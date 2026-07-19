@@ -1,0 +1,47 @@
+R+ 6.2.0 (Estado Actual estructurado — monitoreo en Sala)
+=======================================================
+
+Fecha: 2026-05-26
+
+## Resumen
+
+R+ 6.2.0 añade **monitoreo estructurado en Sala** con la pestaña **Estado actual** en el expediente: signos vitales, glucometrías, balance hídrico, historial, gráficas de tendencia y texto clínico copiable. Incluye mejoras de **laboratorio** (salida rápida sin paciente en lista) y **rendimiento** al cambiar pestañas del expediente.
+
+## Nuevo / mejorado
+
+### Estado Actual (Sala)
+
+- **Pestaña de primer nivel** — Expediente → **Estado actual** (entre Clínico y Resultados), con botón verde en el encabezado que abre el panel.
+- **Registro de medición** — SV con rangos normales; hora editable solo si un valor está alterado; glucometrías dinámicas; ingresos/egresos y balance de turno.
+- **Snapshot y balance** — Resumen del último valor por parámetro; balance de turno y balance global histórico derivados del historial.
+- **Estado clínico general** — Bloque colapsable (FOUR, esferas, soporte, dieta con kcal/kg calculadas por peso del paciente, medicamentos con propuestas desde SOAP).
+- **Historial y gráficas** — Mediciones recientes; tendencias de SV, glucometrías e I/O con Chart.js (a partir de 2 registros).
+- **Texto Estado Actual** — Generación automática tipo SOAP (sin S:); copiar o guardar con timestamp; campos vacíos como `___`.
+- **Medicamentos** — En Sala, «Enviar a Estado Actual» propone líneas de medicación para confirmar en el panel (no sobrescribe campos confirmados).
+- **Sincronización LAN** — `patient.monitoreo` se fusiona entre equipos de la sala; migración automática desde `patient.estadoActual` legacy.
+
+### Laboratorio
+
+- **Salida rápida** — Nuevo interruptor en **Vista de laboratorio** (engranaje): formatea reportes SOME aunque el expediente no esté en tu lista; no guarda historial.
+- **Icono de Resultados** — Matraz distinto al pulso de Estado actual en las pestañas del expediente.
+
+### Rendimiento del expediente
+
+- **Caché por pestaña** — Al volver a una pestaña ya visitada (mismo paciente), no se reconstruye todo el DOM.
+- **Carga diferida** — Formulario y snapshot al instante; gráficas, Manejo y Tendencias en frames siguientes (menos lag al entrar por primera vez).
+- **Precarga al pasar el mouse** — Las pestañas del expediente empiezan a prepararse al posar el cursor (~70 ms antes del clic).
+
+## Correcciones
+
+- **Clínico / Manejo** — Panel clínico ya no queda cortado a mitad de pantalla (conflicto CSS con la pestaña Estado actual oculta).
+- **Signos vitales alterados** — Campos vacíos ya no se interpretan como 0 ni muestran fila «alterado» por error.
+- **Layout SV** — Etiqueta y hora de alterado sin recorte en tarjetas estrechas.
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v6.2.0
+
+- Mac: `R+-6.2.0-arm64.dmg`, `R+-6.2.0-x64.dmg` (y zip para auto-update).
+- Windows: `R+-6.2.0-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye write-release-yml.js).

@@ -1,0 +1,25 @@
+R+ 7.5.5 (dieta AYUNO + onboarding registro)
+=============================================
+
+Fecha: 2026-06-27
+
+## Resumen
+
+Sobre **7.5.4**: propuesta de **dieta** al pegar SOME aunque AYUNO esté confirmado, y correcciones de **onboarding/registro** (formulario cableado, perfil persistido no re-pide datos, LAN push en segundo plano).
+
+## Nuevo / mejorado
+
+- **Dieta pendiente desde AYUNO** — Si el SOME trae una dieta distinta a la confirmada, se llena `pendienteReceta` con kcal/proteína y se desconfirma dieta para revisión en Estado Actual (sin `force`).
+- **Registro clínico cableado** — El formulario de onboarding/modal vuelve a responder al submit; prefill desde URL y cierre del modal tras guardar.
+- **Perfil persistido** — Si el dispositivo ya tiene `@usuario`, nombre y sala en ajustes, no se repite el gate de onboarding cuando la sesión IPC va retrasada.
+- **LAN push en background** — Tras registrar, el modal cierra de inmediato; PIN de turno y push al anfitrión continúan en segundo plano con toast si falla.
+- **Sin migración** — SQLCipher sigue en v20.
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v7.5.5
+
+- Mac: `R+-7.5.5-arm64.dmg`, `R+-7.5.5-x64.dmg` (y zip para auto-update).
+- Windows: `R+-7.5.5-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye write-release-yml.js).

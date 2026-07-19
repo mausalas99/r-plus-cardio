@@ -1,0 +1,42 @@
+R+ 6.5.3 (Guardia LAN Hub · Recuperación de contraseña (r+123))
+=========================================================
+
+Fecha: 2026-06-01
+
+## Resumen
+
+Parche que añade un **mecanismo de recuperación de contraseña maestra** mediante código de respaldo (`r+123`). En cada desbloqueo exitoso se configura automáticamente un respaldo cifrado de la llave, permitiendo recuperar el acceso si se olvida la contraseña.
+
+## ⚠️ Aviso: Modo Guardia (prototipo)
+
+El **Modo Guardia** incluido en esta versión es un **prototipo funcional en desarrollo** y **aún no está listo para uso clínico**. Las funcionalidades de registro de guardia, asignación de equipos y firma criptográfica están en fase experimental. No uses el Modo Guardia para decisiones clínicas reales hasta que se anuncie su disponibilidad oficial.
+
+## Nuevo / mejorado
+
+### Recuperación de contraseña
+
+- **Recuperación de acceso** — Link "¿Olvidaste tu contraseña?" en la pantalla de desbloqueo. Ingresa el código `r+123` para recuperar el acceso a la base clínica.
+- **Auto-configuración** — El mecanismo se configura automáticamente en el primer desbloqueo exitoso; no requiere intervención del usuario.
+- **Seguridad** — La llave de recuperación se envuelve con AES-256-GCM usando una clave derivada de `r+123` con Argon2id. Se guarda en el archivo meta y en la base de datos.
+- **Auditoría** — El desbloqueo por recuperación registra el evento `auth.recovery.unlock` en la cadena forense.
+- **Límite de intentos** — La recuperación comparte el mismo límite de 5 intentos por 15 minutos que el desbloqueo normal.
+
+### Guardia LAN Hub
+
+- **Conexión guardia** — Panel rediseñado en la barra superior con estado de red (conectado/buscando), salas de guardia (Sala 1, 2, E) y secciones contextuales según el rango clínico (R1, R2, R4/Admin).
+- **Auto-descubrimiento LAN** — Detección automática de hosts en la red local con prioridad por rango (Admin > R4 > R3 > R2 > R1). Si un host de mayor rango está activo, la Mac se conecta como cliente sin configuración manual.
+- **Equipos clínicos** — R4/Admin puede crear equipos del mes, R1/R2 pueden unirse a equipos disponibles en su Sala. R2 obtiene auto-promoción a líder al unirse.
+- **Modo Guardia (toggle)** — Activa/desactiva el tablero de guardia con un checkbox en el panel. Los pacientes se asignan automáticamente al equipo del usuario al crearlos.
+- **Vista censo (R4/Admin)** — Resumen de equipos y guardias activas por Sala.
+- **Finalizar rotación** — R4/Admin puede archivar todos los equipos activos y comenzar una nueva rotación mensual.
+- **Enlace móvil** — Botón para copiar un enlace que, al abrirse en un iPad, pre-llena el registro clínico y conecta automáticamente a la red del hospital.
+- **Entrega de pacientes (R2)** — Lista de pacientes entregados por R1s del equipo para revisión.
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v6.5.3
+
+- Mac: `R+-6.5.3-arm64.dmg`, `R+-6.5.3-x64.dmg` (y zip para auto-update).
+- Windows: `R+-6.5.3-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye write-release-yml.js).

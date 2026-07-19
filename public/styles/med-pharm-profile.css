@@ -1,0 +1,1269 @@
+/* Hallmark · utilitarian clinical · theme: Quiet workbench · design.md */
+.med-pharm-root,
+.med-pharm-grid-scope {
+  --some-day-band-h: clamp(22px, 2.8vh, 30px);
+  --some-med-block-h: calc(var(--some-day-band-h) * 2);
+  --some-day-w: clamp(32px, 3.1vw, 48px);
+  --some-hdr-row-h: 30px;
+}
+
+.med-pharm-scroll {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.med-pharm-scroll::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.some-grid-wrap {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+}
+
+.med-pharm-grid-scope .some-grid-wrap,
+.med-pharm-modal.full .some-grid-wrap,
+.med-pharm-modal.med-pharm-dialog-one .modal-body-scroll,
+.med-pharm-list-body,
+.med-pharm-grid-host {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.med-pharm-grid-scope .some-grid-wrap::-webkit-scrollbar,
+.med-pharm-modal.full .some-grid-wrap::-webkit-scrollbar,
+.med-pharm-modal.med-pharm-dialog-one .modal-body-scroll::-webkit-scrollbar,
+.med-pharm-list-body::-webkit-scrollbar,
+.med-pharm-grid-host::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.med-active-shell {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+#med-subview-tabs-bar.inner-tab-bar {
+  flex-shrink: 0;
+  margin-bottom: 0;
+  background: var(--surface);
+}
+
+#med-work-area.med-pharm-root {
+  flex: 1;
+  min-height: 0;
+}
+
+.med-pharm-profile-card {
+  overflow: hidden;
+}
+
+.med-pharm-toolbar {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  align-items: center;
+  gap: 10px 12px;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border);
+  background: color-mix(in oklab, var(--bg) 60%, var(--surface));
+}
+
+.med-pharm-toolbar-start {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.med-pharm-toolbar-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.med-pharm-toolbar-end {
+  display: flex;
+  justify-content: flex-end;
+  min-width: 0;
+}
+
+.med-pharm-toolbar-field {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.med-pharm-toolbar-field label {
+  display: inline;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.med-pharm-toolbar-field select {
+  font: inherit;
+  font-size: 12px;
+  padding: 5px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  min-width: 7.5rem;
+  max-width: 11rem;
+}
+
+.med-pharm-last-paste {
+  font-size: 11px;
+  color: var(--text-muted);
+  white-space: nowrap;
+  padding: 4px 0;
+}
+
+.med-pharm-show-hidden-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--text-muted);
+  cursor: pointer;
+  user-select: none;
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.med-pharm-show-hidden-wrap:hover {
+  color: var(--text);
+  border-color: color-mix(in oklab, var(--primary) 35%, var(--border));
+}
+
+.med-pharm-show-hidden-wrap input {
+  margin: 0;
+  accent-color: var(--primary);
+}
+
+.med-pharm-btn-full {
+  min-width: auto;
+  padding: 6px 12px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.med-pharm-toolbar-actions .btn-med-secondary {
+  padding: 6px 10px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.med-pharm-month-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.med-pharm-month-btn {
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 7px;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.med-pharm-month-nav span {
+  font-weight: 700;
+  font-size: 12px;
+  min-width: 8.5rem;
+  max-width: 14rem;
+  padding: 0 6px;
+  text-align: center;
+  color: var(--primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 960px) {
+  .med-pharm-toolbar {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .med-pharm-toolbar-actions {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .med-pharm-toolbar-end {
+    justify-content: flex-start;
+  }
+
+  .med-pharm-month-nav span {
+    max-width: none;
+    flex: 1;
+  }
+}
+
+.med-pharm-hint {
+  margin: 12px 16px 0;
+}
+
+.med-pharm-list-body {
+  min-height: 48px;
+}
+
+.med-pharm-profile-card.med-pharm-has-grid .med-pharm-list-head {
+  display: none;
+}
+
+.med-pharm-grid-host {
+  padding: 0;
+  overflow: auto;
+  max-height: min(62vh, 560px);
+  border-top: 1px solid var(--border);
+}
+
+.med-pharm-grid-host .some-grid-wrap {
+  max-height: none;
+}
+
+.med-pharm-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 10px 14px;
+  font-size: 11px;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border);
+}
+
+.med-pharm-swatch {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  vertical-align: middle;
+  margin-right: 4px;
+  font-style: normal;
+}
+
+.med-pharm-swatch-ind {
+  background: var(--med-pharm-indicated);
+  border: 1px solid var(--med-pharm-indicated-border);
+}
+
+.med-pharm-swatch-na {
+  background: var(--med-pharm-not-admin);
+  box-shadow: inset 0 0 0 2px var(--med-pharm-not-admin-border);
+}
+
+html.dark .med-pharm-swatch-ind {
+  background: var(--med-pharm-indicated);
+  border-color: var(--med-pharm-indicated-border);
+}
+
+html.dark .med-pharm-swatch-na {
+  background: var(--med-pharm-not-admin);
+  box-shadow: inset 0 0 0 2px var(--med-pharm-not-admin-border);
+}
+
+html.dark .med-pharm-swatch-today {
+  background: var(--med-pharm-today);
+}
+
+.med-pharm-swatch-today {
+  background: var(--med-pharm-today);
+}
+
+.med-pharm-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 32px 20px;
+  text-align: center;
+}
+
+.med-pharm-empty-title {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.med-pharm-empty-lead {
+  margin: 0;
+  max-width: 360px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+.med-pharm-paste-dialog {
+  width: min(560px, calc(100vw - 32px));
+  max-height: min(90vh, 720px);
+  display: flex;
+  flex-direction: column;
+}
+
+.med-pharm-paste-body {
+  padding: 14px 18px 16px;
+  flex: 1;
+  min-height: 0;
+}
+
+.med-pharm-paste-hint {
+  margin: 0 0 14px;
+  font-size: calc(12px * var(--density-font, 1));
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+.med-pharm-paste-hint code {
+  font-size: 0.92em;
+  padding: 1px 5px;
+  border-radius: 4px;
+  background: color-mix(in oklab, var(--border) 35%, var(--surface));
+}
+
+.med-pharm-paste-field {
+  display: block;
+}
+
+.med-pharm-paste-field-label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+.med-pharm-paste-input {
+  width: 100%;
+  min-height: 200px;
+  max-height: min(52vh, 420px);
+  font: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: calc(11.5px * var(--density-font, 1));
+  line-height: 1.5;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm, 8px);
+  border: 1px solid color-mix(in oklab, var(--primary) 22%, var(--border));
+  background: var(--input-fill, color-mix(in oklab, var(--bg) 55%, var(--surface)));
+  color: var(--text);
+  resize: vertical;
+  box-sizing: border-box;
+  box-shadow: inset 0 1px 2px color-mix(in oklab, var(--text) 6%, transparent);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.med-pharm-paste-input::placeholder {
+  color: color-mix(in oklab, var(--text-muted) 85%, transparent);
+  font-style: italic;
+}
+
+.med-pharm-paste-input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow:
+    inset 0 1px 2px color-mix(in oklab, var(--text) 6%, transparent),
+    0 0 0 3px color-mix(in oklab, var(--primary) 28%, transparent);
+}
+
+.med-pharm-paste-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 12px 16px 16px;
+  border-top: 1px solid var(--border);
+}
+
+html.dark .med-pharm-list-head {
+  background: color-mix(in oklab, var(--surface) 88%, var(--border));
+}
+
+html.dark .med-pharm-grid-scope .some-grid-unified thead tr.hdr-row-1 th,
+html.dark .med-pharm-grid-scope .some-grid-unified thead tr.hdr-row-2 th,
+html.dark .med-pharm-grid-scope .some-grid-unified thead .col-meta-hdr {
+  background: color-mix(in oklab, var(--surface) 94%, var(--border));
+  color: var(--text-muted);
+}
+
+html.dark .med-pharm-grid-scope .some-grid-unified th.day-hdr.today-col {
+  color: var(--med-pharm-today-fg);
+}
+
+html.dark .med-pharm-grid-scope .some-grid-unified td.day-pad.today-col {
+  background: color-mix(in oklab, var(--med-pharm-today) 55%, var(--surface));
+}
+
+html.dark .med-pharm-grid-scope .some-grid-unified tbody tr.med-row-block-end td {
+  border-bottom-color: color-mix(in oklab, var(--text-muted) 35%, var(--border));
+}
+
+html.dark .med-pharm-grid-scope .some-grid-unified tbody tr.med-row-block-start td {
+  border-top-color: color-mix(in oklab, var(--text-muted) 28%, var(--border));
+}
+
+html.dark .med-pharm-modal.full {
+  background: var(--bg);
+}
+
+html.dark .med-pharm-modal.full .med-pharm-full-header {
+  background: var(--surface);
+  border-bottom-color: var(--divider);
+}
+
+html.dark .med-pharm-modal-legend {
+  background: color-mix(in oklab, var(--surface) 96%, var(--bg));
+}
+
+.med-pharm-list-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto 44px 36px;
+  gap: 8px;
+  padding: 6px 12px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  background: var(--input-fill);
+  border-bottom: 1px solid var(--border);
+  align-items: center;
+}
+
+.med-pharm-list-head > span:nth-child(2) {
+  min-width: 72px;
+  text-align: center;
+}
+
+.med-pharm-row {
+  border-bottom: 1px solid var(--border);
+}
+
+.med-pharm-row.has-miss .med-pharm-row-summary {
+  background: color-mix(in oklab, var(--med-pharm-not-admin) 12%, var(--surface));
+}
+
+.med-pharm-row-summary {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto 44px 36px;
+  gap: 8px;
+  align-items: center;
+  padding: 6px 12px;
+  background: var(--surface);
+}
+
+.med-pharm-row-summary.has-misses {
+  box-shadow: inset 3px 0 0 var(--med-pharm-not-admin-border);
+}
+
+.med-pharm-row-summary:hover {
+  background: color-mix(in oklab, var(--primary) 4%, var(--surface));
+}
+
+.med-pharm-main {
+  min-width: 0;
+}
+
+.med-pharm-main--compact .med-pharm-name-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 6px;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.med-pharm-name-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px 8px;
+  min-width: 0;
+}
+
+.med-cell-adh {
+  font-size: 10px;
+  margin-top: 0;
+  line-height: 1.35;
+  cursor: help;
+  flex-shrink: 0;
+}
+
+.med-cell-adh .miss {
+  color: var(--med-pharm-not-admin-border);
+  font-weight: 700;
+}
+
+.med-pharm-dosis-line {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 0;
+  line-height: 1.3;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.med-pharm-regimen-badge {
+  display: inline-block;
+  padding: 1px 6px;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0;
+  border-radius: 999px;
+  color: var(--primary);
+  background: color-mix(in oklab, var(--primary) 12%, var(--surface));
+  border: 1px solid color-mix(in oklab, var(--primary) 35%, var(--border));
+  flex-shrink: 0;
+  line-height: 1.4;
+}
+
+.med-pharm-dosis-line--current {
+  font-weight: 600;
+  color: color-mix(in oklab, var(--text) 88%, var(--primary));
+}
+
+.med-pharm-adh-panel-regimens {
+  margin: 0 0 8px;
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.med-pharm-cat-badge {
+  display: inline-block;
+  margin-top: 0;
+  padding: 1px 6px;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  border-radius: 999px;
+  color: var(--text-muted);
+  background: color-mix(in oklab, var(--border) 40%, var(--surface));
+  border: 1px solid var(--border);
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.med-pharm-freq-cell {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--primary);
+  text-align: center;
+  white-space: nowrap;
+}
+
+.med-pharm-via-cell {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-align: center;
+  white-space: nowrap;
+}
+
+.med-pharm-btn-dias:hover {
+  background: color-mix(in oklab, var(--med-pharm-indicated) 45%, var(--surface));
+  border-color: var(--med-pharm-indicated-border);
+}
+
+.med-pharm-row-actions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  flex-shrink: 0;
+  min-width: 72px;
+}
+
+.med-pharm-btn-visibility {
+  font: inherit;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 5px 9px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: color-mix(in oklab, var(--bg) 40%, var(--surface));
+  color: var(--text-muted);
+  cursor: pointer;
+  white-space: nowrap;
+  line-height: 1.2;
+}
+
+.med-pharm-btn-visibility--icon {
+  width: 26px;
+  min-width: 26px;
+  height: 26px;
+  padding: 0;
+  font-size: 14px;
+  line-height: 1;
+  opacity: 0.45;
+}
+
+.med-pharm-row-summary:hover .med-pharm-btn-visibility--icon {
+  opacity: 1;
+}
+
+.med-pharm-btn-visibility:hover {
+  color: var(--text);
+  border-color: var(--text-muted);
+}
+
+.med-pharm-row--hidden .med-pharm-row-summary {
+  opacity: 0.72;
+  background: color-mix(in oklab, var(--border) 25%, var(--surface));
+}
+
+.med-pharm-row--hidden .med-pharm-name {
+  text-decoration: line-through;
+  text-decoration-color: color-mix(in oklab, var(--text-muted) 70%, transparent);
+}
+
+.med-pharm-main--compact .med-pharm-name {
+  flex: 1 1 auto;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.med-pharm-main--compact .med-cell-adh {
+  flex-shrink: 0;
+}
+
+.med-pharm-main--compact .med-pharm-adh-trigger {
+  font-size: 10px;
+  padding: 0;
+  border: none;
+  background: none;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.med-pharm-name {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.35;
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.med-pharm-meta-row .med-pharm-dosis-line::before {
+  content: '·';
+  margin-right: 6px;
+  color: var(--text-muted);
+  opacity: 0.65;
+}
+
+.med-pharm-adh {
+  font-size: 10px;
+  margin-top: 2px;
+}
+
+.med-pharm-adh-ok {
+  color: var(--text-muted);
+}
+
+.med-pharm-adh-miss {
+  color: var(--warn);
+}
+
+.med-pharm-cat-select {
+  display: block;
+  width: 100%;
+  max-width: 220px;
+  font: inherit;
+  font-size: 10px;
+  padding: 2px 4px;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-muted);
+}
+
+.med-pharm-btn-dias {
+  font: inherit;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 7px;
+  border: 1px solid var(--primary);
+  background: var(--surface);
+  color: var(--primary);
+  cursor: pointer;
+  white-space: nowrap;
+  line-height: 1.2;
+}
+
+.med-pharm-modal-backdrop {
+  z-index: var(--z-modal);
+  padding: 16px;
+}
+
+.med-pharm-modal-backdrop[hidden] {
+  display: none !important;
+}
+
+.med-pharm-modal.full .med-pharm-full-header {
+  flex-shrink: 0;
+  position: relative;
+  z-index: 30;
+  align-items: flex-start;
+  gap: 12px;
+  padding-top: calc(14px * var(--density-space));
+  padding-bottom: calc(12px * var(--density-space));
+}
+
+.med-pharm-full-header-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.med-pharm-full-header h2 {
+  margin: 0;
+  font-size: calc(15px * var(--density-font));
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--primary);
+}
+
+.med-pharm-full-header-sub {
+  margin: 6px 0 0;
+  font-size: calc(12px * var(--density-font));
+  line-height: 1.45;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+.med-pharm-modal-backdrop.med-pharm-modal--one.open {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: calc(20px * var(--density-space));
+}
+
+html.electron-macos-inset-bar .med-pharm-modal-backdrop.full.open {
+  height: 100dvh;
+}
+
+html.electron-macos-inset-bar .med-pharm-modal-backdrop.full.open .med-pharm-modal.full {
+  height: 100%;
+  max-height: 100%;
+}
+
+.med-pharm-modal-backdrop.open {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.med-pharm-modal-backdrop.full.open {
+  padding: 0;
+  background: var(--surface);
+  align-items: stretch;
+  justify-content: stretch;
+}
+
+body.rpc-med-pharm-modal-open {
+  overflow: hidden;
+}
+
+.med-pharm-modal {
+  background: var(--surface);
+  border-radius: 12px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+  width: min(480px, 100%);
+  max-height: 90vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.med-pharm-modal.full {
+  width: 100vw;
+  height: 100vh;
+  max-width: 100vw;
+  max-height: 100vh;
+  border-radius: 0;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.med-pharm-modal .modal-body-scroll {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.med-pharm-modal.full .modal-body-scroll {
+  padding: 0;
+}
+
+.med-pharm-modal.full .some-grid-wrap {
+  flex: 1;
+  min-height: 0;
+}
+
+/* Modal «Días»: centrado, ancho según la matriz (no pantalla completa) */
+.med-pharm-modal.med-pharm-dialog-one {
+  width: max-content;
+  max-width: min(calc(100vw - 40px), 1120px);
+  max-height: min(92vh, calc(100dvh - 40px));
+  flex: 0 1 auto;
+  border-radius: var(--radius-lg, 12px);
+  box-shadow: var(--shadow-md);
+}
+
+.med-pharm-modal.med-pharm-dialog-one .med-pharm-full-header {
+  padding-top: calc(12px * var(--density-space));
+  padding-bottom: calc(10px * var(--density-space));
+}
+
+.med-pharm-modal.med-pharm-dialog-one .modal-body-scroll {
+  flex: 0 1 auto;
+  min-height: 0;
+  max-height: min(72vh, calc(100dvh - 240px));
+  overflow: auto;
+  padding: 0;
+  display: block;
+}
+
+.med-pharm-modal.med-pharm-dialog-one .med-pharm-grid-scope {
+  --some-day-w: clamp(28px, 2.6vw, 40px);
+  --some-day-band-h: clamp(24px, 2.6vh, 32px);
+  --some-med-block-h: calc(var(--some-day-band-h) * 2);
+}
+
+.med-pharm-modal.med-pharm-dialog-one .med-pharm-grid-scope .some-grid-unified {
+  font-size: calc(11px * var(--density-font));
+}
+
+.med-pharm-modal.med-pharm-dialog-one .med-pharm-grid-scope .some-grid-unified .med-cell-name {
+  font-size: calc(12px * var(--density-font));
+}
+
+.med-pharm-modal.med-pharm-dialog-one .some-grid-wrap {
+  flex: none;
+  overflow: visible;
+}
+
+.med-pharm-modal.med-pharm-dialog-one .med-pharm-modal-legend {
+  flex-shrink: 0;
+}
+
+.med-pharm-modal-legend {
+  flex-shrink: 0;
+  border-top: 1px solid var(--border);
+}
+
+.med-pharm-grid-scope table.some-grid-unified {
+  border-collapse: collapse;
+  font-size: 10px;
+  width: max-content;
+  min-width: 100%;
+  table-layout: fixed;
+}
+
+.med-pharm-grid-scope .some-grid-unified th,
+.med-pharm-grid-scope .some-grid-unified td {
+  border: 1px solid var(--border);
+  vertical-align: middle;
+  box-sizing: border-box;
+}
+
+.med-pharm-grid-scope .some-grid-unified thead tr.hdr-row-1 th {
+  z-index: 2;
+  height: var(--some-hdr-row-h);
+  background: color-mix(in oklab, var(--bg) 35%, var(--surface));
+  text-align: center;
+  padding: 4px 2px;
+}
+
+.med-pharm-grid-scope .some-grid-unified thead tr.hdr-row-2 th {
+  z-index: 2;
+  height: var(--some-hdr-row-h);
+  background: color-mix(in oklab, var(--bg) 35%, var(--surface));
+  text-align: center;
+  padding: 4px 2px;
+}
+
+.med-pharm-grid-scope .some-grid-unified thead .col-meta-hdr {
+  z-index: 4;
+  background: color-mix(in oklab, var(--bg) 35%, var(--surface));
+  letter-spacing: 0.03em;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-align: left;
+  vertical-align: middle;
+  padding: 8px 10px;
+}
+
+.med-pharm-grid-scope .some-grid-unified thead .col-via.col-meta-hdr {
+  z-index: 1;
+}
+
+.med-pharm-grid-scope .some-grid-unified th.day-hdr {
+  width: var(--some-day-w);
+  min-width: var(--some-day-w);
+  max-width: var(--some-day-w);
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.med-pharm-grid-scope .some-grid-unified th.day-hdr-month {
+  position: relative;
+  padding-top: 12px;
+}
+
+.med-pharm-grid-scope .some-grid-unified th.day-hdr-month-boundary,
+.med-pharm-grid-scope .some-grid-unified td.day-pad-month-boundary {
+  border-left: 2px solid color-mix(in oklab, var(--primary) 55%, var(--border));
+}
+
+.med-pharm-grid-scope .some-grid-unified .day-hdr-month-label {
+  position: absolute;
+  top: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 8px;
+  font-weight: 600;
+  text-transform: lowercase;
+  color: var(--text-muted);
+  opacity: 0.85;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.med-pharm-grid-scope .some-grid-unified th.day-hdr.today-col {
+  background: var(--med-pharm-today);
+  color: var(--med-pharm-today-fg);
+}
+
+.med-pharm-grid-scope .some-grid-unified th.day-hdr-empty,
+.med-pharm-grid-scope .some-grid-unified td.day-pad-empty {
+  background: color-mix(in oklab, var(--bg) 70%, var(--surface));
+  cursor: default;
+}
+
+.med-pharm-grid-scope .some-grid-unified .col-med {
+  width: 200px;
+  min-width: 200px;
+  background: var(--surface);
+  padding: 8px 10px;
+}
+
+.med-pharm-grid-scope .some-grid-unified .col-dosis {
+  width: 180px;
+  min-width: 180px;
+  background: var(--surface);
+  padding: 8px 10px;
+  font-size: 10px;
+  color: var(--text-muted);
+}
+
+.med-pharm-grid-scope .some-grid-unified .col-freq {
+  width: 44px;
+  min-width: 44px;
+  background: var(--surface);
+  text-align: center;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.med-pharm-grid-scope .some-grid-unified .col-via {
+  width: 100px;
+  min-width: 100px;
+  background: var(--surface);
+  border-right: 3px solid var(--primary);
+  padding: 8px 6px;
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+.med-pharm-grid-scope .some-grid-unified thead th {
+  position: static;
+  top: auto;
+  left: auto;
+}
+
+.med-pharm-grid-scope .some-grid-unified .col-day {
+  width: var(--some-day-w);
+  min-width: var(--some-day-w);
+}
+
+.med-pharm-grid-scope .some-grid-unified td.day-pad {
+  width: var(--some-day-w);
+  min-width: var(--some-day-w);
+  max-width: var(--some-day-w);
+  height: var(--some-day-band-h);
+  padding: 0;
+  text-align: center;
+  background: var(--surface);
+}
+
+.med-pharm-grid-scope .some-grid-unified td.day-pad.today-col {
+  background: color-mix(in oklab, var(--med-pharm-today) 35%, var(--surface));
+}
+
+.med-pharm-grid-scope .some-grid-unified td.day-pad.indicated {
+  background: var(--med-pharm-indicated);
+  box-shadow: inset 0 0 0 1px var(--med-pharm-indicated-border);
+  cursor: pointer;
+}
+
+.med-pharm-grid-scope .some-grid-unified td.day-pad.indicated.today-col {
+  background: color-mix(in oklab, var(--med-pharm-today) 30%, var(--med-pharm-indicated));
+}
+
+.med-pharm-grid-scope .some-grid-unified td.day-pad.indicated.not-admin {
+  background: var(--med-pharm-not-admin);
+  box-shadow: inset 0 0 0 2px var(--med-pharm-not-admin-border);
+}
+
+.med-pharm-grid-scope .some-grid-unified td.day-pad.indicated.not-admin.today-col {
+  background: color-mix(in oklab, var(--med-pharm-not-admin) 88%, var(--med-pharm-today) 12%);
+  box-shadow: inset 0 0 0 2px var(--med-pharm-not-admin-border);
+}
+
+.med-pharm-grid-scope .some-grid-unified td.day-pad.indicated .x2 {
+  font-size: 9px;
+  font-weight: 800;
+  color: var(--primary);
+  line-height: var(--some-day-band-h);
+  display: inline-block;
+}
+
+.med-pharm-grid-scope .some-grid-unified tbody tr.med-row-has-miss .col-med {
+  box-shadow: inset 3px 0 0 var(--med-pharm-not-admin-border);
+}
+
+.med-pharm-grid-scope .some-grid-unified .med-cell-name {
+  font-weight: 600;
+  line-height: 1.25;
+  white-space: normal;
+  word-break: break-word;
+}
+
+.med-pharm-grid-scope .some-grid-unified .med-cell-adh,
+.med-cell-adh {
+  font-size: 10px;
+  margin-top: 4px;
+  line-height: 1.3;
+}
+
+.med-pharm-adh-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  max-width: 100%;
+}
+
+.med-pharm-adh-trigger {
+  font: inherit;
+  font-size: 10px;
+  line-height: 1.35;
+  margin: 0;
+  padding: 2px 0;
+  border: none;
+  background: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  text-align: left;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 3px;
+}
+
+.med-pharm-adh-trigger:hover,
+.med-pharm-adh-trigger:focus-visible {
+  color: var(--action);
+  outline: none;
+}
+
+.med-pharm-adh-trigger--miss {
+  color: var(--med-pharm-not-admin-border);
+  font-weight: 700;
+}
+
+.med-pharm-adh-trigger--empty {
+  cursor: default;
+  text-decoration: none;
+  color: var(--text-muted);
+}
+
+.med-pharm-adh-panel {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  min-width: 260px;
+  max-width: min(400px, 92vw);
+  max-height: min(280px, 55vh);
+  overflow-y: auto;
+  z-index: var(--z-modal-nested);
+  padding: 0;
+  border-radius: var(--radius-lg, 10px);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  box-shadow: var(--shadow-md);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.med-pharm-adh-panel.is-open {
+  display: block;
+}
+
+.med-pharm-adh-panel-head {
+  margin: 0;
+  padding: 8px 12px 6px;
+  font-size: 11px;
+  font-weight: 750;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--divider);
+  background: color-mix(in oklab, var(--surface) 92%, var(--bg));
+}
+
+.med-pharm-adh-panel-section {
+  padding: 8px 12px;
+}
+
+.med-pharm-adh-panel-section + .med-pharm-adh-panel-section {
+  border-top: 1px solid color-mix(in oklab, var(--divider) 80%, transparent);
+}
+
+.med-pharm-adh-panel-label {
+  display: block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  margin-bottom: 4px;
+}
+
+.med-pharm-adh-panel-label--ok {
+  color: color-mix(in oklab, var(--color-accent) 80%, var(--text));
+}
+
+.med-pharm-adh-panel-label--miss {
+  color: var(--med-pharm-not-admin-border);
+}
+
+.med-pharm-adh-panel-days {
+  margin: 0;
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--text);
+  word-break: break-word;
+}
+
+.med-pharm-adh-panel-foot {
+  margin: 0;
+  padding: 8px 12px 10px;
+  font-size: 10px;
+  color: var(--text-muted);
+  border-top: 1px solid var(--divider);
+  background: color-mix(in oklab, var(--bg) 35%, var(--surface));
+}
+
+html.dark .med-pharm-adh-panel {
+  box-shadow: var(--shadow-md);
+}
+
+.med-pharm-grid-scope .some-grid-unified .adh-ok {
+  color: var(--text-muted);
+}
+
+.med-pharm-grid-scope .some-grid-unified .adh-miss {
+  color: var(--warn);
+}
+
+.med-pharm-grid-scope .some-grid-unified .adh-miss strong {
+  color: var(--med-pharm-not-admin-border);
+  font-weight: 700;
+}
+
+.med-pharm-grid-scope .some-grid-unified tbody tr.has-misses .col-med {
+  box-shadow: inset 3px 0 0 var(--med-pharm-not-admin-border);
+}
+
+.med-pharm-grid-scope .some-grid-unified tbody tr.has-misses .col-med,
+.med-pharm-grid-scope .some-grid-unified tbody tr.has-misses .col-dosis,
+.med-pharm-grid-scope .some-grid-unified tbody tr.has-misses .col-freq,
+.med-pharm-grid-scope .some-grid-unified tbody tr.has-misses .col-via {
+  background: color-mix(in oklab, var(--med-pharm-not-admin) 8%, var(--surface));
+}
+
+.med-pharm-grid-scope .some-grid-unified tbody tr.day-band {
+  height: var(--some-day-band-h);
+}
+
+.med-pharm-grid-scope .some-grid-unified tbody tr.med-row-block-start td {
+  border-top: 3px solid color-mix(in oklab, var(--color-accent) 28%, var(--border));
+}
+
+.med-pharm-grid-scope .some-grid-unified tbody tr.med-row-block-start .col-med {
+  box-shadow: inset 4px 0 0 color-mix(in oklab, var(--color-accent) 70%, transparent);
+}
+
+.med-pharm-grid-scope .some-grid-unified tbody tr.med-row-block-end td {
+  border-bottom: 3px solid color-mix(in oklab, var(--text-muted) 22%, var(--border));
+}
+
+.med-pharm-grid-scope .some-grid-unified tbody tr.med-block-b .col-med,
+.med-pharm-grid-scope .some-grid-unified tbody tr.med-block-b .col-dosis,
+.med-pharm-grid-scope .some-grid-unified tbody tr.med-block-b .col-freq,
+.med-pharm-grid-scope .some-grid-unified tbody tr.med-block-b .col-via {
+  background: color-mix(in oklab, var(--bg) 38%, var(--surface));
+}
+
+.med-pharm-grid-scope .some-grid-unified tbody tr.med-block-b td.day-pad:not(.indicated) {
+  background: color-mix(in oklab, var(--bg) 28%, var(--surface));
+}
+
+.med-pharm-grid-scope .some-grid-unified tbody tr.med-block-b td.day-pad.indicated:not(.not-admin) {
+  background: color-mix(in oklab, var(--med-pharm-indicated) 82%, var(--bg) 18%);
+}
+
+.med-pharm-grid-scope .some-grid-unified tbody tr:hover .col-med,
+.med-pharm-grid-scope .some-grid-unified tbody tr:hover .col-dosis,
+.med-pharm-grid-scope .some-grid-unified tbody tr:hover .col-freq,
+.med-pharm-grid-scope .some-grid-unified tbody tr:hover .col-via {
+  background: color-mix(in oklab, var(--action) 8%, var(--surface));
+}

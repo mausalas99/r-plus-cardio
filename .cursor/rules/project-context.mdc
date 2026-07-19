@@ -1,0 +1,176 @@
+---
+description: Living project map for R+ — read before exploring the codebase
+alwaysApply: true
+---
+
+# R+ Project Context
+
+**Read this first** for code paths. Use this map instead of broad codebase exploration. Only search or read files when this map lacks the detail you need for the task.
+
+**Strategy & docs hub (product trade-offs):** `docs/core/00-system-index.md` → `docs/core/01-vision-north-star.md`  
+**Feature / logic / DB indices:** `docs/features/features-index.md`, `docs/logic/logic-index.md`, `docs/database/database-index.md`  
+**Large feature designs:** `docs/superpowers/specs/`, `docs/superpowers/plans/`
+
+Design tokens and UI conventions: `design.md`, `public/tokens.css` (see also `docs/core/06-design-system.md`).
+
+---
+
+## Stack
+
+Electron 41 desktop app (Mac arm64/x64, Windows x64). Renderer: ES modules bundled with esbuild (`public/js/app.bundle.mjs`). Main process: `main.js`. LAN HTTP/WS server: `server.js` on port **3738**. Clinical DB: SQLCipher via `better-sqlite3-multiple-ciphers` + Argon2 (`lib/db/`). Tests: `node --test` (colocated `*.test.mjs` / `*.test.js`).
+
+---
+
+## Entry points
+
+| Layer | File | Role |
+|-------|------|------|
+| Electron main | `main.js` | Window, auto-updater, IPC, spawns LAN server |
+| Preload bridge | `preload.js` | `window.electronAPI` IPC surface |
+| LAN server | `server.js` | Express routes, doc export, interno mobile, WS hub |
+| Renderer boot | `public/js/app.js` → `app.bundle.mjs` | Feature registration via `app-runtimes.mjs` |
+| UI shell | `public/index.html` + `public/partials/` | Markup assembled by `scripts/build-ui.mjs` |
+| Release | `scripts/release.js` | bump, test, build, publish |
+
+---
+
+## Directory map
+
+```
+lib/                  Node-side shared logic (importable from main/server)
+  db/                 SQLCipher schema, crypto, clinical access, IPC handlers
+  doc-generators/     Native .docx (note, indicaciones, listado)
+  entrega/            Modo entrega pendientes (v2 templates + completion)
+  interno/            Mobile interno/guardia board, QR, vitals, scope
+  historia-clinica/   HC compile, defaults, migration
+  drive-import/       Google Drive HC/labs import parsers
+ lab-repo/           Intrahospital lab portal scraper (ASP.NET HTML parse, PDF fetch)
+
+lan-squad/            LAN sync host: WS hub, host-store (→ host-store/), conflict resolver,
+          auth-router, ticket-store, write-queue, team-code
+  persistence/        Host durability: CommitBarrier, JSON shards, lab sidecars, SQL v15 repos
+
+public/js/            Renderer modules (pre-bundle)
+  features/           UI feature modules (*.mjs) — primary place for new UI work
+  app-state.mjs       Patient/state hydration
+  clinical-access-runtime.mjs  Session + privileges (façade → clinical-access-runtime/)
+  clinico-access-*.mjs  Scope evaluators (cycle, entrega, guardia, patient, teams, unlock)
+  storage.js          Legacy localStorage (non-DB paths; split helpers under storage/)
+
+public/interno/       Mobile web client (guardia/interno board)
+scripts/              build-ui, bundle-renderer, release, native rebuild
+cloud/                equipos-worker (CF Worker+D1+R2), equipos-pages (static UI)
+cloudflare/           setup guide + `setup.mjs` for one-command deploy
+docs/
+  core/               Agent hub: 00-system-index, 01-vision-north-star, architecture
+  features/           features-index.md → feature domains
+  logic/              logic-index.md → parsers, sync engines
+  database/           database-index.md → SQLCipher schema map
+  logs/               agent-changelog.md
+  superpowers/        Specs and implementation plans (design before big features)
+```
+
+---
+
+## Domain index (where to look)
+
+| Topic | Primary locations |
+|-------|-------------------|
+| Clinical DB / schema | `lib/db/schema.mjs`, `lib/db/db-manager.mjs`, `lib/db/ipc-handlers.mjs`, `lib/db/ipc-handlers.test.mjs` (fake `ipcMain` harness) |
+| Roles / privileges | `lib/db/clinical-privileges.mjs`, `lib/db/clinical-access-*.mjs` (teams, guardia, entrega, …), `public/js/clinical-privileges.mjs`, `public/js/clinico-access.mjs` + `clinico-access-scope/` + `clinico-access-*.mjs`; session bootstrap in `clinical-access-runtime/` |
+| LAN sync / rooms | `lan-squad/` (`host-store/` persistence submodules, `conflict-resolver.js`, `bundle-merge.js`), `public/js/features/lan/` — façade `orchestrator.mjs` + `conflicts.mjs`, `entity-versions.mjs`, `patient-delete.mjs`, `patient-entries.mjs`, `historia-sync.mjs`, `host-patient-http.mjs`, `live-sync-emit.mjs`, `push`, `room`, `transport`, `panel`, `runtime`; thin `features/lan-sync.mjs` barrel; root `lan-host-registry.mjs`, `lan-ward-host-registry.mjs`, `lan-sync-{state,diagnostics,bundle-push}.mjs`, `lan-delta-client.mjs`; LWW → `docs/superpowers/specs/2026-06-03-lan-conflict-lww-design.md` |
+| Clinical teams / guardia | `public/js/features/clinical-teams/` (`teams-roster-{panel,manage,create,directory,submit,shell}`, `teams-roster-lan-*`, `teams-invite`, `teams-guardia-bridge`), barrel `clinical-teams.mjs`, `clinical-rotation.mjs` |
+| Modo entrega | `lib/entrega/`, `public/js/features/clinical-entrega.mjs`, `entrega-modal-ui.mjs` |
+| Interno mobile | `lib/interno/`, `public/interno/`, `server.js` interno routes |
+| Equipos (Lumify/EKG/US) | `lib/equipos/`, `public/equipos/`, `cloud/equipos-worker/`, `equipos-cloud-config.mjs`, `features/equipos-{board,qr-panel}.mjs` | LAN `:3738` **or** Cloudflare Worker queue |
+| Historia clínica | `lib/historia-clinica/`, expediente features |
+| Estado actual / monitoreo | `public/js/features/estado-actual-*.mjs` |
+| Labs / tendencias | `public/js/labs*.mjs`, `cultivo-block-core.mjs`, `features/tendencias.mjs`, `lab-panel.mjs` |
+| Lab repo scraper | `lib/lab-repo/` (`portal-client.mjs`, `portal-html.mjs`, fixtures); spec `docs/superpowers/specs/2026-06-27-lab-repo-scraper-design.md` |
+| VPO (documentación) | `public/js/features/vpo.mjs`, `vpo-panel.mjs`, `vpo-data.mjs`, `vpo-text.mjs` |
+| Document export | `lib/doc-generators/`, `lib/doc-export-http.js`, `server.js` |
+| Updates / downgrade | `lib/update-downgrade.mjs`, `stable-versions.json`, `min-version.json`, `main.js`, Ajustes |
+| Debt metrics | `scripts/metrics/` (`lint-tier1.mjs`, `check.mjs`, `boot-graph.mjs`, `baseline.json`); `npm run lint:tier1` (changed paths), `npm run metrics:check` |
+| Onboarding / tour | `clinical-onboarding*.mjs`, `tour-targets.mjs`, `features/settings-help/` (tours, help, release notes), barrel `settings-help.mjs` |
+| UI shell / pase board | `app-shell.mjs` (chrome/toast/modals), `clinical-quick-export.mjs`, `document-export-client.mjs`, `features/pase-board.mjs`, `public/styles/pase-board.css` |
+
+---
+
+## Build & test
+
+```bash
+npm run build:ui          # assemble index.html + bundle renderer
+npm start                 # electron (prestart rebuilds natives + bundle)
+npm run release:publish   # release pipeline (see README § Desarrollo)
+```
+
+**Testing policy (agents):** Do **not** run `npm test` during normal dev — it still launches ~348 files in a single `node --test` (~35s+, poor feedback loop). That monolithic full-suite run is **not** the target workflow; we are moving toward **targeted** runs and CI sharding instead.
+
+- **Local / agent:** `npm run test:one -- path/to/changed.test.mjs` (runs under Electron's Node via `scripts/run-with-electron-node.mjs` — same SQLCipher ABI as the app). Do **not** use bare `node --test` for DB/native suites.
+- **LAN kernel refactors:** gate with `orchestrator.test.mjs` + `push`/`room`/`transport` + `lan-sync-wiring.test.mjs` (see `docs/core/07-testing-strategy.md`).
+- **DB IPC channels:** `lib/db/ipc-handlers.test.mjs` — fake `ipcMain` + `createUnlockedDbManager` teardown pattern.
+- **CI / release:** `npm test` in `.github/workflows/ci.yml` and `scripts/release.js` — full suite gate only there.
+
+New renderer code: edit `public/js/**/*.mjs`, then `npm run build:ui` (or `npm start` which bundles). Do not edit `app.bundle.mjs` by hand.
+
+Packaged files list: `npm run release:sync-pack` updates electron-builder `build.files`.
+
+---
+
+## Conventions
+
+- **ESM** in renderer and most `lib/` (`.mjs`); CommonJS in `main.js`, `server.js`, `lan-squad/`.
+- **Features pattern**: module exports `windowHandlers`, registered in `app-runtimes.mjs`.
+- **IPC**: add channel in `preload.js` + handler in `main.js` or `lib/db/ipc-handlers.mjs`.
+- **LAN routes**: add to `lan-squad/host-router.js` or `server.js`; auth via `auth-router.js`.
+- **Schema changes**: bump in `lib/db/schema.mjs`, migration + test in `lib/db/schema.test.mjs`.
+- **Spanish UI** copy; code/comments mix EN/ES like surrounding files.
+- **No scope creep**: match existing patterns; minimal diffs.
+
+---
+
+## Changelog (newest first)
+
+Maintained incrementally — see `sync-context-on-commit.mdc`. Max ~20 entries.
+
+- **2026-07-19** `remove-neo`: drop Neo/Casiopea companion — Enviar a Neo UI/IPC, sesion-ingreso export, tour steps `sala_casiopea_*`, Aprender R+ neo modules; curriculum v10; `labs-anion-gap` AG/AGc/UAG.
+- **2026-07-19** `release-7.7.1`: receta SOAP ampliada (familias antieméticos/sedación/transfusiones…), rescates insulina PRN agrupados, glucometrías con UI en NM; `med-receta-soap*.mjs`, `insulin-rescate-*.mjs`, `estado-actual-med-soap-split.mjs`.
+- **2026-07-16** `release-7.7.0`: interpretación citoquímica (GASA, Light, PBE, LCR), fusión bloques duales LCR, diagramas colapsables; `labs-citoquimico-interpret*.mjs`, `labs-lcr-parse.mjs`.
+- **2026-07-11** `release-7.6.8`: bomba insulina IV en EA (SOME algoritmo 1–4), filtro censo sala instantáneo, receta en pestaña Manejo; `insulin-pump-*.mjs`, `estado-actual-insulin-pump.mjs`, `patients-scope.mjs`.
+- **2026-07-07** `release-7.6.7`: equipos PWA Web Push (LAN+cloud), troponina hs SOME/tendencias, consolidación labwork+gaso; `equipos-push.mjs`, `equipos-sw-push.js`, `labs-chemistry.mjs`.
+- **2026-07-03** `release-7.6.5`: host bearer alineado con lan-team-code.txt (401 sync-bundle), `bundledWardInviteUrl` prefill ⇄; `transport-session.mjs`, `push-bundle.mjs`, `clinical-settings.mjs`.
+- **2026-07-02** `lan-bundled-autoconnect`: clientes sin bearer reconectan solos a endpoints del turno (`bundledWardHostUrl`, ward registry); scan loop + bypass sin pausar; `lan-ward-host-registry.mjs`, `panel-scan-hosts.mjs`, `lan-shift-pin-connect.mjs`.
+- **2026-07-01** `release-7.6.1`: SQLCipher v21 sala CHECK (Interconsultas/UX/Eme), borrador Mi rotación, equipos push en cola, downgrade timeout; `schema-migrate-v21-clinical-sala-check.mjs`, `teams-roster-panel-draft.mjs`.
+- **2026-07-01** `ipad-lan-scope`: iPad conserva scope LAN sin SQLCipher; ops clínicas en móvil; sala Interconsultas por equipo; `scope-db.mjs`, `room-clinical-ops.mjs`, `patients-clinical-filter.mjs`; `room.test` exit fix en wrapper Electron.
+- **2026-06-27** `release-7.5.4`: iPad EA signos → LAN (Guardar push), sync-bundle 16mb, merge monitoreo por id, recuperación outbox; `vitals-recovery.mjs`, `server-http-security.js`.
+- **2026-06-27** `ipad-vitals-sync`: EA Guardar empuja LAN; sync-bundle 16mb; merge monitoreo por id; recuperación desde outbox; iPad no borra censo al refrescar; `vitals-recovery.mjs`, `server-http-security.js`.
+- **2026-06-27** `release-7.5.3`: repositorio intrahospitalario — registro + rango fechas, PDF→SOME, import híbrido silencioso/revisión; `lib/lab-repo/`, `lab-repo-import*.mjs`, IPC `lab-repo-fetch`.
+- **2026-06-26** `release-7.5.2`: EA signos en filas + modal historial, SOAP/copiar última lectura, PICO febril ≤5 días, SOME ayuno + traqueostomía; `estado-actual-panel-snapshot-*`, `estado-actual-vital-history-modal.mjs`, `med-receta-parse.mjs`.
+- **2026-06-25** `release-7.5.1`: push equipos LAN/cloud, eTFG desde expediente, labs masivos ventana 2 h, UI Rams, SQLCipher v20; `lib/equipos/equipos-push-*`, `labs-egfr.mjs`, `public/tokens.css`.
+- **2026-06-25** `vibedrift`: phases 0–5 — scan hygiene, arch/DI fixes, `dom-escape`, equipos shared, CI gate `--fail-on-score 45`; `@vibedrift/cli`, `vibedrift:scan`/`vibedrift:check`.
+- **2026-06-24** `ui-lan-settings`: ⇄ hero + unified stack rows; Ajustes panel ghost rows — `settings.css`, `panel-render-once.mjs`, `settings-dropdown.html`, `lan-hub-panel-shell.mjs`.
+- **2026-06-23** `equipos-cloud`: cola Lumify/EKG/US en Cloudflare Worker+D1+R2 (sin Mac anfitrión); `cloud/equipos-worker/`, `equipos-cloud-config.mjs`, desktop board/QR cloud-aware.
+- **2026-06-23** `equipos-tracking`: cola Lumify/EKG/US — schema v18→19, `/equipos` + API, fotos comprimidas + retención **14 días** en admin (`photo_kind=alert` incluido); purga 06:00 UTC solo expiradas; `lib/equipos/`, `public/equipos/`.
+- **2026-06-22** `release-7.4.0`: arranque lazy (boot graph 700→50), deuda Tier 1 cero, EA vitals turn limits, censo highlight patch, UI tokens; `data/release-notes-highlights.mjs`, `docs/RELEASE_NOTES_7.4.0.txt`.
+- **2026-06-21** `debt-phase6`: full-tree Tier 1 ESLint 0 + baseline refresh (31408→50); god-file splits (LAN/interno/renderer), `fix-mechanical-eslint --full`, `lazy-feature-routes-*` split; `lint:tier1:full` gate.
+- **2026-06-21** `boot-lazy-p5c`: boot hub deferrals — lazy `header-context`, `perf-markers`, `session-clinical-wipe`, inline mobile detect in `app.js`, lazy `ui-toast`; `lazy-feature-routes` hub barrel (+2 structural); `bootGraphDebt` 175→**50** interim.
+- **2026-06-20** `boot-lazy-p5b`: shell/app boot deferrals — dynamic mobile LAN modules, lazy modals/quick-export/command-palette/sync-mode handlers, `boot-steps` + todo scheduler dynamic; `bootGraphDebt` 500→175 interim.
+- **2026-06-20** `boot-lazy-p5`: entrega/platform/tour lazy routes — `ensureEntregaLoaded`, runtime proxies for platform + settings-help; boot hubs drop eager submodule imports; `bootGraphDebt` −200 (700→500 interim).
+- **2026-06-20** `debt-refactor`: Tier 1 god-file splits + complexity burn-down — `clinical-access-runtime/`, `clinico-access-*`, `host-store/`, `lib/db/{schema-migrate-*,ipc-handlers-*,clinical-access-*}`, teams-roster LAN/panel splits, tour/settings-help, storage/labs/tendencias; Phase 0 metrics tooling (`lint-tier1`, `top-complexity`, `read-feature-src`); 520 changed paths eslint `--max-warnings 0`; oversized tests → `tests/`.
+- **2026-06-20** `ui-audit-tracks`: scrim/z-index/viewport tokens, interno skip link, radius hierarchy, lab/pase hex tokenization, empty-state parity, track 1.5 header/clinical/popover z-index; spec `docs/superpowers/specs/2026-06-20-hallmark-ui-audit-tracks-design.md`.
+- **2026-06-20** `release-7.3.8`: COAG lab section split from BH; EA I/O balance NC + diet confirm LAN merge; directorio LAN all registered users + sala filter + refresh UI preserve; DB boot toast; SQLCipher pack hardening + sidebar bed-first cards; `patient-sidebar-card.mjs`, `clinical-username.mjs`, `teams-roster-lan.mjs`, `estado-actual-data.mjs`.
+- **2026-06-14** `release-7.3.7`: LAN patient delete by id only (registro reuse / readmisión); `clearPatientDeleteTombstoneForAdmit`; Drive import en barra Clínico expediente; `entity-versions.mjs`, `orchestrator.mjs`, `lan-patient-merge.mjs`, `expediente-tabs.mjs`.
+- **2026-06-13** `release-7.3.6`: LAN client identity (`client-identity-store.js`), orchestrator modular split, cultivo superset, app-shell modals, IPC handler tests, quarantine drain, native rebuild skip; plans 010–020.
+- **2026-06-12** `lan-orchestrator-split`: `orchestrator.mjs` 2,207→1,185 — extracted `conflicts`, `entity-versions`, `patient-delete`, `patient-entries`, `historia-sync`, `host-patient-http`, `live-sync-emit`; façade re-exports + `configure*` DI in `wireLanSyncBridges`.
+- **2026-06-12** `ipc-handler-tests`: `lib/db/ipc-handlers.test.mjs` — 13 integration tests (bootstrap, teams, assign, guardia, rotation, audit) via fake `ipcMain`; manifest + `npm test`.
+- **2026-06-12** `clinico-access-scope`: `evaluateClinicalScope` (complexity 80) decomposed to `clinico-access-scope/` orchestrator + guardia/team evaluators ≤15; 40 characterization goldens in `clinico-access.test.mjs`; export frozen.
+- **2026-06-12** `host-store-durability`: persist failures logged via `reportPersistFailure` + `getLastPersistError`; commit-barrier `onError`; `flushHostStoreNow` on quit (3s cap); `putRoomClinicalOps` DB-first; `host-store.js`, `commit-barrier.js`, `server.js`, `main.js`.
+- **2026-06-12** `cultivo-block-core`: unified cultivo block parser (`cultivo-block-core.mjs`) — censo/bulk-paste/lab-history-set import core with per-context flags; `censo-cultivo-format.mjs`, `lab-bulk-paste.mjs`, `lab-history-set.mjs`.
+- **2026-06-12** `lan-pin-lockout`: global in-memory failure lockout on `POST /auth/exchange` (8 fails → 5 min 429); `auth-failure-lockout.js`, `auth-router.js`.
+- **2026-06-12** `lan-purge-server-guard`: DELETE `/api/lan/v1/patients/:id` enforces ownership server-side (`host-patient-ownership.js`, `clientId`/`isProgramAdmin` query); renderer sends identity + maps 403; `host-router.js`, `orchestrator.mjs`.
+- **2026-06-12** `ci-test-manifest`: npm test explicit list 332 files + drift guard (`scripts/lib/test-manifest.mjs`); six quarantined hang/fail suites.
+- **2026-06-12** `release-7.3.4`: lazy labs/charts chunks, virtual censo (>30), pendientes due/reminder/handoff, LAN scoped todo refresh, iPad team-scoped mirror (`clinical-scope-from-ops.mjs`, `mobile-team-patient-scope.mjs`), guardia-v7 progress nudge; `lazy-feature-routes.mjs`, `todos-due.mjs`, `patient-list-virtual.mjs`.
+- **2026-06-11** `v8-ship`: v8 integration — handoff pendientes filter (`todos-handoff.mjs`), LAN profiled merge on push/room, `labs-display.mjs` extract, guardia-v7 progress meter + board nudge; completes due/reminder/scoped LAN/virtual/lazy tracks.
+- **2026-06-11** `v8-perf`: perf markers, LAN profiling + scoped todo refresh, lazy labs/charts chunks, virtual censo active list (>30); `perf-markers.mjs`, `lazy-feature-routes.mjs`, `patient-list-virtual.mjs`, `orchestrator.mjs`.
+- **2026-06-11** `phase6-procesarlabs`: `procesarLabs` (complejidad 49) descompuesto en orquestador + `parseLabPatientHeader_`/`segmentLabReportBlocks_`/`collectLabSections_` (todas ≤ 15) con goldens de caracterización (`labs-procesar-characterization.test.mjs`, fixtures + script de captura); cero diffs de salida; `labs.js`, `labs-procesar-fixtures.mjs`.
+- **2026-06-11** `ea-charts-split`: `estado-actual-charts.mjs` (1622 líneas) dividido en submódulos bajo presupuesto Tier 1 — façade re-exporta API pública sin cambiar importadores; `estado-actual-charts-series.mjs` (series/colores/firmas), `-display.mjs` (downsample/bundle cache), `-chartjs.mjs` (wiring Chart.js), `-tabs.mjs` (shell de pestañas DOM).

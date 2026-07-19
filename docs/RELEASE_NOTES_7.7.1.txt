@@ -1,0 +1,26 @@
+R+ 7.7.1 (receta SOAP ampliada e insulina rescate)
+======================================================
+
+Fecha: 2026-07-19
+
+## Resumen
+
+**7.7.1** amplía la clasificación SOAP de medicamentos desde la receta hospitalaria (más familias y destinos manuales), agrupa **rescates de insulina** PRN en Manejo y refleja glucometrías con UI aplicadas en el texto de Estado actual.
+
+## Nuevo / mejorado
+
+- **Receta → SOAP — más categorías** — Clasificación automática y override manual para antieméticos, sedación, antiepilépticos, antiparkinsonianos, antídotos, vía aérea, transfusiones, anticoagulación terapéutica, antiarrítmicos y estatinas (además de analgesia, ABX, vasopresores, etc.).
+- **SOAP EA — partición de medicamentos** — Analgésicos y antieméticos van a cláusulas separadas; insulina basal/SC y rescates se separan del resto del bloque NM.
+- **Rescates de insulina** — Detecta insulina PRN SC por glucometría en el SOME; en **Manejo** aparece como grupo **RESCATES DE INSULINA** con checkbox SOAP y suspender en bloque.
+- **Glucometrías con rescate** — Si registraste UI aplicadas en monitoreo, el texto SOAP muestra `valor, NUI` (p. ej. `142, 4UI`) y omite la frase genérica de rescates disponibles cuando ya hubo aplicación.
+- **Bomba de insulina IV** — Mejor detección (algoritmo en P1 sin «EN», cloruro portador excluido del bucket NM); sincroniza con monitoreo al fusionar receta.
+- **Modal SOAP legacy** — Campos médicos ampliados alineados con las nuevas categorías; limpieza centralizada al cerrar.
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v7.7.1
+
+- Mac: `R+-7.7.1-arm64.dmg`, `R+-7.7.1-x64.dmg` (y zip para auto-update).
+- Windows: `R+-7.7.1-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye write-release-yml.js).

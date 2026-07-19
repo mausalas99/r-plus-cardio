@@ -1,0 +1,34 @@
+R+ 6.6.8 (LiveSync — icono Wi‑Fi y estados de conexión)
+===========================================================
+
+Fecha: 2026-06-05
+
+## Resumen
+
+Reemplaza el botón **⇄** del header por un **icono Wi‑Fi** del mismo tamaño que Perfil y Ajustes. Las barras y el color del botón reflejan el **estado LiveSync** (en vivo, sincronizando, reconectando, solo local). Incluye la línea **6.6.7** (iPad/móvil, onboarding local y censo).
+
+## Nuevo / mejorado
+
+- **LiveSync en el header** — Botón cuadrado con icono **Wi‑Fi** (sin texto); abre el mismo panel de conexión LAN. El detalle del estado va en el tooltip y en lectores de pantalla.
+- **Estados visuales** — **Verde** = sync en vivo (3 barras); **ámbar** = conectando/sincronizando (cascada); **naranja** = reconectando (2 barras); **acento** = en sala sin sync en vivo; **gris** = sin sala.
+- **Directorio LAN (admin)** — Tras registrar @usuario y **Unirse** en la misma sala ⇄, los residentes aparecen en **Directorio LAN** para asignar equipo (no al revés). El host acumula perfiles; el directorio hace pull al abrir y se actualiza en vivo.
+- **Tokens de diseño** — Colores semánticos `--color-livesync-*` en `tokens.css` (claro, oscuro y alto contraste).
+- **Accesibilidad** — Respeta `prefers-reduced-motion` (sin animación de barras si el sistema lo pide).
+
+## Operación en guardia
+
+1. Instala **6.6.8 en todas** las Macs, PCs e iPads del turno el **mismo día**.
+2. El icono Wi‑Fi **verde** confirma sync en vivo; si queda **ámbar/naranja**, abre el panel (mismo botón) para revisar sala o red.
+3. **R4/Admin**: cada residente — tu LAN, **⇄ Unirse** en la sala, **Guardar perfil** con @usuario; luego asignas desde **Directorio LAN** (Mi rotación).
+4. Sigue valiendo **6.6.7**: enlaces móviles, onboarding local y censo alineado.
+
+No mezclar **6.6.6** o anterior en la misma guardia con sala en vivo activa.
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v6.6.8
+
+- Mac: `R+-6.6.8-arm64.dmg`, `R+-6.6.8-x64.dmg` (y zip para auto-update).
+- Windows: `R+-6.6.8-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye write-release-yml.js).

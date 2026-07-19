@@ -1,0 +1,30 @@
+R+ 7.3.1 (Manejo modal SOME, AAS SOAP y perfil borrar)
+==========================================================
+
+Fecha: 2026-06-10
+
+## Resumen
+
+Parche sobre **7.3.0**: **Manejo** mueve el pegado SOME a un modal **Importar SOME** con grilla más legible; la clasificación SOAP distingue **AAS 100 mg** (otros) de dosis analgésicas; el **perfil farmacoterapéutico** permite borrar mes o perfil completo; **Estado actual** reorganiza la dieta pendiente y quita «PARA PESO DE X KG» del texto copiado.
+
+## Nuevo / mejorado
+
+- **Manejo — modal Importar SOME** — El pegado del hospital abre en modal (como perfil SOME); la grilla queda en la tarjeta «Medicamentos del turno» con fecha y **+1 día**.
+- **Manejo — etiquetas compactas** — Filas con indicación corta; dosis de `dosisRaw` para combos como piperacilina/tazobactam.
+- **SOAP — AAS por dosis** — Ácido acetilsalicílico ≤160 mg va a **Otros** (antiplaquetario); >160 mg a **Analgesia**. La clasificación usa `dosisRaw`.
+- **SOAP / EA — texto dieta** — Cláusula de dieta sin «PARA PESO DE X KG» (kcal/kg y total se mantienen).
+- **Perfil farmacoterapéutico — borrar** — Menú **⋯**: eliminar mes visible o borrar perfil completo del paciente (con confirmación).
+- **Estado actual — dieta pendiente** — Barra de confirmación bajo nutrición; rejilla FOUR/Glasgow/Soporte y dieta/kcal/proteína en filas dedicadas.
+
+## Operación en guardia
+
+Parche sobre **7.3.0**: instala en **todas** las estaciones del turno el mismo día. Sin cambio de esquema SQLCipher (sigue **v17**). El iPad no requiere actualización.
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v7.3.1
+
+- Mac: `R+-7.3.1-arm64.dmg`, `R+-7.3.1-x64.dmg` (y zip para auto-update).
+- Windows: `R+-7.3.1-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye write-release-yml.js).

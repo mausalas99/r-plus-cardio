@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mockup — Perfil farmacoterapéutico (tabla colapsada + modal)</title>
+  <style>
+    :root {
+      --primary: #5b2d8a;
+      --primary-dark: #3d1d5c;
+      --action: #2563eb;
+      --surface: #ffffff;
+      --bg: #f1f3f6;
+      --border: #d8dee8;
+      --text: #1a2332;
+      --text-muted: #5c6b7a;
+      --indicated: #c4b5fd;
+      --indicated-border: #8b5cf6;
+      --today-col: #fef08a;
+      --not-admin: #fecaca;
+      --not-admin-border: #ef4444;
+      --radius: 10px;
+      --shadow: 0 1px 3px rgba(0,0,0,.08);
+      --some-day-band-h: clamp(22px, 2.8vh, 30px);
+      --some-med-block-h: calc(var(--some-day-band-h) * 2);
+      --some-day-w: clamp(32px, 3.1vw, 48px);
+      --some-hdr-row-h: 30px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 13px;
+      line-height: 1.4;
+    }
+    .mock-banner {
+      background: #1e3a5f;
+      color: #e2e8f0;
+      padding: 8px 16px;
+      font-size: 12px;
+      text-align: center;
+    }
+    .mock-banner strong { color: #fff; }
+    .app-shell { max-width: 960px; margin: 0 auto; padding: 12px 16px 32px; }
+    .app-tabs { display: flex; gap: 4px; margin-bottom: 12px; }
+    .app-tab {
+      padding: 8px 14px; border-radius: 8px; border: 1px solid var(--border);
+      background: var(--surface); color: var(--text-muted); font-weight: 600; font-size: 12px;
+    }
+    .app-tab.active { background: var(--action); color: #fff; border-color: var(--action); }
+    .card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden;
+    }
+    .card-header {
+      padding: 10px 14px; border-bottom: 1px solid var(--border);
+      font-weight: 700; font-size: 13px; display: flex; align-items: center; gap: 8px;
+    }
+    .subview-toggle {
+      display: inline-flex; background: var(--bg); border: 1px solid var(--border);
+      border-radius: 8px; padding: 2px; margin-left: auto;
+    }
+    .subview-toggle button {
+      border: none; background: transparent; padding: 6px 12px; border-radius: 6px;
+      font: inherit; font-size: 12px; font-weight: 600; color: var(--text-muted); cursor: pointer;
+    }
+    .subview-toggle button.active {
+      background: var(--surface); color: var(--primary); box-shadow: var(--shadow);
+    }
+    .patient-banner {
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+      color: #fff; padding: 10px 16px; font-size: 12px; font-weight: 600;
+    }
+    .toolbar {
+      display: flex; flex-wrap: wrap; align-items: center; gap: 10px;
+      padding: 10px 14px; border-bottom: 1px solid var(--border);
+      background: color-mix(in oklab, var(--bg) 60%, var(--surface));
+    }
+    .toolbar label {
+      font-size: 11px; font-weight: 700; color: var(--text-muted);
+      text-transform: uppercase; letter-spacing: 0.04em;
+    }
+    select {
+      font: inherit; font-size: 12px; padding: 6px 10px; border-radius: 6px;
+      border: 1px solid var(--border); background: var(--surface); max-width: 240px;
+    }
+    .month-nav { display: flex; align-items: center; gap: 6px; margin-left: auto; }
+    .month-nav button {
+      width: 28px; height: 28px; border: 1px solid var(--border); border-radius: 6px;
+      background: var(--surface); cursor: pointer;
+    }
+    .month-nav span { font-weight: 700; font-size: 14px; min-width: 110px; text-align: center; color: var(--primary); }
+    .btn-toolbar {
+      font: inherit; font-size: 12px; font-weight: 600;
+      padding: 7px 12px; border-radius: 8px; border: none;
+      background: var(--primary); color: #fff; cursor: pointer;
+    }
+    .btn-toolbar:hover { filter: brightness(1.08); }
+    .list-head {
+      display: grid;
+      grid-template-columns: 1fr 52px 96px;
+      gap: 10px;
+      padding: 8px 12px;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--text-muted);
+      background: #e8ecf2;
+      border-bottom: 1px solid var(--border);
+    }
+    .med-row { border-bottom: 1px solid var(--border); }
+    .med-row-summary {
+      display: grid;
+      grid-template-columns: 1fr 52px 96px;
+      gap: 10px;
+      align-items: center;
+      padding: 10px 12px;
+      background: var(--surface);
+    }
+    .med-row-summary.has-misses { box-shadow: inset 3px 0 0 var(--not-admin-border); }
+    .adh-summary {
+      font-size: 11px;
+      line-height: 1.35;
+      cursor: help;
+    }
+    .adh-summary .miss { color: var(--not-admin-border); font-weight: 700; }
+    .med-row-summary:hover { background: color-mix(in oklab, var(--action) 4%, var(--surface)); }
+    .med-main {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      min-width: 0;
+    }
+    .med-text { flex: 1; min-width: 0; }
+    .med-name { font-weight: 600; font-size: 12px; line-height: 1.3; }
+    .med-dosis { font-size: 11px; color: var(--text-muted); margin-top: 2px; line-height: 1.3; }
+    .med-cell-adh {
+      font-size: 10px;
+      margin-top: 4px;
+      line-height: 1.3;
+      cursor: help;
+    }
+    .freq-cell {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--primary);
+      text-align: center;
+    }
+    .via-cell { font-size: 11px; color: var(--text-muted); }
+    .btn-days {
+      flex-shrink: 0;
+      font: inherit; font-size: 11px; font-weight: 600;
+      padding: 6px 10px; border-radius: 6px;
+      border: 1px solid var(--indicated-border);
+      background: color-mix(in oklab, var(--indicated) 45%, var(--surface));
+      color: var(--primary-dark);
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .btn-days:hover {
+      background: var(--indicated);
+    }
+    .detail-grid-wrap {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--surface);
+      padding: 10px;
+    }
+    .cal-wrap { max-width: 100%; }
+    .cal-wrap.compact .cal-day { min-height: 34px; border-radius: 6px; }
+    .cal-wrap.compact .cal-day .num { font-size: 10px; }
+    .cal-month-title {
+      text-align: center;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--primary);
+      margin: 0 0 10px;
+    }
+    .cal-weekdays {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 4px;
+      margin-bottom: 6px;
+    }
+    .cal-weekdays span {
+      text-align: center;
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+    .cal-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 4px;
+    }
+    .cal-day {
+      min-height: 48px;
+      border: 1px solid color-mix(in oklab, var(--border) 90%, transparent);
+      border-radius: 8px;
+      background: color-mix(in oklab, var(--bg) 55%, var(--surface));
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .cal-day.empty {
+      visibility: hidden;
+      pointer-events: none;
+      border: none;
+      background: transparent;
+    }
+    .cal-day .num {
+      position: absolute;
+      top: 5px;
+      left: 7px;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-muted);
+    }
+    .cal-day.indicated {
+      background: var(--indicated);
+      border-color: var(--indicated-border);
+      cursor: pointer;
+    }
+    .cal-day.indicated .num { color: var(--primary-dark); }
+    .cal-day.indicated:hover { filter: brightness(0.97); }
+    .cal-day.today {
+      box-shadow: inset 0 0 0 2px #ca8a04;
+    }
+    .cal-day.today .num { color: #854d0e; }
+    .cal-day.not-admin {
+      background: var(--not-admin);
+      border-color: var(--not-admin-border);
+      box-shadow: inset 0 0 0 1px var(--not-admin-border);
+    }
+    .cal-day .badge-x2 {
+      font-size: 10px;
+      font-weight: 800;
+      color: var(--primary-dark);
+      margin-top: 10px;
+    }
+    /* Modal */
+    .modal-backdrop {
+      position: fixed; inset: 0; background: rgba(15, 23, 42, 0.45);
+      display: none; align-items: center; justify-content: center;
+      z-index: 100; padding: 16px;
+    }
+    .modal-backdrop.open { display: flex; }
+    #modal-full-backdrop {
+      padding: 0;
+      background: var(--surface);
+    }
+    #modal-full-backdrop.open { align-items: stretch; }
+    .modal {
+      background: var(--surface);
+      border-radius: 12px;
+      box-shadow: 0 20px 50px rgba(0,0,0,.2);
+      width: min(480px, 100%);
+      max-height: 90vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .modal.modal-full {
+      width: 100vw;
+      height: 100vh;
+      max-width: 100vw;
+      max-height: 100vh;
+      border-radius: 0;
+      box-shadow: none;
+    }
+    .modal-full .modal-header { flex-shrink: 0; }
+    .modal-full .modal-legend { flex-shrink: 0; }
+    .modal-full .modal-body {
+      padding: 0;
+      flex: 1;
+      min-height: 0;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .some-grid-wrap {
+      flex: 1;
+      min-height: 0;
+      overflow: auto;
+    }
+    .modal-full .some-grid-wrap {
+      overflow-x: auto;
+      overflow-y: auto;
+    }
+    table.some-grid-unified {
+      border-collapse: collapse;
+      font-size: 10px;
+      width: max-content;
+      min-width: 100%;
+      table-layout: fixed;
+    }
+    .some-grid-unified th,
+    .some-grid-unified td {
+      border: 1px solid var(--border);
+      vertical-align: middle;
+      box-sizing: border-box;
+    }
+    .some-grid-unified thead tr.hdr-row-1 th {
+      position: sticky;
+      top: 0;
+      z-index: 8;
+      height: var(--some-hdr-row-h);
+      background: #e8ecf2;
+      font-size: 10px;
+      font-weight: 700;
+      text-align: center;
+      padding: 4px 2px;
+      color: var(--text-muted);
+    }
+    .some-grid-unified thead tr.hdr-row-2 th {
+      position: sticky;
+      top: var(--some-hdr-row-h);
+      z-index: 8;
+      height: var(--some-hdr-row-h);
+      background: #e8ecf2;
+      font-size: 10px;
+      font-weight: 700;
+      text-align: center;
+      padding: 4px 2px;
+      color: var(--text-muted);
+    }
+    .some-grid-unified thead .col-meta-hdr {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: #e8ecf2;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      vertical-align: middle;
+      text-align: left;
+      padding: 8px 10px;
+    }
+    .some-grid-unified .col-med {
+      width: 200px;
+      min-width: 200px;
+      position: sticky;
+      left: 0;
+      z-index: 6;
+      background: var(--surface);
+    }
+    .some-grid-unified .col-dosis {
+      width: 180px;
+      min-width: 180px;
+      position: sticky;
+      left: 200px;
+      z-index: 6;
+      background: var(--surface);
+      font-size: 10px;
+      color: var(--text-muted);
+      white-space: nowrap;
+      padding: 8px 10px;
+    }
+    .some-grid-unified .col-freq {
+      width: 44px;
+      min-width: 44px;
+      position: sticky;
+      left: 380px;
+      z-index: 6;
+      background: var(--surface);
+      text-align: center;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    .some-grid-unified .col-via {
+      width: 100px;
+      min-width: 100px;
+      position: sticky;
+      left: 424px;
+      z-index: 6;
+      background: var(--surface);
+      font-size: 10px;
+      white-space: nowrap;
+      padding: 8px 10px;
+      box-shadow: 4px 0 8px rgba(15, 23, 42, 0.08);
+      border-right: 3px solid var(--primary) !important;
+    }
+    .some-grid-unified thead .col-via {
+      z-index: 11;
+      background: #e8ecf2;
+    }
+    .some-grid-unified .col-med {
+      padding: 8px 10px;
+      text-align: left;
+      vertical-align: middle;
+    }
+    .some-grid-unified tr.has-misses .col-med {
+      box-shadow: inset 3px 0 0 var(--not-admin-border);
+    }
+    .some-grid-unified tr.has-misses .med-cell-adh .miss,
+    .some-grid-unified tr.has-misses .med-cell-adh strong {
+      color: var(--not-admin-border);
+    }
+    .some-grid-unified .med-cell-name {
+      font-weight: 600;
+      line-height: 1.25;
+      white-space: normal;
+      word-break: break-word;
+    }
+    .some-grid-unified .med-cell-adh {
+      font-size: 10px;
+      margin-top: 4px;
+      line-height: 1.3;
+      cursor: help;
+    }
+    .some-grid-unified th.day-hdr,
+    .some-grid-unified td.day-pad {
+      width: var(--some-day-w);
+      min-width: var(--some-day-w);
+      max-width: var(--some-day-w);
+    }
+    .some-grid-unified th.day-hdr.today-col { background: var(--today-col); color: #854d0e; }
+    .some-grid-unified tbody tr.day-band {
+      height: var(--some-day-band-h);
+    }
+    .some-grid-unified td.day-pad {
+      height: var(--some-day-band-h);
+      padding: 0;
+      text-align: center;
+      background: var(--surface);
+    }
+    .some-grid-unified td.day-pad.day-pad-empty,
+    .some-grid-unified th.day-hdr-empty {
+      background: color-mix(in oklab, var(--bg) 70%, var(--surface));
+      cursor: default;
+    }
+    .some-grid-unified td.day-pad.today-col {
+      background: color-mix(in oklab, var(--today-col) 35%, var(--surface));
+    }
+    .some-grid-unified td.day-pad.indicated {
+      background: var(--indicated);
+      box-shadow: inset 0 0 0 1px var(--indicated-border);
+      cursor: pointer;
+    }
+    .some-grid-unified td.day-pad.indicated.today-col {
+      background: color-mix(in oklab, var(--today-col) 30%, var(--indicated));
+    }
+    .some-grid-unified td.day-pad.indicated.not-admin {
+      background: var(--not-admin);
+      box-shadow: inset 0 0 0 2px var(--not-admin-border);
+    }
+    .some-grid-unified td.day-pad.indicated .x2 {
+      font-size: 9px;
+      font-weight: 800;
+      color: var(--primary-dark);
+      line-height: var(--some-day-band-h);
+      display: inline-block;
+    }
+    .some-grid-unified tbody tr:hover .col-med,
+    .some-grid-unified tbody tr:hover .col-dosis,
+    .some-grid-unified tbody tr:hover .col-freq,
+    .some-grid-unified tbody tr:hover .col-via {
+      background: color-mix(in oklab, var(--action) 5%, var(--surface));
+    }
+    .modal-header {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .modal-header h2 {
+      margin: 0; font-size: 14px; font-weight: 700; color: var(--primary);
+      flex: 1; line-height: 1.35;
+    }
+    .modal-header .sub { font-size: 11px; color: var(--text-muted); font-weight: 400; margin-top: 4px; }
+    .modal-close {
+      border: none; background: var(--bg); width: 32px; height: 32px;
+      border-radius: 8px; cursor: pointer; font-size: 18px; line-height: 1;
+    }
+    .modal-body { padding: 16px; overflow: auto; }
+    .modal-legend {
+      font-size: 11px; color: var(--text-muted);
+      padding: 10px 16px; border-top: 1px solid var(--border);
+      display: flex; flex-wrap: wrap; gap: 12px;
+    }
+    .legend .swatch {
+      display: inline-block; width: 12px; height: 12px;
+      border-radius: 2px; vertical-align: middle; margin-right: 4px;
+    }
+    .swatch.ind { background: var(--indicated); border: 1px solid var(--indicated-border); }
+    .swatch.na { background: var(--not-admin); border: 2px solid var(--not-admin-border); }
+    .swatch.tod { background: var(--today-col); }
+    .toast {
+      position: fixed; bottom: 20px; right: 20px;
+      background: #1a2332; color: #fff; padding: 10px 14px;
+      border-radius: 8px; font-size: 12px; opacity: 0; transition: opacity 0.2s;
+      pointer-events: none; z-index: 200;
+    }
+    .toast.show { opacity: 1; }
+  </style>
+</head>
+<body>
+  <div class="mock-banner">
+    <strong>Mockup v12</strong> — Tabla única alineada · días en 2 filas · encabezados sticky
+  </div>
+
+  <div class="app-shell">
+    <div class="app-tabs">
+      <span class="app-tab">Laboratorio</span>
+      <span class="app-tab active">Medicamentos</span>
+      <span class="app-tab">Expediente</span>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        Medicamentos — GONZÁLEZ / Cama 204
+        <div class="subview-toggle">
+          <button type="button">Receta actual</button>
+          <button type="button" class="active">Perfil histórico</button>
+        </div>
+      </div>
+
+      <div class="patient-banner">G408 — OTRAS EPILEPSIAS · 204 · 211 · 01</div>
+
+      <div class="toolbar">
+        <div>
+          <label for="filtro">Filtrar</label><br />
+          <select id="filtro">
+            <option selected>TODOS</option>
+            <option>ANTIBIÓTICO</option>
+            <option>SEDANTE</option>
+            <option>ANTICONVULSIVO</option>
+          </select>
+        </div>
+        <span style="font-size:11px;color:var(--text-muted);">Último pegado: 31/05/2026</span>
+        <button type="button" class="btn-toolbar" id="btn-full-month">Vista SOME (pantalla completa)</button>
+        <div class="month-nav">
+          <button type="button">‹</button>
+          <span>Mayo 2026</span>
+          <button type="button">›</button>
+        </div>
+      </div>
+
+      <div class="list-head">
+        <span>Medicamento · Días</span>
+        <span>Freq</span>
+        <span>Vía</span>
+      </div>
+      <div id="list"></div>
+
+      <div class="modal-legend legend">
+        <span><i class="swatch ind"></i> Indicado (administrado por defecto)</span>
+        <span><i class="swatch na"></i> No administrado (clic en calendario)</span>
+        <span><i class="swatch tod"></i> Hoy</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal" id="modal-single">
+      <div class="modal-header">
+        <div>
+          <h2 id="modal-title"></h2>
+          <div class="sub" id="modal-sub"></div>
+        </div>
+        <button type="button" class="modal-close" data-close-modal aria-label="Cerrar">×</button>
+      </div>
+      <div class="modal-body">
+        <div class="detail-grid-wrap">
+          <div class="cal-wrap" id="modal-cal"></div>
+        </div>
+      </div>
+      <div class="modal-legend">
+        Clic en día violeta para marcar o quitar «no administrado»
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="modal-full-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-full-title">
+    <div class="modal modal-full">
+      <div class="modal-header">
+        <div>
+          <h2 id="modal-full-title">Calendario farmacoterapéutico — Mayo 2026</h2>
+          <div class="sub" id="modal-full-sub">Todos los medicamentos del filtro activo</div>
+        </div>
+        <button type="button" class="modal-close" data-close-full aria-label="Cerrar">×</button>
+      </div>
+      <div class="modal-body" id="modal-full-body"></div>
+      <div class="modal-legend">
+        Formato SOME: una columna por día · clic en celda violeta = no administrado
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script>
+    const MONTH_LABEL = 'Mayo 2026';
+    const MONTH_YEAR = 2026;
+    const MONTH_INDEX = 4; /* mayo, 0-based */
+    const TODAY = 31;
+    const WEEKDAYS = ['Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb', 'Dom'];
+    const ROWS = [
+      { med: 'ATORVASTATINA 40 MG TABLETA (*)', dosis: '40 MG //', freq: 'Q24H', via: 'VIA GASTROSTOMIA', cat: 'ANTILIPÉMICO', days: { 28:1, 29:1, 30:1, 31:1 } },
+      { med: 'BUDESONIDA 0.25 MG/ML SUSPENSION 2 ML', dosis: '0.25 MG //', freq: 'Q12H', via: 'VIA NEBULIZACION', cat: 'CORTICOSTEROIDE', days: Object.fromEntries([...Array(31)].map((_,i)=>[i+1,1])) },
+      { med: 'CEFALOTINA 1 G SOL INY 5 ML (*)', dosis: '2 G // *DIA# 10*', freq: 'Q4H', via: 'VIA INTRAVENOSA', cat: 'ANTIBIÓTICO', days: { 6:1 } },
+      { med: 'CEFALOTINA 1 G SOL INY 5 ML (*)', dosis: '2 G // *DIA# 5*', freq: 'Q4H', via: 'VIA INTRAVENOSA', cat: 'ANTIBIÓTICO', days: { 1:1 } },
+      { med: 'DEXMEDETOMIDINA 200 MCG SOL INY 2 ML', dosis: '400 MCG … A TITULACION', freq: 'Q24H', via: 'VIA INTRAVENOSA', cat: 'SEDANTE', days: { 14:2 } },
+      { med: 'ERTAPENEM 1 G SOL INY (*)', dosis: '1 G // *DIA# 3*', freq: 'Q24H', via: 'VIA INTRAVENOSA', cat: 'ANTIBIÓTICO', days: { 24:1 } },
+      { med: 'LEVETIRACETAM 500 MG TABLETA', dosis: '1 G //', freq: 'Q12H', via: 'VIA NASOGASTRICA', cat: 'ANTICONVULSIVO', days: Object.fromEntries([...Array(27)].map((_,i)=>[i+4,1])) },
+      { med: 'METAMIZOL 2.5 G SOL INY 5 ML (*)', dosis: '1 G //', freq: 'Q8H', via: 'VIA INTRAVENOSA', cat: 'ANALGÉSICO', days: { 1:1, 2:1, 3:1, 4:1, 5:1, 6:1 } },
+    ];
+
+    const notAdmin = Object.create(null);
+    notAdmin['7-5'] = true; /* demo: METAMIZOL — 6 d indicados, 1 no (día 05) */
+    let fullModalOpen = false;
+
+    function formatFreq(raw) {
+      const t = String(raw || '').trim().toUpperCase();
+      if (!t) return '—';
+      if (t === 'ONCE' || t === 'PRN') return t;
+      const m = t.match(/^Q?(\d+)\s*H$/);
+      if (m) return m[1] + 'H';
+      if (t.indexOf('Q') === 0) return t.slice(1);
+      return t;
+    }
+
+    function formatVia(raw) {
+      return String(raw || '').replace(/^VIA\s+/i, '').trim() || '—';
+    }
+
+    /** Días con indicación en el mes vs no administrados marcados. */
+    function adherenceStats(days, rowKey) {
+      const indicated = [];
+      const missed = [];
+      for (let d = 1; d <= 31; d++) {
+        if (!(days[d] > 0)) continue;
+        indicated.push(d);
+        if (notAdmin[rowKey + '-' + d]) missed.push(d);
+      }
+      const effective = indicated.length - missed.length;
+      return {
+        indicated: indicated.length,
+        effective: effective,
+        missed: missed.length,
+        missedDays: missed,
+      };
+    }
+
+    function buildMedCellInner(row, rowKey) {
+      const adh = adherenceStats(row.days, rowKey);
+      return (
+        '<div class="med-cell-name">' + row.med + '</div>' +
+        '<div class="med-cell-adh">' + formatAdherenceHtml(adh) + '</div>'
+      );
+    }
+
+    function formatAdherenceHtml(stats) {
+      if (!stats.indicated) {
+        return '<span class="adh-ok">—</span>';
+      }
+      if (!stats.missed) {
+        return (
+          '<span class="adh-ok" title="Todos los días indicados se asumen administrados">' +
+          stats.effective + ' d efectivos</span>'
+        );
+      }
+      const daysList = stats.missedDays
+        .map(function (d) {
+          return String(d).padStart(2, '0');
+        })
+        .join(', ');
+      return (
+        '<span class="adh-miss" title="No administrado: días ' + daysList + '">' +
+        stats.effective + ' efect. · <strong>' + stats.missed + ' no</strong></span>'
+      );
+    }
+
+    function getFilteredRows() {
+      const f = document.getElementById('filtro').value;
+      return ROWS.map(function (row, idx) {
+        return { row: row, idx: idx };
+      }).filter(function (x) {
+        return f === 'TODOS' || x.row.cat === f;
+      });
+    }
+
+    function buildCalendarMatrix(year, monthIndex) {
+      const first = new Date(year, monthIndex, 1);
+      const total = new Date(year, monthIndex + 1, 0).getDate();
+      const start = (first.getDay() + 6) % 7; /* lunes = 0 */
+      const cells = [];
+      for (let i = 0; i < start; i++) cells.push(null);
+      for (let d = 1; d <= total; d++) cells.push(d);
+      while (cells.length % 7 !== 0) cells.push(null);
+      return cells;
+    }
+
+    function refreshCalendars() {
+      const openSingle = document.getElementById('modal-backdrop').classList.contains('open');
+      if (openSingle && document.getElementById('modal-cal').dataset.rowKey != null) {
+        const idx = document.getElementById('modal-cal').dataset.rowKey;
+        const row = ROWS[idx];
+        buildDayCalendar(row.days, String(idx), document.getElementById('modal-cal'), true, false, true);
+      }
+      if (fullModalOpen) openFullModal();
+    }
+
+    function toggleNotAdminDay(rowKey, d, days) {
+      const k = rowKey + '-' + d;
+      const wasNa = !!notAdmin[k];
+      if (wasNa) delete notAdmin[k];
+      else notAdmin[k] = true;
+      refreshCalendars();
+      showToast(wasNa ? 'Día ' + d + ': administrado (por defecto)' : 'Día ' + d + ': no administrado');
+    }
+
+    function buildDayCalendar(days, rowKey, container, interactive, compact, showTitle) {
+      container.innerHTML = '';
+      container.className = 'cal-wrap' + (compact ? ' compact' : '');
+      container.dataset.rowKey = rowKey;
+      if (showTitle) {
+        const title = document.createElement('div');
+        title.className = 'cal-month-title';
+        title.textContent = MONTH_LABEL;
+        container.appendChild(title);
+      }
+      const head = document.createElement('div');
+      head.className = 'cal-weekdays';
+      WEEKDAYS.forEach(function (w) {
+        const s = document.createElement('span');
+        s.textContent = w;
+        head.appendChild(s);
+      });
+      container.appendChild(head);
+      const grid = document.createElement('div');
+      grid.className = 'cal-grid';
+      buildCalendarMatrix(MONTH_YEAR, MONTH_INDEX).forEach(function (d) {
+        const cell = document.createElement('div');
+        if (d == null) {
+          cell.className = 'cal-day empty';
+          grid.appendChild(cell);
+          return;
+        }
+        cell.className = 'cal-day';
+        if (d === TODAY) cell.classList.add('today');
+        const num = document.createElement('span');
+        num.className = 'num';
+        num.textContent = String(d);
+        cell.appendChild(num);
+        const v = days[d] || 0;
+        if (v > 0) {
+          cell.classList.add('indicated');
+          if (v > 1) {
+            const b = document.createElement('span');
+            b.className = 'badge-x2';
+            b.textContent = '×2';
+            cell.appendChild(b);
+          }
+          if (notAdmin[rowKey + '-' + d]) cell.classList.add('not-admin');
+          if (interactive) {
+            cell.addEventListener('click', function (e) {
+              e.stopPropagation();
+              toggleNotAdminDay(rowKey, d, days);
+            });
+          }
+        }
+        grid.appendChild(cell);
+      });
+      container.appendChild(grid);
+    }
+
+    function openModal(idx) {
+      const row = ROWS[idx];
+      document.getElementById('modal-title').textContent = row.med;
+      document.getElementById('modal-sub').textContent =
+        row.dosis + ' · ' + formatFreq(row.freq) + ' · ' + formatVia(row.via);
+      buildDayCalendar(row.days, String(idx), document.getElementById('modal-cal'), true, false, true);
+      document.getElementById('modal-backdrop').classList.add('open');
+    }
+
+    function daysInMonth() {
+      return new Date(MONTH_YEAR, MONTH_INDEX + 1, 0).getDate();
+    }
+
+    function appendDayHeaderCells(tr, from, to) {
+      for (let d = from; d <= to; d++) {
+        const th = document.createElement('th');
+        th.className = 'day-hdr' + (d === TODAY ? ' today-col' : '');
+        th.textContent = String(d).padStart(2, '0');
+        tr.appendChild(th);
+      }
+    }
+
+    function padDayRow(tr, count, target, cellTag) {
+      const tag = cellTag || 'td';
+      const padClass = tag === 'th' ? 'day-hdr day-hdr-empty' : 'day-pad day-pad-empty';
+      while (count < target) {
+        const cell = document.createElement(tag);
+        cell.className = padClass;
+        if (tag === 'th') cell.innerHTML = '&nbsp;';
+        tr.appendChild(cell);
+        count += 1;
+      }
+    }
+
+    function appendDayCells(tr, row, rowKey, from, to) {
+      for (let d = from; d <= to; d++) {
+        const td = document.createElement('td');
+        td.className = 'day-pad' + (d === TODAY ? ' today-col' : '');
+        const v = row.days[d] || 0;
+        if (v > 0) {
+          td.classList.add('indicated');
+          if (notAdmin[rowKey + '-' + d]) td.classList.add('not-admin');
+          if (v > 1) {
+            const span = document.createElement('span');
+            span.className = 'x2';
+            span.textContent = '×2';
+            td.appendChild(span);
+          }
+          td.title = 'Día ' + d + ' — clic para marcar no administrado';
+          td.addEventListener('click', function () {
+            toggleNotAdminDay(rowKey, d, row.days);
+          });
+        }
+        tr.appendChild(td);
+      }
+    }
+
+    function buildSomeGrid(container) {
+      const total = daysInMonth();
+      const splitAt = Math.ceil(total / 2);
+      const wrap = document.createElement('div');
+      wrap.className = 'some-grid-wrap';
+      const table = document.createElement('table');
+      table.className = 'some-grid-unified';
+
+      const cg = document.createElement('colgroup');
+      ['col-med', 'col-dosis', 'col-freq', 'col-via'].forEach(function (cls) {
+        const col = document.createElement('col');
+        col.className = cls;
+        cg.appendChild(col);
+      });
+      for (let i = 0; i < splitAt; i++) {
+        const col = document.createElement('col');
+        col.className = 'col-day';
+        cg.appendChild(col);
+      }
+      table.appendChild(cg);
+
+      const thead = document.createElement('thead');
+      const hdr1 = document.createElement('tr');
+      hdr1.className = 'hdr-row-1';
+      hdr1.innerHTML =
+        '<th class="col-meta-hdr col-med" rowspan="2">Medicamento</th>' +
+        '<th class="col-meta-hdr col-dosis" rowspan="2">Dosis</th>' +
+        '<th class="col-meta-hdr col-freq" rowspan="2" title="Frecuencia">Freq</th>' +
+        '<th class="col-meta-hdr col-via" rowspan="2">Vía</th>';
+      appendDayHeaderCells(hdr1, 1, Math.min(splitAt, total));
+      padDayRow(hdr1, hdr1.querySelectorAll('th.day-hdr').length, splitAt, 'th');
+      thead.appendChild(hdr1);
+      const hdr2 = document.createElement('tr');
+      hdr2.className = 'hdr-row-2';
+      if (total > splitAt) {
+        appendDayHeaderCells(hdr2, splitAt + 1, total);
+      }
+      padDayRow(hdr2, hdr2.querySelectorAll('th.day-hdr').length, splitAt, 'th');
+      thead.appendChild(hdr2);
+      table.appendChild(thead);
+
+      const tbody = document.createElement('tbody');
+      getFilteredRows().forEach(function (x) {
+        const row = x.row;
+        const idx = x.idx;
+        const rowKey = String(idx);
+        const adh = adherenceStats(row.days, rowKey);
+
+        const tr1 = document.createElement('tr');
+        tr1.className = 'day-band' + (adh.missed ? ' has-misses' : '');
+        const medTd = document.createElement('td');
+        medTd.rowSpan = 2;
+        medTd.className = 'col-med';
+        medTd.innerHTML = buildMedCellInner(row, rowKey);
+        tr1.appendChild(medTd);
+        const dosisTd = document.createElement('td');
+        dosisTd.rowSpan = 2;
+        dosisTd.className = 'col-dosis';
+        dosisTd.textContent = row.dosis;
+        tr1.appendChild(dosisTd);
+        const freqTd = document.createElement('td');
+        freqTd.rowSpan = 2;
+        freqTd.className = 'col-freq';
+        freqTd.textContent = formatFreq(row.freq);
+        tr1.appendChild(freqTd);
+        const viaTd = document.createElement('td');
+        viaTd.rowSpan = 2;
+        viaTd.className = 'col-via';
+        viaTd.textContent = formatVia(row.via);
+        tr1.appendChild(viaTd);
+        appendDayCells(tr1, row, rowKey, 1, Math.min(splitAt, total));
+        padDayRow(tr1, tr1.querySelectorAll('.day-pad').length, splitAt);
+        tbody.appendChild(tr1);
+
+        const tr2 = document.createElement('tr');
+        tr2.className = 'day-band';
+        if (total > splitAt) {
+          appendDayCells(tr2, row, rowKey, splitAt + 1, total);
+        }
+        padDayRow(tr2, tr2.querySelectorAll('.day-pad').length, splitAt);
+        tbody.appendChild(tr2);
+      });
+      table.appendChild(tbody);
+      wrap.appendChild(table);
+      container.innerHTML = '';
+      container.appendChild(wrap);
+    }
+
+    function openFullModal() {
+      fullModalOpen = true;
+      const f = document.getElementById('filtro').value;
+      const sub = document.getElementById('modal-full-sub');
+      sub.textContent =
+        (f === 'TODOS' ? 'Todos los medicamentos' : 'Filtro: ' + f) +
+        ' · ' +
+        getFilteredRows().length +
+        ' filas · formato matriz SOME';
+      buildSomeGrid(document.getElementById('modal-full-body'));
+      document.getElementById('modal-full-backdrop').classList.add('open');
+    }
+
+    function closeFullModal() {
+      fullModalOpen = false;
+      document.getElementById('modal-full-backdrop').classList.remove('open');
+    }
+
+    function renderList() {
+      const list = document.getElementById('list');
+      list.innerHTML = '';
+      getFilteredRows().forEach(function (x) {
+        const row = x.row;
+        const idx = x.idx;
+        const rowKey = String(idx);
+        const adh = adherenceStats(row.days, rowKey);
+        const wrap = document.createElement('div');
+        wrap.className = 'med-row';
+        wrap.innerHTML =
+          '<div class="med-row-summary' + (adh.missed ? ' has-misses' : '') + '">' +
+            '<div class="med-main">' +
+              '<div class="med-text">' +
+                '<div class="med-name">' + row.med + '</div>' +
+                '<div class="med-cell-adh">' + formatAdherenceHtml(adh) + '</div>' +
+                '<div class="med-dosis">' + row.dosis + '</div>' +
+              '</div>' +
+              '<button type="button" class="btn-days">Días</button>' +
+            '</div>' +
+            '<span class="freq-cell">' + formatFreq(row.freq) + '</span>' +
+            '<span class="via-cell">' + formatVia(row.via) + '</span>' +
+          '</div>';
+        wrap.querySelector('.btn-days').addEventListener('click', function (e) {
+          e.stopPropagation();
+          openModal(idx);
+        });
+        list.appendChild(wrap);
+      });
+    }
+
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      t.textContent = msg;
+      t.classList.add('show');
+      clearTimeout(showToast._t);
+      showToast._t = setTimeout(() => t.classList.remove('show'), 2000);
+    }
+
+    document.getElementById('filtro').addEventListener('change', function () {
+      renderList();
+      if (fullModalOpen) openFullModal();
+    });
+    document.getElementById('btn-full-month').addEventListener('click', openFullModal);
+    document.querySelector('[data-close-modal]').onclick = function () {
+      document.getElementById('modal-backdrop').classList.remove('open');
+    };
+    document.querySelector('[data-close-full]').onclick = closeFullModal;
+    document.getElementById('modal-backdrop').onclick = function (e) {
+      if (e.target.id === 'modal-backdrop') e.currentTarget.classList.remove('open');
+    };
+    document.getElementById('modal-full-backdrop').onclick = function (e) {
+      if (e.target.id === 'modal-full-backdrop') closeFullModal();
+    };
+    renderList();
+  </script>
+</body>
+</html>

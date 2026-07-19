@@ -1,0 +1,36 @@
+R+ 6.6.7 (LAN — iPad/móvil, onboarding local y censo)
+====================================================
+
+Fecha: 2026-06-04
+
+## Resumen
+
+Mejora la **guardia con iPad/Safari**: enlaces móviles permanentes, invitación separada (móvil vs otra Mac/sala), auto-unión a la sala y sincronización silenciosa del compartidor. El **arranque clínico** elige antes **sala LAN o solo equipo** y desbloquea la base sin depender de ⇄. El **censo PDF/HTML** alinea columnas (incluye signos e I/O) y formatea labs/cultivos de forma más legible. Incluye la línea **6.6.6** (perfil @usuario, escalada de anfitrión y un servidor por turno).
+
+## Nuevo / mejorado
+
+- **⇄ — iPad / R+ Móvil** — Enlace **permanente** `/mobile/?token=…` para favoritos en Safari (Añadir a pantalla de inicio); distinto del ticket de sala `/join/req_…` para otra Mac. El anfitrión debe **Unirse** a la sala antes de copiar invitación móvil.
+- **⇄ — Dos invitaciones** — **Copiar enlace móvil** (tu turno en iPad) vs **Copiar enlace de sala** (otra estación con su @usuario). Parámetros del compartidor para que el iPad refleje identidad sin bloquear taps.
+- **Móvil en LAN** — Intercambio de auth usa el **Host** de la petición; el iPad puede **auto-unirse** y reanudar sync; aviso si el bundle tarda (>20 s) o el anfitrión no tiene pacientes.
+- **Onboarding local** — Tras instalar, eliges **sala LAN** o **solo mi equipo** antes de desbloquear SQLCipher; reintentos y mensajes claros en Windows si la sesión falla (sin exigir ⇄).
+- **PWA móvil** — Vista `/mobile/` reducida para guardia en Safari (sin censo PDF, Mi Perfil, Ajustes ni pestaña Salida).
+- **⇄ más fluido en sala** — API LAN exenta de rate-limit; ping 500 ms; descubrimiento con concurrencia **6**; **Mi rotación** no bloquea el barrido ⇄ (fail-open ≤3,5 s).
+- **Censo** — Mismas columnas en PDF y vista previa (**Signos**, **I / E / B**, labs con paneles en líneas separadas); encabezado sala/torre unificado.
+
+## Operación en guardia
+
+1. Instala **6.6.7 en todas** las Macs, PCs e iPads del turno el **mismo día**.
+2. **R4/admin**: ⇄ → **Unirse** → luego **Copiar enlace móvil** o **Copiar enlace de sala** según el dispositivo.
+3. **iPad**: abre el enlace en **Safari**, carga la app, luego **Añadir a pantalla de inicio** (no uses solo un acceso directo viejo sin token).
+4. Windows: firewall puerto **3738** la primera vez en sala ⇄.
+
+No mezclar **6.6.6** o anterior en la misma guardia con sala en vivo activa.
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v6.6.7
+
+- Mac: `R+-6.6.7-arm64.dmg`, `R+-6.6.7-x64.dmg` (y zip para auto-update).
+- Windows: `R+-6.6.7-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye write-release-yml.js).

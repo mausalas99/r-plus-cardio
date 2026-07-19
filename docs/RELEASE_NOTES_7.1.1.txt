@@ -1,0 +1,32 @@
+R+ 7.1.1 (LAN command sync + guardia entrega)
+================================================
+
+Fecha: 2026-06-06
+
+## Resumen
+
+Parche sobre 7.1.0: sincronización LAN por comandos tipados (estado actual, eventualidades, pendientes) con outbox persistente, y correcciones al flujo entrega → turno en Guardia.
+
+## Nuevo / mejorado
+
+- **LAN command sync** — Comandos tipados con outbox SQL/local, ACK ordenado por `deltaSeq` y materialización diferida del bundle. Dominios iniciales: **estado actual** (LWW), **eventualidades** (solo alta), **pendientes** (alta/actualizar/completar). El bundle completo sigue como fallback y recuperación.
+- **Diagnóstico ⇄** — Trazas de command sync en el JSON de diagnósticos LAN (cola, ACK, gaps).
+
+## Correcciones
+
+- **Entrega en Guardia** — Tap en el chip de un paciente abre el modal de entrega antes de iniciar turno activo (no queda bloqueado detrás del menú de acciones).
+- **Críticos en censo** — Borde rojo solo por toggle clínico + vasoactivo/VMI en handoff; deja de marcar por heurística de signos alterados ni badge «Alterado» en la tarjeta.
+- **Menú de paciente** — La hoja de acciones rápidas solo aparece durante turno activo.
+
+## Operación en guardia
+
+Parche sobre **7.1.0**: instala en todas las estaciones del turno el mismo día. PIN, sala y barra de fases no cambian.
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v7.1.1
+
+- Mac: `R+-7.1.1-arm64.dmg`, `R+-7.1.1-x64.dmg` (y zip para auto-update).
+- Windows: `R+-7.1.1-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye write-release-yml.js).

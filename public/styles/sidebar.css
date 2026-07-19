@@ -1,0 +1,426 @@
+/* Hallmark · utilitarian clinical · theme: Quiet workbench · design.md */
+aside.patient-sidebar {
+  width: var(--sidebar-width);
+  background: var(--surface);
+  border: none;
+  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+  display: flex; flex-direction: column; flex-shrink: 0;
+  min-height: 0;
+  overflow: hidden;
+  box-shadow: none;
+  transform: translateX(0);
+  transition:
+    width var(--dur-normal) cubic-bezier(0.25, 1, 0.5, 1),
+    opacity 0.18s ease,
+    box-shadow 0.18s ease,
+    transform var(--dur-normal) var(--ease-out);
+}
+.sidebar-hover-strip {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 14px;
+  z-index: 450;
+  display: none;
+}
+html.sidebar-auto-hide .sidebar-hover-strip { display: block; }
+html.sidebar-auto-hide:not(.sidebar-reveal) .sidebar-hover-strip::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: var(--shell-inset);
+  bottom: var(--shell-inset);
+  width: var(--sidebar-rail-width, 5px);
+  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+  background: var(--sidebar-rail-color);
+  opacity: 1;
+  pointer-events: none;
+  transition: opacity var(--dur-fast) var(--ease-out);
+}
+html.sidebar-auto-hide.sidebar-reveal .sidebar-hover-strip::after {
+  opacity: 0;
+}
+html.sidebar-auto-hide:not(.sidebar-reveal) aside.patient-sidebar {
+  width: 0 !important;
+  min-width: 0 !important;
+  opacity: 0;
+  transform: translateX(-10px);
+  pointer-events: none;
+  box-shadow: none;
+  border-right: none;
+}
+html.sidebar-auto-hide.sidebar-reveal aside.patient-sidebar {
+  opacity: 1;
+  pointer-events: auto;
+  box-shadow: var(--shadow);
+}
+html.dark.sidebar-auto-hide.sidebar-reveal aside.patient-sidebar {
+  box-shadow: var(--shadow-md);
+}
+.sidebar-header {
+  padding: calc(14px * var(--density-space)) calc(16px * var(--density-space)) calc(15px * var(--density-space));
+  border-bottom: none;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 8px;
+  background: transparent;
+}
+.sidebar-header-title-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+  flex: 1;
+}
+.btn-sidebar-auto-hide {
+  appearance: none;
+  -webkit-appearance: none;
+  margin: 0;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: border-color var(--dur-fast) ease, color var(--dur-fast) ease, background var(--dur-fast) ease;
+}
+.btn-sidebar-auto-hide:hover {
+  border-color: color-mix(in oklab, var(--action) 35%, var(--border));
+  color: var(--action);
+  background: color-mix(in oklab, var(--action) 8%, var(--surface));
+}
+html.sidebar-auto-hide .btn-sidebar-auto-hide {
+  border-color: color-mix(in oklab, var(--action) 45%, var(--border));
+  color: var(--action);
+  background: color-mix(in oklab, var(--action) 12%, var(--surface));
+}
+.btn-sidebar-auto-hide:focus-visible {
+  outline: 2px solid color-mix(in oklab, var(--action) 50%, transparent);
+  outline-offset: 1px;
+}
+.sidebar-header h2 { font-size: calc(12px * var(--density-font)); font-weight: 600; color: var(--text-muted); text-transform: none; letter-spacing: 0.01em; }
+.btn-add {
+  background: var(--action); color: var(--color-on-accent); border: none; border-radius: var(--radius-pill);
+  padding: calc(6px * var(--density-space)) calc(14px * var(--density-space));
+  font-size: calc(13px * var(--density-font));
+  font-weight: 600; font-family: inherit;
+  cursor: pointer; display: flex; align-items: center; gap: calc(4px * var(--density-space));
+  transition: background var(--dur-fast) ease, transform 0.12s ease, box-shadow var(--dur-fast) ease;
+  min-height: calc(32px + 6px * (var(--density-space) - 1));
+  box-shadow: 0 2px 10px color-mix(in oklab, var(--action) 22%, transparent);
+}
+.btn-add:hover { background: var(--action-hover); box-shadow: 0 3px 14px color-mix(in oklab, var(--action) 28%, transparent); }
+.btn-add:active { transform: scale(0.96); }
+.btn-add:disabled { opacity: 0.5; cursor: not-allowed; }
+.patient-list {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: clip;
+  -webkit-overflow-scrolling: touch;
+  display: flex;
+  flex-direction: column;
+  gap: calc(8px * var(--density-space));
+  padding: calc(6px * var(--density-space)) calc(12px * var(--density-space)) calc(14px * var(--density-space));
+}
+/** Contenedor Sortable por sección (pinned / activos / archivados): mismo hueco vertical que antes entre tarjetas. */
+.patient-sort-zone {
+  display: flex;
+  flex-direction: column;
+  gap: calc(7px * var(--density-space));
+}
+.patient-sort-zone--virtual-active {
+  flex: 0 1 auto;
+  -webkit-overflow-scrolling: touch;
+}
+.patient-sort-zone--virtual-active .virtual-scroll-inner .patient-card {
+  margin-bottom: 0;
+}
+.patient-sort-zone .sortable-chosen:not(.sortable-ghost):not(.sortable-drag) {
+  box-shadow: 0 4px 18px rgba(79, 86, 255, 0.12);
+}
+.patient-sort-zone .sortable-ghost {
+  opacity: 0.62;
+  border-style: dashed;
+  border-color: color-mix(in oklab, var(--action) 38%, var(--border));
+  background: color-mix(in oklab, var(--surface) 88%, var(--bg));
+}
+.patient-card {
+  padding: calc(8px * var(--density-space)) calc(10px * var(--density-space)) calc(7px * var(--density-space));
+  cursor: grab;
+  position: relative;
+  border-radius: var(--radius-md);
+  border: var(--border-hairline);
+  background: color-mix(in oklab, var(--surface) 82%, transparent);
+  box-shadow: var(--shadow-sm);
+  transition:
+    background var(--dur-fast) var(--ease-out),
+    border-color var(--dur-fast) var(--ease-out),
+    box-shadow var(--dur-fast) var(--ease-out);
+  overflow: hidden;
+  isolation: isolate;
+}
+.patient-card::before {
+  content: '';
+  position: absolute; left: 0;
+  top: calc(7px * var(--density-space));
+  bottom: calc(7px * var(--density-space));
+  width: 3px;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  background: transparent;
+  transition: none;
+}
+.patient-card:active { cursor: grabbing; }
+.patient-card:hover {
+  background: color-mix(in oklab, var(--surface) 92%, var(--lab-chip-bg));
+  border-color: color-mix(in oklab, var(--action) 28%, var(--border));
+  box-shadow: var(--shadow-sm);
+}
+.patient-card.active {
+  background: color-mix(in oklab, var(--surface) 70%, var(--lab-chip-bg));
+  border: 2px solid color-mix(in oklab, var(--color-accent) 55%, var(--border));
+  box-shadow: var(--elev-raised);
+}
+.patient-card.active::before { background: var(--action); }
+html.dark .patient-card {
+  background: color-mix(in oklab, var(--surface) 96%, var(--bg));
+  box-shadow: var(--shadow-sm);
+}
+html.dark .patient-card:hover {
+  background: color-mix(in oklab, var(--surface) 88%, var(--action) 12%);
+  border-color: color-mix(in oklab, var(--action) 28%, var(--border));
+  box-shadow: var(--shadow);
+}
+html.dark .patient-card.active {
+  background: color-mix(in oklab, var(--surface) 82%, var(--action) 18%);
+  border: 2px solid color-mix(in oklab, var(--color-accent) 55%, var(--border));
+  box-shadow: var(--elev-raised);
+}
+.patient-card-toolbar {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  margin-bottom: calc(3px * var(--density-space));
+  min-height: 22px;
+}
+.patient-card-toolbar-left {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  min-width: 0;
+}
+.patient-toolbar-chip--on {
+  background: color-mix(in oklab, var(--action) 24%, var(--surface));
+  border-color: color-mix(in oklab, var(--action) 48%, var(--border));
+  color: var(--action);
+}
+aside.patient-sidebar .patient-toolbar-chip {
+  min-height: 22px;
+  min-width: 22px;
+  padding: 2px 5px;
+  font-size: calc(10px * var(--density-font));
+}
+aside.patient-sidebar .btn-delete-card {
+  position: relative;
+  font-size: 15px;
+  min-width: 22px;
+  min-height: 22px;
+  padding: 1px 4px;
+}
+aside.patient-sidebar .btn-delete-card::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+}
+.patient-card .p-name {
+  font-size: calc(12px * var(--density-font));
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: calc(2px * var(--density-space));
+  line-height: 1.25;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+.patient-card-body {
+  min-width: 0;
+}
+.patient-card-body--round {
+  flex: 1;
+  min-width: 0;
+}
+.patient-card .p-meta {
+  font-size: calc(10.5px * var(--density-font));
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  line-height: 1.22;
+}
+.patient-card .p-meta > span:not(:last-child)::after {
+  content: '·';
+  margin: 0 calc(5px * var(--density-space));
+  opacity: 0.45;
+  font-weight: 400;
+}
+.patient-card-svc {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}
+.patient-toolbar-chip {
+  appearance: none;
+  -webkit-appearance: none;
+  margin: 0;
+  font-family: inherit;
+  cursor: grab;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  background: color-mix(in oklab, var(--action) 18%, var(--surface));
+  color: var(--action);
+  font-size: calc(10px * var(--density-font));
+  font-weight: 700;
+  letter-spacing: 0.28px;
+  padding: 2px 8px;
+  min-height: 22px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in oklab, var(--action) 35%, var(--border));
+  box-shadow: none;
+  line-height: 1.15;
+  flex-shrink: 0;
+}
+.patient-toolbar-chip:active { cursor: grabbing; }
+.patient-toolbar-chip:hover {
+  background: color-mix(in oklab, var(--action) 27%, var(--surface));
+  border-color: color-mix(in oklab, var(--action) 52%, var(--border));
+  color: color-mix(in oklab, var(--action) 94%, var(--text));
+}
+.patient-toolbar-chip:focus-visible {
+  outline: 2px solid color-mix(in oklab, var(--action) 50%, transparent);
+  outline-offset: 1px;
+}
+.patient-toolbar-chip--icon {
+  min-width: 26px;
+  padding: 2px 5px;
+}
+.patient-toolbar-chip--icon svg {
+  display: block;
+}
+html.dark .patient-toolbar-chip:hover {
+  background: color-mix(in oklab, var(--action) 22%, var(--surface));
+  border-color: color-mix(in oklab, var(--action) 55%, var(--border));
+  color: var(--lab-chip-txt);
+}
+.btn-pinned-text {
+  font-size: calc(10px * var(--density-font));
+  font-weight: 700;
+  min-width: 50px;
+}
+.btn-archive-clean {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.patient-sort-zone .sortable-drag {
+  opacity: 0.92;
+  box-shadow: 0 0 0 2px color-mix(in oklab, var(--action) 40%, transparent);
+}
+/** Clon que sigue al cursor con Sortable `forceFallback` (sidebar / Electron). */
+.patient-drag-hovercard.patient-card {
+  cursor: grabbing !important;
+  pointer-events: none !important;
+  z-index: var(--z-toast);
+  box-sizing: border-box;
+  opacity: 1 !important;
+  background: color-mix(in oklab, var(--surface) 97%, var(--bg)) !important;
+  border: 1px solid color-mix(in oklab, var(--action) 38%, var(--border)) !important;
+  border-radius: var(--radius-md);
+  box-shadow: 0 18px 50px rgba(15, 23, 42, 0.2), 0 6px 18px rgba(79, 86, 255, 0.14) !important;
+}
+html.dark .patient-drag-hovercard.patient-card {
+  background: color-mix(in oklab, var(--surface) 94%, var(--color-ink)) !important;
+  border-color: color-mix(in oklab, var(--action) 45%, var(--border)) !important;
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.45), 0 4px 16px rgba(79, 86, 255, 0.18) !important;
+}
+.patient-card.drop-target {
+  border-color: color-mix(in oklab, var(--action) 50%, var(--border));
+  box-shadow: 0 0 0 2px color-mix(in oklab, var(--action) 22%, transparent);
+}
+.patient-list-section-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: calc(2px * var(--density-space)) calc(2px * var(--density-space)) calc(1px * var(--density-space));
+  padding: calc(4px * var(--density-space)) calc(10px * var(--density-space));
+  min-height: 24px;
+  font-size: calc(10px * var(--density-font));
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--text-muted);
+  border-radius: var(--radius-pill);
+  background: color-mix(in oklab, var(--surface) 65%, var(--border));
+  border: 1px solid color-mix(in oklab, var(--divider) 72%, transparent);
+}
+.patient-list-section-label--pinned {
+  gap: 6px;
+}
+.patient-list-pin-svg {
+  flex-shrink: 0;
+  width: 13px;
+  height: 13px;
+  color: var(--text-muted);
+  opacity: 0.92;
+  display: block;
+}
+.patient-list-section-count {
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+.patient-list-section-toggle {
+  width: calc(100% - 4px);
+  margin: 2px 2px 1px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  border: 1px solid color-mix(in oklab, var(--divider) 72%, transparent);
+  border-radius: var(--radius-pill);
+  background: color-mix(in oklab, var(--surface) 65%, var(--border));
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+  font-weight: 700;
+  font-size: 10px;
+  padding: calc(4px * var(--density-space)) calc(10px * var(--density-space));
+  min-height: 24px;
+  cursor: pointer;
+}
+.patient-flag-chip {
+  background: color-mix(in oklab, var(--action) 18%, var(--surface));
+  color: var(--action);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  padding: 1px 6px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in oklab, var(--action) 35%, var(--border));
+}

@@ -1,0 +1,35 @@
+R+ 7.6.9 (gasometría, labs LAN y conexión guardia)
+==================================================
+
+Fecha: 2026-07-15
+
+## Resumen
+
+Parche sobre **7.6.8**: gasometría con resaltado correcto, import del repositorio sin duplicar estudios del mismo día, consolidación de historial que persiste en LiveSync, y corrección al fijar anfitrión en ⇄.
+
+## Nuevo / mejorado
+
+- **Labs — gasometría** — pH, pCO₂, pO₂, lactato, bicarbonato y demás campos vuelven a marcarse con asterisco y subrayado rojo cuando están fuera de rango.
+- **Labs — mantenimiento** — Al reconstruir la línea GASES se preservan asteriscos y se reaplican rangos del reporte (`refsBySection`).
+- **Repositorio** — Un solo conjunto por día al importar varios PDFs; calcula **AG** y **Delta-Delta** con Na/Cl de la química fusionada.
+- **Historial ⋯** — **Eliminar todos los estudios** del paciente (reimportar limpio tras duplicados).
+- **LiveSync — labs** — Consolidar o deduplicar historial empuja al anfitrión (upsert + borrado); el turno ya no «desconsolida» al sincronizar.
+- **⇄ Conexión guardia** — «Fijar anfitrión del turno» activa el servidor local de verdad; sin banner contradictorio de dos servidores.
+
+## Correcciones
+
+- **Gasometría sin highlight** — `reprocessLabResultLines_` copiaba valores numéricos sin `*`; solo el anión gap conservaba el marcado.
+- **AG ausente en import repositorio** — La consolidación masiva no pasaba por `reprocessLabResultLines_`.
+- **Labs (1)–(4) del mismo día** — Import masivo del repositorio creaba un conjunto por PDF; ahora fusiona por calendario.
+- **Historial se reabre tras consolidar** — El bundle LAN reemplazaba `labHistory` sin borrar sets obsoletos en el host.
+- **Fijar anfitrión sin efecto** — El pin devolvía éxito sin conectar el servidor embebido; coexistía con «Dos servidores en la misma sala».
+- **⇄ panel parpadeante** — Al marcar «Fijar anfitrión del turno», el panel entraba en bucle de re-render; corregido en republicación 7.6.9.
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v7.6.9
+
+- Mac: `R+-7.6.9-arm64.dmg`, `R+-7.6.9-x64.dmg` (y zip para auto-update).
+- Windows: `R+-7.6.9-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye write-release-yml.js).

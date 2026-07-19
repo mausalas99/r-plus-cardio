@@ -1,0 +1,75 @@
+{
+  "nodes": [
+    {
+      "id": "file:public/index.html",
+      "type": "file",
+      "name": "index.html",
+      "filePath": "public/index.html",
+      "summary": "Assembled Electron renderer shell HTML: chrome, modals, feature panels, and script tags for app.bundle.mjs.",
+      "tags": [
+        "entry-point",
+        "markup",
+        "ui-shell",
+        "electron-renderer"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:public/index.src.html",
+      "type": "file",
+      "name": "index.src.html",
+      "filePath": "public/index.src.html",
+      "summary": "Source HTML template with partial placeholders consumed by scripts/build-ui.mjs before bundling.",
+      "tags": [
+        "markup",
+        "build-system",
+        "ui-shell",
+        "template"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:public/min-version.json",
+      "type": "config",
+      "name": "min-version.json",
+      "filePath": "public/min-version.json",
+      "summary": "Minimum supported app version gate used by auto-updater downgrade protection.",
+      "tags": [
+        "configuration",
+        "release",
+        "version-gate"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/tokens.css",
+      "type": "file",
+      "name": "tokens.css",
+      "filePath": "public/tokens.css",
+      "summary": "Global design tokens: color ramps, spacing, z-index layers, radius hierarchy, and scrim variables for the workbench.",
+      "tags": [
+        "markup",
+        "design-system",
+        "css-variables",
+        "tokens"
+      ],
+      "complexity": "complex"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:public/index.src.html",
+      "target": "file:scripts/build-ui.mjs",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:public/tokens.css",
+      "target": "file:public/index.html",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    }
+  ]
+}

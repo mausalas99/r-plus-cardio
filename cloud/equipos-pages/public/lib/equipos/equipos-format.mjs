@@ -1,0 +1,1 @@
+../../../../../lib/equipos/equipos-format.mjs

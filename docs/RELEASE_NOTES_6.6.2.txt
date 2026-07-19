@@ -1,0 +1,35 @@
+R+ 6.6.2 (LAN ward-ready — correcciones ⇄ y host)
+=====================================================
+
+Fecha: 2026-06-03
+
+## Resumen
+
+Parche sobre **6.6.1** para guardia: desacopla **clinical-ops** del bundle del turno, endurece la cola offline, corrige imports rotos tras modularizar ⇄, y el **anfitrión** devuelve historia clínica desde el censo del bundle cuando aún no hay entidad `hc:` dedicada. **Actualiza todas las estaciones del turno a 6.6.2** (no mezclar con 6.6.0/6.6.1 en la misma guardia).
+
+## Nuevo / mejorado
+
+### Ward-ready LAN (sobre 6.6.1)
+
+- **Clinical-ops** — `pushClinicalOpsLanNow` ya no cae al bundle completo; cola `clinical_ops` con drenado secuencial y **abort** al primer fallo; toasts **QUEUED** cuando queda en outbox.
+- **Reconciliación** — Pull de ops del host en try/catch; broadcast `livesync:revision` en cada PUT de bundle al anfitrión.
+- **Conflictos** — Panel «Borradores de conflicto» en ⇄; pausa de bundle mientras hay borradores.
+- **Equipos** — Publicación LAN al guardar Mi rotación / dejar equipo; tests de cableado (`lan-sync-wiring.test.mjs`).
+
+### Correcciones de runtime (⇄ / merge)
+
+- Imports restaurados: `refreshClinicalSessionTeams`, `syncLiveSyncStatusChrome`, `resolveLanHostUrlAuto`, versionado de eventualidades (`liveSyncEntityStoreKey`).
+- **Host** — `GET …/historia-clinica` lee HC embebida en `bundle.entries` si no existe entidad `hc:` (evita 404 en consola al abrir expediente).
+
+### Heredado de 6.6.1
+
+LiveSync HTTP-primary, outbox SQL v9, `clinical-ops`, diagnóstico ⇄, anfitrión fijado, modularización LAN.
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v6.6.2
+
+- Mac: `R+-6.6.2-arm64.dmg`, `R+-6.6.2-x64.dmg` (y zip para auto-update).
+- Windows: `R+-6.6.2-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye write-release-yml.js).

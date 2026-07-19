@@ -1,0 +1,353 @@
+{
+  "nodes": [
+    {
+      "id": "file:public/js/vpo-display.mjs",
+      "type": "file",
+      "name": "vpo-display.mjs",
+      "filePath": "public/js/vpo-display.mjs",
+      "summary": "Display formatting helpers for VPO (voluntad anticipada) panel fields.",
+      "tags": [
+        "exports",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/vpo-display.mjs:asaOptionLabel",
+      "type": "function",
+      "name": "asaOptionLabel",
+      "filePath": "public/js/vpo-display.mjs",
+      "lineRange": [
+        4,
+        13
+      ],
+      "summary": "asaOptionLabel — implementation in vpo-display.mjs.",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/vpo-display.mjs:functionalLabel",
+      "type": "function",
+      "name": "functionalLabel",
+      "filePath": "public/js/vpo-display.mjs",
+      "lineRange": [
+        16,
+        23
+      ],
+      "summary": "functionalLabel — implementation in vpo-display.mjs.",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/vpo-display.mjs:procedureLabel",
+      "type": "function",
+      "name": "procedureLabel",
+      "filePath": "public/js/vpo-display.mjs",
+      "lineRange": [
+        50,
+        52
+      ],
+      "summary": "procedureLabel — implementation in vpo-display.mjs.",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/vpo-display.mjs:procedureSearchText",
+      "type": "function",
+      "name": "procedureSearchText",
+      "filePath": "public/js/vpo-display.mjs",
+      "lineRange": [
+        55,
+        57
+      ],
+      "summary": "procedureSearchText — implementation in vpo-display.mjs.",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/vpo-lookups.mjs",
+      "type": "file",
+      "name": "vpo-lookups.mjs",
+      "filePath": "public/js/vpo-lookups.mjs",
+      "summary": "Lookup tables and label maps for VPO documentation codes.",
+      "tags": [
+        "exports",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/vpo-lookups.mjs:getProcedureById",
+      "type": "function",
+      "name": "getProcedureById",
+      "filePath": "public/js/vpo-lookups.mjs",
+      "lineRange": [
+        89,
+        91
+      ],
+      "summary": "Retrieves ProcedureById from state or remote source.",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/vpo-lookups.mjs:getAsaByKey",
+      "type": "function",
+      "name": "getAsaByKey",
+      "filePath": "public/js/vpo-lookups.mjs",
+      "lineRange": [
+        94,
+        96
+      ],
+      "summary": "Retrieves AsaByKey from state or remote source.",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/vpo-lookups.mjs:getFunctionalByKey",
+      "type": "function",
+      "name": "getFunctionalByKey",
+      "filePath": "public/js/vpo-lookups.mjs",
+      "lineRange": [
+        99,
+        101
+      ],
+      "summary": "Retrieves FunctionalByKey from state or remote source.",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/vpo-lookups.mjs:creatinineGuptaCoef",
+      "type": "function",
+      "name": "creatinineGuptaCoef",
+      "filePath": "public/js/vpo-lookups.mjs",
+      "lineRange": [
+        104,
+        108
+      ],
+      "summary": "creatinineGuptaCoef — implementation in vpo-lookups.mjs.",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/vpo-lookups.mjs:searchProcedures",
+      "type": "function",
+      "name": "searchProcedures",
+      "filePath": "public/js/vpo-lookups.mjs",
+      "lineRange": [
+        114,
+        126
+      ],
+      "summary": "searchProcedures — implementation in vpo-lookups.mjs.",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/vpo-lookups.mjs:suggestAhaClinicoFromAsa",
+      "type": "function",
+      "name": "suggestAhaClinicoFromAsa",
+      "filePath": "public/js/vpo-lookups.mjs",
+      "lineRange": [
+        129,
+        135
+      ],
+      "summary": "suggestAhaClinicoFromAsa — implementation in vpo-lookups.mjs.",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/vpo-lookups.test.mjs",
+      "type": "file",
+      "name": "vpo-lookups.test.mjs",
+      "filePath": "public/js/vpo-lookups.test.mjs",
+      "summary": "Tests VPO lookup resolution and missing-code fallbacks.",
+      "tags": [
+        "test",
+        "module"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:public/js/vpo-display.mjs",
+      "target": "function:public/js/vpo-display.mjs:asaOptionLabel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/vpo-display.mjs",
+      "target": "function:public/js/vpo-display.mjs:asaOptionLabel",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/vpo-display.mjs",
+      "target": "function:public/js/vpo-display.mjs:functionalLabel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/vpo-display.mjs",
+      "target": "function:public/js/vpo-display.mjs:functionalLabel",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/vpo-display.mjs",
+      "target": "function:public/js/vpo-display.mjs:procedureLabel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/vpo-display.mjs",
+      "target": "function:public/js/vpo-display.mjs:procedureLabel",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/vpo-display.mjs",
+      "target": "function:public/js/vpo-display.mjs:procedureSearchText",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/vpo-display.mjs",
+      "target": "function:public/js/vpo-display.mjs:procedureSearchText",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/vpo-lookups.mjs",
+      "target": "function:public/js/vpo-lookups.mjs:getProcedureById",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/vpo-lookups.mjs",
+      "target": "function:public/js/vpo-lookups.mjs:getProcedureById",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/vpo-lookups.mjs",
+      "target": "function:public/js/vpo-lookups.mjs:getAsaByKey",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/vpo-lookups.mjs",
+      "target": "function:public/js/vpo-lookups.mjs:getAsaByKey",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/vpo-lookups.mjs",
+      "target": "function:public/js/vpo-lookups.mjs:getFunctionalByKey",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/vpo-lookups.mjs",
+      "target": "function:public/js/vpo-lookups.mjs:getFunctionalByKey",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/vpo-lookups.mjs",
+      "target": "function:public/js/vpo-lookups.mjs:creatinineGuptaCoef",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/vpo-lookups.mjs",
+      "target": "function:public/js/vpo-lookups.mjs:creatinineGuptaCoef",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/vpo-lookups.mjs",
+      "target": "function:public/js/vpo-lookups.mjs:searchProcedures",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/vpo-lookups.mjs",
+      "target": "function:public/js/vpo-lookups.mjs:searchProcedures",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/vpo-lookups.mjs",
+      "target": "function:public/js/vpo-lookups.mjs:suggestAhaClinicoFromAsa",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/vpo-lookups.mjs",
+      "target": "function:public/js/vpo-lookups.mjs:suggestAhaClinicoFromAsa",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/vpo-lookups.test.mjs",
+      "target": "file:public/js/vpo-display.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/vpo-lookups.test.mjs",
+      "target": "file:public/js/vpo-lookups.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/vpo-lookups.mjs",
+      "target": "file:public/js/vpo-lookups.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

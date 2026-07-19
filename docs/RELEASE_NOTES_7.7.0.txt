@@ -1,0 +1,26 @@
+R+ 7.7.0 (interpretación citoquímica y LCR)
+===============================================
+
+Fecha: 2026-07-16
+
+## Resumen
+
+**7.7.0** añade **interpretación citoquímica** automática al pegar SOME (ascitis, pleural y LCR), fusiona bloques duales de LCR química + bacteriología, y permite colapsar la sección de diagramas en Resultados.
+
+## Nuevo / mejorado
+
+- **Labs — interpretación citoquímica** — Tras procesar líquidos corporales, R+ genera un bloque `INTERPRETACIÓN CITOQUÍMICO:` con GASA (portal y no portal), criterios de Light en derrame pleural, sospecha de PBE/SBP (PMN ≥250), banderas de empiema pleural y heurísticas de etiología en LCR (bacteriana, viral, TB).
+- **Solo informativo** — La interpretación aparece como alerta ámbar en el panel de laboratorio; **no** se copia a portapapeles, nota ni censo (la línea compacta `Liq:` / `LCR:` sigue siendo la copiable).
+- **LCR — bloques duales SOME** — Fusiona `CITOQUIMICO DE LCR` (química) con `CITOQUIMICO LIQ. LCR` (bacteriología) en una sola línea `LCR:`; evita que glucosa u otros valores filtren a química sanguínea.
+- **LCR — pH fuera de rango** — Si el pH reportado está fuera de 7.28–7.42, R+ avisa en interpretación (sin alterar el valor copiable).
+- **Labs — diagramas colapsables** — En Resultados puedes plegar la sección de diagramas; la preferencia se recuerda en localStorage.
+- **Parche sobre 7.6.9** — Gasometría con resaltado, consolidación de historial en LiveSync, import del repositorio y ⇄ fijar anfitrión.
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v7.7.0
+
+- Mac: `R+-7.7.0-arm64.dmg`, `R+-7.7.0-x64.dmg` (y zip para auto-update).
+- Windows: `R+-7.7.0-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye write-release-yml.js).

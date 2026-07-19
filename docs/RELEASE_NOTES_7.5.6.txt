@@ -1,0 +1,24 @@
+R+ 7.5.6 (onboarding local + wipe Windows)
+==============================================
+
+Fecha: 2026-06-28
+
+## Resumen
+
+Sobre **7.5.5**: corrige **onboarding en Windows/Electron** (borrado de datos, registro LAN y modo solo equipo) sin diálogos nativos bloqueados.
+
+## Nuevo / mejorado
+
+- **Borrado completo** — Confirmación dentro del modal (escribe BORRAR); ya no usa `prompt()`/`confirm()` del navegador, que fallaban en Electron.
+- **Registro / recuperar @usuario** — Tras borrar ajustes locales, Guardar perfil y Recuperar mi usuario avanzan sin `window.confirm`; `clientId` se restaura desde el dispositivo.
+- **Solo este equipo** — Un clic en la tarjeta local entra directo a la app (sin segunda pantalla de nombre); firma por defecto «Usuario R+» (editable en Mi Perfil).
+- **Sin migración** — SQLCipher sigue en v20.
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v7.5.6
+
+- Mac: `R+-7.5.6-arm64.dmg`, `R+-7.5.6-x64.dmg` (y zip para auto-update).
+- Windows: `R+-7.5.6-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye write-release-yml.js).

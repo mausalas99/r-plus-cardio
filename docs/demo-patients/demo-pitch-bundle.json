@@ -1,0 +1,740 @@
+{
+  "format": "r-plus-pitch-demo-bundle",
+  "version": 1,
+  "exportedAt": "2026-05-29T22:51:24.873Z",
+  "appVersion": null,
+  "patients": [
+    {
+      "format": "r-plus-patient-export",
+      "version": 1,
+      "exportedAt": "2026-05-29T22:51:24.873Z",
+      "appVersion": null,
+      "patient": {
+        "id": "demo-pitch",
+        "nombre": "DEMO PÉREZ",
+        "registro": "0008421-7",
+        "edad": "67 años",
+        "sexo": "M",
+        "area": "SERVICIO DEMO",
+        "servicio": "SERVICIO DEMO",
+        "cuarto": "101",
+        "cama": "1",
+        "fromLab": false,
+        "monitoreo": {
+          "estadoClinico": {
+            "four": "4 extremidades",
+            "esferas": "Sin datos nuevos",
+            "analgesia": "Paracetamol 1 g IV c/8h",
+            "abx": "Cefepime 1 g IV c/8h (día 2)",
+            "antihta": "Losartán 50 mg VO",
+            "vasop": "No",
+            "soporte": "O2 nasal 2 L/min",
+            "tempContext": "Afebril en turno",
+            "dieta": "Dieta renal",
+            "kcalKg": "25",
+            "kcal": "1750",
+            "pesoRef": "70"
+          },
+          "confirmado": {
+            "analgesia": true,
+            "abx": true,
+            "antihta": false,
+            "vasop": false
+          },
+          "pendienteReceta": {
+            "four": "",
+            "esferas": "",
+            "analgesia": "",
+            "abx": "",
+            "antihta": "",
+            "vasop": "",
+            "soporte": "",
+            "tempContext": "",
+            "dieta": "",
+            "kcalKg": "",
+            "kcal": "",
+            "pesoRef": ""
+          },
+          "historial": [
+            {
+              "id": "pitch-ea-0",
+              "recordedAt": "2026-05-28T15:05:00.000Z",
+              "vitals": {
+                "tas": 126,
+                "tad": 76,
+                "fc": 90,
+                "fr": 19,
+                "temp": 36.9,
+                "sat": 95
+              },
+              "glucometrias": [
+                {
+                  "value": 138,
+                  "time": "09:05"
+                },
+                {
+                  "value": 142,
+                  "time": "09:12"
+                }
+              ],
+              "io": {
+                "ing": 200,
+                "egr": 140
+              }
+            },
+            {
+              "id": "pitch-ea-1",
+              "recordedAt": "2026-05-28T18:10:00.000Z",
+              "vitals": {
+                "tas": 120,
+                "tad": 70,
+                "fc": 86,
+                "fr": 18,
+                "temp": 36.7,
+                "sat": 96
+              },
+              "glucometrias": [
+                {
+                  "value": 152,
+                  "time": "12:10"
+                }
+              ],
+              "io": {
+                "ing": 240,
+                "egr": 170
+              }
+            },
+            {
+              "id": "pitch-ea-2",
+              "recordedAt": "2026-05-28T22:15:00.000Z",
+              "vitals": {
+                "tas": 118,
+                "tad": 72,
+                "fc": 84,
+                "fr": 18,
+                "temp": 36.6,
+                "sat": 96
+              },
+              "glucometrias": [
+                {
+                  "value": 176,
+                  "time": "16:15"
+                },
+                {
+                  "value": 168,
+                  "time": "16:22"
+                }
+              ],
+              "io": {
+                "ing": 300,
+                "egr": 220
+              }
+            },
+            {
+              "id": "pitch-ea-3",
+              "recordedAt": "2026-05-29T02:20:00.000Z",
+              "vitals": {
+                "tas": 116,
+                "tad": 74,
+                "fc": 84,
+                "fr": 17,
+                "temp": 36.5,
+                "sat": 97
+              },
+              "glucometrias": [
+                {
+                  "value": 188,
+                  "time": "20:20"
+                }
+              ],
+              "io": {
+                "ing": 120,
+                "egr": 100
+              }
+            },
+            {
+              "id": "pitch-ea-4",
+              "recordedAt": "2026-05-29T05:45:00.000Z",
+              "vitals": {
+                "tas": 124,
+                "tad": 76,
+                "fc": 90,
+                "fr": 19,
+                "temp": 37,
+                "sat": 95
+              },
+              "glucometrias": [
+                {
+                  "value": 198,
+                  "time": "23:45"
+                },
+                {
+                  "value": 192,
+                  "time": "23:52"
+                }
+              ],
+              "io": {
+                "ing": 150,
+                "egr": 130
+              }
+            },
+            {
+              "id": "pitch-ea-5",
+              "recordedAt": "2026-05-29T06:00:00.000Z",
+              "vitals": {
+                "tas": 118,
+                "tad": 72,
+                "fc": 88,
+                "fr": 18,
+                "temp": 36.8,
+                "sat": 96
+              },
+              "glucometrias": [
+                {
+                  "value": 155,
+                  "time": "00:00"
+                }
+              ],
+              "io": {
+                "ing": 180,
+                "egr": 120
+              }
+            },
+            {
+              "id": "pitch-ea-6",
+              "recordedAt": "2026-05-29T16:00:00.000Z",
+              "vitals": {
+                "tas": 118,
+                "tad": 72,
+                "fc": 88,
+                "fr": 18,
+                "temp": 36.8,
+                "sat": 96
+              },
+              "glucometrias": [],
+              "io": {
+                "ing": 220,
+                "egr": 150
+              }
+            },
+            {
+              "id": "pitch-ea-7",
+              "recordedAt": "2026-05-30T00:00:00.000Z",
+              "vitals": {
+                "tas": 120,
+                "tad": 70,
+                "fc": 84,
+                "fr": 17,
+                "temp": 36.6,
+                "sat": 97
+              },
+              "glucometrias": [],
+              "io": {
+                "ing": 200,
+                "egr": 160
+              }
+            },
+            {
+              "id": "pitch-ea-8",
+              "recordedAt": "2026-05-28T12:30:00.000Z",
+              "vitals": {
+                "tas": 128,
+                "tad": 78,
+                "fc": 92,
+                "fr": 20,
+                "temp": 37,
+                "sat": 94
+              },
+              "glucometrias": [],
+              "io": {
+                "ing": 200,
+                "egr": 140
+              }
+            },
+            {
+              "id": "pitch-ea-9",
+              "recordedAt": "2026-05-28T20:30:00.000Z",
+              "vitals": {
+                "tas": 120,
+                "tad": 70,
+                "fc": 86,
+                "fr": 18,
+                "temp": 36.7,
+                "sat": 96
+              },
+              "glucometrias": [],
+              "io": {
+                "ing": 300,
+                "egr": 220
+              }
+            },
+            {
+              "id": "pitch-ea-10",
+              "recordedAt": "2026-05-27T13:00:00.000Z",
+              "vitals": {
+                "tas": 132,
+                "tad": 80,
+                "fc": 94,
+                "fr": 21,
+                "temp": 37.2,
+                "sat": 93
+              },
+              "glucometrias": [],
+              "io": {
+                "ing": 190,
+                "egr": 130
+              }
+            },
+            {
+              "id": "pitch-ea-11",
+              "recordedAt": "2026-05-27T17:00:00.000Z",
+              "vitals": {
+                "tas": 130,
+                "tad": 78,
+                "fc": 92,
+                "fr": 20,
+                "temp": 37,
+                "sat": 94
+              },
+              "glucometrias": [],
+              "io": {
+                "ing": 210,
+                "egr": 150
+              }
+            },
+            {
+              "id": "pitch-ea-12",
+              "recordedAt": "2026-05-27T21:00:00.000Z",
+              "vitals": {
+                "tas": 126,
+                "tad": 76,
+                "fc": 88,
+                "fr": 19,
+                "temp": 36.9,
+                "sat": 95
+              },
+              "glucometrias": [],
+              "io": {
+                "ing": 250,
+                "egr": 180
+              }
+            },
+            {
+              "id": "pitch-ea-13",
+              "recordedAt": "2026-05-28T01:00:00.000Z",
+              "vitals": {
+                "tas": 128,
+                "tad": 78,
+                "fc": 90,
+                "fr": 20,
+                "temp": 37,
+                "sat": 94
+              },
+              "glucometrias": [],
+              "io": {
+                "ing": 160,
+                "egr": 120
+              }
+            }
+          ],
+          "textoGuardado": {
+            "text": "Glucometrías seriadas c/6h: 128–198 mg/dL en 48 h (ver gráfica y tabla en Estado Actual). Balance hídrico estricto; correlacionar con QS.",
+            "savedAt": "2026-05-29T22:51:24.873Z"
+          }
+        }
+      },
+      "note": {
+        "fecha": "29/05/2026",
+        "hora": "16:51",
+        "interrogatorio": "",
+        "evolucion": "Paciente masculino de 67 años con peritonitis asociada a diálisis peritoneal en manejo antibiótico. Hemodinámicamente estable, afebril en el turno. Glucometrías seriadas c/6h con tendencia ascendente en 48 h.",
+        "estudios": "Cultivos con aislamientos documentados; ver pestaña Cultivos.",
+        "diagnosticos": [
+          "Peritonitis asociada a diálisis peritoneal",
+          "DM2 descompensada",
+          "IRC estadio 3",
+          "HAS"
+        ],
+        "tratamiento": [
+          "Cefepime 1 g IV c/8h",
+          "Paracetamol 1 g IV c/8h"
+        ],
+        "ta": "118/72",
+        "fr": "18",
+        "fc": "88",
+        "temp": "36.8",
+        "peso": "70",
+        "medico": "Dr. Demo",
+        "profesor": ""
+      },
+      "indicaciones": {
+        "fecha": "29/05/2026",
+        "hora": "16:51",
+        "medicos": "Dr. Demo · SERVICIO DEMO",
+        "dieta": "Dieta renal, restricción de K y P",
+        "cuidados": "Signos vitales c/8h, glucometría c/6h, balance hídrico estricto",
+        "estudios": "Control de BH y QS mañana",
+        "medicamentos": "1. Cefepime 1 g IV c/8h\n2. Paracetamol 1 g IV c/8h PRN dolor\n3. Losartán 50 mg VO c/24h",
+        "interconsultas": "Nefrología de seguimiento",
+        "otros": []
+      },
+      "labHistory": [
+        {
+          "id": "pitch-lab-trend-1",
+          "fecha": "01/05/2026",
+          "hora": "",
+          "resLabs": [
+            "BH\tHb 10.2*  Hto 35.8*  VCM 81  Leu 5.4  Plt 198",
+            "QS\tGlu 108* Cr 1.55* eTFG 49 BUN 28* TGL 132 COL 155",
+            "ESC\tNa 134* K 3.5*"
+          ],
+          "parsed": {
+            "Hb": 10.2,
+            "Hto": 35.8,
+            "Leu": 5.4,
+            "Plt": 198,
+            "Glu": 108,
+            "Cr": 1.55,
+            "eTFG": 49,
+            "BUN": 28,
+            "PCR": null,
+            "AU": null,
+            "TGL": 132,
+            "COL": 155,
+            "Na": 134,
+            "K": 3.5,
+            "Cl": null,
+            "HCO3": null,
+            "Ca": null,
+            "AST": null,
+            "ALT": null,
+            "FA": null,
+            "BT": null
+          },
+          "sourceText": "Expediente:\t0008421-7\tSolicitud:\t2603050188\nNombre:\tDEMO PÉREZ JUAN\tFecha Registro:\tMar 05 2026 7:18AM\nSexo:\tMASCULINO\tUbicación:\tSERVICIO DEMO\nEdad:\t67\tMedico:\tSERVICIO DEMO\n\nHEMATOLOGIA\nBIOMETRIA HEMATICA COMPLETA\nEstudio\t\tResultado\tUnidades\tValor de Referencia\nRBC\t\t4.55\tM/uL\t4.04 - 6.13\nHGB\t\t*\t10.20\tg/dL\t12.20 - 18.10\nHCT\t\t*\t35.8\t%\t37.7 - 53.7\nMCV\t\t*\t81\tfL\t80 - 97\nWBC\t\t*\t5.40\tK/uL\t4.00 - 11.00\nPLT\t\t*\t198\tK/uL\t142.00 - 424.00\n\nQUIMICA CLINICA\nGLUCOSA EN SANGRE\nEstudio\t\tResultado\tUnidades\tValor de Referencia\nGLUCOSA EN SANGRE\t\t*\t108\tmg/dL\t60 - 100\nNITROGENO DE LA UREA EN SANGRE\nEstudio\t\tResultado\tUnidades\tValor de Referencia\nNITROGENO DE LA UREA EN SANGRE\t\tA\t28\tmg/dL\t7 - 20\nCREATININA EN SANGRE\nEstudio\t\tResultado\tUnidades\tValor de Referencia\nCREATININA EN SANGRE\t\tA\t1.55\tmg/dL\t0.6 - 1.4\nCOLESTEROL\nEstudio\t\tResultado\tUnidades\tValor de Referencia\nCOLESTEROL\t\tB\t155\tmg/dL\t130 - 200\nTRIGLICERIDOS\nEstudio\t\tResultado\tUnidades\tValor de Referencia\nTRIGLICERIDOS\t\t*\t132\tmg/dL\t35 - 150\nSODIO\nEstudio\t\tResultado\tUnidades\tValor de Referencia\nSODIO\t\tB\t134\tmmol/L\t135.0 - 145.0\nPOTASIO\nEstudio\t\tResultado\tUnidades\tValor de Referencia\nPOTASIO\t\t*\t3.5\tmmol/L\t3.6 - 5.0\n"
+        },
+        {
+          "id": "pitch-lab-trend-2",
+          "fecha": "04/05/2026",
+          "hora": "",
+          "resLabs": [
+            "BH\tHb 11.85*  Hto 38.4  VCM 82  HCM 26.1*  Leu 6.12  Neu 3.88  Eos 0.11  Plt 248",
+            "QS\tGlu 94 Cr 1.35 eTFG 58 BUN 22* AU 7.4 TGL 118 COL 142",
+            "ESC\tNa 138 Cl 102 K 3.9 Ca 8.8 F 3.8",
+            "PFHs\tAlb 4.1 AST 19 ALT 14 FA 118 BT 1.2* BD 0.5* BI 0.7 LDH 142 Amil 68"
+          ],
+          "parsed": {
+            "Hb": 11.85,
+            "Hto": 38.4,
+            "Leu": 6.12,
+            "Plt": 248,
+            "Glu": 94,
+            "Cr": 1.35,
+            "eTFG": 58,
+            "BUN": 22,
+            "PCR": null,
+            "AU": 7.4,
+            "TGL": 118,
+            "COL": 142,
+            "Na": 138,
+            "K": 3.9,
+            "Cl": 102,
+            "HCO3": null,
+            "Ca": 8.8,
+            "AST": 19,
+            "ALT": 14,
+            "FA": 118,
+            "BT": 1.2
+          },
+          "sourceText": "Expediente:\t0008421-7\tSolicitud:\t2605110244\nNombre:\tDEMO PÉREZ JUAN\tFecha Registro:\tApr 11 2026 9:42AM\nSexo:\tMASCULINO\tUbicación:\tSERVICIO DEMO\nEdad:\t67\tMedico:\tSERVICIO DEMO\n\nHEMATOLOGIA\nBIOMETRIA HEMATICA COMPLETA\nEstudio\t\tResultado\tUnidades\tValor de Referencia\nRBC\t\t4.71\tM/uL\t4.04 - 6.13\nHGB\t\t*\t11.85\tg/dL\t12.20 - 18.10\nHCT\t\t*\t38.4\t%\t37.7 - 53.7\nMCV\t\t*\t82\tfL\t80 - 97\nMCH\t\tB\t26.1\tpg\t27.0 - 31.2\nMCHC\t\t*\t32.0\tg/dL\t29.9 - 34.2\nRDW\t\t*\t13.2\t%\t11.6 - 14.8\nWBC\t\t*\t6.12\tK/uL\t4.00 - 11.00\nNEU\t\t*\t3.88\tK/uL\t2.00 - 6.90\nNEU%\t\t*\t63.4\t%\t37.0 - 80.0\nLYM\t\t*\t1.05\tK/uL\t0.60 - 3.40\nLYM%\t\t*\t17.2\t%\t10.0 - 50.0\nMONO\t\t*\t0.71\tK/uL\t0.000 - 0.900\nMONO%\t\t*\t11.6\t%\t0.00 - 12.00\nEOS\t\t*\t0.11\tK/uL\t0.000 - 0.700\nEOS%\t\t*\t1.8\t%\t0.00 - 7.00\nBASO\t\t*\t0.12\tK/uL\t0.000 - 0.200\nBASO%\t\t*\t2.0\t%\t0.00 - 2.50\nPLT\t\t*\t248\tK/uL\t142.00 - 424.00\nMPV\t\tB\t7.2\tfL\t7.4 - 10.4\n\nQUIMICA CLINICA\nCOMENTARIO DE MUESTRA\nEstudio\t\tResultado\tUnidades\tValor de Referencia\nCOMENTARIO DE LA MUESTRA\t\t*\t\nGLUCOSA EN SANGRE\nEstudio\t\tResultado\tUnidades\tValor de Referencia\nGLUCOSA EN SANGRE\t\t*\t94\tmg/dL\t60 - 100\nNITROGENO DE LA UREA EN SANGRE\nEstudio\t\tResultado\tUnidades\tValor de Referencia\nNITROGENO DE LA UREA EN SANGRE\t\tA\t22\tmg/dL\t7 - 20\nCREATININA EN SANGRE\nEstudio\t\tResultado\tUnidades\tValor de Referencia\nCREATININA EN SANGRE\t\tA\t1.35\tmg/dL\t0.6 - 1.4\nACIDO URICO EN SANGRE\nEstudio\t\tResultado\tUnidades\tValor de Referencia\nACIDO URICO EN SANGRE\t\tA\t7.4\tmg/dL\t4.8 - 8.7\nPROTEINAS TOTALES\nEstudio\t\tResultado\tUnidades\tValor de Referencia\nPROTEINAS TOTALES\t\tA\t7.6\tg/dL\t6.1 - 7.9\nALBUMINA\nEstudio\t\tResultado\tUnidades\tValor de Referencia\nALBUMINA\t\t*\t4.1\tg/dL\t3.2 - 5.5\nGLOBULINA SERICA\nEstudio\t\tResultado\tUnidades\tValor de Referencia\nGLOBULINA SERICA\t\t*\t3.5\tg/dL\t\nRELACION A/G\nEstudio\t\tResultado\tUnidades\tValor de Referencia\nRELACION A/G\t\t*\t1.17\t\nAST(ASPARTATO AMINOTRANSFERASA)\nEstudio\t\tResultado\tUnidades\tValor de Referencia\nAST(ASPARTATO AMINOTRANSFERASA)\t\t*\t19\tUI/L\t10 - 42\nALT ALANIN AMINO TRANSFERASA\nEstudio\t\tResultado\tUnidades\tValor de Referencia\nALT ALANIN AMINO TRANSFERASA\t\t*\t14\tUI/L\t10 - 42\nALP FOSFATASA ALCALINA\nEstudio\t\tResultado\tUnidades\tValor de Referencia\nALP FOSFATASA ALCALINA\t\tA\t118\tUI/L\t38 - 126\nBILIRRUBINA\nEstudio\t\tResultado\tUnidades\tValor de Referencia\nBILIRRUBINA TOTAL\t\tA\t1.2\tmg/dL\t0.2 - 1.0\nBILIRRUBINA DIRECTA\t\tA\t0.5\tmg/dL\t0.0 - 0.2\nBILIRRUBINA INDIRECTA\t\tA\t0.7\tmg/dL\t0.2 - 0.8\nLDH DESHIDROGENASA LACTICA\nEstudio\t\tResultado\tUnidades\tValor de Referencia\nLDH DESHIDROGENASA LACTICA\t\t*\t142\tUI/L\t91 - 180\nAMILASA SERICA\nEstudio\t\tResultado\tUnidades\tValor de Referencia\nAMILASA\t\t*\t68\tU/L\t28 - 100\nCOLESTEROL\nEstudio\t\tResultado\tUnidades\tValor de Referencia\nCOLESTEROL\t\tB\t142\tmg/dL\t130 - 200\nTRIGLICERIDOS\nEstudio\t\tResultado\tUnidades\tValor de Referencia\nTRIGLICERIDOS\t\t*\t118\tmg/dL\t35 - 150\nCLORO\nEstudio\t\tResultado\tUnidades\tValor de Referencia\nCLORO\t\t*\t102\tmmol/L\t101.0 - 110.0\nSODIO\nEstudio\t\tResultado\tUnidades\tValor de Referencia\nSODIO\t\t*\t138\tmmol/L\t135.0 - 145.0\nPOTASIO\nEstudio\t\tResultado\tUnidades\tValor de Referencia\nPOTASIO\t\t*\t3.9\tmmol/L\t3.6 - 5.0\nCALCIO\nEstudio\t\tResultado\tUnidades\tValor de Referencia\nCALCIO EN SUERO\t\t*\t8.8\tmg/dL\t8.4 - 10.2\nFOSFORO EN SANGRE\nEstudio\t\tResultado\tUnidades\tValor de Referencia\nFOSFORO\t\t*\t3.8\tmg/dL\t2.5 - 4.6\n"
+        },
+        {
+          "id": "pitch-lab-trend-3",
+          "fecha": "06/05/2026",
+          "hora": "",
+          "resLabs": [
+            "BH\tHb 10.2*  Hto 35.8*  VCM 81  Leu 5.4  Plt 198",
+            "QS\tGlu 108* Cr 1.55* eTFG 49 BUN 28* TGL 132 COL 155",
+            "ESC\tNa 134* K 3.5*"
+          ],
+          "parsed": {
+            "Hb": 10.2,
+            "Hto": 35.8,
+            "Leu": 5.4,
+            "Plt": 198,
+            "Glu": 108,
+            "Cr": 1.55,
+            "eTFG": 49,
+            "BUN": 28,
+            "PCR": null,
+            "AU": null,
+            "TGL": 132,
+            "COL": 155,
+            "Na": 134,
+            "K": 3.5,
+            "Cl": null,
+            "HCO3": null,
+            "Ca": null,
+            "AST": null,
+            "ALT": null,
+            "FA": null,
+            "BT": null
+          },
+          "sourceText": "Expediente:\t0008421-7\tSolicitud:\t2603050188\nNombre:\tDEMO PÉREZ JUAN\tFecha Registro:\tMar 05 2026 7:18AM\nSexo:\tMASCULINO\tUbicación:\tSERVICIO DEMO\nEdad:\t67\tMedico:\tSERVICIO DEMO\n\nHEMATOLOGIA\nBIOMETRIA HEMATICA COMPLETA\nEstudio\t\tResultado\tUnidades\tValor de Referencia\nRBC\t\t4.55\tM/uL\t4.04 - 6.13\nHGB\t\t*\t10.20\tg/dL\t12.20 - 18.10\nHCT\t\t*\t35.8\t%\t37.7 - 53.7\nMCV\t\t*\t81\tfL\t80 - 97\nWBC\t\t*\t5.40\tK/uL\t4.00 - 11.00\nPLT\t\t*\t198\tK/uL\t142.00 - 424.00\n\nQUIMICA CLINICA\nGLUCOSA EN SANGRE\nEstudio\t\tResultado\tUnidades\tValor de Referencia\nGLUCOSA EN SANGRE\t\t*\t108\tmg/dL\t60 - 100\nNITROGENO DE LA UREA EN SANGRE\nEstudio\t\tResultado\tUnidades\tValor de Referencia\nNITROGENO DE LA UREA EN SANGRE\t\tA\t28\tmg/dL\t7 - 20\nCREATININA EN SANGRE\nEstudio\t\tResultado\tUnidades\tValor de Referencia\nCREATININA EN SANGRE\t\tA\t1.55\tmg/dL\t0.6 - 1.4\nCOLESTEROL\nEstudio\t\tResultado\tUnidades\tValor de Referencia\nCOLESTEROL\t\tB\t155\tmg/dL\t130 - 200\nTRIGLICERIDOS\nEstudio\t\tResultado\tUnidades\tValor de Referencia\nTRIGLICERIDOS\t\t*\t132\tmg/dL\t35 - 150\nSODIO\nEstudio\t\tResultado\tUnidades\tValor de Referencia\nSODIO\t\tB\t134\tmmol/L\t135.0 - 145.0\nPOTASIO\nEstudio\t\tResultado\tUnidades\tValor de Referencia\nPOTASIO\t\t*\t3.5\tmmol/L\t3.6 - 5.0\n"
+        },
+        {
+          "id": "pitch-lab-trend-4",
+          "fecha": "08/05/2026",
+          "hora": "",
+          "resLabs": [
+            "BH\tHb 11.85*  Hto 38.4  VCM 82  HCM 26.1*  Leu 6.12  Neu 3.88  Eos 0.11  Plt 248",
+            "QS\tGlu 94 Cr 1.35 eTFG 58 BUN 22* AU 7.4 TGL 118 COL 142",
+            "ESC\tNa 138 Cl 102 K 3.9 Ca 8.8 F 3.8",
+            "PFHs\tAlb 4.1 AST 19 ALT 14 FA 118 BT 1.2* BD 0.5* BI 0.7 LDH 142 Amil 68"
+          ],
+          "parsed": {
+            "Hb": 11.85,
+            "Hto": 38.4,
+            "Leu": 6.12,
+            "Plt": 248,
+            "Glu": 94,
+            "Cr": 1.35,
+            "eTFG": 58,
+            "BUN": 22,
+            "PCR": null,
+            "AU": 7.4,
+            "TGL": 118,
+            "COL": 142,
+            "Na": 138,
+            "K": 3.9,
+            "Cl": 102,
+            "HCO3": null,
+            "Ca": 8.8,
+            "AST": 19,
+            "ALT": 14,
+            "FA": 118,
+            "BT": 1.2
+          },
+          "sourceText": "Expediente:\t0008421-7\tSolicitud:\t2605110244\nNombre:\tDEMO PÉREZ JUAN\tFecha Registro:\tApr 11 2026 9:42AM\nSexo:\tMASCULINO\tUbicación:\tSERVICIO DEMO\nEdad:\t67\tMedico:\tSERVICIO DEMO\n\nHEMATOLOGIA\nBIOMETRIA HEMATICA COMPLETA\nEstudio\t\tResultado\tUnidades\tValor de Referencia\nRBC\t\t4.71\tM/uL\t4.04 - 6.13\nHGB\t\t*\t11.85\tg/dL\t12.20 - 18.10\nHCT\t\t*\t38.4\t%\t37.7 - 53.7\nMCV\t\t*\t82\tfL\t80 - 97\nMCH\t\tB\t26.1\tpg\t27.0 - 31.2\nMCHC\t\t*\t32.0\tg/dL\t29.9 - 34.2\nRDW\t\t*\t13.2\t%\t11.6 - 14.8\nWBC\t\t*\t6.12\tK/uL\t4.00 - 11.00\nNEU\t\t*\t3.88\tK/uL\t2.00 - 6.90\nNEU%\t\t*\t63.4\t%\t37.0 - 80.0\nLYM\t\t*\t1.05\tK/uL\t0.60 - 3.40\nLYM%\t\t*\t17.2\t%\t10.0 - 50.0\nMONO\t\t*\t0.71\tK/uL\t0.000 - 0.900\nMONO%\t\t*\t11.6\t%\t0.00 - 12.00\nEOS\t\t*\t0.11\tK/uL\t0.000 - 0.700\nEOS%\t\t*\t1.8\t%\t0.00 - 7.00\nBASO\t\t*\t0.12\tK/uL\t0.000 - 0.200\nBASO%\t\t*\t2.0\t%\t0.00 - 2.50\nPLT\t\t*\t248\tK/uL\t142.00 - 424.00\nMPV\t\tB\t7.2\tfL\t7.4 - 10.4\n\nQUIMICA CLINICA\nCOMENTARIO DE MUESTRA\nEstudio\t\tResultado\tUnidades\tValor de Referencia\nCOMENTARIO DE LA MUESTRA\t\t*\t\nGLUCOSA EN SANGRE\nEstudio\t\tResultado\tUnidades\tValor de Referencia\nGLUCOSA EN SANGRE\t\t*\t94\tmg/dL\t60 - 100\nNITROGENO DE LA UREA EN SANGRE\nEstudio\t\tResultado\tUnidades\tValor de Referencia\nNITROGENO DE LA UREA EN SANGRE\t\tA\t22\tmg/dL\t7 - 20\nCREATININA EN SANGRE\nEstudio\t\tResultado\tUnidades\tValor de Referencia\nCREATININA EN SANGRE\t\tA\t1.35\tmg/dL\t0.6 - 1.4\nACIDO URICO EN SANGRE\nEstudio\t\tResultado\tUnidades\tValor de Referencia\nACIDO URICO EN SANGRE\t\tA\t7.4\tmg/dL\t4.8 - 8.7\nPROTEINAS TOTALES\nEstudio\t\tResultado\tUnidades\tValor de Referencia\nPROTEINAS TOTALES\t\tA\t7.6\tg/dL\t6.1 - 7.9\nALBUMINA\nEstudio\t\tResultado\tUnidades\tValor de Referencia\nALBUMINA\t\t*\t4.1\tg/dL\t3.2 - 5.5\nGLOBULINA SERICA\nEstudio\t\tResultado\tUnidades\tValor de Referencia\nGLOBULINA SERICA\t\t*\t3.5\tg/dL\t\nRELACION A/G\nEstudio\t\tResultado\tUnidades\tValor de Referencia\nRELACION A/G\t\t*\t1.17\t\nAST(ASPARTATO AMINOTRANSFERASA)\nEstudio\t\tResultado\tUnidades\tValor de Referencia\nAST(ASPARTATO AMINOTRANSFERASA)\t\t*\t19\tUI/L\t10 - 42\nALT ALANIN AMINO TRANSFERASA\nEstudio\t\tResultado\tUnidades\tValor de Referencia\nALT ALANIN AMINO TRANSFERASA\t\t*\t14\tUI/L\t10 - 42\nALP FOSFATASA ALCALINA\nEstudio\t\tResultado\tUnidades\tValor de Referencia\nALP FOSFATASA ALCALINA\t\tA\t118\tUI/L\t38 - 126\nBILIRRUBINA\nEstudio\t\tResultado\tUnidades\tValor de Referencia\nBILIRRUBINA TOTAL\t\tA\t1.2\tmg/dL\t0.2 - 1.0\nBILIRRUBINA DIRECTA\t\tA\t0.5\tmg/dL\t0.0 - 0.2\nBILIRRUBINA INDIRECTA\t\tA\t0.7\tmg/dL\t0.2 - 0.8\nLDH DESHIDROGENASA LACTICA\nEstudio\t\tResultado\tUnidades\tValor de Referencia\nLDH DESHIDROGENASA LACTICA\t\t*\t142\tUI/L\t91 - 180\nAMILASA SERICA\nEstudio\t\tResultado\tUnidades\tValor de Referencia\nAMILASA\t\t*\t68\tU/L\t28 - 100\nCOLESTEROL\nEstudio\t\tResultado\tUnidades\tValor de Referencia\nCOLESTEROL\t\tB\t142\tmg/dL\t130 - 200\nTRIGLICERIDOS\nEstudio\t\tResultado\tUnidades\tValor de Referencia\nTRIGLICERIDOS\t\t*\t118\tmg/dL\t35 - 150\nCLORO\nEstudio\t\tResultado\tUnidades\tValor de Referencia\nCLORO\t\t*\t102\tmmol/L\t101.0 - 110.0\nSODIO\nEstudio\t\tResultado\tUnidades\tValor de Referencia\nSODIO\t\t*\t138\tmmol/L\t135.0 - 145.0\nPOTASIO\nEstudio\t\tResultado\tUnidades\tValor de Referencia\nPOTASIO\t\t*\t3.9\tmmol/L\t3.6 - 5.0\nCALCIO\nEstudio\t\tResultado\tUnidades\tValor de Referencia\nCALCIO EN SUERO\t\t*\t8.8\tmg/dL\t8.4 - 10.2\nFOSFORO EN SANGRE\nEstudio\t\tResultado\tUnidades\tValor de Referencia\nFOSFORO\t\t*\t3.8\tmg/dL\t2.5 - 4.6\n"
+        },
+        {
+          "id": "pitch-lab-trend-5",
+          "fecha": "10/05/2026",
+          "hora": "",
+          "resLabs": [
+            "BH\tHb 10.2*  Hto 35.8*  VCM 81  Leu 5.4  Plt 198",
+            "QS\tGlu 108* Cr 1.55* eTFG 49 BUN 28* TGL 132 COL 155",
+            "ESC\tNa 134* K 3.5*"
+          ],
+          "parsed": {
+            "Hb": 10.2,
+            "Hto": 35.8,
+            "Leu": 5.4,
+            "Plt": 198,
+            "Glu": 108,
+            "Cr": 1.55,
+            "eTFG": 49,
+            "BUN": 28,
+            "PCR": null,
+            "AU": null,
+            "TGL": 132,
+            "COL": 155,
+            "Na": 134,
+            "K": 3.5,
+            "Cl": null,
+            "HCO3": null,
+            "Ca": null,
+            "AST": null,
+            "ALT": null,
+            "FA": null,
+            "BT": null
+          },
+          "sourceText": "Expediente:\t0008421-7\tSolicitud:\t2603050188\nNombre:\tDEMO PÉREZ JUAN\tFecha Registro:\tMar 05 2026 7:18AM\nSexo:\tMASCULINO\tUbicación:\tSERVICIO DEMO\nEdad:\t67\tMedico:\tSERVICIO DEMO\n\nHEMATOLOGIA\nBIOMETRIA HEMATICA COMPLETA\nEstudio\t\tResultado\tUnidades\tValor de Referencia\nRBC\t\t4.55\tM/uL\t4.04 - 6.13\nHGB\t\t*\t10.20\tg/dL\t12.20 - 18.10\nHCT\t\t*\t35.8\t%\t37.7 - 53.7\nMCV\t\t*\t81\tfL\t80 - 97\nWBC\t\t*\t5.40\tK/uL\t4.00 - 11.00\nPLT\t\t*\t198\tK/uL\t142.00 - 424.00\n\nQUIMICA CLINICA\nGLUCOSA EN SANGRE\nEstudio\t\tResultado\tUnidades\tValor de Referencia\nGLUCOSA EN SANGRE\t\t*\t108\tmg/dL\t60 - 100\nNITROGENO DE LA UREA EN SANGRE\nEstudio\t\tResultado\tUnidades\tValor de Referencia\nNITROGENO DE LA UREA EN SANGRE\t\tA\t28\tmg/dL\t7 - 20\nCREATININA EN SANGRE\nEstudio\t\tResultado\tUnidades\tValor de Referencia\nCREATININA EN SANGRE\t\tA\t1.55\tmg/dL\t0.6 - 1.4\nCOLESTEROL\nEstudio\t\tResultado\tUnidades\tValor de Referencia\nCOLESTEROL\t\tB\t155\tmg/dL\t130 - 200\nTRIGLICERIDOS\nEstudio\t\tResultado\tUnidades\tValor de Referencia\nTRIGLICERIDOS\t\t*\t132\tmg/dL\t35 - 150\nSODIO\nEstudio\t\tResultado\tUnidades\tValor de Referencia\nSODIO\t\tB\t134\tmmol/L\t135.0 - 145.0\nPOTASIO\nEstudio\t\tResultado\tUnidades\tValor de Referencia\nPOTASIO\t\t*\t3.5\tmmol/L\t3.6 - 5.0\n"
+        },
+        {
+          "id": "pitch-lab-cult-at-1805",
+          "fecha": "18/05/2026",
+          "hora": "",
+          "resLabs": [
+            "ASPIRADO TRAQUEAL 18/05: ESCHERICHIA COLI · BLEE\nATB R: AMP, AMP-SULB, CAZ-AVI, CIPRO, FEP, GENT, LVX, PIP/TAZO, TETRA, TMP/SMX, TOBRA | I: CFXN | ESBL: AZTREONAM, CAZ, CFTX, CTX | S: AMIK, ERTA, IMI, MERO\nCuenta: 50,000 UFC/ML\n\nASPIRADO TRAQUEAL 18/05: ACINETOBACTER BAUMANNII COMPLEX\nATB R: AMIK, AMP-SULB, CAZ, CFTX, CIPRO, GENT, IMI, MERO, TMP/SMX, TOBRA | I: COLISTINA, FEP\nCuenta: 80,000 UFC/ML"
+          ],
+          "parsed": {
+            "Hb": null,
+            "Hto": null,
+            "Leu": null,
+            "Plt": null,
+            "Glu": null,
+            "Cr": null,
+            "eTFG": null,
+            "BUN": null,
+            "PCR": null,
+            "AU": null,
+            "TGL": null,
+            "COL": null,
+            "Na": null,
+            "K": null,
+            "Cl": null,
+            "HCO3": null,
+            "Ca": null,
+            "AST": null,
+            "ALT": null,
+            "FA": null,
+            "BT": null
+          },
+          "sourceText": "Expediente:\t0008421-7\tSolicitud:\t2605181061\nNombre:\tDEMO PÉREZ JUAN\tFecha Registro:\t18/05/2026 04:58:48 p. m.\nSexo:\tMASCULINO\tUbicación:\tSERVICIO DEMO\nEdad:\t67\tMedico:\tSERVICIO DEMO\n\nBACTERIOLOGIA\nASPIRADO TRAQUEAL\nPRODUCTO\n*\nTINCION DE GRAM\n*\nABUNDANTES COCOBACILOS GRAM NEGATIVO\nMICROORGANISMO\n*\nEscherichia coli\nCOMENTARIO:\n*\nAISLAMIENTO PRODUCTOR DE BETALACTAMASAS (BLEE)\nCUENTA\n*\n50,000 UFC/mL\nANTIBIOGRAMA\n*\nAMP/SULBACTAM\n>16/8\tR\nAMIKACINA\n<=16\tS\nAMPICILINA\n>16\tR\nAZTREONAM\n>16\tESBL\nCEFTRIAXONA\n>32\tESBL\nCEFTAZIDIMA\n>16\tESBL\nCEFOTAXIMA\n>16\tESBL\nCEFOXITINA\n16\tI\nCIPROFLOXACINA\n>2\tR\nCEFEPIMA\n>16\tR\nCEFTAZIDIMA/AVIBACTAM\n16\tR\nERTAPENEM\n<=0.5\tS\nGENTAMICINA\n>8\tR\nIMIPENEM\n<=1\tS\nLEVOFLOXACINA\n>4\tR\nMEROPENEM\n<=1\tS\nPIP/TAZO\n>64\tR\nTRIMET/SULFA\n>2/38\tR\nTETRACICLINA\n>8\tR\nTOBRAMICINA\n>8\tR\nMICROORGANISMO\n*\nAcinetobacter baumannii complex\nCUENTA\n*\n80,000 UFC/mL\nANTIBIOGRAMA\n*\nCOLISTINA\n<=2\tI\nAMP/SULBACTAM\n>16/8\tR\nAMIKACINA\n>32\tR\nCEFTRIAXONA\n>32\tR\nCEFTAZIDIMA\n>16\tR\nCIPROFLOXACINA\n>2\tR\nCEFEPIMA\n16\tI\nGENTAMICINA\n>8\tR\nIMIPENEM\n>4\tR\nMEROPENEM\n>8\tR\nTRIMET/SULFA\n>2/38\tR\nTOBRAMICINA\n>8\tR\n"
+        },
+        {
+          "id": "pitch-lab-cult-peritonitis",
+          "fecha": "07/05/2026",
+          "hora": "",
+          "resLabs": [
+            "LIQUIDO PERITONEAL (EN FRASCO DE HEMOCULTIVO ANAEROBIO) 07/05: PSEUDOMONAS AERUGINOSA\nATB R: CAZ, FEP, PIP/TAZO | S: CIPRO, IMI, LVX, MERO, TOBRA"
+          ],
+          "parsed": {
+            "Hb": null,
+            "Hto": null,
+            "Leu": null,
+            "Plt": null,
+            "Glu": null,
+            "Cr": null,
+            "eTFG": null,
+            "BUN": null,
+            "PCR": null,
+            "AU": null,
+            "TGL": null,
+            "COL": null,
+            "Na": null,
+            "K": null,
+            "Cl": null,
+            "HCO3": null,
+            "Ca": null,
+            "AST": null,
+            "ALT": null,
+            "FA": null,
+            "BT": null
+          },
+          "sourceText": "Expediente:\t0008421-7\tSolicitud:\t2605071010\nNombre:\tDEMO PÉREZ JUAN\tFecha Registro:\t07/05/2026 02:04:18 p. m.\nSexo:\tMASCULINO\tUbicación:\tSERVICIO DEMO\nEdad:\t67\tMedico:\tSERVICIO DEMO\n\nBACTERIOLOGIA\nLIQUIDO PERITONEAL\nPRODUCTO\n*\nEN FRASCO DE HEMOCULTIVO ANAEROBIO\nMICROORGANISMO\n*\nPseudomonas aeruginosa\nANTIBIOGRAMA\n*\nCEFTAZIDIMA\n>16\tR\nCIPROFLOXACINA\n<=1\tS\nCEFEPIMA\n>16\tR\nIMIPENEM\n2\tS\nLEVOFLOXACINA\n<=2\tS\nMEROPENEM\n<=1\tS\nPIP/TAZO\n>64\tR\nTOBRAMICINA\n<=4\tS\n"
+        },
+        {
+          "id": "pitch-lab-cult-uro",
+          "fecha": "05/05/2026",
+          "hora": "",
+          "resLabs": [
+            "UROCULTIVO POR SONDA 05/05: PSEUDOMONAS AERUGINOSA · Carb-R\nATB R: AMIK, AZTREONAM, CAZ, CAZ-AVI, CIPRO, FEP, IMI, LVX, MERO, TOBRA | S: PIP/TAZO\nCuenta: 50,000 UFC/ML"
+          ],
+          "parsed": {
+            "Hb": null,
+            "Hto": null,
+            "Leu": null,
+            "Plt": null,
+            "Glu": null,
+            "Cr": null,
+            "eTFG": null,
+            "BUN": null,
+            "PCR": null,
+            "AU": null,
+            "TGL": null,
+            "COL": null,
+            "Na": null,
+            "K": null,
+            "Cl": null,
+            "HCO3": null,
+            "Ca": null,
+            "AST": null,
+            "ALT": null,
+            "FA": null,
+            "BT": null
+          },
+          "sourceText": "Expediente:\t0008421-7\tSolicitud:\t2605050805\nNombre:\tDEMO PÉREZ JUAN\tFecha Registro:\t05/05/2026 06:16:18 p. m.\nSexo:\tMASCULINO\tUbicación:\tSERVICIO DEMO\nEdad:\t67\tMedico:\tSERVICIO DEMO\n\nBACTERIOLOGIA\nUROCULTIVO POR SONDA\nPRODUCTO\n*\nMICROORGANISMO\n*\nPseudomonas aeruginosa\nCOMENTARIO:\n*\nSE DETECTO CARBAPENEMASA. (METODO DE INACTIVACION DE DISCO)\nCUENTA DE KASS\n*\n50,000 UFC/mL\nANTIBIOGRAMA\n*\nAMIKACINA\n>32\tR\nAZTREONAM\n>16\tR\nCEFTAZIDIMA\n>16\tR\nCIPROFLOXACINA\n>2\tR\nCEFEPIMA\n>16\tR\nCEFTAZIDIMA/AVIBACTAM\n>16\tR\nIMIPENEM\n>4\tR\nLEVOFLOXACINA\n>4\tR\nMEROPENEM\n>8\tR\nPIP/TAZO\n<=16\tS\nTOBRAMICINA\n>8\tR\n"
+        },
+        {
+          "id": "pitch-lab-cult-at-2804",
+          "fecha": "28/04/2026",
+          "hora": "",
+          "resLabs": [
+            "ASPIRADO TRAQUEAL 28/04: ESCHERICHIA COLI · BLEE\nATB R: AMP, AMP-SULB, CIPRO, FEP, GENT, LVX, TETRA, TMP/SMX, TOBRA | I: PIP/TAZO | ESBL: CFTX, CTX | S: AMIK, CAZ-AVI, CFXN, ERTA, IMI, MERO\nCuenta: 100,000 UFC/ML\n\nASPIRADO TRAQUEAL 28/04: STAPHYLOCOCCUS AUREUS\nATB R: CFXN, ERITROMICI, PEN, TETRA | S: CLINDA, LINEZ, OXACILINA, RIFAMPICIN, TMP/SMX, VANCO\nCuenta: 20,000 UFC/ML\n\nASPIRADO TRAQUEAL 28/04: PROTEUS MIRABILIS · BLEE\nATB R: AMP, AMP-SULB, CFTX, CIPRO, FEP, LVX, TETRA, TMP/SMX, TOBRA | ESBL: CTX | S: AMIK, CAZ-AVI, CFXN, ERTA, GENT, MERO, PIP/TAZO\nCuenta: 100 UFC/ML"
+          ],
+          "parsed": {
+            "Hb": null,
+            "Hto": null,
+            "Leu": null,
+            "Plt": null,
+            "Glu": null,
+            "Cr": null,
+            "eTFG": null,
+            "BUN": null,
+            "PCR": null,
+            "AU": null,
+            "TGL": null,
+            "COL": null,
+            "Na": null,
+            "K": null,
+            "Cl": null,
+            "HCO3": null,
+            "Ca": null,
+            "AST": null,
+            "ALT": null,
+            "FA": null,
+            "BT": null
+          },
+          "sourceText": "Expediente:\t0008421-7\tSolicitud:\t2604280886\nNombre:\tDEMO PÉREZ JUAN\tFecha Registro:\t28/04/2026 01:45:42 p. m.\nSexo:\tMASCULINO\tUbicación:\tSERVICIO DEMO\nEdad:\t67\tMedico:\tSERVICIO DEMO\n\nBACTERIOLOGIA\nASPIRADO TRAQUEAL\nPRODUCTO\n*\nMICROORGANISMO\n*\nEscherichia coli\nCOMENTARIO:\n*\nAISLAMIENTO PRODUCTOR DE BETALACTAMASAS (BLEE)\nCUENTA\n*\n100,000 UFC/mL\nANTIBIOGRAMA\n*\nAMP/SULBACTAM\n>16/8\tR\nAMIKACINA\n<=16\tS\nAMPICILINA\n>16\tR\nCEFTRIAXONA\n>32\tESBL\nCEFOTAXIMA\n>16\tESBL\nCEFOXITINA\n<=8\tS\nCIPROFLOXACINA\n>2\tR\nCEFEPIMA\n>16\tR\nCEFTAZIDIMA/AVIBACTAM\n<=8\tS\nERTAPENEM\n<=0.5\tS\nGENTAMICINA\n>8\tR\nIMIPENEM\n<=1\tS\nLEVOFLOXACINA\n>4\tR\nMEROPENEM\n<=1\tS\nPIP/TAZO\n64\tI\nTRIMET/SULFA\n>2/38\tR\nTETRACICLINA\n>8\tR\nTOBRAMICINA\n>8\tR\nMICROORGANISMO\n*\nStaphylococcus aureus\nCUENTA\n*\n20,000 UFC/mL\nANTIBIOGRAMA\n*\nCLINDAMICINA\n0.5\tS\nSCREENING DE CEFOXITINA\n<=4\tNEG\nERITROMICINA\n>4\tR\nINDUCCION CLINDAMICINA\n<=4/0.5\tNEG\nLINEZOLID\n<=2\tS\nOXACILINA\n1\tS\nPENICILINA\n>8\tBLAC\nRIFAMPICINA\n<=1\tS\nTRIMET/SULFA\n<=0.5/9.5\tS\nTETRACICLINA\n>8\tR\nVANCOMICINA\n1\tS\nMICROORGANISMO\n*\nProteus mirabilis\nCOMENTARIO:\n*\nAISLAMIENTO PRODUCTOR DE BETALACTAMASAS (BLEE)\nCUENTA\n*\n100 UFC/mL\nANTIBIOGRAMA\n*\nAMP/SULBACTAM\n>16/8\tR\nAMIKACINA\n<=16\tS\nAMPICILINA\n>16\tR\nCEFTRIAXONA\n>32\tR\nCEFOTAXIMA\n>16\tESBL\nCEFOXITINA\n<=8\tS\nCIPROFLOXACINA\n>2\tR\nCEFEPIMA\n>16\tR\nCEFTAZIDIMA/AVIBACTAM\n<=8\tS\nERTAPENEM\n<=0.5\tS\nGENTAMICINA\n<=4\tS\nLEVOFLOXACINA\n>4\tR\nMEROPENEM\n<=1\tS\nPIP/TAZO\n<=16\tS\nTRIMET/SULFA\n>2/38\tR\nTETRACICLINA\n>8\tR\nTOBRAMICINA\n>8\tR\n"
+        },
+        {
+          "id": "pitch-lab-cult-hemo",
+          "fecha": "11/04/2026",
+          "hora": "",
+          "resLabs": [
+            "HEMOCULTIVO (PERIFERICO IZQUIERDO) 11/04: PSEUDOMONAS AERUGINOSA · BLEE\nATB R: CAZ | I: FEP | S: CIPRO, MERO, PIP/TAZO"
+          ],
+          "parsed": {
+            "Hb": null,
+            "Hto": null,
+            "Leu": null,
+            "Plt": null,
+            "Glu": null,
+            "Cr": null,
+            "eTFG": null,
+            "BUN": null,
+            "PCR": null,
+            "AU": null,
+            "TGL": null,
+            "COL": null,
+            "Na": null,
+            "K": null,
+            "Cl": null,
+            "HCO3": null,
+            "Ca": null,
+            "AST": null,
+            "ALT": null,
+            "FA": null,
+            "BT": null
+          },
+          "sourceText": "Expediente:\t0008421-7\tSolicitud:\t2605000001\nNombre:\tDEMO PÉREZ JUAN\tFecha Registro:\t11/04/2026 08:00:00 a. m.\nSexo:\tMASCULINO\tUbicación:\tSERVICIO DEMO\nEdad:\t67\tMedico:\tSERVICIO DEMO\n\nBACTERIOLOGIA\nHEMOCULTIVO\nPRODUCTO\n*\nPERIFERICO IZQUIERDO\nMICROORGANISMO\n*\nPseudomonas aeruginosa\nCOMENTARIO:\n*\nAISLAMIENTO PRODUCTOR DE BETALACTAMASAS (BLEE)\nANTIBIOGRAMA\n*\nCEFTAZIDIMA\n>16\tR\nCEFEPIMA\n16\tI\nCIPROFLOXACINA\n<=1\tS\nMEROPENEM\n<=1\tS\nPIP/TAZO\n64\tS\n"
+        }
+      ],
+      "medReceta": {
+        "fechaActualizacion": "29/05/2026",
+        "items": [
+          {
+            "id": "pitch-med-1",
+            "nombreRaw": "PARACETAMOL 1 G SOL INY (*)",
+            "viaRaw": "VIA INTRAVENOSA",
+            "dosisRaw": "1 G //",
+            "frecuenciaRaw": "CADA 8 HORAS",
+            "suspendido": false,
+            "diaTratamiento": null
+          },
+          {
+            "id": "pitch-med-2",
+            "nombreRaw": "CEFEPIME 1 G SOL INY (*)",
+            "viaRaw": "VIA INTRAVENOSA",
+            "dosisRaw": "1 G // *DIA# 2*",
+            "frecuenciaRaw": "CADA 8 HORAS",
+            "suspendido": false,
+            "diaTratamiento": 2
+          }
+        ]
+      }
+    }
+  ]
+}

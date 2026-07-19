@@ -1,0 +1,276 @@
+{
+  "nodes": [
+    {
+      "id": "document:docs/superpowers/plans/2026-05-26-manejo-guia-clinica.md",
+      "type": "document",
+      "name": "2026-05-26-manejo-guia-clinica.md",
+      "filePath": "docs/superpowers/plans/2026-05-26-manejo-guia-clinica.md",
+      "summary": "Implementation plan: Guía clínica unificada (Manejo) — Implementation Plan.",
+      "tags": [
+        "documentation",
+        "implementation-plan",
+        "lan-sync",
+        "design"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/superpowers/plans/2026-05-26-manejo-room-drive.md",
+      "type": "document",
+      "name": "2026-05-26-manejo-room-drive.md",
+      "filePath": "docs/superpowers/plans/2026-05-26-manejo-room-drive.md",
+      "summary": "Implementation plan: Manejo modular + sala LAN persistente (room drive) — Implementation Plan.",
+      "tags": [
+        "documentation",
+        "implementation-plan",
+        "lan-sync"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/superpowers/plans/2026-05-28-pitch-tour.md",
+      "type": "document",
+      "name": "2026-05-28-pitch-tour.md",
+      "filePath": "docs/superpowers/plans/2026-05-28-pitch-tour.md",
+      "summary": "Implementation plan: Tour pitch (presentación) Implementation Plan.",
+      "tags": [
+        "documentation",
+        "implementation-plan",
+        "lan-sync"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/superpowers/plans/2026-05-28-tour-pitch-remediation.md",
+      "type": "document",
+      "name": "2026-05-28-tour-pitch-remediation.md",
+      "filePath": "docs/superpowers/plans/2026-05-28-tour-pitch-remediation.md",
+      "summary": "Implementation plan: Tour pitch remediation Implementation Plan.",
+      "tags": [
+        "documentation",
+        "implementation-plan",
+        "lan-sync"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/superpowers/plans/2026-05-29-censo-pdf.md",
+      "type": "document",
+      "name": "2026-05-29-censo-pdf.md",
+      "filePath": "docs/superpowers/plans/2026-05-29-censo-pdf.md",
+      "summary": "Implementation plan: Censo de guardia (PDF) — Implementation Plan.",
+      "tags": [
+        "documentation",
+        "implementation-plan",
+        "lan-sync"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/superpowers/plans/2026-05-29-vpo.md",
+      "type": "document",
+      "name": "2026-05-29-vpo.md",
+      "filePath": "docs/superpowers/plans/2026-05-29-vpo.md",
+      "summary": "Implementation plan: VPO (Valoración preoperatoria) Implementation Plan.",
+      "tags": [
+        "documentation",
+        "implementation-plan",
+        "lan-sync"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/superpowers/plans/2026-05-30-clinical-calculator-safety.md",
+      "type": "document",
+      "name": "2026-05-30-clinical-calculator-safety.md",
+      "filePath": "docs/superpowers/plans/2026-05-30-clinical-calculator-safety.md",
+      "summary": "Implementation plan: Clinical Calculator Safety Implementation Plan.",
+      "tags": [
+        "documentation",
+        "implementation-plan",
+        "lan-sync",
+        "clinical"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/superpowers/plans/2026-05-30-clinical-conflict-resolution.md",
+      "type": "document",
+      "name": "2026-05-30-clinical-conflict-resolution.md",
+      "filePath": "docs/superpowers/plans/2026-05-30-clinical-conflict-resolution.md",
+      "summary": "Implementation plan: Clinical Conflict Resolution Implementation Plan.",
+      "tags": [
+        "documentation",
+        "implementation-plan",
+        "lan-sync",
+        "clinical"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/superpowers/plans/2026-05-30-lan-host-concurrency.md",
+      "type": "document",
+      "name": "2026-05-30-lan-host-concurrency.md",
+      "filePath": "docs/superpowers/plans/2026-05-30-lan-host-concurrency.md",
+      "summary": "Implementation plan: LAN host concurrency (Phase 3a) — Implementation Plan.",
+      "tags": [
+        "documentation",
+        "implementation-plan",
+        "lan-sync"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/superpowers/plans/2026-05-30-lan-security-hardening.md",
+      "type": "document",
+      "name": "2026-05-30-lan-security-hardening.md",
+      "filePath": "docs/superpowers/plans/2026-05-30-lan-security-hardening.md",
+      "summary": "Implementation plan: LAN Security Hardening Implementation Plan.",
+      "tags": [
+        "documentation",
+        "implementation-plan",
+        "lan-sync",
+        "security"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/superpowers/plans/2026-05-30-native-document-generation.md",
+      "type": "document",
+      "name": "2026-05-30-native-document-generation.md",
+      "filePath": "docs/superpowers/plans/2026-05-30-native-document-generation.md",
+      "summary": "Implementation plan: Native Document Generation Implementation Plan.",
+      "tags": [
+        "documentation",
+        "implementation-plan",
+        "lan-sync"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/superpowers/plans/2026-05-30-r-plus-security-architecture-remediation-plan.md",
+      "type": "document",
+      "name": "2026-05-30-r-plus-security-architecture-remediation-plan.md",
+      "filePath": "docs/superpowers/plans/2026-05-30-r-plus-security-architecture-remediation-plan.md",
+      "summary": "Implementation plan: R+ Security and Architecture Remediation Implementation Plan.",
+      "tags": [
+        "documentation",
+        "implementation-plan",
+        "lan-sync",
+        "security"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/superpowers/plans/2026-05-30-static-clinical-history.md",
+      "type": "document",
+      "name": "2026-05-30-static-clinical-history.md",
+      "filePath": "docs/superpowers/plans/2026-05-30-static-clinical-history.md",
+      "summary": "Implementation plan: Static Clinical History — Implementation Plan.",
+      "tags": [
+        "documentation",
+        "implementation-plan",
+        "lan-sync",
+        "clinical"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/superpowers/plans/2026-05-31-clinical-access-dashboard.md",
+      "type": "document",
+      "name": "2026-05-31-clinical-access-dashboard.md",
+      "filePath": "docs/superpowers/plans/2026-05-31-clinical-access-dashboard.md",
+      "summary": "Implementation plan: Clinical Access Controls & Shared Dashboard Implementation Plan (v1.9.1).",
+      "tags": [
+        "documentation",
+        "implementation-plan",
+        "lan-sync",
+        "clinical"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/superpowers/plans/2026-05-31-clinical-teams-handoff-v2.md",
+      "type": "document",
+      "name": "2026-05-31-clinical-teams-handoff-v2.md",
+      "filePath": "docs/superpowers/plans/2026-05-31-clinical-teams-handoff-v2.md",
+      "summary": "Implementation plan: Clinical Teams, Entrega & Scope V2 Implementation Plan.",
+      "tags": [
+        "documentation",
+        "implementation-plan",
+        "lan-sync",
+        "clinical"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/superpowers/plans/2026-05-31-guardia-letter-cycle-fix.md",
+      "type": "document",
+      "name": "2026-05-31-guardia-letter-cycle-fix.md",
+      "filePath": "docs/superpowers/plans/2026-05-31-guardia-letter-cycle-fix.md",
+      "summary": "Implementation plan: Guardia Letter-Cycle Fix Implementation Plan.",
+      "tags": [
+        "documentation",
+        "implementation-plan",
+        "lan-sync",
+        "clinical"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/superpowers/plans/2026-05-31-historia-clinica-institutional-format.md",
+      "type": "document",
+      "name": "2026-05-31-historia-clinica-institutional-format.md",
+      "filePath": "docs/superpowers/plans/2026-05-31-historia-clinica-institutional-format.md",
+      "summary": "Implementation plan: Historia Clínica Institutional Format — Implementation Plan.",
+      "tags": [
+        "documentation",
+        "implementation-plan",
+        "lan-sync",
+        "clinical"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/superpowers/plans/2026-05-31-onboarding-overhaul.md",
+      "type": "document",
+      "name": "2026-05-31-onboarding-overhaul.md",
+      "filePath": "docs/superpowers/plans/2026-05-31-onboarding-overhaul.md",
+      "summary": "Implementation plan: Onboarding Overhaul Implementation Plan.",
+      "tags": [
+        "documentation",
+        "implementation-plan",
+        "lan-sync"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/superpowers/plans/2026-05-31-perfil-farmacoterapeutico.md",
+      "type": "document",
+      "name": "2026-05-31-perfil-farmacoterapeutico.md",
+      "filePath": "docs/superpowers/plans/2026-05-31-perfil-farmacoterapeutico.md",
+      "summary": "Implementation plan: Perfil farmacoterapéutico histórico — Implementation Plan.",
+      "tags": [
+        "documentation",
+        "implementation-plan",
+        "lan-sync"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/superpowers/plans/2026-05-31-sala-clinico-navigation-eventualidades.md",
+      "type": "document",
+      "name": "2026-05-31-sala-clinico-navigation-eventualidades.md",
+      "filePath": "docs/superpowers/plans/2026-05-31-sala-clinico-navigation-eventualidades.md",
+      "summary": "Implementation plan: Sala Clínico Navigation + Eventualidades — Implementation Plan.",
+      "tags": [
+        "documentation",
+        "implementation-plan",
+        "lan-sync",
+        "clinical"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": []
+}

@@ -1,0 +1,23 @@
+---
+description: DeepSeek GUI (Kun) integration — entry point and rules
+alwaysApply: true
+globs: []
+---
+
+# DeepSeek GUI Integration
+
+This rule ensures DeepSeek GUI agents (Kun) follow the same conventions as other AI agents working on R+.
+
+## Entry point for Kun
+
+1. `.deepseek/rules.md` — DeepSeek GUI-specific rules
+2. `.cursor/rules/documentation-sync.mdc` — Documentation sync rules
+3. `.cursor/rules/project-context.mdc` — Code map
+
+## Documentation architecture
+
+See `docs/core/00-system-index.md` for the full hub.
+
+## Agent changelog
+
+All agents (including Kun) must append to `docs/logs/agent-changelog.md` at session wrap-up.

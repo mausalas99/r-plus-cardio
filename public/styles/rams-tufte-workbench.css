@@ -1,0 +1,126 @@
+/* Rams + Tufte workbench layer — equipment chrome + chart data surfaces
+ * Loads after workbench-surfaces.css. Global Rams tokens: public/tokens.css */
+
+/* ── Rams · workbench cards: border not shadow ─────────────────── */
+#appcontent-lab .main-work-scroll > .card,
+#appcontent-lab #lab-input-section,
+#appcontent-lab #lab-output-section,
+#appcontent-lab #lab-history-card,
+#appcontent-lab #lab-diagrams-section,
+#appcontent-lab #lab-banner,
+#patient-expediente .card,
+.patient-expediente-classic .card,
+#patient-expediente .listado-section,
+.patient-expediente-classic .listado-section,
+.patient-expediente-classic .exp-segment-panel,
+.ea-card,
+#patient-expediente .ea-card,
+.patient-expediente-classic .ea-card {
+  border: var(--border-hairline) !important;
+  box-shadow: none !important;
+  background: var(--equipment-surface);
+}
+
+/* Pendientes — sin ventana contenedora (filas flotantes; workbench-surfaces.css) */
+.patient-expediente-classic .exp-pendientes-mount > .exp-segment-panel,
+.exp-pendientes-mount > .exp-segment-panel.active {
+  border: none !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  gap: 0 !important;
+}
+
+html.ui-density-normal #appcontent-lab > .main-work-scroll,
+html.ui-density-normal #appcontent-agenda > .rpc-proc-agenda-root,
+html.ui-density-normal #appcontent-med > .med-active-shell,
+html.ui-density-normal .patient-expediente-classic {
+  box-shadow: none !important;
+  border: var(--border-hairline) !important;
+}
+
+/* Sidebar census · Rams flat tiles (radius from sidebar.css) */
+aside.patient-sidebar .patient-card {
+  box-shadow: none;
+  background: var(--color-surface);
+}
+
+aside.patient-sidebar .patient-card:hover {
+  box-shadow: none;
+  border-color: color-mix(in oklab, var(--action) 22%, var(--border));
+}
+
+aside.patient-sidebar .patient-card.active {
+  border: 1px solid color-mix(in oklab, var(--color-accent) 50%, var(--border));
+  box-shadow: none;
+  background: color-mix(in oklab, var(--action) 5%, var(--surface));
+}
+
+/* Primary actions · Rams: no glow */
+aside.patient-sidebar .btn-add {
+  box-shadow: none;
+}
+
+aside.patient-sidebar .btn-add:hover {
+  box-shadow: none;
+}
+
+/* ── Tufte · chart frames + summary tiles ───────────────────────── */
+.ea-chart-block,
+.ea-charts-summary-tile {
+  border: var(--border-hairline);
+  border-radius: var(--equipment-radius);
+  background: var(--wb-chart-surface);
+  box-shadow: none;
+}
+
+.ea-charts-summary-tile-value,
+.ea-chart-block-title,
+.ea-chart-subtitle,
+#appcontent-lab .lab-value,
+#appcontent-lab .lab-grid .lab-item .lab-value {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.ea-charts-summary-tile-value {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.ea-chart-canvas-wrap,
+.ea-charts-canvas-cell {
+  background: color-mix(in oklab, var(--color-paper) 55%, var(--surface));
+  border: 1px solid color-mix(in oklab, var(--color-ink) 6%, transparent);
+  border-radius: var(--equipment-radius);
+}
+
+/* Vitals family nav · Rams signal dot */
+.ea-vitals-family-btn--active {
+  padding-left: 16px;
+}
+
+.ea-vitals-family-btn--active::before {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 50%;
+  width: 5px;
+  height: 5px;
+  margin-top: -2.5px;
+  border-radius: 50%;
+  background: var(--equipment-active-dot);
+}
+
+.ea-vitals-family-btn--active {
+  position: relative;
+}
+
+html.high-contrast .ea-card,
+html.high-contrast .ea-chart-block,
+html.high-contrast .ea-charts-summary-tile,
+html.high-contrast #appcontent-lab .card {
+  box-shadow: none !important;
+  border: 1px solid var(--border) !important;
+}

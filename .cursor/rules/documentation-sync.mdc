@@ -1,0 +1,28 @@
+---
+description: Keep docs hub aligned when adding features or architecture
+alwaysApply: true
+---
+
+# Documentation Sync
+
+## Agent read order
+
+1. `docs/core/01-vision-north-star.md` — product trade-offs
+2. `.cursor/rules/project-context.mdc` — code map (this repo's fast index)
+3. `docs/core/00-system-index.md` — full docs hub
+
+## When to update docs
+
+| Change | Update |
+|--------|--------|
+| New feature domain | `docs/features/features-index.md`; optional `feat-*.md` |
+| New parser/engine | `docs/logic/logic-index.md` |
+| Schema bump | `docs/database/database-index.md` |
+| Architectural commit | `project-context.mdc` changelog (see `sync-context-on-commit.mdc`) |
+| Large feature | `docs/superpowers/specs/` before coding |
+| Strategy pivot | `docs/core/01-vision-north-star.md` + `18-knowledge-capture.md` |
+| Session wrap-up | `docs/logs/agent-changelog.md` |
+
+Do **not** hand-edit `public/js/app.bundle.mjs` or chunks. Do **not** auto-modify `docs/superpowers/plans/` unless executing that plan.
+
+Blueprint: `docs/core/17-docs-blueprint.md`

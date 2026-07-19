@@ -1,0 +1,28 @@
+R+ 7.2.3 (LAN anfitrión ward empaquetado)
+=============================================
+
+Fecha: 2026-06-08
+
+## Resumen
+
+Parche sobre 7.2.2: la dirección del anfitrión del turno (`http://10.0.57.52:3738`) viene empaquetada en clientes nuevos — prellenada en ⇄, incluida en descubrimiento por PIN y en el barrido ward sin configuración manual. Sin cambio de esquema SQLCipher (sigue v14).
+
+## Nuevo / mejorado
+
+- **Anfitrión ward empaquetado** — `bundledWardHostUrl()` en `clinical-settings.mjs` fija `http://10.0.57.52:3738` para el hospital; clientes lo ven al conectar con PIN del turno.
+- **Descubrimiento automático** — La URL empaquetada es la primera en `listWardHostUrlsForProbe()`: shift-PIN, escaneo ⇄ y reconexión la prueban aunque el registro ward esté vacío.
+- **Subred 10.0.57** — El prefijo ward empaquetado entra en barridos beacon cross-VLAN junto a NIC local y prefijos guardados.
+- **UI ⇄** — Campo «Dirección del anfitrión» prellenado y placeholder con la URL del turno.
+
+## Operación en guardia
+
+Parche sobre **7.2.2**: instala en **todas** las estaciones del turno el mismo día. Los clientes nuevos ya traen la dirección del R4; solo hace falta el PIN del turno. Esquema SQLCipher **v14**.
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v7.2.3
+
+- Mac: `R+-7.2.3-arm64.dmg`, `R+-7.2.3-x64.dmg` (y zip para auto-update).
+- Windows: `R+-7.2.3-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye write-release-yml.js).

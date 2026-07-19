@@ -1,0 +1,3507 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 24,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "lib/drive-import/parse-drive-labs.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 204,
+      "nonEmptyLines": 180,
+      "functions": [
+        {
+          "name": "normalizeDriveLabPanel",
+          "startLine": 26,
+          "endLine": 34,
+          "params": [
+            "token"
+          ]
+        },
+        {
+          "name": "isDriveLabDateLine",
+          "startLine": 40,
+          "endLine": 42,
+          "params": [
+            "line"
+          ]
+        },
+        {
+          "name": "isDriveLabPanelLine",
+          "startLine": 48,
+          "endLine": 54,
+          "params": [
+            "line"
+          ]
+        },
+        {
+          "name": "collapseLabWhitespace",
+          "startLine": 60,
+          "endLine": 65,
+          "params": [
+            "content"
+          ]
+        },
+        {
+          "name": "driveLabPanelLineToResLab",
+          "startLine": 71,
+          "endLine": 89,
+          "params": [
+            "line"
+          ]
+        },
+        {
+          "name": "formatDriveLabFecha",
+          "startLine": 96,
+          "endLine": 101,
+          "params": [
+            "partial",
+            "documentYear"
+          ]
+        },
+        {
+          "name": "parseDriveLaboratorios",
+          "startLine": 108,
+          "endLine": 179,
+          "params": [
+            "body",
+            "opts"
+          ]
+        },
+        {
+          "name": "extractLaboratoriosBody",
+          "startLine": 186,
+          "endLine": 204,
+          "params": [
+            "rawText",
+            "sectionBody"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "normalizeDriveLabPanel",
+          "line": 26,
+          "isDefault": false
+        },
+        {
+          "name": "isDriveLabDateLine",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "isDriveLabPanelLine",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "driveLabPanelLineToResLab",
+          "line": 71,
+          "isDefault": false
+        },
+        {
+          "name": "formatDriveLabFecha",
+          "line": 96,
+          "isDefault": false
+        },
+        {
+          "name": "parseDriveLaboratorios",
+          "line": 108,
+          "isDefault": false
+        },
+        {
+          "name": "extractLaboratoriosBody",
+          "line": 186,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "normalizeDriveLabPanel",
+          "callee": "String(token || '').trim().toUpperCase",
+          "lineNumber": 27
+        },
+        {
+          "caller": "normalizeDriveLabPanel",
+          "callee": "String(token || '').trim",
+          "lineNumber": 27
+        },
+        {
+          "caller": "normalizeDriveLabPanel",
+          "callee": "String",
+          "lineNumber": 27
+        },
+        {
+          "caller": "normalizeDriveLabPanel",
+          "callee": "String(token || '').trim",
+          "lineNumber": 33
+        },
+        {
+          "caller": "normalizeDriveLabPanel",
+          "callee": "String",
+          "lineNumber": 33
+        },
+        {
+          "caller": "isDriveLabDateLine",
+          "callee": "parseDateLine",
+          "lineNumber": 41
+        },
+        {
+          "caller": "isDriveLabPanelLine",
+          "callee": "String(line || '').trim",
+          "lineNumber": 49
+        },
+        {
+          "caller": "isDriveLabPanelLine",
+          "callee": "String",
+          "lineNumber": 49
+        },
+        {
+          "caller": "isDriveLabPanelLine",
+          "callee": "isDriveLabDateLine",
+          "lineNumber": 51
+        },
+        {
+          "caller": "isDriveLabPanelLine",
+          "callee": "PANEL_PREFIX_RE.test",
+          "lineNumber": 52
+        },
+        {
+          "caller": "isDriveLabPanelLine",
+          "callee": "INFER_PANEL_RULES.some",
+          "lineNumber": 53
+        },
+        {
+          "caller": "isDriveLabPanelLine",
+          "callee": "r.re.test",
+          "lineNumber": 53
+        },
+        {
+          "caller": "collapseLabWhitespace",
+          "callee": "String(content || '')\n    .replace(/\\t/g, ' ')\n    .replace(/\\s+/g, ' ')\n    .trim",
+          "lineNumber": 61
+        },
+        {
+          "caller": "collapseLabWhitespace",
+          "callee": "String(content || '')\n    .replace(/\\t/g, ' ')\n    .replace",
+          "lineNumber": 61
+        },
+        {
+          "caller": "collapseLabWhitespace",
+          "callee": "String(content || '')\n    .replace",
+          "lineNumber": 61
+        },
+        {
+          "caller": "collapseLabWhitespace",
+          "callee": "String",
+          "lineNumber": 61
+        },
+        {
+          "caller": "driveLabPanelLineToResLab",
+          "callee": "collapseLabWhitespace",
+          "lineNumber": 72
+        },
+        {
+          "caller": "driveLabPanelLineToResLab",
+          "callee": "PANEL_PREFIX_RE.exec",
+          "lineNumber": 75
+        },
+        {
+          "caller": "driveLabPanelLineToResLab",
+          "callee": "normalizeDriveLabPanel",
+          "lineNumber": 77
+        },
+        {
+          "caller": "driveLabPanelLineToResLab",
+          "callee": "collapseLabWhitespace",
+          "lineNumber": 78
+        },
+        {
+          "caller": "driveLabPanelLineToResLab",
+          "callee": "collapsed.slice",
+          "lineNumber": 78
+        },
+        {
+          "caller": "driveLabPanelLineToResLab",
+          "callee": "rule.re.test",
+          "lineNumber": 84
+        },
+        {
+          "caller": "formatDriveLabFecha",
+          "callee": "resolveYear",
+          "lineNumber": 97
+        },
+        {
+          "caller": "formatDriveLabFecha",
+          "callee": "String(partial.day).padStart",
+          "lineNumber": 98
+        },
+        {
+          "caller": "formatDriveLabFecha",
+          "callee": "String",
+          "lineNumber": 98
+        },
+        {
+          "caller": "formatDriveLabFecha",
+          "callee": "String(partial.month).padStart",
+          "lineNumber": 99
+        },
+        {
+          "caller": "formatDriveLabFecha",
+          "callee": "String",
+          "lineNumber": 99
+        },
+        {
+          "caller": "parseDriveLaboratorios",
+          "callee": "normalizeDrivePaste",
+          "lineNumber": 110
+        },
+        {
+          "caller": "parseDriveLaboratorios",
+          "callee": "text.trim",
+          "lineNumber": 113
+        },
+        {
+          "caller": "parseDriveLaboratorios",
+          "callee": "inferDocumentYearFromText",
+          "lineNumber": 116
+        },
+        {
+          "caller": "flushDay",
+          "callee": "currentLines.forEach",
+          "lineNumber": 129
+        },
+        {
+          "caller": "flushDay",
+          "callee": "driveLabPanelLineToResLab",
+          "lineNumber": 130
+        },
+        {
+          "caller": "flushDay",
+          "callee": "resLabs.push",
+          "lineNumber": 131
+        },
+        {
+          "caller": "flushDay",
+          "callee": "warnings.push",
+          "lineNumber": 139
+        },
+        {
+          "caller": "flushDay",
+          "callee": "sets.push",
+          "lineNumber": 144
+        },
+        {
+          "caller": "flushDay",
+          "callee": "currentSource.join('\\n').trim",
+          "lineNumber": 148
+        },
+        {
+          "caller": "flushDay",
+          "callee": "currentSource.join",
+          "lineNumber": 148
+        },
+        {
+          "caller": "parseDriveLaboratorios",
+          "callee": "text.split('\\n').forEach",
+          "lineNumber": 154
+        },
+        {
+          "caller": "parseDriveLaboratorios",
+          "callee": "text.split",
+          "lineNumber": 154
+        },
+        {
+          "caller": "parseDriveLaboratorios",
+          "callee": "rawLine.trim",
+          "lineNumber": 155
+        },
+        {
+          "caller": "parseDriveLaboratorios",
+          "callee": "LAB_SECTION_STOP_RE.test",
+          "lineNumber": 157
+        },
+        {
+          "caller": "parseDriveLaboratorios",
+          "callee": "parseDateLine",
+          "lineNumber": 159
+        },
+        {
+          "caller": "parseDriveLaboratorios",
+          "callee": "flushDay",
+          "lineNumber": 161
+        },
+        {
+          "caller": "parseDriveLaboratorios",
+          "callee": "formatDriveLabFecha",
+          "lineNumber": 162
+        },
+        {
+          "caller": "parseDriveLaboratorios",
+          "callee": "isDriveLabPanelLine",
+          "lineNumber": 167
+        },
+        {
+          "caller": "parseDriveLaboratorios",
+          "callee": "warnings.push",
+          "lineNumber": 169
+        },
+        {
+          "caller": "parseDriveLaboratorios",
+          "callee": "line.slice",
+          "lineNumber": 169
+        },
+        {
+          "caller": "parseDriveLaboratorios",
+          "callee": "currentLines.push",
+          "lineNumber": 172
+        },
+        {
+          "caller": "parseDriveLaboratorios",
+          "callee": "currentSource.push",
+          "lineNumber": 173
+        },
+        {
+          "caller": "parseDriveLaboratorios",
+          "callee": "flushDay",
+          "lineNumber": 176
+        },
+        {
+          "caller": "extractLaboratoriosBody",
+          "callee": "String(sectionBody || '').trim",
+          "lineNumber": 187
+        },
+        {
+          "caller": "extractLaboratoriosBody",
+          "callee": "String",
+          "lineNumber": 187
+        },
+        {
+          "caller": "extractLaboratoriosBody",
+          "callee": "normalizeDrivePaste",
+          "lineNumber": 190
+        },
+        {
+          "caller": "extractLaboratoriosBody",
+          "callee": "/\\nLABORATORIOS(?:\\s+DE\\s+INGRESO)?\\s*\\n/i.exec",
+          "lineNumber": 191
+        },
+        {
+          "caller": "extractLaboratoriosBody",
+          "callee": "text.slice",
+          "lineNumber": 194
+        },
+        {
+          "caller": "extractLaboratoriosBody",
+          "callee": "after.split",
+          "lineNumber": 195
+        },
+        {
+          "caller": "extractLaboratoriosBody",
+          "callee": "line.trim",
+          "lineNumber": 199
+        },
+        {
+          "caller": "extractLaboratoriosBody",
+          "callee": "LAB_SECTION_STOP_RE.test",
+          "lineNumber": 200
+        },
+        {
+          "caller": "extractLaboratoriosBody",
+          "callee": "out.push",
+          "lineNumber": 201
+        },
+        {
+          "caller": "extractLaboratoriosBody",
+          "callee": "out.join('\\n').trim",
+          "lineNumber": 203
+        },
+        {
+          "caller": "extractLaboratoriosBody",
+          "callee": "out.join",
+          "lineNumber": 203
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 7,
+        "functionCount": 8,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/drive-import/parse-drive-labs.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 70,
+      "nonEmptyLines": 60,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/drive-import/parse-header.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 139,
+      "nonEmptyLines": 126,
+      "functions": [
+        {
+          "name": "parsePipeLine",
+          "startLine": 21,
+          "endLine": 48,
+          "params": [
+            "line"
+          ]
+        },
+        {
+          "name": "parsePipeHeader",
+          "startLine": 54,
+          "endLine": 63,
+          "params": [
+            "firstLines"
+          ]
+        },
+        {
+          "name": "parseFichaIdentificacion",
+          "startLine": 69,
+          "endLine": 120,
+          "params": [
+            "block"
+          ]
+        },
+        {
+          "name": "mergeHeader",
+          "startLine": 127,
+          "endLine": 139,
+          "params": [
+            "pipe",
+            "ficha"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "parsePipeHeader",
+          "line": 54,
+          "isDefault": false
+        },
+        {
+          "name": "parseFichaIdentificacion",
+          "line": 69,
+          "isDefault": false
+        },
+        {
+          "name": "mergeHeader",
+          "line": 127,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "parsePipeLine",
+          "callee": "String(line || '').trim",
+          "lineNumber": 22
+        },
+        {
+          "caller": "parsePipeLine",
+          "callee": "String",
+          "lineNumber": 22
+        },
+        {
+          "caller": "parsePipeLine",
+          "callee": "t.includes",
+          "lineNumber": 23
+        },
+        {
+          "caller": "parsePipeLine",
+          "callee": "PIPE_WITH_CAMA_RE.exec",
+          "lineNumber": 25
+        },
+        {
+          "caller": "parsePipeLine",
+          "callee": "withCama[1].trim",
+          "lineNumber": 28
+        },
+        {
+          "caller": "parsePipeLine",
+          "callee": "withCama[2].trim",
+          "lineNumber": 29
+        },
+        {
+          "caller": "parsePipeLine",
+          "callee": "withCama[3].trim",
+          "lineNumber": 30
+        },
+        {
+          "caller": "parsePipeLine",
+          "callee": "withCama[4].trim",
+          "lineNumber": 31
+        },
+        {
+          "caller": "parsePipeLine",
+          "callee": "withCama[5].trim",
+          "lineNumber": 32
+        },
+        {
+          "caller": "parsePipeLine",
+          "callee": "PIPE_NAME_FIRST_RE.exec",
+          "lineNumber": 36
+        },
+        {
+          "caller": "parsePipeLine",
+          "callee": "/^\\d+(?:-\\d+)?$/.test",
+          "lineNumber": 37
+        },
+        {
+          "caller": "parsePipeLine",
+          "callee": "nameFirst[1].trim",
+          "lineNumber": 37
+        },
+        {
+          "caller": "parsePipeLine",
+          "callee": "nameFirst[1].trim",
+          "lineNumber": 40
+        },
+        {
+          "caller": "parsePipeLine",
+          "callee": "nameFirst[2].trim",
+          "lineNumber": 41
+        },
+        {
+          "caller": "parsePipeLine",
+          "callee": "nameFirst[3].trim",
+          "lineNumber": 42
+        },
+        {
+          "caller": "parsePipeLine",
+          "callee": "nameFirst[4].trim",
+          "lineNumber": 43
+        },
+        {
+          "caller": "parsePipeHeader",
+          "callee": "Array.isArray",
+          "lineNumber": 55
+        },
+        {
+          "caller": "parsePipeHeader",
+          "callee": "String(firstLines || '').split",
+          "lineNumber": 55
+        },
+        {
+          "caller": "parsePipeHeader",
+          "callee": "String",
+          "lineNumber": 55
+        },
+        {
+          "caller": "parsePipeHeader",
+          "callee": "lines.slice",
+          "lineNumber": 56
+        },
+        {
+          "caller": "parsePipeHeader",
+          "callee": "String(raw || '').trim",
+          "lineNumber": 57
+        },
+        {
+          "caller": "parsePipeHeader",
+          "callee": "String",
+          "lineNumber": 57
+        },
+        {
+          "caller": "parsePipeHeader",
+          "callee": "parsePipeLine",
+          "lineNumber": 59
+        },
+        {
+          "caller": "parseFichaIdentificacion",
+          "callee": "String(block || '').split",
+          "lineNumber": 73
+        },
+        {
+          "caller": "parseFichaIdentificacion",
+          "callee": "String",
+          "lineNumber": 73
+        },
+        {
+          "caller": "parseFichaIdentificacion",
+          "callee": "raw.trim",
+          "lineNumber": 99
+        },
+        {
+          "caller": "parseFichaIdentificacion",
+          "callee": "FICHA_KV_RE.exec",
+          "lineNumber": 101
+        },
+        {
+          "caller": "parseFichaIdentificacion",
+          "callee": "m[1].trim().toUpperCase",
+          "lineNumber": 103
+        },
+        {
+          "caller": "parseFichaIdentificacion",
+          "callee": "m[1].trim",
+          "lineNumber": 103
+        },
+        {
+          "caller": "parseFichaIdentificacion",
+          "callee": "m[2].trim",
+          "lineNumber": 104
+        },
+        {
+          "caller": "parseFichaIdentificacion",
+          "callee": "/FEMENIN/i.test",
+          "lineNumber": 109
+        },
+        {
+          "caller": "parseFichaIdentificacion",
+          "callee": "/MASCULIN/i.test",
+          "lineNumber": 110
+        },
+        {
+          "caller": "mergeHeader",
+          "callee": "/(\\d+)/.exec",
+          "lineNumber": 129
+        },
+        {
+          "caller": "mergeHeader",
+          "callee": "String",
+          "lineNumber": 129
+        },
+        {
+          "caller": "mergeHeader",
+          "callee": "Object.assign",
+          "lineNumber": 137
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/drive-import/parse-header.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 63,
+      "nonEmptyLines": 56,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/drive-import/profiles/drive-eventos-only-v1.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 19,
+      "nonEmptyLines": 17,
+      "functions": [
+        {
+          "name": "score",
+          "startLine": 8,
+          "endLine": 15,
+          "params": [
+            "sections",
+            "header"
+          ]
+        },
+        {
+          "name": "mapHc",
+          "startLine": 17,
+          "endLine": 19,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "id",
+          "line": 1,
+          "isDefault": false
+        },
+        {
+          "name": "label",
+          "line": 2,
+          "isDefault": false
+        },
+        {
+          "name": "score",
+          "line": 8,
+          "isDefault": false
+        },
+        {
+          "name": "mapHc",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "score",
+          "callee": "hcKeys.some",
+          "lineNumber": 10
+        },
+        {
+          "caller": "score",
+          "callee": "String(sections[k]).trim",
+          "lineNumber": 10
+        },
+        {
+          "caller": "score",
+          "callee": "String",
+          "lineNumber": 10
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/drive-import/profiles/drive-ficha-hc-v1.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 50,
+      "nonEmptyLines": 46,
+      "functions": [
+        {
+          "name": "score",
+          "startLine": 12,
+          "endLine": 21,
+          "params": [
+            "sections",
+            "header"
+          ]
+        },
+        {
+          "name": "mapHc",
+          "startLine": 27,
+          "endLine": 50,
+          "params": [
+            "doc"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "id",
+          "line": 5,
+          "isDefault": false
+        },
+        {
+          "name": "label",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "score",
+          "line": 12,
+          "isDefault": false
+        },
+        {
+          "name": "mapHc",
+          "line": 27,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "mapHc",
+          "callee": "parseFichaIdentificacion",
+          "lineNumber": 29
+        },
+        {
+          "caller": "mapHc",
+          "callee": "parseApnpLines",
+          "lineNumber": 30
+        },
+        {
+          "caller": "mapHc",
+          "callee": "buildAppFromSections",
+          "lineNumber": 31
+        },
+        {
+          "caller": "mapHc",
+          "callee": "[sections.peea, sections.efUx, sections.pendientes].filter",
+          "lineNumber": 32
+        },
+        {
+          "caller": "mapHc",
+          "callee": "peeaParts.join('\\n\\n').trim",
+          "lineNumber": 33
+        },
+        {
+          "caller": "mapHc",
+          "callee": "peeaParts.join",
+          "lineNumber": 33
+        },
+        {
+          "caller": "mapHc",
+          "callee": "filterIdentificacionForHcImport",
+          "lineNumber": 36
+        },
+        {
+          "caller": "mapHc",
+          "callee": "(sections.motivoConsulta || '').trim",
+          "lineNumber": 37
+        },
+        {
+          "caller": "mapHc",
+          "callee": "(sections.signosVitales || '').trim",
+          "lineNumber": 38
+        },
+        {
+          "caller": "mapHc",
+          "callee": "(sections.ahf || '').trim",
+          "lineNumber": 44
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 4,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/drive-import/profiles/drive-fragment-v1.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 10,
+      "nonEmptyLines": 8,
+      "functions": [
+        {
+          "name": "score",
+          "startLine": 4,
+          "endLine": 6,
+          "params": []
+        },
+        {
+          "name": "mapHc",
+          "startLine": 8,
+          "endLine": 10,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "id",
+          "line": 1,
+          "isDefault": false
+        },
+        {
+          "name": "label",
+          "line": 2,
+          "isDefault": false
+        },
+        {
+          "name": "score",
+          "line": 4,
+          "isDefault": false
+        },
+        {
+          "name": "mapHc",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/drive-import/profiles/drive-pipe-hc-v1.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 50,
+      "nonEmptyLines": 46,
+      "functions": [
+        {
+          "name": "score",
+          "startLine": 11,
+          "endLine": 20,
+          "params": [
+            "sections",
+            "header"
+          ]
+        },
+        {
+          "name": "mapHc",
+          "startLine": 26,
+          "endLine": 50,
+          "params": [
+            "doc"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "id",
+          "line": 4,
+          "isDefault": false
+        },
+        {
+          "name": "label",
+          "line": 5,
+          "isDefault": false
+        },
+        {
+          "name": "score",
+          "line": 11,
+          "isDefault": false
+        },
+        {
+          "name": "mapHc",
+          "line": 26,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "mapHc",
+          "callee": "filterIdentificacionForHcImport",
+          "lineNumber": 28
+        },
+        {
+          "caller": "mapHc",
+          "callee": "parseKeyValueBlock",
+          "lineNumber": 28
+        },
+        {
+          "caller": "mapHc",
+          "callee": "parseApnpLines",
+          "lineNumber": 29
+        },
+        {
+          "caller": "mapHc",
+          "callee": "(sections.ahf || '').trim",
+          "lineNumber": 30
+        },
+        {
+          "caller": "mapHc",
+          "callee": "buildAppFromSections",
+          "lineNumber": 31
+        },
+        {
+          "caller": "mapHc",
+          "callee": "app.descripcionDetallada.includes",
+          "lineNumber": 32
+        },
+        {
+          "caller": "mapHc",
+          "callee": "[sections.ecd, app.descripcionDetallada].filter(Boolean).join",
+          "lineNumber": 33
+        },
+        {
+          "caller": "mapHc",
+          "callee": "[sections.ecd, app.descripcionDetallada].filter",
+          "lineNumber": 33
+        },
+        {
+          "caller": "mapHc",
+          "callee": "(sections.motivoConsulta || '').trim",
+          "lineNumber": 38
+        },
+        {
+          "caller": "mapHc",
+          "callee": "(sections.signosVitales || '').trim",
+          "lineNumber": 39
+        },
+        {
+          "caller": "mapHc",
+          "callee": "(sections.peea || '').trim",
+          "lineNumber": 48
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 4,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/drive-import/registry.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 44,
+      "nonEmptyLines": 39,
+      "functions": [
+        {
+          "name": "detectProfile",
+          "startLine": 21,
+          "endLine": 33,
+          "params": [
+            "sections",
+            "header"
+          ]
+        },
+        {
+          "name": "getProfile",
+          "startLine": 38,
+          "endLine": 40,
+          "params": [
+            "profileId"
+          ]
+        },
+        {
+          "name": "listProfiles",
+          "startLine": 42,
+          "endLine": 44,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "PROFILES",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "detectProfile",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "getProfile",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "listProfiles",
+          "line": 42,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "detectProfile",
+          "callee": "PROFILES.map((p) => ({\n    id: p.id,\n    label: p.label,\n    score: p.score(sections, header),\n  })).sort",
+          "lineNumber": 22
+        },
+        {
+          "caller": "detectProfile",
+          "callee": "PROFILES.map",
+          "lineNumber": 22
+        },
+        {
+          "caller": "detectProfile",
+          "callee": "p.score",
+          "lineNumber": 25
+        },
+        {
+          "caller": "getProfile",
+          "callee": "PROFILES.find",
+          "lineNumber": 39
+        },
+        {
+          "caller": "listProfiles",
+          "callee": "PROFILES.map",
+          "lineNumber": 43
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/drive-import/segment.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 181,
+      "nonEmptyLines": 166,
+      "functions": [
+        {
+          "name": "matchInlineSection",
+          "startLine": 51,
+          "endLine": 58,
+          "params": [
+            "line"
+          ]
+        },
+        {
+          "name": "matchSectionHeader",
+          "startLine": 64,
+          "endLine": 71,
+          "params": [
+            "line"
+          ]
+        },
+        {
+          "name": "splitDocumentSections",
+          "startLine": 82,
+          "endLine": 181,
+          "params": [
+            "rawText"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "SECTION_MARKERS",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "splitDocumentSections",
+          "line": 82,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "matchInlineSection",
+          "callee": "line.trim",
+          "lineNumber": 52
+        },
+        {
+          "caller": "matchInlineSection",
+          "callee": "m.re.exec",
+          "lineNumber": 54
+        },
+        {
+          "caller": "matchInlineSection",
+          "callee": "hit[1].trim",
+          "lineNumber": 55
+        },
+        {
+          "caller": "matchSectionHeader",
+          "callee": "line.trim",
+          "lineNumber": 65
+        },
+        {
+          "caller": "matchSectionHeader",
+          "callee": "m.re.test",
+          "lineNumber": 68
+        },
+        {
+          "caller": "splitDocumentSections",
+          "callee": "normalizeDrivePaste",
+          "lineNumber": 83
+        },
+        {
+          "caller": "splitDocumentSections",
+          "callee": "text.split",
+          "lineNumber": 84
+        },
+        {
+          "caller": "flushSection",
+          "callee": "currentLines.join('\\n').trim",
+          "lineNumber": 101
+        },
+        {
+          "caller": "flushSection",
+          "callee": "currentLines.join",
+          "lineNumber": 101
+        },
+        {
+          "caller": "flushSection",
+          "callee": "headerLines.push",
+          "lineNumber": 103
+        },
+        {
+          "caller": "flushSection",
+          "callee": "body.split",
+          "lineNumber": 103
+        },
+        {
+          "caller": "flushSection",
+          "callee": "evBuffer.push",
+          "lineNumber": 105
+        },
+        {
+          "caller": "flushEventualidadesBlock",
+          "callee": "evBuffer.filter(Boolean).join('\\n\\n').trim",
+          "lineNumber": 113
+        },
+        {
+          "caller": "flushEventualidadesBlock",
+          "callee": "evBuffer.filter(Boolean).join",
+          "lineNumber": 113
+        },
+        {
+          "caller": "flushEventualidadesBlock",
+          "callee": "evBuffer.filter",
+          "lineNumber": 113
+        },
+        {
+          "caller": "flushEventualidadesBlock",
+          "callee": "eventualidadesBlocks.push",
+          "lineNumber": 114
+        },
+        {
+          "caller": "splitDocumentSections",
+          "callee": "line.trim",
+          "lineNumber": 119
+        },
+        {
+          "caller": "splitDocumentSections",
+          "callee": "DATE_ONLY_RE.test",
+          "lineNumber": 120
+        },
+        {
+          "caller": "splitDocumentSections",
+          "callee": "MONITOREO_RE.test",
+          "lineNumber": 120
+        },
+        {
+          "caller": "splitDocumentSections",
+          "callee": "matchInlineSection",
+          "lineNumber": 128
+        },
+        {
+          "caller": "splitDocumentSections",
+          "callee": "flushSection",
+          "lineNumber": 130
+        },
+        {
+          "caller": "splitDocumentSections",
+          "callee": "flushEventualidadesBlock",
+          "lineNumber": 133
+        },
+        {
+          "caller": "splitDocumentSections",
+          "callee": "matchSectionHeader",
+          "lineNumber": 142
+        },
+        {
+          "caller": "splitDocumentSections",
+          "callee": "flushSection",
+          "lineNumber": 144
+        },
+        {
+          "caller": "splitDocumentSections",
+          "callee": "flushEventualidadesBlock",
+          "lineNumber": 147
+        },
+        {
+          "caller": "splitDocumentSections",
+          "callee": "warnings.push",
+          "lineNumber": 152
+        },
+        {
+          "caller": "splitDocumentSections",
+          "callee": "flushEventualidadesBlock",
+          "lineNumber": 159
+        },
+        {
+          "caller": "splitDocumentSections",
+          "callee": "flushEventualidadesBlock",
+          "lineNumber": 166
+        },
+        {
+          "caller": "splitDocumentSections",
+          "callee": "currentLines.push",
+          "lineNumber": 173
+        },
+        {
+          "caller": "splitDocumentSections",
+          "callee": "flushSection",
+          "lineNumber": 176
+        },
+        {
+          "caller": "splitDocumentSections",
+          "callee": "flushEventualidadesBlock",
+          "lineNumber": 177
+        },
+        {
+          "caller": "splitDocumentSections",
+          "callee": "evBuffer.some",
+          "lineNumber": 178
+        },
+        {
+          "caller": "splitDocumentSections",
+          "callee": "flushEventualidadesBlock",
+          "lineNumber": 178
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 2,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/drive-import/segment.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 159,
+      "nonEmptyLines": 151,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/historia-clinica/ahf-relatives.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 19,
+      "nonEmptyLines": 17,
+      "functions": [
+        {
+          "name": "ahfRelativeLabel",
+          "startLine": 17,
+          "endLine": 19,
+          "params": [
+            "id"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AHF_RELATIVES",
+          "line": 2,
+          "isDefault": false
+        },
+        {
+          "name": "ahfRelativeLabel",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/historia-clinica/apnp-calculators.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 198,
+      "nonEmptyLines": 178,
+      "functions": [
+        {
+          "name": "num",
+          "startLine": 12,
+          "endLine": 15,
+          "params": [
+            "v"
+          ]
+        },
+        {
+          "name": "calcTobaccoIndex",
+          "startLine": 20,
+          "endLine": 93,
+          "params": [
+            "input"
+          ]
+        },
+        {
+          "name": "calcAlcoholBurden",
+          "startLine": 111,
+          "endLine": 173,
+          "params": [
+            "input"
+          ]
+        },
+        {
+          "name": "formatFrequencyLabel",
+          "startLine": 175,
+          "endLine": 183,
+          "params": [
+            "kind",
+            "count"
+          ]
+        },
+        {
+          "name": "summarizeApnpHabits",
+          "startLine": 189,
+          "endLine": 198,
+          "params": [
+            "apnp",
+            "ctx"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "GRAMS_ETHANOL_PER_DRINK",
+          "line": 2,
+          "isDefault": false
+        },
+        {
+          "name": "TOBACCO_INDEX_WARN",
+          "line": 5,
+          "isDefault": false
+        },
+        {
+          "name": "TOBACCO_INDEX_HIGH",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "ALCOHOL_GRAMS_WEEK_WARN",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "ALCOHOL_GRAMS_WEEK_HIGH",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "calcTobaccoIndex",
+          "line": 20,
+          "isDefault": false
+        },
+        {
+          "name": "calcAlcoholBurden",
+          "line": 111,
+          "isDefault": false
+        },
+        {
+          "name": "summarizeApnpHabits",
+          "line": 189,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "num",
+          "callee": "Number",
+          "lineNumber": 13
+        },
+        {
+          "caller": "num",
+          "callee": "Number.isFinite",
+          "lineNumber": 14
+        },
+        {
+          "caller": "calcTobaccoIndex",
+          "callee": "String",
+          "lineNumber": 21
+        },
+        {
+          "caller": "calcTobaccoIndex",
+          "callee": "num",
+          "lineNumber": 32
+        },
+        {
+          "caller": "calcTobaccoIndex",
+          "callee": "num",
+          "lineNumber": 33
+        },
+        {
+          "caller": "calcTobaccoIndex",
+          "callee": "num",
+          "lineNumber": 34
+        },
+        {
+          "caller": "calcTobaccoIndex",
+          "callee": "num",
+          "lineNumber": 35
+        },
+        {
+          "caller": "calcTobaccoIndex",
+          "callee": "num",
+          "lineNumber": 36
+        },
+        {
+          "caller": "calcTobaccoIndex",
+          "callee": "Math.max",
+          "lineNumber": 43
+        },
+        {
+          "caller": "calcTobaccoIndex",
+          "callee": "Math.round",
+          "lineNumber": 61
+        },
+        {
+          "caller": "calcAlcoholBurden",
+          "callee": "String",
+          "lineNumber": 112
+        },
+        {
+          "caller": "calcAlcoholBurden",
+          "callee": "num",
+          "lineNumber": 124
+        },
+        {
+          "caller": "calcAlcoholBurden",
+          "callee": "String(input.frequencyKind || 'semana').toLowerCase",
+          "lineNumber": 125
+        },
+        {
+          "caller": "calcAlcoholBurden",
+          "callee": "String",
+          "lineNumber": 125
+        },
+        {
+          "caller": "calcAlcoholBurden",
+          "callee": "num",
+          "lineNumber": 126
+        },
+        {
+          "caller": "calcAlcoholBurden",
+          "callee": "num",
+          "lineNumber": 127
+        },
+        {
+          "caller": "calcAlcoholBurden",
+          "callee": "Math.round",
+          "lineNumber": 141
+        },
+        {
+          "caller": "calcAlcoholBurden",
+          "callee": "Math.round",
+          "lineNumber": 142
+        },
+        {
+          "caller": "calcAlcoholBurden",
+          "callee": "formatFrequencyLabel",
+          "lineNumber": 154
+        },
+        {
+          "caller": "summarizeApnpHabits",
+          "callee": "calcTobaccoIndex",
+          "lineNumber": 191
+        },
+        {
+          "caller": "summarizeApnpHabits",
+          "callee": "Object.assign",
+          "lineNumber": 192
+        },
+        {
+          "caller": "summarizeApnpHabits",
+          "callee": "calcAlcoholBurden",
+          "lineNumber": 196
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 8,
+        "functionCount": 5,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/historia-clinica/apnp-calculators.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 62,
+      "nonEmptyLines": 56,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/historia-clinica/clinical-text.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 125,
+      "nonEmptyLines": 118,
+      "functions": [
+        {
+          "name": "toClinicalHistoryText",
+          "startLine": 27,
+          "endLine": 30,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "shouldPreserveString",
+          "startLine": 53,
+          "endLine": 65,
+          "params": [
+            "key",
+            "value",
+            "parentKey"
+          ]
+        },
+        {
+          "name": "applyClinicalHistoryUppercase",
+          "startLine": 73,
+          "endLine": 92,
+          "params": [
+            "value",
+            "key",
+            "parentKey"
+          ]
+        },
+        {
+          "name": "shouldUppercaseHcInput",
+          "startLine": 97,
+          "endLine": 106,
+          "params": [
+            "el"
+          ]
+        },
+        {
+          "name": "applyUppercaseToHcInput",
+          "startLine": 111,
+          "endLine": 125,
+          "params": [
+            "el"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "toClinicalHistoryText",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "applyClinicalHistoryUppercase",
+          "line": 73,
+          "isDefault": false
+        },
+        {
+          "name": "shouldUppercaseHcInput",
+          "line": 97,
+          "isDefault": false
+        },
+        {
+          "name": "applyUppercaseToHcInput",
+          "line": 111,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "toClinicalHistoryText",
+          "callee": "String(value).toUpperCase",
+          "lineNumber": 29
+        },
+        {
+          "caller": "toClinicalHistoryText",
+          "callee": "String",
+          "lineNumber": 29
+        },
+        {
+          "caller": "shouldPreserveString",
+          "callee": "value.trim",
+          "lineNumber": 55
+        },
+        {
+          "caller": "shouldPreserveString",
+          "callee": "SKIP_STRING_KEYS.has",
+          "lineNumber": 56
+        },
+        {
+          "caller": "shouldPreserveString",
+          "callee": "SLUG_STRING_KEYS.has",
+          "lineNumber": 60
+        },
+        {
+          "caller": "shouldPreserveString",
+          "callee": "/^[a-z][a-z0-9_]*$/i.test",
+          "lineNumber": 60
+        },
+        {
+          "caller": "shouldPreserveString",
+          "callee": "PRESERVE_LITERAL.has",
+          "lineNumber": 62
+        },
+        {
+          "caller": "shouldPreserveString",
+          "callee": "value.trim().toLowerCase",
+          "lineNumber": 62
+        },
+        {
+          "caller": "shouldPreserveString",
+          "callee": "value.trim",
+          "lineNumber": 62
+        },
+        {
+          "caller": "applyClinicalHistoryUppercase",
+          "callee": "shouldPreserveString",
+          "lineNumber": 76
+        },
+        {
+          "caller": "applyClinicalHistoryUppercase",
+          "callee": "toClinicalHistoryText",
+          "lineNumber": 77
+        },
+        {
+          "caller": "applyClinicalHistoryUppercase",
+          "callee": "Array.isArray",
+          "lineNumber": 80
+        },
+        {
+          "caller": "applyClinicalHistoryUppercase",
+          "callee": "value.map",
+          "lineNumber": 81
+        },
+        {
+          "caller": "applyClinicalHistoryUppercase",
+          "callee": "applyClinicalHistoryUppercase",
+          "lineNumber": 82
+        },
+        {
+          "caller": "applyClinicalHistoryUppercase",
+          "callee": "Object.keys(value).forEach",
+          "lineNumber": 86
+        },
+        {
+          "caller": "applyClinicalHistoryUppercase",
+          "callee": "Object.keys",
+          "lineNumber": 86
+        },
+        {
+          "caller": "applyClinicalHistoryUppercase",
+          "callee": "applyClinicalHistoryUppercase",
+          "lineNumber": 87
+        },
+        {
+          "caller": "shouldUppercaseHcInput",
+          "callee": "(el.getAttribute('type') || 'text').toLowerCase",
+          "lineNumber": 104
+        },
+        {
+          "caller": "shouldUppercaseHcInput",
+          "callee": "el.getAttribute",
+          "lineNumber": 104
+        },
+        {
+          "caller": "applyUppercaseToHcInput",
+          "callee": "shouldUppercaseHcInput",
+          "lineNumber": 112
+        },
+        {
+          "caller": "applyUppercaseToHcInput",
+          "callee": "toClinicalHistoryText",
+          "lineNumber": 113
+        },
+        {
+          "caller": "applyUppercaseToHcInput",
+          "callee": "el.setSelectionRange",
+          "lineNumber": 120
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 5,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/historia-clinica/clinical-text.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 25,
+      "nonEmptyLines": 22,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/historia-clinica/compile-ahf.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 83,
+      "nonEmptyLines": 73,
+      "functions": [
+        {
+          "name": "trim",
+          "startLine": 3,
+          "endLine": 5,
+          "params": [
+            "s"
+          ]
+        },
+        {
+          "name": "conditionLabel",
+          "startLine": 7,
+          "endLine": 13,
+          "params": [
+            "conditionId",
+            "catalog",
+            "customConditions"
+          ]
+        },
+        {
+          "name": "formatVitalStatus",
+          "startLine": 15,
+          "endLine": 26,
+          "params": [
+            "entry"
+          ]
+        },
+        {
+          "name": "formatEntryLine",
+          "startLine": 28,
+          "endLine": 35,
+          "params": [
+            "entry",
+            "catalog",
+            "customConditions"
+          ]
+        },
+        {
+          "name": "formatAhfSection",
+          "startLine": 41,
+          "endLine": 69,
+          "params": [
+            "ahf",
+            "catalog"
+          ]
+        },
+        {
+          "name": "syncAhfConditionsFromEntries",
+          "startLine": 75,
+          "endLine": 83,
+          "params": [
+            "ahf"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "formatAhfSection",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "syncAhfConditionsFromEntries",
+          "line": 75,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "trim",
+          "callee": "String(s || '').trim",
+          "lineNumber": 4
+        },
+        {
+          "caller": "trim",
+          "callee": "String",
+          "lineNumber": 4
+        },
+        {
+          "caller": "conditionLabel",
+          "callee": "(customConditions || []).find",
+          "lineNumber": 9
+        },
+        {
+          "caller": "formatVitalStatus",
+          "callee": "Number",
+          "lineNumber": 20
+        },
+        {
+          "caller": "formatVitalStatus",
+          "callee": "Number.isFinite",
+          "lineNumber": 21
+        },
+        {
+          "caller": "formatVitalStatus",
+          "callee": "trim",
+          "lineNumber": 22
+        },
+        {
+          "caller": "formatVitalStatus",
+          "callee": "trim",
+          "lineNumber": 22
+        },
+        {
+          "caller": "formatEntryLine",
+          "callee": "ahfRelativeLabel",
+          "lineNumber": 29
+        },
+        {
+          "caller": "formatEntryLine",
+          "callee": "trim",
+          "lineNumber": 31
+        },
+        {
+          "caller": "formatEntryLine",
+          "callee": "parts.push",
+          "lineNumber": 31
+        },
+        {
+          "caller": "formatEntryLine",
+          "callee": "trim",
+          "lineNumber": 31
+        },
+        {
+          "caller": "formatEntryLine",
+          "callee": "trim",
+          "lineNumber": 32
+        },
+        {
+          "caller": "formatEntryLine",
+          "callee": "parts.push",
+          "lineNumber": 32
+        },
+        {
+          "caller": "formatEntryLine",
+          "callee": "trim",
+          "lineNumber": 32
+        },
+        {
+          "caller": "formatEntryLine",
+          "callee": "parts.push",
+          "lineNumber": 33
+        },
+        {
+          "caller": "formatEntryLine",
+          "callee": "formatVitalStatus",
+          "lineNumber": 33
+        },
+        {
+          "caller": "formatEntryLine",
+          "callee": "parts.join",
+          "lineNumber": 34
+        },
+        {
+          "caller": "formatAhfSection",
+          "callee": "Array.isArray",
+          "lineNumber": 45
+        },
+        {
+          "caller": "formatAhfSection",
+          "callee": "entries.forEach",
+          "lineNumber": 48
+        },
+        {
+          "caller": "formatAhfSection",
+          "callee": "byCondition.has",
+          "lineNumber": 51
+        },
+        {
+          "caller": "formatAhfSection",
+          "callee": "byCondition.set",
+          "lineNumber": 51
+        },
+        {
+          "caller": "formatAhfSection",
+          "callee": "byCondition.get(cid).push",
+          "lineNumber": 52
+        },
+        {
+          "caller": "formatAhfSection",
+          "callee": "byCondition.get",
+          "lineNumber": 52
+        },
+        {
+          "caller": "formatAhfSection",
+          "callee": "byCondition.forEach",
+          "lineNumber": 55
+        },
+        {
+          "caller": "formatAhfSection",
+          "callee": "conditionLabel",
+          "lineNumber": 56
+        },
+        {
+          "caller": "formatAhfSection",
+          "callee": "lines.push",
+          "lineNumber": 57
+        },
+        {
+          "caller": "formatAhfSection",
+          "callee": "condEntries.forEach",
+          "lineNumber": 58
+        },
+        {
+          "caller": "formatAhfSection",
+          "callee": "lines.push",
+          "lineNumber": 59
+        },
+        {
+          "caller": "formatAhfSection",
+          "callee": "formatEntryLine",
+          "lineNumber": 59
+        },
+        {
+          "caller": "formatAhfSection",
+          "callee": "trim",
+          "lineNumber": 63
+        },
+        {
+          "caller": "formatAhfSection",
+          "callee": "lines.push",
+          "lineNumber": 64
+        },
+        {
+          "caller": "formatAhfSection",
+          "callee": "lines.push",
+          "lineNumber": 65
+        },
+        {
+          "caller": "formatAhfSection",
+          "callee": "trim",
+          "lineNumber": 65
+        },
+        {
+          "caller": "formatAhfSection",
+          "callee": "lines.join",
+          "lineNumber": 68
+        },
+        {
+          "caller": "syncAhfConditionsFromEntries",
+          "callee": "(ahf.entries || []).forEach",
+          "lineNumber": 78
+        },
+        {
+          "caller": "syncAhfConditionsFromEntries",
+          "callee": "ids.add",
+          "lineNumber": 79
+        },
+        {
+          "caller": "syncAhfConditionsFromEntries",
+          "callee": "Array.from",
+          "lineNumber": 81
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 2,
+        "functionCount": 6,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/historia-clinica/compile-ahf.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 42,
+      "nonEmptyLines": 39,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/historia-clinica/compile-app.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 156,
+      "nonEmptyLines": 142,
+      "functions": [
+        {
+          "name": "trim",
+          "startLine": 4,
+          "endLine": 6,
+          "params": [
+            "s"
+          ]
+        },
+        {
+          "name": "labelsFromCatalog",
+          "startLine": 8,
+          "endLine": 18,
+          "params": [
+            "ids",
+            "catalog",
+            "customConditions"
+          ]
+        },
+        {
+          "name": "formatAppSection",
+          "startLine": 24,
+          "endLine": 156,
+          "params": [
+            "app",
+            "catalog"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "formatAppSection",
+          "line": 24,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "trim",
+          "callee": "String(s || '').trim",
+          "lineNumber": 5
+        },
+        {
+          "caller": "trim",
+          "callee": "String",
+          "lineNumber": 5
+        },
+        {
+          "caller": "labelsFromCatalog",
+          "callee": "Array.isArray",
+          "lineNumber": 9
+        },
+        {
+          "caller": "labelsFromCatalog",
+          "callee": "Object.fromEntries",
+          "lineNumber": 10
+        },
+        {
+          "caller": "labelsFromCatalog",
+          "callee": "custom.map",
+          "lineNumber": 10
+        },
+        {
+          "caller": "labelsFromCatalog",
+          "callee": "(ids || [])\n    .map(function (id) {\n      if (catalog && catalog[id]) return catalog[id];\n      if (customMap[id]) return customMap[id];\n      return id;\n    })\n    .filter",
+          "lineNumber": 11
+        },
+        {
+          "caller": "labelsFromCatalog",
+          "callee": "(ids || [])\n    .map",
+          "lineNumber": 11
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "(app.conditions || []).slice",
+          "lineNumber": 28
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "custom.forEach",
+          "lineNumber": 30
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "ids.indexOf",
+          "lineNumber": 31
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "ids.push",
+          "lineNumber": 31
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "ids.forEach",
+          "lineNumber": 36
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "labelsFromCatalog",
+          "lineNumber": 37
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "formatErcConditionSuffix",
+          "lineNumber": 42
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "formatFlexibleDate",
+          "lineNumber": 45
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "parts.push",
+          "lineNumber": 46
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "trim",
+          "lineNumber": 47
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "parts.push",
+          "lineNumber": 47
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "trim",
+          "lineNumber": 47
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "parts.join",
+          "lineNumber": 48
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "lines.push",
+          "lineNumber": 52
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "lines.push",
+          "lineNumber": 58
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "lines.push",
+          "lineNumber": 60
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "allergyMeds\n          .map(function (m) {\n            return trim(m.medication);\n          })\n          .filter(Boolean)\n          .join",
+          "lineNumber": 62
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "allergyMeds\n          .map(function (m) {\n            return trim(m.medication);\n          })\n          .filter",
+          "lineNumber": 62
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "allergyMeds\n          .map",
+          "lineNumber": 62
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "trim",
+          "lineNumber": 64
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "lines.push",
+          "lineNumber": 73
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "lines.push",
+          "lineNumber": 74
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "trauma.forEach",
+          "lineNumber": 75
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "trim",
+          "lineNumber": 77
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "formatFlexibleDate",
+          "lineNumber": 78
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "lines.push",
+          "lineNumber": 80
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "lines.push",
+          "lineNumber": 86
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "lines.push",
+          "lineNumber": 87
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "transf.forEach",
+          "lineNumber": 88
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "trim",
+          "lineNumber": 91
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "String",
+          "lineNumber": 91
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "parts.push",
+          "lineNumber": 91
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "trim",
+          "lineNumber": 91
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "String",
+          "lineNumber": 91
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "formatFlexibleDate",
+          "lineNumber": 92
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "parts.push",
+          "lineNumber": 93
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "trim",
+          "lineNumber": 94
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "parts.push",
+          "lineNumber": 94
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "trim",
+          "lineNumber": 94
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "lines.push",
+          "lineNumber": 95
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "parts.join",
+          "lineNumber": 95
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "lines.push",
+          "lineNumber": 101
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "lines.push",
+          "lineNumber": 102
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "cirugias.forEach",
+          "lineNumber": 103
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "trim",
+          "lineNumber": 105
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "formatFlexibleDate",
+          "lineNumber": 106
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "trim",
+          "lineNumber": 108
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "trim",
+          "lineNumber": 108
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "lines.push",
+          "lineNumber": 109
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "lines.push",
+          "lineNumber": 115
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "lines.push",
+          "lineNumber": 116
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "hosps.forEach",
+          "lineNumber": 117
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "trim",
+          "lineNumber": 119
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "formatFlexibleDate",
+          "lineNumber": 120
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "trim",
+          "lineNumber": 122
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "trim",
+          "lineNumber": 122
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "trim",
+          "lineNumber": 123
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "trim",
+          "lineNumber": 123
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "lines.push",
+          "lineNumber": 124
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "trim",
+          "lineNumber": 128
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "lines.push",
+          "lineNumber": 129
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "lines.push",
+          "lineNumber": 130
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "trim",
+          "lineNumber": 130
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "trim",
+          "lineNumber": 133
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "lines.push",
+          "lineNumber": 133
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "trim",
+          "lineNumber": 133
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "lines.push",
+          "lineNumber": 137
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "lines.push",
+          "lineNumber": 138
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "currentMeds.forEach",
+          "lineNumber": 139
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "trim",
+          "lineNumber": 141
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "trim",
+          "lineNumber": 144
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "parts.push",
+          "lineNumber": 144
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "trim",
+          "lineNumber": 144
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "trim",
+          "lineNumber": 145
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "parts.push",
+          "lineNumber": 145
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "trim",
+          "lineNumber": 145
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "trim",
+          "lineNumber": 146
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "parts.push",
+          "lineNumber": 146
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "trim",
+          "lineNumber": 146
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "lines.push",
+          "lineNumber": 147
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "parts.join",
+          "lineNumber": 147
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "trim",
+          "lineNumber": 151
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "lines.push",
+          "lineNumber": 152
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "trim",
+          "lineNumber": 152
+        },
+        {
+          "caller": "formatAppSection",
+          "callee": "lines.join",
+          "lineNumber": 155
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/historia-clinica/compile-narrative.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 190,
+      "nonEmptyLines": 171,
+      "functions": [
+        {
+          "name": "trim",
+          "startLine": 9,
+          "endLine": 11,
+          "params": [
+            "s"
+          ]
+        },
+        {
+          "name": "labelsFromCatalog",
+          "startLine": 13,
+          "endLine": 19,
+          "params": [
+            "ids",
+            "catalog"
+          ]
+        },
+        {
+          "name": "formatChecklist",
+          "startLine": 21,
+          "endLine": 30,
+          "params": [
+            "ids",
+            "catalog",
+            "descripcion",
+            "negado"
+          ]
+        },
+        {
+          "name": "pushSection",
+          "startLine": 32,
+          "endLine": 36,
+          "params": [
+            "out",
+            "id",
+            "title",
+            "body"
+          ]
+        },
+        {
+          "name": "formatApnp",
+          "startLine": 38,
+          "endLine": 58,
+          "params": [
+            "apnp",
+            "ctx"
+          ]
+        },
+        {
+          "name": "formatIdentificacion",
+          "startLine": 60,
+          "endLine": 82,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "formatSexual",
+          "startLine": 84,
+          "endLine": 94,
+          "params": [
+            "s"
+          ]
+        },
+        {
+          "name": "formatIpas",
+          "startLine": 96,
+          "endLine": 117,
+          "params": [
+            "ipas",
+            "catalogs"
+          ]
+        },
+        {
+          "name": "compileHistoriaClinicaNarrative",
+          "startLine": 123,
+          "endLine": 181,
+          "params": [
+            "data",
+            "catalogs",
+            "ctx"
+          ]
+        },
+        {
+          "name": "compileHistoriaClinicaPlainText",
+          "startLine": 184,
+          "endLine": 190,
+          "params": [
+            "sections"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "compileHistoriaClinicaNarrative",
+          "line": 123,
+          "isDefault": false
+        },
+        {
+          "name": "compileHistoriaClinicaPlainText",
+          "line": 184,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "trim",
+          "callee": "String(s || '').trim",
+          "lineNumber": 10
+        },
+        {
+          "caller": "trim",
+          "callee": "String",
+          "lineNumber": 10
+        },
+        {
+          "caller": "labelsFromCatalog",
+          "callee": "(ids || [])\n    .map(function (id) {\n      return catalog && catalog[id] ? catalog[id] : id;\n    })\n    .filter",
+          "lineNumber": 14
+        },
+        {
+          "caller": "labelsFromCatalog",
+          "callee": "(ids || [])\n    .map",
+          "lineNumber": 14
+        },
+        {
+          "caller": "formatChecklist",
+          "callee": "trim",
+          "lineNumber": 23
+        },
+        {
+          "caller": "formatChecklist",
+          "callee": "labelsFromCatalog",
+          "lineNumber": 25
+        },
+        {
+          "caller": "formatChecklist",
+          "callee": "trim",
+          "lineNumber": 26
+        },
+        {
+          "caller": "formatChecklist",
+          "callee": "parts.join",
+          "lineNumber": 27
+        },
+        {
+          "caller": "formatChecklist",
+          "callee": "parts.join",
+          "lineNumber": 28
+        },
+        {
+          "caller": "pushSection",
+          "callee": "trim",
+          "lineNumber": 33
+        },
+        {
+          "caller": "pushSection",
+          "callee": "out.push",
+          "lineNumber": 35
+        },
+        {
+          "caller": "formatApnp",
+          "callee": "summarizeApnpHabits",
+          "lineNumber": 40
+        },
+        {
+          "caller": "formatApnp",
+          "callee": "summarizeToxicomanias",
+          "lineNumber": 41
+        },
+        {
+          "caller": "formatApnp",
+          "callee": "lines\n    .filter(function (row) {\n      return trim(row[1]);\n    })\n    .map(function (row) {\n      return row[0] + ': ' + trim(row[1]);\n    })\n    .join",
+          "lineNumber": 50
+        },
+        {
+          "caller": "formatApnp",
+          "callee": "lines\n    .filter(function (row) {\n      return trim(row[1]);\n    })\n    .map",
+          "lineNumber": 50
+        },
+        {
+          "caller": "formatApnp",
+          "callee": "lines\n    .filter",
+          "lineNumber": 50
+        },
+        {
+          "caller": "formatApnp",
+          "callee": "trim",
+          "lineNumber": 52
+        },
+        {
+          "caller": "formatApnp",
+          "callee": "trim",
+          "lineNumber": 55
+        },
+        {
+          "caller": "formatIdentificacion",
+          "callee": "lines\n    .filter(function (row) {\n      return trim(row[1]);\n    })\n    .map(function (row) {\n      return row[0] + ': ' + trim(row[1]);\n    })\n    .join",
+          "lineNumber": 74
+        },
+        {
+          "caller": "formatIdentificacion",
+          "callee": "lines\n    .filter(function (row) {\n      return trim(row[1]);\n    })\n    .map",
+          "lineNumber": 74
+        },
+        {
+          "caller": "formatIdentificacion",
+          "callee": "lines\n    .filter",
+          "lineNumber": 74
+        },
+        {
+          "caller": "formatIdentificacion",
+          "callee": "trim",
+          "lineNumber": 76
+        },
+        {
+          "caller": "formatIdentificacion",
+          "callee": "trim",
+          "lineNumber": 79
+        },
+        {
+          "caller": "formatSexual",
+          "callee": "trim",
+          "lineNumber": 87
+        },
+        {
+          "caller": "formatSexual",
+          "callee": "lines.push",
+          "lineNumber": 87
+        },
+        {
+          "caller": "formatSexual",
+          "callee": "trim",
+          "lineNumber": 87
+        },
+        {
+          "caller": "formatSexual",
+          "callee": "trim",
+          "lineNumber": 88
+        },
+        {
+          "caller": "formatSexual",
+          "callee": "lines.push",
+          "lineNumber": 88
+        },
+        {
+          "caller": "formatSexual",
+          "callee": "trim",
+          "lineNumber": 88
+        },
+        {
+          "caller": "formatSexual",
+          "callee": "trim",
+          "lineNumber": 89
+        },
+        {
+          "caller": "formatSexual",
+          "callee": "lines.push",
+          "lineNumber": 89
+        },
+        {
+          "caller": "formatSexual",
+          "callee": "trim",
+          "lineNumber": 89
+        },
+        {
+          "caller": "formatSexual",
+          "callee": "lines.push",
+          "lineNumber": 90
+        },
+        {
+          "caller": "formatSexual",
+          "callee": "trim",
+          "lineNumber": 91
+        },
+        {
+          "caller": "formatSexual",
+          "callee": "lines.push",
+          "lineNumber": 91
+        },
+        {
+          "caller": "formatSexual",
+          "callee": "trim",
+          "lineNumber": 91
+        },
+        {
+          "caller": "formatSexual",
+          "callee": "trim",
+          "lineNumber": 92
+        },
+        {
+          "caller": "formatSexual",
+          "callee": "lines.push",
+          "lineNumber": 92
+        },
+        {
+          "caller": "formatSexual",
+          "callee": "trim",
+          "lineNumber": 92
+        },
+        {
+          "caller": "formatSexual",
+          "callee": "lines.join",
+          "lineNumber": 93
+        },
+        {
+          "caller": "formatIpas",
+          "callee": "Object.keys",
+          "lineNumber": 98
+        },
+        {
+          "caller": "formatIpas",
+          "callee": "ids.every",
+          "lineNumber": 101
+        },
+        {
+          "caller": "formatIpas",
+          "callee": "ids\n    .map(function (sid) {\n      const block = (ipas && ipas[sid]) || {};\n      const title = systems[sid] || sid;\n      const body = formatChecklist(block.checks, {}, block.descripcion, block.negado);\n      return title + ': ' + (body || HC_INTERROGADO_NEGADO);\n    })\n    .join",
+          "lineNumber": 109
+        },
+        {
+          "caller": "formatIpas",
+          "callee": "ids\n    .map",
+          "lineNumber": 109
+        },
+        {
+          "caller": "formatIpas",
+          "callee": "formatChecklist",
+          "lineNumber": 113
+        },
+        {
+          "caller": "compileHistoriaClinicaNarrative",
+          "callee": "pushSection",
+          "lineNumber": 129
+        },
+        {
+          "caller": "compileHistoriaClinicaNarrative",
+          "callee": "formatIdentificacion",
+          "lineNumber": 129
+        },
+        {
+          "caller": "compileHistoriaClinicaNarrative",
+          "callee": "pushSection",
+          "lineNumber": 130
+        },
+        {
+          "caller": "compileHistoriaClinicaNarrative",
+          "callee": "pushSection",
+          "lineNumber": 131
+        },
+        {
+          "caller": "compileHistoriaClinicaNarrative",
+          "callee": "formatApnp",
+          "lineNumber": 135
+        },
+        {
+          "caller": "compileHistoriaClinicaNarrative",
+          "callee": "formatAppSection",
+          "lineNumber": 138
+        },
+        {
+          "caller": "compileHistoriaClinicaNarrative",
+          "callee": "pushSection",
+          "lineNumber": 139
+        },
+        {
+          "caller": "compileHistoriaClinicaNarrative",
+          "callee": "pushSection",
+          "lineNumber": 141
+        },
+        {
+          "caller": "compileHistoriaClinicaNarrative",
+          "callee": "formatAhfSection",
+          "lineNumber": 145
+        },
+        {
+          "caller": "compileHistoriaClinicaNarrative",
+          "callee": "pushSection",
+          "lineNumber": 148
+        },
+        {
+          "caller": "compileHistoriaClinicaNarrative",
+          "callee": "formatGeneroSection",
+          "lineNumber": 152
+        },
+        {
+          "caller": "compileHistoriaClinicaNarrative",
+          "callee": "pushSection",
+          "lineNumber": 155
+        },
+        {
+          "caller": "compileHistoriaClinicaNarrative",
+          "callee": "formatSexual",
+          "lineNumber": 155
+        },
+        {
+          "caller": "compileHistoriaClinicaNarrative",
+          "callee": "pushSection",
+          "lineNumber": 156
+        },
+        {
+          "caller": "compileHistoriaClinicaNarrative",
+          "callee": "pushSection",
+          "lineNumber": 157
+        },
+        {
+          "caller": "compileHistoriaClinicaNarrative",
+          "callee": "pushSection",
+          "lineNumber": 158
+        },
+        {
+          "caller": "compileHistoriaClinicaNarrative",
+          "callee": "formatIpas",
+          "lineNumber": 158
+        },
+        {
+          "caller": "compileHistoriaClinicaNarrative",
+          "callee": "pushSection",
+          "lineNumber": 159
+        },
+        {
+          "caller": "compileHistoriaClinicaNarrative",
+          "callee": "resolveSignosVitalesIngresoBody",
+          "lineNumber": 163
+        },
+        {
+          "caller": "compileHistoriaClinicaNarrative",
+          "callee": "parts.push",
+          "lineNumber": 171
+        },
+        {
+          "caller": "compileHistoriaClinicaNarrative",
+          "callee": "parts.push",
+          "lineNumber": 172
+        },
+        {
+          "caller": "compileHistoriaClinicaNarrative",
+          "callee": "parts.join",
+          "lineNumber": 173
+        },
+        {
+          "caller": "compileHistoriaClinicaNarrative",
+          "callee": "trim(d.labsAtAdmission.qsSummary).slice",
+          "lineNumber": 175
+        },
+        {
+          "caller": "compileHistoriaClinicaNarrative",
+          "callee": "trim",
+          "lineNumber": 175
+        },
+        {
+          "caller": "compileHistoriaClinicaNarrative",
+          "callee": "pushSection",
+          "lineNumber": 177
+        },
+        {
+          "caller": "compileHistoriaClinicaPlainText",
+          "callee": "(sections || [])\n    .map(function (s) {\n      return s.title + ':\\n' + s.body;\n    })\n    .join",
+          "lineNumber": 185
+        },
+        {
+          "caller": "compileHistoriaClinicaPlainText",
+          "callee": "(sections || [])\n    .map",
+          "lineNumber": 185
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 2,
+        "functionCount": 10,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/historia-clinica/compile-narrative.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 138,
+      "nonEmptyLines": 131,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/historia-clinica/defaults.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 85,
+      "nonEmptyLines": 81,
+      "functions": [
+        {
+          "name": "defaultIpasBlocks",
+          "startLine": 7,
+          "endLine": 14,
+          "params": []
+        },
+        {
+          "name": "defaultHistoriaClinicaData",
+          "startLine": 21,
+          "endLine": 73,
+          "params": [
+            "patientId"
+          ]
+        },
+        {
+          "name": "applyInterrogadoNegadoAllIpas",
+          "startLine": 79,
+          "endLine": 85,
+          "params": [
+            "ipas",
+            "systemIds"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "HC_INTERROGADO_NEGADO",
+          "line": 1,
+          "isDefault": false
+        },
+        {
+          "name": "defaultHistoriaClinicaData",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "applyInterrogadoNegadoAllIpas",
+          "line": 79,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "defaultIpasBlocks",
+          "callee": "Object.keys",
+          "lineNumber": 10
+        },
+        {
+          "caller": "defaultHistoriaClinicaData",
+          "callee": "new Date().toISOString",
+          "lineNumber": 22
+        },
+        {
+          "caller": "defaultHistoriaClinicaData",
+          "callee": "Number.isFinite",
+          "lineNumber": 24
+        },
+        {
+          "caller": "defaultHistoriaClinicaData",
+          "callee": "Number",
+          "lineNumber": 24
+        },
+        {
+          "caller": "defaultHistoriaClinicaData",
+          "callee": "Number",
+          "lineNumber": 25
+        },
+        {
+          "caller": "defaultHistoriaClinicaData",
+          "callee": "String",
+          "lineNumber": 29
+        },
+        {
+          "caller": "defaultHistoriaClinicaData",
+          "callee": "defaultIpasBlocks",
+          "lineNumber": 70
+        },
+        {
+          "caller": "applyInterrogadoNegadoAllIpas",
+          "callee": "Object.assign",
+          "lineNumber": 80
+        },
+        {
+          "caller": "applyInterrogadoNegadoAllIpas",
+          "callee": "(systemIds || []).forEach",
+          "lineNumber": 81
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/historia-clinica/defaults.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 13,
+      "nonEmptyLines": 12,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/historia-clinica/erc-detail.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 122,
+      "nonEmptyLines": 109,
+      "functions": [
+        {
+          "name": "trim",
+          "startLine": 14,
+          "endLine": 16,
+          "params": [
+            "s"
+          ]
+        },
+        {
+          "name": "defaultErcDetail",
+          "startLine": 18,
+          "endLine": 26,
+          "params": []
+        },
+        {
+          "name": "normalizeErcDetail",
+          "startLine": 28,
+          "endLine": 48,
+          "params": [
+            "raw"
+          ]
+        },
+        {
+          "name": "syncErcMedicationsToApp",
+          "startLine": 54,
+          "endLine": 84,
+          "params": [
+            "app"
+          ]
+        },
+        {
+          "name": "purgeErcMedicationsFromApp",
+          "startLine": 86,
+          "endLine": 95,
+          "params": [
+            "app"
+          ]
+        },
+        {
+          "name": "ckdStageLabel",
+          "startLine": 100,
+          "endLine": 105,
+          "params": [
+            "stageId"
+          ]
+        },
+        {
+          "name": "formatErcConditionSuffix",
+          "startLine": 111,
+          "endLine": 122,
+          "params": [
+            "d",
+            "formatDate"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ERC_CONDITION_ID",
+          "line": 1,
+          "isDefault": false
+        },
+        {
+          "name": "CKD_STAGES",
+          "line": 3,
+          "isDefault": false
+        },
+        {
+          "name": "defaultErcDetail",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "normalizeErcDetail",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "syncErcMedicationsToApp",
+          "line": 54,
+          "isDefault": false
+        },
+        {
+          "name": "purgeErcMedicationsFromApp",
+          "line": 86,
+          "isDefault": false
+        },
+        {
+          "name": "ckdStageLabel",
+          "line": 100,
+          "isDefault": false
+        },
+        {
+          "name": "formatErcConditionSuffix",
+          "line": 111,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "trim",
+          "callee": "String(s || '').trim",
+          "lineNumber": 15
+        },
+        {
+          "caller": "trim",
+          "callee": "String",
+          "lineNumber": 15
+        },
+        {
+          "caller": "normalizeErcDetail",
+          "callee": "defaultErcDetail",
+          "lineNumber": 29
+        },
+        {
+          "caller": "normalizeErcDetail",
+          "callee": "String",
+          "lineNumber": 32
+        },
+        {
+          "caller": "normalizeErcDetail",
+          "callee": "String",
+          "lineNumber": 33
+        },
+        {
+          "caller": "normalizeErcDetail",
+          "callee": "String",
+          "lineNumber": 34
+        },
+        {
+          "caller": "normalizeErcDetail",
+          "callee": "Array.isArray",
+          "lineNumber": 36
+        },
+        {
+          "caller": "normalizeErcDetail",
+          "callee": "raw.medications.map",
+          "lineNumber": 37
+        },
+        {
+          "caller": "normalizeErcDetail",
+          "callee": "Math.random().toString(36).slice",
+          "lineNumber": 39
+        },
+        {
+          "caller": "normalizeErcDetail",
+          "callee": "Math.random().toString",
+          "lineNumber": 39
+        },
+        {
+          "caller": "normalizeErcDetail",
+          "callee": "Math.random",
+          "lineNumber": 39
+        },
+        {
+          "caller": "normalizeErcDetail",
+          "callee": "String",
+          "lineNumber": 40
+        },
+        {
+          "caller": "normalizeErcDetail",
+          "callee": "String",
+          "lineNumber": 41
+        },
+        {
+          "caller": "normalizeErcDetail",
+          "callee": "String",
+          "lineNumber": 42
+        },
+        {
+          "caller": "normalizeErcDetail",
+          "callee": "String",
+          "lineNumber": 43
+        },
+        {
+          "caller": "syncErcMedicationsToApp",
+          "callee": "(app.conditions || []).indexOf",
+          "lineNumber": 56
+        },
+        {
+          "caller": "syncErcMedicationsToApp",
+          "callee": "normalizeErcDetail",
+          "lineNumber": 57
+        },
+        {
+          "caller": "syncErcMedicationsToApp",
+          "callee": "(app.medicamentosActuales || []).filter",
+          "lineNumber": 59
+        },
+        {
+          "caller": "syncErcMedicationsToApp",
+          "callee": "det.medications.forEach",
+          "lineNumber": 71
+        },
+        {
+          "caller": "syncErcMedicationsToApp",
+          "callee": "trim",
+          "lineNumber": 72
+        },
+        {
+          "caller": "syncErcMedicationsToApp",
+          "callee": "app.medicamentosActuales.push",
+          "lineNumber": 73
+        },
+        {
+          "caller": "purgeErcMedicationsFromApp",
+          "callee": "(app.medicamentosActuales || []).filter",
+          "lineNumber": 88
+        },
+        {
+          "caller": "ckdStageLabel",
+          "callee": "CKD_STAGES.find",
+          "lineNumber": 101
+        },
+        {
+          "caller": "formatErcConditionSuffix",
+          "callee": "normalizeErcDetail",
+          "lineNumber": 112
+        },
+        {
+          "caller": "formatErcConditionSuffix",
+          "callee": "parts.push",
+          "lineNumber": 114
+        },
+        {
+          "caller": "formatErcConditionSuffix",
+          "callee": "ckdStageLabel",
+          "lineNumber": 114
+        },
+        {
+          "caller": "formatErcConditionSuffix",
+          "callee": "formatDate",
+          "lineNumber": 116
+        },
+        {
+          "caller": "formatErcConditionSuffix",
+          "callee": "parts.push",
+          "lineNumber": 117
+        },
+        {
+          "caller": "formatErcConditionSuffix",
+          "callee": "trim",
+          "lineNumber": 119
+        },
+        {
+          "caller": "formatErcConditionSuffix",
+          "callee": "parts.push",
+          "lineNumber": 119
+        },
+        {
+          "caller": "formatErcConditionSuffix",
+          "callee": "trim",
+          "lineNumber": 119
+        },
+        {
+          "caller": "formatErcConditionSuffix",
+          "callee": "trim",
+          "lineNumber": 120
+        },
+        {
+          "caller": "formatErcConditionSuffix",
+          "callee": "parts.push",
+          "lineNumber": 120
+        },
+        {
+          "caller": "formatErcConditionSuffix",
+          "callee": "trim",
+          "lineNumber": 120
+        },
+        {
+          "caller": "formatErcConditionSuffix",
+          "callee": "parts.join",
+          "lineNumber": 121
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 8,
+        "functionCount": 7,
+        "classCount": 0
+      }
+    }
+  ]
+}

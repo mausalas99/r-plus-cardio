@@ -1,0 +1,1584 @@
+{
+  "nodes": [
+    {
+      "id": "file:generate-receta-hu.js",
+      "type": "file",
+      "name": "generate-receta-hu.js",
+      "filePath": "generate-receta-hu.js",
+      "summary": "Rellena la plantilla AcroForm HU 000-061-R-06-12 (receta médica). Campos mapeados por inspección del PDF oficial.",
+      "tags": [
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:generate-receta-hu.js:resolveTemplatePath",
+      "type": "function",
+      "name": "resolveTemplatePath",
+      "filePath": "generate-receta-hu.js",
+      "lineRange": [
+        13,
+        25
+      ],
+      "summary": "Internal resolve template path in generate-receta-hu.js.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:generate-receta-hu.js:splitToFieldLines",
+      "type": "function",
+      "name": "splitToFieldLines",
+      "filePath": "generate-receta-hu.js",
+      "lineRange": [
+        35,
+        52
+      ],
+      "summary": "Internal split to field lines in generate-receta-hu.js.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:generate-receta-hu.js:formatMedicationsBlock",
+      "type": "function",
+      "name": "formatMedicationsBlock",
+      "filePath": "generate-receta-hu.js",
+      "lineRange": [
+        57,
+        69
+      ],
+      "summary": "Internal format medications block in generate-receta-hu.js.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:generate-receta-hu.js:fillRecetaHuPdf",
+      "type": "function",
+      "name": "fillRecetaHuPdf",
+      "filePath": "generate-receta-hu.js",
+      "lineRange": [
+        97,
+        125
+      ],
+      "summary": "Internal fill receta hu pdf in generate-receta-hu.js.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:lan-squad/atomic-json.js",
+      "type": "file",
+      "name": "atomic-json.js",
+      "filePath": "lan-squad/atomic-json.js",
+      "summary": "LAN LiveSync helpers and wiring in atomic-json.js.",
+      "tags": [
+        "lan-sync",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lan-squad/atomic-json.js:readJson",
+      "type": "function",
+      "name": "readJson",
+      "filePath": "lan-squad/atomic-json.js",
+      "lineRange": [
+        5,
+        15
+      ],
+      "summary": "read json supporting LAN LiveSync.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:lan-squad/audit-log.js",
+      "type": "file",
+      "name": "audit-log.js",
+      "filePath": "lan-squad/audit-log.js",
+      "summary": "LAN LiveSync helpers and wiring in audit-log.js.",
+      "tags": [
+        "lan-sync",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:lan-squad/audit-log.test.js",
+      "type": "file",
+      "name": "audit-log.test.js",
+      "filePath": "lan-squad/audit-log.test.js",
+      "summary": "Tests for audit-log.js covering LAN LiveSync.",
+      "tags": [
+        "test",
+        "lan-sync",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:lan-squad/auth-failure-lockout.js",
+      "type": "file",
+      "name": "auth-failure-lockout.js",
+      "filePath": "lan-squad/auth-failure-lockout.js",
+      "summary": "LAN LiveSync helpers and wiring in auth-failure-lockout.js.",
+      "tags": [
+        "lan-sync",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:lan-squad/auth-failure-lockout.js:createAuthFailureLockout",
+      "type": "function",
+      "name": "createAuthFailureLockout",
+      "filePath": "lan-squad/auth-failure-lockout.js",
+      "lineRange": [
+        3,
+        59
+      ],
+      "summary": "create auth failure lockout supporting LAN LiveSync.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:lan-squad/auth-failure-lockout.test.js",
+      "type": "file",
+      "name": "auth-failure-lockout.test.js",
+      "filePath": "lan-squad/auth-failure-lockout.test.js",
+      "summary": "Tests for auth-failure-lockout.js covering LAN LiveSync.",
+      "tags": [
+        "test",
+        "lan-sync",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:lan-squad/auth-router.js",
+      "type": "file",
+      "name": "auth-router.js",
+      "filePath": "lan-squad/auth-router.js",
+      "summary": "LAN LiveSync helpers and wiring in auth-router.js.",
+      "tags": [
+        "lan-sync",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:lan-squad/auth-router.js:createAuthRouter",
+      "type": "function",
+      "name": "createAuthRouter",
+      "filePath": "lan-squad/auth-router.js",
+      "lineRange": [
+        21,
+        195
+      ],
+      "summary": "create auth router supporting LAN LiveSync.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:lan-squad/auth-router.test.js",
+      "type": "file",
+      "name": "auth-router.test.js",
+      "filePath": "lan-squad/auth-router.test.js",
+      "summary": "Tests for auth-router.js covering LAN LiveSync.",
+      "tags": [
+        "test",
+        "lan-sync",
+        "module"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:lan-squad/auth-router.test.js:createTestApp",
+      "type": "function",
+      "name": "createTestApp",
+      "filePath": "lan-squad/auth-router.test.js",
+      "lineRange": [
+        17,
+        49
+      ],
+      "summary": "create test app supporting LAN LiveSync.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:lan-squad/bearer-auth.js",
+      "type": "file",
+      "name": "bearer-auth.js",
+      "filePath": "lan-squad/bearer-auth.js",
+      "summary": "LAN LiveSync helpers and wiring in bearer-auth.js.",
+      "tags": [
+        "lan-sync",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lan-squad/bearer-auth.js:createBearerAuthMiddleware",
+      "type": "function",
+      "name": "createBearerAuthMiddleware",
+      "filePath": "lan-squad/bearer-auth.js",
+      "lineRange": [
+        10,
+        25
+      ],
+      "summary": "create bearer auth middleware supporting LAN LiveSync.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:lan-squad/bundle-merge.js",
+      "type": "file",
+      "name": "bundle-merge.js",
+      "filePath": "lan-squad/bundle-merge.js",
+      "summary": "LAN LiveSync helpers and wiring in bundle-merge.js.",
+      "tags": [
+        "lan-sync",
+        "module"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:lan-squad/bundle-merge.js:emptyBundle",
+      "type": "function",
+      "name": "emptyBundle",
+      "filePath": "lan-squad/bundle-merge.js",
+      "lineRange": [
+        11,
+        24
+      ],
+      "summary": "empty bundle supporting LAN LiveSync.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lan-squad/bundle-merge.js:todosByKey",
+      "type": "function",
+      "name": "todosByKey",
+      "filePath": "lan-squad/bundle-merge.js",
+      "lineRange": [
+        34,
+        44
+      ],
+      "summary": "todos by key supporting LAN LiveSync.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lan-squad/bundle-merge.js:mergeBundlePut",
+      "type": "function",
+      "name": "mergeBundlePut",
+      "filePath": "lan-squad/bundle-merge.js",
+      "lineRange": [
+        92,
+        268
+      ],
+      "summary": "merge bundle put supporting LAN LiveSync.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:lan-squad/bundle-merge.js:extractPayloadForKey",
+      "type": "function",
+      "name": "extractPayloadForKey",
+      "filePath": "lan-squad/bundle-merge.js",
+      "lineRange": [
+        270,
+        289
+      ],
+      "summary": "extract payload for key supporting LAN LiveSync.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:lan-squad/bundle-merge.test.js",
+      "type": "file",
+      "name": "bundle-merge.test.js",
+      "filePath": "lan-squad/bundle-merge.test.js",
+      "summary": "Tests for bundle-merge.js covering LAN LiveSync.",
+      "tags": [
+        "test",
+        "lan-sync",
+        "module"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:lan-squad/client-identity-store.js",
+      "type": "file",
+      "name": "client-identity-store.js",
+      "filePath": "lan-squad/client-identity-store.js",
+      "summary": "LAN LiveSync helpers and wiring in client-identity-store.js.",
+      "tags": [
+        "lan-sync",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lan-squad/client-identity-store.js:createClientIdentityStore",
+      "type": "function",
+      "name": "createClientIdentityStore",
+      "filePath": "lan-squad/client-identity-store.js",
+      "lineRange": [
+        7,
+        36
+      ],
+      "summary": "create client identity store supporting LAN LiveSync.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:lan-squad/client-identity-store.test.js",
+      "type": "file",
+      "name": "client-identity-store.test.js",
+      "filePath": "lan-squad/client-identity-store.test.js",
+      "summary": "Tests for client-identity-store.js covering LAN LiveSync.",
+      "tags": [
+        "test",
+        "lan-sync",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:lan-squad/command-registry.js",
+      "type": "file",
+      "name": "command-registry.js",
+      "filePath": "lan-squad/command-registry.js",
+      "summary": "LAN LiveSync helpers and wiring in command-registry.js.",
+      "tags": [
+        "lan-sync",
+        "utility",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:lan-squad/command-registry.js:compareCommandOrder",
+      "type": "function",
+      "name": "compareCommandOrder",
+      "filePath": "lan-squad/command-registry.js",
+      "lineRange": [
+        40,
+        51
+      ],
+      "summary": "compare command order supporting LAN LiveSync.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lan-squad/command-registry.js:setPath",
+      "type": "function",
+      "name": "setPath",
+      "filePath": "lan-squad/command-registry.js",
+      "lineRange": [
+        53,
+        64
+      ],
+      "summary": "set path supporting LAN LiveSync.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lan-squad/command-registry.js:applyEstadoActual",
+      "type": "function",
+      "name": "applyEstadoActual",
+      "filePath": "lan-squad/command-registry.js",
+      "lineRange": [
+        66,
+        85
+      ],
+      "summary": "apply estado actual supporting LAN LiveSync.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lan-squad/command-registry.js:applyEventualidades",
+      "type": "function",
+      "name": "applyEventualidades",
+      "filePath": "lan-squad/command-registry.js",
+      "lineRange": [
+        91,
+        110
+      ],
+      "summary": "apply eventualidades supporting LAN LiveSync.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lan-squad/command-registry.js:applyPendientes",
+      "type": "function",
+      "name": "applyPendientes",
+      "filePath": "lan-squad/command-registry.js",
+      "lineRange": [
+        112,
+        143
+      ],
+      "summary": "apply pendientes supporting LAN LiveSync.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lan-squad/command-registry.js:createCommandRegistry",
+      "type": "function",
+      "name": "createCommandRegistry",
+      "filePath": "lan-squad/command-registry.js",
+      "lineRange": [
+        151,
+        189
+      ],
+      "summary": "create command registry supporting LAN LiveSync.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:lan-squad/command-registry.test.js",
+      "type": "file",
+      "name": "command-registry.test.js",
+      "filePath": "lan-squad/command-registry.test.js",
+      "summary": "Tests for command-registry.js covering LAN LiveSync.",
+      "tags": [
+        "test",
+        "lan-sync",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:lan-squad/command-resolver.js",
+      "type": "file",
+      "name": "command-resolver.js",
+      "filePath": "lan-squad/command-resolver.js",
+      "summary": "LAN LiveSync helpers and wiring in command-resolver.js.",
+      "tags": [
+        "lan-sync",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:lan-squad/command-resolver.js:createCommandResolver",
+      "type": "function",
+      "name": "createCommandResolver",
+      "filePath": "lan-squad/command-resolver.js",
+      "lineRange": [
+        5,
+        65
+      ],
+      "summary": "create command resolver supporting LAN LiveSync.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:lan-squad/command-resolver.test.js",
+      "type": "file",
+      "name": "command-resolver.test.js",
+      "filePath": "lan-squad/command-resolver.test.js",
+      "summary": "Tests for command-resolver.js covering LAN LiveSync.",
+      "tags": [
+        "test",
+        "lan-sync",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:lan-squad/command-resolver.test.js:estadoCommand",
+      "type": "function",
+      "name": "estadoCommand",
+      "filePath": "lan-squad/command-resolver.test.js",
+      "lineRange": [
+        19,
+        33
+      ],
+      "summary": "estado command supporting LAN LiveSync.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:lan-squad/conflict-resolver.js",
+      "type": "file",
+      "name": "conflict-resolver.js",
+      "filePath": "lan-squad/conflict-resolver.js",
+      "summary": "LAN LiveSync helpers and wiring in conflict-resolver.js.",
+      "tags": [
+        "lan-sync",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:lan-squad/conflict-resolver.js:createConflictResolver",
+      "type": "function",
+      "name": "createConflictResolver",
+      "filePath": "lan-squad/conflict-resolver.js",
+      "lineRange": [
+        28,
+        176
+      ],
+      "summary": "create conflict resolver supporting LAN LiveSync.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:lan-squad/conflict-resolver.test.js",
+      "type": "file",
+      "name": "conflict-resolver.test.js",
+      "filePath": "lan-squad/conflict-resolver.test.js",
+      "summary": "Tests for conflict-resolver.js covering LAN LiveSync.",
+      "tags": [
+        "test",
+        "lan-sync",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:lan-squad/delta-paths.js",
+      "type": "file",
+      "name": "delta-paths.js",
+      "filePath": "lan-squad/delta-paths.js",
+      "summary": "LAN LiveSync helpers and wiring in delta-paths.js.",
+      "tags": [
+        "lan-sync",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:lan-squad/delta-paths.js:normalizeDeltaPath",
+      "type": "function",
+      "name": "normalizeDeltaPath",
+      "filePath": "lan-squad/delta-paths.js",
+      "lineRange": [
+        29,
+        39
+      ],
+      "summary": "normalize delta path supporting LAN LiveSync.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lan-squad/delta-paths.js:classifyDeltaPath",
+      "type": "function",
+      "name": "classifyDeltaPath",
+      "filePath": "lan-squad/delta-paths.js",
+      "lineRange": [
+        56,
+        65
+      ],
+      "summary": "classify delta path supporting LAN LiveSync.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lan-squad/delta-paths.js:validateDeltaPaths",
+      "type": "function",
+      "name": "validateDeltaPaths",
+      "filePath": "lan-squad/delta-paths.js",
+      "lineRange": [
+        67,
+        93
+      ],
+      "summary": "validate delta paths supporting LAN LiveSync.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lan-squad/delta-paths.js:applyPathValue",
+      "type": "function",
+      "name": "applyPathValue",
+      "filePath": "lan-squad/delta-paths.js",
+      "lineRange": [
+        95,
+        109
+      ],
+      "summary": "apply path value supporting LAN LiveSync.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:lan-squad/delta-paths.test.js",
+      "type": "file",
+      "name": "delta-paths.test.js",
+      "filePath": "lan-squad/delta-paths.test.js",
+      "summary": "Tests for delta-paths.js covering LAN LiveSync.",
+      "tags": [
+        "test",
+        "lan-sync",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:lan-squad/delta-resolver.js",
+      "type": "file",
+      "name": "delta-resolver.js",
+      "filePath": "lan-squad/delta-resolver.js",
+      "summary": "LAN LiveSync helpers and wiring in delta-resolver.js.",
+      "tags": [
+        "lan-sync",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:lan-squad/delta-resolver.js:buildRejectedMeta",
+      "type": "function",
+      "name": "buildRejectedMeta",
+      "filePath": "lan-squad/delta-resolver.js",
+      "lineRange": [
+        22,
+        32
+      ],
+      "summary": "build rejected meta supporting LAN LiveSync.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lan-squad/delta-resolver.js:createDeltaResolver",
+      "type": "function",
+      "name": "createDeltaResolver",
+      "filePath": "lan-squad/delta-resolver.js",
+      "lineRange": [
+        34,
+        133
+      ],
+      "summary": "create delta resolver supporting LAN LiveSync.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:lan-squad/delta-resolver.test.js",
+      "type": "file",
+      "name": "delta-resolver.test.js",
+      "filePath": "lan-squad/delta-resolver.test.js",
+      "summary": "Tests for delta-resolver.js covering LAN LiveSync.",
+      "tags": [
+        "test",
+        "lan-sync",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:lan-squad/effective-team-code.js",
+      "type": "file",
+      "name": "effective-team-code.js",
+      "filePath": "lan-squad/effective-team-code.js",
+      "summary": "LAN LiveSync helpers and wiring in effective-team-code.js.",
+      "tags": [
+        "lan-sync",
+        "utility",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:lan-squad/effective-team-code.js:readLanGuestBearerFile",
+      "type": "function",
+      "name": "readLanGuestBearerFile",
+      "filePath": "lan-squad/effective-team-code.js",
+      "lineRange": [
+        44,
+        54
+      ],
+      "summary": "Guest-only bearer (remote host token); never overwrites lan-team-code.txt.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lan-squad/effective-team-code.js:recoverLocalHostTeamCodeIfGuestOverwrite",
+      "type": "function",
+      "name": "recoverLocalHostTeamCodeIfGuestOverwrite",
+      "filePath": "lan-squad/effective-team-code.js",
+      "lineRange": [
+        67,
+        79
+      ],
+      "summary": "7.2.0 wrote guest bearer into lan-team-code.txt — regenerate local host token when detected.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lan-squad/effective-team-code.js:rehashLanHostState",
+      "type": "function",
+      "name": "rehashLanHostState",
+      "filePath": "lan-squad/effective-team-code.js",
+      "lineRange": [
+        81,
+        92
+      ],
+      "summary": "rehash lan host state supporting LAN LiveSync.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lan-squad/effective-team-code.js:reconcileLanHostStateTeamCodeFile",
+      "type": "function",
+      "name": "reconcileLanHostStateTeamCodeFile",
+      "filePath": "lan-squad/effective-team-code.js",
+      "lineRange": [
+        94,
+        105
+      ],
+      "summary": "reconcile lan host state team code file supporting LAN LiveSync.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lan-squad/effective-team-code.js:reconcileLanHostStateTeamCodeDb",
+      "type": "function",
+      "name": "reconcileLanHostStateTeamCodeDb",
+      "filePath": "lan-squad/effective-team-code.js",
+      "lineRange": [
+        107,
+        121
+      ],
+      "summary": "reconcile lan host state team code db supporting LAN LiveSync.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lan-squad/effective-team-code.js:bootstrapLanTeamCode",
+      "type": "function",
+      "name": "bootstrapLanTeamCode",
+      "filePath": "lan-squad/effective-team-code.js",
+      "lineRange": [
+        132,
+        173
+      ],
+      "summary": "bootstrap lan team code supporting LAN LiveSync.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lan-squad/effective-team-code.js:readLanTeamCodeFile",
+      "type": "function",
+      "name": "readLanTeamCodeFile",
+      "filePath": "lan-squad/effective-team-code.js",
+      "lineRange": [
+        176,
+        186
+      ],
+      "summary": "Read token from disk only (IPC); never returns weak or default fallbacks.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:lan-squad/effective-team-code.test.js",
+      "type": "file",
+      "name": "effective-team-code.test.js",
+      "filePath": "lan-squad/effective-team-code.test.js",
+      "summary": "Tests for effective-team-code.js covering LAN LiveSync.",
+      "tags": [
+        "test",
+        "lan-sync",
+        "module"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:lan-squad/entity-keys.js",
+      "type": "file",
+      "name": "entity-keys.js",
+      "filePath": "lan-squad/entity-keys.js",
+      "summary": "LAN LiveSync helpers and wiring in entity-keys.js.",
+      "tags": [
+        "lan-sync",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lan-squad/entity-keys.js:collectKeysFromBundlePayload",
+      "type": "function",
+      "name": "collectKeysFromBundlePayload",
+      "filePath": "lan-squad/entity-keys.js",
+      "lineRange": [
+        15,
+        32
+      ],
+      "summary": "collect keys from bundle payload supporting LAN LiveSync.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:lan-squad/entity-keys.test.js",
+      "type": "file",
+      "name": "entity-keys.test.js",
+      "filePath": "lan-squad/entity-keys.test.js",
+      "summary": "Tests for entity-keys.js covering LAN LiveSync.",
+      "tags": [
+        "test",
+        "lan-sync",
+        "module"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:generate-receta-hu.js",
+      "target": "function:generate-receta-hu.js:resolveTemplatePath",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:generate-receta-hu.js",
+      "target": "function:generate-receta-hu.js:splitToFieldLines",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:generate-receta-hu.js",
+      "target": "function:generate-receta-hu.js:formatMedicationsBlock",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:generate-receta-hu.js",
+      "target": "function:generate-receta-hu.js:fillRecetaHuPdf",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lan-squad/atomic-json.js",
+      "target": "function:lan-squad/atomic-json.js:readJson",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lan-squad/audit-log.test.js",
+      "target": "file:lan-squad/audit-log.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lan-squad/audit-log.js",
+      "target": "file:lan-squad/audit-log.test.js",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:lan-squad/auth-failure-lockout.js",
+      "target": "function:lan-squad/auth-failure-lockout.js:createAuthFailureLockout",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lan-squad/auth-failure-lockout.test.js",
+      "target": "file:lan-squad/auth-failure-lockout.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lan-squad/auth-failure-lockout.js",
+      "target": "file:lan-squad/auth-failure-lockout.test.js",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:lan-squad/auth-router.js",
+      "target": "file:lan-squad/auth-failure-lockout.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lan-squad/auth-router.js",
+      "target": "file:lan-squad/bearer-auth.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lan-squad/auth-router.js",
+      "target": "file:lan-squad/lan-request-host.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lan-squad/auth-router.js",
+      "target": "file:lan-squad/redact-secrets.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lan-squad/auth-router.js",
+      "target": "file:lan-squad/team-code.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lan-squad/auth-router.js",
+      "target": "file:lib/db/lan-db-bridge.cjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lan-squad/auth-router.js",
+      "target": "function:lan-squad/auth-router.js:createAuthRouter",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lan-squad/auth-router.test.js",
+      "target": "file:lan-squad/auth-failure-lockout.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lan-squad/auth-router.test.js",
+      "target": "file:lan-squad/auth-router.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lan-squad/auth-router.test.js",
+      "target": "file:lan-squad/client-identity-store.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lan-squad/auth-router.test.js",
+      "target": "file:lan-squad/host-store.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lan-squad/auth-router.test.js",
+      "target": "file:lan-squad/shift-pin-store.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lan-squad/auth-router.test.js",
+      "target": "file:lan-squad/ticket-store.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lan-squad/auth-router.test.js",
+      "target": "file:lan-squad/ward-host-registry.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lan-squad/auth-router.test.js",
+      "target": "file:lib/db/lan-db-bridge.cjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lan-squad/auth-router.test.js",
+      "target": "function:lan-squad/auth-router.test.js:createTestApp",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lan-squad/auth-failure-lockout.js",
+      "target": "file:lan-squad/auth-router.test.js",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:lan-squad/auth-router.js",
+      "target": "file:lan-squad/auth-router.test.js",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:lan-squad/client-identity-store.js",
+      "target": "file:lan-squad/auth-router.test.js",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:lan-squad/host-store.js",
+      "target": "file:lan-squad/auth-router.test.js",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:lan-squad/shift-pin-store.js",
+      "target": "file:lan-squad/auth-router.test.js",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:lan-squad/ticket-store.js",
+      "target": "file:lan-squad/auth-router.test.js",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:lan-squad/ward-host-registry.js",
+      "target": "file:lan-squad/auth-router.test.js",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:lib/db/lan-db-bridge.cjs",
+      "target": "file:lan-squad/auth-router.test.js",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:lan-squad/bearer-auth.js",
+      "target": "file:lan-squad/team-code.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lan-squad/bearer-auth.js",
+      "target": "function:lan-squad/bearer-auth.js:createBearerAuthMiddleware",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lan-squad/bundle-merge.js",
+      "target": "file:lan-squad/audit-log.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lan-squad/bundle-merge.js",
+      "target": "file:lan-squad/entity-keys.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lan-squad/bundle-merge.js",
+      "target": "file:lan-squad/lww-utils.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lan-squad/bundle-merge.js",
+      "target": "file:lib/db/clinical-ops-bundle-merge.cjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lan-squad/bundle-merge.js",
+      "target": "function:lan-squad/bundle-merge.js:emptyBundle",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lan-squad/bundle-merge.js",
+      "target": "function:lan-squad/bundle-merge.js:todosByKey",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lan-squad/bundle-merge.js",
+      "target": "function:lan-squad/bundle-merge.js:mergeBundlePut",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lan-squad/bundle-merge.js",
+      "target": "function:lan-squad/bundle-merge.js:extractPayloadForKey",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lan-squad/bundle-merge.test.js",
+      "target": "file:lan-squad/bundle-merge.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lan-squad/bundle-merge.js",
+      "target": "file:lan-squad/bundle-merge.test.js",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:lan-squad/client-identity-store.js",
+      "target": "function:lan-squad/client-identity-store.js:createClientIdentityStore",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lan-squad/client-identity-store.test.js",
+      "target": "file:lan-squad/client-identity-store.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lan-squad/client-identity-store.js",
+      "target": "file:lan-squad/client-identity-store.test.js",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:lan-squad/command-registry.js",
+      "target": "function:lan-squad/command-registry.js:compareCommandOrder",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lan-squad/command-registry.js",
+      "target": "function:lan-squad/command-registry.js:setPath",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lan-squad/command-registry.js",
+      "target": "function:lan-squad/command-registry.js:applyEstadoActual",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lan-squad/command-registry.js",
+      "target": "function:lan-squad/command-registry.js:applyEventualidades",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lan-squad/command-registry.js",
+      "target": "function:lan-squad/command-registry.js:applyPendientes",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lan-squad/command-registry.js",
+      "target": "function:lan-squad/command-registry.js:createCommandRegistry",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lan-squad/command-registry.test.js",
+      "target": "file:lan-squad/command-registry.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lan-squad/command-registry.js",
+      "target": "file:lan-squad/command-registry.test.js",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:lan-squad/command-resolver.js",
+      "target": "file:lan-squad/command-registry.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lan-squad/command-resolver.js",
+      "target": "function:lan-squad/command-resolver.js:createCommandResolver",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lan-squad/command-resolver.test.js",
+      "target": "file:lan-squad/command-resolver.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lan-squad/command-resolver.test.js",
+      "target": "file:lan-squad/host-store.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lan-squad/command-resolver.test.js",
+      "target": "function:lan-squad/command-resolver.test.js:estadoCommand",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lan-squad/command-resolver.js",
+      "target": "file:lan-squad/command-resolver.test.js",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:lan-squad/host-store.js",
+      "target": "file:lan-squad/command-resolver.test.js",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:lan-squad/conflict-resolver.js",
+      "target": "file:lan-squad/lww-utils.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lan-squad/conflict-resolver.js",
+      "target": "function:lan-squad/conflict-resolver.js:createConflictResolver",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lan-squad/conflict-resolver.test.js",
+      "target": "file:lan-squad/conflict-resolver.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lan-squad/conflict-resolver.test.js",
+      "target": "file:lan-squad/host-store.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lan-squad/conflict-resolver.js",
+      "target": "file:lan-squad/conflict-resolver.test.js",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:lan-squad/host-store.js",
+      "target": "file:lan-squad/conflict-resolver.test.js",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:lan-squad/delta-paths.js",
+      "target": "function:lan-squad/delta-paths.js:normalizeDeltaPath",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lan-squad/delta-paths.js",
+      "target": "function:lan-squad/delta-paths.js:classifyDeltaPath",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lan-squad/delta-paths.js",
+      "target": "function:lan-squad/delta-paths.js:validateDeltaPaths",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lan-squad/delta-paths.js",
+      "target": "function:lan-squad/delta-paths.js:applyPathValue",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lan-squad/delta-paths.test.js",
+      "target": "file:lan-squad/delta-paths.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lan-squad/delta-paths.js",
+      "target": "file:lan-squad/delta-paths.test.js",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:lan-squad/delta-resolver.js",
+      "target": "file:lan-squad/delta-paths.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lan-squad/delta-resolver.js",
+      "target": "function:lan-squad/delta-resolver.js:buildRejectedMeta",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lan-squad/delta-resolver.js",
+      "target": "function:lan-squad/delta-resolver.js:createDeltaResolver",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lan-squad/delta-resolver.test.js",
+      "target": "file:lan-squad/delta-resolver.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lan-squad/delta-resolver.test.js",
+      "target": "file:lan-squad/host-store.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lan-squad/delta-resolver.js",
+      "target": "file:lan-squad/delta-resolver.test.js",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:lan-squad/host-store.js",
+      "target": "file:lan-squad/delta-resolver.test.js",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:lan-squad/effective-team-code.js",
+      "target": "file:lan-squad/team-code.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lan-squad/effective-team-code.js",
+      "target": "function:lan-squad/effective-team-code.js:readLanGuestBearerFile",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lan-squad/effective-team-code.js",
+      "target": "function:lan-squad/effective-team-code.js:recoverLocalHostTeamCodeIfGuestOverwrite",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lan-squad/effective-team-code.js",
+      "target": "function:lan-squad/effective-team-code.js:rehashLanHostState",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lan-squad/effective-team-code.js",
+      "target": "function:lan-squad/effective-team-code.js:reconcileLanHostStateTeamCodeFile",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lan-squad/effective-team-code.js",
+      "target": "function:lan-squad/effective-team-code.js:reconcileLanHostStateTeamCodeDb",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lan-squad/effective-team-code.js",
+      "target": "function:lan-squad/effective-team-code.js:bootstrapLanTeamCode",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lan-squad/effective-team-code.js",
+      "target": "function:lan-squad/effective-team-code.js:readLanTeamCodeFile",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lan-squad/effective-team-code.test.js",
+      "target": "file:lan-squad/effective-team-code.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lan-squad/effective-team-code.test.js",
+      "target": "file:lan-squad/team-code.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lan-squad/effective-team-code.js",
+      "target": "file:lan-squad/effective-team-code.test.js",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:lan-squad/team-code.js",
+      "target": "file:lan-squad/effective-team-code.test.js",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:lan-squad/entity-keys.js",
+      "target": "function:lan-squad/entity-keys.js:collectKeysFromBundlePayload",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lan-squad/entity-keys.test.js",
+      "target": "file:lan-squad/entity-keys.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lan-squad/entity-keys.js",
+      "target": "file:lan-squad/entity-keys.test.js",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

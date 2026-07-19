@@ -1,0 +1,25 @@
+R+ 7.6.2 (iPad scope LAN + Interconsultas sala)
+===================================================
+
+Fecha: 2026-07-01
+
+## Resumen
+
+Sobre **7.6.1**: iPad/PWA conserva el scope clínico hidratado por LAN sin SQLCipher; censo y ops clínicas sincronizan en móvil; sala **Interconsultas** al asignar equipo o registrar paciente; filtro de censo por sala incluye pacientes del equipo; suite `room.test` ya no cuelga el pipeline de release.
+
+## Nuevo / mejorado
+
+- **iPad — scope LAN** — Sin IPC SQLCipher se conserva `scopeContext` hidratado por ops del anfitrión; el censo no aplica pacientes LAN hasta tener equipo unido.
+- **iPad — ops clínicas** — Fetch/apply de snapshot del host en móvil; reconcile de pacientes tras merge de ops sin exigir modo DB en desktop.
+- **Interconsultas — sala** — Al registrar o asignar equipo, la sala del equipo prevalece sobre el stamp UX del perfil (p. ej. Cardiología en sala Interconsultas).
+- **Censo — filtro sala** — Pacientes asignados a un equipo cuentan por la sala del equipo, no solo por `patient.sala` explícita.
+- **Tests / release** — `room.test.mjs` teardown + `--test-force-exit` en posición correcta en el wrapper Electron; join “ya en sala” sin reconcile pesado.
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v7.6.2
+
+- Mac: `R+-7.6.2-arm64.dmg`, `R+-7.6.2-x64.dmg` (y zip para auto-update).
+- Windows: `R+-7.6.2-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye write-release-yml.js).

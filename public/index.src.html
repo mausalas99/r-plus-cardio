@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob:; connect-src 'self' http: https: ws: wss:; manifest-src 'self'; base-uri 'self'; form-action 'self'">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<title>R+</title>
+<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="R+">
+<meta name="theme-color" content="#4a52e8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="/tokens.css">
+<script>
+(function () {
+  try {
+    if (!window.electronAPI) window.__RPC_WEB_CLINICAL__ = true;
+  } catch (_eWeb) {}
+})();
+(function () {
+  try {
+    if (window.electronAPI && typeof window.electronAPI.getWindowChromeFlags === 'function') {
+      var f = window.electronAPI.getWindowChromeFlags();
+      if (f && f.macTitleBarInset) document.documentElement.classList.add('electron-macos-inset-bar');
+      if (f && f.isWindows) document.documentElement.classList.add('electron-windows');
+    }
+  } catch (_e) {}
+})();
+(function () {
+  try {
+    var ls = localStorage;
+    var p = new URLSearchParams(location.search || '');
+    var pathMobile = /^\/mobile\/?$/i.test(location.pathname || '');
+    var queryMobile = p.get('rpc-mobile') === '1';
+    var sticky = ls.getItem('rpc-mobile-mode') === '1';
+    var inviteToken = !!(p.get('token') || p.get('code'));
+    var touchUa = /iPad|iPhone|iPod|Android|Mobile/i.test(navigator.userAgent || '');
+    if (!queryMobile && !pathMobile && !sticky && !inviteToken && !touchUa) return;
+    window.__RPC_MOBILE_WEB__ = true;
+    document.documentElement.classList.add('rpc-mobile-web', 'ui-density-normal');
+    ls.setItem('rpc-mobile-mode', '1');
+    try { ls.setItem('rpc-sidebar-auto-hide', '0'); } catch (_eSide) {}
+    var token = String(p.get('token') || p.get('code') || '').trim();
+    if (token) {
+      var hostUrl = String(location.origin || '').replace(/\/+$/, '');
+      var room = String(p.get('room') || '').trim();
+      var sala = String(p.get('sala') || '').trim();
+      if (/^sala-[12e]|torre-hu|area-a-pensionistas$/i.test(sala)) room = room || sala.toLowerCase();
+      else if (sala === 'Sala 1') room = room || 'sala-1';
+      else if (sala === 'Sala 2') room = room || 'sala-2';
+      else if (sala === 'Sala E') room = room || 'sala-e';
+      else if (sala === 'Torre HU') room = room || 'torre-hu';
+      else if (sala === 'Área A/Pensionistas') room = room || 'area-a-pensionistas';
+      var prev = {};
+      try { prev = JSON.parse(ls.getItem('rpc-lan-config') || '{}') || {}; } catch (_ePrev) {}
+      var cfg = { hostUrl: hostUrl || prev.hostUrl || '', teamCode: token };
+      if (room) cfg.roomId = room;
+      if (sala) cfg.sala = sala;
+      var user = String(p.get('user') || '').trim();
+      var name = String(p.get('name') || '').trim();
+      var rank = String(p.get('rank') || '').trim();
+      if (user || name || rank || sala) {
+        cfg.sharer = { user: user, name: name, rank: rank, sala: sala || undefined };
+      }
+      if (cfg.hostUrl && cfg.teamCode) ls.setItem('rpc-lan-config', JSON.stringify(cfg));
+    }
+  } catch (_e) {}
+})();
+(function () {
+  try {
+    var d = localStorage.getItem('rpc-ui-density');
+    var isNormal = true;
+    if (d === 'pase' || d === 'compact') isNormal = false;
+    else if (d === 'normal' || d === 'comfortable') isNormal = true;
+    document.documentElement.classList.toggle('ui-density-normal', isNormal);
+  } catch (_e) {}
+})();
+(function () {
+  try {
+    var ls = localStorage;
+    var root = document.documentElement;
+    var isDark = ls.getItem('theme') === 'dark';
+    if (isDark) root.classList.add('dark');
+    if (ls.getItem('rpc-high-contrast') === '1') root.classList.add('high-contrast');
+    var motion = ls.getItem('rpc-motion-mode');
+    if (motion === 'sobrio') root.classList.add('motion-sobrio');
+    else if (motion === 'expresivo') root.classList.add('motion-expresivo');
+    var meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.setAttribute('content', isDark ? '#161922' : '#4a52e8');
+  } catch (_e) {}
+})();
+</script>
+<link rel="stylesheet" href="/styles/base.css">
+<link rel="stylesheet" href="/styles/layout.css">
+<link rel="stylesheet" href="/styles/pase-board.css">
+<link rel="stylesheet" href="/styles/sidebar.css">
+<link rel="stylesheet" href="/styles/lab.css">
+<link rel="stylesheet" href="/styles/expediente.css">
+<link rel="stylesheet" href="/styles/group-row.css">
+<link rel="stylesheet" href="/styles/estado-actual.css">
+<link rel="stylesheet" href="/styles/eventualidades.css">
+<link rel="stylesheet" href="/styles/historia-clinica.css">
+<link rel="stylesheet" href="/styles/vpo.css">
+<link rel="stylesheet" href="/styles/receta-hu.css">
+<link rel="stylesheet" href="/styles/med-pharm-profile.css">
+<link rel="stylesheet" href="/styles/settings.css">
+<link rel="stylesheet" href="/styles/modals.css">
+<link rel="stylesheet" href="/styles/motion.css">
+<link rel="stylesheet" href="/styles/skeleton.css">
+<link rel="stylesheet" href="/styles/components.css">
+<link rel="stylesheet" href="/styles/workbench-tokens.css">
+<link rel="stylesheet" href="/styles/soft-ui.css">
+<link rel="stylesheet" href="/styles/workbench-surfaces.css">
+<link rel="stylesheet" href="/styles/rams-tufte-workbench.css">
+<link rel="stylesheet" href="/styles/mobile.css">
+<link rel="stylesheet" href="/styles/rpc-date-picker.css">
+<link rel="stylesheet" href="/styles/overlays.css">
+<link rel="stylesheet" href="/styles/cmdk.css">
+<link rel="stylesheet" href="/styles/mobile-surfaces.css">
+<script src="/vendor/sortable.min.js"></script>
+<script src="/vendor/chart.umd.min.js"></script>
+<script type="module" src="/js/app.bundle.mjs"></script>
+</head>
+<body>
+<!-- @include partials/chrome/overlays.html -->
+<!-- @include partials/chrome/header.html -->
+<!-- @include partials/layout/app-body.html -->
+<!-- @include partials/modals/root.html -->
+</body>
+</html>

@@ -1,0 +1,22 @@
+R+ 6.6.4 (LAN — iPad links y sync en chunks)
+================================================
+
+Fecha: 2026-06-04
+
+## Resumen
+
+Parche sobre **6.6.3**: enlaces móviles `/join/req_…` para iPad e invitación de sala, con parámetros opcionales de perfil en la URL; continúa la línea cold-start con chunks de esbuild.
+
+## Nuevo / mejorado
+
+- **⇄** — Enlace `/join/req_…` para iPad y invitación; parámetros opcionales de perfil en la URL.
+- **Renderer** — Chunks de esbuild; carga diferida de módulos pesados (continúa línea 6.6.3 cold-start).
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v6.6.4
+
+- Mac: `R+-6.6.4-arm64.dmg`, `R+-6.6.4-x64.dmg` (y zip para auto-update).
+- Windows: `R+-6.6.4-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye write-release-yml.js).

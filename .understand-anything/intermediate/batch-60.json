@@ -1,0 +1,337 @@
+{
+  "nodes": [
+    {
+      "id": "document:.agents/skills/brandkit/SKILL.md",
+      "type": "document",
+      "name": "SKILL.md",
+      "filePath": ".agents/skills/brandkit/SKILL.md",
+      "summary": "Agent skill instructions for brandkit workflows used by AI coding assistants.",
+      "tags": [
+        "documentation",
+        "agent-skill",
+        "development"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:.agents/skills/design-taste-frontend-v1/SKILL.md",
+      "type": "document",
+      "name": "SKILL.md",
+      "filePath": ".agents/skills/design-taste-frontend-v1/SKILL.md",
+      "summary": "Agent skill instructions for design taste frontend v1 workflows used by AI coding assistants.",
+      "tags": [
+        "documentation",
+        "agent-skill",
+        "development"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:.agents/skills/design-taste-frontend/SKILL.md",
+      "type": "document",
+      "name": "SKILL.md",
+      "filePath": ".agents/skills/design-taste-frontend/SKILL.md",
+      "summary": "Agent skill instructions for design taste frontend workflows used by AI coding assistants.",
+      "tags": [
+        "documentation",
+        "agent-skill",
+        "development"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:.agents/skills/full-output-enforcement/SKILL.md",
+      "type": "document",
+      "name": "SKILL.md",
+      "filePath": ".agents/skills/full-output-enforcement/SKILL.md",
+      "summary": "Agent skill instructions for full output enforcement workflows used by AI coding assistants.",
+      "tags": [
+        "documentation",
+        "agent-skill",
+        "development"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/gpt-taste/SKILL.md",
+      "type": "document",
+      "name": "SKILL.md",
+      "filePath": ".agents/skills/gpt-taste/SKILL.md",
+      "summary": "Agent skill instructions for gpt taste workflows used by AI coding assistants.",
+      "tags": [
+        "documentation",
+        "agent-skill",
+        "development"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:.agents/skills/high-end-visual-design/SKILL.md",
+      "type": "document",
+      "name": "SKILL.md",
+      "filePath": ".agents/skills/high-end-visual-design/SKILL.md",
+      "summary": "Agent skill instructions for high end visual design workflows used by AI coding assistants.",
+      "tags": [
+        "documentation",
+        "agent-skill",
+        "development"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:.agents/skills/image-to-code/SKILL.md",
+      "type": "document",
+      "name": "SKILL.md",
+      "filePath": ".agents/skills/image-to-code/SKILL.md",
+      "summary": "Agent skill instructions for image to code workflows used by AI coding assistants.",
+      "tags": [
+        "documentation",
+        "agent-skill",
+        "development"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:.agents/skills/imagegen-frontend-mobile/SKILL.md",
+      "type": "document",
+      "name": "SKILL.md",
+      "filePath": ".agents/skills/imagegen-frontend-mobile/SKILL.md",
+      "summary": "Agent skill instructions for imagegen frontend mobile workflows used by AI coding assistants.",
+      "tags": [
+        "documentation",
+        "agent-skill",
+        "development"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:.agents/skills/imagegen-frontend-web/SKILL.md",
+      "type": "document",
+      "name": "SKILL.md",
+      "filePath": ".agents/skills/imagegen-frontend-web/SKILL.md",
+      "summary": "Agent skill instructions for imagegen frontend web workflows used by AI coding assistants.",
+      "tags": [
+        "documentation",
+        "agent-skill",
+        "development"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:.agents/skills/improve/SKILL.md",
+      "type": "document",
+      "name": "SKILL.md",
+      "filePath": ".agents/skills/improve/SKILL.md",
+      "summary": "Agent skill instructions for improve workflows used by AI coding assistants.",
+      "tags": [
+        "documentation",
+        "agent-skill",
+        "development"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:.agents/skills/industrial-brutalist-ui/SKILL.md",
+      "type": "document",
+      "name": "SKILL.md",
+      "filePath": ".agents/skills/industrial-brutalist-ui/SKILL.md",
+      "summary": "Agent skill instructions for industrial brutalist ui workflows used by AI coding assistants.",
+      "tags": [
+        "documentation",
+        "agent-skill",
+        "development"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:.agents/skills/minimalist-ui/SKILL.md",
+      "type": "document",
+      "name": "SKILL.md",
+      "filePath": ".agents/skills/minimalist-ui/SKILL.md",
+      "summary": "Agent skill instructions for minimalist ui workflows used by AI coding assistants.",
+      "tags": [
+        "documentation",
+        "agent-skill",
+        "development"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:.agents/skills/redesign-existing-projects/SKILL.md",
+      "type": "document",
+      "name": "SKILL.md",
+      "filePath": ".agents/skills/redesign-existing-projects/SKILL.md",
+      "summary": "Agent skill instructions for redesign existing projects workflows used by AI coding assistants.",
+      "tags": [
+        "documentation",
+        "agent-skill",
+        "development"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:.agents/skills/stitch-design-taste/DESIGN.md",
+      "type": "document",
+      "name": "DESIGN.md",
+      "filePath": ".agents/skills/stitch-design-taste/DESIGN.md",
+      "summary": "Project documentation covering design system: taste standard for R+ clinical workbench.",
+      "tags": [
+        "documentation",
+        "development",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:.agents/skills/stitch-design-taste/SKILL.md",
+      "type": "document",
+      "name": "SKILL.md",
+      "filePath": ".agents/skills/stitch-design-taste/SKILL.md",
+      "summary": "Agent skill instructions for stitch design taste workflows used by AI coding assistants.",
+      "tags": [
+        "documentation",
+        "agent-skill",
+        "development"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:.claude/settings.json",
+      "type": "config",
+      "name": "settings.json",
+      "filePath": ".claude/settings.json",
+      "summary": "settings.json (json, 1 non-empty lines).",
+      "tags": [
+        "module",
+        "module",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.cursor/plans/premium_ui_overhaul_14d9a511.plan.md",
+      "type": "document",
+      "name": "premium_ui_overhaul_14d9a511.plan.md",
+      "filePath": ".cursor/plans/premium_ui_overhaul_14d9a511.plan.md",
+      "summary": "Project documentation covering premium ui overhaul (hallmark phase 5) for R+ clinical workbench.",
+      "tags": [
+        "documentation",
+        "development",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:.cursor/rules/context-token-management.mdc",
+      "type": "file",
+      "name": "context-token-management.mdc",
+      "filePath": ".cursor/rules/context-token-management.mdc",
+      "summary": "Cursor workspace rule enforcing context token management conventions for R+ agents.",
+      "tags": [
+        "documentation",
+        "cursor-rule",
+        "development",
+        "configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:.cursor/rules/deepseek-integration.mdc",
+      "type": "file",
+      "name": "deepseek-integration.mdc",
+      "filePath": ".cursor/rules/deepseek-integration.mdc",
+      "summary": "Cursor workspace rule enforcing deepseek integration conventions for R+ agents.",
+      "tags": [
+        "documentation",
+        "cursor-rule",
+        "development",
+        "configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:.cursor/rules/documentation-sync.mdc",
+      "type": "file",
+      "name": "documentation-sync.mdc",
+      "filePath": ".cursor/rules/documentation-sync.mdc",
+      "summary": "Cursor workspace rule enforcing documentation sync conventions for R+ agents.",
+      "tags": [
+        "documentation",
+        "cursor-rule",
+        "development",
+        "configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:.cursor/rules/product-north-star.mdc",
+      "type": "file",
+      "name": "product-north-star.mdc",
+      "filePath": ".cursor/rules/product-north-star.mdc",
+      "summary": "Cursor workspace rule enforcing product north star conventions for R+ agents.",
+      "tags": [
+        "documentation",
+        "cursor-rule",
+        "development",
+        "configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:.cursor/rules/project-context.mdc",
+      "type": "file",
+      "name": "project-context.mdc",
+      "filePath": ".cursor/rules/project-context.mdc",
+      "summary": "Cursor workspace rule enforcing project context conventions for R+ agents.",
+      "tags": [
+        "documentation",
+        "cursor-rule",
+        "development",
+        "configuration"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:.cursor/rules/sync-context-on-commit.mdc",
+      "type": "file",
+      "name": "sync-context-on-commit.mdc",
+      "filePath": ".cursor/rules/sync-context-on-commit.mdc",
+      "summary": "Cursor workspace rule enforcing sync context on commit conventions for R+ agents.",
+      "tags": [
+        "documentation",
+        "cursor-rule",
+        "development",
+        "configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:.cursor/rules/technical-debt-accounting.mdc",
+      "type": "file",
+      "name": "technical-debt-accounting.mdc",
+      "filePath": ".cursor/rules/technical-debt-accounting.mdc",
+      "summary": "Cursor workspace rule enforcing technical debt accounting conventions for R+ agents.",
+      "tags": [
+        "documentation",
+        "cursor-rule",
+        "development",
+        "configuration"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:.cursor/settings.json",
+      "type": "config",
+      "name": "settings.json",
+      "filePath": ".cursor/settings.json",
+      "summary": "settings.json (json, 12 non-empty lines).",
+      "tags": [
+        "module",
+        "module",
+        "module"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": []
+}

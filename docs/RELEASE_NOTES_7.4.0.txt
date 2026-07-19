@@ -1,0 +1,29 @@
+R+ 7.4.0 (arranque rápido, monitoreo EA y UI pulida)
+========================================================
+
+Fecha: 2026-06-22
+
+## Resumen
+
+Sobre **7.3.8**: la app **abre más rápido** (módulos pesados cargan bajo demanda); **Estado actual** valida signos vitales por turno y rellena la hora de alteración desde el registro; el **censo** deja de parpadear al re-tocar el mismo paciente; el **expediente** en pase se pinta aunque el panel estuviera vacío; y pulido visual en sidebar, workbench, EA e interno.
+
+## Nuevo / mejorado
+
+- **Arranque** — Modo entrega, plataforma, tour, modales, export rápido, paleta de comandos, ajustes de sync y cliente LAN móvil entran con carga diferida; menos trabajo antes del primer uso visible.
+- **Estado actual — signos vitales** — Al **registrar** la medición se valida el máximo por turno por signo (TA, FC, FR, etc.); mensaje claro si superas el límite. Al agregar capas, la hora de **alteración** se prellena desde la fecha/hora del registro.
+- **Censo** — Re-seleccionar el mismo paciente ya no re-dibuja toda la lista; el highlight activo se actualiza en silencio. Primera selección desde estado vacío ya no se trata como «sin cambio».
+- **Pase / expediente** — Al cambiar de paciente, las pestañas del expediente se fuerzan a render si el montaje estaba vacío (p. ej. overview en nota). En pase + nota, el modo overview del turno se alinea al cambiar paciente.
+- **UI — tokens y superficies** — Anillos de profundidad (`shadow-border`) en tarjetas y contenedores; sidebar con cama primero; spacing y jerarquía en EA; lab, modales y **interno** alineados al design system.
+
+## Operación en guardia
+
+Instala **7.4.0** si notas lentitud al abrir R+ entre pacientes o usas monitoreo con varias lecturas de signos por turno. Sin cambio de esquema SQLCipher (sigue **v17**). Recomendable el mismo build en todas las Macs del turno para arranque homogéneo; no es obligatorio para datos clínicos ni ⇄.
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v7.4.0
+
+- Mac: `R+-7.4.0-arm64.dmg`, `R+-7.4.0-x64.dmg` (y zip para auto-update).
+- Windows: `R+-7.4.0-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye write-release-yml.js).

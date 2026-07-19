@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Lista de espera">
+  <rect width="512" height="512" fill="#4a52e8"/>
+  <g transform="translate(256 256) scale(0.82)">
+    <rect x="-108" y="-58" width="216" height="20" rx="10" fill="#ffffff"/>
+    <rect x="-108" y="-14" width="216" height="20" rx="10" fill="#ffffff" opacity="0.5"/>
+    <rect x="-108" y="30" width="216" height="20" rx="10" fill="#ffffff" opacity="0.5"/>
+  </g>
+</svg>

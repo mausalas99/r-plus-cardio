@@ -1,0 +1,1797 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 20,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "docs/superpowers/plans/2026-05-31-sqlcipher-forensic-audit.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 923,
+      "nonEmptyLines": 706,
+      "sections": [
+        {
+          "heading": "SQLCipher Clinical Store & Forensic Audit Ledger — Implementation Plan",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "File map",
+          "level": 2,
+          "line": 19
+        },
+        {
+          "heading": "Clinical blob key map (migration)",
+          "level": 2,
+          "line": 58
+        },
+        {
+          "heading": "Task 0: Native dependency spike",
+          "level": 2,
+          "line": 81
+        },
+        {
+          "heading": "Task 1: Canonical JSON (payload hashing)",
+          "level": 2,
+          "line": 136
+        },
+        {
+          "heading": "Task 2: Forensic audit chain (pure logic)",
+          "level": 2,
+          "line": 191
+        },
+        {
+          "heading": "Task 3: Schema migrations",
+          "level": 2,
+          "line": 341
+        },
+        {
+          "heading": "Task 4: Crypto (Argon2id + safeStorage)",
+          "level": 2,
+          "line": 388
+        },
+        {
+          "heading": "Task 5: DbManager + WriteQueue",
+          "level": 2,
+          "line": 463
+        },
+        {
+          "heading": "Task 6: Clinical blobs + LAN host persistence",
+          "level": 2,
+          "line": 560
+        },
+        {
+          "heading": "Task 7: Refactor `host-store.js` to use DB",
+          "level": 2,
+          "line": 632
+        },
+        {
+          "heading": "Task 8: IPC handlers + preload",
+          "level": 2,
+          "line": 677
+        },
+        {
+          "heading": "Task 9: Renderer storage bridge + boot gate",
+          "level": 2,
+          "line": 726
+        },
+        {
+          "heading": "Task 10: Unlock / lock UI",
+          "level": 2,
+          "line": 789
+        },
+        {
+          "heading": "Task 11: First-run migration orchestration",
+          "level": 2,
+          "line": 820
+        },
+        {
+          "heading": "Task 12: Security audit hooks (Option C events)",
+          "level": 2,
+          "line": 850
+        },
+        {
+          "heading": "Task 13: Pack native module + docs",
+          "level": 2,
+          "line": 874
+        },
+        {
+          "heading": "Plan self-review (spec coverage)",
+          "level": 2,
+          "line": 899
+        },
+        {
+          "heading": "Suggested execution order",
+          "level": 2,
+          "line": 916
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 19
+      }
+    },
+    {
+      "path": "docs/superpowers/plans/2026-06-01-clinical-identity-guardia-teams-ux.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 641,
+      "nonEmptyLines": 461,
+      "sections": [
+        {
+          "heading": "Clinical Identity, Guardia UX & Team Onboarding Implementation Plan",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "File map (create / modify)",
+          "level": 2,
+          "line": 15
+        },
+        {
+          "heading": "PR 1 — Username claim API + DB persistence",
+          "level": 2,
+          "line": 45
+        },
+        {
+          "heading": "Task 1: Username validation helpers",
+          "level": 3,
+          "line": 47
+        },
+        {
+          "heading": "Task 2: `claimUsername` + extend profile upsert",
+          "level": 3,
+          "line": 137
+        },
+        {
+          "heading": "Task 3: IPC + preload for claim and profile",
+          "level": 3,
+          "line": 200
+        },
+        {
+          "heading": "Task 4: Registration form — username field + DB save",
+          "level": 3,
+          "line": 249
+        },
+        {
+          "heading": "PR 2 — Sala team list + join IPC",
+          "level": 2,
+          "line": 311
+        },
+        {
+          "heading": "Task 5: `listTeamsBySala` + join eligibility",
+          "level": 3,
+          "line": 313
+        },
+        {
+          "heading": "PR 3 — Onboarding wizard + Mi rotación directory",
+          "level": 2,
+          "line": 366
+        },
+        {
+          "heading": "Task 6: `clinical-onboarding.mjs` wizard shell",
+          "level": 3,
+          "line": 368
+        },
+        {
+          "heading": "Task 7: Steady-state Mi rotación layout",
+          "level": 3,
+          "line": 452
+        },
+        {
+          "heading": "PR 4 — Modo Guardia labels + Config rotación UX",
+          "level": 2,
+          "line": 473
+        },
+        {
+          "heading": "Task 8: Disambiguate Modo Guardia controls",
+          "level": 3,
+          "line": 475
+        },
+        {
+          "heading": "Task 9: Disable Configuración rotación for non-R4",
+          "level": 3,
+          "line": 510
+        },
+        {
+          "heading": "PR 5 — Tests, Entrega labels, package.json",
+          "level": 2,
+          "line": 542
+        },
+        {
+          "heading": "Task 10: Entrega dropdown display names",
+          "level": 3,
+          "line": 544
+        },
+        {
+          "heading": "Task 11: Register tests + full suite",
+          "level": 3,
+          "line": 570
+        },
+        {
+          "heading": "Manual test checklist (post-PR 5)",
+          "level": 2,
+          "line": 600
+        },
+        {
+          "heading": "Plan self-review (spec coverage)",
+          "level": 2,
+          "line": 613
+        },
+        {
+          "heading": "Execution handoff",
+          "level": 2,
+          "line": 632
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 21
+      }
+    },
+    {
+      "path": "docs/superpowers/plans/2026-06-01-guardia-lan-hub.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 1503,
+      "nonEmptyLines": 1194,
+      "sections": [
+        {
+          "heading": "Guardia LAN Hub Implementation Plan",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Task 1: Schema migration v4 — leader_user_id and rotation_active",
+          "level": 2,
+          "line": 13
+        },
+        {
+          "heading": "Task 2: Add team-related DB functions to clinical-access-db.mjs",
+          "level": 2,
+          "line": 132
+        },
+        {
+          "heading": "Task 3: Wire IPC handlers for new DB functions",
+          "level": 2,
+          "line": 195
+        },
+        {
+          "heading": "Task 4: Remove deprecated sections from renderLanPanelOnce",
+          "level": 2,
+          "line": 229
+        },
+        {
+          "heading": "Task 5: Build the new LAN status line and auto-discovery scaffold",
+          "level": 2,
+          "line": 258
+        },
+        {
+          "heading": "Task 6: Build R1 section — team status, Modo Guardia, mobile link",
+          "level": 2,
+          "line": 465
+        },
+        {
+          "heading": "Task 7: Build R2 section — Solicitar entrega",
+          "level": 2,
+          "line": 576
+        },
+        {
+          "heading": "Task 8: Build R4/Admin section — team creation, census, mobile link",
+          "level": 2,
+          "line": 642
+        },
+        {
+          "heading": "Task 9: Team joining UI — available teams list for R1/R2",
+          "level": 2,
+          "line": 784
+        },
+        {
+          "heading": "Task 10: Patient auto-assignment on creation",
+          "level": 2,
+          "line": 920
+        },
+        {
+          "heading": "Task 11: Mobile pairing link with pre-filled credentials",
+          "level": 2,
+          "line": 1032
+        },
+        {
+          "heading": "Task 12: Auto-discovery network scanner for LAN hosts",
+          "level": 2,
+          "line": 1139
+        },
+        {
+          "heading": "Task 13: Header dropdown title update",
+          "level": 2,
+          "line": 1274
+        },
+        {
+          "heading": "Task 14: CSS updates for new LAN hub styles",
+          "level": 2,
+          "line": 1303
+        },
+        {
+          "heading": "Task 15: Integration wiring — imports, exports, and runtime",
+          "level": 2,
+          "line": 1411
+        },
+        {
+          "heading": "Task 16: Final verification and cleanup",
+          "level": 2,
+          "line": 1465
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 17
+      }
+    },
+    {
+      "path": "docs/superpowers/plans/2026-06-01-lan-teams-decoupled-qa.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 14,
+      "nonEmptyLines": 12,
+      "sections": [
+        {
+          "heading": "LAN Teams Decoupled — Manual QA Checklist",
+          "level": 1,
+          "line": 1
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": "docs/superpowers/plans/2026-06-01-lan-teams-decoupled.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 787,
+      "nonEmptyLines": 617,
+      "sections": [
+        {
+          "heading": "LAN Teams Decoupled Implementation Plan",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "File map",
+          "level": 2,
+          "line": 15
+        },
+        {
+          "heading": "Task 1: Privileges + scope V3 core",
+          "level": 3,
+          "line": 36
+        },
+        {
+          "heading": "Task 2: Mi rotación — remove Guardia hoy",
+          "level": 3,
+          "line": 391
+        },
+        {
+          "heading": "Task 3: Scope-aware patient sidebar + elevated filters",
+          "level": 3,
+          "line": 489
+        },
+        {
+          "heading": "Task 4: LAN hub R4 global teams + census",
+          "level": 3,
+          "line": 640
+        },
+        {
+          "heading": "Task 5: QA checklist + doc cross-links",
+          "level": 3,
+          "line": 723
+        },
+        {
+          "heading": "Spec coverage (self-review)",
+          "level": 2,
+          "line": 769
+        },
+        {
+          "heading": "Entrega regression note",
+          "level": 2,
+          "line": 785
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 9
+      }
+    },
+    {
+      "path": "docs/superpowers/plans/2026-06-01-sala-based-lan-rooms.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 244,
+      "nonEmptyLines": 189,
+      "sections": [
+        {
+          "heading": "Sala-Based LAN Rooms Implementation Plan",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Task 1: Remove server room fetch and create-room action",
+          "level": 3,
+          "line": 13
+        },
+        {
+          "heading": "Task 2: Replace rooms card with Sala-based card",
+          "level": 3,
+          "line": 73
+        },
+        {
+          "heading": "Task 3: Functional smoke test",
+          "level": 3,
+          "line": 198
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 4
+      }
+    },
+    {
+      "path": "docs/superpowers/plans/2026-06-01-sala-guardia-v3.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 1295,
+      "nonEmptyLines": 1048,
+      "sections": [
+        {
+          "heading": "Sala Guardia V3 Implementation Plan",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "File Structure",
+          "level": 2,
+          "line": 13
+        },
+        {
+          "heading": "Task 1: Schema V3 — Add `clinical_name`, `sala`, `team_leader_name`",
+          "level": 3,
+          "line": 29
+        },
+        {
+          "heading": "Task 2: Clinical profile IPC — read/write profile from DB",
+          "level": 3,
+          "line": 134
+        },
+        {
+          "heading": "Task 3: Clinical registration — name, rank, sala",
+          "level": 3,
+          "line": 209
+        },
+        {
+          "heading": "Task 4: Sala team creation — form & validations",
+          "level": 3,
+          "line": 350
+        },
+        {
+          "heading": "Task 5: Sala membership validations",
+          "level": 3,
+          "line": 496
+        },
+        {
+          "heading": "Task 6: Sala cycle — R1 ABCDx2, R2 ABCDEF with Guardia declarations",
+          "level": 3,
+          "line": 580
+        },
+        {
+          "heading": "Task 7: `evaluateClinicalScope` V3 — team-based visibility + handoff + guardia mode",
+          "level": 3,
+          "line": 712
+        },
+        {
+          "heading": "Task 8: Modo Guardia toggle + remove \"Siguiente entrega\" tile",
+          "level": 3,
+          "line": 992
+        },
+        {
+          "heading": "Task 9: Entrega V3 — double handoff for R2",
+          "level": 3,
+          "line": 1191
+        },
+        {
+          "heading": "Task 10: Full integration verification",
+          "level": 3,
+          "line": 1261
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 12
+      }
+    },
+    {
+      "path": "docs/superpowers/plans/2026-06-02-clinical-onboarding-main-collapsible-filters.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 511,
+      "nonEmptyLines": 390,
+      "sections": [
+        {
+          "heading": "Clinical Onboarding Main + Collapsible Census Filters Implementation Plan",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Visibility rule (locked)",
+          "level": 2,
+          "line": 15
+        },
+        {
+          "heading": "File map",
+          "level": 2,
+          "line": 29
+        },
+        {
+          "heading": "Task 1: Lock elevated-only filter visibility (tests)",
+          "level": 2,
+          "line": 47
+        },
+        {
+          "heading": "Task 2: Collapsible census filters (R4/Admin only)",
+          "level": 2,
+          "line": 128
+        },
+        {
+          "heading": "Task 3: Main-area onboarding host module",
+          "level": 2,
+          "line": 209
+        },
+        {
+          "heading": "Task 4: Boot + registration modal retirement",
+          "level": 2,
+          "line": 329
+        },
+        {
+          "heading": "Task 5: Mi rotación modal when onboarding incomplete",
+          "level": 2,
+          "line": 387
+        },
+        {
+          "heading": "Task 6: Main onboarding styles",
+          "level": 2,
+          "line": 413
+        },
+        {
+          "heading": "Task 7: Bundle + verification",
+          "level": 2,
+          "line": 453
+        },
+        {
+          "heading": "Spec coverage self-review",
+          "level": 2,
+          "line": 483
+        },
+        {
+          "heading": "Commit suggestion (single feature branch)",
+          "level": 2,
+          "line": 497
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 12
+      }
+    },
+    {
+      "path": "docs/superpowers/plans/2026-06-02-drive-import-hc-eventualidades.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 836,
+      "nonEmptyLines": 665,
+      "sections": [
+        {
+          "heading": "Drive import (HC + Eventualidades) — Implementation Plan",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "File map",
+          "level": 2,
+          "line": 15
+        },
+        {
+          "heading": "Task 1: Normalize + segment + header parser",
+          "level": 3,
+          "line": 48
+        },
+        {
+          "heading": "Task 2: Eventualidad dates + map-to-eventualidades",
+          "level": 3,
+          "line": 177
+        },
+        {
+          "heading": "Task 3: HC mapping + merge patch",
+          "level": 3,
+          "line": 303
+        },
+        {
+          "heading": "Task 4: Profile registry + parse orchestrator",
+          "level": 3,
+          "line": 410
+        },
+        {
+          "heading": "Task 5: Dedup + merge eventualidades (lib)",
+          "level": 3,
+          "line": 497
+        },
+        {
+          "heading": "Task 6: Modal markup + styles",
+          "level": 3,
+          "line": 542
+        },
+        {
+          "heading": "Task 7: Clínico entry button (Sala only)",
+          "level": 3,
+          "line": 592
+        },
+        {
+          "heading": "Task 8: `drive-import-modal.mjs` — preview + open/close",
+          "level": 3,
+          "line": 628
+        },
+        {
+          "heading": "Task 9: Apply flow — create + active patient",
+          "level": 3,
+          "line": 699
+        },
+        {
+          "heading": "Task 10: Tests in package.json + build + manual QA",
+          "level": 3,
+          "line": 761
+        },
+        {
+          "heading": "Spec coverage self-review",
+          "level": 2,
+          "line": 806
+        },
+        {
+          "heading": "Execution handoff",
+          "level": 2,
+          "line": 827
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 14
+      }
+    },
+    {
+      "path": "docs/superpowers/plans/2026-06-02-hospital-service-profiles.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 797,
+      "nonEmptyLines": 579,
+      "sections": [
+        {
+          "heading": "Perfiles de servicio hospitalario — Implementation Plan",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "File map (nuevo / modificado)",
+          "level": 2,
+          "line": 15
+        },
+        {
+          "heading": "Phase 1 — LAN + perfil (prioridad)",
+          "level": 2,
+          "line": 41
+        },
+        {
+          "heading": "Task 1: Derivación de token efectivo (Node)",
+          "level": 3,
+          "line": 43
+        },
+        {
+          "heading": "Task 2: Espejo ESM + lectura de perfil activo (renderer)",
+          "level": 3,
+          "line": 124
+        },
+        {
+          "heading": "Task 3: Sync perfil a userData + IPC token efectivo",
+          "level": 3,
+          "line": 222
+        },
+        {
+          "heading": "Task 4: Host boot con token efectivo",
+          "level": 3,
+          "line": 309
+        },
+        {
+          "heading": "Task 5: Cliente LAN — Bearer efectivo y reconexión",
+          "level": 3,
+          "line": 340
+        },
+        {
+          "heading": "Task 6: Endpoint host-rank con serviceProfileId",
+          "level": 3,
+          "line": 412
+        },
+        {
+          "heading": "Task 7: Onboarding “Elige tu servicio” (antes de Mi rotación)",
+          "level": 3,
+          "line": 443
+        },
+        {
+          "heading": "Task 8: Selector en Mi Perfil + cambio con confirmación",
+          "level": 3,
+          "line": 485
+        },
+        {
+          "heading": "Phase 2 — Manifiestos preset + resolveServiceModules",
+          "level": 2,
+          "line": 532
+        },
+        {
+          "heading": "Task 9: Presets embebidos",
+          "level": 3,
+          "line": 534
+        },
+        {
+          "heading": "Task 10: resolveServiceModules + wire UI",
+          "level": 3,
+          "line": 570
+        },
+        {
+          "heading": "Phase 3 — Sandbox",
+          "level": 2,
+          "line": 600
+        },
+        {
+          "heading": "Task 11: Preview state + banner",
+          "level": 3,
+          "line": 602
+        },
+        {
+          "heading": "Phase 4 — Custom overrides (R4/Admin)",
+          "level": 2,
+          "line": 638
+        },
+        {
+          "heading": "Task 12: Persist custom manifest in userData",
+          "level": 3,
+          "line": 640
+        },
+        {
+          "heading": "Phase 5 — Notificaciones cross-service (cultivos)",
+          "level": 2,
+          "line": 657
+        },
+        {
+          "heading": "Task 13: Canal LAN `clinical-events`",
+          "level": 3,
+          "line": 661
+        },
+        {
+          "heading": "Task 14: Cliente eventos + cola de notificaciones",
+          "level": 3,
+          "line": 690
+        },
+        {
+          "heading": "Task 15: Publicar desde Infecto al guardar cultivos",
+          "level": 3,
+          "line": 716
+        },
+        {
+          "heading": "Task 16: UI Ver / Importar / Descartar",
+          "level": 3,
+          "line": 744
+        },
+        {
+          "heading": "Verification checklist (end-to-end)",
+          "level": 2,
+          "line": 767
+        },
+        {
+          "heading": "Spec coverage self-review",
+          "level": 2,
+          "line": 780
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 25
+      }
+    },
+    {
+      "path": "docs/superpowers/plans/2026-06-02-interno-guardia-mobile.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 312,
+      "nonEmptyLines": 195,
+      "sections": [
+        {
+          "heading": "Modo Interno (MIP) — Guardia móvil Implementation Plan",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "File map",
+          "level": 2,
+          "line": 15
+        },
+        {
+          "heading": "Task 1: Schema + token storage",
+          "level": 3,
+          "line": 41
+        },
+        {
+          "heading": "Task 2: Interno scope + board builder",
+          "level": 3,
+          "line": 90
+        },
+        {
+          "heading": "Task 3: Vitals submission builder",
+          "level": 3,
+          "line": 125
+        },
+        {
+          "heading": "Task 4: Express router + vitals POST",
+          "level": 3,
+          "line": 152
+        },
+        {
+          "heading": "Task 5: WebSocket channel",
+          "level": 3,
+          "line": 188
+        },
+        {
+          "heading": "Task 6: Mobile micro-app UI",
+          "level": 3,
+          "line": 208
+        },
+        {
+          "heading": "Task 7: R4/Admin QR panel",
+          "level": 3,
+          "line": 244
+        },
+        {
+          "heading": "Task 8: Resident sync + guardia alerts",
+          "level": 3,
+          "line": 267
+        },
+        {
+          "heading": "Task 9: End-to-end verification",
+          "level": 3,
+          "line": 287
+        },
+        {
+          "heading": "Notes for implementer",
+          "level": 2,
+          "line": 306
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 12
+      }
+    },
+    {
+      "path": "docs/superpowers/plans/2026-06-02-modo-entrega-pendientes.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 618,
+      "nonEmptyLines": 474,
+      "sections": [
+        {
+          "heading": "Modo Entrega — Pendientes estructurados Implementation Plan",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "File map",
+          "level": 2,
+          "line": 15
+        },
+        {
+          "heading": "Task 1: Core `entrega-pendientes` module (TDD)",
+          "level": 3,
+          "line": 43
+        },
+        {
+          "heading": "Task 2: Schema v8 — template tables",
+          "level": 3,
+          "line": 271
+        },
+        {
+          "heading": "Task 3: Clinical DB — templates + complete pendiente",
+          "level": 3,
+          "line": 345
+        },
+        {
+          "heading": "Task 4: LAN sync — template tables",
+          "level": 3,
+          "line": 390
+        },
+        {
+          "heading": "Task 5: Interno board v2 + PATCH route",
+          "level": 3,
+          "line": 408
+        },
+        {
+          "heading": "Task 6: Interno mobile UI",
+          "level": 3,
+          "line": 463
+        },
+        {
+          "heading": "Task 7: Entrega modal HTML + styles",
+          "level": 3,
+          "line": 485
+        },
+        {
+          "heading": "Task 8: Renderer — `entrega-modal-ui.mjs` + wire `clinical-entrega.mjs`",
+          "level": 3,
+          "line": 524
+        },
+        {
+          "heading": "Task 9: Grid chip pending count + package.json tests",
+          "level": 3,
+          "line": 559
+        },
+        {
+          "heading": "Spec coverage checklist (self-review)",
+          "level": 2,
+          "line": 593
+        },
+        {
+          "heading": "Manual test plan",
+          "level": 2,
+          "line": 609
+        },
+        {
+          "heading": "Execution order",
+          "level": 2,
+          "line": 616
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 14
+      }
+    },
+    {
+      "path": "docs/superpowers/plans/2026-06-02-modularization-metrics.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 805,
+      "nonEmptyLines": 606,
+      "sections": [
+        {
+          "heading": "Modularization via Metrics — Implementation Plan",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "File map (Phase 1 — locked)",
+          "level": 2,
+          "line": 19
+        },
+        {
+          "heading": "Phase 1: Metrics pipeline",
+          "level": 2,
+          "line": 40
+        },
+        {
+          "heading": "Task 1: Dev dependencies and npm scripts",
+          "level": 3,
+          "line": 42
+        },
+        {
+          "heading": "Task 2: ESLint flat config (Tier 1 budgets)",
+          "level": 3,
+          "line": 85
+        },
+        {
+          "heading": "Task 3: Boot graph parser + tests",
+          "level": 3,
+          "line": 146
+        },
+        {
+          "heading": "Task 4: Debt score aggregator + tests",
+          "level": 3,
+          "line": 246
+        },
+        {
+          "heading": "Task 5: changed-files helper",
+          "level": 3,
+          "line": 335
+        },
+        {
+          "heading": "Task 6: `run.mjs` orchestrator",
+          "level": 3,
+          "line": 393
+        },
+        {
+          "heading": "Task 7: dependency-cruiser config (minimal v1)",
+          "level": 3,
+          "line": 533
+        },
+        {
+          "heading": "Task 8: `check.mjs` + wire prebuild",
+          "level": 3,
+          "line": 582
+        },
+        {
+          "heading": "Phase 2: God-file burn-down — `lan-sync` (part 1)",
+          "level": 2,
+          "line": 656
+        },
+        {
+          "heading": "Task 9: `lan-sync/conflicts-core.mjs` (pure logic)",
+          "level": 3,
+          "line": 660
+        },
+        {
+          "heading": "Task 10: `lan-sync/connection-ui.mjs` (DOM wiring)",
+          "level": 3,
+          "line": 691
+        },
+        {
+          "heading": "Task 11: Document lazy boundary (no code until part 2)",
+          "level": 3,
+          "line": 709
+        },
+        {
+          "heading": "Phase 3: `settings-help` split (outline)",
+          "level": 2,
+          "line": 718
+        },
+        {
+          "heading": "Phase 4: Lazy-load pilot (entrega modal)",
+          "level": 2,
+          "line": 733
+        },
+        {
+          "heading": "Task 16: Dynamic import entrega modal",
+          "level": 3,
+          "line": 735
+        },
+        {
+          "heading": "Verification matrix",
+          "level": 2,
+          "line": 763
+        },
+        {
+          "heading": "Spec coverage self-review",
+          "level": 2,
+          "line": 775
+        },
+        {
+          "heading": "Execution handoff",
+          "level": 2,
+          "line": 795
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 21
+      }
+    },
+    {
+      "path": "docs/superpowers/plans/2026-06-03-cold-start-navigation.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 476,
+      "nonEmptyLines": 312,
+      "sections": [
+        {
+          "heading": "Cold Start & Code Navigation — Implementation Plan",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "File map (by phase)",
+          "level": 2,
+          "line": 23
+        },
+        {
+          "heading": "Phase 0 — Governance & boot path (BN-00 – BN-03)",
+          "level": 2,
+          "line": 48
+        },
+        {
+          "heading": "Task 0: BN-00 — Metrics pipeline (delegate)",
+          "level": 3,
+          "line": 50
+        },
+        {
+          "heading": "Task 1: BN-01 — Lazy LAN server factory",
+          "level": 3,
+          "line": 66
+        },
+        {
+          "heading": "Task 2: BN-02 — Boot step registry",
+          "level": 3,
+          "line": 152
+        },
+        {
+          "heading": "Task 3: BN-03 — Collapse app-runtimes DI",
+          "level": 3,
+          "line": 203
+        },
+        {
+          "heading": "Phase 1 — Navigation & decomposition (BN-04 – BN-08)",
+          "level": 2,
+          "line": 256
+        },
+        {
+          "heading": "Task 4: BN-04 — LAN folder consolidation",
+          "level": 3,
+          "line": 260
+        },
+        {
+          "heading": "Task 5: BN-05 — Split settings-help",
+          "level": 3,
+          "line": 282
+        },
+        {
+          "heading": "Task 6: BN-06 — Split platform",
+          "level": 3,
+          "line": 303
+        },
+        {
+          "heading": "Task 7: BN-07 — Split clinical-teams",
+          "level": 3,
+          "line": 312
+        },
+        {
+          "heading": "Task 8: BN-08 — Trim app-shell",
+          "level": 3,
+          "line": 324
+        },
+        {
+          "heading": "Phase 2 — Lazy load & splitting (BN-09 – BN-12)",
+          "level": 2,
+          "line": 341
+        },
+        {
+          "heading": "Task 9: BN-09 — Chart.js loading (revised)",
+          "level": 3,
+          "line": 343
+        },
+        {
+          "heading": "Task 10: BN-10 — Feature lazy routes (pilot)",
+          "level": 3,
+          "line": 363
+        },
+        {
+          "heading": "Task 11: BN-11 — esbuild code splitting",
+          "level": 3,
+          "line": 393
+        },
+        {
+          "heading": "Task 12: BN-12 — Boot graph denylist test",
+          "level": 3,
+          "line": 422
+        },
+        {
+          "heading": "Verification checklist (end of initiative)",
+          "level": 2,
+          "line": 444
+        },
+        {
+          "heading": "Suggested execution order (human or agent)",
+          "level": 2,
+          "line": 456
+        },
+        {
+          "heading": "Out of scope (track separately)",
+          "level": 2,
+          "line": 469
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 21
+      }
+    },
+    {
+      "path": "docs/superpowers/plans/2026-06-03-lan-conflict-lww.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 618,
+      "nonEmptyLines": 464,
+      "sections": [
+        {
+          "heading": "LAN Full LWW — Implementation Plan",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "File map",
+          "level": 2,
+          "line": 15
+        },
+        {
+          "heading": "Task 1: LWW utilities (host)",
+          "level": 3,
+          "line": 42
+        },
+        {
+          "heading": "Task 2: ConflictResolver — LWW on overlap",
+          "level": 3,
+          "line": 177
+        },
+        {
+          "heading": "Task 3: Bundle merge — LWW on version skew",
+          "level": 3,
+          "line": 289
+        },
+        {
+          "heading": "Task 4: HTTP + WS host surfaces",
+          "level": 3,
+          "line": 348
+        },
+        {
+          "heading": "Task 5: Renderer — toast preference + helper",
+          "level": 3,
+          "line": 403
+        },
+        {
+          "heading": "Task 6: Renderer — remove conflict modal hot path",
+          "level": 3,
+          "line": 466
+        },
+        {
+          "heading": "Task 7: Settings UI + legacy drafts",
+          "level": 3,
+          "line": 516
+        },
+        {
+          "heading": "Task 8: Verification + docs",
+          "level": 3,
+          "line": 552
+        },
+        {
+          "heading": "Spec coverage checklist",
+          "level": 2,
+          "line": 592
+        },
+        {
+          "heading": "Execution handoff",
+          "level": 2,
+          "line": 609
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 12
+      }
+    },
+    {
+      "path": "docs/superpowers/plans/2026-06-03-lan-sync-improvements.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 641,
+      "nonEmptyLines": 433,
+      "sections": [
+        {
+          "heading": "LAN Sync Improvements — Implementation Plan",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "File map (by phase)",
+          "level": 2,
+          "line": 19
+        },
+        {
+          "heading": "Phase 0 — Bug fixes & honest UX (IM-01 – IM-03)",
+          "level": 2,
+          "line": 53
+        },
+        {
+          "heading": "Task 1: IM-01 — Fix profile push live WebSocket (P0)",
+          "level": 3,
+          "line": 55
+        },
+        {
+          "heading": "Task 2: IM-02 — Structured `LanPushResult` (P0)",
+          "level": 3,
+          "line": 119
+        },
+        {
+          "heading": "Task 3: IM-03 — Ticket expiry UX (P0)",
+          "level": 3,
+          "line": 156
+        },
+        {
+          "heading": "Phase 0 exit criteria",
+          "level": 3,
+          "line": 185
+        },
+        {
+          "heading": "Phase 1 — Sync reliability (IM-04 – IM-07)",
+          "level": 2,
+          "line": 193
+        },
+        {
+          "heading": "Task 4: IM-04 — Room sync state machine (P1)",
+          "level": 3,
+          "line": 195
+        },
+        {
+          "heading": "Task 5: IM-05 — HTTP vs WebSocket responsibilities (P1)",
+          "level": 3,
+          "line": 249
+        },
+        {
+          "heading": "Task 6: IM-06 — SQLCipher LAN outbox (P1)",
+          "level": 3,
+          "line": 288
+        },
+        {
+          "heading": "Task 7: IM-07 — Clinical-ops slice endpoint (P1)",
+          "level": 3,
+          "line": 349
+        },
+        {
+          "heading": "Phase 1 exit criteria",
+          "level": 3,
+          "line": 385
+        },
+        {
+          "heading": "Phase 2 — Ward operations (IM-08 – IM-10)",
+          "level": 2,
+          "line": 393
+        },
+        {
+          "heading": "Task 8: IM-08 — Pinned host role (P2)",
+          "level": 3,
+          "line": 395
+        },
+        {
+          "heading": "Task 9: IM-09 — Sync health panel (P2)",
+          "level": 3,
+          "line": 425
+        },
+        {
+          "heading": "Task 10: IM-10 — Confirm inferred auto-join (P2)",
+          "level": 3,
+          "line": 453
+        },
+        {
+          "heading": "Phase 2 exit criteria",
+          "level": 3,
+          "line": 481
+        },
+        {
+          "heading": "Phase 3 — Maintainability (IM-11 – IM-13)",
+          "level": 2,
+          "line": 488
+        },
+        {
+          "heading": "Task 11: IM-11 — Split `lan-sync.mjs` (P3)",
+          "level": 3,
+          "line": 492
+        },
+        {
+          "heading": "Task 12: IM-12 — Domain merge registry (P3)",
+          "level": 3,
+          "line": 527
+        },
+        {
+          "heading": "Task 13: IM-13 — Host clinical ops in SQLCipher (P3, incremental)",
+          "level": 3,
+          "line": 549
+        },
+        {
+          "heading": "Task 13a: Host writes clinical ops via DB IPC",
+          "level": 4,
+          "line": 553
+        },
+        {
+          "heading": "Task 13b: Bundle clinicalOps as cache only",
+          "level": 4,
+          "line": 566
+        },
+        {
+          "heading": "Phase 3 exit criteria",
+          "level": 3,
+          "line": 578
+        },
+        {
+          "heading": "Phase 4 — Future forks (IM-14 – IM-16) — NOT in this plan",
+          "level": 2,
+          "line": 585
+        },
+        {
+          "heading": "Open questions (resolve in PR 1 of Phase 1)",
+          "level": 2,
+          "line": 597
+        },
+        {
+          "heading": "Verification matrix (full program)",
+          "level": 2,
+          "line": 610
+        },
+        {
+          "heading": "Suggested PR sequence",
+          "level": 2,
+          "line": 622
+        },
+        {
+          "heading": "Changelog (plan maintenance)",
+          "level": 2,
+          "line": 635
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 30
+      }
+    },
+    {
+      "path": "docs/superpowers/plans/2026-06-03-lan-ward-ready-remediation.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 581,
+      "nonEmptyLines": 439,
+      "sections": [
+        {
+          "heading": "LAN Ward-Ready Remediation — Implementation Plan",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "File map",
+          "level": 2,
+          "line": 19
+        },
+        {
+          "heading": "Task 0: Land ward fixes already in the working tree",
+          "level": 2,
+          "line": 33
+        },
+        {
+          "heading": "Task 1: IM-OPS-1 — Stop clinical-ops → sync-bundle fallback",
+          "level": 2,
+          "line": 74
+        },
+        {
+          "heading": "Task 2: IM-OPS-2 — `clinical_ops` outbox enqueue + drain",
+          "level": 2,
+          "line": 147
+        },
+        {
+          "heading": "Task 3: IM-OPS-3 — clinical-ops 409 returns success + toasts",
+          "level": 2,
+          "line": 332
+        },
+        {
+          "heading": "Task 4: IM-HOST-1 — Always broadcast revision on sync-bundle PUT",
+          "level": 2,
+          "line": 428
+        },
+        {
+          "heading": "Task 5: Reconcile ops-only path when bundle GET fails (P2)",
+          "level": 2,
+          "line": 478
+        },
+        {
+          "heading": "Task 6: Build, full test, metrics",
+          "level": 2,
+          "line": 511
+        },
+        {
+          "heading": "Task 7: Manual ward checklist (sign-off)",
+          "level": 2,
+          "line": 544
+        },
+        {
+          "heading": "Spec coverage self-review",
+          "level": 2,
+          "line": 556
+        },
+        {
+          "heading": "Execution handoff",
+          "level": 2,
+          "line": 572
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 12
+      }
+    },
+    {
+      "path": "docs/superpowers/plans/2026-06-03-stable-version-downgrade.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 953,
+      "nonEmptyLines": 775,
+      "sections": [
+        {
+          "heading": "Restaurar versión estable anterior — Implementation Plan",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "File map",
+          "level": 2,
+          "line": 15
+        },
+        {
+          "heading": "Task 1: Core lib — URLs y semver",
+          "level": 3,
+          "line": 36
+        },
+        {
+          "heading": "Task 2: Catálogo inicial + helper release",
+          "level": 3,
+          "line": 231
+        },
+        {
+          "heading": "Task 3: Main process — IPC downgrade feed",
+          "level": 3,
+          "line": 403
+        },
+        {
+          "heading": "Task 4: Renderer module — catálogo y selector Ajustes",
+          "level": 3,
+          "line": 577
+        },
+        {
+          "heading": "Task 5: Ayuda, release hook, verificación final",
+          "level": 3,
+          "line": 860
+        },
+        {
+          "heading": "Spec coverage checklist",
+          "level": 2,
+          "line": 914
+        },
+        {
+          "heading": "Manual test plan (post-implementation)",
+          "level": 2,
+          "line": 933
+        },
+        {
+          "heading": "Execution handoff",
+          "level": 2,
+          "line": 943
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 10
+      }
+    },
+    {
+      "path": "docs/superpowers/plans/2026-06-04-lan-single-host-consolidation.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 768,
+      "nonEmptyLines": 614,
+      "sections": [
+        {
+          "heading": "LAN Single-Host Consolidation — Implementation Plan",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Module refinement (vs spec §3.1)",
+          "level": 2,
+          "line": 19
+        },
+        {
+          "heading": "File map",
+          "level": 2,
+          "line": 28
+        },
+        {
+          "heading": "Task 1: `startedAt` on disk meta",
+          "level": 3,
+          "line": 53
+        },
+        {
+          "heading": "Task 2: `GET /host-rank` includes `startedAt`",
+          "level": 3,
+          "line": 125
+        },
+        {
+          "heading": "Task 3: `resolveHostElection` (pure)",
+          "level": 3,
+          "line": 188
+        },
+        {
+          "heading": "Task 4: Subnet discovery merge (cloud probing)",
+          "level": 3,
+          "line": 310
+        },
+        {
+          "heading": "Task 5: Pure consolidation core (`lan-host-consolidation.mjs`)",
+          "level": 3,
+          "line": 350
+        },
+        {
+          "heading": "Task 6: Wire consolidation in `transport.mjs`",
+          "level": 3,
+          "line": 542
+        },
+        {
+          "heading": "Task 7: Panel scan loop + UX (cloud port)",
+          "level": 3,
+          "line": 644
+        },
+        {
+          "heading": "Task 8: Update `pickPreferredLanPeerHost` for election",
+          "level": 3,
+          "line": 678
+        },
+        {
+          "heading": "Task 9: Register tests + project context",
+          "level": 3,
+          "line": 697
+        },
+        {
+          "heading": "Self-review (spec coverage)",
+          "level": 2,
+          "line": 739
+        },
+        {
+          "heading": "Verification (before merge)",
+          "level": 2,
+          "line": 758
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 14
+      }
+    },
+    {
+      "path": "docs/superpowers/plans/2026-06-05-guardia-panel-overhaul.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 1087,
+      "nonEmptyLines": 839,
+      "sections": [
+        {
+          "heading": "Guardia Panel Overhaul — Implementation Plan",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "File Map",
+          "level": 2,
+          "line": 15
+        },
+        {
+          "heading": "Task 1: Fix `normalizeVasopressor` active inference (BUG-1)",
+          "level": 2,
+          "line": 32
+        },
+        {
+          "heading": "Task 2: Fix critical status logic (BUG-2)",
+          "level": 2,
+          "line": 102
+        },
+        {
+          "heading": "Task 3: Fix entrega button wiring (BUG-4)",
+          "level": 2,
+          "line": 192
+        },
+        {
+          "heading": "Task 4: Live vitals countdown ticker (BUG-3)",
+          "level": 2,
+          "line": 246
+        },
+        {
+          "heading": "Task 5: New `guardia-vitals-feed.mjs` (turno activo vitals panel)",
+          "level": 2,
+          "line": 366
+        },
+        {
+          "heading": "Task 6: New `entrega-roster-panel.mjs` (entrega slide-over)",
+          "level": 2,
+          "line": 524
+        },
+        {
+          "heading": "Task 7: Wire entrega button to roster panel in `clinical-entrega.mjs`",
+          "level": 2,
+          "line": 742
+        },
+        {
+          "heading": "Task 8: Wide entrega modal layout",
+          "level": 2,
+          "line": 814
+        },
+        {
+          "heading": "Task 9: Wire vitals feed and turno-activo into `guardia-board.mjs`",
+          "level": 2,
+          "line": 874
+        },
+        {
+          "heading": "Task 10: HTML mount points, CSS, and build",
+          "level": 2,
+          "line": 947
+        },
+        {
+          "heading": "Task 11: Final build + full test run",
+          "level": 2,
+          "line": 1045
+        },
+        {
+          "heading": "Self-Review Checklist",
+          "level": 2,
+          "line": 1073
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 14
+      }
+    }
+  ]
+}

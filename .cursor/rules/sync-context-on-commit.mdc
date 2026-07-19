@@ -1,0 +1,65 @@
+---
+description: Incrementally update project-context.mdc when committing architectural changes
+alwaysApply: true
+---
+
+# Sync Project Context on Commit
+
+When the user asks you to **commit**, or you are preparing a commit with meaningful structural changes, update `.cursor/rules/project-context.mdc` in the **same commit** (before `git commit`).
+
+Skip only when the diff is trivial (typo, comment, pure test assertion, CSS one-liner).
+
+---
+
+## Step-by-step
+
+1. Review `git diff --staged` (or full diff if nothing staged yet).
+2. Decide if changes are **architecturally relevant** (see list below).
+3. If yes, edit `project-context.mdc`:
+   - **Changelog**: prepend one bullet under `## Changelog`.
+   - **Directory map / Domain index / Entry points**: update if a new area was added or paths moved.
+4. If a **new user-facing feature domain** was added, also update `docs/features/features-index.md` (and `docs/logic/` or `docs/database/` indices if applicable). See `documentation-sync.mdc`.
+5. Stage the rule file (and doc indices) with the code changes.
+6. Commit message may mention `docs(context): …` when the rule or docs hub update is substantial.
+
+---
+
+## Relevant (update required)
+
+- New top-level or `lib/` / `features/` module or directory
+- New HTTP route, WS message type, or IPC channel
+- DB schema version bump or new table
+- New user-facing feature domain (even if small)
+- Renamed/moved entry points or build steps
+- New mobile/LAN/interno surface
+- Release pipeline or native dependency changes
+
+## Not relevant (skip changelog)
+
+- Bug fix inside existing module, no new files
+- Style/copy/CSS-only tweaks
+- Test-only changes mirroring production code
+- Version bump / release manifest without new architecture
+
+---
+
+## Changelog entry format
+
+```markdown
+- **YYYY-MM-DD** `scope`: one line — what changed + primary paths (no file laundry lists).
+```
+
+Example:
+
+```markdown
+- **2026-06-03** `interno-auth`: sala slug + access token validation; `lib/interno/sala-slug.mjs`, `server.js`.
+```
+
+---
+
+## Maintenance rules
+
+- Keep **≤20** changelog entries; remove oldest when adding new.
+- If the same `scope` changes again within a week, **edit the existing entry** instead of duplicating.
+- When a changelog entry stabilizes (3+ related commits), **promote** it into Directory map or Domain index and shorten the changelog line.
+- Do **not** re-explore the whole repo to refresh the rule — derive updates only from the current diff and files you already touched.

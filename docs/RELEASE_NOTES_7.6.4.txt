@@ -1,0 +1,25 @@
+R+ 7.6.4 (LAN reconnect — host URL visible)
+===============================================
+
+Fecha: 2026-07-02
+
+## Resumen
+
+Sobre **7.6.3**: corrige la reconexión LAN tras **Restablecer** — vuelve el campo de **dirección del anfitrión** en ⇄ (sin PIN), el host empaquetado apunta a **10.0.57.65** y **Unirse** a sala intenta conectar al R4 antes de fallar.
+
+## Nuevo / mejorado
+
+- **LAN — campo anfitrión** — Con bypass de PIN activo, ⇄ muestra **Conectar al anfitrión del turno** con dirección editable (ya no oculto dentro de la tarjeta PIN).
+- **LAN — host empaquetado** — `bundledWardHostUrl` actualizado a `http://10.0.57.65:3738` (R4 actual del turno).
+- **LAN — Restablecer** — Tras reset: siembra el ward registry, busca anfitrión automáticamente y mensajes sin pedir PIN.
+- **LAN — Unirse sala** — Si aún no hay bearer, intenta conectar al host antes del toast de error.
+- **LAN — auto-sala** — Tras conectar, une la sala de **Mi rotación** cuando aplica.
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v7.6.4
+
+- Mac: `R+-7.6.4-arm64.dmg`, `R+-7.6.4-x64.dmg` (y zip para auto-update).
+- Windows: `R+-7.6.4-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye write-release-yml.js).

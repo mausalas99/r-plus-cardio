@@ -1,0 +1,37 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  verify:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: UI build
+        run: npm run build:ui
+
+      - name: Lint (root + scripts)
+        run: npm run lint
+
+      - name: Debt metrics
+        run: npm run metrics:check
+
+      - name: VibeDrift drift gate
+        run: npm run vibedrift:check
+
+      - name: Test suite
+        run: npm test

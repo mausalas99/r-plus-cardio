@@ -1,0 +1,51 @@
+R+ 6.3.3 (Guía clínica desbloqueable, modales y gasometría explicada)
+====================================================================
+
+Fecha: 2026-05-27
+
+## Resumen
+
+Parche de uso diario: **Manejo / Guía clínica** queda oculta hasta un desbloqueo explícito con frase de confirmación; vuelven a funcionar **Esc** y **clic fuera** en modales; en **Tendencias** la gasometría extendida muestra el razonamiento del trastorno y las mini-gráficas son más ligeras; **Estado Actual** actualiza las gráficas sin rearmar el panel completo en cada cambio.
+
+## Nuevo / mejorado
+
+### Guía clínica (Manejo)
+
+- **Activación consciente** — Modal «Guía clínica de orientación»: para mostrar Manejo debes escribir la frase de confirmación (insensible a mayúsculas y acentos).
+- **Por defecto oculta** — Hasta desbloquear, la sección Manejo no aparece en Expediente → Clínico; **Nota** e **Indicaciones** siguen disponibles en interconsulta.
+- **Ajustes → Expediente** — Al desmarcar **Ocultar Manejo en Clínico**, si aún no desbloqueaste la guía, se abre el mismo modal antes de volver a mostrar Manejo.
+
+### Gasometría (Tendencias)
+
+- **Razonamiento visible** — La interpretación extendida incluye un texto breve que explica el etiquetado (pH, Winter, compensación, cuadros mixtos).
+- **Tooltips en badges** — En la vista extendida de gasometría, los distintivos del trastorno primario, anion gap y delta-delta muestran el detalle al pasar el cursor.
+
+### Tendencias
+
+- **Sparks en canvas** — Mini-gráficas por tarjeta con canvas 2D (menos peso que instanciar Chart.js en cada analito).
+- **Filtro «Solo fuera de rango»** — Las tarjetas marcan alteración según la referencia del laboratorio; el filtro oculta las que no están fuera de rango y el botón alterna con **Ver todas**.
+
+### Estado Actual (Sala)
+
+- **Gráficas más estables** — Signos, glucometrías e I/O se actualizan de forma incremental cuando cambia el historial, sin destruir y recrear cada gráfica en cada pulsación.
+
+## Correcciones
+
+### Modales (toda la app)
+
+- **Esc y clic en el fondo** — Restaurado en ayuda, laboratorio, perfil, novedades, Estado Actual (registrar medición y pegar monitoreo), desbloqueo de guía clínica y demás capas registradas.
+- **Orden de capas** — La capa abierta más reciente cierra primero; modales anidados (p. ej. pegar monitoreo dentro de registro) respetan el panel correcto.
+- **Arranque** — El registro de cierre se inicializa al inicio del boot para que los listeners existan aunque falle o retrase otro paso del arranque.
+
+### Novedades (actualización)
+
+- **Modal de release notes** — Botón **Cerrar** más visible y capa por encima del resto de overlays al mostrar novedades de versión.
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v6.3.3
+
+- Mac: `R+-6.3.3-arm64.dmg`, `R+-6.3.3-x64.dmg` (y zip para auto-update).
+- Windows: `R+-6.3.3-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye `build:ui` y bundle del renderer).

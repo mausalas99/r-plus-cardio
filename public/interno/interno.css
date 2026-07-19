@@ -1,0 +1,833 @@
+:root {
+  --interno-row-h: 3.5rem;
+}
+
+.interno-body {
+  margin: 0;
+  min-height: 100dvh;
+  background: var(--bg, #0f1419);
+  color: var(--text, #e8eaed);
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.skip-to-main {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: var(--z-db-unlock);
+  padding: 10px 16px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--surface);
+  background: var(--action);
+  border: none;
+  border-radius: var(--radius-md, 12px);
+  box-shadow: var(--shadow-md);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.skip-to-main:focus {
+  left: 12px;
+  top: 12px;
+  outline: 3px solid color-mix(in oklab, var(--action) 50%, var(--surface));
+  outline-offset: 1px;
+}
+
+.interno-app:focus {
+  outline: none;
+}
+
+.interno-app {
+  max-width: 640px;
+  margin: 0 auto;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+.interno-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: 0.75rem 1rem;
+  background: var(--surface, #1a222c);
+  border-bottom: 1px solid var(--border, #2a3544);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.interno-header h1 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  flex: 1;
+}
+
+.interno-summary {
+  font-size: 0.75rem;
+  color: var(--text-muted, #9aa5b1);
+}
+
+.interno-btn-icon {
+  border: none;
+  background: transparent;
+  color: var(--text-muted, #9aa5b1);
+  font-size: 1.25rem;
+  padding: 0.35rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.interno-empty {
+  padding: 2rem 1rem;
+  text-align: center;
+  color: var(--text-muted, #9aa5b1);
+  line-height: 1.5;
+}
+
+.interno-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.interno-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: var(--interno-row-h);
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid var(--border, #2a3544);
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.interno-row:active {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.interno-row.is-critical {
+  border-left: 3px solid var(--error, #e5534b);
+}
+
+.interno-bed {
+  font-weight: 700;
+  font-size: 0.95rem;
+  min-width: 2.75rem;
+}
+
+.interno-row-main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.interno-name {
+  font-size: 0.85rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.interno-handoff-markers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem;
+}
+
+.interno-detail-markers {
+  margin: 0.35rem 0 0;
+}
+
+.interno-detail-markers .interno-handoff-markers {
+  gap: 0.3rem;
+}
+
+.interno-chip {
+  font-size: 0.65rem;
+  font-weight: 600;
+  padding: 0.2rem 0.45rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.interno-chip.nominal,
+.interno-chip.nominal-gray {
+  background: rgba(120, 140, 160, 0.25);
+  color: var(--text-muted, #9aa5b1);
+}
+
+.interno-chip.warning {
+  background: rgba(230, 170, 40, 0.2);
+  color: #e6aa28;
+}
+
+.interno-chip.breached {
+  background: rgba(229, 83, 75, 0.2);
+  color: #e5534b;
+}
+
+.interno-pending-tags {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  min-width: 2.25rem;
+  justify-content: flex-end;
+}
+
+.interno-pending-tags--empty {
+  color: var(--text-muted, #9aa5b1);
+  font-size: 0.7rem;
+}
+
+.interno-pending-tag {
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  padding: 0.15rem 0.4rem;
+  border-radius: 999px;
+  line-height: 1.2;
+}
+
+.interno-pending-tag--signos {
+  background: rgba(56, 132, 255, 0.22);
+  color: #6eb0ff;
+}
+
+.interno-pending-tag--estudios {
+  background: rgba(160, 120, 255, 0.2);
+  color: #c4a8ff;
+}
+
+.interno-vitals-metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0.5rem 0 0.75rem;
+}
+
+.interno-vitals-metric {
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 0.15rem 0.45rem;
+  border-radius: 999px;
+  background: rgba(56, 132, 255, 0.12);
+  color: #9ec5ff;
+}
+
+.interno-detail {
+  padding: 0 1rem 1rem;
+  border-bottom: 1px solid var(--border, #2a3544);
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.interno-detail h2 {
+  margin: 0.75rem 0 0.35rem;
+  font-size: 0.95rem;
+}
+
+.interno-section-title {
+  margin: 1rem 0 0.5rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-muted, #9aa5b1);
+}
+
+.interno-vitals-banner {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  min-height: 44px;
+  margin: 0.5rem 0 0;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--border, #2a3544);
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  touch-action: manipulation;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+}
+
+.interno-vitals-banner:active {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.interno-vitals-banner__label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-muted, #9aa5b1);
+  flex-shrink: 0;
+}
+
+.interno-vitals-banner__text {
+  flex: 1;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.interno-vitals-banner__freq {
+  font-size: 0.65rem;
+  color: var(--text-muted, #9aa5b1);
+  flex-shrink: 0;
+}
+
+.interno-estudios-list {
+  list-style: none;
+  margin: 0 0 0.75rem;
+  padding: 0;
+}
+
+.interno-estudios-empty {
+  margin: 0 0 0.75rem;
+}
+
+.interno-estudio-row {
+  display: grid;
+  grid-template-columns: 2.75rem 1fr auto;
+  align-items: center;
+  gap: 0.35rem 0.5rem;
+  min-height: 44px;
+  padding: 0.45rem 0;
+  border-bottom: 1px solid var(--border, #2a3544);
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.interno-estudio-row:last-child {
+  border-bottom: none;
+}
+
+.interno-estudio-row:active:not(.is-done) {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.interno-estudio-row.is-done {
+  opacity: 0.55;
+  cursor: default;
+}
+
+.interno-estudio-row.is-done .interno-estudio-label {
+  text-decoration: line-through;
+}
+
+.interno-estudio-time {
+  font-size: 0.75rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-muted, #9aa5b1);
+}
+
+.interno-estudio-main {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 0;
+}
+
+.interno-estudio-label {
+  font-size: 0.85rem;
+  line-height: 1.25;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.interno-estudio-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+.interno-badge {
+  font-size: 0.6rem;
+  font-weight: 700;
+  padding: 0.12rem 0.4rem;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  background: rgba(230, 170, 40, 0.18);
+  color: #e6aa28;
+}
+
+.interno-badge--consentimiento {
+  background: rgba(61, 139, 253, 0.18);
+  color: #6eb0ff;
+}
+
+.interno-badge--anestesia {
+  background: rgba(180, 100, 220, 0.18);
+  color: #c99af0;
+}
+
+.interno-badge--familiar {
+  background: rgba(229, 83, 75, 0.15);
+  color: #f0a09a;
+}
+
+.interno-badge--critico {
+  background: rgba(229, 83, 75, 0.22);
+  color: #f5b0ab;
+}
+
+.interno-badge--negativas {
+  background: rgba(230, 170, 40, 0.2);
+  color: #e6c06a;
+}
+
+.interno-badge--show {
+  background: rgba(100, 149, 237, 0.2);
+  color: #9ec5ff;
+}
+
+.interno-estudio-done {
+  min-width: 3.25rem;
+  min-height: 36px;
+  padding: 0.25rem 0.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--border, #2a3544);
+  background: rgba(61, 139, 253, 0.12);
+  color: var(--accent, #3d8bfd);
+  font-size: 0.7rem;
+  font-weight: 700;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.interno-estudio-done--done {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-color: transparent;
+  background: rgba(80, 200, 120, 0.15);
+  color: #6dd68a;
+  cursor: default;
+}
+
+.interno-sheet-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: flex-end;
+  z-index: 100;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.interno-sheet-backdrop.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.interno-sheet {
+  width: 100%;
+  max-height: 85dvh;
+  overflow: auto;
+  background: var(--surface, #1a222c);
+  border-radius: 16px 16px 0 0;
+  padding: 1rem 1rem calc(1rem + env(safe-area-inset-bottom));
+}
+
+.interno-sheet h3 {
+  margin: 0 0 0.75rem;
+  font-size: 1rem;
+  line-height: 1.3;
+}
+
+.interno-sheet-dl {
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+.interno-sheet-dl > div {
+  display: grid;
+  grid-template-columns: 5.5rem 1fr;
+  gap: 0.35rem;
+  padding: 0.35rem 0;
+  border-bottom: 1px solid var(--border, #2a3544);
+}
+
+.interno-sheet-dl dt {
+  margin: 0;
+  color: var(--text-muted, #9aa5b1);
+  font-size: 0.75rem;
+}
+
+.interno-sheet-dl dd {
+  margin: 0;
+}
+
+.interno-sheet-reqs {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.interno-sheet-reqs li {
+  margin-bottom: 0.25rem;
+}
+
+.interno-sheet-mark {
+  margin-top: 0.75rem;
+}
+
+.interno-sheet-close {
+  display: block;
+  width: 100%;
+  min-height: 44px;
+  margin-top: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--border, #2a3544);
+  background: transparent;
+  color: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.interno-btn-primary {
+  display: block;
+  width: 100%;
+  min-height: 44px;
+  border: none;
+  border-radius: 8px;
+  background: var(--accent, #3d8bfd);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.interno-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: flex-end;
+  z-index: 100;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.interno-modal-backdrop.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.interno-modal {
+  width: 100%;
+  max-height: 92dvh;
+  overflow: auto;
+  background: var(--surface, #1a222c);
+  border-radius: 16px 16px 0 0;
+  padding: 1rem 1rem calc(1rem + env(safe-area-inset-bottom));
+}
+
+.interno-modal h3 {
+  margin: 0 0 0.75rem;
+  font-size: 1rem;
+}
+
+.interno-field-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+.interno-field label {
+  display: block;
+  font-size: 0.7rem;
+  color: var(--text-muted, #9aa5b1);
+  margin-bottom: 0.2rem;
+}
+
+.interno-field input {
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 44px;
+  border-radius: 8px;
+  border: 1px solid var(--border, #2a3544);
+  background: var(--bg, #0f1419);
+  color: inherit;
+  font-size: 1rem;
+  padding: 0 0.5rem;
+}
+
+.interno-glu-block {
+  margin-top: 0.75rem;
+}
+
+.interno-glu-row {
+  display: grid;
+  grid-template-columns: 1fr 5rem auto;
+  gap: 0.35rem;
+  margin-bottom: 0.35rem;
+}
+
+.interno-glu-row input {
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 44px;
+  border-radius: 8px;
+  border: 1px solid var(--border, #2a3544);
+  background: var(--bg, #0f1419);
+  color: inherit;
+  font-size: 1rem;
+  padding: 0 0.5rem;
+}
+
+.interno-link-btn {
+  border: none;
+  background: none;
+  color: var(--accent, #3d8bfd);
+  font-size: 0.85rem;
+  padding: 0.35rem 0;
+  cursor: pointer;
+}
+
+.interno-modal-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.interno-modal-actions button {
+  flex: 1;
+  min-height: 44px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.interno-btn-secondary {
+  border: 1px solid var(--border, #2a3544);
+  background: transparent;
+  color: inherit;
+}
+
+.interno-toast {
+  position: fixed;
+  bottom: calc(1rem + env(safe-area-inset-bottom));
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1e2936;
+  color: #fff;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  z-index: 200;
+  opacity: 0;
+  transition: opacity 0.2s;
+  pointer-events: none;
+}
+
+.interno-toast.show {
+  opacity: 1;
+}
+
+.interno-error-screen {
+  padding: 2rem 1rem;
+  text-align: center;
+  color: var(--error, #e5534b);
+}
+
+.interno-connect-help {
+  text-align: left;
+  color: var(--text, #e8eaed);
+  max-width: 28rem;
+  margin: 0 auto;
+}
+
+.interno-connect-help strong {
+  color: var(--error, #e5534b);
+}
+
+.interno-help-list {
+  margin: 0.75rem 0 1rem;
+  padding-left: 1.2rem;
+  color: var(--text-muted, #9aa5b1);
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.interno-help-list code {
+  font-size: 0.85em;
+  color: var(--text, #e8eaed);
+}
+
+.interno-host-manual {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  border: 1px solid var(--border, #2a3544);
+  border-radius: 8px;
+  background: var(--surface, #1a222c);
+}
+
+.interno-host-manual summary {
+  cursor: pointer;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.interno-host-manual .interno-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin: 0.75rem 0;
+}
+
+.interno-host-manual input {
+  min-height: 44px;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid var(--border, #2a3544);
+  background: var(--bg, #0f1419);
+  color: inherit;
+  font-size: 1rem;
+}
+
+.interno-host-manual .interno-btn-primary {
+  width: 100%;
+  min-height: 44px;
+  border: none;
+  border-radius: 8px;
+  background: var(--action, #3b82f6);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+@media print {
+  .interno-btn-icon,
+  .interno-modal-backdrop,
+  .interno-sheet-backdrop {
+    display: none !important;
+  }
+}
+
+/* ── Premium UI phase 3 (design tokens via tokens.css) ───────── */
+
+.interno-header {
+  border-bottom: var(--border-hairline);
+  box-shadow: var(--elev-flat);
+}
+
+.interno-header h1 {
+  font: var(--type-section);
+  letter-spacing: var(--tracking-section);
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.interno-row {
+  border-bottom: var(--border-hairline);
+  min-height: max(var(--interno-row-h), 44px);
+  transition: background var(--dur-fast) var(--ease-out);
+}
+
+.interno-row:active {
+  background: var(--state-hover-bg);
+}
+
+.interno-btn-icon {
+  min-width: 44px;
+  min-height: 44px;
+  border-radius: var(--radius-control);
+  transition: background var(--dur-fast) var(--ease-out);
+}
+
+.interno-btn-icon:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+.interno-chip {
+  border: var(--border-hairline);
+}
+
+.interno-sheet,
+.interno-modal {
+  border: var(--overlay-border, var(--border-hairline));
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  box-shadow: var(--elev-overlay);
+  background: var(--overlay-bg, var(--surface));
+  -webkit-backdrop-filter: blur(var(--overlay-blur, 12px));
+  backdrop-filter: blur(var(--overlay-blur, 12px));
+}
+
+@supports not (backdrop-filter: blur(1px)) {
+  .interno-sheet,
+  .interno-modal {
+    background: var(--surface);
+  }
+}
+
+.interno-btn-primary,
+.interno-sheet-close,
+.interno-modal-actions button {
+  border-radius: var(--radius-control);
+  transition:
+    background var(--dur-fast) var(--ease-out),
+    border-color var(--dur-fast) var(--ease-out),
+    box-shadow var(--dur-fast) var(--ease-out);
+}
+
+.interno-btn-primary {
+  background: var(--action);
+  color: var(--color-on-accent, #fff);
+}
+
+.interno-btn-primary:focus-visible,
+.interno-sheet-close:focus-visible,
+.interno-modal-actions button:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+.interno-host-manual {
+  border: var(--border-hairline);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--elev-flat);
+}
+
+.interno-host-manual input {
+  border: var(--border-hairline);
+  border-radius: var(--radius-control);
+  background: var(--input-fill, var(--bg));
+}
+
+.interno-host-manual input:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+.interno-detail {
+  border-bottom: var(--border-hairline);
+  background: color-mix(in oklab, var(--bg) 92%, var(--surface));
+}
+
+html.high-contrast .interno-sheet,
+html.high-contrast .interno-modal {
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: none;
+  border: 1px solid var(--border);
+}
+

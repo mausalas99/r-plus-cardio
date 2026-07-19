@@ -1,0 +1,366 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 20,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "docs/RELEASE_NOTES_7.2.2.txt",
+      "language": "txt",
+      "fileCategory": "docs",
+      "totalLines": 29,
+      "nonEmptyLines": 18,
+      "metrics": {}
+    },
+    {
+      "path": "docs/RELEASE_NOTES_7.2.3.txt",
+      "language": "txt",
+      "fileCategory": "docs",
+      "totalLines": 28,
+      "nonEmptyLines": 17,
+      "metrics": {}
+    },
+    {
+      "path": "docs/RELEASE_NOTES_7.2.4.txt",
+      "language": "txt",
+      "fileCategory": "docs",
+      "totalLines": 29,
+      "nonEmptyLines": 18,
+      "metrics": {}
+    },
+    {
+      "path": "docs/RELEASE_NOTES_7.2.5.txt",
+      "language": "txt",
+      "fileCategory": "docs",
+      "totalLines": 29,
+      "nonEmptyLines": 18,
+      "metrics": {}
+    },
+    {
+      "path": "docs/RELEASE_NOTES_7.2.6.txt",
+      "language": "txt",
+      "fileCategory": "docs",
+      "totalLines": 36,
+      "nonEmptyLines": 25,
+      "metrics": {}
+    },
+    {
+      "path": "docs/RELEASE_NOTES_7.2.7.txt",
+      "language": "txt",
+      "fileCategory": "docs",
+      "totalLines": 26,
+      "nonEmptyLines": 15,
+      "metrics": {}
+    },
+    {
+      "path": "docs/RELEASE_NOTES_7.2.8.txt",
+      "language": "txt",
+      "fileCategory": "docs",
+      "totalLines": 29,
+      "nonEmptyLines": 18,
+      "metrics": {}
+    },
+    {
+      "path": "docs/RELEASE_NOTES_7.2.9.txt",
+      "language": "txt",
+      "fileCategory": "docs",
+      "totalLines": 31,
+      "nonEmptyLines": 20,
+      "metrics": {}
+    },
+    {
+      "path": "docs/RELEASE_NOTES_7.3.0.txt",
+      "language": "txt",
+      "fileCategory": "docs",
+      "totalLines": 38,
+      "nonEmptyLines": 27,
+      "metrics": {}
+    },
+    {
+      "path": "docs/RELEASE_NOTES_7.3.1.txt",
+      "language": "txt",
+      "fileCategory": "docs",
+      "totalLines": 30,
+      "nonEmptyLines": 19,
+      "metrics": {}
+    },
+    {
+      "path": "docs/RELEASE_NOTES_7.3.2.txt",
+      "language": "txt",
+      "fileCategory": "docs",
+      "totalLines": 38,
+      "nonEmptyLines": 25,
+      "metrics": {}
+    },
+    {
+      "path": "docs/RELEASE_NOTES_7.3.3.txt",
+      "language": "txt",
+      "fileCategory": "docs",
+      "totalLines": 28,
+      "nonEmptyLines": 17,
+      "metrics": {}
+    },
+    {
+      "path": "docs/RELEASE_NOTES_7.3.4.txt",
+      "language": "txt",
+      "fileCategory": "docs",
+      "totalLines": 33,
+      "nonEmptyLines": 22,
+      "metrics": {}
+    },
+    {
+      "path": "docs/RELEASE_NOTES_7.3.5.txt",
+      "language": "txt",
+      "fileCategory": "docs",
+      "totalLines": 33,
+      "nonEmptyLines": 22,
+      "metrics": {}
+    },
+    {
+      "path": "docs/RELEASE_NOTES_7.3.6.txt",
+      "language": "txt",
+      "fileCategory": "docs",
+      "totalLines": 32,
+      "nonEmptyLines": 21,
+      "metrics": {}
+    },
+    {
+      "path": "docs/RELEASE_NOTES_7.3.7.txt",
+      "language": "txt",
+      "fileCategory": "docs",
+      "totalLines": 28,
+      "nonEmptyLines": 17,
+      "metrics": {}
+    },
+    {
+      "path": "docs/RELEASE_NOTES_7.3.8.txt",
+      "language": "txt",
+      "fileCategory": "docs",
+      "totalLines": 33,
+      "nonEmptyLines": 22,
+      "metrics": {}
+    },
+    {
+      "path": "docs/db-encryption.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 79,
+      "nonEmptyLines": 51,
+      "sections": [
+        {
+          "heading": "Base de datos cifrada (SQLCipher)",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Recompilar el módulo nativo",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "Instalación y scripts postinstall",
+          "level": 2,
+          "line": 15
+        },
+        {
+          "heading": "Olvidé la contraseña",
+          "level": 2,
+          "line": 25
+        },
+        {
+          "heading": "Tipos de respaldo",
+          "level": 2,
+          "line": 36
+        },
+        {
+          "heading": "Prueba rápida con archivo en disco",
+          "level": 2,
+          "line": 45
+        },
+        {
+          "heading": "Empaquetado Electron",
+          "level": 2,
+          "line": 64
+        },
+        {
+          "heading": "Referencias",
+          "level": 2,
+          "line": 76
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 8
+      }
+    },
+    {
+      "path": "docs/presentacion-r-plus-gemini-slides.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 362,
+      "nonEmptyLines": 257,
+      "sections": [
+        {
+          "heading": "R+ — Brief para Gemini (Google Slides)",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Índice",
+          "level": 2,
+          "line": 7
+        },
+        {
+          "heading": "PROMPT MAESTRO (copiar desde aquí)",
+          "level": 2,
+          "line": 31
+        },
+        {
+          "heading": "DIAPOSITIVAS (contenido fuente)",
+          "level": 2,
+          "line": 67
+        },
+        {
+          "heading": "Diapositiva 1 — Portada",
+          "level": 3,
+          "line": 69
+        },
+        {
+          "heading": "Diapositiva 2 — El problema que resolvemos",
+          "level": 3,
+          "line": 81
+        },
+        {
+          "heading": "Diapositiva 3 — Qué es (y qué NO es)",
+          "level": 3,
+          "line": 95
+        },
+        {
+          "heading": "Diapositiva 4 — Arquitectura en 30 segundos",
+          "level": 3,
+          "line": 110
+        },
+        {
+          "heading": "Diapositiva 5 — Flujo clínico principal",
+          "level": 3,
+          "line": 125
+        },
+        {
+          "heading": "Diapositiva 6 — Seguridad del paciente (ingeniería clínica)",
+          "level": 3,
+          "line": 140
+        },
+        {
+          "heading": "Diapositiva 7 — Integridad del dato (varios residentes)",
+          "level": 3,
+          "line": 155
+        },
+        {
+          "heading": "Diapositiva 8 — Seguridad de red (LAN)",
+          "level": 3,
+          "line": 170
+        },
+        {
+          "heading": "Diapositiva 9 — Auditoría y trazabilidad (alcance actual)",
+          "level": 3,
+          "line": 186
+        },
+        {
+          "heading": "Diapositiva 10 — Limitaciones y riesgos (slide obligatorio)",
+          "level": 3,
+          "line": 201
+        },
+        {
+          "heading": "Diapositiva 11 — Roadmap: planes frente a cada limitación",
+          "level": 3,
+          "line": 217
+        },
+        {
+          "heading": "Diapositiva 12 — Propuesta de piloto",
+          "level": 3,
+          "line": 245
+        },
+        {
+          "heading": "Diapositiva 13 — Cierre",
+          "level": 3,
+          "line": 260
+        },
+        {
+          "heading": "APÉNDICE — Roadmap detallado (referencia para el presentador)",
+          "level": 2,
+          "line": 276
+        },
+        {
+          "heading": "Fase 1 — Entorno hospitalario inmediato (semanas 1–2)",
+          "level": 3,
+          "line": 280
+        },
+        {
+          "heading": "Fase 2 — Mejoras de arquitectura (semanas 3–4)",
+          "level": 3,
+          "line": 290
+        },
+        {
+          "heading": "Fase 3 — Operación y madurez regulatoria (semanas 5–6)",
+          "level": 3,
+          "line": 300
+        },
+        {
+          "heading": "Decisiones abiertas (mencionar si preguntan «cuándo»)",
+          "level": 3,
+          "line": 309
+        },
+        {
+          "heading": "Mensaje clave para el jefe",
+          "level": 3,
+          "line": 316
+        },
+        {
+          "heading": "APÉNDICE — Preguntas frecuentes (slide opcional 14)",
+          "level": 2,
+          "line": 322
+        },
+        {
+          "heading": "APÉNDICE — Instrucciones extra para Gemini",
+          "level": 2,
+          "line": 337
+        },
+        {
+          "heading": "Checklist antes de presentar",
+          "level": 2,
+          "line": 352
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 26
+      }
+    },
+    {
+      "path": "docs/vision-north-star.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 7,
+      "nonEmptyLines": 4,
+      "sections": [
+        {
+          "heading": "Moved",
+          "level": 1,
+          "line": 1
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    }
+  ]
+}

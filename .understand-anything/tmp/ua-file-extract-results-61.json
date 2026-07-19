@@ -1,0 +1,1042 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 25,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": ".cursorignore",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 25,
+      "nonEmptyLines": 20,
+      "metrics": {}
+    },
+    {
+      "path": ".deepseek/rules.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 61,
+      "nonEmptyLines": 44,
+      "sections": [
+        {
+          "heading": "DeepSeek GUI — Rules for R+",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Convención de reglas",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "Orden de lectura para Kun",
+          "level": 2,
+          "line": 14
+        },
+        {
+          "heading": "Reglas para DeepSeek GUI (Kun)",
+          "level": 2,
+          "line": 21
+        },
+        {
+          "heading": "No hacer",
+          "level": 3,
+          "line": 23
+        },
+        {
+          "heading": "Sí hacer",
+          "level": 3,
+          "line": 30
+        },
+        {
+          "heading": "Documentación",
+          "level": 3,
+          "line": 39
+        },
+        {
+          "heading": "Cache y telemetría",
+          "level": 3,
+          "line": 51
+        },
+        {
+          "heading": "Referencias",
+          "level": 2,
+          "line": 57
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 9
+      }
+    },
+    {
+      "path": ".dependency-cruiser.cjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 40,
+      "nonEmptyLines": 40,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": ".kunsdd/draft/f5e6164c-990b-4f51-9628-4045f9feeef7/requirement.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 7,
+      "nonEmptyLines": 4,
+      "sections": [
+        {
+          "heading": "Untitled requirement",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Background",
+          "level": 2,
+          "line": 3
+        },
+        {
+          "heading": "Goal",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "Acceptance criteria",
+          "level": 2,
+          "line": 7
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 4
+      }
+    },
+    {
+      "path": ".understand-anything/.understandignore",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 62,
+      "nonEmptyLines": 56,
+      "metrics": {}
+    },
+    {
+      "path": "design/icon/signal-from-noise/README.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 58,
+      "nonEmptyLines": 42,
+      "sections": [
+        {
+          "heading": "Signal from noise — icon layers",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Files",
+          "level": 2,
+          "line": 7
+        },
+        {
+          "heading": "Icon Composer import",
+          "level": 2,
+          "line": 21
+        },
+        {
+          "heading": "Electron / raster export (interim)",
+          "level": 2,
+          "line": 30
+        },
+        {
+          "heading": "Small-size rules",
+          "level": 2,
+          "line": 41
+        },
+        {
+          "heading": "Tokens",
+          "level": 2,
+          "line": 52
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 6
+      }
+    },
+    {
+      "path": "design/icon/single-glass-cross/README.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 22,
+      "nonEmptyLines": 14,
+      "sections": [
+        {
+          "heading": "Single glass cross",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Open this",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "Spec",
+          "level": 2,
+          "line": 9
+        },
+        {
+          "heading": "Icon Composer layers",
+          "level": 2,
+          "line": 16
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 4
+      }
+    },
+    {
+      "path": "docs/api/README.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 158,
+      "nonEmptyLines": 117,
+      "sections": [
+        {
+          "heading": "API Reference — R+",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "IPC (preload.js → main process)",
+          "level": 2,
+          "line": 7
+        },
+        {
+          "heading": "Canales IPC",
+          "level": 3,
+          "line": 11
+        },
+        {
+          "heading": "Uso desde el renderer",
+          "level": 3,
+          "line": 35
+        },
+        {
+          "heading": "HTTP API (LAN — puerto 3738)",
+          "level": 2,
+          "line": 50
+        },
+        {
+          "heading": "Rutas",
+          "level": 3,
+          "line": 54
+        },
+        {
+          "heading": "Salud y estado",
+          "level": 4,
+          "line": 56
+        },
+        {
+          "heading": "Autenticación",
+          "level": 4,
+          "line": 63
+        },
+        {
+          "heading": "Sincronización de bundles (LiveSync)",
+          "level": 4,
+          "line": 70
+        },
+        {
+          "heading": "Datos clínicos",
+          "level": 4,
+          "line": 79
+        },
+        {
+          "heading": "Descubrimiento y peers",
+          "level": 4,
+          "line": 89
+        },
+        {
+          "heading": "Eventos SSE",
+          "level": 3,
+          "line": 98
+        },
+        {
+          "heading": "WebSocket API",
+          "level": 2,
+          "line": 113
+        },
+        {
+          "heading": "Eventos WS (cliente → servidor)",
+          "level": 3,
+          "line": 117
+        },
+        {
+          "heading": "Eventos WS (servidor → cliente)",
+          "level": 3,
+          "line": 125
+        },
+        {
+          "heading": "IPC de almacenamiento local",
+          "level": 2,
+          "line": 136
+        },
+        {
+          "heading": "Referencias",
+          "level": 2,
+          "line": 153
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 17
+      }
+    },
+    {
+      "path": "docs/database/database-index.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 39,
+      "nonEmptyLines": 30,
+      "sections": [
+        {
+          "heading": "Database Index",
+          "level": 1,
+          "line": 8
+        },
+        {
+          "heading": "When to read which file",
+          "level": 2,
+          "line": 12
+        },
+        {
+          "heading": "Key tables (conceptual)",
+          "level": 2,
+          "line": 24
+        },
+        {
+          "heading": "Rules",
+          "level": 2,
+          "line": 34
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 4
+      }
+    },
+    {
+      "path": "docs/examples/med-catalog-some-tokens.example.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 21,
+      "nonEmptyLines": 21,
+      "sections": [
+        {
+          "heading": "format",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "exportedAt",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "accents",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "soapTokens",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "somePharm",
+          "level": 1,
+          "line": 12
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 6
+      }
+    },
+    {
+      "path": "docs/features/features-index.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 32,
+      "nonEmptyLines": 28,
+      "sections": [
+        {
+          "heading": "Features Index",
+          "level": 1,
+          "line": 8
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": "docs/logic/logic-index.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 25,
+      "nonEmptyLines": 22,
+      "sections": [
+        {
+          "heading": "Logic Index",
+          "level": 1,
+          "line": 8
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": "docs/logs/agent-changelog.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 68,
+      "nonEmptyLines": 49,
+      "sections": [
+        {
+          "heading": "Agent Changelog",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Summary",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "[2026-06-20] - Hallmark UI audit tracks 1–4",
+          "level": 2,
+          "line": 37
+        },
+        {
+          "heading": "[2026-06-08] - Documentation hub & North Star integration",
+          "level": 2,
+          "line": 53
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 4
+      }
+    },
+    {
+      "path": "docs/logs/v8-lan-sync-profile-2026-06-11.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 75,
+      "nonEmptyLines": 54,
+      "sections": [
+        {
+          "heading": "v8 LAN sync profile — 2026-06-11",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Setup",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "Instrumentation points added",
+          "level": 2,
+          "line": 16
+        },
+        {
+          "heading": "Journeys measured",
+          "level": 2,
+          "line": 27
+        },
+        {
+          "heading": "Results (median / p95 ms)",
+          "level": 2,
+          "line": 33
+        },
+        {
+          "heading": "Recommended Chrome Performance steps",
+          "level": 3,
+          "line": 44
+        },
+        {
+          "heading": "Code changes (2026-06-11, post-instrumentation)",
+          "level": 2,
+          "line": 53
+        },
+        {
+          "heading": "Conclusion: worker needed? scoped repaint enough?",
+          "level": 2,
+          "line": 59
+        },
+        {
+          "heading": "Recommended fix",
+          "level": 2,
+          "line": 71
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 9
+      }
+    },
+    {
+      "path": "docs/mockups/perfil-farmacoterapeutico-mockup.html",
+      "language": "html",
+      "fileCategory": "markup",
+      "totalLines": 993,
+      "nonEmptyLines": 956,
+      "metrics": {}
+    },
+    {
+      "path": "docs/superpowers/brainstorm-vitals/io-chart-options.html",
+      "language": "html",
+      "fileCategory": "markup",
+      "totalLines": 188,
+      "nonEmptyLines": 178,
+      "metrics": {}
+    },
+    {
+      "path": "eslint.config.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 145,
+      "nonEmptyLines": 133,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/censo-export-file.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 111,
+      "nonEmptyLines": 102,
+      "functions": [
+        {
+          "name": "censoSafeName",
+          "startLine": 8,
+          "endLine": 10,
+          "params": [
+            "str"
+          ]
+        },
+        {
+          "name": "censoDateStamp",
+          "startLine": 16,
+          "endLine": 23,
+          "params": [
+            "date"
+          ]
+        },
+        {
+          "name": "censoTimeStamp",
+          "startLine": 30,
+          "endLine": 37,
+          "params": [
+            "date"
+          ]
+        },
+        {
+          "name": "censoFileName",
+          "startLine": 45,
+          "endLine": 56,
+          "params": [
+            "servicio",
+            "date"
+          ]
+        },
+        {
+          "name": "censoDailyFilePattern",
+          "startLine": 62,
+          "endLine": 65,
+          "params": [
+            "dateStamp"
+          ]
+        },
+        {
+          "name": "listCensoFilesForDate",
+          "startLine": 73,
+          "endLine": 78,
+          "params": [
+            "dir",
+            "dateStamp"
+          ]
+        },
+        {
+          "name": "removeCensoFilesForDate",
+          "startLine": 86,
+          "endLine": 93,
+          "params": [
+            "dir",
+            "dateStamp"
+          ]
+        },
+        {
+          "name": "writeCensoPdf",
+          "startLine": 102,
+          "endLine": 106,
+          "params": [
+            "destDir",
+            "fileName",
+            "buffer"
+          ]
+        },
+        {
+          "name": "writeCensoPdfForToday",
+          "startLine": 109,
+          "endLine": 111,
+          "params": [
+            "destDir",
+            "fileName",
+            "buffer"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "censoSafeName",
+          "line": 8,
+          "isDefault": false
+        },
+        {
+          "name": "censoDateStamp",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "censoTimeStamp",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "censoFileName",
+          "line": 45,
+          "isDefault": false
+        },
+        {
+          "name": "censoDailyFilePattern",
+          "line": 62,
+          "isDefault": false
+        },
+        {
+          "name": "listCensoFilesForDate",
+          "line": 73,
+          "isDefault": false
+        },
+        {
+          "name": "removeCensoFilesForDate",
+          "line": 86,
+          "isDefault": false
+        },
+        {
+          "name": "writeCensoPdf",
+          "line": 102,
+          "isDefault": false
+        },
+        {
+          "name": "writeCensoPdfForToday",
+          "line": 109,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "censoSafeName",
+          "callee": "String(str || '').replace",
+          "lineNumber": 9
+        },
+        {
+          "caller": "censoSafeName",
+          "callee": "String",
+          "lineNumber": 9
+        },
+        {
+          "caller": "censoDateStamp",
+          "callee": "[\n    d.getFullYear(),\n    String(d.getMonth() + 1).padStart(2, '0'),\n    String(d.getDate()).padStart(2, '0'),\n  ].join",
+          "lineNumber": 18
+        },
+        {
+          "caller": "censoDateStamp",
+          "callee": "d.getFullYear",
+          "lineNumber": 19
+        },
+        {
+          "caller": "censoDateStamp",
+          "callee": "String(d.getMonth() + 1).padStart",
+          "lineNumber": 20
+        },
+        {
+          "caller": "censoDateStamp",
+          "callee": "String",
+          "lineNumber": 20
+        },
+        {
+          "caller": "censoDateStamp",
+          "callee": "d.getMonth",
+          "lineNumber": 20
+        },
+        {
+          "caller": "censoDateStamp",
+          "callee": "String(d.getDate()).padStart",
+          "lineNumber": 21
+        },
+        {
+          "caller": "censoDateStamp",
+          "callee": "String",
+          "lineNumber": 21
+        },
+        {
+          "caller": "censoDateStamp",
+          "callee": "d.getDate",
+          "lineNumber": 21
+        },
+        {
+          "caller": "censoTimeStamp",
+          "callee": "[\n    String(d.getHours()).padStart(2, '0'),\n    String(d.getMinutes()).padStart(2, '0'),\n    String(d.getSeconds()).padStart(2, '0'),\n  ].join",
+          "lineNumber": 32
+        },
+        {
+          "caller": "censoTimeStamp",
+          "callee": "String(d.getHours()).padStart",
+          "lineNumber": 33
+        },
+        {
+          "caller": "censoTimeStamp",
+          "callee": "String",
+          "lineNumber": 33
+        },
+        {
+          "caller": "censoTimeStamp",
+          "callee": "d.getHours",
+          "lineNumber": 33
+        },
+        {
+          "caller": "censoTimeStamp",
+          "callee": "String(d.getMinutes()).padStart",
+          "lineNumber": 34
+        },
+        {
+          "caller": "censoTimeStamp",
+          "callee": "String",
+          "lineNumber": 34
+        },
+        {
+          "caller": "censoTimeStamp",
+          "callee": "d.getMinutes",
+          "lineNumber": 34
+        },
+        {
+          "caller": "censoTimeStamp",
+          "callee": "String(d.getSeconds()).padStart",
+          "lineNumber": 35
+        },
+        {
+          "caller": "censoTimeStamp",
+          "callee": "String",
+          "lineNumber": 35
+        },
+        {
+          "caller": "censoTimeStamp",
+          "callee": "d.getSeconds",
+          "lineNumber": 35
+        },
+        {
+          "caller": "censoFileName",
+          "callee": "censoSafeName",
+          "lineNumber": 49
+        },
+        {
+          "caller": "censoFileName",
+          "callee": "censoDateStamp",
+          "lineNumber": 51
+        },
+        {
+          "caller": "censoFileName",
+          "callee": "censoTimeStamp",
+          "lineNumber": 53
+        },
+        {
+          "caller": "censoDailyFilePattern",
+          "callee": "String(dateStamp).replace",
+          "lineNumber": 63
+        },
+        {
+          "caller": "censoDailyFilePattern",
+          "callee": "String",
+          "lineNumber": 63
+        },
+        {
+          "caller": "listCensoFilesForDate",
+          "callee": "censoDailyFilePattern",
+          "lineNumber": 74
+        },
+        {
+          "caller": "listCensoFilesForDate",
+          "callee": "fs.readdirSync(dir).filter",
+          "lineNumber": 75
+        },
+        {
+          "caller": "listCensoFilesForDate",
+          "callee": "fs.readdirSync",
+          "lineNumber": 75
+        },
+        {
+          "caller": "listCensoFilesForDate",
+          "callee": "re.test",
+          "lineNumber": 76
+        },
+        {
+          "caller": "removeCensoFilesForDate",
+          "callee": "listCensoFilesForDate(dir, dateStamp).forEach",
+          "lineNumber": 88
+        },
+        {
+          "caller": "removeCensoFilesForDate",
+          "callee": "listCensoFilesForDate",
+          "lineNumber": 88
+        },
+        {
+          "caller": "removeCensoFilesForDate",
+          "callee": "fs.unlinkSync",
+          "lineNumber": 89
+        },
+        {
+          "caller": "removeCensoFilesForDate",
+          "callee": "path.join",
+          "lineNumber": 89
+        },
+        {
+          "caller": "removeCensoFilesForDate",
+          "callee": "removed.push",
+          "lineNumber": 90
+        },
+        {
+          "caller": "writeCensoPdf",
+          "callee": "fs.mkdirSync",
+          "lineNumber": 103
+        },
+        {
+          "caller": "writeCensoPdf",
+          "callee": "fs.writeFileSync",
+          "lineNumber": 104
+        },
+        {
+          "caller": "writeCensoPdf",
+          "callee": "path.join",
+          "lineNumber": 104
+        },
+        {
+          "caller": "writeCensoPdfForToday",
+          "callee": "writeCensoPdf",
+          "lineNumber": 110
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 9,
+        "functionCount": 9,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/censo-export-file.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 41,
+      "nonEmptyLines": 37,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/csp-policy.txt",
+      "language": "txt",
+      "fileCategory": "docs",
+      "totalLines": 1,
+      "nonEmptyLines": 1,
+      "metrics": {}
+    },
+    {
+      "path": "lib/db/fixtures/legacy-minimal.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 32,
+      "nonEmptyLines": 32,
+      "sections": [
+        {
+          "heading": "teamCodeHash",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "lsSnapshot",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "hostStateObject",
+          "level": 1,
+          "line": 8
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 3
+      }
+    },
+    {
+      "path": "lib/drive-import/fixtures/eventos-short.txt",
+      "language": "txt",
+      "fileCategory": "docs",
+      "totalLines": 8,
+      "nonEmptyLines": 7,
+      "metrics": {}
+    },
+    {
+      "path": "lib/drive-import/fixtures/labs-drive-sample.txt",
+      "language": "txt",
+      "fileCategory": "docs",
+      "totalLines": 25,
+      "nonEmptyLines": 22,
+      "metrics": {}
+    },
+    {
+      "path": "lib/interno/qr-svg.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 26,
+      "nonEmptyLines": 24,
+      "functions": [
+        {
+          "name": "renderQrSvg",
+          "startLine": 7,
+          "endLine": 26,
+          "params": [
+            "text"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "renderQrSvg",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "renderQrSvg",
+          "callee": "qrcode",
+          "lineNumber": 8
+        },
+        {
+          "caller": "renderQrSvg",
+          "callee": "qr.addData",
+          "lineNumber": 9
+        },
+        {
+          "caller": "renderQrSvg",
+          "callee": "String",
+          "lineNumber": 9
+        },
+        {
+          "caller": "renderQrSvg",
+          "callee": "qr.make",
+          "lineNumber": 10
+        },
+        {
+          "caller": "renderQrSvg",
+          "callee": "qr.getModuleCount",
+          "lineNumber": 12
+        },
+        {
+          "caller": "renderQrSvg",
+          "callee": "qr.isDark",
+          "lineNumber": 18
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/interno/qr-svg.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 9,
+      "nonEmptyLines": 8,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    }
+  ]
+}

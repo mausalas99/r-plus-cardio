@@ -1,0 +1,31 @@
+R+ 5.2.1 (cáscara Arc y correcciones UX)
+==========================================
+
+Fecha: 2026-05-24
+
+## Resumen
+
+Refinamiento visual tipo **Arc** (cáscara flotante, esquinas radiales, paneles unificados) y correcciones de usabilidad en Agenda, sidebar auto-oculto y edición de datos del paciente.
+
+## Nuevo / mejorado
+
+- **Interfaz:** cáscara con `--shell-gap`, header y `.app` con radios consistentes; paneles flotantes en Lab, Medicamentos, Agenda, Expediente y Pase.
+- **Sidebar:** rail discreto al auto-ocultar; esquinas redondeadas al mostrar/ocultar la barra de pacientes.
+- **Tabs:** fila principal con esquinas superiores suaves; indicador animado en pestañas.
+- **Pendientes:** chip de prioridad con clic para rotar (Alta / Media / Baja) y pulso visual.
+- **Motion:** `motion.css`, transiciones de paneles y utilidades en `ui-motion.mjs`.
+
+## Correcciones
+
+- **Agenda:** panel único bajo las tabs (sin doble marco ni header desconectado).
+- **Datos del paciente:** ya no pierde el foco al escribir en la pestaña Datos (modo Sala).
+- **Sidebar oculto:** esquina superior izquierda del contenido alineada con la cáscara cuando reaparece la barra.
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v5.2.1
+
+- Mac: `R+-5.2.1-arm64.dmg`, `R+-5.2.1-x64.dmg` (y zip para auto-update).
+- Windows: `R+-5.2.1-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye write-release-yml.js).

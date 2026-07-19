@@ -1,0 +1,646 @@
+/* Hallmark · utilitarian clinical · theme: Quiet workbench · design.md */
+.hc-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+/* expediente.css redefine .btn-med-secondary sin min-height; igualar con Editar */
+#historia-clinica-mount .hc-toolbar .btn-generate,
+#historia-clinica-mount .hc-toolbar .btn-med-secondary {
+  margin: 0;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+#historia-clinica-mount .hc-toolbar .btn-med-secondary {
+  border-radius: var(--radius-pill);
+  padding: calc(9px * var(--density-space)) calc(16px * var(--density-space));
+  font-size: calc(13px * var(--density-font));
+  font-weight: 600;
+  background: color-mix(in oklab, var(--lab-chip-bg) 88%, var(--surface));
+  border: 1px solid color-mix(in oklab, var(--action) 32%, var(--border));
+  color: var(--primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.hc-stepper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.hc-step {
+  flex: 1;
+  min-width: 120px;
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.hc-step--active {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 12%, var(--surface));
+}
+
+.hc-step--done::after {
+  content: ' ✓';
+  color: var(--accent);
+}
+
+.hc-step-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+.hc-step-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.hc-step-title {
+  margin: 0 0 4px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.hc-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: calc(12px * var(--density-space));
+  align-items: start;
+}
+
+.hc-genero-panel {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: calc(12px * var(--density-space));
+  align-items: start;
+}
+
+.hc-genero-panel .hc-genero-field {
+  margin: 0;
+}
+
+.hc-genero-field--full {
+  grid-column: 1 / -1;
+}
+
+.hc-genero-panel .hc-genero-field input,
+.hc-genero-panel .hc-genero-field textarea {
+  width: 100%;
+}
+
+.hc-genero-inline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(10px * var(--density-space));
+}
+
+.hc-genero-inline-field {
+  flex: 1;
+  min-width: 120px;
+  margin: 0;
+}
+
+.hc-genero-gpac {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: calc(8px * var(--density-space));
+}
+
+.hc-genero-gpac-cell {
+  margin: 0;
+}
+
+.hc-genero-gpac-cell input {
+  width: 100%;
+}
+
+.hc-genero-meds-host .hc-medicamentos-list {
+  margin-bottom: 8px;
+}
+
+.hc-genero-meds-host .hc-entry-row {
+  margin-bottom: 8px;
+}
+
+.hc-genero-field--full .hc-genero-meds-host {
+  width: 100%;
+}
+
+.hc-apnp-toxicomanias {
+  grid-column: 1 / -1;
+}
+
+.hc-tox-panel .hc-tox-chips {
+  margin-bottom: calc(10px * var(--density-space));
+}
+
+.hc-tox-entries {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: calc(10px * var(--density-space));
+}
+
+.hc-tox-entry {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: calc(10px * var(--density-space));
+  padding: calc(10px * var(--density-space));
+  padding-top: calc(28px * var(--density-space));
+  border: 1px dashed color-mix(in oklab, var(--border) 80%, transparent);
+  border-radius: var(--radius-md);
+  position: relative;
+}
+
+.hc-tox-entry-title {
+  position: absolute;
+  top: 8px;
+  left: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.hc-tox-entry .btn-remove {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+}
+
+.hc-tox-entry-fields {
+  display: contents;
+}
+
+.hc-tox-custom-row {
+  margin-top: 4px;
+}
+
+@media (max-width: 768px) {
+  .hc-tox-entry {
+    grid-template-columns: 1fr;
+  }
+}
+
+#historia-clinica-mount input[type='text'],
+#historia-clinica-mount textarea:not([data-hc-no-uppercase]) {
+  text-transform: uppercase;
+}
+
+#historia-clinica-mount .hc-grid .field-group {
+  margin: 0;
+}
+
+#historia-clinica-mount .hc-step-body > .field-group {
+  margin: 0;
+}
+
+#historia-clinica-mount .hc-checklist-detail-wrap {
+  margin-top: calc(8px * var(--density-space));
+}
+
+#historia-clinica-mount .card-body > .field-group:only-child {
+  margin: 0;
+}
+
+.hc-read-view {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.hc-read-body {
+  line-height: 1.55;
+  white-space: pre-wrap;
+}
+
+.hc-labs-pre {
+  max-height: 200px;
+  overflow: auto;
+  font-size: 12px;
+  margin-top: 8px;
+}
+
+.hc-vitals-ingreso {
+  display: flex;
+  flex-direction: column;
+  gap: calc(8px * var(--density-space, 1));
+  padding: calc(11px * var(--density-space, 1)) calc(13px * var(--density-space, 1));
+  border: 1px solid color-mix(in oklab, var(--border) 82%, transparent);
+  border-radius: var(--radius-md);
+  background: color-mix(in oklab, var(--surface) 96%, var(--bg));
+}
+
+.hc-vitals-ingreso--empty {
+  border-style: dashed;
+  border-color: color-mix(in oklab, var(--action) 28%, var(--border));
+  background: color-mix(in oklab, var(--action) 5%, var(--surface));
+}
+
+.hc-vitals-ingreso__text {
+  margin: 0;
+  font-size: calc(13px * var(--density-font, 1));
+  line-height: 1.45;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.hc-vitals-ingreso__source,
+.hc-vitals-ingreso__empty-msg {
+  margin: 0;
+}
+
+.hc-vitals-ingreso__cta {
+  align-self: flex-start;
+}
+
+.hc-checklist-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: calc(10px * var(--density-space));
+}
+
+.hc-checklist-options--grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(148px, 1fr));
+  gap: 6px;
+}
+
+.hc-check-chip {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 7px 10px;
+  min-height: 2.5rem;
+  border: 1px solid color-mix(in oklab, var(--border) 90%, transparent);
+  border-radius: var(--radius-md);
+  background: var(--input-fill);
+  cursor: pointer;
+  font-size: calc(13px * var(--density-font));
+  line-height: 1.35;
+  transition: border-color 0.15s, background 0.15s, box-shadow 0.15s;
+  user-select: none;
+}
+
+.hc-check-chip:has(.hc-check-chip-input:checked) {
+  border-color: color-mix(in oklab, var(--action) 55%, var(--border));
+  background: color-mix(in srgb, var(--action) 10%, var(--surface));
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--action) 18%, transparent);
+}
+
+.hc-check-chip-input {
+  width: 1rem;
+  height: 1rem;
+  margin: 0;
+  accent-color: var(--action);
+  flex-shrink: 0;
+}
+
+.hc-check-chip-label {
+  flex: 1;
+  min-width: 0;
+}
+
+.hc-apnp-habits {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: calc(12px * var(--density-space));
+  margin-bottom: calc(4px * var(--density-space));
+}
+
+.hc-calc-wrap .card-body {
+  display: flex;
+  flex-direction: column;
+  gap: calc(10px * var(--density-space));
+}
+
+.hc-calc-status-row {
+  display: flex;
+  align-items: center;
+  gap: calc(10px * var(--density-space, 1));
+  flex-wrap: wrap;
+}
+
+.hc-calc-status-row__label {
+  flex: 0 0 auto;
+  margin: 0;
+  font-size: calc(12px * var(--density-font, 1));
+  font-weight: 600;
+  color: var(--text-muted);
+  line-height: 1.3;
+}
+
+.hc-calc-status-row__select {
+  flex: 0 1 auto;
+  width: auto;
+  min-width: 8.5rem;
+  max-width: min(100%, 12rem);
+  min-height: 36px;
+  padding: 6px 28px 6px 10px;
+  font-size: calc(13px * var(--density-font, 1));
+}
+
+.hc-calc-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: calc(10px * var(--density-space));
+}
+
+.hc-calc-result {
+  font-size: calc(12px * var(--density-font));
+  color: var(--text-muted);
+  line-height: 1.45;
+  margin: 0;
+}
+
+.hc-calc-alert {
+  font-size: calc(12px * var(--density-font));
+  padding: 8px 10px;
+  border-radius: var(--radius-md);
+  line-height: 1.4;
+}
+
+.hc-calc-alert--warn {
+  background: color-mix(in oklab, var(--todo-prio-media) 14%, var(--surface));
+  border: 1px solid color-mix(in oklab, var(--todo-prio-media) 35%, var(--border));
+  color: var(--text);
+}
+
+.hc-calc-alert--high {
+  background: color-mix(in oklab, var(--error) 12%, var(--surface));
+  border: 1px solid color-mix(in oklab, var(--error) 35%, var(--border));
+  color: var(--text);
+}
+
+.hc-app-panel {
+  display: flex;
+  flex-direction: column;
+  gap: calc(20px * var(--density-space));
+}
+
+.hc-app-block {
+  display: flex;
+  flex-direction: column;
+  gap: calc(12px * var(--density-space));
+}
+
+.hc-app-block-title {
+  margin: 0;
+  font-size: calc(13px * var(--density-font));
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+}
+
+.hc-app-custom-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: flex-end;
+  margin-top: calc(4px * var(--density-space));
+}
+
+.hc-app-custom-field {
+  flex: 1;
+  min-width: 200px;
+  margin: 0;
+}
+
+.hc-app-special .card-body {
+  display: flex;
+  flex-direction: column;
+  gap: calc(10px * var(--density-space));
+}
+
+.hc-app-special-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-height: 2rem;
+}
+
+.hc-app-special-body--hidden {
+  display: none;
+}
+
+.hc-app-special-actions {
+  margin-top: 4px;
+}
+
+.hc-inline-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: calc(13px * var(--density-font));
+  color: var(--text);
+  cursor: pointer;
+  margin-bottom: 4px;
+}
+
+.hc-inline-toggle input {
+  width: 1rem;
+  height: 1rem;
+  accent-color: var(--action);
+}
+
+.hc-empty-hint {
+  margin: 0;
+  padding: 10px 12px;
+  font-size: calc(12px * var(--density-font));
+  color: var(--text-muted);
+  line-height: 1.45;
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--input-fill) 80%, transparent);
+  border: 1px dashed color-mix(in oklab, var(--border) 70%, transparent);
+}
+
+.hc-entry-row-span {
+  grid-column: 1 / -1;
+}
+
+.hc-entry-row--compact {
+  grid-template-columns: 1fr auto;
+}
+
+.hc-entry-row--linked {
+  border-color: color-mix(in oklab, var(--action) 35%, var(--border));
+  background: color-mix(in srgb, var(--action) 6%, var(--surface));
+}
+
+.hc-erc-meds-block {
+  margin-top: calc(12px * var(--density-space));
+  padding-top: calc(12px * var(--density-space));
+  border-top: 1px solid color-mix(in oklab, var(--border) 75%, transparent);
+}
+
+.hc-app-cond-card--erc .card-body {
+  display: flex;
+  flex-direction: column;
+  gap: calc(10px * var(--density-space));
+}
+
+#historia-clinica-mount .hc-entry-row--linked input[readonly] {
+  cursor: default;
+  opacity: 0.92;
+}
+
+.hc-entry-row-main {
+  grid-column: 1 / -1;
+}
+
+@media (min-width: 769px) {
+  .hc-entry-row--compact {
+    grid-template-columns: 1fr auto;
+  }
+
+  .hc-entry-row--compact .hc-entry-row-main {
+    grid-column: auto;
+  }
+}
+
+.hc-app-conditions-detail,
+.hc-ahf-conditions-detail {
+  display: flex;
+  flex-direction: column;
+  gap: calc(10px * var(--density-space));
+  margin-bottom: calc(12px * var(--density-space));
+}
+
+.hc-ahf-entry {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: calc(10px * var(--density-space));
+  padding: calc(10px * var(--density-space));
+  margin-bottom: 8px;
+  border: 1px dashed color-mix(in oklab, var(--border) 80%, transparent);
+  border-radius: var(--radius-md);
+  position: relative;
+}
+
+.hc-ahf-entry .btn-remove {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+}
+
+.hc-ahf-death-fields {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: calc(10px * var(--density-space));
+}
+
+.hc-ahf-death-fields--hidden {
+  display: none;
+}
+
+#historia-clinica-mount .hc-ahf-cond-card .btn-add-row {
+  margin: 0 calc(12px * var(--density-space)) calc(12px * var(--density-space));
+}
+
+.hc-tag {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--text-muted);
+  margin-left: 6px;
+}
+
+.hc-entry-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: calc(10px * var(--density-space));
+  padding: calc(10px * var(--density-space));
+  margin-bottom: 8px;
+  border: 1px dashed color-mix(in oklab, var(--border) 80%, transparent);
+  border-radius: var(--radius-md);
+  position: relative;
+}
+
+.hc-entry-row .btn-remove {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+}
+
+.hc-flex-date {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+
+.hc-flex-date select,
+.hc-flex-date input[type='number'] {
+  border: 1px solid color-mix(in oklab, var(--border) 90%, transparent);
+  border-radius: var(--radius-md);
+  padding: 8px 10px;
+  font-size: calc(13px * var(--density-font));
+  font-family: inherit;
+  background: var(--input-fill);
+  color: var(--text);
+  min-width: 0;
+}
+
+.hc-flex-precision {
+  flex: 1 1 120px;
+}
+
+.hc-flex-year {
+  width: 5.5rem;
+}
+
+.hc-flex-month,
+.hc-flex-day {
+  width: 4rem;
+}
+
+#historia-clinica-mount .btn-add-row {
+  align-self: flex-start;
+  margin: 0;
+}
+
+#historia-clinica-mount #hc-mount-ipas {
+  display: flex;
+  flex-direction: column;
+  gap: calc(12px * var(--density-space));
+}
+
+.hc-mobile-teaser {
+  font-size: 12px;
+  line-height: 1.45;
+  max-height: 240px;
+  overflow: auto;
+}
+
+@media (max-width: 768px) {
+  .hc-grid,
+  .hc-calc-grid,
+  .hc-apnp-habits,
+  .hc-entry-row,
+  .hc-ahf-entry,
+  .hc-ahf-death-fields {
+    grid-template-columns: 1fr;
+  }
+}

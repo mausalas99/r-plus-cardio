@@ -1,0 +1,5041 @@
+{
+  "nodes": [
+    {
+      "id": "file:generate-censo.js",
+      "type": "file",
+      "name": "generate-censo.js",
+      "filePath": "generate-censo.js",
+      "summary": "PDF censo generator with table layout, lab wrapping, and daily export file naming.",
+      "tags": [
+        "censo",
+        "exports"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:generate-censo.js:tableLayout",
+      "type": "function",
+      "name": "tableLayout",
+      "filePath": "generate-censo.js",
+      "lineRange": [
+        92,
+        110
+      ],
+      "summary": "tableLayout implements guardia/clinical workflow logic in generate-censo.js.",
+      "tags": [
+        "censo",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:generate-censo.js:wrapText",
+      "type": "function",
+      "name": "wrapText",
+      "filePath": "generate-censo.js",
+      "lineRange": [
+        119,
+        152
+      ],
+      "summary": "wrapText implements guardia/clinical workflow logic in generate-censo.js.",
+      "tags": [
+        "censo",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:generate-censo.js:wrapCell",
+      "type": "function",
+      "name": "wrapCell",
+      "filePath": "generate-censo.js",
+      "lineRange": [
+        161,
+        186
+      ],
+      "summary": "wrapCell implements guardia/clinical workflow logic in generate-censo.js.",
+      "tags": [
+        "censo",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:generate-censo.js:fitLineToWidth",
+      "type": "function",
+      "name": "fitLineToWidth",
+      "filePath": "generate-censo.js",
+      "lineRange": [
+        194,
+        203
+      ],
+      "summary": "fitLineToWidth implements guardia/clinical workflow logic in generate-censo.js.",
+      "tags": [
+        "censo",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:generate-censo.js:fitLineShrinkToWidth",
+      "type": "function",
+      "name": "fitLineShrinkToWidth",
+      "filePath": "generate-censo.js",
+      "lineRange": [
+        213,
+        230
+      ],
+      "summary": "fitLineShrinkToWidth implements guardia/clinical workflow logic in generate-censo.js.",
+      "tags": [
+        "censo",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:generate-censo.js:formatPacienteCellText",
+      "type": "function",
+      "name": "formatPacienteCellText",
+      "filePath": "generate-censo.js",
+      "lineRange": [
+        236,
+        249
+      ],
+      "summary": "Formats paciente cell text for generate-censo.js.",
+      "tags": [
+        "censo",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:generate-censo.js:rowCells",
+      "type": "function",
+      "name": "rowCells",
+      "filePath": "generate-censo.js",
+      "lineRange": [
+        251,
+        278
+      ],
+      "summary": "rowCells implements guardia/clinical workflow logic in generate-censo.js.",
+      "tags": [
+        "censo",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:generate-censo.js:cellLines",
+      "type": "function",
+      "name": "cellLines",
+      "filePath": "generate-censo.js",
+      "lineRange": [
+        306,
+        320
+      ],
+      "summary": "cellLines implements guardia/clinical workflow logic in generate-censo.js.",
+      "tags": [
+        "censo",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:generate-censo.js:cellLinesUnbounded",
+      "type": "function",
+      "name": "cellLinesUnbounded",
+      "filePath": "generate-censo.js",
+      "lineRange": [
+        322,
+        331
+      ],
+      "summary": "cellLinesUnbounded implements guardia/clinical workflow logic in generate-censo.js.",
+      "tags": [
+        "censo",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:generate-censo.js:splitCellLinesNoWrap",
+      "type": "function",
+      "name": "splitCellLinesNoWrap",
+      "filePath": "generate-censo.js",
+      "lineRange": [
+        338,
+        347
+      ],
+      "summary": "splitCellLinesNoWrap implements guardia/clinical workflow logic in generate-censo.js.",
+      "tags": [
+        "censo",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:generate-censo.js:wrapLabsCellLines",
+      "type": "function",
+      "name": "wrapLabsCellLines",
+      "filePath": "generate-censo.js",
+      "lineRange": [
+        358,
+        382
+      ],
+      "summary": "wrapLabsCellLines implements guardia/clinical workflow logic in generate-censo.js.",
+      "tags": [
+        "censo",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:generate-censo.js:wrapPlainCellLines",
+      "type": "function",
+      "name": "wrapPlainCellLines",
+      "filePath": "generate-censo.js",
+      "lineRange": [
+        392,
+        412
+      ],
+      "summary": "wrapPlainCellLines implements guardia/clinical workflow logic in generate-censo.js.",
+      "tags": [
+        "censo",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:generate-censo.js:rowHeightForLineCount",
+      "type": "function",
+      "name": "rowHeightForLineCount",
+      "filePath": "generate-censo.js",
+      "lineRange": [
+        437,
+        439
+      ],
+      "summary": "rowHeightForLineCount implements guardia/clinical workflow logic in generate-censo.js.",
+      "tags": [
+        "censo",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:generate-censo.js:measureRowLineCount",
+      "type": "function",
+      "name": "measureRowLineCount",
+      "filePath": "generate-censo.js",
+      "lineRange": [
+        448,
+        463
+      ],
+      "summary": "measureRowLineCount implements guardia/clinical workflow logic in generate-censo.js.",
+      "tags": [
+        "censo",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:generate-censo.js:drawColumnGuides",
+      "type": "function",
+      "name": "drawColumnGuides",
+      "filePath": "generate-censo.js",
+      "lineRange": [
+        471,
+        482
+      ],
+      "summary": "drawColumnGuides implements guardia/clinical workflow logic in generate-censo.js.",
+      "tags": [
+        "censo",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:generate-censo.js:drawTextVerticalInBox",
+      "type": "function",
+      "name": "drawTextVerticalInBox",
+      "filePath": "generate-censo.js",
+      "lineRange": [
+        499,
+        532
+      ],
+      "summary": "drawTextVerticalInBox implements guardia/clinical workflow logic in generate-censo.js.",
+      "tags": [
+        "censo",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:generate-censo.js:drawTableHeader",
+      "type": "function",
+      "name": "drawTableHeader",
+      "filePath": "generate-censo.js",
+      "lineRange": [
+        538,
+        571
+      ],
+      "summary": "drawTableHeader implements guardia/clinical workflow logic in generate-censo.js.",
+      "tags": [
+        "censo",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:generate-censo.js:cellLineStyle",
+      "type": "function",
+      "name": "cellLineStyle",
+      "filePath": "generate-censo.js",
+      "lineRange": [
+        599,
+        617
+      ],
+      "summary": "cellLineStyle implements guardia/clinical workflow logic in generate-censo.js.",
+      "tags": [
+        "censo",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:generate-censo.js:drawCellText",
+      "type": "function",
+      "name": "drawCellText",
+      "filePath": "generate-censo.js",
+      "lineRange": [
+        619,
+        678
+      ],
+      "summary": "drawCellText implements guardia/clinical workflow logic in generate-censo.js.",
+      "tags": [
+        "censo",
+        "function"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:generate-censo.js:drawTableRow",
+      "type": "function",
+      "name": "drawTableRow",
+      "filePath": "generate-censo.js",
+      "lineRange": [
+        680,
+        721
+      ],
+      "summary": "drawTableRow implements guardia/clinical workflow logic in generate-censo.js.",
+      "tags": [
+        "censo",
+        "function"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:generate-censo.js:drawPageHeader",
+      "type": "function",
+      "name": "drawPageHeader",
+      "filePath": "generate-censo.js",
+      "lineRange": [
+        729,
+        774
+      ],
+      "summary": "drawPageHeader implements guardia/clinical workflow logic in generate-censo.js.",
+      "tags": [
+        "censo",
+        "function"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:generate-censo.js:buildEquipoLine",
+      "type": "function",
+      "name": "buildEquipoLine",
+      "filePath": "generate-censo.js",
+      "lineRange": [
+        780,
+        790
+      ],
+      "summary": "Builds equipo line for generate-censo.js.",
+      "tags": [
+        "censo",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:generate-censo.js:normalizePayload",
+      "type": "function",
+      "name": "normalizePayload",
+      "filePath": "generate-censo.js",
+      "lineRange": [
+        796,
+        816
+      ],
+      "summary": "Normalizes payload for generate-censo.js.",
+      "tags": [
+        "censo",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:generate-censo.js:pageTableMetrics",
+      "type": "function",
+      "name": "pageTableMetrics",
+      "filePath": "generate-censo.js",
+      "lineRange": [
+        821,
+        826
+      ],
+      "summary": "pageTableMetrics implements guardia/clinical workflow logic in generate-censo.js.",
+      "tags": [
+        "censo",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:generate-censo.js:layoutRows",
+      "type": "function",
+      "name": "layoutRows",
+      "filePath": "generate-censo.js",
+      "lineRange": [
+        835,
+        872
+      ],
+      "summary": "layoutRows implements guardia/clinical workflow logic in generate-censo.js.",
+      "tags": [
+        "censo",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:generate-censo.js:renderCensusPdf",
+      "type": "function",
+      "name": "renderCensusPdf",
+      "filePath": "generate-censo.js",
+      "lineRange": [
+        878,
+        912
+      ],
+      "summary": "Renders census pdf for generate-censo.js.",
+      "tags": [
+        "censo",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:generate-censo.layout.test.js",
+      "type": "file",
+      "name": "generate-censo.layout.test.js",
+      "filePath": "generate-censo.layout.test.js",
+      "summary": "Unit tests for generate-censo.layout.js covering guardia/clinical behavior and edge cases.",
+      "tags": [
+        "test",
+        "censo"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:generate-censo.layout.test.js:makeRow",
+      "type": "function",
+      "name": "makeRow",
+      "filePath": "generate-censo.layout.test.js",
+      "lineRange": [
+        13,
+        24
+      ],
+      "summary": "makeRow implements guardia/clinical workflow logic in generate-censo.layout.test.js.",
+      "tags": [
+        "censo",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:generate-censo.test.js",
+      "type": "file",
+      "name": "generate-censo.test.js",
+      "filePath": "generate-censo.test.js",
+      "summary": "Unit tests for generate-censo.js covering guardia/clinical behavior and edge cases.",
+      "tags": [
+        "test",
+        "censo"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/censo-build.mjs",
+      "type": "file",
+      "name": "censo-build.mjs",
+      "filePath": "public/js/censo-build.mjs",
+      "summary": "Builds censo row data from patient census state for PDF export.",
+      "tags": [
+        "censo",
+        "exports"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:public/js/censo-build.mjs:formatCensusMonthLabel",
+      "type": "function",
+      "name": "formatCensusMonthLabel",
+      "filePath": "public/js/censo-build.mjs",
+      "lineRange": [
+        18,
+        22
+      ],
+      "summary": "Formats census month label for censo-build.mjs.",
+      "tags": [
+        "censo",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/censo-build.mjs:formatCensusDateLabel",
+      "type": "function",
+      "name": "formatCensusDateLabel",
+      "filePath": "public/js/censo-build.mjs",
+      "lineRange": [
+        25,
+        34
+      ],
+      "summary": "Formats census date label for censo-build.mjs.",
+      "tags": [
+        "censo",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/censo-build.mjs:truncateCensusCell",
+      "type": "function",
+      "name": "truncateCensusCell",
+      "filePath": "public/js/censo-build.mjs",
+      "lineRange": [
+        37,
+        42
+      ],
+      "summary": "truncateCensusCell implements guardia/clinical workflow logic in censo-build.mjs.",
+      "tags": [
+        "censo",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/censo-build.mjs:sortPatientsForCensus",
+      "type": "function",
+      "name": "sortPatientsForCensus",
+      "filePath": "public/js/censo-build.mjs",
+      "lineRange": [
+        45,
+        47
+      ],
+      "summary": "sortPatientsForCensus implements guardia/clinical workflow logic in censo-build.mjs.",
+      "tags": [
+        "censo",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/censo-build.mjs:buildPatientSections",
+      "type": "function",
+      "name": "buildPatientSections",
+      "filePath": "public/js/censo-build.mjs",
+      "lineRange": [
+        60,
+        110
+      ],
+      "summary": "Builds patient sections for censo-build.mjs.",
+      "tags": [
+        "censo",
+        "function"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:public/js/censo-build.mjs:flattenRowForCompactPdf",
+      "type": "function",
+      "name": "flattenRowForCompactPdf",
+      "filePath": "public/js/censo-build.mjs",
+      "lineRange": [
+        113,
+        131
+      ],
+      "summary": "flattenRowForCompactPdf implements guardia/clinical workflow logic in censo-build.mjs.",
+      "tags": [
+        "censo",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/censo-build.mjs:normalizeCensoCamaNumber",
+      "type": "function",
+      "name": "normalizeCensoCamaNumber",
+      "filePath": "public/js/censo-build.mjs",
+      "lineRange": [
+        138,
+        147
+      ],
+      "summary": "Normalizes censo cama number for censo-build.mjs.",
+      "tags": [
+        "censo",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/censo-build.mjs:parseCamaCellForCenso",
+      "type": "function",
+      "name": "parseCamaCellForCenso",
+      "filePath": "public/js/censo-build.mjs",
+      "lineRange": [
+        153,
+        181
+      ],
+      "summary": "Parses cama cell for censo for censo-build.mjs.",
+      "tags": [
+        "censo",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/censo-build.mjs:formatCamaCellLabel",
+      "type": "function",
+      "name": "formatCamaCellLabel",
+      "filePath": "public/js/censo-build.mjs",
+      "lineRange": [
+        187,
+        193
+      ],
+      "summary": "Formats cama cell label for censo-build.mjs.",
+      "tags": [
+        "censo",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/censo-build.mjs:formatCamaCellForCenso",
+      "type": "function",
+      "name": "formatCamaCellForCenso",
+      "filePath": "public/js/censo-build.mjs",
+      "lineRange": [
+        195,
+        199
+      ],
+      "summary": "Formats cama cell for censo for censo-build.mjs.",
+      "tags": [
+        "censo",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/censo-build.mjs:formatPatientNameForCenso",
+      "type": "function",
+      "name": "formatPatientNameForCenso",
+      "filePath": "public/js/censo-build.mjs",
+      "lineRange": [
+        202,
+        207
+      ],
+      "summary": "Formats patient name for censo for censo-build.mjs.",
+      "tags": [
+        "censo",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/censo-build.mjs:formatPacienteMetaForCenso",
+      "type": "function",
+      "name": "formatPacienteMetaForCenso",
+      "filePath": "public/js/censo-build.mjs",
+      "lineRange": [
+        214,
+        226
+      ],
+      "summary": "Formats paciente meta for censo for censo-build.mjs.",
+      "tags": [
+        "censo",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/censo-build.mjs:buildCensusPayload",
+      "type": "function",
+      "name": "buildCensusPayload",
+      "filePath": "public/js/censo-build.mjs",
+      "lineRange": [
+        239,
+        295
+      ],
+      "summary": "Builds census payload for censo-build.mjs.",
+      "tags": [
+        "censo",
+        "function"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:public/js/censo-build.test.mjs",
+      "type": "file",
+      "name": "censo-build.test.mjs",
+      "filePath": "public/js/censo-build.test.mjs",
+      "summary": "Unit tests for censo-build.mjs covering guardia/clinical behavior and edge cases.",
+      "tags": [
+        "test",
+        "censo"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:public/js/censo-header-format.mjs",
+      "type": "file",
+      "name": "censo-header-format.mjs",
+      "filePath": "public/js/censo-header-format.mjs",
+      "summary": "censo-header-format.mjs — censo module exporting CENSO_UBICACION_TORRE, CENSO_TORRE_HU_LABEL, DEFAULT_CENSO_FIMI_LABEL, resolveCensoFimiLabel, ….",
+      "tags": [
+        "censo",
+        "exports"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/censo-header-format.mjs:resolveCensoFimiLabel",
+      "type": "function",
+      "name": "resolveCensoFimiLabel",
+      "filePath": "public/js/censo-header-format.mjs",
+      "lineRange": [
+        10,
+        12
+      ],
+      "summary": "Resolves censo fimi label for censo-header-format.mjs.",
+      "tags": [
+        "censo",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/censo-header-format.mjs:normalizeCensoUbicacionValue",
+      "type": "function",
+      "name": "normalizeCensoUbicacionValue",
+      "filePath": "public/js/censo-header-format.mjs",
+      "lineRange": [
+        30,
+        39
+      ],
+      "summary": "Normalizes censo ubicacion value for censo-header-format.mjs.",
+      "tags": [
+        "censo",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/censo-header-format.mjs:formatCensoSalaTitleLine",
+      "type": "function",
+      "name": "formatCensoSalaTitleLine",
+      "filePath": "public/js/censo-header-format.mjs",
+      "lineRange": [
+        45,
+        50
+      ],
+      "summary": "Formats censo sala title line for censo-header-format.mjs.",
+      "tags": [
+        "censo",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/censo-header-format.mjs:resolveCensoEquipoMembers",
+      "type": "function",
+      "name": "resolveCensoEquipoMembers",
+      "filePath": "public/js/censo-header-format.mjs",
+      "lineRange": [
+        56,
+        66
+      ],
+      "summary": "Resolves censo equipo members for censo-header-format.mjs.",
+      "tags": [
+        "censo",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/censo-header-format.mjs:formatCensoEquipoLine",
+      "type": "function",
+      "name": "formatCensoEquipoLine",
+      "filePath": "public/js/censo-header-format.mjs",
+      "lineRange": [
+        72,
+        75
+      ],
+      "summary": "Formats censo equipo line for censo-header-format.mjs.",
+      "tags": [
+        "censo",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/censo-header-format.mjs:buildCensoDocumentHeader",
+      "type": "function",
+      "name": "buildCensoDocumentHeader",
+      "filePath": "public/js/censo-header-format.mjs",
+      "lineRange": [
+        81,
+        91
+      ],
+      "summary": "Builds censo document header for censo-header-format.mjs.",
+      "tags": [
+        "censo",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/censo-header-format.test.mjs",
+      "type": "file",
+      "name": "censo-header-format.test.mjs",
+      "filePath": "public/js/censo-header-format.test.mjs",
+      "summary": "Unit tests for censo-header-format.mjs covering guardia/clinical behavior and edge cases.",
+      "tags": [
+        "test",
+        "censo"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/censo-meds-format.mjs",
+      "type": "file",
+      "name": "censo-meds-format.mjs",
+      "filePath": "public/js/censo-meds-format.mjs",
+      "summary": "censo-meds-format.mjs — censo module exporting formatCensoMedsFromReceta.",
+      "tags": [
+        "censo",
+        "exports"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/censo-meds-format.mjs:formatCensoMedsFromReceta",
+      "type": "function",
+      "name": "formatCensoMedsFromReceta",
+      "filePath": "public/js/censo-meds-format.mjs",
+      "lineRange": [
+        21,
+        32
+      ],
+      "summary": "Formats censo meds from receta for censo-meds-format.mjs.",
+      "tags": [
+        "censo",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/censo-meds-format.test.mjs",
+      "type": "file",
+      "name": "censo-meds-format.test.mjs",
+      "filePath": "public/js/censo-meds-format.test.mjs",
+      "summary": "Unit tests for censo-meds-format.mjs covering guardia/clinical behavior and edge cases.",
+      "tags": [
+        "test",
+        "censo"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/censo-pendientes-format.mjs",
+      "type": "file",
+      "name": "censo-pendientes-format.mjs",
+      "filePath": "public/js/censo-pendientes-format.mjs",
+      "summary": "censo-pendientes-format.mjs — guardia module exporting formatPendientesForCenso.",
+      "tags": [
+        "guardia",
+        "entrega",
+        "censo",
+        "exports"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/censo-pendientes-format.mjs:formatPendientesForCenso",
+      "type": "function",
+      "name": "formatPendientesForCenso",
+      "filePath": "public/js/censo-pendientes-format.mjs",
+      "lineRange": [
+        12,
+        31
+      ],
+      "summary": "Formats pendientes for censo for censo-pendientes-format.mjs.",
+      "tags": [
+        "guardia",
+        "entrega",
+        "censo",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:public/js/censo-pendientes-format.test.mjs",
+      "type": "file",
+      "name": "censo-pendientes-format.test.mjs",
+      "filePath": "public/js/censo-pendientes-format.test.mjs",
+      "summary": "Unit tests for censo-pendientes-format.mjs covering guardia/clinical behavior and edge cases.",
+      "tags": [
+        "test",
+        "guardia",
+        "entrega",
+        "censo"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/censo-preview-html.mjs",
+      "type": "file",
+      "name": "censo-preview-html.mjs",
+      "filePath": "public/js/censo-preview-html.mjs",
+      "summary": "censo-preview-html.mjs — censo module exporting renderCensoPreviewHtml, closeCensoPreviewModal, openCensoPreviewInApp, openCensoPreviewWindow, ….",
+      "tags": [
+        "censo",
+        "exports"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:public/js/censo-preview-html.mjs:renderCensoPreviewHtml",
+      "type": "function",
+      "name": "renderCensoPreviewHtml",
+      "filePath": "public/js/censo-preview-html.mjs",
+      "lineRange": [
+        14,
+        207
+      ],
+      "summary": "Renders censo preview html for censo-preview-html.mjs.",
+      "tags": [
+        "censo",
+        "function"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:public/js/censo-preview-html.mjs:ensureCensoPreviewModal",
+      "type": "function",
+      "name": "ensureCensoPreviewModal",
+      "filePath": "public/js/censo-preview-html.mjs",
+      "lineRange": [
+        209,
+        251
+      ],
+      "summary": "Ensures censo preview modal for censo-preview-html.mjs.",
+      "tags": [
+        "censo",
+        "function"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:public/js/censo-preview-html.mjs:closeCensoPreviewModal",
+      "type": "function",
+      "name": "closeCensoPreviewModal",
+      "filePath": "public/js/censo-preview-html.mjs",
+      "lineRange": [
+        253,
+        261
+      ],
+      "summary": "Closes censo preview modal for censo-preview-html.mjs.",
+      "tags": [
+        "censo",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/censo-preview-html.mjs:openCensoPreviewInApp",
+      "type": "function",
+      "name": "openCensoPreviewInApp",
+      "filePath": "public/js/censo-preview-html.mjs",
+      "lineRange": [
+        268,
+        278
+      ],
+      "summary": "Opens censo preview in app for censo-preview-html.mjs.",
+      "tags": [
+        "censo",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/censo-preview-html.mjs:openCensoPreviewWindow",
+      "type": "function",
+      "name": "openCensoPreviewWindow",
+      "filePath": "public/js/censo-preview-html.mjs",
+      "lineRange": [
+        284,
+        286
+      ],
+      "summary": "Opens censo preview window for censo-preview-html.mjs.",
+      "tags": [
+        "censo",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/censo-table-columns.mjs",
+      "type": "file",
+      "name": "censo-table-columns.mjs",
+      "filePath": "public/js/censo-table-columns.mjs",
+      "summary": "censo-table-columns.mjs — censo module exporting CENSO_COL_WEIGHTS, censoColumnPercents, censoColgroupCssRules, censoColgroupHtml, ….",
+      "tags": [
+        "censo",
+        "exports"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/censo-table-columns.mjs:censoColumnPercents",
+      "type": "function",
+      "name": "censoColumnPercents",
+      "filePath": "public/js/censo-table-columns.mjs",
+      "lineRange": [
+        19,
+        36
+      ],
+      "summary": "censoColumnPercents implements guardia/clinical workflow logic in censo-table-columns.mjs.",
+      "tags": [
+        "censo",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/censo-table-columns.mjs:censoColgroupCssRules",
+      "type": "function",
+      "name": "censoColgroupCssRules",
+      "filePath": "public/js/censo-table-columns.mjs",
+      "lineRange": [
+        41,
+        48
+      ],
+      "summary": "censoColgroupCssRules implements guardia/clinical workflow logic in censo-table-columns.mjs.",
+      "tags": [
+        "censo",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/censo-table-columns.mjs:censoColgroupHtml",
+      "type": "function",
+      "name": "censoColgroupHtml",
+      "filePath": "public/js/censo-table-columns.mjs",
+      "lineRange": [
+        53,
+        60
+      ],
+      "summary": "censoColgroupHtml implements guardia/clinical workflow logic in censo-table-columns.mjs.",
+      "tags": [
+        "censo",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/censo-table-columns.mjs:censoTheadRowHtml",
+      "type": "function",
+      "name": "censoTheadRowHtml",
+      "filePath": "public/js/censo-table-columns.mjs",
+      "lineRange": [
+        65,
+        72
+      ],
+      "summary": "censoTheadRowHtml implements guardia/clinical workflow logic in censo-table-columns.mjs.",
+      "tags": [
+        "censo",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/censo-table-columns.test.mjs",
+      "type": "file",
+      "name": "censo-table-columns.test.mjs",
+      "filePath": "public/js/censo-table-columns.test.mjs",
+      "summary": "Unit tests for censo-table-columns.mjs covering guardia/clinical behavior and edge cases.",
+      "tags": [
+        "test",
+        "censo"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/censo-table-style.mjs",
+      "type": "file",
+      "name": "censo-table-style.mjs",
+      "filePath": "public/js/censo-table-style.mjs",
+      "summary": "censo-table-style.mjs — censo module exporting CENSO_LAB_PANEL_CODES, normalizeCensoPanelLine, splitCensoLabPanelsLine, reflowLabsForCensoDisplay, ….",
+      "tags": [
+        "censo",
+        "exports"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/censo-table-style.mjs:normalizeCensoPanelLine",
+      "type": "function",
+      "name": "normalizeCensoPanelLine",
+      "filePath": "public/js/censo-table-style.mjs",
+      "lineRange": [
+        17,
+        23
+      ],
+      "summary": "Normalizes censo panel line for censo-table-style.mjs.",
+      "tags": [
+        "censo",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/censo-table-style.mjs:splitCensoLabPanelsLine",
+      "type": "function",
+      "name": "splitCensoLabPanelsLine",
+      "filePath": "public/js/censo-table-style.mjs",
+      "lineRange": [
+        30,
+        42
+      ],
+      "summary": "splitCensoLabPanelsLine implements guardia/clinical workflow logic in censo-table-style.mjs.",
+      "tags": [
+        "censo",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/censo-table-style.mjs:reflowLabsForCensoDisplay",
+      "type": "function",
+      "name": "reflowLabsForCensoDisplay",
+      "filePath": "public/js/censo-table-style.mjs",
+      "lineRange": [
+        49,
+        67
+      ],
+      "summary": "reflowLabsForCensoDisplay implements guardia/clinical workflow logic in censo-table-style.mjs.",
+      "tags": [
+        "censo",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/censo-table-style.mjs:classifyCensoTableLine",
+      "type": "function",
+      "name": "classifyCensoTableLine",
+      "filePath": "public/js/censo-table-style.mjs",
+      "lineRange": [
+        76,
+        93
+      ],
+      "summary": "classifyCensoTableLine implements guardia/clinical workflow logic in censo-table-style.mjs.",
+      "tags": [
+        "censo",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:public/js/censo-table-style.test.mjs",
+      "type": "file",
+      "name": "censo-table-style.test.mjs",
+      "filePath": "public/js/censo-table-style.test.mjs",
+      "summary": "Unit tests for censo-table-style.mjs covering guardia/clinical behavior and edge cases.",
+      "tags": [
+        "test",
+        "censo"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/features/todos.mjs",
+      "type": "file",
+      "name": "todos.mjs",
+      "filePath": "public/js/features/todos.mjs",
+      "summary": "todos.mjs — clinical module exporting registerTodosRuntime, todoCompareForSort, refreshTodoUIsForPatient, refreshTodoUIsForPatients, ….",
+      "tags": [
+        "component",
+        "exports"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:public/js/features/todos.mjs:registerTodosRuntime",
+      "type": "function",
+      "name": "registerTodosRuntime",
+      "filePath": "public/js/features/todos.mjs",
+      "lineRange": [
+        47,
+        49
+      ],
+      "summary": "registerTodosRuntime implements guardia/clinical workflow logic in todos.mjs.",
+      "tags": [
+        "component",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/features/todos.mjs:pulseTodoPrioChip",
+      "type": "function",
+      "name": "pulseTodoPrioChip",
+      "filePath": "public/js/features/todos.mjs",
+      "lineRange": [
+        61,
+        74
+      ],
+      "summary": "pulseTodoPrioChip implements guardia/clinical workflow logic in todos.mjs.",
+      "tags": [
+        "component",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/features/todos.mjs:applyTodoPrioChip",
+      "type": "function",
+      "name": "applyTodoPrioChip",
+      "filePath": "public/js/features/todos.mjs",
+      "lineRange": [
+        76,
+        87
+      ],
+      "summary": "applyTodoPrioChip implements guardia/clinical workflow logic in todos.mjs.",
+      "tags": [
+        "component",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/features/todos.mjs:createTodoPrioChip",
+      "type": "function",
+      "name": "createTodoPrioChip",
+      "filePath": "public/js/features/todos.mjs",
+      "lineRange": [
+        89,
+        107
+      ],
+      "summary": "Creates todo prio chip for todos.mjs.",
+      "tags": [
+        "component",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/features/todos.mjs:getTodoFormDraftState",
+      "type": "function",
+      "name": "getTodoFormDraftState",
+      "filePath": "public/js/features/todos.mjs",
+      "lineRange": [
+        116,
+        132
+      ],
+      "summary": "Accessor get todo form draft state exposing todos.mjs state or data.",
+      "tags": [
+        "component",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/features/todos.mjs:appendTodoHandoffMeta",
+      "type": "function",
+      "name": "appendTodoHandoffMeta",
+      "filePath": "public/js/features/todos.mjs",
+      "lineRange": [
+        150,
+        159
+      ],
+      "summary": "appendTodoHandoffMeta implements guardia/clinical workflow logic in todos.mjs.",
+      "tags": [
+        "component",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/features/todos.mjs:appendTodoMainCell",
+      "type": "function",
+      "name": "appendTodoMainCell",
+      "filePath": "public/js/features/todos.mjs",
+      "lineRange": [
+        161,
+        181
+      ],
+      "summary": "appendTodoMainCell implements guardia/clinical workflow logic in todos.mjs.",
+      "tags": [
+        "component",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/features/todos.mjs:buildTodoRow",
+      "type": "function",
+      "name": "buildTodoRow",
+      "filePath": "public/js/features/todos.mjs",
+      "lineRange": [
+        183,
+        247
+      ],
+      "summary": "Builds todo row for todos.mjs.",
+      "tags": [
+        "component",
+        "function"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:public/js/features/todos.mjs:appendTodoFilterBar",
+      "type": "function",
+      "name": "appendTodoFilterBar",
+      "filePath": "public/js/features/todos.mjs",
+      "lineRange": [
+        249,
+        288
+      ],
+      "summary": "appendTodoFilterBar implements guardia/clinical workflow logic in todos.mjs.",
+      "tags": [
+        "component",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/features/todos.mjs:syncDueAddSelection",
+      "type": "function",
+      "name": "syncDueAddSelection",
+      "filePath": "public/js/features/todos.mjs",
+      "lineRange": [
+        290,
+        314
+      ],
+      "summary": "Syncs due add selection for todos.mjs.",
+      "tags": [
+        "component",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/features/todos.mjs:createTodoDueAddSection",
+      "type": "function",
+      "name": "createTodoDueAddSection",
+      "filePath": "public/js/features/todos.mjs",
+      "lineRange": [
+        324,
+        420
+      ],
+      "summary": "Creates todo due add section for todos.mjs.",
+      "tags": [
+        "component",
+        "function"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:public/js/features/todos.mjs:appendTodoAddRow",
+      "type": "function",
+      "name": "appendTodoAddRow",
+      "filePath": "public/js/features/todos.mjs",
+      "lineRange": [
+        422,
+        460
+      ],
+      "summary": "appendTodoAddRow implements guardia/clinical workflow logic in todos.mjs.",
+      "tags": [
+        "component",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/features/todos.mjs:renderTodoListSection",
+      "type": "function",
+      "name": "renderTodoListSection",
+      "filePath": "public/js/features/todos.mjs",
+      "lineRange": [
+        462,
+        504
+      ],
+      "summary": "Renders todo list section for todos.mjs.",
+      "tags": [
+        "component",
+        "function"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:public/js/features/todos.mjs:todoCompareForSort",
+      "type": "function",
+      "name": "todoCompareForSort",
+      "filePath": "public/js/features/todos.mjs",
+      "lineRange": [
+        506,
+        514
+      ],
+      "summary": "todoCompareForSort implements guardia/clinical workflow logic in todos.mjs.",
+      "tags": [
+        "component",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/features/todos.mjs:refreshRondaTodoMount",
+      "type": "function",
+      "name": "refreshRondaTodoMount",
+      "filePath": "public/js/features/todos.mjs",
+      "lineRange": [
+        516,
+        532
+      ],
+      "summary": "refreshRondaTodoMount implements guardia/clinical workflow logic in todos.mjs.",
+      "tags": [
+        "component",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/features/todos.mjs:refreshTodoUIsForPatient",
+      "type": "function",
+      "name": "refreshTodoUIsForPatient",
+      "filePath": "public/js/features/todos.mjs",
+      "lineRange": [
+        535,
+        549
+      ],
+      "summary": "refreshTodoUIsForPatient implements guardia/clinical workflow logic in todos.mjs.",
+      "tags": [
+        "component",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/features/todos.mjs:refreshTodoUIsForPatients",
+      "type": "function",
+      "name": "refreshTodoUIsForPatients",
+      "filePath": "public/js/features/todos.mjs",
+      "lineRange": [
+        552,
+        567
+      ],
+      "summary": "refreshTodoUIsForPatients implements guardia/clinical workflow logic in todos.mjs.",
+      "tags": [
+        "component",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/features/todos.mjs:refreshAllTodoUIs",
+      "type": "function",
+      "name": "refreshAllTodoUIs",
+      "filePath": "public/js/features/todos.mjs",
+      "lineRange": [
+        569,
+        574
+      ],
+      "summary": "refreshAllTodoUIs implements guardia/clinical workflow logic in todos.mjs.",
+      "tags": [
+        "component",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/features/todos.mjs:renderTodoForm",
+      "type": "function",
+      "name": "renderTodoForm",
+      "filePath": "public/js/features/todos.mjs",
+      "lineRange": [
+        576,
+        578
+      ],
+      "summary": "Renders todo form for todos.mjs.",
+      "tags": [
+        "component",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/features/todos.mjs:renderTodoFormIn",
+      "type": "function",
+      "name": "renderTodoFormIn",
+      "filePath": "public/js/features/todos.mjs",
+      "lineRange": [
+        580,
+        614
+      ],
+      "summary": "Renders todo form in for todos.mjs.",
+      "tags": [
+        "component",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/features/todos.mjs:addTodo",
+      "type": "function",
+      "name": "addTodo",
+      "filePath": "public/js/features/todos.mjs",
+      "lineRange": [
+        616,
+        650
+      ],
+      "summary": "addTodo implements guardia/clinical workflow logic in todos.mjs.",
+      "tags": [
+        "component",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/features/todos.mjs:toggleTodo",
+      "type": "function",
+      "name": "toggleTodo",
+      "filePath": "public/js/features/todos.mjs",
+      "lineRange": [
+        652,
+        672
+      ],
+      "summary": "toggleTodo implements guardia/clinical workflow logic in todos.mjs.",
+      "tags": [
+        "component",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/features/todos.mjs:deleteTodo",
+      "type": "function",
+      "name": "deleteTodo",
+      "filePath": "public/js/features/todos.mjs",
+      "lineRange": [
+        674,
+        689
+      ],
+      "summary": "Deletes todo for todos.mjs.",
+      "tags": [
+        "component",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/features/todos.mjs:setTodoPriority",
+      "type": "function",
+      "name": "setTodoPriority",
+      "filePath": "public/js/features/todos.mjs",
+      "lineRange": [
+        691,
+        708
+      ],
+      "summary": "Accessor set todo priority exposing todos.mjs state or data.",
+      "tags": [
+        "component",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/features/todos.mjs:acknowledgeHandoffTodo",
+      "type": "function",
+      "name": "acknowledgeHandoffTodo",
+      "filePath": "public/js/features/todos.mjs",
+      "lineRange": [
+        710,
+        722
+      ],
+      "summary": "acknowledgeHandoffTodo implements guardia/clinical workflow logic in todos.mjs.",
+      "tags": [
+        "component",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/features/todos.mjs:updateTodoText",
+      "type": "function",
+      "name": "updateTodoText",
+      "filePath": "public/js/features/todos.mjs",
+      "lineRange": [
+        724,
+        737
+      ],
+      "summary": "Updates todo text for todos.mjs.",
+      "tags": [
+        "component",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/features/todos.mjs:archiveLegacyRepoTodos",
+      "type": "function",
+      "name": "archiveLegacyRepoTodos",
+      "filePath": "public/js/features/todos.mjs",
+      "lineRange": [
+        743,
+        755
+      ],
+      "summary": "archiveLegacyRepoTodos implements guardia/clinical workflow logic in todos.mjs.",
+      "tags": [
+        "component",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/patient-accesos.mjs",
+      "type": "file",
+      "name": "patient-accesos.mjs",
+      "filePath": "public/js/patient-accesos.mjs",
+      "summary": "patient-accesos.mjs — clinical module exporting VIA_ACCESO_LABELS, viaAccesoLabel, ensurePatientAccesos, syncLegacyAccesoFields, ….",
+      "tags": [
+        "utility",
+        "exports"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/patient-accesos.mjs:viaAccesoLabel",
+      "type": "function",
+      "name": "viaAccesoLabel",
+      "filePath": "public/js/patient-accesos.mjs",
+      "lineRange": [
+        10,
+        13
+      ],
+      "summary": "viaAccesoLabel implements guardia/clinical workflow logic in patient-accesos.mjs.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/patient-accesos.mjs:ensurePatientAccesos",
+      "type": "function",
+      "name": "ensurePatientAccesos",
+      "filePath": "public/js/patient-accesos.mjs",
+      "lineRange": [
+        16,
+        37
+      ],
+      "summary": "Ensures patient accesos for patient-accesos.mjs.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/patient-accesos.mjs:syncLegacyAccesoFields",
+      "type": "function",
+      "name": "syncLegacyAccesoFields",
+      "filePath": "public/js/patient-accesos.mjs",
+      "lineRange": [
+        40,
+        55
+      ],
+      "summary": "Syncs legacy acceso fields for patient-accesos.mjs.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/patient-accesos.mjs:formatAccesosForCenso",
+      "type": "function",
+      "name": "formatAccesosForCenso",
+      "filePath": "public/js/patient-accesos.mjs",
+      "lineRange": [
+        58,
+        70
+      ],
+      "summary": "Formats accesos for censo for patient-accesos.mjs.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/patient-accesos.mjs:mergeAccesosPatientFields",
+      "type": "function",
+      "name": "mergeAccesosPatientFields",
+      "filePath": "public/js/patient-accesos.mjs",
+      "lineRange": [
+        73,
+        94
+      ],
+      "summary": "Merges accesos patient fields for patient-accesos.mjs.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:public/js/patient-accesos.test.mjs",
+      "type": "file",
+      "name": "patient-accesos.test.mjs",
+      "filePath": "public/js/patient-accesos.test.mjs",
+      "summary": "Unit tests for patient-accesos.mjs covering guardia/clinical behavior and edge cases.",
+      "tags": [
+        "test"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/patient-data-ingreso-ui.mjs",
+      "type": "file",
+      "name": "patient-data-ingreso-ui.mjs",
+      "filePath": "public/js/patient-data-ingreso-ui.mjs",
+      "summary": "patient-data-ingreso-ui.mjs — clinical module exporting buildPatientIngresoFechasHtml.",
+      "tags": [
+        "utility",
+        "exports"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/patient-data-ingreso-ui.mjs:buildPatientIngresoFechasHtml",
+      "type": "function",
+      "name": "buildPatientIngresoFechasHtml",
+      "filePath": "public/js/patient-data-ingreso-ui.mjs",
+      "lineRange": [
+        17,
+        36
+      ],
+      "summary": "Builds patient ingreso fechas html for patient-data-ingreso-ui.mjs.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:public/js/patient-date-fields.mjs",
+      "type": "file",
+      "name": "patient-date-fields.mjs",
+      "filePath": "public/js/patient-date-fields.mjs",
+      "summary": "patient-date-fields.mjs — clinical module exporting accesoFechaToDateInputValue, dateInputValueToAccesoFecha, formatAccesoFechaDisplay.",
+      "tags": [
+        "utility",
+        "exports"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/patient-date-fields.mjs:accesoFechaToDateInputValue",
+      "type": "function",
+      "name": "accesoFechaToDateInputValue",
+      "filePath": "public/js/patient-date-fields.mjs",
+      "lineRange": [
+        7,
+        17
+      ],
+      "summary": "accesoFechaToDateInputValue implements guardia/clinical workflow logic in patient-date-fields.mjs.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/patient-date-fields.mjs:dateInputValueToAccesoFecha",
+      "type": "function",
+      "name": "dateInputValueToAccesoFecha",
+      "filePath": "public/js/patient-date-fields.mjs",
+      "lineRange": [
+        20,
+        23
+      ],
+      "summary": "dateInputValueToAccesoFecha implements guardia/clinical workflow logic in patient-date-fields.mjs.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/patient-date-fields.mjs:formatAccesoFechaDisplay",
+      "type": "function",
+      "name": "formatAccesoFechaDisplay",
+      "filePath": "public/js/patient-date-fields.mjs",
+      "lineRange": [
+        26,
+        32
+      ],
+      "summary": "Formats acceso fecha display for patient-date-fields.mjs.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/patient-date-fields.test.mjs",
+      "type": "file",
+      "name": "patient-date-fields.test.mjs",
+      "filePath": "public/js/patient-date-fields.test.mjs",
+      "summary": "Unit tests for patient-date-fields.mjs covering guardia/clinical behavior and edge cases.",
+      "tags": [
+        "test"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/todo-due-modal.mjs",
+      "type": "file",
+      "name": "todo-due-modal.mjs",
+      "filePath": "public/js/todo-due-modal.mjs",
+      "summary": "todo-due-modal.mjs — clinical module exporting openTodoDueModal, closeTodoDueModalPublic.",
+      "tags": [
+        "utility",
+        "exports"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:public/js/todo-due-modal.mjs:readModalFields",
+      "type": "function",
+      "name": "readModalFields",
+      "filePath": "public/js/todo-due-modal.mjs",
+      "lineRange": [
+        55,
+        65
+      ],
+      "summary": "readModalFields implements guardia/clinical workflow logic in todo-due-modal.mjs.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/todo-due-modal.mjs:saveTodoDueModal",
+      "type": "function",
+      "name": "saveTodoDueModal",
+      "filePath": "public/js/todo-due-modal.mjs",
+      "lineRange": [
+        67,
+        76
+      ],
+      "summary": "Saves todo due modal for todo-due-modal.mjs.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/todo-due-modal.mjs:setPresetEditOpen",
+      "type": "function",
+      "name": "setPresetEditOpen",
+      "filePath": "public/js/todo-due-modal.mjs",
+      "lineRange": [
+        85,
+        100
+      ],
+      "summary": "Accessor set preset edit open exposing todo-due-modal.mjs state or data.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/todo-due-modal.mjs:applyPresetToModal",
+      "type": "function",
+      "name": "applyPresetToModal",
+      "filePath": "public/js/todo-due-modal.mjs",
+      "lineRange": [
+        102,
+        111
+      ],
+      "summary": "applyPresetToModal implements guardia/clinical workflow logic in todo-due-modal.mjs.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/todo-due-modal.mjs:syncModalPresetActiveState",
+      "type": "function",
+      "name": "syncModalPresetActiveState",
+      "filePath": "public/js/todo-due-modal.mjs",
+      "lineRange": [
+        113,
+        122
+      ],
+      "summary": "Syncs modal preset active state for todo-due-modal.mjs.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/todo-due-modal.mjs:renderModalPresetChips",
+      "type": "function",
+      "name": "renderModalPresetChips",
+      "filePath": "public/js/todo-due-modal.mjs",
+      "lineRange": [
+        124,
+        140
+      ],
+      "summary": "Renders modal preset chips for todo-due-modal.mjs.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/todo-due-modal.mjs:readRowValueSnapshot",
+      "type": "function",
+      "name": "readRowValueSnapshot",
+      "filePath": "public/js/todo-due-modal.mjs",
+      "lineRange": [
+        151,
+        164
+      ],
+      "summary": "readRowValueSnapshot implements guardia/clinical workflow logic in todo-due-modal.mjs.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/todo-due-modal.mjs:appendPresetHoursInput",
+      "type": "function",
+      "name": "appendPresetHoursInput",
+      "filePath": "public/js/todo-due-modal.mjs",
+      "lineRange": [
+        166,
+        183
+      ],
+      "summary": "appendPresetHoursInput implements guardia/clinical workflow logic in todo-due-modal.mjs.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/todo-due-modal.mjs:appendPresetTimeInput",
+      "type": "function",
+      "name": "appendPresetTimeInput",
+      "filePath": "public/js/todo-due-modal.mjs",
+      "lineRange": [
+        185,
+        195
+      ],
+      "summary": "appendPresetTimeInput implements guardia/clinical workflow logic in todo-due-modal.mjs.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/todo-due-modal.mjs:rebuildRowValueInput",
+      "type": "function",
+      "name": "rebuildRowValueInput",
+      "filePath": "public/js/todo-due-modal.mjs",
+      "lineRange": [
+        197,
+        207
+      ],
+      "summary": "rebuildRowValueInput implements guardia/clinical workflow logic in todo-due-modal.mjs.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/todo-due-modal.mjs:buildPresetModeSelect",
+      "type": "function",
+      "name": "buildPresetModeSelect",
+      "filePath": "public/js/todo-due-modal.mjs",
+      "lineRange": [
+        209,
+        228
+      ],
+      "summary": "Builds preset mode select for todo-due-modal.mjs.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/todo-due-modal.mjs:readVisiblePresetRowIds",
+      "type": "function",
+      "name": "readVisiblePresetRowIds",
+      "filePath": "public/js/todo-due-modal.mjs",
+      "lineRange": [
+        230,
+        240
+      ],
+      "summary": "readVisiblePresetRowIds implements guardia/clinical workflow logic in todo-due-modal.mjs.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/todo-due-modal.mjs:readPresetEditRowsIntoPatch",
+      "type": "function",
+      "name": "readPresetEditRowsIntoPatch",
+      "filePath": "public/js/todo-due-modal.mjs",
+      "lineRange": [
+        242,
+        294
+      ],
+      "summary": "readPresetEditRowsIntoPatch implements guardia/clinical workflow logic in todo-due-modal.mjs.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:public/js/todo-due-modal.mjs:focusPresetRowLabel",
+      "type": "function",
+      "name": "focusPresetRowLabel",
+      "filePath": "public/js/todo-due-modal.mjs",
+      "lineRange": [
+        303,
+        312
+      ],
+      "summary": "focusPresetRowLabel implements guardia/clinical workflow logic in todo-due-modal.mjs.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/todo-due-modal.mjs:renderPresetEditRows",
+      "type": "function",
+      "name": "renderPresetEditRows",
+      "filePath": "public/js/todo-due-modal.mjs",
+      "lineRange": [
+        323,
+        383
+      ],
+      "summary": "Renders preset edit rows for todo-due-modal.mjs.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:public/js/todo-due-modal.mjs:wireTodoDueModal",
+      "type": "function",
+      "name": "wireTodoDueModal",
+      "filePath": "public/js/todo-due-modal.mjs",
+      "lineRange": [
+        394,
+        462
+      ],
+      "summary": "Wires todo due modal for todo-due-modal.mjs.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:public/js/todo-due-modal.mjs:openTodoDueModal",
+      "type": "function",
+      "name": "openTodoDueModal",
+      "filePath": "public/js/todo-due-modal.mjs",
+      "lineRange": [
+        477,
+        503
+      ],
+      "summary": "Opens todo due modal for todo-due-modal.mjs.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/todo-due-modal.mjs:closeTodoDueModalPublic",
+      "type": "function",
+      "name": "closeTodoDueModalPublic",
+      "filePath": "public/js/todo-due-modal.mjs",
+      "lineRange": [
+        505,
+        507
+      ],
+      "summary": "Closes todo due modal public for todo-due-modal.mjs.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/todos-due.mjs",
+      "type": "file",
+      "name": "todos-due.mjs",
+      "filePath": "public/js/todos-due.mjs",
+      "summary": "todos-due.mjs — clinical module exporting isTodoOverdue, todoCompareForDueSort, computeReminderAt, isoToDatetimeLocalValue, ….",
+      "tags": [
+        "utility",
+        "exports"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:public/js/todos-due.mjs:isTodoOverdue",
+      "type": "function",
+      "name": "isTodoOverdue",
+      "filePath": "public/js/todos-due.mjs",
+      "lineRange": [
+        62,
+        68
+      ],
+      "summary": "Predicate is todo overdue used by todos-due.mjs.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/todos-due.mjs:todoCompareForDueSort",
+      "type": "function",
+      "name": "todoCompareForDueSort",
+      "filePath": "public/js/todos-due.mjs",
+      "lineRange": [
+        70,
+        89
+      ],
+      "summary": "todoCompareForDueSort implements guardia/clinical workflow logic in todos-due.mjs.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/todos-due.mjs:computeReminderAt",
+      "type": "function",
+      "name": "computeReminderAt",
+      "filePath": "public/js/todos-due.mjs",
+      "lineRange": [
+        91,
+        96
+      ],
+      "summary": "Computes reminder at for todos-due.mjs.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/todos-due.mjs:isoToDatetimeLocalValue",
+      "type": "function",
+      "name": "isoToDatetimeLocalValue",
+      "filePath": "public/js/todos-due.mjs",
+      "lineRange": [
+        98,
+        112
+      ],
+      "summary": "isoToDatetimeLocalValue implements guardia/clinical workflow logic in todos-due.mjs.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/todos-due.mjs:parseDatetimeLocalToIso",
+      "type": "function",
+      "name": "parseDatetimeLocalToIso",
+      "filePath": "public/js/todos-due.mjs",
+      "lineRange": [
+        114,
+        120
+      ],
+      "summary": "Parses datetime local to iso for todos-due.mjs.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/todos-due.mjs:formatTodoDueLabel",
+      "type": "function",
+      "name": "formatTodoDueLabel",
+      "filePath": "public/js/todos-due.mjs",
+      "lineRange": [
+        122,
+        131
+      ],
+      "summary": "Formats todo due label for todos-due.mjs.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/todos-due.mjs:readPresetOverridesMap",
+      "type": "function",
+      "name": "readPresetOverridesMap",
+      "filePath": "public/js/todos-due.mjs",
+      "lineRange": [
+        160,
+        170
+      ],
+      "summary": "readPresetOverridesMap implements guardia/clinical workflow logic in todos-due.mjs.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/todos-due.mjs:writePresetOverridesMap",
+      "type": "function",
+      "name": "writePresetOverridesMap",
+      "filePath": "public/js/todos-due.mjs",
+      "lineRange": [
+        172,
+        182
+      ],
+      "summary": "writePresetOverridesMap implements guardia/clinical workflow logic in todos-due.mjs.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/todos-due.mjs:formatTodoDuePresetAutoLabel",
+      "type": "function",
+      "name": "formatTodoDuePresetAutoLabel",
+      "filePath": "public/js/todos-due.mjs",
+      "lineRange": [
+        184,
+        194
+      ],
+      "summary": "Formats todo due preset auto label for todos-due.mjs.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/todos-due.mjs:normalizePresetOverride",
+      "type": "function",
+      "name": "normalizePresetOverride",
+      "filePath": "public/js/todos-due.mjs",
+      "lineRange": [
+        196,
+        209
+      ],
+      "summary": "Normalizes preset override for todos-due.mjs.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/todos-due.mjs:mergeTodoDuePreset",
+      "type": "function",
+      "name": "mergeTodoDuePreset",
+      "filePath": "public/js/todos-due.mjs",
+      "lineRange": [
+        211,
+        213
+      ],
+      "summary": "Merges todo due preset for todos-due.mjs.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/todos-due.mjs:buildCustomPresetDef",
+      "type": "function",
+      "name": "buildCustomPresetDef",
+      "filePath": "public/js/todos-due.mjs",
+      "lineRange": [
+        227,
+        238
+      ],
+      "summary": "Builds custom preset def for todos-due.mjs.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/todos-due.mjs:normalizeCustomPresetEntry",
+      "type": "function",
+      "name": "normalizeCustomPresetEntry",
+      "filePath": "public/js/todos-due.mjs",
+      "lineRange": [
+        240,
+        254
+      ],
+      "summary": "Normalizes custom preset entry for todos-due.mjs.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/todos-due.mjs:resolveTodoDuePresetDef",
+      "type": "function",
+      "name": "resolveTodoDuePresetDef",
+      "filePath": "public/js/todos-due.mjs",
+      "lineRange": [
+        256,
+        267
+      ],
+      "summary": "Resolves todo due preset def for todos-due.mjs.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/todos-due.mjs:getTodoDuePresets",
+      "type": "function",
+      "name": "getTodoDuePresets",
+      "filePath": "public/js/todos-due.mjs",
+      "lineRange": [
+        269,
+        286
+      ],
+      "summary": "Accessor get todo due presets exposing todos-due.mjs state or data.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/todos-due.mjs:getTodoDuePresetsLegacyList",
+      "type": "function",
+      "name": "getTodoDuePresetsLegacyList",
+      "filePath": "public/js/todos-due.mjs",
+      "lineRange": [
+        289,
+        293
+      ],
+      "summary": "Accessor get todo due presets legacy list exposing todos-due.mjs state or data.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/todos-due.mjs:saveTodoDuePresetOverrides",
+      "type": "function",
+      "name": "saveTodoDuePresetOverrides",
+      "filePath": "public/js/todos-due.mjs",
+      "lineRange": [
+        295,
+        331
+      ],
+      "summary": "Saves todo due preset overrides for todos-due.mjs.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/todos-due.mjs:syncTodoDuePresetsFromEditRows",
+      "type": "function",
+      "name": "syncTodoDuePresetsFromEditRows",
+      "filePath": "public/js/todos-due.mjs",
+      "lineRange": [
+        333,
+        358
+      ],
+      "summary": "Syncs todo due presets from edit rows for todos-due.mjs.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/todos-due.mjs:deleteTodoDuePreset",
+      "type": "function",
+      "name": "deleteTodoDuePreset",
+      "filePath": "public/js/todos-due.mjs",
+      "lineRange": [
+        360,
+        370
+      ],
+      "summary": "Deletes todo due preset for todos-due.mjs.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/todos-due.mjs:addTodoDuePreset",
+      "type": "function",
+      "name": "addTodoDuePreset",
+      "filePath": "public/js/todos-due.mjs",
+      "lineRange": [
+        372,
+        392
+      ],
+      "summary": "addTodoDuePreset implements guardia/clinical workflow logic in todos-due.mjs.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/todos-due.mjs:resetTodoDuePresetOverrides",
+      "type": "function",
+      "name": "resetTodoDuePresetOverrides",
+      "filePath": "public/js/todos-due.mjs",
+      "lineRange": [
+        394,
+        396
+      ],
+      "summary": "resetTodoDuePresetOverrides implements guardia/clinical workflow logic in todos-due.mjs.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/todos-due.mjs:dueDateFromPresetDef",
+      "type": "function",
+      "name": "dueDateFromPresetDef",
+      "filePath": "public/js/todos-due.mjs",
+      "lineRange": [
+        398,
+        410
+      ],
+      "summary": "dueDateFromPresetDef implements guardia/clinical workflow logic in todos-due.mjs.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/todos-due.mjs:parseDuePreset",
+      "type": "function",
+      "name": "parseDuePreset",
+      "filePath": "public/js/todos-due.mjs",
+      "lineRange": [
+        412,
+        420
+      ],
+      "summary": "Parses due preset for todos-due.mjs.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/todos-due.test.mjs",
+      "type": "file",
+      "name": "todos-due.test.mjs",
+      "filePath": "public/js/todos-due.test.mjs",
+      "summary": "Unit tests for todos-due.mjs covering guardia/clinical behavior and edge cases.",
+      "tags": [
+        "test"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:public/js/todos-due.test.mjs:todo",
+      "type": "function",
+      "name": "todo",
+      "filePath": "public/js/todos-due.test.mjs",
+      "lineRange": [
+        25,
+        36
+      ],
+      "summary": "todo implements guardia/clinical workflow logic in todos-due.test.mjs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/todos-handoff.mjs",
+      "type": "file",
+      "name": "todos-handoff.mjs",
+      "filePath": "public/js/todos-handoff.mjs",
+      "summary": "todos-handoff.mjs — clinical module exporting TODO_FILTER_ALL, TODO_FILTER_HANDOFF, normalizeTodoUsername, usernamesMatch, ….",
+      "tags": [
+        "utility",
+        "exports"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/todos-handoff.mjs:normalizeTodoUsername",
+      "type": "function",
+      "name": "normalizeTodoUsername",
+      "filePath": "public/js/todos-handoff.mjs",
+      "lineRange": [
+        8,
+        11
+      ],
+      "summary": "Normalizes todo username for todos-handoff.mjs.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/todos-handoff.mjs:usernamesMatch",
+      "type": "function",
+      "name": "usernamesMatch",
+      "filePath": "public/js/todos-handoff.mjs",
+      "lineRange": [
+        13,
+        18
+      ],
+      "summary": "usernamesMatch implements guardia/clinical workflow logic in todos-handoff.mjs.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/todos-handoff.mjs:isHandoffTodo",
+      "type": "function",
+      "name": "isHandoffTodo",
+      "filePath": "public/js/todos-handoff.mjs",
+      "lineRange": [
+        21,
+        27
+      ],
+      "summary": "Predicate is handoff todo used by todos-handoff.mjs.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/todos-handoff.mjs:filterTodosByView",
+      "type": "function",
+      "name": "filterTodosByView",
+      "filePath": "public/js/todos-handoff.mjs",
+      "lineRange": [
+        29,
+        35
+      ],
+      "summary": "filterTodosByView implements guardia/clinical workflow logic in todos-handoff.mjs.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/todos-handoff.mjs:countHandoffTodos",
+      "type": "function",
+      "name": "countHandoffTodos",
+      "filePath": "public/js/todos-handoff.mjs",
+      "lineRange": [
+        37,
+        39
+      ],
+      "summary": "countHandoffTodos implements guardia/clinical workflow logic in todos-handoff.mjs.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/todos-handoff.mjs:formatTodoCreatorLabel",
+      "type": "function",
+      "name": "formatTodoCreatorLabel",
+      "filePath": "public/js/todos-handoff.mjs",
+      "lineRange": [
+        41,
+        45
+      ],
+      "summary": "Formats todo creator label for todos-handoff.mjs.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/todos-handoff.mjs:buildHandoffAckPatch",
+      "type": "function",
+      "name": "buildHandoffAckPatch",
+      "filePath": "public/js/todos-handoff.mjs",
+      "lineRange": [
+        47,
+        56
+      ],
+      "summary": "Builds handoff ack patch for todos-handoff.mjs.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/todos-handoff.test.mjs",
+      "type": "file",
+      "name": "todos-handoff.test.mjs",
+      "filePath": "public/js/todos-handoff.test.mjs",
+      "summary": "Unit tests for todos-handoff.mjs covering guardia/clinical behavior and edge cases.",
+      "tags": [
+        "test"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:public/js/todos-priority.mjs",
+      "type": "file",
+      "name": "todos-priority.mjs",
+      "filePath": "public/js/todos-priority.mjs",
+      "summary": "todos-priority.mjs — clinical module exporting TODO_PRIORITY_CYCLE, normalizeTodoPriority, nextTodoPriority, todoPriorityLabel, ….",
+      "tags": [
+        "utility",
+        "exports"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/todos-priority.mjs:normalizeTodoPriority",
+      "type": "function",
+      "name": "normalizeTodoPriority",
+      "filePath": "public/js/todos-priority.mjs",
+      "lineRange": [
+        5,
+        7
+      ],
+      "summary": "Normalizes todo priority for todos-priority.mjs.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/todos-priority.mjs:nextTodoPriority",
+      "type": "function",
+      "name": "nextTodoPriority",
+      "filePath": "public/js/todos-priority.mjs",
+      "lineRange": [
+        9,
+        13
+      ],
+      "summary": "nextTodoPriority implements guardia/clinical workflow logic in todos-priority.mjs.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/todos-priority.mjs:todoPriorityLabel",
+      "type": "function",
+      "name": "todoPriorityLabel",
+      "filePath": "public/js/todos-priority.mjs",
+      "lineRange": [
+        15,
+        19
+      ],
+      "summary": "todoPriorityLabel implements guardia/clinical workflow logic in todos-priority.mjs.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/todos-priority.test.mjs",
+      "type": "file",
+      "name": "todos-priority.test.mjs",
+      "filePath": "public/js/todos-priority.test.mjs",
+      "summary": "Unit tests for todos-priority.mjs covering guardia/clinical behavior and edge cases.",
+      "tags": [
+        "test"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/todos-refresh.test.mjs",
+      "type": "file",
+      "name": "todos-refresh.test.mjs",
+      "filePath": "public/js/todos-refresh.test.mjs",
+      "summary": "Unit tests for todos-refresh.mjs covering guardia/clinical behavior and edge cases.",
+      "tags": [
+        "test"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/todos-reminder-scheduler.mjs",
+      "type": "file",
+      "name": "todos-reminder-scheduler.mjs",
+      "filePath": "public/js/todos-reminder-scheduler.mjs",
+      "summary": "todos-reminder-scheduler.mjs — clinical module exporting configureTodoReminderScheduler, rescheduleAllTodos, cancelTodoReminder, resetTodoReminderSchedulerForTests, ….",
+      "tags": [
+        "utility",
+        "exports"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/todos-reminder-scheduler.mjs:fireReminder",
+      "type": "function",
+      "name": "fireReminder",
+      "filePath": "public/js/todos-reminder-scheduler.mjs",
+      "lineRange": [
+        27,
+        40
+      ],
+      "summary": "fireReminder implements guardia/clinical workflow logic in todos-reminder-scheduler.mjs.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/todos-reminder-scheduler.mjs:scheduleTodoReminder",
+      "type": "function",
+      "name": "scheduleTodoReminder",
+      "filePath": "public/js/todos-reminder-scheduler.mjs",
+      "lineRange": [
+        42,
+        65
+      ],
+      "summary": "scheduleTodoReminder implements guardia/clinical workflow logic in todos-reminder-scheduler.mjs.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/todos-reminder-scheduler.mjs:configureTodoReminderScheduler",
+      "type": "function",
+      "name": "configureTodoReminderScheduler",
+      "filePath": "public/js/todos-reminder-scheduler.mjs",
+      "lineRange": [
+        86,
+        98
+      ],
+      "summary": "configureTodoReminderScheduler implements guardia/clinical workflow logic in todos-reminder-scheduler.mjs.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/todos-reminder-scheduler.mjs:rescheduleAllTodos",
+      "type": "function",
+      "name": "rescheduleAllTodos",
+      "filePath": "public/js/todos-reminder-scheduler.mjs",
+      "lineRange": [
+        103,
+        130
+      ],
+      "summary": "rescheduleAllTodos implements guardia/clinical workflow logic in todos-reminder-scheduler.mjs.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/todos-reminder-scheduler.mjs:cancelTodoReminder",
+      "type": "function",
+      "name": "cancelTodoReminder",
+      "filePath": "public/js/todos-reminder-scheduler.mjs",
+      "lineRange": [
+        136,
+        147
+      ],
+      "summary": "cancelTodoReminder implements guardia/clinical workflow logic in todos-reminder-scheduler.mjs.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/todos-reminder-scheduler.mjs:resetTodoReminderSchedulerForTests",
+      "type": "function",
+      "name": "resetTodoReminderSchedulerForTests",
+      "filePath": "public/js/todos-reminder-scheduler.mjs",
+      "lineRange": [
+        150,
+        161
+      ],
+      "summary": "resetTodoReminderSchedulerForTests implements guardia/clinical workflow logic in todos-reminder-scheduler.mjs.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:generate-censo.js",
+      "target": "file:public/js/censo-build.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:generate-censo.js",
+      "target": "file:public/js/censo-table-columns.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:generate-censo.js",
+      "target": "file:public/js/censo-table-style.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:generate-censo.js",
+      "target": "function:generate-censo.js:tableLayout",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:generate-censo.js",
+      "target": "function:generate-censo.js:wrapText",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:generate-censo.js",
+      "target": "function:generate-censo.js:wrapCell",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:generate-censo.js",
+      "target": "function:generate-censo.js:fitLineToWidth",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:generate-censo.js",
+      "target": "function:generate-censo.js:fitLineShrinkToWidth",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:generate-censo.js",
+      "target": "function:generate-censo.js:formatPacienteCellText",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:generate-censo.js",
+      "target": "function:generate-censo.js:rowCells",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:generate-censo.js",
+      "target": "function:generate-censo.js:cellLines",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:generate-censo.js",
+      "target": "function:generate-censo.js:cellLinesUnbounded",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:generate-censo.js",
+      "target": "function:generate-censo.js:splitCellLinesNoWrap",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:generate-censo.js",
+      "target": "function:generate-censo.js:wrapLabsCellLines",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:generate-censo.js",
+      "target": "function:generate-censo.js:wrapLabsCellLines",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:generate-censo.js",
+      "target": "function:generate-censo.js:wrapPlainCellLines",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:generate-censo.js",
+      "target": "function:generate-censo.js:wrapPlainCellLines",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:generate-censo.js",
+      "target": "function:generate-censo.js:rowHeightForLineCount",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:generate-censo.js",
+      "target": "function:generate-censo.js:rowHeightForLineCount",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:generate-censo.js",
+      "target": "function:generate-censo.js:measureRowLineCount",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:generate-censo.js",
+      "target": "function:generate-censo.js:measureRowLineCount",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:generate-censo.js",
+      "target": "function:generate-censo.js:drawColumnGuides",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:generate-censo.js",
+      "target": "function:generate-censo.js:drawTextVerticalInBox",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:generate-censo.js",
+      "target": "function:generate-censo.js:drawTableHeader",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:generate-censo.js",
+      "target": "function:generate-censo.js:cellLineStyle",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:generate-censo.js",
+      "target": "function:generate-censo.js:drawCellText",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:generate-censo.js",
+      "target": "function:generate-censo.js:drawTableRow",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:generate-censo.js",
+      "target": "function:generate-censo.js:drawPageHeader",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:generate-censo.js",
+      "target": "function:generate-censo.js:buildEquipoLine",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:generate-censo.js",
+      "target": "function:generate-censo.js:normalizePayload",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:generate-censo.js",
+      "target": "function:generate-censo.js:pageTableMetrics",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:generate-censo.js",
+      "target": "function:generate-censo.js:pageTableMetrics",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:generate-censo.js",
+      "target": "function:generate-censo.js:layoutRows",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:generate-censo.js",
+      "target": "function:generate-censo.js:layoutRows",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:generate-censo.js",
+      "target": "function:generate-censo.js:renderCensusPdf",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:generate-censo.js",
+      "target": "function:generate-censo.js:renderCensusPdf",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:generate-censo.layout.test.js",
+      "target": "file:generate-censo.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:generate-censo.js",
+      "target": "file:generate-censo.layout.test.js",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:generate-censo.layout.test.js",
+      "target": "function:generate-censo.layout.test.js:makeRow",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:generate-censo.test.js",
+      "target": "file:generate-censo.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:generate-censo.js",
+      "target": "file:generate-censo.test.js",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:public/js/censo-build.mjs",
+      "target": "file:lib/patient-bed-sort.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/censo-build.mjs",
+      "target": "file:public/js/censo-cultivo-format.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/censo-build.mjs",
+      "target": "file:public/js/censo-header-format.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/censo-build.mjs",
+      "target": "file:public/js/censo-labs-format.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/censo-build.mjs",
+      "target": "file:public/js/censo-meds-format.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/censo-build.mjs",
+      "target": "file:public/js/censo-pendientes-format.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/censo-build.mjs",
+      "target": "file:public/js/censo-signos-format.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/censo-build.mjs",
+      "target": "file:public/js/patient-accesos.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/censo-build.mjs",
+      "target": "file:public/js/patient-date-fields.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/censo-build.mjs",
+      "target": "file:public/js/patient-diagnosticos.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/censo-build.mjs",
+      "target": "file:public/js/tend-core.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/censo-build.mjs",
+      "target": "function:public/js/censo-build.mjs:formatCensusMonthLabel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/censo-build.mjs",
+      "target": "function:public/js/censo-build.mjs:formatCensusMonthLabel",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/censo-build.mjs",
+      "target": "function:public/js/censo-build.mjs:formatCensusDateLabel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/censo-build.mjs",
+      "target": "function:public/js/censo-build.mjs:formatCensusDateLabel",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/censo-build.mjs",
+      "target": "function:public/js/censo-build.mjs:truncateCensusCell",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/censo-build.mjs",
+      "target": "function:public/js/censo-build.mjs:truncateCensusCell",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/censo-build.mjs",
+      "target": "function:public/js/censo-build.mjs:sortPatientsForCensus",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/censo-build.mjs",
+      "target": "function:public/js/censo-build.mjs:sortPatientsForCensus",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/censo-build.mjs",
+      "target": "function:public/js/censo-build.mjs:buildPatientSections",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/censo-build.mjs",
+      "target": "function:public/js/censo-build.mjs:flattenRowForCompactPdf",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/censo-build.mjs",
+      "target": "function:public/js/censo-build.mjs:normalizeCensoCamaNumber",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/censo-build.mjs",
+      "target": "function:public/js/censo-build.mjs:normalizeCensoCamaNumber",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/censo-build.mjs",
+      "target": "function:public/js/censo-build.mjs:parseCamaCellForCenso",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/censo-build.mjs",
+      "target": "function:public/js/censo-build.mjs:parseCamaCellForCenso",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/censo-build.mjs",
+      "target": "function:public/js/censo-build.mjs:formatCamaCellLabel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/censo-build.mjs",
+      "target": "function:public/js/censo-build.mjs:formatCamaCellLabel",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/censo-build.mjs",
+      "target": "function:public/js/censo-build.mjs:formatCamaCellForCenso",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/censo-build.mjs",
+      "target": "function:public/js/censo-build.mjs:formatCamaCellForCenso",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/censo-build.mjs",
+      "target": "function:public/js/censo-build.mjs:formatPatientNameForCenso",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/censo-build.mjs",
+      "target": "function:public/js/censo-build.mjs:formatPatientNameForCenso",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/censo-build.mjs",
+      "target": "function:public/js/censo-build.mjs:formatPacienteMetaForCenso",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/censo-build.mjs",
+      "target": "function:public/js/censo-build.mjs:formatPacienteMetaForCenso",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/censo-build.mjs",
+      "target": "function:public/js/censo-build.mjs:buildCensusPayload",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/censo-build.mjs",
+      "target": "function:public/js/censo-build.mjs:buildCensusPayload",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/censo-build.test.mjs",
+      "target": "file:public/js/censo-build.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/censo-build.mjs",
+      "target": "file:public/js/censo-build.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:public/js/censo-header-format.mjs",
+      "target": "function:public/js/censo-header-format.mjs:resolveCensoFimiLabel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/censo-header-format.mjs",
+      "target": "function:public/js/censo-header-format.mjs:resolveCensoFimiLabel",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/censo-header-format.mjs",
+      "target": "function:public/js/censo-header-format.mjs:normalizeCensoUbicacionValue",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/censo-header-format.mjs",
+      "target": "function:public/js/censo-header-format.mjs:normalizeCensoUbicacionValue",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/censo-header-format.mjs",
+      "target": "function:public/js/censo-header-format.mjs:formatCensoSalaTitleLine",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/censo-header-format.mjs",
+      "target": "function:public/js/censo-header-format.mjs:formatCensoSalaTitleLine",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/censo-header-format.mjs",
+      "target": "function:public/js/censo-header-format.mjs:resolveCensoEquipoMembers",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/censo-header-format.mjs",
+      "target": "function:public/js/censo-header-format.mjs:resolveCensoEquipoMembers",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/censo-header-format.mjs",
+      "target": "function:public/js/censo-header-format.mjs:formatCensoEquipoLine",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/censo-header-format.mjs",
+      "target": "function:public/js/censo-header-format.mjs:formatCensoEquipoLine",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/censo-header-format.mjs",
+      "target": "function:public/js/censo-header-format.mjs:buildCensoDocumentHeader",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/censo-header-format.mjs",
+      "target": "function:public/js/censo-header-format.mjs:buildCensoDocumentHeader",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/censo-header-format.test.mjs",
+      "target": "file:public/js/censo-header-format.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/censo-header-format.mjs",
+      "target": "file:public/js/censo-header-format.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:public/js/censo-meds-format.mjs",
+      "target": "function:public/js/censo-meds-format.mjs:formatCensoMedsFromReceta",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/censo-meds-format.mjs",
+      "target": "function:public/js/censo-meds-format.mjs:formatCensoMedsFromReceta",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/censo-meds-format.test.mjs",
+      "target": "file:public/js/censo-meds-format.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/censo-meds-format.mjs",
+      "target": "file:public/js/censo-meds-format.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:public/js/censo-pendientes-format.mjs",
+      "target": "file:public/js/todos-priority.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/censo-pendientes-format.mjs",
+      "target": "function:public/js/censo-pendientes-format.mjs:formatPendientesForCenso",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/censo-pendientes-format.mjs",
+      "target": "function:public/js/censo-pendientes-format.mjs:formatPendientesForCenso",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/censo-pendientes-format.test.mjs",
+      "target": "file:public/js/censo-pendientes-format.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/censo-pendientes-format.mjs",
+      "target": "file:public/js/censo-pendientes-format.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:public/js/censo-preview-html.mjs",
+      "target": "file:public/js/censo-build.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/censo-preview-html.mjs",
+      "target": "file:public/js/censo-table-columns.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/censo-preview-html.mjs",
+      "target": "file:public/js/censo-table-style.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/censo-preview-html.mjs",
+      "target": "function:public/js/censo-preview-html.mjs:renderCensoPreviewHtml",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/censo-preview-html.mjs",
+      "target": "function:public/js/censo-preview-html.mjs:renderCensoPreviewHtml",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/censo-preview-html.mjs",
+      "target": "function:public/js/censo-preview-html.mjs:ensureCensoPreviewModal",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/censo-preview-html.mjs",
+      "target": "function:public/js/censo-preview-html.mjs:closeCensoPreviewModal",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/censo-preview-html.mjs",
+      "target": "function:public/js/censo-preview-html.mjs:closeCensoPreviewModal",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/censo-preview-html.mjs",
+      "target": "function:public/js/censo-preview-html.mjs:openCensoPreviewInApp",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/censo-preview-html.mjs",
+      "target": "function:public/js/censo-preview-html.mjs:openCensoPreviewInApp",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/censo-preview-html.mjs",
+      "target": "function:public/js/censo-preview-html.mjs:openCensoPreviewWindow",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/censo-preview-html.mjs",
+      "target": "function:public/js/censo-preview-html.mjs:openCensoPreviewWindow",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/censo-table-columns.mjs",
+      "target": "function:public/js/censo-table-columns.mjs:censoColumnPercents",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/censo-table-columns.mjs",
+      "target": "function:public/js/censo-table-columns.mjs:censoColumnPercents",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/censo-table-columns.mjs",
+      "target": "function:public/js/censo-table-columns.mjs:censoColgroupCssRules",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/censo-table-columns.mjs",
+      "target": "function:public/js/censo-table-columns.mjs:censoColgroupCssRules",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/censo-table-columns.mjs",
+      "target": "function:public/js/censo-table-columns.mjs:censoColgroupHtml",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/censo-table-columns.mjs",
+      "target": "function:public/js/censo-table-columns.mjs:censoColgroupHtml",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/censo-table-columns.mjs",
+      "target": "function:public/js/censo-table-columns.mjs:censoTheadRowHtml",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/censo-table-columns.mjs",
+      "target": "function:public/js/censo-table-columns.mjs:censoTheadRowHtml",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/censo-table-columns.test.mjs",
+      "target": "file:public/js/censo-table-columns.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/censo-table-columns.mjs",
+      "target": "file:public/js/censo-table-columns.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:public/js/censo-table-style.mjs",
+      "target": "function:public/js/censo-table-style.mjs:normalizeCensoPanelLine",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/censo-table-style.mjs",
+      "target": "function:public/js/censo-table-style.mjs:normalizeCensoPanelLine",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/censo-table-style.mjs",
+      "target": "function:public/js/censo-table-style.mjs:splitCensoLabPanelsLine",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/censo-table-style.mjs",
+      "target": "function:public/js/censo-table-style.mjs:splitCensoLabPanelsLine",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/censo-table-style.mjs",
+      "target": "function:public/js/censo-table-style.mjs:reflowLabsForCensoDisplay",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/censo-table-style.mjs",
+      "target": "function:public/js/censo-table-style.mjs:reflowLabsForCensoDisplay",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/censo-table-style.mjs",
+      "target": "function:public/js/censo-table-style.mjs:classifyCensoTableLine",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/censo-table-style.mjs",
+      "target": "function:public/js/censo-table-style.mjs:classifyCensoTableLine",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/censo-table-style.test.mjs",
+      "target": "file:public/js/censo-table-style.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/censo-table-style.mjs",
+      "target": "file:public/js/censo-table-style.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:public/js/features/todos.mjs",
+      "target": "file:public/js/features/chrome.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/features/todos.mjs",
+      "target": "file:public/js/features/lan-sync.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/features/todos.mjs",
+      "target": "file:public/js/storage.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/features/todos.mjs",
+      "target": "file:public/js/todo-due-modal.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/features/todos.mjs",
+      "target": "file:public/js/todos-due.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/features/todos.mjs",
+      "target": "file:public/js/todos-handoff.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/features/todos.mjs",
+      "target": "file:public/js/todos-priority.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/features/todos.mjs",
+      "target": "file:public/js/todos-reminder-scheduler.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/features/todos.mjs",
+      "target": "function:public/js/features/todos.mjs:registerTodosRuntime",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/features/todos.mjs",
+      "target": "function:public/js/features/todos.mjs:registerTodosRuntime",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/features/todos.mjs",
+      "target": "function:public/js/features/todos.mjs:pulseTodoPrioChip",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/features/todos.mjs",
+      "target": "function:public/js/features/todos.mjs:applyTodoPrioChip",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/features/todos.mjs",
+      "target": "function:public/js/features/todos.mjs:createTodoPrioChip",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/features/todos.mjs",
+      "target": "function:public/js/features/todos.mjs:getTodoFormDraftState",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/features/todos.mjs",
+      "target": "function:public/js/features/todos.mjs:appendTodoHandoffMeta",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/features/todos.mjs",
+      "target": "function:public/js/features/todos.mjs:appendTodoMainCell",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/features/todos.mjs",
+      "target": "function:public/js/features/todos.mjs:buildTodoRow",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/features/todos.mjs",
+      "target": "function:public/js/features/todos.mjs:appendTodoFilterBar",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/features/todos.mjs",
+      "target": "function:public/js/features/todos.mjs:syncDueAddSelection",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/features/todos.mjs",
+      "target": "function:public/js/features/todos.mjs:createTodoDueAddSection",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/features/todos.mjs",
+      "target": "function:public/js/features/todos.mjs:appendTodoAddRow",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/features/todos.mjs",
+      "target": "function:public/js/features/todos.mjs:renderTodoListSection",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/features/todos.mjs",
+      "target": "function:public/js/features/todos.mjs:todoCompareForSort",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/features/todos.mjs",
+      "target": "function:public/js/features/todos.mjs:todoCompareForSort",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/features/todos.mjs",
+      "target": "function:public/js/features/todos.mjs:refreshRondaTodoMount",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/features/todos.mjs",
+      "target": "function:public/js/features/todos.mjs:refreshTodoUIsForPatient",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/features/todos.mjs",
+      "target": "function:public/js/features/todos.mjs:refreshTodoUIsForPatient",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/features/todos.mjs",
+      "target": "function:public/js/features/todos.mjs:refreshTodoUIsForPatients",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/features/todos.mjs",
+      "target": "function:public/js/features/todos.mjs:refreshTodoUIsForPatients",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/features/todos.mjs",
+      "target": "function:public/js/features/todos.mjs:refreshAllTodoUIs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/features/todos.mjs",
+      "target": "function:public/js/features/todos.mjs:refreshAllTodoUIs",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/features/todos.mjs",
+      "target": "function:public/js/features/todos.mjs:renderTodoForm",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/features/todos.mjs",
+      "target": "function:public/js/features/todos.mjs:renderTodoForm",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/features/todos.mjs",
+      "target": "function:public/js/features/todos.mjs:renderTodoFormIn",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/features/todos.mjs",
+      "target": "function:public/js/features/todos.mjs:renderTodoFormIn",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/features/todos.mjs",
+      "target": "function:public/js/features/todos.mjs:addTodo",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/features/todos.mjs",
+      "target": "function:public/js/features/todos.mjs:addTodo",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/features/todos.mjs",
+      "target": "function:public/js/features/todos.mjs:toggleTodo",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/features/todos.mjs",
+      "target": "function:public/js/features/todos.mjs:toggleTodo",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/features/todos.mjs",
+      "target": "function:public/js/features/todos.mjs:deleteTodo",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/features/todos.mjs",
+      "target": "function:public/js/features/todos.mjs:deleteTodo",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/features/todos.mjs",
+      "target": "function:public/js/features/todos.mjs:setTodoPriority",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/features/todos.mjs",
+      "target": "function:public/js/features/todos.mjs:setTodoPriority",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/features/todos.mjs",
+      "target": "function:public/js/features/todos.mjs:acknowledgeHandoffTodo",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/features/todos.mjs",
+      "target": "function:public/js/features/todos.mjs:acknowledgeHandoffTodo",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/features/todos.mjs",
+      "target": "function:public/js/features/todos.mjs:updateTodoText",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/features/todos.mjs",
+      "target": "function:public/js/features/todos.mjs:updateTodoText",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/features/todos.mjs",
+      "target": "function:public/js/features/todos.mjs:archiveLegacyRepoTodos",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/features/todos.mjs",
+      "target": "function:public/js/features/todos.mjs:archiveLegacyRepoTodos",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/patient-accesos.mjs",
+      "target": "file:public/js/patient-date-fields.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/patient-accesos.mjs",
+      "target": "function:public/js/patient-accesos.mjs:viaAccesoLabel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/patient-accesos.mjs",
+      "target": "function:public/js/patient-accesos.mjs:viaAccesoLabel",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/patient-accesos.mjs",
+      "target": "function:public/js/patient-accesos.mjs:ensurePatientAccesos",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/patient-accesos.mjs",
+      "target": "function:public/js/patient-accesos.mjs:ensurePatientAccesos",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/patient-accesos.mjs",
+      "target": "function:public/js/patient-accesos.mjs:syncLegacyAccesoFields",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/patient-accesos.mjs",
+      "target": "function:public/js/patient-accesos.mjs:syncLegacyAccesoFields",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/patient-accesos.mjs",
+      "target": "function:public/js/patient-accesos.mjs:formatAccesosForCenso",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/patient-accesos.mjs",
+      "target": "function:public/js/patient-accesos.mjs:formatAccesosForCenso",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/patient-accesos.mjs",
+      "target": "function:public/js/patient-accesos.mjs:mergeAccesosPatientFields",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/patient-accesos.mjs",
+      "target": "function:public/js/patient-accesos.mjs:mergeAccesosPatientFields",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/patient-accesos.test.mjs",
+      "target": "file:public/js/patient-accesos.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/patient-accesos.mjs",
+      "target": "file:public/js/patient-accesos.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:public/js/patient-data-ingreso-ui.mjs",
+      "target": "file:public/js/censo-header-format.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/patient-data-ingreso-ui.mjs",
+      "target": "file:public/js/patient-date-fields.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/patient-data-ingreso-ui.mjs",
+      "target": "function:public/js/patient-data-ingreso-ui.mjs:buildPatientIngresoFechasHtml",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/patient-data-ingreso-ui.mjs",
+      "target": "function:public/js/patient-data-ingreso-ui.mjs:buildPatientIngresoFechasHtml",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/patient-date-fields.mjs",
+      "target": "function:public/js/patient-date-fields.mjs:accesoFechaToDateInputValue",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/patient-date-fields.mjs",
+      "target": "function:public/js/patient-date-fields.mjs:accesoFechaToDateInputValue",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/patient-date-fields.mjs",
+      "target": "function:public/js/patient-date-fields.mjs:dateInputValueToAccesoFecha",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/patient-date-fields.mjs",
+      "target": "function:public/js/patient-date-fields.mjs:dateInputValueToAccesoFecha",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/patient-date-fields.mjs",
+      "target": "function:public/js/patient-date-fields.mjs:formatAccesoFechaDisplay",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/patient-date-fields.mjs",
+      "target": "function:public/js/patient-date-fields.mjs:formatAccesoFechaDisplay",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/patient-date-fields.test.mjs",
+      "target": "file:public/js/patient-date-fields.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/patient-date-fields.mjs",
+      "target": "file:public/js/patient-date-fields.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:public/js/todo-due-modal.mjs",
+      "target": "file:public/js/rpc-date-picker.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/todo-due-modal.mjs",
+      "target": "file:public/js/todos-due.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/todo-due-modal.mjs",
+      "target": "function:public/js/todo-due-modal.mjs:readModalFields",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/todo-due-modal.mjs",
+      "target": "function:public/js/todo-due-modal.mjs:saveTodoDueModal",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/todo-due-modal.mjs",
+      "target": "function:public/js/todo-due-modal.mjs:setPresetEditOpen",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/todo-due-modal.mjs",
+      "target": "function:public/js/todo-due-modal.mjs:applyPresetToModal",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/todo-due-modal.mjs",
+      "target": "function:public/js/todo-due-modal.mjs:syncModalPresetActiveState",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/todo-due-modal.mjs",
+      "target": "function:public/js/todo-due-modal.mjs:renderModalPresetChips",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/todo-due-modal.mjs",
+      "target": "function:public/js/todo-due-modal.mjs:readRowValueSnapshot",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/todo-due-modal.mjs",
+      "target": "function:public/js/todo-due-modal.mjs:appendPresetHoursInput",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/todo-due-modal.mjs",
+      "target": "function:public/js/todo-due-modal.mjs:appendPresetTimeInput",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/todo-due-modal.mjs",
+      "target": "function:public/js/todo-due-modal.mjs:rebuildRowValueInput",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/todo-due-modal.mjs",
+      "target": "function:public/js/todo-due-modal.mjs:buildPresetModeSelect",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/todo-due-modal.mjs",
+      "target": "function:public/js/todo-due-modal.mjs:readVisiblePresetRowIds",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/todo-due-modal.mjs",
+      "target": "function:public/js/todo-due-modal.mjs:readPresetEditRowsIntoPatch",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/todo-due-modal.mjs",
+      "target": "function:public/js/todo-due-modal.mjs:focusPresetRowLabel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/todo-due-modal.mjs",
+      "target": "function:public/js/todo-due-modal.mjs:renderPresetEditRows",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/todo-due-modal.mjs",
+      "target": "function:public/js/todo-due-modal.mjs:wireTodoDueModal",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/todo-due-modal.mjs",
+      "target": "function:public/js/todo-due-modal.mjs:openTodoDueModal",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/todo-due-modal.mjs",
+      "target": "function:public/js/todo-due-modal.mjs:openTodoDueModal",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/todo-due-modal.mjs",
+      "target": "function:public/js/todo-due-modal.mjs:closeTodoDueModalPublic",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/todo-due-modal.mjs",
+      "target": "function:public/js/todo-due-modal.mjs:closeTodoDueModalPublic",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/todos-due.mjs",
+      "target": "file:public/js/todos-priority.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/todos-due.mjs",
+      "target": "function:public/js/todos-due.mjs:isTodoOverdue",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/todos-due.mjs",
+      "target": "function:public/js/todos-due.mjs:isTodoOverdue",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/todos-due.mjs",
+      "target": "function:public/js/todos-due.mjs:todoCompareForDueSort",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/todos-due.mjs",
+      "target": "function:public/js/todos-due.mjs:todoCompareForDueSort",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/todos-due.mjs",
+      "target": "function:public/js/todos-due.mjs:computeReminderAt",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/todos-due.mjs",
+      "target": "function:public/js/todos-due.mjs:computeReminderAt",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/todos-due.mjs",
+      "target": "function:public/js/todos-due.mjs:isoToDatetimeLocalValue",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/todos-due.mjs",
+      "target": "function:public/js/todos-due.mjs:isoToDatetimeLocalValue",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/todos-due.mjs",
+      "target": "function:public/js/todos-due.mjs:parseDatetimeLocalToIso",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/todos-due.mjs",
+      "target": "function:public/js/todos-due.mjs:parseDatetimeLocalToIso",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/todos-due.mjs",
+      "target": "function:public/js/todos-due.mjs:formatTodoDueLabel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/todos-due.mjs",
+      "target": "function:public/js/todos-due.mjs:formatTodoDueLabel",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/todos-due.mjs",
+      "target": "function:public/js/todos-due.mjs:readPresetOverridesMap",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/todos-due.mjs",
+      "target": "function:public/js/todos-due.mjs:writePresetOverridesMap",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/todos-due.mjs",
+      "target": "function:public/js/todos-due.mjs:formatTodoDuePresetAutoLabel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/todos-due.mjs",
+      "target": "function:public/js/todos-due.mjs:formatTodoDuePresetAutoLabel",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/todos-due.mjs",
+      "target": "function:public/js/todos-due.mjs:normalizePresetOverride",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/todos-due.mjs",
+      "target": "function:public/js/todos-due.mjs:mergeTodoDuePreset",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/todos-due.mjs",
+      "target": "function:public/js/todos-due.mjs:mergeTodoDuePreset",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/todos-due.mjs",
+      "target": "function:public/js/todos-due.mjs:buildCustomPresetDef",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/todos-due.mjs",
+      "target": "function:public/js/todos-due.mjs:normalizeCustomPresetEntry",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/todos-due.mjs",
+      "target": "function:public/js/todos-due.mjs:resolveTodoDuePresetDef",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/todos-due.mjs",
+      "target": "function:public/js/todos-due.mjs:resolveTodoDuePresetDef",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/todos-due.mjs",
+      "target": "function:public/js/todos-due.mjs:getTodoDuePresets",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/todos-due.mjs",
+      "target": "function:public/js/todos-due.mjs:getTodoDuePresets",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/todos-due.mjs",
+      "target": "function:public/js/todos-due.mjs:getTodoDuePresetsLegacyList",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/todos-due.mjs",
+      "target": "function:public/js/todos-due.mjs:getTodoDuePresetsLegacyList",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/todos-due.mjs",
+      "target": "function:public/js/todos-due.mjs:saveTodoDuePresetOverrides",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/todos-due.mjs",
+      "target": "function:public/js/todos-due.mjs:saveTodoDuePresetOverrides",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/todos-due.mjs",
+      "target": "function:public/js/todos-due.mjs:syncTodoDuePresetsFromEditRows",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/todos-due.mjs",
+      "target": "function:public/js/todos-due.mjs:syncTodoDuePresetsFromEditRows",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/todos-due.mjs",
+      "target": "function:public/js/todos-due.mjs:deleteTodoDuePreset",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/todos-due.mjs",
+      "target": "function:public/js/todos-due.mjs:deleteTodoDuePreset",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/todos-due.mjs",
+      "target": "function:public/js/todos-due.mjs:addTodoDuePreset",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/todos-due.mjs",
+      "target": "function:public/js/todos-due.mjs:addTodoDuePreset",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/todos-due.mjs",
+      "target": "function:public/js/todos-due.mjs:resetTodoDuePresetOverrides",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/todos-due.mjs",
+      "target": "function:public/js/todos-due.mjs:resetTodoDuePresetOverrides",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/todos-due.mjs",
+      "target": "function:public/js/todos-due.mjs:dueDateFromPresetDef",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/todos-due.mjs",
+      "target": "function:public/js/todos-due.mjs:dueDateFromPresetDef",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/todos-due.mjs",
+      "target": "function:public/js/todos-due.mjs:parseDuePreset",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/todos-due.mjs",
+      "target": "function:public/js/todos-due.mjs:parseDuePreset",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/todos-due.test.mjs",
+      "target": "file:public/js/todos-due.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/todos-due.mjs",
+      "target": "file:public/js/todos-due.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:public/js/todos-due.test.mjs",
+      "target": "function:public/js/todos-due.test.mjs:todo",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/todos-handoff.mjs",
+      "target": "function:public/js/todos-handoff.mjs:normalizeTodoUsername",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/todos-handoff.mjs",
+      "target": "function:public/js/todos-handoff.mjs:normalizeTodoUsername",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/todos-handoff.mjs",
+      "target": "function:public/js/todos-handoff.mjs:usernamesMatch",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/todos-handoff.mjs",
+      "target": "function:public/js/todos-handoff.mjs:usernamesMatch",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/todos-handoff.mjs",
+      "target": "function:public/js/todos-handoff.mjs:isHandoffTodo",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/todos-handoff.mjs",
+      "target": "function:public/js/todos-handoff.mjs:isHandoffTodo",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/todos-handoff.mjs",
+      "target": "function:public/js/todos-handoff.mjs:filterTodosByView",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/todos-handoff.mjs",
+      "target": "function:public/js/todos-handoff.mjs:filterTodosByView",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/todos-handoff.mjs",
+      "target": "function:public/js/todos-handoff.mjs:countHandoffTodos",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/todos-handoff.mjs",
+      "target": "function:public/js/todos-handoff.mjs:countHandoffTodos",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/todos-handoff.mjs",
+      "target": "function:public/js/todos-handoff.mjs:formatTodoCreatorLabel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/todos-handoff.mjs",
+      "target": "function:public/js/todos-handoff.mjs:formatTodoCreatorLabel",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/todos-handoff.mjs",
+      "target": "function:public/js/todos-handoff.mjs:buildHandoffAckPatch",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/todos-handoff.mjs",
+      "target": "function:public/js/todos-handoff.mjs:buildHandoffAckPatch",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/todos-handoff.test.mjs",
+      "target": "file:public/js/todos-handoff.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/todos-handoff.mjs",
+      "target": "file:public/js/todos-handoff.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:public/js/todos-priority.mjs",
+      "target": "function:public/js/todos-priority.mjs:normalizeTodoPriority",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/todos-priority.mjs",
+      "target": "function:public/js/todos-priority.mjs:normalizeTodoPriority",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/todos-priority.mjs",
+      "target": "function:public/js/todos-priority.mjs:nextTodoPriority",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/todos-priority.mjs",
+      "target": "function:public/js/todos-priority.mjs:nextTodoPriority",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/todos-priority.mjs",
+      "target": "function:public/js/todos-priority.mjs:todoPriorityLabel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/todos-priority.mjs",
+      "target": "function:public/js/todos-priority.mjs:todoPriorityLabel",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/todos-priority.test.mjs",
+      "target": "file:public/js/todos-priority.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/todos-priority.mjs",
+      "target": "file:public/js/todos-priority.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:public/js/todos-refresh.test.mjs",
+      "target": "file:public/js/features/todos.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/features/todos.mjs",
+      "target": "file:public/js/todos-refresh.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:public/js/todos-reminder-scheduler.mjs",
+      "target": "file:public/js/storage.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/todos-reminder-scheduler.mjs",
+      "target": "file:public/js/todos-due.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/todos-reminder-scheduler.mjs",
+      "target": "function:public/js/todos-reminder-scheduler.mjs:fireReminder",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/todos-reminder-scheduler.mjs",
+      "target": "function:public/js/todos-reminder-scheduler.mjs:scheduleTodoReminder",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/todos-reminder-scheduler.mjs",
+      "target": "function:public/js/todos-reminder-scheduler.mjs:configureTodoReminderScheduler",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/todos-reminder-scheduler.mjs",
+      "target": "function:public/js/todos-reminder-scheduler.mjs:configureTodoReminderScheduler",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/todos-reminder-scheduler.mjs",
+      "target": "function:public/js/todos-reminder-scheduler.mjs:rescheduleAllTodos",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/todos-reminder-scheduler.mjs",
+      "target": "function:public/js/todos-reminder-scheduler.mjs:rescheduleAllTodos",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/todos-reminder-scheduler.mjs",
+      "target": "function:public/js/todos-reminder-scheduler.mjs:cancelTodoReminder",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/todos-reminder-scheduler.mjs",
+      "target": "function:public/js/todos-reminder-scheduler.mjs:cancelTodoReminder",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/todos-reminder-scheduler.mjs",
+      "target": "function:public/js/todos-reminder-scheduler.mjs:resetTodoReminderSchedulerForTests",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/todos-reminder-scheduler.mjs",
+      "target": "function:public/js/todos-reminder-scheduler.mjs:resetTodoReminderSchedulerForTests",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

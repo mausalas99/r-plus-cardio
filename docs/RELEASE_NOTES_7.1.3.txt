@@ -1,0 +1,27 @@
+R+ 7.1.3 (signos vitales + Aprender)
+====================================
+
+Fecha: 2026-06-06
+
+## Resumen
+
+Parche sobre 7.1.2: corrige alertas de signos vitales que sonaban sin plan activo o se repetían cada minuto, y simplifica la educación post-actualización hacia el Learn Hub (sin modal Sala/Interconsulta).
+
+## Nuevo / mejorado
+
+- **Alertas de signos** — Las notificaciones usan el mismo criterio que el tablero de guardia: solo pacientes con plan de signos en intervalo o por turno (no rutina). Sin repetir el mismo aviso en cada barrido de fondo.
+- **Aprender R+** — Tras actualizar, se abre el Learn Hub en lugar del modal «Sala o Interconsulta».
+- **Fundamentos · Interconsulta** — Cuatro módulos visibles bajo Fundamentos → Interconsulta (lab, expediente, ajustes, equipo).
+
+## Operación en guardia
+
+Parche sobre **7.1.2**: instala en todas las estaciones del turno el mismo día. Learn Hub, guardia-v7, LAN command sync y PIN del turno no cambian.
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v7.1.3
+
+- Mac: `R+-7.1.3-arm64.dmg`, `R+-7.1.3-x64.dmg` (y zip para auto-update).
+- Windows: `R+-7.1.3-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye write-release-yml.js).

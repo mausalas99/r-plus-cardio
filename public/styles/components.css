@@ -1,0 +1,91 @@
+/* Premium UI · shared control micro-interactions (phase 2–3) */
+
+/* Press feedback — buttons */
+.btn-generate:active:not(:disabled):not(.loading),
+.btn-save:active:not(:disabled):not(.loading),
+.btn-cancel:active:not(:disabled),
+.btn-med-secondary:active:not(:disabled),
+.btn-primary:active:not(:disabled),
+.btn-add:active:not(:disabled),
+.btn-header-icon:active:not(:disabled) {
+  transform: scale(0.96);
+  transition:
+    transform 100ms var(--ease-out),
+    background var(--dur-fast) var(--ease-out),
+    box-shadow var(--dur-fast) var(--ease-out);
+}
+
+/* Census cards */
+.patient-card:active:not(.sortable-ghost):not(.sortable-chosen) {
+  transform: scale(0.985);
+  transition:
+    transform 100ms var(--ease-out),
+    background var(--dur-fast) var(--ease-out),
+    border-color var(--dur-fast) var(--ease-out),
+    box-shadow var(--dur-fast) var(--ease-out);
+}
+
+/* Guardia / pase chips */
+.pase-mini-card:active,
+.guardia-census-chip:active {
+  transform: scale(0.96);
+  transition: transform 100ms var(--ease-out);
+}
+
+html.motion-sobrio .btn-generate:active:not(:disabled),
+html.motion-sobrio .btn-save:active:not(:disabled),
+html.motion-sobrio .patient-card:active {
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-generate:active,
+  .btn-save:active,
+  .patient-card:active,
+  .pase-mini-card:active,
+  .guardia-census-chip:active {
+    transform: none;
+  }
+}
+
+/* Canonical primary button (single source — lab.css defers here for shadow/timing) */
+.btn-generate {
+  box-shadow: var(--elev-raised);
+  transition:
+    background var(--dur-fast) var(--ease-out),
+    transform 100ms var(--ease-out),
+    box-shadow var(--dur-fast) var(--ease-out);
+}
+
+.btn-generate:hover:not(:disabled):not(.loading) {
+  box-shadow: var(--elev-floating);
+}
+
+.btn-save {
+  box-shadow: var(--elev-raised);
+  transition:
+    background var(--dur-fast) var(--ease-out),
+    transform 100ms var(--ease-out),
+    box-shadow var(--dur-fast) var(--ease-out);
+}
+
+.btn-save:hover:not(:disabled):not(.loading) {
+  box-shadow: var(--elev-floating);
+}
+
+/* Hover lift — visible motion on interactive surfaces (Mixto/Expresivo) */
+html:not(.motion-sobrio) .patient-card,
+html:not(.motion-sobrio) #main-area .card {
+  transition:
+    box-shadow var(--dur-fast) var(--ease-out),
+    border-color var(--dur-fast) var(--ease-out),
+    background var(--dur-fast) var(--ease-out),
+    transform 100ms var(--ease-out);
+}
+
+html:not(.motion-sobrio) .app-tab,
+html:not(.motion-sobrio) .inner-tab {
+  transition:
+    color var(--dur-fast) var(--ease-out),
+    background var(--dur-fast) var(--ease-out);
+}

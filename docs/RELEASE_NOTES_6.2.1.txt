@@ -1,0 +1,45 @@
+R+ 6.2.1 (Expediente más fluido — Manejo opcional en Interconsulta)
+======================================================================
+
+Fecha: 2026-05-27
+
+## Resumen
+
+R+ 6.2.1 prioriza **fluidez al navegar el expediente** (cambio de paciente y de pestañas), corrige la visibilidad de **Nota / Indicaciones en Sala**, y ajusta la opción de perfil para **ocultar solo Manejo** en Interconsulta (sin quitar la pestaña Clínico completa). Incluye **bundle único del frontend** (recomendación Electron) y mejoras de **tendencias / historial de laboratorio** en pacientes con muchos sets.
+
+## Nuevo / mejorado
+
+### Rendimiento
+
+- **Bundle del renderer** — El código de la interfaz se empaqueta en un solo módulo (`app.bundle.mjs`) al compilar la UI; menos coste de carga al abrir la app (`npm run build:ui` / builds de release).
+- **Cambio de paciente** — La lista lateral actualiza solo la tarjeta activa cuando basta; lab y medicamentos solo se repintan si estás en esas pestañas principales.
+- **Pestañas del expediente** — Caché por paciente y pestaña: volver a **Estado actual** o **Resultados** no repinta si los datos no cambiaron; sin animación ni doble frame cuando el panel ya está listo.
+- **Precalentado** — Tras elegir paciente (Sala), se preparan en segundo plano Estado actual y Tendencias para que el primer cambio sea más rápido.
+- **Tendencias / laboratorio** — Parseo con caché por set, ventana compacta de sparks, render incremental cuando la estructura no cambia, y debounce al refrescar tras mutar labs.
+
+### Expediente y ajustes
+
+- **Ocultar Manejo (Interconsulta)** — En **Mi Perfil → Expediente**, la opción ahora dice **Ocultar Manejo en Clínico**: mantiene **Nota de evolución** e **Indicaciones**; solo quita el segmento Manejo. La configuración anterior (`hideClinicoTab`) sigue aplicando como ocultar Manejo.
+- **Sala** — En **Resultados** ya no aparece el formulario de Nota encima de Tendencias (los paneles de Nota/Indicaciones se desactivan al salir de Clínico).
+
+## Correcciones
+
+- **Sala + Resultados** — El panel de notas dejaba la clase `active` y se superponía a Tendencias; corregido al sincronizar visibilidad de todos los segmentos de Clínico.
+- **Modo Sala** — Al cambiar de modo ya no se reconstruye el formulario de Nota si no aplica en Sala.
+
+## Desarrollo
+
+```bash
+npm run build:ui          # index.html + app.bundle.mjs
+npm run bundle:renderer   # solo el bundle
+npm run bundle:renderer:watch   # desarrollo con recarga del bundle
+```
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v6.2.1
+
+- Mac: `R+-6.2.1-arm64.dmg`, `R+-6.2.1-x64.dmg` (y zip para auto-update).
+- Windows: `R+-6.2.1-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye `build:ui` y bundle minificado en prebuild).

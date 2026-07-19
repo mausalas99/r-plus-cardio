@@ -1,0 +1,167 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 20,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "public/styles/base.css",
+      "language": "css",
+      "fileCategory": "markup",
+      "totalLines": 1082,
+      "nonEmptyLines": 1074,
+      "metrics": {}
+    },
+    {
+      "path": "public/styles/cmdk.css",
+      "language": "css",
+      "fileCategory": "markup",
+      "totalLines": 140,
+      "nonEmptyLines": 120,
+      "metrics": {}
+    },
+    {
+      "path": "public/styles/components.css",
+      "language": "css",
+      "fileCategory": "markup",
+      "totalLines": 90,
+      "nonEmptyLines": 79,
+      "metrics": {}
+    },
+    {
+      "path": "public/styles/estado-actual.css",
+      "language": "css",
+      "fileCategory": "markup",
+      "totalLines": 2272,
+      "nonEmptyLines": 1953,
+      "metrics": {}
+    },
+    {
+      "path": "public/styles/eventualidades.css",
+      "language": "css",
+      "fileCategory": "markup",
+      "totalLines": 471,
+      "nonEmptyLines": 408,
+      "metrics": {}
+    },
+    {
+      "path": "public/styles/expediente.css",
+      "language": "css",
+      "fileCategory": "markup",
+      "totalLines": 1404,
+      "nonEmptyLines": 1285,
+      "metrics": {}
+    },
+    {
+      "path": "public/styles/group-row.css",
+      "language": "css",
+      "fileCategory": "markup",
+      "totalLines": 252,
+      "nonEmptyLines": 219,
+      "metrics": {}
+    },
+    {
+      "path": "public/styles/historia-clinica.css",
+      "language": "css",
+      "fileCategory": "markup",
+      "totalLines": 646,
+      "nonEmptyLines": 547,
+      "metrics": {}
+    },
+    {
+      "path": "public/styles/lab.css",
+      "language": "css",
+      "fileCategory": "markup",
+      "totalLines": 2442,
+      "nonEmptyLines": 2336,
+      "metrics": {}
+    },
+    {
+      "path": "public/styles/layout.css",
+      "language": "css",
+      "fileCategory": "markup",
+      "totalLines": 1285,
+      "nonEmptyLines": 1264,
+      "metrics": {}
+    },
+    {
+      "path": "public/styles/med-pharm-profile.css",
+      "language": "css",
+      "fileCategory": "markup",
+      "totalLines": 1285,
+      "nonEmptyLines": 1100,
+      "metrics": {}
+    },
+    {
+      "path": "public/styles/mobile-surfaces.css",
+      "language": "css",
+      "fileCategory": "markup",
+      "totalLines": 229,
+      "nonEmptyLines": 192,
+      "metrics": {}
+    },
+    {
+      "path": "public/styles/mobile.css",
+      "language": "css",
+      "fileCategory": "markup",
+      "totalLines": 600,
+      "nonEmptyLines": 586,
+      "metrics": {}
+    },
+    {
+      "path": "public/styles/modals.css",
+      "language": "css",
+      "fileCategory": "markup",
+      "totalLines": 2421,
+      "nonEmptyLines": 2351,
+      "metrics": {}
+    },
+    {
+      "path": "public/styles/motion.css",
+      "language": "css",
+      "fileCategory": "markup",
+      "totalLines": 425,
+      "nonEmptyLines": 362,
+      "metrics": {}
+    },
+    {
+      "path": "public/styles/overlays.css",
+      "language": "css",
+      "fileCategory": "markup",
+      "totalLines": 51,
+      "nonEmptyLines": 48,
+      "metrics": {}
+    },
+    {
+      "path": "public/styles/pase-board.css",
+      "language": "css",
+      "fileCategory": "markup",
+      "totalLines": 5604,
+      "nonEmptyLines": 4806,
+      "metrics": {}
+    },
+    {
+      "path": "public/styles/receta-hu.css",
+      "language": "css",
+      "fileCategory": "markup",
+      "totalLines": 284,
+      "nonEmptyLines": 243,
+      "metrics": {}
+    },
+    {
+      "path": "public/styles/rpc-date-picker.css",
+      "language": "css",
+      "fileCategory": "markup",
+      "totalLines": 302,
+      "nonEmptyLines": 268,
+      "metrics": {}
+    },
+    {
+      "path": "public/styles/settings.css",
+      "language": "css",
+      "fileCategory": "markup",
+      "totalLines": 1174,
+      "nonEmptyLines": 1152,
+      "metrics": {}
+    }
+  ]
+}

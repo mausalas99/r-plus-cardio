@@ -1,0 +1,46 @@
+R+ 6.6.1 (LiveSync LAN — fiabilidad y mantenimiento)
+=====================================================
+
+Fecha: 2026-06-03
+
+## Resumen
+
+Integra el programa **LAN sync improvements (Phases 0–3)**: menos reconexiones WS al publicar @usuario, push HTTP como vía principal del censo, cola offline en SQLCipher, endpoint `clinical-ops`, panel de diagnóstico ⇄, anfitrión fijado, y código LAN modularizado. **Requiere turno homogéneo en 6.6.1** (no mezclar con 6.6.0 en la misma guardia).
+
+Análisis de riesgos LiveSync: `docs/LAN_SYNC_6.6.1_RISK_ANALYSIS.md`.
+
+## Nuevo / mejorado
+
+### Fiabilidad LiveSync (Phases 0–1)
+
+- **Push de perfil** — No reabre el WebSocket en vivo si ya estás en la sala; resultado con canales `http` / `live` / `outbox`.
+- **Censo y bundles** — El debounce (~900 ms) publica por **HTTP**; los peers reciben aviso `livesync:revision` y reconcilian (menos bundles duplicados por WS).
+- **Cola offline** — Tabla `lan_sync_outbox` (schema DB v9) cuando la base clínica está desbloqueada.
+- **`PUT /clinical-ops`** — Directorio y @usuario sin subir el bundle completo del turno.
+
+### Operación en guardia (Phase 2)
+
+- **Anfitrión fijado** — Evita cambio silencioso de Mac anfitriona; failover con confirmación.
+- **Estado de sincronización** — Panel en ⇄ con host, fase, outbox, últimos errores e informe para soporte.
+- **Auto-unión a sala** — Si solo se infiere la sala desde Ajustes, pide confirmación antes de unirte.
+
+### Mantenimiento (Phase 3)
+
+- **Módulos LAN** — `lan-sync-push`, `room`, `transport`, `panel` + fachada `features/lan-sync.mjs`.
+- **Registro de merges** — `lan-merge-registry.mjs` centraliza fusiones por dominio.
+- **Host y SQLCipher** — `clinicalOps` autoritativo en DB del anfitrión cuando está desbloqueada.
+
+### Heredado de 6.6.0
+
+@usuario sin ⇄ obligatorio, ticket iPad nuevo, copiar varios días en labs, directorio LAN y tombstones admin.
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v6.6.1
+
+- Mac: `R+-6.6.1-arm64.dmg`, `R+-6.6.1-x64.dmg` (y zip para auto-update).
+- Windows: `R+-6.6.1-x64.exe`.
+
+**Recomendado:** Actualizar **todas** las estaciones del turno a **6.6.1 el mismo día**. No mezclar 6.6.0 y 6.6.1 en guardia (el censo puede no verse en Macs viejas). Firewall **3738** en Windows la primera vez.
+
+Tras el build local: `npm run build:mac` / `npm run build:win`.

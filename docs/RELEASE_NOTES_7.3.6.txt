@@ -1,0 +1,32 @@
+R+ 7.3.6 (LAN identity, sync modular y calidad)
+================================================
+
+Fecha: 2026-06-13
+
+## Resumen
+
+Sobre **7.3.5**: identidad LAN emitida por el anfitrión (la purga ya no confía en parámetros del cliente), `orchestrator.mjs` dividido en módulos enfocados, detección unificada de cultivos, arranque más rápido sin rebuild nativo forzado, y más cobertura de pruebas (IPC clínico + suites antes en cuarentena).
+
+## Nuevo / mejorado
+
+- **LAN — identidad por cliente** — En `POST /auth/exchange` el host emite token de identidad ligado al `clientId`; la purga y auditoría prefieren identidad resuelta en servidor (fallback legacy para turnos mixtos).
+- **LAN — orchestrator modular** — Façade ~1,185 líneas; extraídos `conflicts`, `entity-versions`, `patient-delete`, `patient-entries`, `historia-sync`, `host-patient-http`, `live-sync-emit`.
+- **Laboratorio — cultivos** — Detección superset alineada en censo, pegado masivo, historial y panel; parser lipasa con golden.
+- **Shell — modales** — `app-shell-modals.mjs` extrae modales del shell; presupuesto de líneas restaurado.
+- **Anfitrión — hot path** — Menos reensamblado en `clinicalOps` PUT; un solo `byteLength` por flush.
+- **Seguridad — window.open** — Allowlist GitHub + LAN privada en lugar de solo esquema.
+- **DX / CI** — ESLint en raíz y `scripts/`; cinco suites reactivadas; 13 pruebas de integración IPC (`ipc-handlers.test.mjs`).
+- **Arranque** — `npm start` ya no fuerza rebuild SQLCipher si el binario nativo coincide con Electron.
+
+## Operación en guardia
+
+Instala **7.3.6 en todas** las estaciones del turno el mismo día. Sin cambio de esquema SQLCipher (sigue **v17**). La identidad LAN requiere anfitrión y clientes en **7.3.6** (o superior) para dejar de depender del fallback por query string.
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v7.3.6
+
+- Mac: `R+-7.3.6-arm64.dmg`, `R+-7.3.6-x64.dmg` (y zip para auto-update).
+- Windows: `R+-7.3.6-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye write-release-yml.js).

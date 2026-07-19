@@ -1,0 +1,7037 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 27,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "lan-squad/historia-clinica-validate.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 143,
+      "nonEmptyLines": 137,
+      "functions": [
+        {
+          "name": "isPlainObject",
+          "startLine": 29,
+          "endLine": 31,
+          "params": [
+            "v"
+          ]
+        },
+        {
+          "name": "isLegacyFlatHistoria",
+          "startLine": 33,
+          "endLine": 42,
+          "params": [
+            "data"
+          ]
+        },
+        {
+          "name": "migrateLegacyHistoriaData",
+          "startLine": 48,
+          "endLine": 78,
+          "params": [
+            "data"
+          ]
+        },
+        {
+          "name": "validateHistoriaClinicaPut",
+          "startLine": 84,
+          "endLine": 135,
+          "params": [
+            "body"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "isPlainObject",
+          "callee": "Array.isArray",
+          "lineNumber": 30
+        },
+        {
+          "caller": "isLegacyFlatHistoria",
+          "callee": "isPlainObject",
+          "lineNumber": 34
+        },
+        {
+          "caller": "migrateLegacyHistoriaData",
+          "callee": "isPlainObject",
+          "lineNumber": 49
+        },
+        {
+          "caller": "migrateLegacyHistoriaData",
+          "callee": "isLegacyFlatHistoria",
+          "lineNumber": 49
+        },
+        {
+          "caller": "migrateLegacyHistoriaData",
+          "callee": "isPlainObject",
+          "lineNumber": 71
+        },
+        {
+          "caller": "validateHistoriaClinicaPut",
+          "callee": "isPlainObject",
+          "lineNumber": 85
+        },
+        {
+          "caller": "validateHistoriaClinicaPut",
+          "callee": "Number",
+          "lineNumber": 88
+        },
+        {
+          "caller": "validateHistoriaClinicaPut",
+          "callee": "Number.isFinite",
+          "lineNumber": 89
+        },
+        {
+          "caller": "validateHistoriaClinicaPut",
+          "callee": "Array.isArray",
+          "lineNumber": 92
+        },
+        {
+          "caller": "validateHistoriaClinicaPut",
+          "callee": "SECTION_KEYS.has",
+          "lineNumber": 97
+        },
+        {
+          "caller": "validateHistoriaClinicaPut",
+          "callee": "META_KEYS.has",
+          "lineNumber": 97
+        },
+        {
+          "caller": "validateHistoriaClinicaPut",
+          "callee": "String(body.roomId || '').trim",
+          "lineNumber": 101
+        },
+        {
+          "caller": "validateHistoriaClinicaPut",
+          "callee": "String",
+          "lineNumber": 101
+        },
+        {
+          "caller": "validateHistoriaClinicaPut",
+          "callee": "isPlainObject",
+          "lineNumber": 105
+        },
+        {
+          "caller": "validateHistoriaClinicaPut",
+          "callee": "migrateLegacyHistoriaData",
+          "lineNumber": 108
+        },
+        {
+          "caller": "validateHistoriaClinicaPut",
+          "callee": "isPlainObject",
+          "lineNumber": 109
+        },
+        {
+          "caller": "validateHistoriaClinicaPut",
+          "callee": "Array.isArray",
+          "lineNumber": 112
+        },
+        {
+          "caller": "validateHistoriaClinicaPut",
+          "callee": "String",
+          "lineNumber": 123
+        },
+        {
+          "caller": "validateHistoriaClinicaPut",
+          "callee": "String",
+          "lineNumber": 124
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lan-squad/historia-clinica-validate.test.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 53,
+      "nonEmptyLines": 49,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lan-squad/host-clinical-meta.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 59,
+      "nonEmptyLines": 54,
+      "functions": [
+        {
+          "name": "metaFilePath",
+          "startLine": 5,
+          "endLine": 7,
+          "params": [
+            "userDataPath"
+          ]
+        },
+        {
+          "name": "readHostClinicalMeta",
+          "startLine": 13,
+          "endLine": 29,
+          "params": [
+            "userDataPath"
+          ]
+        },
+        {
+          "name": "writeHostClinicalMeta",
+          "startLine": 35,
+          "endLine": 47,
+          "params": [
+            "userDataPath",
+            "payload"
+          ]
+        },
+        {
+          "name": "ensureHostStartedAt",
+          "startLine": 50,
+          "endLine": 52,
+          "params": [
+            "userDataPath"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "metaFilePath",
+          "callee": "path.join",
+          "lineNumber": 6
+        },
+        {
+          "caller": "metaFilePath",
+          "callee": "String",
+          "lineNumber": 6
+        },
+        {
+          "caller": "readHostClinicalMeta",
+          "callee": "fs.readFileSync",
+          "lineNumber": 16
+        },
+        {
+          "caller": "readHostClinicalMeta",
+          "callee": "metaFilePath",
+          "lineNumber": 16
+        },
+        {
+          "caller": "readHostClinicalMeta",
+          "callee": "JSON.parse",
+          "lineNumber": 17
+        },
+        {
+          "caller": "readHostClinicalMeta",
+          "callee": "String(o.rank || 'R1').trim",
+          "lineNumber": 20
+        },
+        {
+          "caller": "readHostClinicalMeta",
+          "callee": "String",
+          "lineNumber": 20
+        },
+        {
+          "caller": "readHostClinicalMeta",
+          "callee": "Number",
+          "lineNumber": 23
+        },
+        {
+          "caller": "readHostClinicalMeta",
+          "callee": "String",
+          "lineNumber": 24
+        },
+        {
+          "caller": "writeHostClinicalMeta",
+          "callee": "readHostClinicalMeta",
+          "lineNumber": 36
+        },
+        {
+          "caller": "writeHostClinicalMeta",
+          "callee": "Date.now",
+          "lineNumber": 37
+        },
+        {
+          "caller": "writeHostClinicalMeta",
+          "callee": "String(payload?.rank || 'R1').trim",
+          "lineNumber": 39
+        },
+        {
+          "caller": "writeHostClinicalMeta",
+          "callee": "String",
+          "lineNumber": 39
+        },
+        {
+          "caller": "writeHostClinicalMeta",
+          "callee": "new Date().toISOString",
+          "lineNumber": 43
+        },
+        {
+          "caller": "writeHostClinicalMeta",
+          "callee": "fs.writeFileSync",
+          "lineNumber": 45
+        },
+        {
+          "caller": "writeHostClinicalMeta",
+          "callee": "metaFilePath",
+          "lineNumber": 45
+        },
+        {
+          "caller": "writeHostClinicalMeta",
+          "callee": "JSON.stringify",
+          "lineNumber": 45
+        },
+        {
+          "caller": "ensureHostStartedAt",
+          "callee": "writeHostClinicalMeta",
+          "lineNumber": 51
+        },
+        {
+          "caller": "ensureHostStartedAt",
+          "callee": "readHostClinicalMeta",
+          "lineNumber": 51
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lan-squad/host-clinical-meta.test.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 37,
+      "nonEmptyLines": 34,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lan-squad/host-patient-ownership.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 67,
+      "nonEmptyLines": 61,
+      "functions": [
+        {
+          "name": "resolveHostPatientOwnerClientId",
+          "startLine": 10,
+          "endLine": 17,
+          "params": [
+            "row"
+          ]
+        },
+        {
+          "name": "isHostPatientOwnedByOtherClient",
+          "startLine": 24,
+          "endLine": 29,
+          "params": [
+            "row",
+            "requesterClientId"
+          ]
+        },
+        {
+          "name": "shouldBlockHostPatientPurge",
+          "startLine": 37,
+          "endLine": 44,
+          "params": [
+            "row",
+            "requesterClientId",
+            "isProgramAdmin"
+          ]
+        },
+        {
+          "name": "evaluateHostPatientPurgeGuard",
+          "startLine": 52,
+          "endLine": 60,
+          "params": [
+            "store",
+            "patientId",
+            "clientId",
+            "isProgramAdmin"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "resolveHostPatientOwnerClientId",
+          "callee": "Array.isArray",
+          "lineNumber": 11
+        },
+        {
+          "caller": "resolveHostPatientOwnerClientId",
+          "callee": "audit.find",
+          "lineNumber": 13
+        },
+        {
+          "caller": "resolveHostPatientOwnerClientId",
+          "callee": "String(createEntry?.clientId || '').trim",
+          "lineNumber": 16
+        },
+        {
+          "caller": "resolveHostPatientOwnerClientId",
+          "callee": "String",
+          "lineNumber": 16
+        },
+        {
+          "caller": "isHostPatientOwnedByOtherClient",
+          "callee": "String(requesterClientId || '').trim",
+          "lineNumber": 25
+        },
+        {
+          "caller": "isHostPatientOwnedByOtherClient",
+          "callee": "String",
+          "lineNumber": 25
+        },
+        {
+          "caller": "isHostPatientOwnedByOtherClient",
+          "callee": "resolveHostPatientOwnerClientId",
+          "lineNumber": 26
+        },
+        {
+          "caller": "shouldBlockHostPatientPurge",
+          "callee": "resolveHostPatientOwnerClientId",
+          "lineNumber": 39
+        },
+        {
+          "caller": "shouldBlockHostPatientPurge",
+          "callee": "String(requesterClientId || '').trim",
+          "lineNumber": 41
+        },
+        {
+          "caller": "shouldBlockHostPatientPurge",
+          "callee": "String",
+          "lineNumber": 41
+        },
+        {
+          "caller": "shouldBlockHostPatientPurge",
+          "callee": "isHostPatientOwnedByOtherClient",
+          "lineNumber": 43
+        },
+        {
+          "caller": "evaluateHostPatientPurgeGuard",
+          "callee": "String(patientId || '').trim",
+          "lineNumber": 53
+        },
+        {
+          "caller": "evaluateHostPatientPurgeGuard",
+          "callee": "String",
+          "lineNumber": 53
+        },
+        {
+          "caller": "evaluateHostPatientPurgeGuard",
+          "callee": "store.getState().patients.find",
+          "lineNumber": 54
+        },
+        {
+          "caller": "evaluateHostPatientPurgeGuard",
+          "callee": "store.getState",
+          "lineNumber": 54
+        },
+        {
+          "caller": "evaluateHostPatientPurgeGuard",
+          "callee": "shouldBlockHostPatientPurge",
+          "lineNumber": 56
+        },
+        {
+          "caller": "evaluateHostPatientPurgeGuard",
+          "callee": "String(clientId || '').trim",
+          "lineNumber": 57
+        },
+        {
+          "caller": "evaluateHostPatientPurgeGuard",
+          "callee": "String",
+          "lineNumber": 57
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lan-squad/host-patient-ownership.test.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 55,
+      "nonEmptyLines": 46,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lan-squad/host-router.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 522,
+      "nonEmptyLines": 487,
+      "functions": [
+        {
+          "name": "resolvePurgeClientIdentity",
+          "startLine": 13,
+          "endLine": 30,
+          "params": [
+            "req",
+            "clientIdentityStore"
+          ]
+        },
+        {
+          "name": "startHeartbeat",
+          "startLine": 32,
+          "endLine": 54,
+          "params": [
+            "broadcastFn",
+            "getMetaFn",
+            "getExtrasFn"
+          ]
+        },
+        {
+          "name": "createLanRouter",
+          "startLine": 56,
+          "endLine": 520,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "resolvePurgeClientIdentity",
+          "callee": "String(req.get('x-client-token') || '').trim",
+          "lineNumber": 14
+        },
+        {
+          "caller": "resolvePurgeClientIdentity",
+          "callee": "String",
+          "lineNumber": 14
+        },
+        {
+          "caller": "resolvePurgeClientIdentity",
+          "callee": "req.get",
+          "lineNumber": 14
+        },
+        {
+          "caller": "resolvePurgeClientIdentity",
+          "callee": "clientIdentityStore.resolve",
+          "lineNumber": 17
+        },
+        {
+          "caller": "resolvePurgeClientIdentity",
+          "callee": "String(req.query.clientId || '').trim",
+          "lineNumber": 19
+        },
+        {
+          "caller": "resolvePurgeClientIdentity",
+          "callee": "String",
+          "lineNumber": 19
+        },
+        {
+          "caller": "resolvePurgeClientIdentity",
+          "callee": "console.warn",
+          "lineNumber": 21
+        },
+        {
+          "caller": "resolvePurgeClientIdentity",
+          "callee": "console.warn",
+          "lineNumber": 24
+        },
+        {
+          "caller": "startHeartbeat",
+          "callee": "setInterval",
+          "lineNumber": 34
+        },
+        {
+          "caller": "startHeartbeat",
+          "callee": "getMetaFn",
+          "lineNumber": 36
+        },
+        {
+          "caller": "startHeartbeat",
+          "callee": "getExtrasFn",
+          "lineNumber": 37
+        },
+        {
+          "caller": "startHeartbeat",
+          "callee": "broadcastFn",
+          "lineNumber": 39
+        },
+        {
+          "caller": "startHeartbeat",
+          "callee": "String",
+          "lineNumber": 41
+        },
+        {
+          "caller": "startHeartbeat",
+          "callee": "Number",
+          "lineNumber": 42
+        },
+        {
+          "caller": "startHeartbeat",
+          "callee": "Number",
+          "lineNumber": 43
+        },
+        {
+          "caller": "startHeartbeat",
+          "callee": "String",
+          "lineNumber": 44
+        },
+        {
+          "caller": "startHeartbeat",
+          "callee": "console.error",
+          "lineNumber": 50
+        },
+        {
+          "caller": "startHeartbeat",
+          "callee": "_heartbeatTimer.unref",
+          "lineNumber": 53
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "express.Router",
+          "lineNumber": 66
+        },
+        {
+          "caller": "getState",
+          "callee": "store.getState",
+          "lineNumber": 67
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "createDeltaResolver",
+          "lineNumber": 68
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "createCommandResolver",
+          "lineNumber": 69
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "createSyncScheduler",
+          "lineNumber": 70
+        },
+        {
+          "caller": "broadcastAll",
+          "callee": "broadcast",
+          "lineNumber": 73
+        },
+        {
+          "caller": "broadcastAll",
+          "callee": "sseBroadcast",
+          "lineNumber": 74
+        },
+        {
+          "caller": "broadcastLiveRevision",
+          "callee": "String(roomId || '').trim",
+          "lineNumber": 79
+        },
+        {
+          "caller": "broadcastLiveRevision",
+          "callee": "String",
+          "lineNumber": 79
+        },
+        {
+          "caller": "broadcastLiveRevision",
+          "callee": "broadcastAll",
+          "lineNumber": 81
+        },
+        {
+          "caller": "broadcastLiveRevision",
+          "callee": "encodeURIComponent",
+          "lineNumber": 81
+        },
+        {
+          "caller": "broadcastLiveRevision",
+          "callee": "Number",
+          "lineNumber": 84
+        },
+        {
+          "caller": "broadcastLiveRevision",
+          "callee": "String",
+          "lineNumber": 85
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "r.get",
+          "lineNumber": 89
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "getHostClinicalMeta",
+          "lineNumber": 92
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "getHealthExtras",
+          "lineNumber": 94
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.json",
+          "lineNumber": 95
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "String(meta.rank || 'R1').trim",
+          "lineNumber": 99
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "String",
+          "lineNumber": 99
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "String(extras.clientId || '').trim",
+          "lineNumber": 100
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "String",
+          "lineNumber": 100
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "Number",
+          "lineNumber": 101
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "Number",
+          "lineNumber": 102
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "r.use",
+          "lineNumber": 106
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "createBearerAuthMiddleware",
+          "lineNumber": 106
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "r.get",
+          "lineNumber": 108
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.json",
+          "lineNumber": 109
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "r.get",
+          "lineNumber": 112
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "getHostClinicalMeta",
+          "lineNumber": 115
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.json",
+          "lineNumber": 117
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "String(meta.rank || 'R1').trim",
+          "lineNumber": 118
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "String",
+          "lineNumber": 118
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "Number",
+          "lineNumber": 121
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "r.get",
+          "lineNumber": 125
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "store.getState().patients.filter",
+          "lineNumber": 126
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "store.getState",
+          "lineNumber": 126
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.json",
+          "lineNumber": 127
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "r.delete",
+          "lineNumber": 130
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "String(req.params.id || '').trim",
+          "lineNumber": 132
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "String",
+          "lineNumber": 132
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "String(req.query.registro || '').trim",
+          "lineNumber": 133
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "String",
+          "lineNumber": 133
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "resolvePurgeClientIdentity",
+          "lineNumber": 134
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.status(400).json",
+          "lineNumber": 135
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.status",
+          "lineNumber": 135
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "evaluateHostPatientPurgeGuard",
+          "lineNumber": 136
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "console.warn",
+          "lineNumber": 138
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.status(403).json",
+          "lineNumber": 139
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.status",
+          "lineNumber": 139
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "store.purgePatientFromHostCensus",
+          "lineNumber": 141
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.status(404).json",
+          "lineNumber": 142
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.status",
+          "lineNumber": 142
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "broadcast",
+          "lineNumber": 143
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.json",
+          "lineNumber": 144
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.status(400).json",
+          "lineNumber": 146
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.status",
+          "lineNumber": 146
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "r.put",
+          "lineNumber": 150
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "express.json",
+          "lineNumber": 150
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "Number",
+          "lineNumber": 155
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.status(400).json",
+          "lineNumber": 162
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.status",
+          "lineNumber": 162
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "resolver.applyMutation",
+          "lineNumber": 164
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "store.archiveHistoriaClinicaForPatient",
+          "lineNumber": 166
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "broadcast",
+          "lineNumber": 168
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.json",
+          "lineNumber": 169
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.status(409).json",
+          "lineNumber": 172
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.status",
+          "lineNumber": 172
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.status(400).json",
+          "lineNumber": 183
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.status",
+          "lineNumber": 183
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "r.get",
+          "lineNumber": 187
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.json",
+          "lineNumber": 188
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "store.listRooms",
+          "lineNumber": 188
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "r.post",
+          "lineNumber": 191
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "express.json",
+          "lineNumber": 191
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "store.createRoom",
+          "lineNumber": 192
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "broadcast",
+          "lineNumber": 193
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.status(201).json",
+          "lineNumber": 194
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.status",
+          "lineNumber": 194
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "r.patch",
+          "lineNumber": 197
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "express.json",
+          "lineNumber": 197
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "store.renameRoom",
+          "lineNumber": 198
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "broadcast",
+          "lineNumber": 199
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.json",
+          "lineNumber": 200
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "r.delete",
+          "lineNumber": 203
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "store.deleteRoom",
+          "lineNumber": 204
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "broadcast",
+          "lineNumber": 205
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.json",
+          "lineNumber": 206
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "r.get",
+          "lineNumber": 209
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "store.getRoomSyncBundleForApi",
+          "lineNumber": 212
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "store.getRoomSyncBundle",
+          "lineNumber": 213
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.status(404).json",
+          "lineNumber": 214
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.status",
+          "lineNumber": 214
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.json",
+          "lineNumber": 215
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "r.post",
+          "lineNumber": 218
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "express.json",
+          "lineNumber": 218
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "deltaResolver.applyDelta",
+          "lineNumber": 220
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.status(400).json",
+          "lineNumber": 224
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.status",
+          "lineNumber": 224
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.status(409).json",
+          "lineNumber": 225
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.status",
+          "lineNumber": 225
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "broadcast",
+          "lineNumber": 226
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "encodeURIComponent",
+          "lineNumber": 226
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "broadcastLiveRevision",
+          "lineNumber": 230
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "store.getRoomSyncBundle",
+          "lineNumber": 230
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.json",
+          "lineNumber": 231
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "r.get",
+          "lineNumber": 234
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "Number",
+          "lineNumber": 235
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "store.getRoomDeltaLog",
+          "lineNumber": 236
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.status(409).json",
+          "lineNumber": 238
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.status",
+          "lineNumber": 238
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.json",
+          "lineNumber": 243
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "r.post",
+          "lineNumber": 246
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "express.json",
+          "lineNumber": 246
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "commandResolver.applyCommand",
+          "lineNumber": 248
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.status(409).json",
+          "lineNumber": 252
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.status",
+          "lineNumber": 252
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.status(400).json",
+          "lineNumber": 253
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.status",
+          "lineNumber": 253
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "syncScheduler.scheduleMaterialize",
+          "lineNumber": 255
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "broadcast",
+          "lineNumber": 256
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "encodeURIComponent",
+          "lineNumber": 256
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "broadcastLiveRevision",
+          "lineNumber": 260
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.json",
+          "lineNumber": 262
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "r.post",
+          "lineNumber": 265
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "express.json",
+          "lineNumber": 265
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "String(body.reason || 'sync-now').slice",
+          "lineNumber": 267
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "String",
+          "lineNumber": 267
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "String(body.clientId || 'host').slice",
+          "lineNumber": 268
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "String",
+          "lineNumber": 268
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "syncScheduler.flush",
+          "lineNumber": 269
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.json",
+          "lineNumber": 270
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "r.get",
+          "lineNumber": 273
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "store.getRoomSyncBundle",
+          "lineNumber": 274
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.status(404).json",
+          "lineNumber": 275
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.status",
+          "lineNumber": 275
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.json",
+          "lineNumber": 278
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "Number",
+          "lineNumber": 278
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "r.put",
+          "lineNumber": 281
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "express.json",
+          "lineNumber": 281
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "store.putRoomClinicalOps",
+          "lineNumber": 284
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "broadcastLiveRevision",
+          "lineNumber": 285
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "onClinicalOpsMerged",
+          "lineNumber": 292
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "console.error",
+          "lineNumber": 294
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.json",
+          "lineNumber": 297
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.status(409).json",
+          "lineNumber": 300
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.status",
+          "lineNumber": 300
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.status(400).json",
+          "lineNumber": 307
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.status",
+          "lineNumber": 307
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "r.get",
+          "lineNumber": 311
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "String(req.query.roomId || '').trim",
+          "lineNumber": 312
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "String",
+          "lineNumber": 312
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.status(400).json",
+          "lineNumber": 313
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.status",
+          "lineNumber": 313
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "store.getEntity",
+          "lineNumber": 314
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.status(404).json",
+          "lineNumber": 320
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.status",
+          "lineNumber": 320
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.json",
+          "lineNumber": 321
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "r.put",
+          "lineNumber": 324
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "express.json",
+          "lineNumber": 324
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "validateHistoriaClinicaPut",
+          "lineNumber": 326
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.status(400).json",
+          "lineNumber": 332
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.status",
+          "lineNumber": 332
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "new Date().toISOString",
+          "lineNumber": 339
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "String",
+          "lineNumber": 340
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "Array.isArray",
+          "lineNumber": 346
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "store.putHistoriaClinicaQueued",
+          "lineNumber": 349
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "broadcast",
+          "lineNumber": 350
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.json",
+          "lineNumber": 351
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.status(409).json",
+          "lineNumber": 354
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.status",
+          "lineNumber": 354
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.status(400).json",
+          "lineNumber": 365
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.status",
+          "lineNumber": 365
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "r.post",
+          "lineNumber": 371
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "express.json",
+          "lineNumber": 371
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.status(400).json",
+          "lineNumber": 374
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.status",
+          "lineNumber": 374
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "store.upsertPatientLabHistorySet",
+          "lineNumber": 375
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "Number",
+          "lineNumber": 378
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.status(404).json",
+          "lineNumber": 381
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.status",
+          "lineNumber": 381
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "store.awaitDurableCommit",
+          "lineNumber": 382
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "broadcastLiveRevision",
+          "lineNumber": 383
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.json",
+          "lineNumber": 384
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.status(400).json",
+          "lineNumber": 391
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.status",
+          "lineNumber": 391
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "r.put",
+          "lineNumber": 395
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "express.json",
+          "lineNumber": 395
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.status(400).json",
+          "lineNumber": 398
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.status",
+          "lineNumber": 398
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "store.replacePatientNota",
+          "lineNumber": 399
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "Number",
+          "lineNumber": 402
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "Number",
+          "lineNumber": 403
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.status(404).json",
+          "lineNumber": 405
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.status",
+          "lineNumber": 405
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "store.awaitDurableCommit",
+          "lineNumber": 406
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "broadcastLiveRevision",
+          "lineNumber": 407
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.json",
+          "lineNumber": 408
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.status(400).json",
+          "lineNumber": 415
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.status",
+          "lineNumber": 415
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "r.put",
+          "lineNumber": 419
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "express.json",
+          "lineNumber": 419
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.status(400).json",
+          "lineNumber": 422
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.status",
+          "lineNumber": 422
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "store.replacePatientIndicaciones",
+          "lineNumber": 423
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "Number",
+          "lineNumber": 426
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "Number",
+          "lineNumber": 427
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.status(404).json",
+          "lineNumber": 429
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.status",
+          "lineNumber": 429
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "store.awaitDurableCommit",
+          "lineNumber": 430
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "broadcastLiveRevision",
+          "lineNumber": 431
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.json",
+          "lineNumber": 432
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.status(400).json",
+          "lineNumber": 439
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.status",
+          "lineNumber": 439
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "r.put",
+          "lineNumber": 443
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "express.json",
+          "lineNumber": 443
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "Array.isArray",
+          "lineNumber": 446
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.status(400).json",
+          "lineNumber": 447
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.status",
+          "lineNumber": 447
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "resolver.applyMutation",
+          "lineNumber": 449
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "Number",
+          "lineNumber": 452
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "String",
+          "lineNumber": 455
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.status(409).json",
+          "lineNumber": 457
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.status",
+          "lineNumber": 457
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "store.awaitDurableCommit",
+          "lineNumber": 458
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "store.findRoomForPatient",
+          "lineNumber": 460
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "broadcastLiveRevision",
+          "lineNumber": 462
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.json",
+          "lineNumber": 463
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.status(400).json",
+          "lineNumber": 465
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.status",
+          "lineNumber": 465
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "r.put",
+          "lineNumber": 469
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "express.json",
+          "lineNumber": 469
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "store.putRoomSyncBundle",
+          "lineNumber": 472
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "store.persistRoomBundleClinicalOpsToHostDb",
+          "lineNumber": 479
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "store.getRoomClinicalOpsForApi",
+          "lineNumber": 482
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "broadcastLiveRevision",
+          "lineNumber": 494
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "Array.isArray",
+          "lineNumber": 501
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.json",
+          "lineNumber": 504
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.status(409).json",
+          "lineNumber": 507
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.status",
+          "lineNumber": 507
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.status(400).json",
+          "lineNumber": 513
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "res.status",
+          "lineNumber": 513
+        },
+        {
+          "caller": "createLanRouter",
+          "callee": "startHeartbeat",
+          "lineNumber": 517
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 0,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lan-squad/host-router.test.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 1254,
+      "nonEmptyLines": 1205,
+      "functions": [
+        {
+          "name": "bearerHeaders",
+          "startLine": 15,
+          "endLine": 17,
+          "params": [
+            "token"
+          ]
+        },
+        {
+          "name": "mountLanRouter",
+          "startLine": 19,
+          "endLine": 42,
+          "params": [
+            "store",
+            "getHostClinicalMeta",
+            "getHealthExtras",
+            "clientIdentityStore"
+          ]
+        },
+        {
+          "name": "listenServer",
+          "startLine": 44,
+          "endLine": 48,
+          "params": [
+            "server"
+          ]
+        },
+        {
+          "name": "tearDownLanTest",
+          "startLine": 50,
+          "endLine": 56,
+          "params": []
+        },
+        {
+          "name": "seedOwnedHostPatient",
+          "startLine": 245,
+          "endLine": 257,
+          "params": [
+            "store",
+            "id",
+            "ownerClientId"
+          ]
+        },
+        {
+          "name": "setupLanDeltaRouterTest",
+          "startLine": 908,
+          "endLine": 921,
+          "params": [
+            "prefix"
+          ]
+        },
+        {
+          "name": "makeTypedMutationTestApp",
+          "startLine": 1053,
+          "endLine": 1085,
+          "params": []
+        },
+        {
+          "name": "doTypedMutationRequest",
+          "startLine": 1087,
+          "endLine": 1124,
+          "params": [
+            "app",
+            "method",
+            "path",
+            "body"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "mountLanRouter",
+          "callee": "createConflictResolver",
+          "lineNumber": 20
+        },
+        {
+          "caller": "mountLanRouter",
+          "callee": "express",
+          "lineNumber": 21
+        },
+        {
+          "caller": "mountLanRouter",
+          "callee": "app.use",
+          "lineNumber": 22
+        },
+        {
+          "caller": "mountLanRouter",
+          "callee": "createLanRouter",
+          "lineNumber": 24
+        },
+        {
+          "caller": "listenServer",
+          "callee": "server.listen",
+          "lineNumber": 46
+        },
+        {
+          "caller": "listenServer",
+          "callee": "reject",
+          "lineNumber": 46
+        },
+        {
+          "caller": "listenServer",
+          "callee": "resolve",
+          "lineNumber": 46
+        },
+        {
+          "caller": "tearDownLanTest",
+          "callee": "server.close",
+          "lineNumber": 51
+        },
+        {
+          "caller": "tearDownLanTest",
+          "callee": "store.flush",
+          "lineNumber": 53
+        },
+        {
+          "caller": "tearDownLanTest",
+          "callee": "fs.rmSync",
+          "lineNumber": 55
+        },
+        {
+          "caller": "seedOwnedHostPatient",
+          "callee": "store.upsertPatient",
+          "lineNumber": 246
+        },
+        {
+          "caller": "seedOwnedHostPatient",
+          "callee": "store.getState().patients.find",
+          "lineNumber": 247
+        },
+        {
+          "caller": "seedOwnedHostPatient",
+          "callee": "store.getState",
+          "lineNumber": 247
+        },
+        {
+          "caller": "setupLanDeltaRouterTest",
+          "callee": "fs.mkdtempSync",
+          "lineNumber": 909
+        },
+        {
+          "caller": "setupLanDeltaRouterTest",
+          "callee": "path.join",
+          "lineNumber": 909
+        },
+        {
+          "caller": "setupLanDeltaRouterTest",
+          "callee": "os.tmpdir",
+          "lineNumber": 909
+        },
+        {
+          "caller": "setupLanDeltaRouterTest",
+          "callee": "path.join",
+          "lineNumber": 910
+        },
+        {
+          "caller": "setupLanDeltaRouterTest",
+          "callee": "Date.now",
+          "lineNumber": 911
+        },
+        {
+          "caller": "setupLanDeltaRouterTest",
+          "callee": "'-'.repeat",
+          "lineNumber": 911
+        },
+        {
+          "caller": "setupLanDeltaRouterTest",
+          "callee": "createHostStore",
+          "lineNumber": 912
+        },
+        {
+          "caller": "setupLanDeltaRouterTest",
+          "callee": "store.createRoom",
+          "lineNumber": 913
+        },
+        {
+          "caller": "setupLanDeltaRouterTest",
+          "callee": "store.putRoomSyncBundle",
+          "lineNumber": 914
+        },
+        {
+          "caller": "setupLanDeltaRouterTest",
+          "callee": "mountLanRouter",
+          "lineNumber": 915
+        },
+        {
+          "caller": "setupLanDeltaRouterTest",
+          "callee": "http.createServer",
+          "lineNumber": 916
+        },
+        {
+          "caller": "setupLanDeltaRouterTest",
+          "callee": "listenServer",
+          "lineNumber": 917
+        },
+        {
+          "caller": "setupLanDeltaRouterTest",
+          "callee": "server.address",
+          "lineNumber": 918
+        },
+        {
+          "caller": "makeTypedMutationTestApp",
+          "callee": "express",
+          "lineNumber": 1054
+        },
+        {
+          "caller": "makeTypedMutationTestApp",
+          "callee": "app.use",
+          "lineNumber": 1055
+        },
+        {
+          "caller": "makeTypedMutationTestApp",
+          "callee": "express.json",
+          "lineNumber": 1055
+        },
+        {
+          "caller": "makeTypedMutationTestApp",
+          "callee": "hashTeamCode",
+          "lineNumber": 1059
+        },
+        {
+          "caller": "makeTypedMutationTestApp",
+          "callee": "createLanRouter",
+          "lineNumber": 1076
+        },
+        {
+          "caller": "makeTypedMutationTestApp",
+          "callee": "app.use",
+          "lineNumber": 1083
+        },
+        {
+          "caller": "doTypedMutationRequest",
+          "callee": "http.createServer",
+          "lineNumber": 1089
+        },
+        {
+          "caller": "doTypedMutationRequest",
+          "callee": "server.listen",
+          "lineNumber": 1090
+        },
+        {
+          "caller": "doTypedMutationRequest",
+          "callee": "server.address",
+          "lineNumber": 1091
+        },
+        {
+          "caller": "doTypedMutationRequest",
+          "callee": "JSON.stringify",
+          "lineNumber": 1092
+        },
+        {
+          "caller": "doTypedMutationRequest",
+          "callee": "http.request",
+          "lineNumber": 1093
+        },
+        {
+          "caller": "doTypedMutationRequest",
+          "callee": "Buffer.byteLength",
+          "lineNumber": 1101
+        },
+        {
+          "caller": "doTypedMutationRequest",
+          "callee": "res.on",
+          "lineNumber": 1107
+        },
+        {
+          "caller": "doTypedMutationRequest",
+          "callee": "res.on",
+          "lineNumber": 1110
+        },
+        {
+          "caller": "doTypedMutationRequest",
+          "callee": "server.close",
+          "lineNumber": 1111
+        },
+        {
+          "caller": "doTypedMutationRequest",
+          "callee": "resolve",
+          "lineNumber": 1113
+        },
+        {
+          "caller": "doTypedMutationRequest",
+          "callee": "JSON.parse",
+          "lineNumber": 1113
+        },
+        {
+          "caller": "doTypedMutationRequest",
+          "callee": "resolve",
+          "lineNumber": 1115
+        },
+        {
+          "caller": "doTypedMutationRequest",
+          "callee": "req.write",
+          "lineNumber": 1120
+        },
+        {
+          "caller": "doTypedMutationRequest",
+          "callee": "req.end",
+          "lineNumber": 1121
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 0,
+        "functionCount": 8,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lan-squad/host-state-cache.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 21,
+      "nonEmptyLines": 19,
+      "functions": [
+        {
+          "name": "createHostStateCache",
+          "startLine": 3,
+          "endLine": 19,
+          "params": []
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lan-squad/host-store-clinical-ops-db.test.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 567,
+      "nonEmptyLines": 520,
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lan-squad/host-store.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 1752,
+      "nonEmptyLines": 1652,
+      "functions": [
+        {
+          "name": "getGlobalClinicalDbManager",
+          "startLine": 60,
+          "endLine": 63,
+          "params": []
+        },
+        {
+          "name": "clinicalOpsCacheStale",
+          "startLine": 65,
+          "endLine": 71,
+          "params": [
+            "cached",
+            "exported"
+          ]
+        },
+        {
+          "name": "refreshBundleClinicalOpsCacheIfStale",
+          "startLine": 73,
+          "endLine": 88,
+          "params": [
+            "bundle"
+          ]
+        },
+        {
+          "name": "mergeBundleClinicalOpsIntoHostDb",
+          "startLine": 90,
+          "endLine": 104,
+          "params": [
+            "snapshot"
+          ]
+        },
+        {
+          "name": "nowIso",
+          "startLine": 106,
+          "endLine": 108,
+          "params": []
+        },
+        {
+          "name": "newId",
+          "startLine": 110,
+          "endLine": 112,
+          "params": [
+            "prefix"
+          ]
+        },
+        {
+          "name": "atomicWriteJson",
+          "startLine": 114,
+          "endLine": 120,
+          "params": [
+            "filePath",
+            "obj"
+          ]
+        },
+        {
+          "name": "readStateSync",
+          "startLine": 122,
+          "endLine": 132,
+          "params": [
+            "filePath"
+          ]
+        },
+        {
+          "name": "defaultState",
+          "startLine": 134,
+          "endLine": 142,
+          "params": [
+            "teamCodeHash"
+          ]
+        },
+        {
+          "name": "assertDbUnlocked",
+          "startLine": 144,
+          "endLine": 150,
+          "params": [
+            "dbManager"
+          ]
+        },
+        {
+          "name": "normalizeLoadedState",
+          "startLine": 152,
+          "endLine": 168,
+          "params": [
+            "s"
+          ]
+        },
+        {
+          "name": "alignTeamCodeHash",
+          "startLine": 170,
+          "endLine": 174,
+          "params": [
+            "s",
+            "teamCodeHash"
+          ]
+        },
+        {
+          "name": "persistAlignedTeamCodeHash",
+          "startLine": 176,
+          "endLine": 219,
+          "params": []
+        },
+        {
+          "name": "readPersistModeOverride",
+          "startLine": 222,
+          "endLine": 235,
+          "params": []
+        },
+        {
+          "name": "createHostStore",
+          "startLine": 237,
+          "endLine": 1750,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getGlobalClinicalDbManager",
+          "callee": "getLanDbManager",
+          "lineNumber": 61
+        },
+        {
+          "caller": "getGlobalClinicalDbManager",
+          "callee": "mgr.isUnlocked",
+          "lineNumber": 62
+        },
+        {
+          "caller": "clinicalOpsCacheStale",
+          "callee": "String",
+          "lineNumber": 68
+        },
+        {
+          "caller": "clinicalOpsCacheStale",
+          "callee": "String",
+          "lineNumber": 69
+        },
+        {
+          "caller": "refreshBundleClinicalOpsCacheIfStale",
+          "callee": "getGlobalClinicalDbManager",
+          "lineNumber": 74
+        },
+        {
+          "caller": "refreshBundleClinicalOpsCacheIfStale",
+          "callee": "mgr.getDb",
+          "lineNumber": 76
+        },
+        {
+          "caller": "refreshBundleClinicalOpsCacheIfStale",
+          "callee": "exportClinicalOpsSnapshot",
+          "lineNumber": 78
+        },
+        {
+          "caller": "refreshBundleClinicalOpsCacheIfStale",
+          "callee": "clinicalOpsCacheStale",
+          "lineNumber": 79
+        },
+        {
+          "caller": "refreshBundleClinicalOpsCacheIfStale",
+          "callee": "mergeClinicalOpsSnapshotsData",
+          "lineNumber": 87
+        },
+        {
+          "caller": "mergeBundleClinicalOpsIntoHostDb",
+          "callee": "getGlobalClinicalDbManager",
+          "lineNumber": 91
+        },
+        {
+          "caller": "mergeBundleClinicalOpsIntoHostDb",
+          "callee": "mgr.withTransaction",
+          "lineNumber": 94
+        },
+        {
+          "caller": "mergeBundleClinicalOpsIntoHostDb",
+          "callee": "mergeClinicalOpsSnapshot",
+          "lineNumber": 95
+        },
+        {
+          "caller": "mergeBundleClinicalOpsIntoHostDb",
+          "callee": "exportClinicalOpsSnapshot",
+          "lineNumber": 96
+        },
+        {
+          "caller": "mergeBundleClinicalOpsIntoHostDb",
+          "callee": "audit",
+          "lineNumber": 97
+        },
+        {
+          "caller": "nowIso",
+          "callee": "new Date().toISOString",
+          "lineNumber": 107
+        },
+        {
+          "caller": "newId",
+          "callee": "Date.now().toString",
+          "lineNumber": 111
+        },
+        {
+          "caller": "newId",
+          "callee": "Date.now",
+          "lineNumber": 111
+        },
+        {
+          "caller": "newId",
+          "callee": "crypto.randomBytes(6).toString",
+          "lineNumber": 111
+        },
+        {
+          "caller": "newId",
+          "callee": "crypto.randomBytes",
+          "lineNumber": 111
+        },
+        {
+          "caller": "atomicWriteJson",
+          "callee": "path.dirname",
+          "lineNumber": 115
+        },
+        {
+          "caller": "atomicWriteJson",
+          "callee": "fs.mkdirSync",
+          "lineNumber": 116
+        },
+        {
+          "caller": "atomicWriteJson",
+          "callee": "Date.now",
+          "lineNumber": 117
+        },
+        {
+          "caller": "atomicWriteJson",
+          "callee": "fs.writeFileSync",
+          "lineNumber": 118
+        },
+        {
+          "caller": "atomicWriteJson",
+          "callee": "JSON.stringify",
+          "lineNumber": 118
+        },
+        {
+          "caller": "atomicWriteJson",
+          "callee": "fs.renameSync",
+          "lineNumber": 119
+        },
+        {
+          "caller": "readStateSync",
+          "callee": "fs.readFileSync",
+          "lineNumber": 124
+        },
+        {
+          "caller": "readStateSync",
+          "callee": "JSON.parse",
+          "lineNumber": 125
+        },
+        {
+          "caller": "assertDbUnlocked",
+          "callee": "dbManager.isUnlocked",
+          "lineNumber": 145
+        },
+        {
+          "caller": "normalizeLoadedState",
+          "callee": "migrateHostStateIfNeeded",
+          "lineNumber": 153
+        },
+        {
+          "caller": "normalizeLoadedState",
+          "callee": "Array.isArray",
+          "lineNumber": 154
+        },
+        {
+          "caller": "normalizeLoadedState",
+          "callee": "Array.isArray",
+          "lineNumber": 155
+        },
+        {
+          "caller": "normalizeLoadedState",
+          "callee": "Object.keys",
+          "lineNumber": 160
+        },
+        {
+          "caller": "persistAlignedTeamCodeHash",
+          "callee": "useDb",
+          "lineNumber": 190
+        },
+        {
+          "caller": "persistAlignedTeamCodeHash",
+          "callee": "resolvePersistModeFn",
+          "lineNumber": 191
+        },
+        {
+          "caller": "persistAlignedTeamCodeHash",
+          "callee": "markDirtyFn",
+          "lineNumber": 192
+        },
+        {
+          "caller": "persistAlignedTeamCodeHash",
+          "callee": "queue.enqueue(() => flushCacheToDiskFn()).catch",
+          "lineNumber": 193
+        },
+        {
+          "caller": "persistAlignedTeamCodeHash",
+          "callee": "queue.enqueue",
+          "lineNumber": 193
+        },
+        {
+          "caller": "persistAlignedTeamCodeHash",
+          "callee": "flushCacheToDiskFn",
+          "lineNumber": 193
+        },
+        {
+          "caller": "persistAlignedTeamCodeHash",
+          "callee": "reportPersistFailure",
+          "lineNumber": 193
+        },
+        {
+          "caller": "persistAlignedTeamCodeHash",
+          "callee": "queue.enqueue(() => persistCacheToDb()).catch",
+          "lineNumber": 196
+        },
+        {
+          "caller": "persistAlignedTeamCodeHash",
+          "callee": "queue.enqueue",
+          "lineNumber": 196
+        },
+        {
+          "caller": "persistAlignedTeamCodeHash",
+          "callee": "persistCacheToDb",
+          "lineNumber": 196
+        },
+        {
+          "caller": "persistAlignedTeamCodeHash",
+          "callee": "reportPersistFailure",
+          "lineNumber": 196
+        },
+        {
+          "caller": "persistAlignedTeamCodeHash",
+          "callee": "isShardedLayout",
+          "lineNumber": 199
+        },
+        {
+          "caller": "persistAlignedTeamCodeHash",
+          "callee": "markDirtyFn",
+          "lineNumber": 200
+        },
+        {
+          "caller": "persistAlignedTeamCodeHash",
+          "callee": "readStateSync",
+          "lineNumber": 201
+        },
+        {
+          "caller": "persistAlignedTeamCodeHash",
+          "callee": "path.join",
+          "lineNumber": 201
+        },
+        {
+          "caller": "persistAlignedTeamCodeHash",
+          "callee": "queue.enqueue(() =>\n      writeJsonAtomic(path.join(stateDir, 'meta.json'), {\n        ...existing,\n        version: 2,\n        teamCodeHash: migrated.teamCodeHash,\n        patients: migrated.patients,\n        rooms: migrated.rooms,\n        roomRevisions: existing.roomRevisions || {},\n      })\n    ).catch",
+          "lineNumber": 202
+        },
+        {
+          "caller": "persistAlignedTeamCodeHash",
+          "callee": "queue.enqueue",
+          "lineNumber": 202
+        },
+        {
+          "caller": "persistAlignedTeamCodeHash",
+          "callee": "writeJsonAtomic",
+          "lineNumber": 203
+        },
+        {
+          "caller": "persistAlignedTeamCodeHash",
+          "callee": "path.join",
+          "lineNumber": 203
+        },
+        {
+          "caller": "persistAlignedTeamCodeHash",
+          "callee": "reportPersistFailure",
+          "lineNumber": 211
+        },
+        {
+          "caller": "persistAlignedTeamCodeHash",
+          "callee": "atomicWriteJson",
+          "lineNumber": 216
+        },
+        {
+          "caller": "persistAlignedTeamCodeHash",
+          "callee": "queue.enqueue(() => writeJsonAtomic(filePath, migrated)).catch",
+          "lineNumber": 218
+        },
+        {
+          "caller": "persistAlignedTeamCodeHash",
+          "callee": "queue.enqueue",
+          "lineNumber": 218
+        },
+        {
+          "caller": "persistAlignedTeamCodeHash",
+          "callee": "writeJsonAtomic",
+          "lineNumber": 218
+        },
+        {
+          "caller": "persistAlignedTeamCodeHash",
+          "callee": "reportPersistFailure",
+          "lineNumber": 218
+        },
+        {
+          "caller": "readPersistModeOverride",
+          "callee": "String(process.env.R_PLUS_LAN_PERSIST_MODE || '').trim().toLowerCase",
+          "lineNumber": 223
+        },
+        {
+          "caller": "readPersistModeOverride",
+          "callee": "String(process.env.R_PLUS_LAN_PERSIST_MODE || '').trim",
+          "lineNumber": 223
+        },
+        {
+          "caller": "readPersistModeOverride",
+          "callee": "String",
+          "lineNumber": 223
+        },
+        {
+          "caller": "createHostStore",
+          "callee": "hashTeamCode",
+          "lineNumber": 244
+        },
+        {
+          "caller": "createHostStore",
+          "callee": "path.join",
+          "lineNumber": 245
+        },
+        {
+          "caller": "createHostStore",
+          "callee": "path.dirname",
+          "lineNumber": 245
+        },
+        {
+          "caller": "createHostStore",
+          "callee": "createHostStateCache",
+          "lineNumber": 246
+        },
+        {
+          "caller": "createHostStore",
+          "callee": "createWriteQueue",
+          "lineNumber": 247
+        },
+        {
+          "caller": "reportPersistFailure",
+          "callee": "new Date().toISOString",
+          "lineNumber": 250
+        },
+        {
+          "caller": "reportPersistFailure",
+          "callee": "console.error",
+          "lineNumber": 251
+        },
+        {
+          "caller": "createHostStore",
+          "callee": "createCommitBarrier",
+          "lineNumber": 253
+        },
+        {
+          "caller": "createHostStore",
+          "callee": "reportPersistFailure",
+          "lineNumber": 255
+        },
+        {
+          "caller": "resolvePersistMode",
+          "callee": "readPersistModeOverride",
+          "lineNumber": 267
+        },
+        {
+          "caller": "resolvePersistMode",
+          "callee": "useDb",
+          "lineNumber": 269
+        },
+        {
+          "caller": "resolvePersistMode",
+          "callee": "dbManager.isUnlocked",
+          "lineNumber": 269
+        },
+        {
+          "caller": "resolvePersistMode",
+          "callee": "dbManager.getDb",
+          "lineNumber": 270
+        },
+        {
+          "caller": "resolvePersistMode",
+          "callee": "dbHasLanHostV15",
+          "lineNumber": 271
+        },
+        {
+          "caller": "resolvePersistMode",
+          "callee": "isShardedLayout",
+          "lineNumber": 274
+        },
+        {
+          "caller": "markDirty",
+          "callee": "dirtyRooms.add",
+          "lineNumber": 279
+        },
+        {
+          "caller": "markDirty",
+          "callee": "String",
+          "lineNumber": 279
+        },
+        {
+          "caller": "labSidecarKey",
+          "callee": "String",
+          "lineNumber": 284
+        },
+        {
+          "caller": "labSidecarKey",
+          "callee": "String",
+          "lineNumber": 284
+        },
+        {
+          "caller": "markDirtyLab",
+          "callee": "dirtyLabSidecars.add",
+          "lineNumber": 288
+        },
+        {
+          "caller": "markDirtyLab",
+          "callee": "labSidecarKey",
+          "lineNumber": 288
+        },
+        {
+          "caller": "getLabSidecar",
+          "callee": "labSidecarKey",
+          "lineNumber": 292
+        },
+        {
+          "caller": "getLabSidecar",
+          "callee": "labSidecarCache.has",
+          "lineNumber": 293
+        },
+        {
+          "caller": "getLabSidecar",
+          "callee": "labSidecarCache.get",
+          "lineNumber": 293
+        },
+        {
+          "caller": "getLabSidecar",
+          "callee": "readLabSidecarSync",
+          "lineNumber": 294
+        },
+        {
+          "caller": "getLabSidecar",
+          "callee": "emptySidecar",
+          "lineNumber": 294
+        },
+        {
+          "caller": "getLabSidecar",
+          "callee": "labSidecarCache.set",
+          "lineNumber": 295
+        },
+        {
+          "caller": "setLabSidecar",
+          "callee": "labSidecarKey",
+          "lineNumber": 300
+        },
+        {
+          "caller": "setLabSidecar",
+          "callee": "labSidecarCache.set",
+          "lineNumber": 301
+        },
+        {
+          "caller": "setLabSidecar",
+          "callee": "markDirtyLab",
+          "lineNumber": 302
+        },
+        {
+          "caller": "stripEntryLabsToSidecar",
+          "callee": "entryPatientId",
+          "lineNumber": 307
+        },
+        {
+          "caller": "stripEntryLabsToSidecar",
+          "callee": "Array.isArray",
+          "lineNumber": 309
+        },
+        {
+          "caller": "stripEntryLabsToSidecar",
+          "callee": "sidecarFromLabHistory",
+          "lineNumber": 311
+        },
+        {
+          "caller": "stripEntryLabsToSidecar",
+          "callee": "setLabSidecar",
+          "lineNumber": 312
+        },
+        {
+          "caller": "stripEntryLabsToSidecar",
+          "callee": "labMetaFromSidecar",
+          "lineNumber": 313
+        },
+        {
+          "caller": "stripRoomBundleLabsToSidecars",
+          "callee": "Array.isArray",
+          "lineNumber": 322
+        },
+        {
+          "caller": "stripRoomBundleLabsToSidecars",
+          "callee": "stripEntryLabsToSidecar",
+          "lineNumber": 325
+        },
+        {
+          "caller": "persistCacheToDb",
+          "callee": "assertDbUnlocked",
+          "lineNumber": 331
+        },
+        {
+          "caller": "persistCacheToDb",
+          "callee": "cache.get",
+          "lineNumber": 332
+        },
+        {
+          "caller": "persistCacheToDb",
+          "callee": "resolvePersistMode",
+          "lineNumber": 333
+        },
+        {
+          "caller": "persistCacheToDb",
+          "callee": "JSON.stringify",
+          "lineNumber": 335
+        },
+        {
+          "caller": "persistCacheToDb",
+          "callee": "dbManager.withTransaction",
+          "lineNumber": 336
+        },
+        {
+          "caller": "persistCacheToDb",
+          "callee": "Date.now",
+          "lineNumber": 337
+        },
+        {
+          "caller": "persistCacheToDb",
+          "callee": "persistFullCacheSql",
+          "lineNumber": 339
+        },
+        {
+          "caller": "persistCacheToDb",
+          "callee": "writeHostState",
+          "lineNumber": 341
+        },
+        {
+          "caller": "persistCacheToDb",
+          "callee": "Date.now",
+          "lineNumber": 343
+        },
+        {
+          "caller": "persistCacheToDb",
+          "callee": "audit",
+          "lineNumber": 344
+        },
+        {
+          "caller": "persistCacheToDb",
+          "callee": "getClientId",
+          "lineNumber": 344
+        },
+        {
+          "caller": "flushCacheToDisk",
+          "callee": "cache.isLoaded",
+          "lineNumber": 354
+        },
+        {
+          "caller": "flushCacheToDisk",
+          "callee": "Date.now",
+          "lineNumber": 355
+        },
+        {
+          "caller": "flushCacheToDisk",
+          "callee": "cache.get",
+          "lineNumber": 356
+        },
+        {
+          "caller": "flushCacheToDisk",
+          "callee": "resolvePersistMode",
+          "lineNumber": 357
+        },
+        {
+          "caller": "flushCacheToDisk",
+          "callee": "dbManager.withTransaction",
+          "lineNumber": 362
+        },
+        {
+          "caller": "flushCacheToDisk",
+          "callee": "Date.now",
+          "lineNumber": 363
+        },
+        {
+          "caller": "flushCacheToDisk",
+          "callee": "commitDirtyShardsSql",
+          "lineNumber": 364
+        },
+        {
+          "caller": "flushCacheToDisk",
+          "callee": "Date.now",
+          "lineNumber": 371
+        },
+        {
+          "caller": "flushCacheToDisk",
+          "callee": "audit",
+          "lineNumber": 372
+        },
+        {
+          "caller": "flushCacheToDisk",
+          "callee": "getClientId",
+          "lineNumber": 372
+        },
+        {
+          "caller": "flushCacheToDisk",
+          "callee": "dirtyRooms.clear",
+          "lineNumber": 382
+        },
+        {
+          "caller": "flushCacheToDisk",
+          "callee": "dirtyLabSidecars.clear",
+          "lineNumber": 383
+        },
+        {
+          "caller": "flushCacheToDisk",
+          "callee": "Date.now",
+          "lineNumber": 385
+        },
+        {
+          "caller": "flushCacheToDisk",
+          "callee": "JSON.stringify",
+          "lineNumber": 393
+        },
+        {
+          "caller": "flushCacheToDisk",
+          "callee": "persistCacheToDb",
+          "lineNumber": 395
+        },
+        {
+          "caller": "flushCacheToDisk",
+          "callee": "Date.now",
+          "lineNumber": 397
+        },
+        {
+          "caller": "flushCacheToDisk",
+          "callee": "isShardedLayout",
+          "lineNumber": 405
+        },
+        {
+          "caller": "flushCacheToDisk",
+          "callee": "commitDirtyShards",
+          "lineNumber": 406
+        },
+        {
+          "caller": "flushCacheToDisk",
+          "callee": "dirtyRooms.clear",
+          "lineNumber": 415
+        },
+        {
+          "caller": "flushCacheToDisk",
+          "callee": "dirtyLabSidecars.clear",
+          "lineNumber": 416
+        },
+        {
+          "caller": "flushCacheToDisk",
+          "callee": "Date.now",
+          "lineNumber": 418
+        },
+        {
+          "caller": "flushCacheToDisk",
+          "callee": "writeJsonAtomic",
+          "lineNumber": 426
+        },
+        {
+          "caller": "flushCacheToDisk",
+          "callee": "Date.now",
+          "lineNumber": 428
+        },
+        {
+          "caller": "schedulePersist",
+          "callee": "commitBarrier.scheduleFlush",
+          "lineNumber": 437
+        },
+        {
+          "caller": "schedulePersist",
+          "callee": "queue.enqueue",
+          "lineNumber": 437
+        },
+        {
+          "caller": "schedulePersist",
+          "callee": "flushCacheToDisk",
+          "lineNumber": 437
+        },
+        {
+          "caller": "schedulePersist",
+          "callee": "p.catch",
+          "lineNumber": 438
+        },
+        {
+          "caller": "schedulePersist",
+          "callee": "reportPersistFailure",
+          "lineNumber": 438
+        },
+        {
+          "caller": "awaitDurableCommit",
+          "callee": "schedulePersist",
+          "lineNumber": 447
+        },
+        {
+          "caller": "flushCacheNow",
+          "callee": "flushCacheToDisk",
+          "lineNumber": 452
+        },
+        {
+          "caller": "flushCacheNow",
+          "callee": "queue.enqueue",
+          "lineNumber": 453
+        },
+        {
+          "caller": "flushCacheNow",
+          "callee": "flushCacheToDisk",
+          "lineNumber": 453
+        },
+        {
+          "caller": "flushCacheNow",
+          "callee": "commitBarrier.flushNow",
+          "lineNumber": 454
+        },
+        {
+          "caller": "persistSnapshot",
+          "callee": "useDb",
+          "lineNumber": 462
+        },
+        {
+          "caller": "persistSnapshot",
+          "callee": "cache.replace",
+          "lineNumber": 463
+        },
+        {
+          "caller": "persistSnapshot",
+          "callee": "resolvePersistMode",
+          "lineNumber": 464
+        },
+        {
+          "caller": "persistSnapshot",
+          "callee": "markDirty",
+          "lineNumber": 466
+        },
+        {
+          "caller": "persistSnapshot",
+          "callee": "Object.keys",
+          "lineNumber": 467
+        },
+        {
+          "caller": "persistSnapshot",
+          "callee": "markDirty",
+          "lineNumber": 467
+        },
+        {
+          "caller": "persistSnapshot",
+          "callee": "flushCacheToDisk",
+          "lineNumber": 468
+        },
+        {
+          "caller": "persistSnapshot",
+          "callee": "persistCacheToDb",
+          "lineNumber": 471
+        },
+        {
+          "caller": "persistSnapshot",
+          "callee": "isShardedLayout",
+          "lineNumber": 474
+        },
+        {
+          "caller": "persistSnapshot",
+          "callee": "cache.replace",
+          "lineNumber": 475
+        },
+        {
+          "caller": "persistSnapshot",
+          "callee": "markDirty",
+          "lineNumber": 476
+        },
+        {
+          "caller": "persistSnapshot",
+          "callee": "Object.keys",
+          "lineNumber": 477
+        },
+        {
+          "caller": "persistSnapshot",
+          "callee": "markDirty",
+          "lineNumber": 477
+        },
+        {
+          "caller": "persistSnapshot",
+          "callee": "commitDirtyShards",
+          "lineNumber": 478
+        },
+        {
+          "caller": "persistSnapshot",
+          "callee": "Object.keys",
+          "lineNumber": 482
+        },
+        {
+          "caller": "persistSnapshot",
+          "callee": "dirtyRooms.clear",
+          "lineNumber": 487
+        },
+        {
+          "caller": "persistSnapshot",
+          "callee": "dirtyLabSidecars.clear",
+          "lineNumber": 488
+        },
+        {
+          "caller": "persistSnapshot",
+          "callee": "writeJsonAtomic",
+          "lineNumber": 491
+        },
+        {
+          "caller": "loadJsonHostState",
+          "callee": "isShardedLayout",
+          "lineNumber": 495
+        },
+        {
+          "caller": "loadJsonHostState",
+          "callee": "loadShardedState",
+          "lineNumber": 496
+        },
+        {
+          "caller": "loadJsonHostState",
+          "callee": "initEmptyShardedState",
+          "lineNumber": 498
+        },
+        {
+          "caller": "loadJsonHostState",
+          "callee": "cache.replace",
+          "lineNumber": 500
+        },
+        {
+          "caller": "loadJsonHostState",
+          "callee": "repairShardsOnBoot",
+          "lineNumber": 501
+        },
+        {
+          "caller": "loadJsonHostState",
+          "callee": "loadShardedState",
+          "lineNumber": 504
+        },
+        {
+          "caller": "loadJsonHostState",
+          "callee": "cache.replace",
+          "lineNumber": 505
+        },
+        {
+          "caller": "loadJsonHostState",
+          "callee": "migrateLabSidecarsOnBoot",
+          "lineNumber": 507
+        },
+        {
+          "caller": "loadJsonHostState",
+          "callee": "repairLabSidecarsOnBoot",
+          "lineNumber": 508
+        },
+        {
+          "caller": "loadJsonHostState",
+          "callee": "loadShardedState",
+          "lineNumber": 511
+        },
+        {
+          "caller": "loadJsonHostState",
+          "callee": "cache.replace",
+          "lineNumber": 512
+        },
+        {
+          "caller": "loadJsonHostState",
+          "callee": "fs.existsSync",
+          "lineNumber": 516
+        },
+        {
+          "caller": "loadJsonHostState",
+          "callee": "migrateMonolithToShards",
+          "lineNumber": 517
+        },
+        {
+          "caller": "loadJsonHostState",
+          "callee": "loadShardedState",
+          "lineNumber": 522
+        },
+        {
+          "caller": "loadJsonHostState",
+          "callee": "cache.replace",
+          "lineNumber": 523
+        },
+        {
+          "caller": "loadJsonHostState",
+          "callee": "initEmptyShardedState",
+          "lineNumber": 526
+        },
+        {
+          "caller": "loadJsonHostState",
+          "callee": "cache.replace",
+          "lineNumber": 527
+        },
+        {
+          "caller": "loadSqlV3HostState",
+          "callee": "assertDbUnlocked",
+          "lineNumber": 532
+        },
+        {
+          "caller": "loadSqlV3HostState",
+          "callee": "isShardedLayout",
+          "lineNumber": 533
+        },
+        {
+          "caller": "loadSqlV3HostState",
+          "callee": "sqlMetaNeedsImport",
+          "lineNumber": 533
+        },
+        {
+          "caller": "loadSqlV3HostState",
+          "callee": "dbManager.getDb",
+          "lineNumber": 533
+        },
+        {
+          "caller": "loadSqlV3HostState",
+          "callee": "backupJsonShardsForSqlImport",
+          "lineNumber": 534
+        },
+        {
+          "caller": "loadSqlV3HostState",
+          "callee": "dbManager.withTransaction",
+          "lineNumber": 535
+        },
+        {
+          "caller": "loadSqlV3HostState",
+          "callee": "importFromJsonShards",
+          "lineNumber": 536
+        },
+        {
+          "caller": "loadSqlV3HostState",
+          "callee": "dbManager.withTransaction",
+          "lineNumber": 539
+        },
+        {
+          "caller": "loadSqlV3HostState",
+          "callee": "loadCacheFromSql",
+          "lineNumber": 539
+        },
+        {
+          "caller": "loadSqlV3HostState",
+          "callee": "defaultState",
+          "lineNumber": 541
+        },
+        {
+          "caller": "loadSqlV3HostState",
+          "callee": "persistSnapshot",
+          "lineNumber": 542
+        },
+        {
+          "caller": "loadSqlV3HostState",
+          "callee": "cache.replace",
+          "lineNumber": 543
+        },
+        {
+          "caller": "loadSqlV3HostState",
+          "callee": "dbManager.withTransaction",
+          "lineNumber": 546
+        },
+        {
+          "caller": "loadSqlV3HostState",
+          "callee": "loadLabSidecarsIntoCache",
+          "lineNumber": 547
+        },
+        {
+          "caller": "loadFromDisk",
+          "callee": "useDb",
+          "lineNumber": 554
+        },
+        {
+          "caller": "loadFromDisk",
+          "callee": "assertDbUnlocked",
+          "lineNumber": 555
+        },
+        {
+          "caller": "loadFromDisk",
+          "callee": "resolvePersistMode",
+          "lineNumber": 556
+        },
+        {
+          "caller": "loadFromDisk",
+          "callee": "loadSqlV3HostState",
+          "lineNumber": 557
+        },
+        {
+          "caller": "loadFromDisk",
+          "callee": "alignTeamCodeHash",
+          "lineNumber": 558
+        },
+        {
+          "caller": "loadFromDisk",
+          "callee": "normalizeLoadedState",
+          "lineNumber": 559
+        },
+        {
+          "caller": "loadFromDisk",
+          "callee": "markDirty",
+          "lineNumber": 561
+        },
+        {
+          "caller": "loadFromDisk",
+          "callee": "flushCacheNow",
+          "lineNumber": 562
+        },
+        {
+          "caller": "loadFromDisk",
+          "callee": "cache.replace",
+          "lineNumber": 564
+        },
+        {
+          "caller": "loadFromDisk",
+          "callee": "dbManager.withTransaction",
+          "lineNumber": 567
+        },
+        {
+          "caller": "loadFromDisk",
+          "callee": "readHostState",
+          "lineNumber": 567
+        },
+        {
+          "caller": "loadFromDisk",
+          "callee": "loadJsonHostState",
+          "lineNumber": 569
+        },
+        {
+          "caller": "loadFromDisk",
+          "callee": "alignTeamCodeHash",
+          "lineNumber": 570
+        },
+        {
+          "caller": "loadFromDisk",
+          "callee": "markDirty",
+          "lineNumber": 572
+        },
+        {
+          "caller": "loadFromDisk",
+          "callee": "flushCacheNow",
+          "lineNumber": 573
+        },
+        {
+          "caller": "loadFromDisk",
+          "callee": "defaultState",
+          "lineNumber": 578
+        },
+        {
+          "caller": "loadFromDisk",
+          "callee": "persistSnapshot",
+          "lineNumber": 579
+        },
+        {
+          "caller": "loadFromDisk",
+          "callee": "cache.replace",
+          "lineNumber": 580
+        },
+        {
+          "caller": "loadFromDisk",
+          "callee": "alignTeamCodeHash",
+          "lineNumber": 583
+        },
+        {
+          "caller": "loadFromDisk",
+          "callee": "Number",
+          "lineNumber": 584
+        },
+        {
+          "caller": "loadFromDisk",
+          "callee": "normalizeLoadedState",
+          "lineNumber": 585
+        },
+        {
+          "caller": "loadFromDisk",
+          "callee": "Number",
+          "lineNumber": 586
+        },
+        {
+          "caller": "loadFromDisk",
+          "callee": "persistSnapshot",
+          "lineNumber": 588
+        },
+        {
+          "caller": "loadFromDisk",
+          "callee": "useDb",
+          "lineNumber": 589
+        },
+        {
+          "caller": "loadFromDisk",
+          "callee": "persistSnapshot",
+          "lineNumber": 590
+        },
+        {
+          "caller": "loadFromDisk",
+          "callee": "persistSnapshot",
+          "lineNumber": 592
+        },
+        {
+          "caller": "loadFromDisk",
+          "callee": "cache.replace",
+          "lineNumber": 594
+        },
+        {
+          "caller": "ensureLoadedSync",
+          "callee": "cache.isLoaded",
+          "lineNumber": 599
+        },
+        {
+          "caller": "ensureLoadedSync",
+          "callee": "cache.get",
+          "lineNumber": 599
+        },
+        {
+          "caller": "ensureLoadedSync",
+          "callee": "useDb",
+          "lineNumber": 601
+        },
+        {
+          "caller": "ensureLoadedSync",
+          "callee": "assertDbUnlocked",
+          "lineNumber": 602
+        },
+        {
+          "caller": "ensureLoadedSync",
+          "callee": "resolvePersistMode",
+          "lineNumber": 603
+        },
+        {
+          "caller": "ensureLoadedSync",
+          "callee": "isShardedLayout",
+          "lineNumber": 604
+        },
+        {
+          "caller": "ensureLoadedSync",
+          "callee": "sqlMetaNeedsImport",
+          "lineNumber": 604
+        },
+        {
+          "caller": "ensureLoadedSync",
+          "callee": "dbManager.getDb",
+          "lineNumber": 604
+        },
+        {
+          "caller": "ensureLoadedSync",
+          "callee": "loadFromDisk",
+          "lineNumber": 605
+        },
+        {
+          "caller": "ensureLoadedSync",
+          "callee": "cache.isLoaded",
+          "lineNumber": 606
+        },
+        {
+          "caller": "ensureLoadedSync",
+          "callee": "cache.get",
+          "lineNumber": 606
+        },
+        {
+          "caller": "ensureLoadedSync",
+          "callee": "loadCacheFromSql",
+          "lineNumber": 608
+        },
+        {
+          "caller": "ensureLoadedSync",
+          "callee": "dbManager.getDb",
+          "lineNumber": 608
+        },
+        {
+          "caller": "ensureLoadedSync",
+          "callee": "defaultState",
+          "lineNumber": 610
+        },
+        {
+          "caller": "ensureLoadedSync",
+          "callee": "cache.replace",
+          "lineNumber": 611
+        },
+        {
+          "caller": "ensureLoadedSync",
+          "callee": "markDirty",
+          "lineNumber": 612
+        },
+        {
+          "caller": "ensureLoadedSync",
+          "callee": "queue.enqueue(() => flushCacheToDisk()).catch",
+          "lineNumber": 613
+        },
+        {
+          "caller": "ensureLoadedSync",
+          "callee": "queue.enqueue",
+          "lineNumber": 613
+        },
+        {
+          "caller": "ensureLoadedSync",
+          "callee": "flushCacheToDisk",
+          "lineNumber": 613
+        },
+        {
+          "caller": "ensureLoadedSync",
+          "callee": "reportPersistFailure",
+          "lineNumber": 613
+        },
+        {
+          "caller": "ensureLoadedSync",
+          "callee": "loadLabSidecarsIntoCache",
+          "lineNumber": 616
+        },
+        {
+          "caller": "ensureLoadedSync",
+          "callee": "dbManager.getDb",
+          "lineNumber": 616
+        },
+        {
+          "caller": "ensureLoadedSync",
+          "callee": "readHostState",
+          "lineNumber": 618
+        },
+        {
+          "caller": "ensureLoadedSync",
+          "callee": "dbManager.getDb",
+          "lineNumber": 618
+        },
+        {
+          "caller": "ensureLoadedSync",
+          "callee": "isShardedLayout",
+          "lineNumber": 620
+        },
+        {
+          "caller": "ensureLoadedSync",
+          "callee": "loadShardedStateSync",
+          "lineNumber": 621
+        },
+        {
+          "caller": "ensureLoadedSync",
+          "callee": "fs.existsSync",
+          "lineNumber": 622
+        },
+        {
+          "caller": "ensureLoadedSync",
+          "callee": "readStateSync",
+          "lineNumber": 623
+        },
+        {
+          "caller": "ensureLoadedSync",
+          "callee": "defaultState",
+          "lineNumber": 628
+        },
+        {
+          "caller": "ensureLoadedSync",
+          "callee": "useDb",
+          "lineNumber": 629
+        },
+        {
+          "caller": "ensureLoadedSync",
+          "callee": "cache.replace",
+          "lineNumber": 630
+        },
+        {
+          "caller": "ensureLoadedSync",
+          "callee": "queue.enqueue(() => persistCacheToDb()).catch",
+          "lineNumber": 631
+        },
+        {
+          "caller": "ensureLoadedSync",
+          "callee": "queue.enqueue",
+          "lineNumber": 631
+        },
+        {
+          "caller": "ensureLoadedSync",
+          "callee": "persistCacheToDb",
+          "lineNumber": 631
+        },
+        {
+          "caller": "ensureLoadedSync",
+          "callee": "reportPersistFailure",
+          "lineNumber": 631
+        },
+        {
+          "caller": "ensureLoadedSync",
+          "callee": "isShardedLayout",
+          "lineNumber": 634
+        },
+        {
+          "caller": "ensureLoadedSync",
+          "callee": "fs.existsSync",
+          "lineNumber": 634
+        },
+        {
+          "caller": "ensureLoadedSync",
+          "callee": "initEmptyShardedStateSync",
+          "lineNumber": 635
+        },
+        {
+          "caller": "ensureLoadedSync",
+          "callee": "atomicWriteJson",
+          "lineNumber": 637
+        },
+        {
+          "caller": "ensureLoadedSync",
+          "callee": "cache.replace",
+          "lineNumber": 639
+        },
+        {
+          "caller": "ensureLoadedSync",
+          "callee": "alignTeamCodeHash",
+          "lineNumber": 642
+        },
+        {
+          "caller": "ensureLoadedSync",
+          "callee": "Number",
+          "lineNumber": 643
+        },
+        {
+          "caller": "ensureLoadedSync",
+          "callee": "normalizeLoadedState",
+          "lineNumber": 644
+        },
+        {
+          "caller": "ensureLoadedSync",
+          "callee": "cache.replace",
+          "lineNumber": 645
+        },
+        {
+          "caller": "ensureLoadedSync",
+          "callee": "useDb",
+          "lineNumber": 647
+        },
+        {
+          "caller": "ensureLoadedSync",
+          "callee": "isShardedLayout",
+          "lineNumber": 647
+        },
+        {
+          "caller": "ensureLoadedSync",
+          "callee": "markDirty",
+          "lineNumber": 648
+        },
+        {
+          "caller": "ensureLoadedSync",
+          "callee": "queue.enqueue(() => flushCacheToDisk()).catch",
+          "lineNumber": 649
+        },
+        {
+          "caller": "ensureLoadedSync",
+          "callee": "queue.enqueue",
+          "lineNumber": 649
+        },
+        {
+          "caller": "ensureLoadedSync",
+          "callee": "flushCacheToDisk",
+          "lineNumber": 649
+        },
+        {
+          "caller": "ensureLoadedSync",
+          "callee": "reportPersistFailure",
+          "lineNumber": 649
+        },
+        {
+          "caller": "ensureLoadedSync",
+          "callee": "persistAlignedTeamCodeHash",
+          "lineNumber": 651
+        },
+        {
+          "caller": "ensureLoadedSync",
+          "callee": "Number",
+          "lineNumber": 665
+        },
+        {
+          "caller": "ensureLoadedSync",
+          "callee": "useDb",
+          "lineNumber": 666
+        },
+        {
+          "caller": "ensureLoadedSync",
+          "callee": "resolvePersistMode",
+          "lineNumber": 667
+        },
+        {
+          "caller": "ensureLoadedSync",
+          "callee": "markDirty",
+          "lineNumber": 668
+        },
+        {
+          "caller": "ensureLoadedSync",
+          "callee": "queue.enqueue(() => flushCacheToDisk()).catch",
+          "lineNumber": 669
+        },
+        {
+          "caller": "ensureLoadedSync",
+          "callee": "queue.enqueue",
+          "lineNumber": 669
+        },
+        {
+          "caller": "ensureLoadedSync",
+          "callee": "flushCacheToDisk",
+          "lineNumber": 669
+        },
+        {
+          "caller": "ensureLoadedSync",
+          "callee": "reportPersistFailure",
+          "lineNumber": 669
+        },
+        {
+          "caller": "ensureLoadedSync",
+          "callee": "queue.enqueue(() => persistCacheToDb()).catch",
+          "lineNumber": 671
+        },
+        {
+          "caller": "ensureLoadedSync",
+          "callee": "queue.enqueue",
+          "lineNumber": 671
+        },
+        {
+          "caller": "ensureLoadedSync",
+          "callee": "persistCacheToDb",
+          "lineNumber": 671
+        },
+        {
+          "caller": "ensureLoadedSync",
+          "callee": "reportPersistFailure",
+          "lineNumber": 671
+        },
+        {
+          "caller": "ensureLoadedSync",
+          "callee": "queue.enqueue(() => writeJsonAtomic(filePath, migrated)).catch",
+          "lineNumber": 674
+        },
+        {
+          "caller": "ensureLoadedSync",
+          "callee": "queue.enqueue",
+          "lineNumber": 674
+        },
+        {
+          "caller": "ensureLoadedSync",
+          "callee": "writeJsonAtomic",
+          "lineNumber": 674
+        },
+        {
+          "caller": "ensureLoadedSync",
+          "callee": "reportPersistFailure",
+          "lineNumber": 674
+        },
+        {
+          "caller": "ready",
+          "callee": "loadFromDisk().catch",
+          "lineNumber": 681
+        },
+        {
+          "caller": "ready",
+          "callee": "loadFromDisk",
+          "lineNumber": 681
+        },
+        {
+          "caller": "flush",
+          "callee": "flushCacheNow",
+          "lineNumber": 689
+        },
+        {
+          "caller": "getState",
+          "callee": "ensureLoadedSync",
+          "lineNumber": 693
+        },
+        {
+          "caller": "upsertPatient",
+          "callee": "ensureLoadedSync",
+          "lineNumber": 697
+        },
+        {
+          "caller": "upsertPatient",
+          "callee": "state.patients.findIndex",
+          "lineNumber": 698
+        },
+        {
+          "caller": "upsertPatient",
+          "callee": "nowIso",
+          "lineNumber": 699
+        },
+        {
+          "caller": "upsertPatient",
+          "callee": "appendAudit",
+          "lineNumber": 702
+        },
+        {
+          "caller": "upsertPatient",
+          "callee": "state.patients.push",
+          "lineNumber": 706
+        },
+        {
+          "caller": "upsertPatient",
+          "callee": "markDirty",
+          "lineNumber": 707
+        },
+        {
+          "caller": "upsertPatient",
+          "callee": "schedulePersist",
+          "lineNumber": 708
+        },
+        {
+          "caller": "upsertPatient",
+          "callee": "Number",
+          "lineNumber": 718
+        },
+        {
+          "caller": "upsertPatient",
+          "callee": "Number",
+          "lineNumber": 718
+        },
+        {
+          "caller": "upsertPatient",
+          "callee": "Array.isArray",
+          "lineNumber": 724
+        },
+        {
+          "caller": "upsertPatient",
+          "callee": "Number",
+          "lineNumber": 725
+        },
+        {
+          "caller": "upsertPatient",
+          "callee": "appendAudit",
+          "lineNumber": 726
+        },
+        {
+          "caller": "upsertPatient",
+          "callee": "markDirty",
+          "lineNumber": 731
+        },
+        {
+          "caller": "upsertPatient",
+          "callee": "schedulePersist",
+          "lineNumber": 732
+        },
+        {
+          "caller": "listRooms",
+          "callee": "ensureLoadedSync().rooms.slice",
+          "lineNumber": 737
+        },
+        {
+          "caller": "listRooms",
+          "callee": "ensureLoadedSync",
+          "lineNumber": 737
+        },
+        {
+          "caller": "createRoom",
+          "callee": "ensureLoadedSync",
+          "lineNumber": 741
+        },
+        {
+          "caller": "createRoom",
+          "callee": "nowIso",
+          "lineNumber": 742
+        },
+        {
+          "caller": "createRoom",
+          "callee": "newId",
+          "lineNumber": 744
+        },
+        {
+          "caller": "createRoom",
+          "callee": "String",
+          "lineNumber": 745
+        },
+        {
+          "caller": "createRoom",
+          "callee": "appendAudit",
+          "lineNumber": 750
+        },
+        {
+          "caller": "createRoom",
+          "callee": "state.rooms.push",
+          "lineNumber": 754
+        },
+        {
+          "caller": "createRoom",
+          "callee": "markDirty",
+          "lineNumber": 755
+        },
+        {
+          "caller": "createRoom",
+          "callee": "schedulePersist",
+          "lineNumber": 756
+        },
+        {
+          "caller": "renameRoom",
+          "callee": "ensureLoadedSync",
+          "lineNumber": 761
+        },
+        {
+          "caller": "renameRoom",
+          "callee": "state.rooms.find",
+          "lineNumber": 762
+        },
+        {
+          "caller": "renameRoom",
+          "callee": "String",
+          "lineNumber": 764
+        },
+        {
+          "caller": "renameRoom",
+          "callee": "Number",
+          "lineNumber": 765
+        },
+        {
+          "caller": "renameRoom",
+          "callee": "Array.isArray",
+          "lineNumber": 766
+        },
+        {
+          "caller": "renameRoom",
+          "callee": "appendAudit",
+          "lineNumber": 767
+        },
+        {
+          "caller": "renameRoom",
+          "callee": "nowIso",
+          "lineNumber": 768
+        },
+        {
+          "caller": "renameRoom",
+          "callee": "markDirty",
+          "lineNumber": 771
+        },
+        {
+          "caller": "renameRoom",
+          "callee": "schedulePersist",
+          "lineNumber": 772
+        },
+        {
+          "caller": "deleteRoom",
+          "callee": "ensureLoadedSync",
+          "lineNumber": 777
+        },
+        {
+          "caller": "deleteRoom",
+          "callee": "String",
+          "lineNumber": 778
+        },
+        {
+          "caller": "deleteRoom",
+          "callee": "state.rooms.filter",
+          "lineNumber": 779
+        },
+        {
+          "caller": "deleteRoom",
+          "callee": "markDirty",
+          "lineNumber": 782
+        },
+        {
+          "caller": "deleteRoom",
+          "callee": "markDirty",
+          "lineNumber": 784
+        },
+        {
+          "caller": "deleteRoom",
+          "callee": "schedulePersist",
+          "lineNumber": 785
+        },
+        {
+          "caller": "getRoomSyncBundle",
+          "callee": "ensureLoadedSync",
+          "lineNumber": 789
+        },
+        {
+          "caller": "getRoomSyncBundle",
+          "callee": "String",
+          "lineNumber": 790
+        },
+        {
+          "caller": "getRoomSyncBundle",
+          "callee": "refreshBundleClinicalOpsCacheIfStale",
+          "lineNumber": 793
+        },
+        {
+          "caller": "assembleBundleLabsForApi",
+          "callee": "String",
+          "lineNumber": 799
+        },
+        {
+          "caller": "assembleBundleLabsForApi",
+          "callee": "(bundle.entries || []).map",
+          "lineNumber": 800
+        },
+        {
+          "caller": "assembleBundleLabsForApi",
+          "callee": "entryPatientId",
+          "lineNumber": 802
+        },
+        {
+          "caller": "assembleBundleLabsForApi",
+          "callee": "getLabSidecar",
+          "lineNumber": 805
+        },
+        {
+          "caller": "assembleBundleLabsForApi",
+          "callee": "assembleLabHistory",
+          "lineNumber": 807
+        },
+        {
+          "caller": "assembleBundleLabsForApi",
+          "callee": "Array.isArray",
+          "lineNumber": 808
+        },
+        {
+          "caller": "getRoomSyncBundleForApi",
+          "callee": "getRoomSyncBundle",
+          "lineNumber": 818
+        },
+        {
+          "caller": "getRoomSyncBundleForApi",
+          "callee": "assembleBundleLabsForApi",
+          "lineNumber": 820
+        },
+        {
+          "caller": "getRoomClinicalOpsForApi",
+          "callee": "getRoomSyncBundle",
+          "lineNumber": 825
+        },
+        {
+          "caller": "ensureRoomRecord",
+          "callee": "String",
+          "lineNumber": 835
+        },
+        {
+          "caller": "ensureRoomRecord",
+          "callee": "Array.isArray",
+          "lineNumber": 837
+        },
+        {
+          "caller": "ensureRoomRecord",
+          "callee": "rooms.some",
+          "lineNumber": 838
+        },
+        {
+          "caller": "ensureRoomRecord",
+          "callee": "rooms.push",
+          "lineNumber": 839
+        },
+        {
+          "caller": "ensureRoomRecord",
+          "callee": "String(displayName || 'Sala en vivo').trim",
+          "lineNumber": 841
+        },
+        {
+          "caller": "ensureRoomRecord",
+          "callee": "String",
+          "lineNumber": 841
+        },
+        {
+          "caller": "ensureRoomRecord",
+          "callee": "nowIso",
+          "lineNumber": 842
+        },
+        {
+          "caller": "findRoomForPatient",
+          "callee": "String(patientId || '').trim",
+          "lineNumber": 851
+        },
+        {
+          "caller": "findRoomForPatient",
+          "callee": "String",
+          "lineNumber": 851
+        },
+        {
+          "caller": "findRoomForPatient",
+          "callee": "Object.entries",
+          "lineNumber": 853
+        },
+        {
+          "caller": "findRoomForPatient",
+          "callee": "Array.isArray",
+          "lineNumber": 854
+        },
+        {
+          "caller": "findRoomForPatient",
+          "callee": "bundle.entries.some",
+          "lineNumber": 855
+        },
+        {
+          "caller": "findBundleEntry",
+          "callee": "String(patientId || '').trim",
+          "lineNumber": 867
+        },
+        {
+          "caller": "findBundleEntry",
+          "callee": "String",
+          "lineNumber": 867
+        },
+        {
+          "caller": "findBundleEntry",
+          "callee": "(bundle?.entries || []).find",
+          "lineNumber": 868
+        },
+        {
+          "caller": "upsertPatientLabHistorySet",
+          "callee": "ensureLoadedSync",
+          "lineNumber": 877
+        },
+        {
+          "caller": "upsertPatientLabHistorySet",
+          "callee": "findRoomForPatient",
+          "lineNumber": 878
+        },
+        {
+          "caller": "upsertPatientLabHistorySet",
+          "callee": "findBundleEntry",
+          "lineNumber": 882
+        },
+        {
+          "caller": "upsertPatientLabHistorySet",
+          "callee": "String(patientId || '').trim",
+          "lineNumber": 885
+        },
+        {
+          "caller": "upsertPatientLabHistorySet",
+          "callee": "String",
+          "lineNumber": 885
+        },
+        {
+          "caller": "upsertPatientLabHistorySet",
+          "callee": "getLabSidecar",
+          "lineNumber": 886
+        },
+        {
+          "caller": "upsertPatientLabHistorySet",
+          "callee": "Number",
+          "lineNumber": 889
+        },
+        {
+          "caller": "upsertPatientLabHistorySet",
+          "callee": "Number",
+          "lineNumber": 893
+        },
+        {
+          "caller": "upsertPatientLabHistorySet",
+          "callee": "Number",
+          "lineNumber": 895
+        },
+        {
+          "caller": "upsertPatientLabHistorySet",
+          "callee": "upsertLabSidecar",
+          "lineNumber": 900
+        },
+        {
+          "caller": "upsertPatientLabHistorySet",
+          "callee": "setLabSidecar",
+          "lineNumber": 901
+        },
+        {
+          "caller": "upsertPatientLabHistorySet",
+          "callee": "labMetaFromSidecar",
+          "lineNumber": 902
+        },
+        {
+          "caller": "upsertPatientLabHistorySet",
+          "callee": "Number",
+          "lineNumber": 908
+        },
+        {
+          "caller": "upsertPatientLabHistorySet",
+          "callee": "nowIso",
+          "lineNumber": 909
+        },
+        {
+          "caller": "upsertPatientLabHistorySet",
+          "callee": "Number",
+          "lineNumber": 910
+        },
+        {
+          "caller": "upsertPatientLabHistorySet",
+          "callee": "Array.isArray",
+          "lineNumber": 913
+        },
+        {
+          "caller": "upsertPatientLabHistorySet",
+          "callee": "bundle.deltaLog.push",
+          "lineNumber": 914
+        },
+        {
+          "caller": "upsertPatientLabHistorySet",
+          "callee": "String",
+          "lineNumber": 918
+        },
+        {
+          "caller": "upsertPatientLabHistorySet",
+          "callee": "String",
+          "lineNumber": 924
+        },
+        {
+          "caller": "upsertPatientLabHistorySet",
+          "callee": "Number",
+          "lineNumber": 925
+        },
+        {
+          "caller": "upsertPatientLabHistorySet",
+          "callee": "bundle.deltaLog.shift",
+          "lineNumber": 930
+        },
+        {
+          "caller": "upsertPatientLabHistorySet",
+          "callee": "markDirty",
+          "lineNumber": 932
+        },
+        {
+          "caller": "upsertPatientLabHistorySet",
+          "callee": "schedulePersist",
+          "lineNumber": 933
+        },
+        {
+          "caller": "replacePatientNota",
+          "callee": "ensureLoadedSync",
+          "lineNumber": 938
+        },
+        {
+          "caller": "replacePatientNota",
+          "callee": "findRoomForPatient",
+          "lineNumber": 939
+        },
+        {
+          "caller": "replacePatientNota",
+          "callee": "findBundleEntry",
+          "lineNumber": 942
+        },
+        {
+          "caller": "replacePatientNota",
+          "callee": "Number",
+          "lineNumber": 944
+        },
+        {
+          "caller": "replacePatientNota",
+          "callee": "Number",
+          "lineNumber": 947
+        },
+        {
+          "caller": "replacePatientNota",
+          "callee": "Number",
+          "lineNumber": 955
+        },
+        {
+          "caller": "replacePatientNota",
+          "callee": "Number",
+          "lineNumber": 964
+        },
+        {
+          "caller": "replacePatientNota",
+          "callee": "markDirty",
+          "lineNumber": 965
+        },
+        {
+          "caller": "replacePatientNota",
+          "callee": "schedulePersist",
+          "lineNumber": 966
+        },
+        {
+          "caller": "replacePatientIndicaciones",
+          "callee": "ensureLoadedSync",
+          "lineNumber": 978
+        },
+        {
+          "caller": "replacePatientIndicaciones",
+          "callee": "findRoomForPatient",
+          "lineNumber": 979
+        },
+        {
+          "caller": "replacePatientIndicaciones",
+          "callee": "findBundleEntry",
+          "lineNumber": 982
+        },
+        {
+          "caller": "replacePatientIndicaciones",
+          "callee": "Number",
+          "lineNumber": 984
+        },
+        {
+          "caller": "replacePatientIndicaciones",
+          "callee": "Number",
+          "lineNumber": 987
+        },
+        {
+          "caller": "replacePatientIndicaciones",
+          "callee": "Number",
+          "lineNumber": 995
+        },
+        {
+          "caller": "replacePatientIndicaciones",
+          "callee": "Number",
+          "lineNumber": 1004
+        },
+        {
+          "caller": "replacePatientIndicaciones",
+          "callee": "markDirty",
+          "lineNumber": 1005
+        },
+        {
+          "caller": "replacePatientIndicaciones",
+          "callee": "schedulePersist",
+          "lineNumber": 1006
+        },
+        {
+          "caller": "putRoomSyncBundle",
+          "callee": "ensureLoadedSync",
+          "lineNumber": 1018
+        },
+        {
+          "caller": "putRoomSyncBundle",
+          "callee": "String",
+          "lineNumber": 1019
+        },
+        {
+          "caller": "putRoomSyncBundle",
+          "callee": "ensureRoomRecord",
+          "lineNumber": 1022
+        },
+        {
+          "caller": "putRoomSyncBundle",
+          "callee": "Number",
+          "lineNumber": 1031
+        },
+        {
+          "caller": "putRoomSyncBundle",
+          "callee": "Number",
+          "lineNumber": 1048
+        },
+        {
+          "caller": "putRoomSyncBundle",
+          "callee": "Array.isArray",
+          "lineNumber": 1053
+        },
+        {
+          "caller": "putRoomSyncBundle",
+          "callee": "Array.isArray",
+          "lineNumber": 1055
+        },
+        {
+          "caller": "putRoomSyncBundle",
+          "callee": "mergeBundlePut",
+          "lineNumber": 1065
+        },
+        {
+          "caller": "putRoomSyncBundle",
+          "callee": "stripRoomBundleLabsToSidecars",
+          "lineNumber": 1079
+        },
+        {
+          "caller": "putRoomSyncBundle",
+          "callee": "markDirty",
+          "lineNumber": 1080
+        },
+        {
+          "caller": "putRoomSyncBundle",
+          "callee": "markDirty",
+          "lineNumber": 1082
+        },
+        {
+          "caller": "putRoomSyncBundle",
+          "callee": "schedulePersist",
+          "lineNumber": 1083
+        },
+        {
+          "caller": "putRoomSyncBundle",
+          "callee": "Array.isArray",
+          "lineNumber": 1086
+        },
+        {
+          "caller": "persistRoomBundleClinicalOpsToHostDb",
+          "callee": "ensureLoadedSync",
+          "lineNumber": 1097
+        },
+        {
+          "caller": "persistRoomBundleClinicalOpsToHostDb",
+          "callee": "String",
+          "lineNumber": 1098
+        },
+        {
+          "caller": "persistRoomBundleClinicalOpsToHostDb",
+          "callee": "mergeBundleClinicalOpsIntoHostDb",
+          "lineNumber": 1102
+        },
+        {
+          "caller": "persistRoomBundleClinicalOpsToHostDb",
+          "callee": "markDirty",
+          "lineNumber": 1108
+        },
+        {
+          "caller": "persistRoomBundleClinicalOpsToHostDb",
+          "callee": "schedulePersist",
+          "lineNumber": 1109
+        },
+        {
+          "caller": "putRoomClinicalOps",
+          "callee": "ensureLoadedSync",
+          "lineNumber": 1115
+        },
+        {
+          "caller": "putRoomClinicalOps",
+          "callee": "String",
+          "lineNumber": 1116
+        },
+        {
+          "caller": "putRoomClinicalOps",
+          "callee": "ensureRoomRecord",
+          "lineNumber": 1119
+        },
+        {
+          "caller": "putRoomClinicalOps",
+          "callee": "ensureRoomBundle",
+          "lineNumber": 1120
+        },
+        {
+          "caller": "putRoomClinicalOps",
+          "callee": "String",
+          "lineNumber": 1121
+        },
+        {
+          "caller": "putRoomClinicalOps",
+          "callee": "Number",
+          "lineNumber": 1122
+        },
+        {
+          "caller": "putRoomClinicalOps",
+          "callee": "Number",
+          "lineNumber": 1123
+        },
+        {
+          "caller": "putRoomClinicalOps",
+          "callee": "refreshBundleClinicalOpsCacheIfStale",
+          "lineNumber": 1128
+        },
+        {
+          "caller": "putRoomClinicalOps",
+          "callee": "lwwAppliedKeys.push",
+          "lineNumber": 1129
+        },
+        {
+          "caller": "putRoomClinicalOps",
+          "callee": "mergeClinicalOpsSnapshotsData",
+          "lineNumber": 1140
+        },
+        {
+          "caller": "putRoomClinicalOps",
+          "callee": "mergeBundleClinicalOpsIntoHostDb",
+          "lineNumber": 1145
+        },
+        {
+          "caller": "putRoomClinicalOps",
+          "callee": "Number",
+          "lineNumber": 1155
+        },
+        {
+          "caller": "putRoomClinicalOps",
+          "callee": "nowIso",
+          "lineNumber": 1157
+        },
+        {
+          "caller": "putRoomClinicalOps",
+          "callee": "Array.isArray",
+          "lineNumber": 1159
+        },
+        {
+          "caller": "putRoomClinicalOps",
+          "callee": "appendAudit",
+          "lineNumber": 1160
+        },
+        {
+          "caller": "putRoomClinicalOps",
+          "callee": "markDirty",
+          "lineNumber": 1171
+        },
+        {
+          "caller": "putRoomClinicalOps",
+          "callee": "schedulePersist",
+          "lineNumber": 1172
+        },
+        {
+          "caller": "ensureRoomBundle",
+          "callee": "String",
+          "lineNumber": 1182
+        },
+        {
+          "caller": "ensureRoomBundle",
+          "callee": "nowIso",
+          "lineNumber": 1192
+        },
+        {
+          "caller": "ensureRoomBundle",
+          "callee": "Array.isArray",
+          "lineNumber": 1206
+        },
+        {
+          "caller": "ensureRoomBundle",
+          "callee": "Number.isFinite",
+          "lineNumber": 1207
+        },
+        {
+          "caller": "ensureRoomBundle",
+          "callee": "Number",
+          "lineNumber": 1207
+        },
+        {
+          "caller": "getEntity",
+          "callee": "String",
+          "lineNumber": 1212
+        },
+        {
+          "caller": "getEntity",
+          "callee": "String",
+          "lineNumber": 1213
+        },
+        {
+          "caller": "getEntity",
+          "callee": "ensureLoadedSync",
+          "lineNumber": 1215
+        },
+        {
+          "caller": "getEntity",
+          "callee": "state.patients.find",
+          "lineNumber": 1216
+        },
+        {
+          "caller": "getEntity",
+          "callee": "Number",
+          "lineNumber": 1218
+        },
+        {
+          "caller": "getEntity",
+          "callee": "getRoomSyncBundle",
+          "lineNumber": 1221
+        },
+        {
+          "caller": "getEntity",
+          "callee": "agendaEntityKey",
+          "lineNumber": 1223
+        },
+        {
+          "caller": "getEntity",
+          "callee": "todoEntityKey",
+          "lineNumber": 1223
+        },
+        {
+          "caller": "getEntity",
+          "callee": "Number",
+          "lineNumber": 1227
+        },
+        {
+          "caller": "getEntity",
+          "callee": "getRoomSyncBundle",
+          "lineNumber": 1233
+        },
+        {
+          "caller": "getEntity",
+          "callee": "String(patientId || id || '').trim",
+          "lineNumber": 1235
+        },
+        {
+          "caller": "getEntity",
+          "callee": "String",
+          "lineNumber": 1235
+        },
+        {
+          "caller": "getEntity",
+          "callee": "historiaClinicaEntityKey",
+          "lineNumber": 1236
+        },
+        {
+          "caller": "getEntity",
+          "callee": "Number",
+          "lineNumber": 1241
+        },
+        {
+          "caller": "getEntity",
+          "callee": "Array.isArray",
+          "lineNumber": 1247
+        },
+        {
+          "caller": "getEntity",
+          "callee": "String(p.id || '').trim",
+          "lineNumber": 1250
+        },
+        {
+          "caller": "getEntity",
+          "callee": "String",
+          "lineNumber": 1250
+        },
+        {
+          "caller": "getEntity",
+          "callee": "Number",
+          "lineNumber": 1255
+        },
+        {
+          "caller": "bundleEntryMatchesPatient",
+          "callee": "String(patientId || '').trim",
+          "lineNumber": 1266
+        },
+        {
+          "caller": "bundleEntryMatchesPatient",
+          "callee": "String",
+          "lineNumber": 1266
+        },
+        {
+          "caller": "bundleEntryMatchesPatient",
+          "callee": "String(registro || '').trim",
+          "lineNumber": 1267
+        },
+        {
+          "caller": "bundleEntryMatchesPatient",
+          "callee": "String",
+          "lineNumber": 1267
+        },
+        {
+          "caller": "bundleEntryMatchesPatient",
+          "callee": "entryPatientId",
+          "lineNumber": 1268
+        },
+        {
+          "caller": "bundleEntryMatchesPatient",
+          "callee": "String((p && p.registro) || ent.registro || '').trim",
+          "lineNumber": 1272
+        },
+        {
+          "caller": "bundleEntryMatchesPatient",
+          "callee": "String",
+          "lineNumber": 1272
+        },
+        {
+          "caller": "purgePatientFromHostCensus",
+          "callee": "ensureLoadedSync",
+          "lineNumber": 1281
+        },
+        {
+          "caller": "purgePatientFromHostCensus",
+          "callee": "String(patientId || '').trim",
+          "lineNumber": 1282
+        },
+        {
+          "caller": "purgePatientFromHostCensus",
+          "callee": "String",
+          "lineNumber": 1282
+        },
+        {
+          "caller": "purgePatientFromHostCensus",
+          "callee": "String(registro || '').trim",
+          "lineNumber": 1283
+        },
+        {
+          "caller": "purgePatientFromHostCensus",
+          "callee": "String",
+          "lineNumber": 1283
+        },
+        {
+          "caller": "purgePatientFromHostCensus",
+          "callee": "state.patients.findIndex",
+          "lineNumber": 1285
+        },
+        {
+          "caller": "purgePatientFromHostCensus",
+          "callee": "setEntity",
+          "lineNumber": 1288
+        },
+        {
+          "caller": "purgePatientFromHostCensus",
+          "callee": "Number",
+          "lineNumber": 1292
+        },
+        {
+          "caller": "purgePatientFromHostCensus",
+          "callee": "purgePatientFromAllRoomBundles",
+          "lineNumber": 1300
+        },
+        {
+          "caller": "purgePatientFromHostCensus",
+          "callee": "markDirty",
+          "lineNumber": 1303
+        },
+        {
+          "caller": "purgePatientFromHostCensus",
+          "callee": "schedulePersist",
+          "lineNumber": 1304
+        },
+        {
+          "caller": "purgePatientFromAllRoomBundles",
+          "callee": "String(patientId || '').trim",
+          "lineNumber": 1310
+        },
+        {
+          "caller": "purgePatientFromAllRoomBundles",
+          "callee": "String",
+          "lineNumber": 1310
+        },
+        {
+          "caller": "purgePatientFromAllRoomBundles",
+          "callee": "String(registro || '').trim",
+          "lineNumber": 1311
+        },
+        {
+          "caller": "purgePatientFromAllRoomBundles",
+          "callee": "String",
+          "lineNumber": 1311
+        },
+        {
+          "caller": "purgePatientFromAllRoomBundles",
+          "callee": "Object.keys",
+          "lineNumber": 1316
+        },
+        {
+          "caller": "purgePatientFromAllRoomBundles",
+          "callee": "Array.isArray",
+          "lineNumber": 1318
+        },
+        {
+          "caller": "purgePatientFromAllRoomBundles",
+          "callee": "bundle.entries.filter",
+          "lineNumber": 1320
+        },
+        {
+          "caller": "purgePatientFromAllRoomBundles",
+          "callee": "bundleEntryMatchesPatient",
+          "lineNumber": 1321
+        },
+        {
+          "caller": "purgePatientFromAllRoomBundles",
+          "callee": "Number",
+          "lineNumber": 1324
+        },
+        {
+          "caller": "purgePatientFromAllRoomBundles",
+          "callee": "nowIso",
+          "lineNumber": 1325
+        },
+        {
+          "caller": "purgePatientFromAllRoomBundles",
+          "callee": "markDirty",
+          "lineNumber": 1326
+        },
+        {
+          "caller": "purgePatientFromAllRoomBundles",
+          "callee": "markDirty",
+          "lineNumber": 1331
+        },
+        {
+          "caller": "purgePatientFromAllRoomBundles",
+          "callee": "schedulePersist",
+          "lineNumber": 1332
+        },
+        {
+          "caller": "materializeRoomViews",
+          "callee": "ensureLoadedSync",
+          "lineNumber": 1339
+        },
+        {
+          "caller": "materializeRoomViews",
+          "callee": "ensureRoomBundle",
+          "lineNumber": 1340
+        },
+        {
+          "caller": "materializeRoomViews",
+          "callee": "Object.entries",
+          "lineNumber": 1344
+        },
+        {
+          "caller": "materializeRoomViews",
+          "callee": "key.startsWith",
+          "lineNumber": 1346
+        },
+        {
+          "caller": "materializeRoomViews",
+          "callee": "agenda.push",
+          "lineNumber": 1347
+        },
+        {
+          "caller": "materializeRoomViews",
+          "callee": "key.startsWith",
+          "lineNumber": 1350
+        },
+        {
+          "caller": "materializeRoomViews",
+          "callee": "key.slice",
+          "lineNumber": 1351
+        },
+        {
+          "caller": "materializeRoomViews",
+          "callee": "rest.indexOf",
+          "lineNumber": 1352
+        },
+        {
+          "caller": "materializeRoomViews",
+          "callee": "rest.slice",
+          "lineNumber": 1353
+        },
+        {
+          "caller": "materializeRoomViews",
+          "callee": "todos[pid].push",
+          "lineNumber": 1356
+        },
+        {
+          "caller": "materializeRoomViews",
+          "callee": "agenda.sort",
+          "lineNumber": 1359
+        },
+        {
+          "caller": "materializeRoomViews",
+          "callee": "String(a.updatedAt || '').localeCompare",
+          "lineNumber": 1359
+        },
+        {
+          "caller": "materializeRoomViews",
+          "callee": "String",
+          "lineNumber": 1359
+        },
+        {
+          "caller": "materializeRoomViews",
+          "callee": "String",
+          "lineNumber": 1359
+        },
+        {
+          "caller": "materializeRoomViews",
+          "callee": "Object.keys",
+          "lineNumber": 1360
+        },
+        {
+          "caller": "materializeRoomViews",
+          "callee": "todos[pid].sort",
+          "lineNumber": 1361
+        },
+        {
+          "caller": "materializeRoomViews",
+          "callee": "String(a.updatedAt || '').localeCompare",
+          "lineNumber": 1361
+        },
+        {
+          "caller": "materializeRoomViews",
+          "callee": "String",
+          "lineNumber": 1361
+        },
+        {
+          "caller": "materializeRoomViews",
+          "callee": "String",
+          "lineNumber": 1361
+        },
+        {
+          "caller": "materializeRoomViews",
+          "callee": "nowIso",
+          "lineNumber": 1365
+        },
+        {
+          "caller": "materializeRoomViews",
+          "callee": "markDirty",
+          "lineNumber": 1367
+        },
+        {
+          "caller": "materializeRoomViews",
+          "callee": "schedulePersist",
+          "lineNumber": 1368
+        },
+        {
+          "caller": "setEntity",
+          "callee": "String",
+          "lineNumber": 1375
+        },
+        {
+          "caller": "setEntity",
+          "callee": "String",
+          "lineNumber": 1376
+        },
+        {
+          "caller": "setEntity",
+          "callee": "ensureLoadedSync",
+          "lineNumber": 1377
+        },
+        {
+          "caller": "setEntity",
+          "callee": "nowIso",
+          "lineNumber": 1378
+        },
+        {
+          "caller": "setEntity",
+          "callee": "state.patients.findIndex",
+          "lineNumber": 1381
+        },
+        {
+          "caller": "setEntity",
+          "callee": "Number",
+          "lineNumber": 1383
+        },
+        {
+          "caller": "setEntity",
+          "callee": "purgePatientFromAllRoomBundles",
+          "lineNumber": 1386
+        },
+        {
+          "caller": "setEntity",
+          "callee": "String(nextData.registro || '').trim",
+          "lineNumber": 1386
+        },
+        {
+          "caller": "setEntity",
+          "callee": "String",
+          "lineNumber": 1386
+        },
+        {
+          "caller": "setEntity",
+          "callee": "markDirty",
+          "lineNumber": 1388
+        },
+        {
+          "caller": "setEntity",
+          "callee": "schedulePersist",
+          "lineNumber": 1389
+        },
+        {
+          "caller": "setEntity",
+          "callee": "state.patients.push",
+          "lineNumber": 1394
+        },
+        {
+          "caller": "setEntity",
+          "callee": "markDirty",
+          "lineNumber": 1396
+        },
+        {
+          "caller": "setEntity",
+          "callee": "schedulePersist",
+          "lineNumber": 1397
+        },
+        {
+          "caller": "setEntity",
+          "callee": "purgePatientFromAllRoomBundles",
+          "lineNumber": 1405
+        },
+        {
+          "caller": "setEntity",
+          "callee": "markDirty",
+          "lineNumber": 1408
+        },
+        {
+          "caller": "setEntity",
+          "callee": "schedulePersist",
+          "lineNumber": 1409
+        },
+        {
+          "caller": "setEntity",
+          "callee": "ensureRoomBundle",
+          "lineNumber": 1415
+        },
+        {
+          "caller": "setEntity",
+          "callee": "agendaEntityKey",
+          "lineNumber": 1417
+        },
+        {
+          "caller": "setEntity",
+          "callee": "todoEntityKey",
+          "lineNumber": 1417
+        },
+        {
+          "caller": "setEntity",
+          "callee": "Number",
+          "lineNumber": 1419
+        },
+        {
+          "caller": "setEntity",
+          "callee": "Number",
+          "lineNumber": 1424
+        },
+        {
+          "caller": "setEntity",
+          "callee": "Number",
+          "lineNumber": 1425
+        },
+        {
+          "caller": "setEntity",
+          "callee": "markDirty",
+          "lineNumber": 1427
+        },
+        {
+          "caller": "setEntity",
+          "callee": "schedulePersist",
+          "lineNumber": 1428
+        },
+        {
+          "caller": "setEntity",
+          "callee": "materializeRoomViews",
+          "lineNumber": 1430
+        },
+        {
+          "caller": "setEntity",
+          "callee": "ensureRoomBundle",
+          "lineNumber": 1435
+        },
+        {
+          "caller": "setEntity",
+          "callee": "historiaClinicaEntityKey",
+          "lineNumber": 1436
+        },
+        {
+          "caller": "setEntity",
+          "callee": "String",
+          "lineNumber": 1441
+        },
+        {
+          "caller": "setEntity",
+          "callee": "Number",
+          "lineNumber": 1443
+        },
+        {
+          "caller": "setEntity",
+          "callee": "Number",
+          "lineNumber": 1448
+        },
+        {
+          "caller": "setEntity",
+          "callee": "Number",
+          "lineNumber": 1449
+        },
+        {
+          "caller": "setEntity",
+          "callee": "Array.isArray",
+          "lineNumber": 1450
+        },
+        {
+          "caller": "setEntity",
+          "callee": "markDirty",
+          "lineNumber": 1452
+        },
+        {
+          "caller": "setEntity",
+          "callee": "schedulePersist",
+          "lineNumber": 1453
+        },
+        {
+          "caller": "ensureDeltaEntity",
+          "callee": "ensureLoadedSync",
+          "lineNumber": 1462
+        },
+        {
+          "caller": "ensureDeltaEntity",
+          "callee": "ensureRoomBundle",
+          "lineNumber": 1463
+        },
+        {
+          "caller": "ensureDeltaEntity",
+          "callee": "String",
+          "lineNumber": 1464
+        },
+        {
+          "caller": "ensureDeltaEntity",
+          "callee": "String",
+          "lineNumber": 1465
+        },
+        {
+          "caller": "ensureDeltaEntity",
+          "callee": "agendaEntityKey",
+          "lineNumber": 1467
+        },
+        {
+          "caller": "ensureDeltaEntity",
+          "callee": "todoEntityKey",
+          "lineNumber": 1468
+        },
+        {
+          "caller": "ensureDeltaEntity",
+          "callee": "historiaClinicaEntityKey",
+          "lineNumber": 1469
+        },
+        {
+          "caller": "ensureDeltaEntity",
+          "callee": "nowIso",
+          "lineNumber": 1477
+        },
+        {
+          "caller": "commandEntityKey",
+          "callee": "String(command && command.domain || '').trim",
+          "lineNumber": 1491
+        },
+        {
+          "caller": "commandEntityKey",
+          "callee": "String",
+          "lineNumber": 1491
+        },
+        {
+          "caller": "commandEntityKey",
+          "callee": "String(command && command.entityId || '').trim",
+          "lineNumber": 1492
+        },
+        {
+          "caller": "commandEntityKey",
+          "callee": "String",
+          "lineNumber": 1492
+        },
+        {
+          "caller": "commandEntityKey",
+          "callee": "String(command && command.patientId || '').trim",
+          "lineNumber": 1493
+        },
+        {
+          "caller": "commandEntityKey",
+          "callee": "String",
+          "lineNumber": 1493
+        },
+        {
+          "caller": "commitDeltaEntity",
+          "callee": "ensureDeltaEntity",
+          "lineNumber": 1512
+        },
+        {
+          "caller": "commitDeltaEntity",
+          "callee": "Number",
+          "lineNumber": 1513
+        },
+        {
+          "caller": "commitDeltaEntity",
+          "callee": "Number",
+          "lineNumber": 1514
+        },
+        {
+          "caller": "commitDeltaEntity",
+          "callee": "nowIso",
+          "lineNumber": 1515
+        },
+        {
+          "caller": "commitDeltaEntity",
+          "callee": "buildFieldMeta",
+          "lineNumber": 1518
+        },
+        {
+          "caller": "commitDeltaEntity",
+          "callee": "Number",
+          "lineNumber": 1526
+        },
+        {
+          "caller": "commitDeltaEntity",
+          "callee": "Array.isArray",
+          "lineNumber": 1529
+        },
+        {
+          "caller": "appendDeltaLog",
+          "callee": "ensureLoadedSync",
+          "lineNumber": 1534
+        },
+        {
+          "caller": "appendDeltaLog",
+          "callee": "ensureRoomBundle",
+          "lineNumber": 1535
+        },
+        {
+          "caller": "appendDeltaLog",
+          "callee": "Array.isArray",
+          "lineNumber": 1536
+        },
+        {
+          "caller": "appendDeltaLog",
+          "callee": "bundle.deltaLog.push",
+          "lineNumber": 1537
+        },
+        {
+          "caller": "appendDeltaLog",
+          "callee": "bundle.deltaLog.shift",
+          "lineNumber": 1538
+        },
+        {
+          "caller": "appendDeltaLog",
+          "callee": "markDirty",
+          "lineNumber": 1539
+        },
+        {
+          "caller": "appendDeltaLog",
+          "callee": "schedulePersist",
+          "lineNumber": 1540
+        },
+        {
+          "caller": "getRoomDeltaLog",
+          "callee": "getRoomSyncBundle",
+          "lineNumber": 1544
+        },
+        {
+          "caller": "getRoomDeltaLog",
+          "callee": "Number",
+          "lineNumber": 1546
+        },
+        {
+          "caller": "getRoomDeltaLog",
+          "callee": "Array.isArray",
+          "lineNumber": 1547
+        },
+        {
+          "caller": "getRoomDeltaLog",
+          "callee": "log.filter",
+          "lineNumber": 1548
+        },
+        {
+          "caller": "getRoomDeltaLog",
+          "callee": "Number",
+          "lineNumber": 1548
+        },
+        {
+          "caller": "getRoomDeltaLog",
+          "callee": "Number",
+          "lineNumber": 1549
+        },
+        {
+          "caller": "getRoomDeltaLog",
+          "callee": "Number",
+          "lineNumber": 1552
+        },
+        {
+          "caller": "ensureRoomBundleForTest",
+          "callee": "ensureRoomBundle",
+          "lineNumber": 1556
+        },
+        {
+          "caller": "ensureRoomBundleForTest",
+          "callee": "ensureLoadedSync",
+          "lineNumber": 1556
+        },
+        {
+          "caller": "getAppliedCommand",
+          "callee": "getRoomSyncBundle",
+          "lineNumber": 1560
+        },
+        {
+          "caller": "getAppliedCommand",
+          "callee": "String(commandId || '').trim",
+          "lineNumber": 1561
+        },
+        {
+          "caller": "getAppliedCommand",
+          "callee": "String",
+          "lineNumber": 1561
+        },
+        {
+          "caller": "getAppliedCommand",
+          "callee": "Array.isArray",
+          "lineNumber": 1562
+        },
+        {
+          "caller": "getAppliedCommand",
+          "callee": "bundle.deltaLog.find",
+          "lineNumber": 1563
+        },
+        {
+          "caller": "getCommandEntityState",
+          "callee": "ensureRoomBundle",
+          "lineNumber": 1567
+        },
+        {
+          "caller": "getCommandEntityState",
+          "callee": "ensureLoadedSync",
+          "lineNumber": 1567
+        },
+        {
+          "caller": "getCommandEntityState",
+          "callee": "commandEntityKey",
+          "lineNumber": 1568
+        },
+        {
+          "caller": "getCommandEntityState",
+          "callee": "Number",
+          "lineNumber": 1572
+        },
+        {
+          "caller": "commitCommandEntity",
+          "callee": "ensureLoadedSync",
+          "lineNumber": 1579
+        },
+        {
+          "caller": "commitCommandEntity",
+          "callee": "ensureRoomBundle",
+          "lineNumber": 1580
+        },
+        {
+          "caller": "commitCommandEntity",
+          "callee": "commandEntityKey",
+          "lineNumber": 1581
+        },
+        {
+          "caller": "commitCommandEntity",
+          "callee": "Number",
+          "lineNumber": 1585
+        },
+        {
+          "caller": "commitCommandEntity",
+          "callee": "nowIso",
+          "lineNumber": 1586
+        },
+        {
+          "caller": "commitCommandEntity",
+          "callee": "Number",
+          "lineNumber": 1587
+        },
+        {
+          "caller": "commitCommandEntity",
+          "callee": "Number",
+          "lineNumber": 1594
+        },
+        {
+          "caller": "commitCommandEntity",
+          "callee": "Array.isArray",
+          "lineNumber": 1597
+        },
+        {
+          "caller": "commitCommandEntity",
+          "callee": "String",
+          "lineNumber": 1601
+        },
+        {
+          "caller": "commitCommandEntity",
+          "callee": "String",
+          "lineNumber": 1602
+        },
+        {
+          "caller": "commitCommandEntity",
+          "callee": "String",
+          "lineNumber": 1603
+        },
+        {
+          "caller": "commitCommandEntity",
+          "callee": "String",
+          "lineNumber": 1607
+        },
+        {
+          "caller": "commitCommandEntity",
+          "callee": "Number",
+          "lineNumber": 1608
+        },
+        {
+          "caller": "commitCommandEntity",
+          "callee": "bundle.deltaLog.push",
+          "lineNumber": 1614
+        },
+        {
+          "caller": "commitCommandEntity",
+          "callee": "bundle.deltaLog.shift",
+          "lineNumber": 1615
+        },
+        {
+          "caller": "commitCommandEntity",
+          "callee": "markDirty",
+          "lineNumber": 1616
+        },
+        {
+          "caller": "commitCommandEntity",
+          "callee": "schedulePersist",
+          "lineNumber": 1617
+        },
+        {
+          "caller": "appendRoomBundleAuditInMemory",
+          "callee": "ensureLoadedSync",
+          "lineNumber": 1622
+        },
+        {
+          "caller": "appendRoomBundleAuditInMemory",
+          "callee": "ensureRoomBundle",
+          "lineNumber": 1623
+        },
+        {
+          "caller": "appendRoomBundleAuditInMemory",
+          "callee": "Array.isArray",
+          "lineNumber": 1624
+        },
+        {
+          "caller": "appendRoomBundleAuditInMemory",
+          "callee": "appendAudit",
+          "lineNumber": 1625
+        },
+        {
+          "caller": "appendRoomBundleAudit",
+          "callee": "appendRoomBundleAuditInMemory",
+          "lineNumber": 1630
+        },
+        {
+          "caller": "appendRoomBundleAudit",
+          "callee": "markDirty",
+          "lineNumber": 1631
+        },
+        {
+          "caller": "appendRoomBundleAudit",
+          "callee": "schedulePersist",
+          "lineNumber": 1632
+        },
+        {
+          "caller": "appendRoomBundleAudit",
+          "callee": "ensureRoomBundle",
+          "lineNumber": 1633
+        },
+        {
+          "caller": "appendRoomBundleAudit",
+          "callee": "ensureLoadedSync",
+          "lineNumber": 1633
+        },
+        {
+          "caller": "putHistoriaClinicaQueued",
+          "callee": "queue.enqueue",
+          "lineNumber": 1643
+        },
+        {
+          "caller": "putHistoriaClinicaQueued",
+          "callee": "ensureLoadedSync",
+          "lineNumber": 1644
+        },
+        {
+          "caller": "putHistoriaClinicaQueued",
+          "callee": "resolver.applyMutation",
+          "lineNumber": 1645
+        },
+        {
+          "caller": "putHistoriaClinicaQueued",
+          "callee": "nowIso",
+          "lineNumber": 1648
+        },
+        {
+          "caller": "putHistoriaClinicaQueued",
+          "callee": "appendRoomBundleAuditInMemory",
+          "lineNumber": 1657
+        },
+        {
+          "caller": "putHistoriaClinicaQueued",
+          "callee": "markDirty",
+          "lineNumber": 1659
+        },
+        {
+          "caller": "putHistoriaClinicaQueued",
+          "callee": "flushCacheNow",
+          "lineNumber": 1660
+        },
+        {
+          "caller": "archiveHistoriaClinicaForPatient",
+          "callee": "String(patientId || '').trim",
+          "lineNumber": 1666
+        },
+        {
+          "caller": "archiveHistoriaClinicaForPatient",
+          "callee": "String",
+          "lineNumber": 1666
+        },
+        {
+          "caller": "archiveHistoriaClinicaForPatient",
+          "callee": "ensureLoadedSync",
+          "lineNumber": 1668
+        },
+        {
+          "caller": "archiveHistoriaClinicaForPatient",
+          "callee": "Object.keys",
+          "lineNumber": 1670
+        },
+        {
+          "caller": "archiveHistoriaClinicaForPatient",
+          "callee": "historiaClinicaEntityKey",
+          "lineNumber": 1673
+        },
+        {
+          "caller": "archiveHistoriaClinicaForPatient",
+          "callee": "writeHistoriaClinicaArchive",
+          "lineNumber": 1676
+        },
+        {
+          "caller": "archiveHistoriaClinicaForPatient",
+          "callee": "resolveStorageRoot",
+          "lineNumber": 1677
+        },
+        {
+          "caller": "archiveHistoriaClinicaForPatient",
+          "callee": "Number",
+          "lineNumber": 1689
+        },
+        {
+          "caller": "archiveHistoriaClinicaForPatient",
+          "callee": "markDirty",
+          "lineNumber": 1690
+        },
+        {
+          "caller": "archiveHistoriaClinicaForPatient",
+          "callee": "markDirty",
+          "lineNumber": 1694
+        },
+        {
+          "caller": "archiveHistoriaClinicaForPatient",
+          "callee": "schedulePersist",
+          "lineNumber": 1695
+        },
+        {
+          "caller": "createHostStore",
+          "callee": "useDb",
+          "lineNumber": 1704
+        },
+        {
+          "caller": "createHostStore",
+          "callee": "isShardedLayout",
+          "lineNumber": 1704
+        },
+        {
+          "caller": "createHostStore",
+          "callee": "fs.existsSync",
+          "lineNumber": 1704
+        },
+        {
+          "caller": "createHostStore",
+          "callee": "initEmptyShardedStateSync",
+          "lineNumber": 1705
+        },
+        {
+          "caller": "createHostStore",
+          "callee": "findRoomForPatient",
+          "lineNumber": 1730
+        },
+        {
+          "caller": "createHostStore",
+          "callee": "ensureLoadedSync",
+          "lineNumber": 1730
+        }
+      ],
+      "metrics": {
+        "importCount": 15,
+        "exportCount": 0,
+        "functionCount": 15,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lan-squad/host-store.test.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 625,
+      "nonEmptyLines": 599,
+      "callGraph": [
+        {
+          "caller": "createStore",
+          "callee": "createHostStore",
+          "lineNumber": 22
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lan-squad/lan-candidate-url.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 78,
+      "nonEmptyLines": 71,
+      "functions": [
+        {
+          "name": "pickLanCandidateBaseUrl",
+          "startLine": 7,
+          "endLine": 29,
+          "params": []
+        },
+        {
+          "name": "isLoopbackLanHost",
+          "startLine": 31,
+          "endLine": 33,
+          "params": [
+            "hostname"
+          ]
+        },
+        {
+          "name": "isPrivateLanIpv4",
+          "startLine": 35,
+          "endLine": 44,
+          "params": [
+            "addr"
+          ]
+        },
+        {
+          "name": "subnetPrefixFromIpv4",
+          "startLine": 46,
+          "endLine": 50,
+          "params": [
+            "ip"
+          ]
+        },
+        {
+          "name": "listPrivateIpv4SubnetPrefixes",
+          "startLine": 53,
+          "endLine": 69,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "pickLanCandidateBaseUrl",
+          "callee": "os.networkInterfaces",
+          "lineNumber": 8
+        },
+        {
+          "caller": "pickLanCandidateBaseUrl",
+          "callee": "Object.keys",
+          "lineNumber": 10
+        },
+        {
+          "caller": "pickLanCandidateBaseUrl",
+          "callee": "candidates.push",
+          "lineNumber": 17
+        },
+        {
+          "caller": "prefer",
+          "callee": "/en0|eth0|wlan|wi-?fi|wifi|ethernet|enp|wlp/i.test",
+          "lineNumber": 21
+        },
+        {
+          "caller": "pickLanCandidateBaseUrl",
+          "callee": "candidates.sort",
+          "lineNumber": 22
+        },
+        {
+          "caller": "pickLanCandidateBaseUrl",
+          "callee": "prefer",
+          "lineNumber": 23
+        },
+        {
+          "caller": "pickLanCandidateBaseUrl",
+          "callee": "prefer",
+          "lineNumber": 24
+        },
+        {
+          "caller": "pickLanCandidateBaseUrl",
+          "callee": "String(a.address).localeCompare",
+          "lineNumber": 26
+        },
+        {
+          "caller": "pickLanCandidateBaseUrl",
+          "callee": "String",
+          "lineNumber": 26
+        },
+        {
+          "caller": "pickLanCandidateBaseUrl",
+          "callee": "String",
+          "lineNumber": 26
+        },
+        {
+          "caller": "isLoopbackLanHost",
+          "callee": "/^(localhost|127\\.0\\.0\\.1)$/i.test",
+          "lineNumber": 32
+        },
+        {
+          "caller": "isLoopbackLanHost",
+          "callee": "String(hostname || '').trim",
+          "lineNumber": 32
+        },
+        {
+          "caller": "isLoopbackLanHost",
+          "callee": "String",
+          "lineNumber": 32
+        },
+        {
+          "caller": "isPrivateLanIpv4",
+          "callee": "/^(\\d+)\\.(\\d+)\\.(\\d+)\\.(\\d+)$/.exec",
+          "lineNumber": 36
+        },
+        {
+          "caller": "isPrivateLanIpv4",
+          "callee": "String",
+          "lineNumber": 36
+        },
+        {
+          "caller": "subnetPrefixFromIpv4",
+          "callee": "String",
+          "lineNumber": 47
+        },
+        {
+          "caller": "subnetPrefixFromIpv4",
+          "callee": "/^\\d+\\.\\d+\\.\\d+\\.\\d+$/.test",
+          "lineNumber": 48
+        },
+        {
+          "caller": "subnetPrefixFromIpv4",
+          "callee": "s.split('.').slice(0, 3).join",
+          "lineNumber": 49
+        },
+        {
+          "caller": "subnetPrefixFromIpv4",
+          "callee": "s.split('.').slice",
+          "lineNumber": 49
+        },
+        {
+          "caller": "subnetPrefixFromIpv4",
+          "callee": "s.split",
+          "lineNumber": 49
+        },
+        {
+          "caller": "listPrivateIpv4SubnetPrefixes",
+          "callee": "os.networkInterfaces",
+          "lineNumber": 54
+        },
+        {
+          "caller": "listPrivateIpv4SubnetPrefixes",
+          "callee": "Object.keys",
+          "lineNumber": 57
+        },
+        {
+          "caller": "listPrivateIpv4SubnetPrefixes",
+          "callee": "isPrivateLanIpv4",
+          "lineNumber": 63
+        },
+        {
+          "caller": "listPrivateIpv4SubnetPrefixes",
+          "callee": "subnetPrefixFromIpv4",
+          "lineNumber": 64
+        },
+        {
+          "caller": "listPrivateIpv4SubnetPrefixes",
+          "callee": "prefixes.add",
+          "lineNumber": 65
+        },
+        {
+          "caller": "listPrivateIpv4SubnetPrefixes",
+          "callee": "[...prefixes].sort",
+          "lineNumber": 68
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 5,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lan-squad/lan-candidate-url.test.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 36,
+      "nonEmptyLines": 32,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lan-squad/lan-mdns-service.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 159,
+      "nonEmptyLines": 141,
+      "functions": [
+        {
+          "name": "isRecoverableMdnsError",
+          "startLine": 23,
+          "endLine": 26,
+          "params": [
+            "err"
+          ]
+        },
+        {
+          "name": "hasLanInterfaceForMdns",
+          "startLine": 33,
+          "endLine": 37,
+          "params": [
+            "hostBaseUrl"
+          ]
+        },
+        {
+          "name": "handleMdnsFault",
+          "startLine": 43,
+          "endLine": 51,
+          "params": [
+            "err",
+            "stopFn"
+          ]
+        },
+        {
+          "name": "createLanMdnsService",
+          "startLine": 57,
+          "endLine": 148,
+          "params": [
+            "onPeers"
+          ]
+        },
+        {
+          "name": "buildTeamHashSync",
+          "startLine": 150,
+          "endLine": 152,
+          "params": [
+            "teamCode"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "isRecoverableMdnsError",
+          "callee": "RECOVERABLE_MDNS_CODES.has",
+          "lineNumber": 25
+        },
+        {
+          "caller": "isRecoverableMdnsError",
+          "callee": "String",
+          "lineNumber": 25
+        },
+        {
+          "caller": "hasLanInterfaceForMdns",
+          "callee": "String(hostBaseUrl || '').trim",
+          "lineNumber": 34
+        },
+        {
+          "caller": "hasLanInterfaceForMdns",
+          "callee": "String",
+          "lineNumber": 34
+        },
+        {
+          "caller": "hasLanInterfaceForMdns",
+          "callee": "pickLanCandidateBaseUrl",
+          "lineNumber": 36
+        },
+        {
+          "caller": "handleMdnsFault",
+          "callee": "isRecoverableMdnsError",
+          "lineNumber": 45
+        },
+        {
+          "caller": "handleMdnsFault",
+          "callee": "console.warn",
+          "lineNumber": 46
+        },
+        {
+          "caller": "handleMdnsFault",
+          "callee": "String",
+          "lineNumber": 46
+        },
+        {
+          "caller": "handleMdnsFault",
+          "callee": "stopFn",
+          "lineNumber": 49
+        },
+        {
+          "caller": "onMdnsSocketEvent",
+          "callee": "handleMdnsFault",
+          "lineNumber": 65
+        },
+        {
+          "caller": "attachMdnsListeners",
+          "callee": "mdns.on",
+          "lineNumber": 71
+        },
+        {
+          "caller": "attachMdnsListeners",
+          "callee": "mdns.on",
+          "lineNumber": 72
+        },
+        {
+          "caller": "detachMdnsListeners",
+          "callee": "mdnsEmitter.removeListener",
+          "lineNumber": 78
+        },
+        {
+          "caller": "detachMdnsListeners",
+          "callee": "mdnsEmitter.removeListener",
+          "lineNumber": 79
+        },
+        {
+          "caller": "start",
+          "callee": "stop",
+          "lineNumber": 85
+        },
+        {
+          "caller": "start",
+          "callee": "hasLanInterfaceForMdns",
+          "lineNumber": 86
+        },
+        {
+          "caller": "start",
+          "callee": "handleMdnsFault",
+          "lineNumber": 89
+        },
+        {
+          "caller": "start",
+          "callee": "attachMdnsListeners",
+          "lineNumber": 91
+        },
+        {
+          "caller": "start",
+          "callee": "bonjour.publish",
+          "lineNumber": 93
+        },
+        {
+          "caller": "start",
+          "callee": "String(clientId).slice",
+          "lineNumber": 94
+        },
+        {
+          "caller": "start",
+          "callee": "String",
+          "lineNumber": 94
+        },
+        {
+          "caller": "start",
+          "callee": "String",
+          "lineNumber": 97
+        },
+        {
+          "caller": "start",
+          "callee": "bonjour.find",
+          "lineNumber": 100
+        },
+        {
+          "caller": "start",
+          "callee": "String(txt.clientId || '').trim",
+          "lineNumber": 103
+        },
+        {
+          "caller": "start",
+          "callee": "String",
+          "lineNumber": 103
+        },
+        {
+          "caller": "start",
+          "callee": "Number",
+          "lineNumber": 104
+        },
+        {
+          "caller": "start",
+          "callee": "String(txt.rank || '').trim",
+          "lineNumber": 105
+        },
+        {
+          "caller": "start",
+          "callee": "String",
+          "lineNumber": 105
+        },
+        {
+          "caller": "start",
+          "callee": "String(txt.teamHash || '').trim",
+          "lineNumber": 106
+        },
+        {
+          "caller": "start",
+          "callee": "String",
+          "lineNumber": 106
+        },
+        {
+          "caller": "start",
+          "callee": "Array.isArray",
+          "lineNumber": 109
+        },
+        {
+          "caller": "start",
+          "callee": "addresses.find",
+          "lineNumber": 110
+        },
+        {
+          "caller": "start",
+          "callee": "/^\\d+\\.\\d+\\.\\d+\\.\\d+$/.test",
+          "lineNumber": 110
+        },
+        {
+          "caller": "start",
+          "callee": "onPeers",
+          "lineNumber": 114
+        },
+        {
+          "caller": "stop",
+          "callee": "detachMdnsListeners",
+          "lineNumber": 121
+        },
+        {
+          "caller": "stop",
+          "callee": "browser.stop",
+          "lineNumber": 124
+        },
+        {
+          "caller": "stop",
+          "callee": "advertised.stop",
+          "lineNumber": 130
+        },
+        {
+          "caller": "stop",
+          "callee": "bonjour.destroy",
+          "lineNumber": 136
+        },
+        {
+          "caller": "restart",
+          "callee": "stop",
+          "lineNumber": 143
+        },
+        {
+          "caller": "restart",
+          "callee": "setTimeout",
+          "lineNumber": 144
+        },
+        {
+          "caller": "restart",
+          "callee": "start",
+          "lineNumber": 144
+        },
+        {
+          "caller": "buildTeamHashSync",
+          "callee": "crypto.createHash('sha256').update(String(teamCode || '')).digest('hex').slice",
+          "lineNumber": 151
+        },
+        {
+          "caller": "buildTeamHashSync",
+          "callee": "crypto.createHash('sha256').update(String(teamCode || '')).digest",
+          "lineNumber": 151
+        },
+        {
+          "caller": "buildTeamHashSync",
+          "callee": "crypto.createHash('sha256').update",
+          "lineNumber": 151
+        },
+        {
+          "caller": "buildTeamHashSync",
+          "callee": "crypto.createHash",
+          "lineNumber": 151
+        },
+        {
+          "caller": "buildTeamHashSync",
+          "callee": "String",
+          "lineNumber": 151
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 5,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lan-squad/lan-mdns-service.test.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 16,
+      "nonEmptyLines": 14,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lan-squad/lan-network-watch.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 72,
+      "nonEmptyLines": 66,
+      "functions": [
+        {
+          "name": "lanNetworkFingerprint",
+          "startLine": 9,
+          "endLine": 14,
+          "params": [
+            "prefixes",
+            "candidateBaseUrl"
+          ]
+        },
+        {
+          "name": "createLanNetworkWatch",
+          "startLine": 21,
+          "endLine": 67,
+          "params": [
+            "send"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "lanNetworkFingerprint",
+          "callee": "JSON.stringify",
+          "lineNumber": 10
+        },
+        {
+          "caller": "lanNetworkFingerprint",
+          "callee": "[...prefixes].sort",
+          "lineNumber": 11
+        },
+        {
+          "caller": "lanNetworkFingerprint",
+          "callee": "String(candidateBaseUrl || '').trim",
+          "lineNumber": 12
+        },
+        {
+          "caller": "lanNetworkFingerprint",
+          "callee": "String",
+          "lineNumber": 12
+        },
+        {
+          "caller": "createLanNetworkWatch",
+          "callee": "Number",
+          "lineNumber": 22
+        },
+        {
+          "caller": "createLanNetworkWatch",
+          "callee": "Number",
+          "lineNumber": 22
+        },
+        {
+          "caller": "poll",
+          "callee": "readPrefixes",
+          "lineNumber": 30
+        },
+        {
+          "caller": "poll",
+          "callee": "readCandidate",
+          "lineNumber": 31
+        },
+        {
+          "caller": "poll",
+          "callee": "lanNetworkFingerprint",
+          "lineNumber": 32
+        },
+        {
+          "caller": "poll",
+          "callee": "JSON.parse",
+          "lineNumber": 37
+        },
+        {
+          "caller": "poll",
+          "callee": "Array.isArray",
+          "lineNumber": 38
+        },
+        {
+          "caller": "poll",
+          "callee": "String",
+          "lineNumber": 39
+        },
+        {
+          "caller": "poll",
+          "callee": "send",
+          "lineNumber": 41
+        },
+        {
+          "caller": "start",
+          "callee": "poll",
+          "lineNumber": 54
+        },
+        {
+          "caller": "start",
+          "callee": "setInterval",
+          "lineNumber": 55
+        },
+        {
+          "caller": "stop",
+          "callee": "clearInterval",
+          "lineNumber": 59
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lan-squad/lan-network-watch.test.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 38,
+      "nonEmptyLines": 35,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lan-squad/lan-request-host.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 36,
+      "nonEmptyLines": 32,
+      "functions": [
+        {
+          "name": "hostUrlFromRequest",
+          "startLine": 6,
+          "endLine": 17,
+          "params": [
+            "req"
+          ]
+        },
+        {
+          "name": "resolveHostUrlForClient",
+          "startLine": 24,
+          "endLine": 34,
+          "params": [
+            "req",
+            "getHostUrl"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "hostUrlFromRequest",
+          "callee": "String((req && req.headers && req.headers.host) || '').trim",
+          "lineNumber": 7
+        },
+        {
+          "caller": "hostUrlFromRequest",
+          "callee": "String",
+          "lineNumber": 7
+        },
+        {
+          "caller": "hostUrlFromRequest",
+          "callee": "/^(localhost|127\\.0\\.0\\.1)$/i.test",
+          "lineNumber": 12
+        },
+        {
+          "caller": "hostUrlFromRequest",
+          "callee": "`${u.protocol}//${u.host}`.replace",
+          "lineNumber": 13
+        },
+        {
+          "caller": "resolveHostUrlForClient",
+          "callee": "String((typeof getHostUrl === 'function' ? getHostUrl() : '') || '')\n    .trim()\n    .replace",
+          "lineNumber": 25
+        },
+        {
+          "caller": "resolveHostUrlForClient",
+          "callee": "String((typeof getHostUrl === 'function' ? getHostUrl() : '') || '')\n    .trim",
+          "lineNumber": 25
+        },
+        {
+          "caller": "resolveHostUrlForClient",
+          "callee": "String",
+          "lineNumber": 25
+        },
+        {
+          "caller": "resolveHostUrlForClient",
+          "callee": "getHostUrl",
+          "lineNumber": 25
+        },
+        {
+          "caller": "resolveHostUrlForClient",
+          "callee": "getRequestClientIp",
+          "lineNumber": 28
+        },
+        {
+          "caller": "resolveHostUrlForClient",
+          "callee": "isLoopbackClientIp",
+          "lineNumber": 29
+        },
+        {
+          "caller": "resolveHostUrlForClient",
+          "callee": "hostUrlFromRequest",
+          "lineNumber": 30
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lan-squad/lan-request-host.test.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 36,
+      "nonEmptyLines": 32,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lan-squad/lan-sse-hub.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 64,
+      "nonEmptyLines": 53,
+      "functions": [
+        {
+          "name": "createSseHub",
+          "startLine": 6,
+          "endLine": 62,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "broadcast",
+          "callee": "String(channel || 'sync').trim",
+          "lineNumber": 11
+        },
+        {
+          "caller": "broadcast",
+          "callee": "String",
+          "lineNumber": 11
+        },
+        {
+          "caller": "broadcast",
+          "callee": "clients.get",
+          "lineNumber": 12
+        },
+        {
+          "caller": "broadcast",
+          "callee": "JSON.stringify",
+          "lineNumber": 14
+        },
+        {
+          "caller": "broadcast",
+          "callee": "client.res.write",
+          "lineNumber": 17
+        },
+        {
+          "caller": "attachSseRouter",
+          "callee": "createBearerAuthMiddleware",
+          "lineNumber": 25
+        },
+        {
+          "caller": "attachSseRouter",
+          "callee": "router.get",
+          "lineNumber": 27
+        },
+        {
+          "caller": "attachSseRouter",
+          "callee": "String(req.query.channel || 'sync').trim",
+          "lineNumber": 28
+        },
+        {
+          "caller": "attachSseRouter",
+          "callee": "String",
+          "lineNumber": 28
+        },
+        {
+          "caller": "attachSseRouter",
+          "callee": "res.writeHead",
+          "lineNumber": 30
+        },
+        {
+          "caller": "attachSseRouter",
+          "callee": "clients.has",
+          "lineNumber": 37
+        },
+        {
+          "caller": "attachSseRouter",
+          "callee": "clients.set",
+          "lineNumber": 37
+        },
+        {
+          "caller": "attachSseRouter",
+          "callee": "clients.get(channel).add",
+          "lineNumber": 39
+        },
+        {
+          "caller": "attachSseRouter",
+          "callee": "clients.get",
+          "lineNumber": 39
+        },
+        {
+          "caller": "attachSseRouter",
+          "callee": "setInterval",
+          "lineNumber": 41
+        },
+        {
+          "caller": "attachSseRouter",
+          "callee": "res.write",
+          "lineNumber": 43
+        },
+        {
+          "caller": "attachSseRouter",
+          "callee": "clearInterval",
+          "lineNumber": 45
+        },
+        {
+          "caller": "attachSseRouter",
+          "callee": "keepAlive.unref",
+          "lineNumber": 48
+        },
+        {
+          "caller": "attachSseRouter",
+          "callee": "req.on",
+          "lineNumber": 50
+        },
+        {
+          "caller": "attachSseRouter",
+          "callee": "clearInterval",
+          "lineNumber": 51
+        },
+        {
+          "caller": "attachSseRouter",
+          "callee": "clients.get",
+          "lineNumber": 52
+        },
+        {
+          "caller": "attachSseRouter",
+          "callee": "set.delete",
+          "lineNumber": 54
+        },
+        {
+          "caller": "attachSseRouter",
+          "callee": "clients.delete",
+          "lineNumber": 55
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lan-squad/lan-sse-hub.test.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 108,
+      "nonEmptyLines": 95,
+      "functions": [
+        {
+          "name": "bearerHeaders",
+          "startLine": 12,
+          "endLine": 14,
+          "params": [
+            "token"
+          ]
+        },
+        {
+          "name": "listenServer",
+          "startLine": 16,
+          "endLine": 20,
+          "params": [
+            "server"
+          ]
+        },
+        {
+          "name": "tearDown",
+          "startLine": 22,
+          "endLine": 28,
+          "params": []
+        },
+        {
+          "name": "mountSseRouter",
+          "startLine": 30,
+          "endLine": 37,
+          "params": [
+            "store"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "listenServer",
+          "callee": "server.listen",
+          "lineNumber": 18
+        },
+        {
+          "caller": "listenServer",
+          "callee": "reject",
+          "lineNumber": 18
+        },
+        {
+          "caller": "listenServer",
+          "callee": "resolve",
+          "lineNumber": 18
+        },
+        {
+          "caller": "tearDown",
+          "callee": "server.close",
+          "lineNumber": 23
+        },
+        {
+          "caller": "tearDown",
+          "callee": "store.flush",
+          "lineNumber": 25
+        },
+        {
+          "caller": "tearDown",
+          "callee": "fs.rmSync",
+          "lineNumber": 27
+        },
+        {
+          "caller": "mountSseRouter",
+          "callee": "createSseHub",
+          "lineNumber": 31
+        },
+        {
+          "caller": "mountSseRouter",
+          "callee": "express",
+          "lineNumber": 32
+        },
+        {
+          "caller": "mountSseRouter",
+          "callee": "express.Router",
+          "lineNumber": 33
+        },
+        {
+          "caller": "mountSseRouter",
+          "callee": "sseHub.attachSseRouter",
+          "lineNumber": 34
+        },
+        {
+          "caller": "mountSseRouter",
+          "callee": "store.getState",
+          "lineNumber": 34
+        },
+        {
+          "caller": "mountSseRouter",
+          "callee": "app.use",
+          "lineNumber": 35
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lan-squad/lan-udp-beacon.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 156,
+      "nonEmptyLines": 140,
+      "functions": [
+        {
+          "name": "createUdpBeacon",
+          "startLine": 11,
+          "endLine": 154,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createUdpBeacon",
+          "callee": "JSON.stringify",
+          "lineNumber": 16
+        },
+        {
+          "caller": "startListening",
+          "callee": "dgram.createSocket",
+          "lineNumber": 28
+        },
+        {
+          "caller": "startListening",
+          "callee": "sock.on",
+          "lineNumber": 31
+        },
+        {
+          "caller": "startListening",
+          "callee": "JSON.parse",
+          "lineNumber": 33
+        },
+        {
+          "caller": "startListening",
+          "callee": "msg.toString",
+          "lineNumber": 33
+        },
+        {
+          "caller": "startListening",
+          "callee": "Buffer.from",
+          "lineNumber": 35
+        },
+        {
+          "caller": "startListening",
+          "callee": "sock.send",
+          "lineNumber": 36
+        },
+        {
+          "caller": "startListening",
+          "callee": "sock.on",
+          "lineNumber": 41
+        },
+        {
+          "caller": "startListening",
+          "callee": "reject",
+          "lineNumber": 42
+        },
+        {
+          "caller": "startListening",
+          "callee": "Number",
+          "lineNumber": 45
+        },
+        {
+          "caller": "startListening",
+          "callee": "sock.bind",
+          "lineNumber": 46
+        },
+        {
+          "caller": "startListening",
+          "callee": "sock.addMembership",
+          "lineNumber": 49
+        },
+        {
+          "caller": "startListening",
+          "callee": "sock.address",
+          "lineNumber": 54
+        },
+        {
+          "caller": "startListening",
+          "callee": "resolve",
+          "lineNumber": 55
+        },
+        {
+          "caller": "discoverOnPort",
+          "callee": "dgram.createSocket",
+          "lineNumber": 69
+        },
+        {
+          "caller": "discoverOnPort",
+          "callee": "sock.on",
+          "lineNumber": 71
+        },
+        {
+          "caller": "discoverOnPort",
+          "callee": "JSON.parse",
+          "lineNumber": 73
+        },
+        {
+          "caller": "discoverOnPort",
+          "callee": "msg.toString",
+          "lineNumber": 73
+        },
+        {
+          "caller": "discoverOnPort",
+          "callee": "results.push",
+          "lineNumber": 75
+        },
+        {
+          "caller": "discoverOnPort",
+          "callee": "String",
+          "lineNumber": 77
+        },
+        {
+          "caller": "discoverOnPort",
+          "callee": "Number",
+          "lineNumber": 78
+        },
+        {
+          "caller": "discoverOnPort",
+          "callee": "String",
+          "lineNumber": 79
+        },
+        {
+          "caller": "discoverOnPort",
+          "callee": "String",
+          "lineNumber": 80
+        },
+        {
+          "caller": "discoverOnPort",
+          "callee": "sock.bind",
+          "lineNumber": 87
+        },
+        {
+          "caller": "discoverOnPort",
+          "callee": "sock.setBroadcast",
+          "lineNumber": 89
+        },
+        {
+          "caller": "discoverOnPort",
+          "callee": "Buffer.from",
+          "lineNumber": 91
+        },
+        {
+          "caller": "discoverOnPort",
+          "callee": "Number",
+          "lineNumber": 92
+        },
+        {
+          "caller": "discoverOnPort",
+          "callee": "sock.send",
+          "lineNumber": 93
+        },
+        {
+          "caller": "discoverOnPort",
+          "callee": "setTimeout",
+          "lineNumber": 94
+        },
+        {
+          "caller": "discoverOnPort",
+          "callee": "sock.close",
+          "lineNumber": 95
+        },
+        {
+          "caller": "discoverOnPort",
+          "callee": "resolve",
+          "lineNumber": 96
+        },
+        {
+          "caller": "discover",
+          "callee": "dgram.createSocket",
+          "lineNumber": 110
+        },
+        {
+          "caller": "discover",
+          "callee": "sock.on",
+          "lineNumber": 112
+        },
+        {
+          "caller": "discover",
+          "callee": "JSON.parse",
+          "lineNumber": 114
+        },
+        {
+          "caller": "discover",
+          "callee": "msg.toString",
+          "lineNumber": 114
+        },
+        {
+          "caller": "discover",
+          "callee": "seen.has",
+          "lineNumber": 117
+        },
+        {
+          "caller": "discover",
+          "callee": "seen.add",
+          "lineNumber": 118
+        },
+        {
+          "caller": "discover",
+          "callee": "results.push",
+          "lineNumber": 119
+        },
+        {
+          "caller": "discover",
+          "callee": "sock.bind",
+          "lineNumber": 132
+        },
+        {
+          "caller": "discover",
+          "callee": "sock.setBroadcast",
+          "lineNumber": 133
+        },
+        {
+          "caller": "discover",
+          "callee": "sock.setMulticastTTL",
+          "lineNumber": 134
+        },
+        {
+          "caller": "discover",
+          "callee": "Buffer.from",
+          "lineNumber": 135
+        },
+        {
+          "caller": "discover",
+          "callee": "Number",
+          "lineNumber": 136
+        },
+        {
+          "caller": "discover",
+          "callee": "sock.send",
+          "lineNumber": 137
+        },
+        {
+          "caller": "discover",
+          "callee": "setTimeout",
+          "lineNumber": 138
+        },
+        {
+          "caller": "discover",
+          "callee": "sock.close",
+          "lineNumber": 139
+        },
+        {
+          "caller": "discover",
+          "callee": "resolve",
+          "lineNumber": 140
+        },
+        {
+          "caller": "stop",
+          "callee": "listenSocket.close",
+          "lineNumber": 148
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lan-squad/lan-udp-beacon.test.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 31,
+      "nonEmptyLines": 27,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lan-squad/lww-utils.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 77,
+      "nonEmptyLines": 67,
+      "functions": [
+        {
+          "name": "tsValue",
+          "startLine": 3,
+          "endLine": 7,
+          "params": [
+            "iso"
+          ]
+        },
+        {
+          "name": "compareUpdatedAt",
+          "startLine": 10,
+          "endLine": 15,
+          "params": [
+            "aIso",
+            "bIso"
+          ]
+        },
+        {
+          "name": "recordTimestamp",
+          "startLine": 17,
+          "endLine": 23,
+          "params": [
+            "rec",
+            "fields"
+          ]
+        },
+        {
+          "name": "pickLwwRecordMeta",
+          "startLine": 26,
+          "endLine": 36,
+          "params": [
+            "serverRec",
+            "incomingRec",
+            "preferOnTie",
+            "timestampFields"
+          ]
+        },
+        {
+          "name": "pickLwwRecord",
+          "startLine": 39,
+          "endLine": 41,
+          "params": [
+            "serverRec",
+            "incomingRec",
+            "preferOnTie",
+            "timestampFields"
+          ]
+        },
+        {
+          "name": "mergeRecordsLww",
+          "startLine": 43,
+          "endLine": 75,
+          "params": [
+            "serverData",
+            "incomingPatch",
+            "opts"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "tsValue",
+          "callee": "Date.parse",
+          "lineNumber": 5
+        },
+        {
+          "caller": "tsValue",
+          "callee": "Number.isFinite",
+          "lineNumber": 6
+        },
+        {
+          "caller": "compareUpdatedAt",
+          "callee": "tsValue",
+          "lineNumber": 11
+        },
+        {
+          "caller": "compareUpdatedAt",
+          "callee": "tsValue",
+          "lineNumber": 12
+        },
+        {
+          "caller": "recordTimestamp",
+          "callee": "Array.isArray",
+          "lineNumber": 18
+        },
+        {
+          "caller": "pickLwwRecordMeta",
+          "callee": "recordTimestamp",
+          "lineNumber": 27
+        },
+        {
+          "caller": "pickLwwRecordMeta",
+          "callee": "recordTimestamp",
+          "lineNumber": 28
+        },
+        {
+          "caller": "pickLwwRecordMeta",
+          "callee": "compareUpdatedAt",
+          "lineNumber": 29
+        },
+        {
+          "caller": "pickLwwRecord",
+          "callee": "pickLwwRecordMeta",
+          "lineNumber": 40
+        },
+        {
+          "caller": "mergeRecordsLww",
+          "callee": "Array.isArray",
+          "lineNumber": 44
+        },
+        {
+          "caller": "mergeRecordsLww",
+          "callee": "Object.keys",
+          "lineNumber": 44
+        },
+        {
+          "caller": "mergeRecordsLww",
+          "callee": "pickLwwRecordMeta",
+          "lineNumber": 49
+        },
+        {
+          "caller": "mergeRecordsLww",
+          "callee": "timestampFields.includes",
+          "lineNumber": 59
+        },
+        {
+          "caller": "mergeRecordsLww",
+          "callee": "overwrittenKeys.push",
+          "lineNumber": 64
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 6,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lan-squad/lww-utils.test.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 27,
+      "nonEmptyLines": 24,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lan-squad/migrate-host-state.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 62,
+      "nonEmptyLines": 58,
+      "functions": [
+        {
+          "name": "buildEntityVersionsFromBundle",
+          "startLine": 4,
+          "endLine": 9,
+          "params": [
+            "bundle"
+          ]
+        },
+        {
+          "name": "migrateBundleV1ToV2",
+          "startLine": 11,
+          "endLine": 30,
+          "params": [
+            "bundle"
+          ]
+        },
+        {
+          "name": "migrateHostStateIfNeeded",
+          "startLine": 32,
+          "endLine": 60,
+          "params": [
+            "state"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "buildEntityVersionsFromBundle",
+          "callee": "collectKeysFromBundlePayload",
+          "lineNumber": 6
+        },
+        {
+          "caller": "migrateBundleV1ToV2",
+          "callee": "String",
+          "lineNumber": 13
+        },
+        {
+          "caller": "migrateBundleV1ToV2",
+          "callee": "new Date().toISOString",
+          "lineNumber": 13
+        },
+        {
+          "caller": "migrateBundleV1ToV2",
+          "callee": "Number",
+          "lineNumber": 15
+        },
+        {
+          "caller": "migrateBundleV1ToV2",
+          "callee": "buildEntityVersionsFromBundle",
+          "lineNumber": 19
+        },
+        {
+          "caller": "migrateBundleV1ToV2",
+          "callee": "Array.isArray",
+          "lineNumber": 20
+        },
+        {
+          "caller": "migrateBundleV1ToV2",
+          "callee": "Array.isArray",
+          "lineNumber": 22
+        },
+        {
+          "caller": "migrateBundleV1ToV2",
+          "callee": "String",
+          "lineNumber": 26
+        },
+        {
+          "caller": "migrateBundleV1ToV2",
+          "callee": "Array.isArray",
+          "lineNumber": 28
+        },
+        {
+          "caller": "migrateHostStateIfNeeded",
+          "callee": "Number",
+          "lineNumber": 34
+        },
+        {
+          "caller": "migrateHostStateIfNeeded",
+          "callee": "Array.isArray",
+          "lineNumber": 36
+        },
+        {
+          "caller": "migrateHostStateIfNeeded",
+          "callee": "Array.isArray",
+          "lineNumber": 40
+        },
+        {
+          "caller": "migrateHostStateIfNeeded",
+          "callee": "Array.isArray",
+          "lineNumber": 43
+        },
+        {
+          "caller": "migrateHostStateIfNeeded",
+          "callee": "Array.isArray",
+          "lineNumber": 47
+        },
+        {
+          "caller": "migrateHostStateIfNeeded",
+          "callee": "Object.keys",
+          "lineNumber": 55
+        },
+        {
+          "caller": "migrateHostStateIfNeeded",
+          "callee": "migrateBundleV1ToV2",
+          "lineNumber": 56
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    }
+  ]
+}

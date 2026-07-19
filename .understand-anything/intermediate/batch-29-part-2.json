@@ -1,0 +1,624 @@
+{
+  "nodes": [
+    {
+      "id": "file:public/js/features/estado-actual-ranges.mjs",
+      "type": "file",
+      "name": "estado-actual-ranges.mjs",
+      "filePath": "public/js/features/estado-actual-ranges.mjs",
+      "summary": "Clinical reference ranges and abnormal flags for EA vital signs.",
+      "tags": [
+        "component",
+        "clinical-ui",
+        "exports"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/features/estado-actual-ranges.mjs:isGluAltered",
+      "type": "function",
+      "name": "isGluAltered",
+      "filePath": "public/js/features/estado-actual-ranges.mjs",
+      "lineRange": [
+        13,
+        18
+      ],
+      "summary": "isGluAltered — implementation in estado-actual-ranges.mjs.",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/features/estado-actual-ranges.mjs:isGlucometriaMarkedAltered",
+      "type": "function",
+      "name": "isGlucometriaMarkedAltered",
+      "filePath": "public/js/features/estado-actual-ranges.mjs",
+      "lineRange": [
+        23,
+        27
+      ],
+      "summary": "isGlucometriaMarkedAltered — implementation in estado-actual-ranges.mjs.",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/features/estado-actual-ranges.mjs:isVitalAltered",
+      "type": "function",
+      "name": "isVitalAltered",
+      "filePath": "public/js/features/estado-actual-ranges.mjs",
+      "lineRange": [
+        29,
+        36
+      ],
+      "summary": "isVitalAltered — implementation in estado-actual-ranges.mjs.",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/features/estado-actual-ranges.mjs:buildAlteredAtDefaults",
+      "type": "function",
+      "name": "buildAlteredAtDefaults",
+      "filePath": "public/js/features/estado-actual-ranges.mjs",
+      "lineRange": [
+        38,
+        44
+      ],
+      "summary": "Builds AlteredAtDefaults structure for downstream use.",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/features/estado-actual-ranges.test.mjs",
+      "type": "file",
+      "name": "estado-actual-ranges.test.mjs",
+      "filePath": "public/js/features/estado-actual-ranges.test.mjs",
+      "summary": "Tests vital range thresholds and age-adjusted limits.",
+      "tags": [
+        "test",
+        "component",
+        "clinical-ui"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/features/estado-actual-registro-defaults.mjs",
+      "type": "file",
+      "name": "estado-actual-registro-defaults.mjs",
+      "filePath": "public/js/features/estado-actual-registro-defaults.mjs",
+      "summary": "Default values for new EA registro rows and shift handoff fields.",
+      "tags": [
+        "component",
+        "clinical-ui",
+        "exports"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/features/estado-actual-registro-defaults.mjs:startOfLocalDay",
+      "type": "function",
+      "name": "startOfLocalDay",
+      "filePath": "public/js/features/estado-actual-registro-defaults.mjs",
+      "lineRange": [
+        13,
+        15
+      ],
+      "summary": "startOfLocalDay — implementation in estado-actual-registro-defaults.mjs.",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/features/estado-actual-registro-defaults.mjs:getDefaultRegistroRecordedAt",
+      "type": "function",
+      "name": "getDefaultRegistroRecordedAt",
+      "filePath": "public/js/features/estado-actual-registro-defaults.mjs",
+      "lineRange": [
+        22,
+        25
+      ],
+      "summary": "Retrieves DefaultRegistroRecordedAt from state or remote source.",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/features/estado-actual-registro-defaults.mjs:getGlucometriaRegistroWindow",
+      "type": "function",
+      "name": "getGlucometriaRegistroWindow",
+      "filePath": "public/js/features/estado-actual-registro-defaults.mjs",
+      "lineRange": [
+        32,
+        39
+      ],
+      "summary": "Retrieves GlucometriaRegistroWindow from state or remote source.",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/features/estado-actual-registro-defaults.mjs:gluPointMs",
+      "type": "function",
+      "name": "gluPointMs",
+      "filePath": "public/js/features/estado-actual-registro-defaults.mjs",
+      "lineRange": [
+        71,
+        88
+      ],
+      "summary": "gluPointMs — implementation in estado-actual-registro-defaults.mjs.",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/features/estado-actual-registro-defaults.mjs:sortGlucometriasChronologically",
+      "type": "function",
+      "name": "sortGlucometriasChronologically",
+      "filePath": "public/js/features/estado-actual-registro-defaults.mjs",
+      "lineRange": [
+        95,
+        109
+      ],
+      "summary": "sortGlucometriasChronologically — implementation in estado-actual-registro-defaults.mjs.",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/features/estado-actual-registro-defaults.mjs:isGluPointInRegistroWindow",
+      "type": "function",
+      "name": "isGluPointInRegistroWindow",
+      "filePath": "public/js/features/estado-actual-registro-defaults.mjs",
+      "lineRange": [
+        116,
+        120
+      ],
+      "summary": "isGluPointInRegistroWindow — implementation in estado-actual-registro-defaults.mjs.",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/features/estado-actual-registro-defaults.mjs:collectGlucometriasForRegistroWindow",
+      "type": "function",
+      "name": "collectGlucometriasForRegistroWindow",
+      "filePath": "public/js/features/estado-actual-registro-defaults.mjs",
+      "lineRange": [
+        127,
+        164
+      ],
+      "summary": "collectGlucometriasForRegistroWindow — implementation in estado-actual-registro-defaults.mjs.",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/features/estado-actual-registro-defaults.test.mjs",
+      "type": "file",
+      "name": "estado-actual-registro-defaults.test.mjs",
+      "filePath": "public/js/features/estado-actual-registro-defaults.test.mjs",
+      "summary": "Tests EA registro default population on new patient admit.",
+      "tags": [
+        "test",
+        "component",
+        "clinical-ui"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:public/js/features/estado-actual-text.mjs",
+      "type": "file",
+      "name": "estado-actual-text.mjs",
+      "filePath": "public/js/features/estado-actual-text.mjs",
+      "summary": "Text serialization and clipboard export for Estado Actual summaries.",
+      "tags": [
+        "component",
+        "clinical-ui",
+        "exports"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/features/estado-actual-text.mjs:medsListForSoap",
+      "type": "function",
+      "name": "medsListForSoap",
+      "filePath": "public/js/features/estado-actual-text.mjs",
+      "lineRange": [
+        22,
+        34
+      ],
+      "summary": "medsListForSoap — implementation in estado-actual-text.mjs.",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/features/estado-actual-text.mjs:buildEstadoActualText",
+      "type": "function",
+      "name": "buildEstadoActualText",
+      "filePath": "public/js/features/estado-actual-text.mjs",
+      "lineRange": [
+        58,
+        207
+      ],
+      "summary": "Builds EstadoActualText structure for downstream use.",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:public/js/features/estado-actual-text.test.mjs",
+      "type": "file",
+      "name": "estado-actual-text.test.mjs",
+      "filePath": "public/js/features/estado-actual-text.test.mjs",
+      "summary": "Tests EA text export format for evolution notes.",
+      "tags": [
+        "test",
+        "component",
+        "clinical-ui"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:public/js/features/estado-actual-vital-extras.mjs",
+      "type": "file",
+      "name": "estado-actual-vital-extras.mjs",
+      "filePath": "public/js/features/estado-actual-vital-extras.mjs",
+      "summary": "Extended vital fields (pain scale, GCS, etc.) beyond standard SOME columns.",
+      "tags": [
+        "component",
+        "clinical-ui",
+        "exports"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/features/estado-actual-vital-extras.mjs:getVitalExtraStorageKey",
+      "type": "function",
+      "name": "getVitalExtraStorageKey",
+      "filePath": "public/js/features/estado-actual-vital-extras.mjs",
+      "lineRange": [
+        9,
+        11
+      ],
+      "summary": "Retrieves VitalExtraStorageKey from state or remote source.",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/features/estado-actual-vital-extras.mjs:getBaseVitalKey",
+      "type": "function",
+      "name": "getBaseVitalKey",
+      "filePath": "public/js/features/estado-actual-vital-extras.mjs",
+      "lineRange": [
+        17,
+        21
+      ],
+      "summary": "Retrieves BaseVitalKey from state or remote source.",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/features/estado-actual-vital-extras.mjs:getVitalExtraValue",
+      "type": "function",
+      "name": "getVitalExtraValue",
+      "filePath": "public/js/features/estado-actual-vital-extras.mjs",
+      "lineRange": [
+        28,
+        31
+      ],
+      "summary": "Retrieves VitalExtraValue from state or remote source.",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:public/js/features/estado-actual-ranges.mjs",
+      "target": "function:public/js/features/estado-actual-ranges.mjs:isGluAltered",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/features/estado-actual-ranges.mjs",
+      "target": "function:public/js/features/estado-actual-ranges.mjs:isGluAltered",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/features/estado-actual-ranges.mjs",
+      "target": "function:public/js/features/estado-actual-ranges.mjs:isGlucometriaMarkedAltered",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/features/estado-actual-ranges.mjs",
+      "target": "function:public/js/features/estado-actual-ranges.mjs:isGlucometriaMarkedAltered",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/features/estado-actual-ranges.mjs",
+      "target": "function:public/js/features/estado-actual-ranges.mjs:isVitalAltered",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/features/estado-actual-ranges.mjs",
+      "target": "function:public/js/features/estado-actual-ranges.mjs:isVitalAltered",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/features/estado-actual-ranges.mjs",
+      "target": "function:public/js/features/estado-actual-ranges.mjs:buildAlteredAtDefaults",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/features/estado-actual-ranges.mjs",
+      "target": "function:public/js/features/estado-actual-ranges.mjs:buildAlteredAtDefaults",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/features/estado-actual-ranges.test.mjs",
+      "target": "file:public/js/features/estado-actual-ranges.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/features/estado-actual-ranges.mjs",
+      "target": "file:public/js/features/estado-actual-ranges.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:public/js/features/estado-actual-registro-defaults.mjs",
+      "target": "function:public/js/features/estado-actual-registro-defaults.mjs:startOfLocalDay",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/features/estado-actual-registro-defaults.mjs",
+      "target": "function:public/js/features/estado-actual-registro-defaults.mjs:startOfLocalDay",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/features/estado-actual-registro-defaults.mjs",
+      "target": "function:public/js/features/estado-actual-registro-defaults.mjs:getDefaultRegistroRecordedAt",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/features/estado-actual-registro-defaults.mjs",
+      "target": "function:public/js/features/estado-actual-registro-defaults.mjs:getDefaultRegistroRecordedAt",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/features/estado-actual-registro-defaults.mjs",
+      "target": "function:public/js/features/estado-actual-registro-defaults.mjs:getGlucometriaRegistroWindow",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/features/estado-actual-registro-defaults.mjs",
+      "target": "function:public/js/features/estado-actual-registro-defaults.mjs:getGlucometriaRegistroWindow",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/features/estado-actual-registro-defaults.mjs",
+      "target": "function:public/js/features/estado-actual-registro-defaults.mjs:gluPointMs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/features/estado-actual-registro-defaults.mjs",
+      "target": "function:public/js/features/estado-actual-registro-defaults.mjs:gluPointMs",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/features/estado-actual-registro-defaults.mjs",
+      "target": "function:public/js/features/estado-actual-registro-defaults.mjs:sortGlucometriasChronologically",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/features/estado-actual-registro-defaults.mjs",
+      "target": "function:public/js/features/estado-actual-registro-defaults.mjs:sortGlucometriasChronologically",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/features/estado-actual-registro-defaults.mjs",
+      "target": "function:public/js/features/estado-actual-registro-defaults.mjs:isGluPointInRegistroWindow",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/features/estado-actual-registro-defaults.mjs",
+      "target": "function:public/js/features/estado-actual-registro-defaults.mjs:isGluPointInRegistroWindow",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/features/estado-actual-registro-defaults.mjs",
+      "target": "function:public/js/features/estado-actual-registro-defaults.mjs:collectGlucometriasForRegistroWindow",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/features/estado-actual-registro-defaults.mjs",
+      "target": "function:public/js/features/estado-actual-registro-defaults.mjs:collectGlucometriasForRegistroWindow",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/features/estado-actual-registro-defaults.test.mjs",
+      "target": "file:public/js/features/estado-actual-registro-defaults.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/features/estado-actual-registro-defaults.mjs",
+      "target": "file:public/js/features/estado-actual-registro-defaults.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:public/js/features/estado-actual-text.mjs",
+      "target": "file:public/js/features/estado-actual-data.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/features/estado-actual-text.mjs",
+      "target": "file:public/js/features/estado-actual-glu-rescue.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/features/estado-actual-text.mjs",
+      "target": "file:public/js/features/estado-actual-io.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/features/estado-actual-text.mjs",
+      "target": "function:public/js/features/estado-actual-text.mjs:medsListForSoap",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/features/estado-actual-text.mjs",
+      "target": "function:public/js/features/estado-actual-text.mjs:buildEstadoActualText",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/features/estado-actual-text.mjs",
+      "target": "function:public/js/features/estado-actual-text.mjs:buildEstadoActualText",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/features/estado-actual-text.test.mjs",
+      "target": "file:public/js/features/estado-actual-data.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/features/estado-actual-text.test.mjs",
+      "target": "file:public/js/features/estado-actual-text.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/features/estado-actual-text.mjs",
+      "target": "file:public/js/features/estado-actual-text.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:public/js/features/estado-actual-vital-extras.mjs",
+      "target": "function:public/js/features/estado-actual-vital-extras.mjs:getVitalExtraStorageKey",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/features/estado-actual-vital-extras.mjs",
+      "target": "function:public/js/features/estado-actual-vital-extras.mjs:getVitalExtraStorageKey",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/features/estado-actual-vital-extras.mjs",
+      "target": "function:public/js/features/estado-actual-vital-extras.mjs:getBaseVitalKey",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/features/estado-actual-vital-extras.mjs",
+      "target": "function:public/js/features/estado-actual-vital-extras.mjs:getBaseVitalKey",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/features/estado-actual-vital-extras.mjs",
+      "target": "function:public/js/features/estado-actual-vital-extras.mjs:getVitalExtraValue",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/features/estado-actual-vital-extras.mjs",
+      "target": "function:public/js/features/estado-actual-vital-extras.mjs:getVitalExtraValue",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

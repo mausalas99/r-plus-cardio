@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024" fill="none">
+  <title>R+ icon layer 3 accent signal</title>
+  <g stroke="#4a52e8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M 196 656 L 512 572 L 828 648" fill="none" stroke-width="52"/>
+    <line x1="196" y1="708" x2="196" y2="760" stroke-width="12"/>
+    <line x1="828" y1="708" x2="828" y2="760" stroke-width="12"/>
+  </g>
+</svg>

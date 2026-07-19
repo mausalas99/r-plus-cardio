@@ -1,0 +1,29 @@
+{
+  "female": [
+    { "id": "menarca", "label": "Menarca", "kind": "age" },
+    { "id": "ciclo_menstrual", "label": "Ciclo menstrual / FUM", "kind": "fum" },
+    { "id": "gpac", "label": "Gestas, partos, abortos y cesáreas", "kind": "gpac", "fullWidth": true },
+    { "id": "menopausia", "label": "Menopausia", "kind": "detail" },
+    { "id": "anticonceptivos_th", "label": "Anticonceptivos / terapia hormonal", "kind": "medications", "fullWidth": true },
+    {
+      "id": "patologia_ginecologica",
+      "label": "Patología ginecológica (mama, cuello uterino, ovario)",
+      "kind": "detail",
+      "fullWidth": true
+    },
+    {
+      "id": "embarazo",
+      "label": "Embarazo actual / complicaciones obstétricas",
+      "kind": "detail",
+      "fullWidth": true
+    }
+  ],
+  "male": [
+    { "id": "desarrollo_sexual", "label": "Desarrollo sexual secundario", "kind": "detail" },
+    { "id": "andropausia", "label": "Andropausia", "kind": "detail" },
+    { "id": "prostata", "label": "Patología prostática (HPB, cáncer)", "kind": "detail" },
+    { "id": "disfuncion_sexual", "label": "Disfunción sexual", "kind": "detail" },
+    { "id": "patologia_urologica", "label": "Patología urológica / oncológica", "kind": "detail", "fullWidth": true },
+    { "id": "hernia_escrotal", "label": "Hernia inguinal / escrotal", "kind": "detail" }
+  ]
+}

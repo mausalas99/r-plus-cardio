@@ -1,0 +1,38 @@
+R+ 7.3.0 (Perfil histórico, directorio LAN y laboratorio)
+==========================================================
+
+Fecha: 2026-06-10
+
+## Resumen
+
+Sobre **7.2.9**: el **perfil farmacoterapéutico** muestra una grilla dinámica que cruza meses con filas continuas por medicamento; el **directorio LAN** registra actividad reciente y admite filtros; **Laboratorio** renueva el historial por fecha; el censo PDF envuelve labs y pendientes; el anfitrión abre un **dashboard modal** del censo host.
+
+## Nuevo / mejorado
+
+- **Perfil histórico — ventana dinámica** — Columnas ancladas al mes en navegación: solape automático cerca de fin/inicio de mes (< día 14), mes actual sin días futuros (`1…hoy`), mes pasado acotado por `fimiFecha` y primer/último día con indicación.
+- **Perfil histórico — filas continuas** — Medicamentos con el mismo `rowKey` en dos meses se unifican en una sola fila al cruzar el calendario (persistencia sigue por mes).
+- **Perfil histórico — grupos por medicamento** — Filas colapsables por nombre de fármaco; adherencia calculada sobre el conjunto de `rowKey` del grupo.
+- **FAB Copiar — contexto** — Los botones flotantes de **Laboratorio** y **Estado actual** solo aparecen en la pestaña activa y cuando hay contenido copiable.
+- **Directorio LAN — actividad** — `last_activity_at` en usuarios clínicos (SQLCipher **v16–v17**); etiquetas «Activo ahora», «hace X min», «Inactivo».
+- **Directorio LAN — filtros** — Búsqueda, estado (asignado/sin equipo), sala y actividad; rangos de rango colapsables cuando hay más de 4 usuarios.
+- **Directorio LAN — CTA** — Botón **Directorio LAN** en la barra superior de equipos (modal aparte).
+- **Laboratorio — historial por fecha** — Selector **Estudio** (fecha + tipo) en lugar de lista larga; re-procesar, re-enviar a nota o borrar el set seleccionado.
+- **Manejo — destino SOAP** — Medicamentos clasificados como «otros» muestran selector de destino en Estado actual / SOAP.
+- **Estado actual — dieta pendiente en panel** — La propuesta de dieta se refleja en los campos del panel antes de confirmar.
+- **Censo PDF — labs y pendientes** — Columnas con envoltura completa (sin elipsis por ancho estrecho).
+- **Censo — columna pendientes** — Hasta 3 pendientes abiertos por prioridad (alta → media → baja).
+- **Filtros censo — equipo por sala** — El dropdown de equipo se acota a la sala seleccionada; limpia filtro inválido al cambiar sala.
+- **LAN anfitrión — censo dashboard** — Modal a pantalla completa con snapshot host vs local, fantasmas, archivados y purga.
+
+## Operación en guardia
+
+Instala **7.3.0 en todas** las estaciones del turno el mismo día. La base clínica sube a esquema **v17** (`last_activity_at` en usuarios). Macs en **7.2.9** siguen compatibles en LAN; el iPad no requiere actualización.
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v7.3.0
+
+- Mac: `R+-7.3.0-arm64.dmg`, `R+-7.3.0-x64.dmg` (y zip para auto-update).
+- Windows: `R+-7.3.0-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye write-release-yml.js).

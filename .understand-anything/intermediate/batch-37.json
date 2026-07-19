@@ -1,0 +1,170 @@
+{
+  "nodes": [
+    {
+      "id": "config:.env.example",
+      "type": "config",
+      "name": ".env.example",
+      "filePath": ".env.example",
+      "summary": "Example R_PLUS_* environment variables for LAN peer dev, persistence mode, and user data override.",
+      "tags": [
+        "configuration",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:CHANGELOG.md",
+      "type": "document",
+      "name": "CHANGELOG.md",
+      "filePath": "CHANGELOG.md",
+      "summary": "Human-readable release history with versioned sections for GitHub releases.",
+      "tags": [
+        "documentation",
+        "module"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:CLAUDE.md",
+      "type": "document",
+      "name": "CLAUDE.md",
+      "filePath": "CLAUDE.md",
+      "summary": "Claude Code entry pointer: build commands, hard rules, and docs hub links.",
+      "tags": [
+        "documentation",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:CONTRIBUTING.md",
+      "type": "document",
+      "name": "CONTRIBUTING.md",
+      "filePath": "CONTRIBUTING.md",
+      "summary": "Contributor guide: PR conventions, test policy, and multi-agent rules table.",
+      "tags": [
+        "documentation",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:README.md",
+      "type": "document",
+      "name": "README.md",
+      "filePath": "README.md",
+      "summary": "Project overview: R+ Electron medical workbench, install, dev workflow, and release notes link.",
+      "tags": [
+        "documentation",
+        "entry-point",
+        "module"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:design.md",
+      "type": "document",
+      "name": "design.md",
+      "filePath": "design.md",
+      "summary": "Design system reference: tokens, typography, spacing, and UI conventions for R+.",
+      "tags": [
+        "documentation",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:min-version.json",
+      "type": "config",
+      "name": "min-version.json",
+      "filePath": "min-version.json",
+      "summary": "Minimum compatible app version for LAN sync and auto-update peer gating.",
+      "tags": [
+        "configuration",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:package.json",
+      "type": "config",
+      "name": "package.json",
+      "filePath": "package.json",
+      "summary": "npm manifest: Electron app metadata, scripts, dependencies, and electron-builder config.",
+      "tags": [
+        "configuration",
+        "entry-point",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:skills-lock.json",
+      "type": "config",
+      "name": "skills-lock.json",
+      "filePath": "skills-lock.json",
+      "summary": "Lockfile pinning agent skill versions for reproducible Cursor/Claude skill installs.",
+      "tags": [
+        "configuration",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:stable-versions.json",
+      "type": "config",
+      "name": "stable-versions.json",
+      "filePath": "stable-versions.json",
+      "summary": "Catalog of stable release versions available for downgrade selection.",
+      "tags": [
+        "configuration",
+        "module"
+      ],
+      "complexity": "complex"
+    }
+  ],
+  "edges": [
+    {
+      "source": "config:.env.example",
+      "target": "file:server.js",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "document:CLAUDE.md",
+      "target": "file:main.js",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:README.md",
+      "target": "file:main.js",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:design.md",
+      "target": "file:public/tokens.css",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:package.json",
+      "target": "file:main.js",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:package.json",
+      "target": "file:scripts/release.js",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    }
+  ]
+}

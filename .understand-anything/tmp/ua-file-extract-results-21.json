@@ -1,0 +1,6542 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 27,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "lib/db/lan-db-bridge.cjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 19,
+      "nonEmptyLines": 14,
+      "functions": [
+        {
+          "name": "setLanDbManager",
+          "startLine": 7,
+          "endLine": 9,
+          "params": [
+            "mgr"
+          ]
+        },
+        {
+          "name": "getLanDbManager",
+          "startLine": 11,
+          "endLine": 13,
+          "params": []
+        },
+        {
+          "name": "resetLanDbManagerForTests",
+          "startLine": 15,
+          "endLine": 17,
+          "params": []
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/doc-export-audit.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 22,
+      "nonEmptyLines": 19,
+      "functions": [
+        {
+          "name": "safeRegistro",
+          "startLine": 3,
+          "endLine": 7,
+          "params": [
+            "patient"
+          ]
+        },
+        {
+          "name": "logDocExport",
+          "startLine": 9,
+          "endLine": 20,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "safeRegistro",
+          "callee": "String(r).slice",
+          "lineNumber": 5
+        },
+        {
+          "caller": "safeRegistro",
+          "callee": "String",
+          "lineNumber": 5
+        },
+        {
+          "caller": "logDocExport",
+          "callee": "safeRegistro",
+          "lineNumber": 12
+        },
+        {
+          "caller": "logDocExport",
+          "callee": "String(error).slice",
+          "lineNumber": 15
+        },
+        {
+          "caller": "logDocExport",
+          "callee": "String",
+          "lineNumber": 15
+        },
+        {
+          "caller": "logDocExport",
+          "callee": "JSON.stringify",
+          "lineNumber": 17
+        },
+        {
+          "caller": "logDocExport",
+          "callee": "console.error",
+          "lineNumber": 18
+        },
+        {
+          "caller": "logDocExport",
+          "callee": "console.log",
+          "lineNumber": 19
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/doc-export-http.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 56,
+      "nonEmptyLines": 52,
+      "functions": [
+        {
+          "name": "sendDocxBuffer",
+          "startLine": 8,
+          "endLine": 33,
+          "params": [
+            "res"
+          ]
+        },
+        {
+          "name": "sendPdfBuffer",
+          "startLine": 35,
+          "endLine": 54,
+          "params": [
+            "res"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "sendDocxBuffer",
+          "callee": "String(fileName || 'document.docx').replace",
+          "lineNumber": 11
+        },
+        {
+          "caller": "sendDocxBuffer",
+          "callee": "String",
+          "lineNumber": 11
+        },
+        {
+          "caller": "sendDocxBuffer",
+          "callee": "res.setHeader",
+          "lineNumber": 12
+        },
+        {
+          "caller": "sendDocxBuffer",
+          "callee": "res.setHeader",
+          "lineNumber": 13
+        },
+        {
+          "caller": "sendDocxBuffer",
+          "callee": "res.send",
+          "lineNumber": 14
+        },
+        {
+          "caller": "sendDocxBuffer",
+          "callee": "logDocExport",
+          "lineNumber": 15
+        },
+        {
+          "caller": "sendDocxBuffer",
+          "callee": "res.status(500).json",
+          "lineNumber": 18
+        },
+        {
+          "caller": "sendDocxBuffer",
+          "callee": "res.status",
+          "lineNumber": 18
+        },
+        {
+          "caller": "sendDocxBuffer",
+          "callee": "logDocExport",
+          "lineNumber": 20
+        },
+        {
+          "caller": "sendDocxBuffer",
+          "callee": "String",
+          "lineNumber": 24
+        },
+        {
+          "caller": "sendDocxBuffer",
+          "callee": "require",
+          "lineNumber": 29
+        },
+        {
+          "caller": "sendDocxBuffer",
+          "callee": "fs.promises.unlink(tmpPath).catch",
+          "lineNumber": 30
+        },
+        {
+          "caller": "sendDocxBuffer",
+          "callee": "fs.promises.unlink",
+          "lineNumber": 30
+        },
+        {
+          "caller": "sendPdfBuffer",
+          "callee": "String(fileName || 'censo.pdf').replace",
+          "lineNumber": 37
+        },
+        {
+          "caller": "sendPdfBuffer",
+          "callee": "String",
+          "lineNumber": 37
+        },
+        {
+          "caller": "sendPdfBuffer",
+          "callee": "res.setHeader",
+          "lineNumber": 38
+        },
+        {
+          "caller": "sendPdfBuffer",
+          "callee": "res.setHeader",
+          "lineNumber": 39
+        },
+        {
+          "caller": "sendPdfBuffer",
+          "callee": "res.send",
+          "lineNumber": 40
+        },
+        {
+          "caller": "sendPdfBuffer",
+          "callee": "logDocExport",
+          "lineNumber": 41
+        },
+        {
+          "caller": "sendPdfBuffer",
+          "callee": "res.status(500).json",
+          "lineNumber": 44
+        },
+        {
+          "caller": "sendPdfBuffer",
+          "callee": "res.status",
+          "lineNumber": 44
+        },
+        {
+          "caller": "sendPdfBuffer",
+          "callee": "logDocExport",
+          "lineNumber": 46
+        },
+        {
+          "caller": "sendPdfBuffer",
+          "callee": "String",
+          "lineNumber": 50
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/doc-export-service.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 105,
+      "nonEmptyLines": 94,
+      "functions": [
+        {
+          "name": "safeName",
+          "startLine": 12,
+          "endLine": 14,
+          "params": [
+            "str"
+          ]
+        },
+        {
+          "name": "getScriptsDir",
+          "startLine": 16,
+          "endLine": 19,
+          "params": []
+        },
+        {
+          "name": "badRequest",
+          "startLine": 21,
+          "endLine": 25,
+          "params": [
+            "message"
+          ]
+        },
+        {
+          "name": "resolveExportDir",
+          "startLine": 27,
+          "endLine": 43,
+          "params": [
+            "outputDir",
+            "paths"
+          ]
+        },
+        {
+          "name": "exportNoteDocx",
+          "startLine": 45,
+          "endLine": 50,
+          "params": []
+        },
+        {
+          "name": "exportIndicacionesDocx",
+          "startLine": 52,
+          "endLine": 57,
+          "params": []
+        },
+        {
+          "name": "exportListadoDocx",
+          "startLine": 59,
+          "endLine": 74,
+          "params": []
+        },
+        {
+          "name": "exportCensoPdf",
+          "startLine": 76,
+          "endLine": 83,
+          "params": []
+        },
+        {
+          "name": "exportRecetaHuPdf",
+          "startLine": 85,
+          "endLine": 95,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "safeName",
+          "callee": "(str || '').replace",
+          "lineNumber": 13
+        },
+        {
+          "caller": "getScriptsDir",
+          "callee": "path.join",
+          "lineNumber": 17
+        },
+        {
+          "caller": "getScriptsDir",
+          "callee": "root.includes",
+          "lineNumber": 18
+        },
+        {
+          "caller": "getScriptsDir",
+          "callee": "root.replace",
+          "lineNumber": 18
+        },
+        {
+          "caller": "resolveExportDir",
+          "callee": "resolveAllowedOutputDir",
+          "lineNumber": 29
+        },
+        {
+          "caller": "exportNoteDocx",
+          "callee": "badRequest",
+          "lineNumber": 46
+        },
+        {
+          "caller": "exportNoteDocx",
+          "callee": "generateNoteBuffer",
+          "lineNumber": 47
+        },
+        {
+          "caller": "exportNoteDocx",
+          "callee": "safeName",
+          "lineNumber": 48
+        },
+        {
+          "caller": "exportNoteDocx",
+          "callee": "safeName",
+          "lineNumber": 48
+        },
+        {
+          "caller": "exportIndicacionesDocx",
+          "callee": "badRequest",
+          "lineNumber": 53
+        },
+        {
+          "caller": "exportIndicacionesDocx",
+          "callee": "generateIndicacionesBuffer",
+          "lineNumber": 54
+        },
+        {
+          "caller": "exportIndicacionesDocx",
+          "callee": "safeName",
+          "lineNumber": 55
+        },
+        {
+          "caller": "exportIndicacionesDocx",
+          "callee": "safeName",
+          "lineNumber": 55
+        },
+        {
+          "caller": "exportListadoDocx",
+          "callee": "badRequest",
+          "lineNumber": 60
+        },
+        {
+          "caller": "exportListadoDocx",
+          "callee": "generateListadoBuffer",
+          "lineNumber": 61
+        },
+        {
+          "caller": "exportListadoDocx",
+          "callee": "[\n    String(now.getHours()).padStart(2, '0'),\n    String(now.getMinutes()).padStart(2, '0'),\n    String(now.getSeconds()).padStart(2, '0'),\n  ].join",
+          "lineNumber": 67
+        },
+        {
+          "caller": "exportListadoDocx",
+          "callee": "String(now.getHours()).padStart",
+          "lineNumber": 68
+        },
+        {
+          "caller": "exportListadoDocx",
+          "callee": "String",
+          "lineNumber": 68
+        },
+        {
+          "caller": "exportListadoDocx",
+          "callee": "now.getHours",
+          "lineNumber": 68
+        },
+        {
+          "caller": "exportListadoDocx",
+          "callee": "String(now.getMinutes()).padStart",
+          "lineNumber": 69
+        },
+        {
+          "caller": "exportListadoDocx",
+          "callee": "String",
+          "lineNumber": 69
+        },
+        {
+          "caller": "exportListadoDocx",
+          "callee": "now.getMinutes",
+          "lineNumber": 69
+        },
+        {
+          "caller": "exportListadoDocx",
+          "callee": "String(now.getSeconds()).padStart",
+          "lineNumber": 70
+        },
+        {
+          "caller": "exportListadoDocx",
+          "callee": "String",
+          "lineNumber": 70
+        },
+        {
+          "caller": "exportListadoDocx",
+          "callee": "now.getSeconds",
+          "lineNumber": 70
+        },
+        {
+          "caller": "exportListadoDocx",
+          "callee": "safeName",
+          "lineNumber": 72
+        },
+        {
+          "caller": "exportListadoDocx",
+          "callee": "safeName",
+          "lineNumber": 72
+        },
+        {
+          "caller": "exportCensoPdf",
+          "callee": "Array.isArray",
+          "lineNumber": 77
+        },
+        {
+          "caller": "exportCensoPdf",
+          "callee": "badRequest",
+          "lineNumber": 77
+        },
+        {
+          "caller": "exportCensoPdf",
+          "callee": "import",
+          "lineNumber": 78
+        },
+        {
+          "caller": "exportCensoPdf",
+          "callee": "renderCensusPdf",
+          "lineNumber": 79
+        },
+        {
+          "caller": "exportCensoPdf",
+          "callee": "censoFileName",
+          "lineNumber": 81
+        },
+        {
+          "caller": "exportRecetaHuPdf",
+          "callee": "badRequest",
+          "lineNumber": 86
+        },
+        {
+          "caller": "exportRecetaHuPdf",
+          "callee": "Object.assign",
+          "lineNumber": 87
+        },
+        {
+          "caller": "exportRecetaHuPdf",
+          "callee": "fillRecetaHuPdf",
+          "lineNumber": 92
+        },
+        {
+          "caller": "exportRecetaHuPdf",
+          "callee": "getScriptsDir",
+          "lineNumber": 92
+        },
+        {
+          "caller": "exportRecetaHuPdf",
+          "callee": "safeName",
+          "lineNumber": 93
+        },
+        {
+          "caller": "exportRecetaHuPdf",
+          "callee": "safeName",
+          "lineNumber": 93
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 0,
+        "functionCount": 9,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/doc-generators/indicaciones.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 214,
+      "nonEmptyLines": 183,
+      "functions": [
+        {
+          "name": "mkR",
+          "startLine": 17,
+          "endLine": 23,
+          "params": [
+            "text"
+          ]
+        },
+        {
+          "name": "mkP",
+          "startLine": 25,
+          "endLine": 28,
+          "params": [
+            "contentXml"
+          ]
+        },
+        {
+          "name": "mkListP",
+          "startLine": 30,
+          "endLine": 39,
+          "params": [
+            "text"
+          ]
+        },
+        {
+          "name": "sectionXml",
+          "startLine": 41,
+          "endLine": 52,
+          "params": [
+            "title",
+            "content"
+          ]
+        },
+        {
+          "name": "cellR0c0",
+          "startLine": 54,
+          "endLine": 61,
+          "params": [
+            "fecha",
+            "hora"
+          ]
+        },
+        {
+          "name": "cellR0c1",
+          "startLine": 63,
+          "endLine": 70,
+          "params": [
+            "servicio"
+          ]
+        },
+        {
+          "name": "cellR1c0",
+          "startLine": 72,
+          "endLine": 85,
+          "params": [
+            "medicos"
+          ]
+        },
+        {
+          "name": "cellR1c1",
+          "startLine": 87,
+          "endLine": 117,
+          "params": [
+            "ind",
+            "servicio",
+            "otros"
+          ]
+        },
+        {
+          "name": "findFirstTable",
+          "startLine": 119,
+          "endLine": 125,
+          "params": [
+            "xml"
+          ]
+        },
+        {
+          "name": "findRows",
+          "startLine": 127,
+          "endLine": 135,
+          "params": [
+            "tblXml"
+          ]
+        },
+        {
+          "name": "findCells",
+          "startLine": 137,
+          "endLine": 145,
+          "params": [
+            "rowXml"
+          ]
+        },
+        {
+          "name": "generateIndicacionesBuffer",
+          "startLine": 147,
+          "endLine": 206,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "mkR",
+          "callee": "esc",
+          "lineNumber": 21
+        },
+        {
+          "caller": "mkListP",
+          "callee": "esc",
+          "lineNumber": 37
+        },
+        {
+          "caller": "sectionXml",
+          "callee": "mkP",
+          "lineNumber": 42
+        },
+        {
+          "caller": "sectionXml",
+          "callee": "mkR",
+          "lineNumber": 42
+        },
+        {
+          "caller": "sectionXml",
+          "callee": "String(content).trim",
+          "lineNumber": 43
+        },
+        {
+          "caller": "sectionXml",
+          "callee": "String",
+          "lineNumber": 43
+        },
+        {
+          "caller": "sectionXml",
+          "callee": "String(content).trim().split",
+          "lineNumber": 44
+        },
+        {
+          "caller": "sectionXml",
+          "callee": "String(content).trim",
+          "lineNumber": 44
+        },
+        {
+          "caller": "sectionXml",
+          "callee": "String",
+          "lineNumber": 44
+        },
+        {
+          "caller": "sectionXml",
+          "callee": "line.trim",
+          "lineNumber": 45
+        },
+        {
+          "caller": "sectionXml",
+          "callee": "mkListP",
+          "lineNumber": 47
+        },
+        {
+          "caller": "cellR0c0",
+          "callee": "mkP",
+          "lineNumber": 57
+        },
+        {
+          "caller": "cellR0c0",
+          "callee": "mkR",
+          "lineNumber": 57
+        },
+        {
+          "caller": "cellR0c0",
+          "callee": "mkP",
+          "lineNumber": 58
+        },
+        {
+          "caller": "cellR0c0",
+          "callee": "mkR",
+          "lineNumber": 58
+        },
+        {
+          "caller": "cellR0c1",
+          "callee": "mkP",
+          "lineNumber": 67
+        },
+        {
+          "caller": "cellR0c1",
+          "callee": "mkR",
+          "lineNumber": 67
+        },
+        {
+          "caller": "cellR1c0",
+          "callee": "String(medicos || '')\n    .split('\\n')\n    .map((l) => l.trim())\n    .filter",
+          "lineNumber": 73
+        },
+        {
+          "caller": "cellR1c0",
+          "callee": "String(medicos || '')\n    .split('\\n')\n    .map",
+          "lineNumber": 73
+        },
+        {
+          "caller": "cellR1c0",
+          "callee": "String(medicos || '')\n    .split",
+          "lineNumber": 73
+        },
+        {
+          "caller": "cellR1c0",
+          "callee": "String",
+          "lineNumber": 73
+        },
+        {
+          "caller": "cellR1c0",
+          "callee": "l.trim",
+          "lineNumber": 75
+        },
+        {
+          "caller": "cellR1c0",
+          "callee": "mkP",
+          "lineNumber": 77
+        },
+        {
+          "caller": "cellR1c0",
+          "callee": "mkP",
+          "lineNumber": 79
+        },
+        {
+          "caller": "cellR1c0",
+          "callee": "mkR",
+          "lineNumber": 79
+        },
+        {
+          "caller": "cellR1c1",
+          "callee": "(ind.descripcion || '').trim",
+          "lineNumber": 88
+        },
+        {
+          "caller": "cellR1c1",
+          "callee": "mkP",
+          "lineNumber": 93
+        },
+        {
+          "caller": "cellR1c1",
+          "callee": "mkR",
+          "lineNumber": 93
+        },
+        {
+          "caller": "cellR1c1",
+          "callee": "sectionXml",
+          "lineNumber": 102
+        },
+        {
+          "caller": "cellR1c1",
+          "callee": "(item.titulo || '').trim().toUpperCase",
+          "lineNumber": 106
+        },
+        {
+          "caller": "cellR1c1",
+          "callee": "(item.titulo || '').trim",
+          "lineNumber": 106
+        },
+        {
+          "caller": "cellR1c1",
+          "callee": "(item.contenido || '').trim",
+          "lineNumber": 107
+        },
+        {
+          "caller": "cellR1c1",
+          "callee": "sectionXml",
+          "lineNumber": 109
+        },
+        {
+          "caller": "findFirstTable",
+          "callee": "xml.indexOf",
+          "lineNumber": 120
+        },
+        {
+          "caller": "findFirstTable",
+          "callee": "xml.indexOf",
+          "lineNumber": 122
+        },
+        {
+          "caller": "findFirstTable",
+          "callee": "xml.slice",
+          "lineNumber": 124
+        },
+        {
+          "caller": "findRows",
+          "callee": "re.exec",
+          "lineNumber": 131
+        },
+        {
+          "caller": "findRows",
+          "callee": "rows.push",
+          "lineNumber": 132
+        },
+        {
+          "caller": "findCells",
+          "callee": "re.exec",
+          "lineNumber": 141
+        },
+        {
+          "caller": "findCells",
+          "callee": "cells.push",
+          "lineNumber": 142
+        },
+        {
+          "caller": "generateIndicacionesBuffer",
+          "callee": "loadDocxTemplate",
+          "lineNumber": 151
+        },
+        {
+          "caller": "generateIndicacionesBuffer",
+          "callee": "files['word/document.xml'].toString",
+          "lineNumber": 153
+        },
+        {
+          "caller": "generateIndicacionesBuffer",
+          "callee": "(patient.nombre || '').toUpperCase",
+          "lineNumber": 155
+        },
+        {
+          "caller": "generateIndicacionesBuffer",
+          "callee": "String",
+          "lineNumber": 157
+        },
+        {
+          "caller": "generateIndicacionesBuffer",
+          "callee": "(patient.sexo || '').toUpperCase",
+          "lineNumber": 158
+        },
+        {
+          "caller": "generateIndicacionesBuffer",
+          "callee": "(patient.area || '').toUpperCase",
+          "lineNumber": 159
+        },
+        {
+          "caller": "generateIndicacionesBuffer",
+          "callee": "(patient.servicio || 'MEDICINA INTERNA').toUpperCase",
+          "lineNumber": 160
+        },
+        {
+          "caller": "generateIndicacionesBuffer",
+          "callee": "(indicaciones.fecha || '').replace",
+          "lineNumber": 164
+        },
+        {
+          "caller": "generateIndicacionesBuffer",
+          "callee": "findFirstTable",
+          "lineNumber": 169
+        },
+        {
+          "caller": "generateIndicacionesBuffer",
+          "callee": "findRows",
+          "lineNumber": 174
+        },
+        {
+          "caller": "generateIndicacionesBuffer",
+          "callee": "findCells",
+          "lineNumber": 179
+        },
+        {
+          "caller": "generateIndicacionesBuffer",
+          "callee": "findCells",
+          "lineNumber": 180
+        },
+        {
+          "caller": "generateIndicacionesBuffer",
+          "callee": "xml.replace",
+          "lineNumber": 190
+        },
+        {
+          "caller": "generateIndicacionesBuffer",
+          "callee": "cellR0c0",
+          "lineNumber": 190
+        },
+        {
+          "caller": "generateIndicacionesBuffer",
+          "callee": "xml.replace",
+          "lineNumber": 191
+        },
+        {
+          "caller": "generateIndicacionesBuffer",
+          "callee": "cellR0c1",
+          "lineNumber": 191
+        },
+        {
+          "caller": "generateIndicacionesBuffer",
+          "callee": "xml.replace",
+          "lineNumber": 192
+        },
+        {
+          "caller": "generateIndicacionesBuffer",
+          "callee": "cellR1c0",
+          "lineNumber": 192
+        },
+        {
+          "caller": "generateIndicacionesBuffer",
+          "callee": "xml.replace",
+          "lineNumber": 193
+        },
+        {
+          "caller": "generateIndicacionesBuffer",
+          "callee": "cellR1c1",
+          "lineNumber": 193
+        },
+        {
+          "caller": "generateIndicacionesBuffer",
+          "callee": "replaceT",
+          "lineNumber": 195
+        },
+        {
+          "caller": "generateIndicacionesBuffer",
+          "callee": "replaceT",
+          "lineNumber": 196
+        },
+        {
+          "caller": "generateIndicacionesBuffer",
+          "callee": "replaceT",
+          "lineNumber": 197
+        },
+        {
+          "caller": "generateIndicacionesBuffer",
+          "callee": "replaceT",
+          "lineNumber": 198
+        },
+        {
+          "caller": "generateIndicacionesBuffer",
+          "callee": "replaceT",
+          "lineNumber": 199
+        },
+        {
+          "caller": "generateIndicacionesBuffer",
+          "callee": "replaceT",
+          "lineNumber": 200
+        },
+        {
+          "caller": "generateIndicacionesBuffer",
+          "callee": "replaceT",
+          "lineNumber": 201
+        },
+        {
+          "caller": "generateIndicacionesBuffer",
+          "callee": "replaceT",
+          "lineNumber": 202
+        },
+        {
+          "caller": "generateIndicacionesBuffer",
+          "callee": "Buffer.from",
+          "lineNumber": 204
+        },
+        {
+          "caller": "generateIndicacionesBuffer",
+          "callee": "packDocxBuffer",
+          "lineNumber": 205
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 12,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/doc-generators/indicaciones.test.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 41,
+      "nonEmptyLines": 36,
+      "functions": [
+        {
+          "name": "readDocumentXml",
+          "startLine": 8,
+          "endLine": 11,
+          "params": [
+            "buf"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "readDocumentXml",
+          "callee": "JSZip.loadAsync",
+          "lineNumber": 9
+        },
+        {
+          "caller": "readDocumentXml",
+          "callee": "zip.file('word/document.xml').async",
+          "lineNumber": 10
+        },
+        {
+          "caller": "readDocumentXml",
+          "callee": "zip.file",
+          "lineNumber": 10
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/doc-generators/listado.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 337,
+      "nonEmptyLines": 303,
+      "functions": [
+        {
+          "name": "fmtFecha",
+          "startLine": 25,
+          "endLine": 34,
+          "params": [
+            "isoOrDmy"
+          ]
+        },
+        {
+          "name": "mkPara",
+          "startLine": 36,
+          "endLine": 43,
+          "params": [
+            "contentXml"
+          ]
+        },
+        {
+          "name": "mkRun",
+          "startLine": 45,
+          "endLine": 48,
+          "params": [
+            "text"
+          ]
+        },
+        {
+          "name": "bestBreakInWindow",
+          "startLine": 50,
+          "endLine": 60,
+          "params": [
+            "window"
+          ]
+        },
+        {
+          "name": "splitLongCellText",
+          "startLine": 62,
+          "endLine": 87,
+          "params": [
+            "text"
+          ]
+        },
+        {
+          "name": "mkListContinuationPara",
+          "startLine": 89,
+          "endLine": 101,
+          "params": [
+            "chunk"
+          ]
+        },
+        {
+          "name": "mkListPara",
+          "startLine": 103,
+          "endLine": 126,
+          "params": [
+            "content",
+            "numId"
+          ]
+        },
+        {
+          "name": "textToParagraphs",
+          "startLine": 128,
+          "endLine": 167,
+          "params": [
+            "text",
+            "numIdAlloc"
+          ]
+        },
+        {
+          "name": "plainCell",
+          "startLine": 169,
+          "endLine": 173,
+          "params": [
+            "widthDxa",
+            "text"
+          ]
+        },
+        {
+          "name": "descCell",
+          "startLine": 175,
+          "endLine": 179,
+          "params": [
+            "widthDxa",
+            "text",
+            "numIdAlloc"
+          ]
+        },
+        {
+          "name": "buildProblemRow",
+          "startLine": 181,
+          "endLine": 210,
+          "params": [
+            "fecha",
+            "num",
+            "activosText",
+            "inactivosText",
+            "numIdAlloc"
+          ]
+        },
+        {
+          "name": "generateListadoBuffer",
+          "startLine": 212,
+          "endLine": 329,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "fmtFecha",
+          "callee": "String(isoOrDmy).trim",
+          "lineNumber": 27
+        },
+        {
+          "caller": "fmtFecha",
+          "callee": "String",
+          "lineNumber": 27
+        },
+        {
+          "caller": "fmtFecha",
+          "callee": "s.match",
+          "lineNumber": 28
+        },
+        {
+          "caller": "mkRun",
+          "callee": "esc",
+          "lineNumber": 47
+        },
+        {
+          "caller": "bestBreakInWindow",
+          "callee": "window.lastIndexOf",
+          "lineNumber": 54
+        },
+        {
+          "caller": "splitLongCellText",
+          "callee": "(text || '').trim",
+          "lineNumber": 63
+        },
+        {
+          "caller": "splitLongCellText",
+          "callee": "chunks.push",
+          "lineNumber": 70
+        },
+        {
+          "caller": "splitLongCellText",
+          "callee": "rest.slice",
+          "lineNumber": 73
+        },
+        {
+          "caller": "splitLongCellText",
+          "callee": "bestBreakInWindow",
+          "lineNumber": 74
+        },
+        {
+          "caller": "splitLongCellText",
+          "callee": "rest.slice(0, cut).trimEnd",
+          "lineNumber": 78
+        },
+        {
+          "caller": "splitLongCellText",
+          "callee": "rest.slice",
+          "lineNumber": 78
+        },
+        {
+          "caller": "splitLongCellText",
+          "callee": "Math.min",
+          "lineNumber": 80
+        },
+        {
+          "caller": "splitLongCellText",
+          "callee": "rest.slice(0, cut).trimEnd",
+          "lineNumber": 81
+        },
+        {
+          "caller": "splitLongCellText",
+          "callee": "rest.slice",
+          "lineNumber": 81
+        },
+        {
+          "caller": "splitLongCellText",
+          "callee": "chunks.push",
+          "lineNumber": 83
+        },
+        {
+          "caller": "splitLongCellText",
+          "callee": "rest.slice(cut).trimStart",
+          "lineNumber": 84
+        },
+        {
+          "caller": "splitLongCellText",
+          "callee": "rest.slice",
+          "lineNumber": 84
+        },
+        {
+          "caller": "splitLongCellText",
+          "callee": "chunks.filter",
+          "lineNumber": 86
+        },
+        {
+          "caller": "mkListContinuationPara",
+          "callee": "esc",
+          "lineNumber": 98
+        },
+        {
+          "caller": "mkListPara",
+          "callee": "splitLongCellText",
+          "lineNumber": 104
+        },
+        {
+          "caller": "mkListPara",
+          "callee": "esc",
+          "lineNumber": 122
+        },
+        {
+          "caller": "mkListPara",
+          "callee": "chunks.slice(1).map((c) => mkListContinuationPara(c)).join",
+          "lineNumber": 124
+        },
+        {
+          "caller": "mkListPara",
+          "callee": "chunks.slice(1).map",
+          "lineNumber": 124
+        },
+        {
+          "caller": "mkListPara",
+          "callee": "chunks.slice",
+          "lineNumber": 124
+        },
+        {
+          "caller": "mkListPara",
+          "callee": "mkListContinuationPara",
+          "lineNumber": 124
+        },
+        {
+          "caller": "assignNewNumId",
+          "callee": "numIdAlloc.used.has",
+          "lineNumber": 134
+        },
+        {
+          "caller": "assignNewNumId",
+          "callee": "numIdAlloc.used.add",
+          "lineNumber": 135
+        },
+        {
+          "caller": "assignNewNumId",
+          "callee": "numIdAlloc.used.add",
+          "lineNumber": 140
+        },
+        {
+          "caller": "textToParagraphs",
+          "callee": "String(text).split",
+          "lineNumber": 144
+        },
+        {
+          "caller": "textToParagraphs",
+          "callee": "String",
+          "lineNumber": 144
+        },
+        {
+          "caller": "textToParagraphs",
+          "callee": "raw.replace",
+          "lineNumber": 145
+        },
+        {
+          "caller": "textToParagraphs",
+          "callee": "line.trim",
+          "lineNumber": 146
+        },
+        {
+          "caller": "textToParagraphs",
+          "callee": "paragraphs.push",
+          "lineNumber": 148
+        },
+        {
+          "caller": "textToParagraphs",
+          "callee": "line.match",
+          "lineNumber": 152
+        },
+        {
+          "caller": "textToParagraphs",
+          "callee": "assignNewNumId",
+          "lineNumber": 156
+        },
+        {
+          "caller": "textToParagraphs",
+          "callee": "paragraphs.push",
+          "lineNumber": 158
+        },
+        {
+          "caller": "textToParagraphs",
+          "callee": "mkListPara",
+          "lineNumber": 158
+        },
+        {
+          "caller": "textToParagraphs",
+          "callee": "splitLongCellText",
+          "lineNumber": 160
+        },
+        {
+          "caller": "textToParagraphs",
+          "callee": "paragraphs.push",
+          "lineNumber": 161
+        },
+        {
+          "caller": "textToParagraphs",
+          "callee": "mkPara",
+          "lineNumber": 161
+        },
+        {
+          "caller": "textToParagraphs",
+          "callee": "mkRun",
+          "lineNumber": 161
+        },
+        {
+          "caller": "textToParagraphs",
+          "callee": "paragraphs.join",
+          "lineNumber": 166
+        },
+        {
+          "caller": "plainCell",
+          "callee": "mkPara",
+          "lineNumber": 171
+        },
+        {
+          "caller": "plainCell",
+          "callee": "mkRun",
+          "lineNumber": 171
+        },
+        {
+          "caller": "descCell",
+          "callee": "textToParagraphs",
+          "lineNumber": 177
+        },
+        {
+          "caller": "buildProblemRow",
+          "callee": "plainCell",
+          "lineNumber": 183
+        },
+        {
+          "caller": "buildProblemRow",
+          "callee": "fmtFecha",
+          "lineNumber": 183
+        },
+        {
+          "caller": "buildProblemRow",
+          "callee": "plainCell",
+          "lineNumber": 189
+        },
+        {
+          "caller": "buildProblemRow",
+          "callee": "descCell",
+          "lineNumber": 195
+        },
+        {
+          "caller": "buildProblemRow",
+          "callee": "descCell",
+          "lineNumber": 200
+        },
+        {
+          "caller": "generateListadoBuffer",
+          "callee": "loadDocxTemplate",
+          "lineNumber": 217
+        },
+        {
+          "caller": "generateListadoBuffer",
+          "callee": "files['word/document.xml'].toString",
+          "lineNumber": 219
+        },
+        {
+          "caller": "generateListadoBuffer",
+          "callee": "(patient.nombre || '').toUpperCase",
+          "lineNumber": 221
+        },
+        {
+          "caller": "generateListadoBuffer",
+          "callee": "String",
+          "lineNumber": 223
+        },
+        {
+          "caller": "generateListadoBuffer",
+          "callee": "(patient.sexo || '').toUpperCase",
+          "lineNumber": 224
+        },
+        {
+          "caller": "generateListadoBuffer",
+          "callee": "(patient.area || '').toUpperCase",
+          "lineNumber": 225
+        },
+        {
+          "caller": "generateListadoBuffer",
+          "callee": "(patient.servicio || '').toUpperCase",
+          "lineNumber": 226
+        },
+        {
+          "caller": "generateListadoBuffer",
+          "callee": "xml.split(sentinel).join",
+          "lineNumber": 240
+        },
+        {
+          "caller": "generateListadoBuffer",
+          "callee": "xml.split",
+          "lineNumber": 240
+        },
+        {
+          "caller": "generateListadoBuffer",
+          "callee": "esc",
+          "lineNumber": 240
+        },
+        {
+          "caller": "generateListadoBuffer",
+          "callee": "xml.split(sentinel).join",
+          "lineNumber": 250
+        },
+        {
+          "caller": "generateListadoBuffer",
+          "callee": "xml.split",
+          "lineNumber": 250
+        },
+        {
+          "caller": "generateListadoBuffer",
+          "callee": "esc",
+          "lineNumber": 250
+        },
+        {
+          "caller": "generateListadoBuffer",
+          "callee": "xml.indexOf",
+          "lineNumber": 257
+        },
+        {
+          "caller": "generateListadoBuffer",
+          "callee": "xml.lastIndexOf",
+          "lineNumber": 262
+        },
+        {
+          "caller": "generateListadoBuffer",
+          "callee": "xml.indexOf",
+          "lineNumber": 267
+        },
+        {
+          "caller": "generateListadoBuffer",
+          "callee": "xml.indexOf",
+          "lineNumber": 268
+        },
+        {
+          "caller": "generateListadoBuffer",
+          "callee": "xml.slice",
+          "lineNumber": 273
+        },
+        {
+          "caller": "generateListadoBuffer",
+          "callee": "xml.indexOf",
+          "lineNumber": 275
+        },
+        {
+          "caller": "generateListadoBuffer",
+          "callee": "xml.indexOf",
+          "lineNumber": 279
+        },
+        {
+          "caller": "generateListadoBuffer",
+          "callee": "xml.slice",
+          "lineNumber": 280
+        },
+        {
+          "caller": "generateListadoBuffer",
+          "callee": "xml.indexOf",
+          "lineNumber": 281
+        },
+        {
+          "caller": "generateListadoBuffer",
+          "callee": "Math.max",
+          "lineNumber": 290
+        },
+        {
+          "caller": "generateListadoBuffer",
+          "callee": "buildProblemRow",
+          "lineNumber": 295
+        },
+        {
+          "caller": "generateListadoBuffer",
+          "callee": "problemTables.push",
+          "lineNumber": 302
+        },
+        {
+          "caller": "generateListadoBuffer",
+          "callee": "problemTables.join",
+          "lineNumber": 305
+        },
+        {
+          "caller": "generateListadoBuffer",
+          "callee": "xml.slice",
+          "lineNumber": 306
+        },
+        {
+          "caller": "generateListadoBuffer",
+          "callee": "xml.slice",
+          "lineNumber": 306
+        },
+        {
+          "caller": "generateListadoBuffer",
+          "callee": "(files['word/numbering.xml'] || Buffer.alloc(0)).toString",
+          "lineNumber": 308
+        },
+        {
+          "caller": "generateListadoBuffer",
+          "callee": "Buffer.alloc",
+          "lineNumber": 308
+        },
+        {
+          "caller": "generateListadoBuffer",
+          "callee": "[...numIdAlloc.used]\n    .filter((nid) => nid !== LIST_NUMID_BASE)\n    .sort",
+          "lineNumber": 309
+        },
+        {
+          "caller": "generateListadoBuffer",
+          "callee": "[...numIdAlloc.used]\n    .filter",
+          "lineNumber": 309
+        },
+        {
+          "caller": "generateListadoBuffer",
+          "callee": "numXml.includes",
+          "lineNumber": 321
+        },
+        {
+          "caller": "generateListadoBuffer",
+          "callee": "numXml.replace",
+          "lineNumber": 322
+        },
+        {
+          "caller": "generateListadoBuffer",
+          "callee": "Buffer.from",
+          "lineNumber": 323
+        },
+        {
+          "caller": "generateListadoBuffer",
+          "callee": "Buffer.from",
+          "lineNumber": 327
+        },
+        {
+          "caller": "generateListadoBuffer",
+          "callee": "packDocxBuffer",
+          "lineNumber": 328
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 12,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/doc-generators/listado.test.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 181,
+      "nonEmptyLines": 162,
+      "functions": [
+        {
+          "name": "generateDocx",
+          "startLine": 19,
+          "endLine": 21,
+          "params": [
+            "payload"
+          ]
+        },
+        {
+          "name": "cellTexts",
+          "startLine": 23,
+          "endLine": 38,
+          "params": [
+            "rowXml"
+          ]
+        },
+        {
+          "name": "isProblemRow",
+          "startLine": 40,
+          "endLine": 43,
+          "params": [
+            "rowXml"
+          ]
+        },
+        {
+          "name": "problemRows",
+          "startLine": 45,
+          "endLine": 58,
+          "params": [
+            "docxBytes"
+          ]
+        },
+        {
+          "name": "problemRowElements",
+          "startLine": 60,
+          "endLine": 73,
+          "params": [
+            "docxBytes"
+          ]
+        },
+        {
+          "name": "szValues",
+          "startLine": 75,
+          "endLine": 83,
+          "params": [
+            "rowXml"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "generateDocx",
+          "callee": "generateListadoBuffer",
+          "lineNumber": 20
+        },
+        {
+          "caller": "cellTexts",
+          "callee": "tcRe.exec",
+          "lineNumber": 27
+        },
+        {
+          "caller": "cellTexts",
+          "callee": "tRe.exec",
+          "lineNumber": 32
+        },
+        {
+          "caller": "cellTexts",
+          "callee": "texts.push",
+          "lineNumber": 33
+        },
+        {
+          "caller": "cellTexts",
+          "callee": "cells.push",
+          "lineNumber": 35
+        },
+        {
+          "caller": "cellTexts",
+          "callee": "texts.join",
+          "lineNumber": 35
+        },
+        {
+          "caller": "isProblemRow",
+          "callee": "cellTexts",
+          "lineNumber": 41
+        },
+        {
+          "caller": "isProblemRow",
+          "callee": "texts.some",
+          "lineNumber": 42
+        },
+        {
+          "caller": "isProblemRow",
+          "callee": "t.includes",
+          "lineNumber": 42
+        },
+        {
+          "caller": "problemRows",
+          "callee": "JSZip.loadAsync",
+          "lineNumber": 46
+        },
+        {
+          "caller": "problemRows",
+          "callee": "zip.file('word/document.xml').async",
+          "lineNumber": 47
+        },
+        {
+          "caller": "problemRows",
+          "callee": "zip.file",
+          "lineNumber": 47
+        },
+        {
+          "caller": "problemRows",
+          "callee": "trRe.exec",
+          "lineNumber": 51
+        },
+        {
+          "caller": "problemRows",
+          "callee": "isProblemRow",
+          "lineNumber": 53
+        },
+        {
+          "caller": "problemRows",
+          "callee": "rows.push",
+          "lineNumber": 54
+        },
+        {
+          "caller": "problemRows",
+          "callee": "cellTexts",
+          "lineNumber": 54
+        },
+        {
+          "caller": "problemRowElements",
+          "callee": "JSZip.loadAsync",
+          "lineNumber": 61
+        },
+        {
+          "caller": "problemRowElements",
+          "callee": "zip.file('word/document.xml').async",
+          "lineNumber": 62
+        },
+        {
+          "caller": "problemRowElements",
+          "callee": "zip.file",
+          "lineNumber": 62
+        },
+        {
+          "caller": "problemRowElements",
+          "callee": "trRe.exec",
+          "lineNumber": 66
+        },
+        {
+          "caller": "problemRowElements",
+          "callee": "isProblemRow",
+          "lineNumber": 68
+        },
+        {
+          "caller": "problemRowElements",
+          "callee": "rows.push",
+          "lineNumber": 69
+        },
+        {
+          "caller": "szValues",
+          "callee": "re.exec",
+          "lineNumber": 79
+        },
+        {
+          "caller": "szValues",
+          "callee": "sizes.push",
+          "lineNumber": 80
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 6,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/doc-generators/note.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 232,
+      "nonEmptyLines": 196,
+      "functions": [
+        {
+          "name": "findParagraphs",
+          "startLine": 48,
+          "endLine": 56,
+          "params": [
+            "xml"
+          ]
+        },
+        {
+          "name": "getTx",
+          "startLine": 58,
+          "endLine": 60,
+          "params": [
+            "tratamiento",
+            "i"
+          ]
+        },
+        {
+          "name": "normalizeLines",
+          "startLine": 62,
+          "endLine": 69,
+          "params": [
+            "raw"
+          ]
+        },
+        {
+          "name": "normalizeStringList",
+          "startLine": 71,
+          "endLine": 82,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "generateNoteBuffer",
+          "startLine": 84,
+          "endLine": 226,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "findParagraphs",
+          "callee": "re.exec",
+          "lineNumber": 52
+        },
+        {
+          "caller": "findParagraphs",
+          "callee": "paragraphs.push",
+          "lineNumber": 53
+        },
+        {
+          "caller": "getTx",
+          "callee": "tratamiento[i].toUpperCase",
+          "lineNumber": 59
+        },
+        {
+          "caller": "normalizeLines",
+          "callee": "String(raw)\n    .split('\\n')\n    .map((l) => l.trim())\n    .filter(Boolean)\n    .map",
+          "lineNumber": 64
+        },
+        {
+          "caller": "normalizeLines",
+          "callee": "String(raw)\n    .split('\\n')\n    .map((l) => l.trim())\n    .filter",
+          "lineNumber": 64
+        },
+        {
+          "caller": "normalizeLines",
+          "callee": "String(raw)\n    .split('\\n')\n    .map",
+          "lineNumber": 64
+        },
+        {
+          "caller": "normalizeLines",
+          "callee": "String(raw)\n    .split",
+          "lineNumber": 64
+        },
+        {
+          "caller": "normalizeLines",
+          "callee": "String",
+          "lineNumber": 64
+        },
+        {
+          "caller": "normalizeLines",
+          "callee": "l.trim",
+          "lineNumber": 66
+        },
+        {
+          "caller": "normalizeLines",
+          "callee": "l.toUpperCase",
+          "lineNumber": 68
+        },
+        {
+          "caller": "normalizeStringList",
+          "callee": "Array.isArray",
+          "lineNumber": 72
+        },
+        {
+          "caller": "normalizeStringList",
+          "callee": "value.map((d) => String(d).trim()).filter",
+          "lineNumber": 73
+        },
+        {
+          "caller": "normalizeStringList",
+          "callee": "value.map",
+          "lineNumber": 73
+        },
+        {
+          "caller": "normalizeStringList",
+          "callee": "String(d).trim",
+          "lineNumber": 73
+        },
+        {
+          "caller": "normalizeStringList",
+          "callee": "String",
+          "lineNumber": 73
+        },
+        {
+          "caller": "normalizeStringList",
+          "callee": "value\n      .split('\\n')\n      .map((d) => d.trim())\n      .filter",
+          "lineNumber": 76
+        },
+        {
+          "caller": "normalizeStringList",
+          "callee": "value\n      .split('\\n')\n      .map",
+          "lineNumber": 76
+        },
+        {
+          "caller": "normalizeStringList",
+          "callee": "value\n      .split",
+          "lineNumber": 76
+        },
+        {
+          "caller": "normalizeStringList",
+          "callee": "d.trim",
+          "lineNumber": 78
+        },
+        {
+          "caller": "generateNoteBuffer",
+          "callee": "loadDocxTemplate",
+          "lineNumber": 88
+        },
+        {
+          "caller": "generateNoteBuffer",
+          "callee": "files['word/document.xml'].toString",
+          "lineNumber": 90
+        },
+        {
+          "caller": "generateNoteBuffer",
+          "callee": "(patient.nombre || '').toUpperCase",
+          "lineNumber": 92
+        },
+        {
+          "caller": "generateNoteBuffer",
+          "callee": "String",
+          "lineNumber": 94
+        },
+        {
+          "caller": "generateNoteBuffer",
+          "callee": "(patient.area || '').toUpperCase",
+          "lineNumber": 96
+        },
+        {
+          "caller": "generateNoteBuffer",
+          "callee": "(patient.servicio || '').toUpperCase",
+          "lineNumber": 97
+        },
+        {
+          "caller": "generateNoteBuffer",
+          "callee": "replaceT",
+          "lineNumber": 103
+        },
+        {
+          "caller": "generateNoteBuffer",
+          "callee": "replaceT",
+          "lineNumber": 104
+        },
+        {
+          "caller": "generateNoteBuffer",
+          "callee": "(note.interrogatorio || '').toUpperCase",
+          "lineNumber": 106
+        },
+        {
+          "caller": "generateNoteBuffer",
+          "callee": "replaceT",
+          "lineNumber": 107
+        },
+        {
+          "caller": "generateNoteBuffer",
+          "callee": "xml.replace",
+          "lineNumber": 109
+        },
+        {
+          "caller": "generateNoteBuffer",
+          "callee": "esc",
+          "lineNumber": 109
+        },
+        {
+          "caller": "generateNoteBuffer",
+          "callee": "xml.replace",
+          "lineNumber": 110
+        },
+        {
+          "caller": "generateNoteBuffer",
+          "callee": "esc",
+          "lineNumber": 110
+        },
+        {
+          "caller": "generateNoteBuffer",
+          "callee": "replaceT",
+          "lineNumber": 111
+        },
+        {
+          "caller": "generateNoteBuffer",
+          "callee": "xml.replace",
+          "lineNumber": 112
+        },
+        {
+          "caller": "generateNoteBuffer",
+          "callee": "esc",
+          "lineNumber": 112
+        },
+        {
+          "caller": "generateNoteBuffer",
+          "callee": "xml.replace",
+          "lineNumber": 113
+        },
+        {
+          "caller": "generateNoteBuffer",
+          "callee": "esc",
+          "lineNumber": 113
+        },
+        {
+          "caller": "generateNoteBuffer",
+          "callee": "xml.replace",
+          "lineNumber": 114
+        },
+        {
+          "caller": "generateNoteBuffer",
+          "callee": "esc",
+          "lineNumber": 114
+        },
+        {
+          "caller": "generateNoteBuffer",
+          "callee": "replaceT",
+          "lineNumber": 115
+        },
+        {
+          "caller": "generateNoteBuffer",
+          "callee": "xml.replace",
+          "lineNumber": 116
+        },
+        {
+          "caller": "generateNoteBuffer",
+          "callee": "esc",
+          "lineNumber": 118
+        },
+        {
+          "caller": "generateNoteBuffer",
+          "callee": "normalizeLines",
+          "lineNumber": 121
+        },
+        {
+          "caller": "generateNoteBuffer",
+          "callee": "replaceT",
+          "lineNumber": 124
+        },
+        {
+          "caller": "generateNoteBuffer",
+          "callee": "normalizeLines",
+          "lineNumber": 127
+        },
+        {
+          "caller": "generateNoteBuffer",
+          "callee": "replaceT",
+          "lineNumber": 130
+        },
+        {
+          "caller": "generateNoteBuffer",
+          "callee": "xml.replace",
+          "lineNumber": 134
+        },
+        {
+          "caller": "generateNoteBuffer",
+          "callee": "normalizeStringList",
+          "lineNumber": 140
+        },
+        {
+          "caller": "generateNoteBuffer",
+          "callee": "diagnosticos[0].toUpperCase",
+          "lineNumber": 141
+        },
+        {
+          "caller": "generateNoteBuffer",
+          "callee": "diagnosticos[1].toUpperCase",
+          "lineNumber": 142
+        },
+        {
+          "caller": "generateNoteBuffer",
+          "callee": "diagnosticos.slice(2).map((d) => d.toUpperCase()).join",
+          "lineNumber": 144
+        },
+        {
+          "caller": "generateNoteBuffer",
+          "callee": "diagnosticos.slice(2).map",
+          "lineNumber": 144
+        },
+        {
+          "caller": "generateNoteBuffer",
+          "callee": "diagnosticos.slice",
+          "lineNumber": 144
+        },
+        {
+          "caller": "generateNoteBuffer",
+          "callee": "d.toUpperCase",
+          "lineNumber": 144
+        },
+        {
+          "caller": "generateNoteBuffer",
+          "callee": "replaceT",
+          "lineNumber": 147
+        },
+        {
+          "caller": "generateNoteBuffer",
+          "callee": "replaceT",
+          "lineNumber": 148
+        },
+        {
+          "caller": "generateNoteBuffer",
+          "callee": "replaceT",
+          "lineNumber": 156
+        },
+        {
+          "caller": "generateNoteBuffer",
+          "callee": "replaceT",
+          "lineNumber": 157
+        },
+        {
+          "caller": "generateNoteBuffer",
+          "callee": "xml.replace",
+          "lineNumber": 158
+        },
+        {
+          "caller": "generateNoteBuffer",
+          "callee": "esc",
+          "lineNumber": 160
+        },
+        {
+          "caller": "generateNoteBuffer",
+          "callee": "xml.replace",
+          "lineNumber": 162
+        },
+        {
+          "caller": "generateNoteBuffer",
+          "callee": "esc",
+          "lineNumber": 164
+        },
+        {
+          "caller": "generateNoteBuffer",
+          "callee": "xml.replace",
+          "lineNumber": 166
+        },
+        {
+          "caller": "generateNoteBuffer",
+          "callee": "esc",
+          "lineNumber": 168
+        },
+        {
+          "caller": "generateNoteBuffer",
+          "callee": "normalizeStringList",
+          "lineNumber": 171
+        },
+        {
+          "caller": "generateNoteBuffer",
+          "callee": "findParagraphs",
+          "lineNumber": 173
+        },
+        {
+          "caller": "generateNoteBuffer",
+          "callee": "p68.match",
+          "lineNumber": 178
+        },
+        {
+          "caller": "generateNoteBuffer",
+          "callee": "getTx",
+          "lineNumber": 181
+        },
+        {
+          "caller": "generateNoteBuffer",
+          "callee": "getTx",
+          "lineNumber": 182
+        },
+        {
+          "caller": "generateNoteBuffer",
+          "callee": "esc",
+          "lineNumber": 188
+        },
+        {
+          "caller": "generateNoteBuffer",
+          "callee": "'  '.repeat",
+          "lineNumber": 188
+        },
+        {
+          "caller": "generateNoteBuffer",
+          "callee": "esc",
+          "lineNumber": 189
+        },
+        {
+          "caller": "generateNoteBuffer",
+          "callee": "xml.replace",
+          "lineNumber": 191
+        },
+        {
+          "caller": "generateNoteBuffer",
+          "callee": "getTx",
+          "lineNumber": 195
+        },
+        {
+          "caller": "generateNoteBuffer",
+          "callee": "xml.replace",
+          "lineNumber": 197
+        },
+        {
+          "caller": "generateNoteBuffer",
+          "callee": "esc",
+          "lineNumber": 197
+        },
+        {
+          "caller": "generateNoteBuffer",
+          "callee": "getTx",
+          "lineNumber": 203
+        },
+        {
+          "caller": "generateNoteBuffer",
+          "callee": "xml.replace",
+          "lineNumber": 205
+        },
+        {
+          "caller": "generateNoteBuffer",
+          "callee": "esc",
+          "lineNumber": 205
+        },
+        {
+          "caller": "generateNoteBuffer",
+          "callee": "xml.replace",
+          "lineNumber": 209
+        },
+        {
+          "caller": "generateNoteBuffer",
+          "callee": "esc(ORIG_MEDICO_SUFFIX).replace",
+          "lineNumber": 211
+        },
+        {
+          "caller": "generateNoteBuffer",
+          "callee": "esc",
+          "lineNumber": 211
+        },
+        {
+          "caller": "generateNoteBuffer",
+          "callee": "esc",
+          "lineNumber": 214
+        },
+        {
+          "caller": "generateNoteBuffer",
+          "callee": "replaceT",
+          "lineNumber": 218
+        },
+        {
+          "caller": "generateNoteBuffer",
+          "callee": "xml.replace",
+          "lineNumber": 219
+        },
+        {
+          "caller": "generateNoteBuffer",
+          "callee": "Buffer.from",
+          "lineNumber": 224
+        },
+        {
+          "caller": "generateNoteBuffer",
+          "callee": "packDocxBuffer",
+          "lineNumber": 225
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 5,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/doc-generators/note.test.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 49,
+      "nonEmptyLines": 44,
+      "functions": [
+        {
+          "name": "readDocumentXml",
+          "startLine": 8,
+          "endLine": 11,
+          "params": [
+            "buf"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "readDocumentXml",
+          "callee": "JSZip.loadAsync",
+          "lineNumber": 9
+        },
+        {
+          "caller": "readDocumentXml",
+          "callee": "zip.file('word/document.xml').async",
+          "lineNumber": 10
+        },
+        {
+          "caller": "readDocumentXml",
+          "callee": "zip.file",
+          "lineNumber": 10
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/doc-generators/shared.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 67,
+      "nonEmptyLines": 60,
+      "functions": [
+        {
+          "name": "esc",
+          "startLine": 6,
+          "endLine": 13,
+          "params": [
+            "text"
+          ]
+        },
+        {
+          "name": "replaceT",
+          "startLine": 15,
+          "endLine": 23,
+          "params": [
+            "xml",
+            "oldVal",
+            "newVal"
+          ]
+        },
+        {
+          "name": "resolveGeneratorBaseDir",
+          "startLine": 25,
+          "endLine": 31,
+          "params": []
+        },
+        {
+          "name": "resolveTemplatePath",
+          "startLine": 33,
+          "endLine": 38,
+          "params": [
+            "fileName"
+          ]
+        },
+        {
+          "name": "loadDocxTemplate",
+          "startLine": 40,
+          "endLine": 50,
+          "params": [
+            "templateFileName"
+          ]
+        },
+        {
+          "name": "packDocxBuffer",
+          "startLine": 52,
+          "endLine": 58,
+          "params": [
+            "files",
+            "names"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "esc",
+          "callee": "String(text)\n    .replace(/&/g, '&amp;')\n    .replace(/</g, '&lt;')\n    .replace(/>/g, '&gt;')\n    .replace",
+          "lineNumber": 8
+        },
+        {
+          "caller": "esc",
+          "callee": "String(text)\n    .replace(/&/g, '&amp;')\n    .replace(/</g, '&lt;')\n    .replace",
+          "lineNumber": 8
+        },
+        {
+          "caller": "esc",
+          "callee": "String(text)\n    .replace(/&/g, '&amp;')\n    .replace",
+          "lineNumber": 8
+        },
+        {
+          "caller": "esc",
+          "callee": "String(text)\n    .replace",
+          "lineNumber": 8
+        },
+        {
+          "caller": "esc",
+          "callee": "String",
+          "lineNumber": 8
+        },
+        {
+          "caller": "replaceT",
+          "callee": "esc",
+          "lineNumber": 16
+        },
+        {
+          "caller": "replaceT",
+          "callee": "esc",
+          "lineNumber": 17
+        },
+        {
+          "caller": "replaceT",
+          "callee": "xml.split(`<w:t>${eOld}</w:t>`).join",
+          "lineNumber": 18
+        },
+        {
+          "caller": "replaceT",
+          "callee": "xml.split",
+          "lineNumber": 18
+        },
+        {
+          "caller": "replaceT",
+          "callee": "out\n    .split(`<w:t xml:space=\"preserve\">${eOld}</w:t>`)\n    .join",
+          "lineNumber": 19
+        },
+        {
+          "caller": "replaceT",
+          "callee": "out\n    .split",
+          "lineNumber": 19
+        },
+        {
+          "caller": "resolveGeneratorBaseDir",
+          "callee": "path.join",
+          "lineNumber": 26
+        },
+        {
+          "caller": "resolveGeneratorBaseDir",
+          "callee": "dir.includes",
+          "lineNumber": 27
+        },
+        {
+          "caller": "resolveGeneratorBaseDir",
+          "callee": "dir.replace",
+          "lineNumber": 28
+        },
+        {
+          "caller": "resolveTemplatePath",
+          "callee": "resolveGeneratorBaseDir",
+          "lineNumber": 34
+        },
+        {
+          "caller": "resolveTemplatePath",
+          "callee": "path.join",
+          "lineNumber": 35
+        },
+        {
+          "caller": "resolveTemplatePath",
+          "callee": "fs.existsSync",
+          "lineNumber": 36
+        },
+        {
+          "caller": "loadDocxTemplate",
+          "callee": "resolveTemplatePath",
+          "lineNumber": 41
+        },
+        {
+          "caller": "loadDocxTemplate",
+          "callee": "fs.promises.readFile",
+          "lineNumber": 42
+        },
+        {
+          "caller": "loadDocxTemplate",
+          "callee": "JSZip.loadAsync",
+          "lineNumber": 43
+        },
+        {
+          "caller": "loadDocxTemplate",
+          "callee": "Object.keys(zip.files).filter",
+          "lineNumber": 45
+        },
+        {
+          "caller": "loadDocxTemplate",
+          "callee": "Object.keys",
+          "lineNumber": 45
+        },
+        {
+          "caller": "loadDocxTemplate",
+          "callee": "zip.files[name].async",
+          "lineNumber": 47
+        },
+        {
+          "caller": "packDocxBuffer",
+          "callee": "zip.file",
+          "lineNumber": 55
+        },
+        {
+          "caller": "packDocxBuffer",
+          "callee": "zip.generateAsync",
+          "lineNumber": 57
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 6,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/doc-generators/shared.test.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 18,
+      "nonEmptyLines": 16,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/historia-clinica/storage.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 55,
+      "nonEmptyLines": 48,
+      "functions": [
+        {
+          "name": "resolveStorageRoot",
+          "startLine": 6,
+          "endLine": 10,
+          "params": [
+            "baseDir"
+          ]
+        },
+        {
+          "name": "archiveDirForPatient",
+          "startLine": 12,
+          "endLine": 14,
+          "params": [
+            "storageRoot",
+            "patientId"
+          ]
+        },
+        {
+          "name": "archiveFilePath",
+          "startLine": 16,
+          "endLine": 18,
+          "params": [
+            "storageRoot",
+            "patientId"
+          ]
+        },
+        {
+          "name": "writeHistoriaClinicaArchive",
+          "startLine": 23,
+          "endLine": 38,
+          "params": [
+            "opts"
+          ]
+        },
+        {
+          "name": "readHistoriaClinicaArchive",
+          "startLine": 43,
+          "endLine": 48,
+          "params": [
+            "opts"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "resolveStorageRoot",
+          "callee": "path.join",
+          "lineNumber": 9
+        },
+        {
+          "caller": "resolveStorageRoot",
+          "callee": "process.cwd",
+          "lineNumber": 9
+        },
+        {
+          "caller": "archiveDirForPatient",
+          "callee": "path.join",
+          "lineNumber": 13
+        },
+        {
+          "caller": "archiveDirForPatient",
+          "callee": "resolveStorageRoot",
+          "lineNumber": 13
+        },
+        {
+          "caller": "archiveDirForPatient",
+          "callee": "String",
+          "lineNumber": 13
+        },
+        {
+          "caller": "archiveFilePath",
+          "callee": "path.join",
+          "lineNumber": 17
+        },
+        {
+          "caller": "archiveFilePath",
+          "callee": "archiveDirForPatient",
+          "lineNumber": 17
+        },
+        {
+          "caller": "writeHistoriaClinicaArchive",
+          "callee": "String(opts.patientId || '').trim",
+          "lineNumber": 24
+        },
+        {
+          "caller": "writeHistoriaClinicaArchive",
+          "callee": "String",
+          "lineNumber": 24
+        },
+        {
+          "caller": "writeHistoriaClinicaArchive",
+          "callee": "archiveDirForPatient",
+          "lineNumber": 26
+        },
+        {
+          "caller": "writeHistoriaClinicaArchive",
+          "callee": "fs.mkdirSync",
+          "lineNumber": 27
+        },
+        {
+          "caller": "writeHistoriaClinicaArchive",
+          "callee": "archiveFilePath",
+          "lineNumber": 28
+        },
+        {
+          "caller": "writeHistoriaClinicaArchive",
+          "callee": "new Date().toISOString",
+          "lineNumber": 30
+        },
+        {
+          "caller": "writeHistoriaClinicaArchive",
+          "callee": "Date.now",
+          "lineNumber": 34
+        },
+        {
+          "caller": "writeHistoriaClinicaArchive",
+          "callee": "fs.writeFileSync",
+          "lineNumber": 35
+        },
+        {
+          "caller": "writeHistoriaClinicaArchive",
+          "callee": "JSON.stringify",
+          "lineNumber": 35
+        },
+        {
+          "caller": "writeHistoriaClinicaArchive",
+          "callee": "fs.renameSync",
+          "lineNumber": 36
+        },
+        {
+          "caller": "readHistoriaClinicaArchive",
+          "callee": "archiveFilePath",
+          "lineNumber": 44
+        },
+        {
+          "caller": "readHistoriaClinicaArchive",
+          "callee": "fs.existsSync",
+          "lineNumber": 45
+        },
+        {
+          "caller": "readHistoriaClinicaArchive",
+          "callee": "fs.readFileSync",
+          "lineNumber": 46
+        },
+        {
+          "caller": "readHistoriaClinicaArchive",
+          "callee": "JSON.parse",
+          "lineNumber": 47
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 5,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/interno/interno-router.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 368,
+      "nonEmptyLines": 328,
+      "functions": [
+        {
+          "name": "esm",
+          "startLine": 9,
+          "endLine": 30,
+          "params": []
+        },
+        {
+          "name": "internoRoomKey",
+          "startLine": 35,
+          "endLine": 37,
+          "params": [
+            "sala"
+          ]
+        },
+        {
+          "name": "broadcastInterno",
+          "startLine": 39,
+          "endLine": 46,
+          "params": [
+            "sala",
+            "obj"
+          ]
+        },
+        {
+          "name": "createInternoRouter",
+          "startLine": 57,
+          "endLine": 295,
+          "params": [
+            "deps"
+          ]
+        },
+        {
+          "name": "attachInternoWs",
+          "startLine": 298,
+          "endLine": 366,
+          "params": [
+            "httpServer",
+            "getDb"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "esm",
+          "callee": "import",
+          "lineNumber": 12
+        },
+        {
+          "caller": "esm",
+          "callee": "import",
+          "lineNumber": 13
+        },
+        {
+          "caller": "esm",
+          "callee": "import",
+          "lineNumber": 14
+        },
+        {
+          "caller": "esm",
+          "callee": "import",
+          "lineNumber": 15
+        },
+        {
+          "caller": "esm",
+          "callee": "import",
+          "lineNumber": 16
+        },
+        {
+          "caller": "esm",
+          "callee": "import",
+          "lineNumber": 17
+        },
+        {
+          "caller": "esm",
+          "callee": "import",
+          "lineNumber": 18
+        },
+        {
+          "caller": "esm",
+          "callee": "import",
+          "lineNumber": 19
+        },
+        {
+          "caller": "esm",
+          "callee": "import",
+          "lineNumber": 20
+        },
+        {
+          "caller": "esm",
+          "callee": "import",
+          "lineNumber": 21
+        },
+        {
+          "caller": "esm",
+          "callee": "import",
+          "lineNumber": 22
+        },
+        {
+          "caller": "esm",
+          "callee": "import",
+          "lineNumber": 24
+        },
+        {
+          "caller": "esm",
+          "callee": "import",
+          "lineNumber": 25
+        },
+        {
+          "caller": "esm",
+          "callee": "import",
+          "lineNumber": 26
+        },
+        {
+          "caller": "esm",
+          "callee": "import",
+          "lineNumber": 27
+        },
+        {
+          "caller": "broadcastInterno",
+          "callee": "internoRooms.get",
+          "lineNumber": 40
+        },
+        {
+          "caller": "broadcastInterno",
+          "callee": "internoRoomKey",
+          "lineNumber": 40
+        },
+        {
+          "caller": "broadcastInterno",
+          "callee": "JSON.stringify",
+          "lineNumber": 42
+        },
+        {
+          "caller": "broadcastInterno",
+          "callee": "ws.send",
+          "lineNumber": 44
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "express.Router",
+          "lineNumber": 58
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "rateLimit",
+          "lineNumber": 59
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "res.status(429).json",
+          "lineNumber": 64
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "res.status",
+          "lineNumber": 64
+        },
+        {
+          "caller": "readBoard",
+          "callee": "esm",
+          "lineNumber": 68
+        },
+        {
+          "caller": "readBoard",
+          "callee": "mod.normalizeInternoSala",
+          "lineNumber": 69
+        },
+        {
+          "caller": "readBoard",
+          "callee": "deps.getDb",
+          "lineNumber": 72
+        },
+        {
+          "caller": "readBoard",
+          "callee": "db\n      .prepare('SELECT is_active FROM sala_interno_access WHERE sala = ?')\n      .get",
+          "lineNumber": 77
+        },
+        {
+          "caller": "readBoard",
+          "callee": "db\n      .prepare",
+          "lineNumber": 77
+        },
+        {
+          "caller": "readBoard",
+          "callee": "mod.getInternoScopeContext",
+          "lineNumber": 84
+        },
+        {
+          "caller": "readBoard",
+          "callee": "db\n      .prepare(`SELECT * FROM active_guardias WHERE status = 'Active' ORDER BY assigned_at`)\n      .all",
+          "lineNumber": 85
+        },
+        {
+          "caller": "readBoard",
+          "callee": "db\n      .prepare",
+          "lineNumber": 85
+        },
+        {
+          "caller": "readBoard",
+          "callee": "mod.loadCensusPatientIdSet",
+          "lineNumber": 88
+        },
+        {
+          "caller": "readBoard",
+          "callee": "deps.store.getState",
+          "lineNumber": 89
+        },
+        {
+          "caller": "readBoard",
+          "callee": "mod.resolveInternoBoardPatients",
+          "lineNumber": 90
+        },
+        {
+          "caller": "readBoard",
+          "callee": "guardiasByPatientId.set",
+          "lineNumber": 100
+        },
+        {
+          "caller": "readBoard",
+          "callee": "String",
+          "lineNumber": 100
+        },
+        {
+          "caller": "readBoard",
+          "callee": "mod.buildInternoBoardDto",
+          "lineNumber": 103
+        },
+        {
+          "caller": "authInterno",
+          "callee": "esm",
+          "lineNumber": 108
+        },
+        {
+          "caller": "authInterno",
+          "callee": "mod.normalizeInternoSala",
+          "lineNumber": 109
+        },
+        {
+          "caller": "authInterno",
+          "callee": "String(\n        req.headers['x-interno-token'] || req.query.t || req.body?.token || ''\n      ).trim",
+          "lineNumber": 112
+        },
+        {
+          "caller": "authInterno",
+          "callee": "String",
+          "lineNumber": 112
+        },
+        {
+          "caller": "authInterno",
+          "callee": "res.status(401).json",
+          "lineNumber": 116
+        },
+        {
+          "caller": "authInterno",
+          "callee": "res.status",
+          "lineNumber": 116
+        },
+        {
+          "caller": "authInterno",
+          "callee": "deps.getDb",
+          "lineNumber": 118
+        },
+        {
+          "caller": "authInterno",
+          "callee": "res.status(503).json",
+          "lineNumber": 120
+        },
+        {
+          "caller": "authInterno",
+          "callee": "res.status",
+          "lineNumber": 120
+        },
+        {
+          "caller": "authInterno",
+          "callee": "mod.getSalaInternoAccess",
+          "lineNumber": 122
+        },
+        {
+          "caller": "authInterno",
+          "callee": "res.status(403).json",
+          "lineNumber": 124
+        },
+        {
+          "caller": "authInterno",
+          "callee": "res.status",
+          "lineNumber": 124
+        },
+        {
+          "caller": "authInterno",
+          "callee": "mod.verifySalaInternoToken",
+          "lineNumber": 126
+        },
+        {
+          "caller": "authInterno",
+          "callee": "res.status(403).json",
+          "lineNumber": 127
+        },
+        {
+          "caller": "authInterno",
+          "callee": "res.status",
+          "lineNumber": 127
+        },
+        {
+          "caller": "authInterno",
+          "callee": "next",
+          "lineNumber": 131
+        },
+        {
+          "caller": "authInterno",
+          "callee": "res.status(500).json",
+          "lineNumber": 133
+        },
+        {
+          "caller": "authInterno",
+          "callee": "res.status",
+          "lineNumber": 133
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "r.get",
+          "lineNumber": 137
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "res.json",
+          "lineNumber": 138
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "r.get",
+          "lineNumber": 141
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "String(req.query.data || '').trim",
+          "lineNumber": 143
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "String",
+          "lineNumber": 143
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "res.status(400).json",
+          "lineNumber": 145
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "res.status",
+          "lineNumber": 145
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "esm",
+          "lineNumber": 147
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "res.type('image/svg+xml').send",
+          "lineNumber": 148
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "res.type",
+          "lineNumber": 148
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "mod.renderQrSvg",
+          "lineNumber": 148
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "res.status(500).json",
+          "lineNumber": 150
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "res.status",
+          "lineNumber": 150
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "r.get",
+          "lineNumber": 154
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "readBoard",
+          "lineNumber": 156
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "res.status(400).json",
+          "lineNumber": 157
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "res.status",
+          "lineNumber": 157
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "res.json",
+          "lineNumber": 158
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "res.status(500).json",
+          "lineNumber": 160
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "res.status",
+          "lineNumber": 160
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "r.patch",
+          "lineNumber": 164
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "express.json",
+          "lineNumber": 167
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "esm",
+          "lineNumber": 171
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "String(req.params.patientId || '').trim",
+          "lineNumber": 172
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "String",
+          "lineNumber": 172
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "String(req.params.itemId || '').trim",
+          "lineNumber": 173
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "String",
+          "lineNumber": 173
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "res.status(400).json",
+          "lineNumber": 175
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "res.status",
+          "lineNumber": 175
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "readBoard",
+          "lineNumber": 178
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "res.status(403).json",
+          "lineNumber": 179
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "res.status",
+          "lineNumber": 179
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "board.patients.some",
+          "lineNumber": 180
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "res.status(403).json",
+          "lineNumber": 181
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "res.status",
+          "lineNumber": 181
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "deps.getDb",
+          "lineNumber": 184
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "res.status(503).json",
+          "lineNumber": 185
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "res.status",
+          "lineNumber": 185
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "String(req.body?.reporterName || '').trim",
+          "lineNumber": 187
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "String",
+          "lineNumber": 187
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "mod.patchGuardiaPendienteComplete",
+          "lineNumber": 193
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "res.status(404).json",
+          "lineNumber": 196
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "res.status",
+          "lineNumber": 196
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "res.status(400).json",
+          "lineNumber": 198
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "res.status",
+          "lineNumber": 198
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "deps.broadcastSync",
+          "lineNumber": 202
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "broadcastInterno",
+          "lineNumber": 204
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "res.json",
+          "lineNumber": 206
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "res.status(500).json",
+          "lineNumber": 208
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "res.status",
+          "lineNumber": 208
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "r.post",
+          "lineNumber": 213
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "express.json",
+          "lineNumber": 213
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "esm",
+          "lineNumber": 215
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "String(req.body?.patientId || '').trim",
+          "lineNumber": 216
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "String",
+          "lineNumber": 216
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "res.status(400).json",
+          "lineNumber": 217
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "res.status",
+          "lineNumber": 217
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "readBoard",
+          "lineNumber": 219
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "res.status(403).json",
+          "lineNumber": 220
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "res.status",
+          "lineNumber": 220
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "board.patients.some",
+          "lineNumber": 221
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "res.status(403).json",
+          "lineNumber": 222
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "res.status",
+          "lineNumber": 222
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "mod.buildInternoMedicion",
+          "lineNumber": 225
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "res.status(400).json",
+          "lineNumber": 231
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "res.status",
+          "lineNumber": 231
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "deps.store.getState",
+          "lineNumber": 233
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "(state.patients || []).find",
+          "lineNumber": 234
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "String",
+          "lineNumber": 234
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "structuredClone",
+          "lineNumber": 243
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "mod.applyInternoMedicionToPatient",
+          "lineNumber": 247
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "res.status(400).json",
+          "lineNumber": 248
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "res.status",
+          "lineNumber": 248
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "deps.store.upsertPatient",
+          "lineNumber": 251
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "deps.store.upsertPatient",
+          "lineNumber": 252
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "Number",
+          "lineNumber": 252
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "deps.getDb",
+          "lineNumber": 254
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "mod.touchActiveGuardiaVitalsCheck",
+          "lineNumber": 255
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "deps.broadcastSync",
+          "lineNumber": 263
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "deps.broadcastSync",
+          "lineNumber": 264
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "deps.onHostSync",
+          "lineNumber": 267
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "deps.onHostSync",
+          "lineNumber": 268
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "broadcastInterno",
+          "lineNumber": 270
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "res.json",
+          "lineNumber": 276
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "res.status(409).json",
+          "lineNumber": 284
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "res.status",
+          "lineNumber": 284
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "res.status(500).json",
+          "lineNumber": 286
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "res.status",
+          "lineNumber": 286
+        },
+        {
+          "caller": "createInternoRouter",
+          "callee": "attachInternoWs",
+          "lineNumber": 291
+        },
+        {
+          "caller": "attachInternoWs",
+          "callee": "httpServer.on",
+          "lineNumber": 301
+        },
+        {
+          "caller": "attachInternoWs",
+          "callee": "wss.handleUpgrade",
+          "lineNumber": 306
+        },
+        {
+          "caller": "attachInternoWs",
+          "callee": "setTimeout",
+          "lineNumber": 308
+        },
+        {
+          "caller": "attachInternoWs",
+          "callee": "ws.terminate",
+          "lineNumber": 310
+        },
+        {
+          "caller": "attachInternoWs",
+          "callee": "wss.emit",
+          "lineNumber": 315
+        },
+        {
+          "caller": "attachInternoWs",
+          "callee": "socket.destroy",
+          "lineNumber": 319
+        },
+        {
+          "caller": "attachInternoWs",
+          "callee": "wss.on",
+          "lineNumber": 326
+        },
+        {
+          "caller": "attachInternoWs",
+          "callee": "ws.on",
+          "lineNumber": 327
+        },
+        {
+          "caller": "attachInternoWs",
+          "callee": "JSON.parse",
+          "lineNumber": 329
+        },
+        {
+          "caller": "attachInternoWs",
+          "callee": "String",
+          "lineNumber": 329
+        },
+        {
+          "caller": "attachInternoWs",
+          "callee": "esm",
+          "lineNumber": 331
+        },
+        {
+          "caller": "attachInternoWs",
+          "callee": "mod.normalizeInternoSala",
+          "lineNumber": 332
+        },
+        {
+          "caller": "attachInternoWs",
+          "callee": "String(msg.token || '').trim",
+          "lineNumber": 333
+        },
+        {
+          "caller": "attachInternoWs",
+          "callee": "String",
+          "lineNumber": 333
+        },
+        {
+          "caller": "attachInternoWs",
+          "callee": "getDb",
+          "lineNumber": 334
+        },
+        {
+          "caller": "attachInternoWs",
+          "callee": "mod.verifySalaInternoToken",
+          "lineNumber": 335
+        },
+        {
+          "caller": "attachInternoWs",
+          "callee": "ws.close",
+          "lineNumber": 336
+        },
+        {
+          "caller": "attachInternoWs",
+          "callee": "clearTimeout",
+          "lineNumber": 339
+        },
+        {
+          "caller": "attachInternoWs",
+          "callee": "internoRoomKey",
+          "lineNumber": 342
+        },
+        {
+          "caller": "attachInternoWs",
+          "callee": "internoRooms.has",
+          "lineNumber": 343
+        },
+        {
+          "caller": "attachInternoWs",
+          "callee": "internoRooms.set",
+          "lineNumber": 343
+        },
+        {
+          "caller": "attachInternoWs",
+          "callee": "internoRooms.get(key).add",
+          "lineNumber": 344
+        },
+        {
+          "caller": "attachInternoWs",
+          "callee": "internoRooms.get",
+          "lineNumber": 344
+        },
+        {
+          "caller": "attachInternoWs",
+          "callee": "ws.send",
+          "lineNumber": 345
+        },
+        {
+          "caller": "attachInternoWs",
+          "callee": "JSON.stringify",
+          "lineNumber": 345
+        },
+        {
+          "caller": "attachInternoWs",
+          "callee": "ws.close",
+          "lineNumber": 349
+        },
+        {
+          "caller": "attachInternoWs",
+          "callee": "ws.close",
+          "lineNumber": 352
+        },
+        {
+          "caller": "attachInternoWs",
+          "callee": "ws.on",
+          "lineNumber": 356
+        },
+        {
+          "caller": "attachInternoWs",
+          "callee": "internoRooms.get",
+          "lineNumber": 358
+        },
+        {
+          "caller": "attachInternoWs",
+          "callee": "internoRoomKey",
+          "lineNumber": 358
+        },
+        {
+          "caller": "attachInternoWs",
+          "callee": "set.delete",
+          "lineNumber": 360
+        },
+        {
+          "caller": "attachInternoWs",
+          "callee": "internoRooms.delete",
+          "lineNumber": 361
+        },
+        {
+          "caller": "attachInternoWs",
+          "callee": "internoRoomKey",
+          "lineNumber": 361
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 5,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/output-dir-policy.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 97,
+      "nonEmptyLines": 84,
+      "functions": [
+        {
+          "name": "readApprovedOutputDir",
+          "startLine": 8,
+          "endLine": 19,
+          "params": [
+            "userDataPath"
+          ]
+        },
+        {
+          "name": "writeApprovedOutputDir",
+          "startLine": 21,
+          "endLine": 30,
+          "params": [
+            "userDataPath",
+            "dir"
+          ]
+        },
+        {
+          "name": "isPathInsideRoot",
+          "startLine": 32,
+          "endLine": 35,
+          "params": [
+            "rootDir",
+            "targetDir"
+          ]
+        },
+        {
+          "name": "resolveAllowedOutputDir",
+          "startLine": 42,
+          "endLine": 89,
+          "params": [
+            "requestedDir",
+            "opts"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "readApprovedOutputDir",
+          "callee": "path.join",
+          "lineNumber": 11
+        },
+        {
+          "caller": "readApprovedOutputDir",
+          "callee": "fs.existsSync",
+          "lineNumber": 12
+        },
+        {
+          "caller": "readApprovedOutputDir",
+          "callee": "JSON.parse",
+          "lineNumber": 13
+        },
+        {
+          "caller": "readApprovedOutputDir",
+          "callee": "fs.readFileSync",
+          "lineNumber": 13
+        },
+        {
+          "caller": "readApprovedOutputDir",
+          "callee": "String(parsed.path).trim",
+          "lineNumber": 14
+        },
+        {
+          "caller": "readApprovedOutputDir",
+          "callee": "String",
+          "lineNumber": 14
+        },
+        {
+          "caller": "readApprovedOutputDir",
+          "callee": "path.resolve",
+          "lineNumber": 15
+        },
+        {
+          "caller": "writeApprovedOutputDir",
+          "callee": "path.resolve",
+          "lineNumber": 23
+        },
+        {
+          "caller": "writeApprovedOutputDir",
+          "callee": "String(dir || '').trim",
+          "lineNumber": 23
+        },
+        {
+          "caller": "writeApprovedOutputDir",
+          "callee": "String",
+          "lineNumber": 23
+        },
+        {
+          "caller": "writeApprovedOutputDir",
+          "callee": "fs.mkdirSync",
+          "lineNumber": 24
+        },
+        {
+          "caller": "writeApprovedOutputDir",
+          "callee": "fs.writeFileSync",
+          "lineNumber": 25
+        },
+        {
+          "caller": "writeApprovedOutputDir",
+          "callee": "path.join",
+          "lineNumber": 26
+        },
+        {
+          "caller": "writeApprovedOutputDir",
+          "callee": "JSON.stringify",
+          "lineNumber": 27
+        },
+        {
+          "caller": "writeApprovedOutputDir",
+          "callee": "new Date().toISOString",
+          "lineNumber": 27
+        },
+        {
+          "caller": "isPathInsideRoot",
+          "callee": "path.relative",
+          "lineNumber": 33
+        },
+        {
+          "caller": "isPathInsideRoot",
+          "callee": "rel.startsWith",
+          "lineNumber": 34
+        },
+        {
+          "caller": "isPathInsideRoot",
+          "callee": "path.isAbsolute",
+          "lineNumber": 34
+        },
+        {
+          "caller": "resolveAllowedOutputDir",
+          "callee": "path.resolve",
+          "lineNumber": 43
+        },
+        {
+          "caller": "resolveAllowedOutputDir",
+          "callee": "String",
+          "lineNumber": 43
+        },
+        {
+          "caller": "resolveAllowedOutputDir",
+          "callee": "path.resolve",
+          "lineNumber": 44
+        },
+        {
+          "caller": "resolveAllowedOutputDir",
+          "callee": "String",
+          "lineNumber": 44
+        },
+        {
+          "caller": "resolveAllowedOutputDir",
+          "callee": "path.join",
+          "lineNumber": 45
+        },
+        {
+          "caller": "resolveAllowedOutputDir",
+          "callee": "fs.mkdirSync",
+          "lineNumber": 46
+        },
+        {
+          "caller": "resolveAllowedOutputDir",
+          "callee": "readApprovedOutputDir",
+          "lineNumber": 48
+        },
+        {
+          "caller": "resolveAllowedOutputDir",
+          "callee": "String(requestedDir || '').trim",
+          "lineNumber": 49
+        },
+        {
+          "caller": "resolveAllowedOutputDir",
+          "callee": "String",
+          "lineNumber": 49
+        },
+        {
+          "caller": "resolveAllowedOutputDir",
+          "callee": "path.resolve",
+          "lineNumber": 50
+        },
+        {
+          "caller": "resolveAllowedOutputDir",
+          "callee": "allowedRoots.unshift",
+          "lineNumber": 53
+        },
+        {
+          "caller": "resolveAllowedOutputDir",
+          "callee": "fs.realpathSync",
+          "lineNumber": 59
+        },
+        {
+          "caller": "resolveAllowedOutputDir",
+          "callee": "fs.existsSync",
+          "lineNumber": 60
+        },
+        {
+          "caller": "resolveAllowedOutputDir",
+          "callee": "fs.mkdirSync",
+          "lineNumber": 61
+        },
+        {
+          "caller": "resolveAllowedOutputDir",
+          "callee": "fs.realpathSync",
+          "lineNumber": 63
+        },
+        {
+          "caller": "resolveAllowedOutputDir",
+          "callee": "isPathInsideRoot",
+          "lineNumber": 64
+        },
+        {
+          "caller": "resolveAllowedOutputDir",
+          "callee": "fs.accessSync",
+          "lineNumber": 81
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/output-dir-policy.test.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 44,
+      "nonEmptyLines": 40,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/perf-config.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 30,
+      "nonEmptyLines": 24,
+      "functions": [
+        {
+          "name": "normalizePerfConfig",
+          "startLine": 11,
+          "endLine": 14,
+          "params": [
+            "raw"
+          ]
+        },
+        {
+          "name": "readPerfConfig",
+          "startLine": 16,
+          "endLine": 22,
+          "params": [
+            "fsLike",
+            "filePath"
+          ]
+        },
+        {
+          "name": "writePerfConfig",
+          "startLine": 24,
+          "endLine": 28,
+          "params": [
+            "fsLike",
+            "filePath",
+            "raw"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "readPerfConfig",
+          "callee": "normalizePerfConfig",
+          "lineNumber": 18
+        },
+        {
+          "caller": "readPerfConfig",
+          "callee": "JSON.parse",
+          "lineNumber": 18
+        },
+        {
+          "caller": "readPerfConfig",
+          "callee": "fsLike.readFileSync",
+          "lineNumber": 18
+        },
+        {
+          "caller": "readPerfConfig",
+          "callee": "normalizePerfConfig",
+          "lineNumber": 20
+        },
+        {
+          "caller": "writePerfConfig",
+          "callee": "normalizePerfConfig",
+          "lineNumber": 25
+        },
+        {
+          "caller": "writePerfConfig",
+          "callee": "fsLike.writeFileSync",
+          "lineNumber": 26
+        },
+        {
+          "caller": "writePerfConfig",
+          "callee": "JSON.stringify",
+          "lineNumber": 26
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/perf-config.test.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 63,
+      "nonEmptyLines": 55,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/server-http-security.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 87,
+      "nonEmptyLines": 78,
+      "functions": [
+        {
+          "name": "normalizeClientIp",
+          "startLine": 5,
+          "endLine": 9,
+          "params": [
+            "raw"
+          ]
+        },
+        {
+          "name": "getRequestClientIp",
+          "startLine": 12,
+          "endLine": 14,
+          "params": [
+            "req"
+          ]
+        },
+        {
+          "name": "isLoopbackClientIp",
+          "startLine": 17,
+          "endLine": 19,
+          "params": [
+            "ip"
+          ]
+        },
+        {
+          "name": "createLanTokenVerifier",
+          "startLine": 24,
+          "endLine": 34,
+          "params": [
+            "getHostState"
+          ]
+        },
+        {
+          "name": "createDocumentExportAuthMiddleware",
+          "startLine": 40,
+          "endLine": 51,
+          "params": [
+            "getHostState"
+          ]
+        },
+        {
+          "name": "isStaticOrHealthRequest",
+          "startLine": 54,
+          "endLine": 62,
+          "params": [
+            "req"
+          ]
+        },
+        {
+          "name": "shouldSkipGlobalRateLimit",
+          "startLine": 69,
+          "endLine": 78,
+          "params": [
+            "req"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "normalizeClientIp",
+          "callee": "String(raw || '').trim",
+          "lineNumber": 6
+        },
+        {
+          "caller": "normalizeClientIp",
+          "callee": "String",
+          "lineNumber": 6
+        },
+        {
+          "caller": "normalizeClientIp",
+          "callee": "ip.startsWith",
+          "lineNumber": 7
+        },
+        {
+          "caller": "normalizeClientIp",
+          "callee": "ip.slice",
+          "lineNumber": 7
+        },
+        {
+          "caller": "getRequestClientIp",
+          "callee": "normalizeClientIp",
+          "lineNumber": 13
+        },
+        {
+          "caller": "createLanTokenVerifier",
+          "callee": "getHostState",
+          "lineNumber": 28
+        },
+        {
+          "caller": "createLanTokenVerifier",
+          "callee": "verifyTeamCode",
+          "lineNumber": 29
+        },
+        {
+          "caller": "createLanTokenVerifier",
+          "callee": "String",
+          "lineNumber": 29
+        },
+        {
+          "caller": "createDocumentExportAuthMiddleware",
+          "callee": "createLanTokenVerifier",
+          "lineNumber": 41
+        },
+        {
+          "caller": "createDocumentExportAuthMiddleware",
+          "callee": "getRequestClientIp",
+          "lineNumber": 43
+        },
+        {
+          "caller": "createDocumentExportAuthMiddleware",
+          "callee": "isLoopbackClientIp",
+          "lineNumber": 44
+        },
+        {
+          "caller": "createDocumentExportAuthMiddleware",
+          "callee": "next",
+          "lineNumber": 44
+        },
+        {
+          "caller": "createDocumentExportAuthMiddleware",
+          "callee": "req.get",
+          "lineNumber": 45
+        },
+        {
+          "caller": "createDocumentExportAuthMiddleware",
+          "callee": "/^Bearer\\s+(\\S+)\\s*$/i.exec",
+          "lineNumber": 46
+        },
+        {
+          "caller": "createDocumentExportAuthMiddleware",
+          "callee": "verifyLanBearer",
+          "lineNumber": 48
+        },
+        {
+          "caller": "createDocumentExportAuthMiddleware",
+          "callee": "next",
+          "lineNumber": 48
+        },
+        {
+          "caller": "createDocumentExportAuthMiddleware",
+          "callee": "res.status(403).json",
+          "lineNumber": 49
+        },
+        {
+          "caller": "createDocumentExportAuthMiddleware",
+          "callee": "res.status",
+          "lineNumber": 49
+        },
+        {
+          "caller": "isStaticOrHealthRequest",
+          "callee": "p.startsWith",
+          "lineNumber": 59
+        },
+        {
+          "caller": "isStaticOrHealthRequest",
+          "callee": "p.startsWith",
+          "lineNumber": 60
+        },
+        {
+          "caller": "isStaticOrHealthRequest",
+          "callee": "p.startsWith",
+          "lineNumber": 60
+        },
+        {
+          "caller": "isStaticOrHealthRequest",
+          "callee": "p.startsWith",
+          "lineNumber": 60
+        },
+        {
+          "caller": "isStaticOrHealthRequest",
+          "callee": "/\\.(css|js|mjs|map|woff2?|png|svg|ico|webp|html|webmanifest)(\\?|$)/i.test",
+          "lineNumber": 61
+        },
+        {
+          "caller": "shouldSkipGlobalRateLimit",
+          "callee": "isStaticOrHealthRequest",
+          "lineNumber": 70
+        },
+        {
+          "caller": "shouldSkipGlobalRateLimit",
+          "callee": "String",
+          "lineNumber": 71
+        },
+        {
+          "caller": "shouldSkipGlobalRateLimit",
+          "callee": "p.startsWith",
+          "lineNumber": 73
+        },
+        {
+          "caller": "shouldSkipGlobalRateLimit",
+          "callee": "p.startsWith",
+          "lineNumber": 74
+        },
+        {
+          "caller": "shouldSkipGlobalRateLimit",
+          "callee": "p.startsWith",
+          "lineNumber": 75
+        },
+        {
+          "caller": "shouldSkipGlobalRateLimit",
+          "callee": "p.startsWith",
+          "lineNumber": 76
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 7,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/server-http-security.test.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 82,
+      "nonEmptyLines": 76,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/window-open-policy.cjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 48,
+      "nonEmptyLines": 43,
+      "functions": [
+        {
+          "name": "isPrivateLanHost",
+          "startLine": 8,
+          "endLine": 22,
+          "params": [
+            "hostname"
+          ]
+        },
+        {
+          "name": "isAllowedExternalHost",
+          "startLine": 24,
+          "endLine": 34,
+          "params": [
+            "protocol",
+            "hostname"
+          ]
+        },
+        {
+          "name": "isAllowedExternalUrl",
+          "startLine": 36,
+          "endLine": 46,
+          "params": [
+            "url"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "isPrivateLanHost",
+          "callee": "String(hostname || '').toLowerCase",
+          "lineNumber": 9
+        },
+        {
+          "caller": "isPrivateLanHost",
+          "callee": "String",
+          "lineNumber": 9
+        },
+        {
+          "caller": "isPrivateLanHost",
+          "callee": "h.endsWith",
+          "lineNumber": 11
+        },
+        {
+          "caller": "isPrivateLanHost",
+          "callee": "/^10\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}$/.test",
+          "lineNumber": 13
+        },
+        {
+          "caller": "isPrivateLanHost",
+          "callee": "/^192\\.168\\.\\d{1,3}\\.\\d{1,3}$/.test",
+          "lineNumber": 14
+        },
+        {
+          "caller": "isPrivateLanHost",
+          "callee": "/^169\\.254\\.\\d{1,3}\\.\\d{1,3}$/.test",
+          "lineNumber": 15
+        },
+        {
+          "caller": "isPrivateLanHost",
+          "callee": "h.match",
+          "lineNumber": 16
+        },
+        {
+          "caller": "isPrivateLanHost",
+          "callee": "Number",
+          "lineNumber": 18
+        },
+        {
+          "caller": "isAllowedExternalHost",
+          "callee": "String(hostname || '').toLowerCase",
+          "lineNumber": 25
+        },
+        {
+          "caller": "isAllowedExternalHost",
+          "callee": "String",
+          "lineNumber": 25
+        },
+        {
+          "caller": "isAllowedExternalHost",
+          "callee": "h.endsWith",
+          "lineNumber": 27
+        },
+        {
+          "caller": "isAllowedExternalHost",
+          "callee": "h.endsWith",
+          "lineNumber": 28
+        },
+        {
+          "caller": "isAllowedExternalHost",
+          "callee": "isPrivateLanHost",
+          "lineNumber": 31
+        },
+        {
+          "caller": "isAllowedExternalUrl",
+          "callee": "isAllowedExternalHost",
+          "lineNumber": 45
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/window-open-policy.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 24,
+      "nonEmptyLines": 22,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "main-lan-boot.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 73,
+      "nonEmptyLines": 66,
+      "functions": [
+        {
+          "name": "whenReadyBody",
+          "startLine": 13,
+          "endLine": 19,
+          "params": [
+            "src"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "whenReadyBody",
+          "callee": "src.indexOf",
+          "lineNumber": 14
+        },
+        {
+          "caller": "whenReadyBody",
+          "callee": "assert.ok",
+          "lineNumber": 15
+        },
+        {
+          "caller": "whenReadyBody",
+          "callee": "src.indexOf",
+          "lineNumber": 16
+        },
+        {
+          "caller": "whenReadyBody",
+          "callee": "assert.ok",
+          "lineNumber": 17
+        },
+        {
+          "caller": "whenReadyBody",
+          "callee": "src.slice",
+          "lineNumber": 18
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "main.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 1137,
+      "nonEmptyLines": 1036,
+      "functions": [
+        {
+          "name": "normalizeUpdateChannel",
+          "startLine": 42,
+          "endLine": 44,
+          "params": [
+            "channel"
+          ]
+        },
+        {
+          "name": "updateChannelFilePath",
+          "startLine": 46,
+          "endLine": 48,
+          "params": []
+        },
+        {
+          "name": "readUpdateChannelFromDisk",
+          "startLine": 50,
+          "endLine": 57,
+          "params": []
+        },
+        {
+          "name": "writeUpdateChannelToDisk",
+          "startLine": 59,
+          "endLine": 65,
+          "params": [
+            "channel"
+          ]
+        },
+        {
+          "name": "applyUpdateChannel",
+          "startLine": 68,
+          "endLine": 74,
+          "params": [
+            "channel"
+          ]
+        },
+        {
+          "name": "clearReinstallSession",
+          "startLine": 80,
+          "endLine": 86,
+          "params": []
+        },
+        {
+          "name": "beginReinstallCurrentVersion",
+          "startLine": 89,
+          "endLine": 114,
+          "params": []
+        },
+        {
+          "name": "captureDefaultUpdaterFeed",
+          "startLine": 116,
+          "endLine": 124,
+          "params": []
+        },
+        {
+          "name": "resetUpdaterFeedToDefault",
+          "startLine": 126,
+          "endLine": 137,
+          "params": []
+        },
+        {
+          "name": "beginDowngradeToVersion",
+          "startLine": 139,
+          "endLine": 152,
+          "params": [
+            "version"
+          ]
+        },
+        {
+          "name": "sendDowngradeFailedFromSession",
+          "startLine": 154,
+          "endLine": 172,
+          "params": [
+            "code",
+            "message"
+          ]
+        },
+        {
+          "name": "serializeReleaseNotes",
+          "startLine": 180,
+          "endLine": 192,
+          "params": [
+            "info"
+          ]
+        },
+        {
+          "name": "createWindow",
+          "startLine": 194,
+          "endLine": 266,
+          "params": []
+        },
+        {
+          "name": "safeSendToRenderer",
+          "startLine": 269,
+          "endLine": 277,
+          "params": [
+            "channel",
+            "payload"
+          ]
+        },
+        {
+          "name": "scheduleUpdateCheck",
+          "startLine": 381,
+          "endLine": 390,
+          "params": [
+            "delayMs"
+          ]
+        },
+        {
+          "name": "perfConfigFilePath",
+          "startLine": 435,
+          "endLine": 437,
+          "params": []
+        },
+        {
+          "name": "defaultDownloadsDir",
+          "startLine": 503,
+          "endLine": 505,
+          "params": []
+        },
+        {
+          "name": "validateOutputDir",
+          "startLine": 507,
+          "endLine": 511,
+          "params": [
+            "dir"
+          ]
+        },
+        {
+          "name": "ensureLanMdnsClientId",
+          "startLine": 672,
+          "endLine": 683,
+          "params": [
+            "userDataPath"
+          ]
+        },
+        {
+          "name": "startLanMdnsIfHosting",
+          "startLine": 685,
+          "endLine": 710,
+          "params": []
+        },
+        {
+          "name": "startUdpBeaconIfHosting",
+          "startLine": 712,
+          "endLine": 730,
+          "params": []
+        },
+        {
+          "name": "getWardHostRegistryForIpc",
+          "startLine": 838,
+          "endLine": 845,
+          "params": []
+        },
+        {
+          "name": "getTargetWebContents",
+          "startLine": 913,
+          "endLine": 918,
+          "params": []
+        },
+        {
+          "name": "webContentsMenuAction",
+          "startLine": 921,
+          "endLine": 932,
+          "params": [
+            "method"
+          ]
+        },
+        {
+          "name": "buildMenu",
+          "startLine": 934,
+          "endLine": 988,
+          "params": []
+        },
+        {
+          "name": "unlockClinicalDbAtStartup",
+          "startLine": 994,
+          "endLine": 1009,
+          "params": [
+            "dbManager"
+          ]
+        },
+        {
+          "name": "destroyAllBrowserWindows",
+          "startLine": 1108,
+          "endLine": 1112,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "normalizeUpdateChannel",
+          "callee": "String(channel || '').toLowerCase",
+          "lineNumber": 43
+        },
+        {
+          "caller": "normalizeUpdateChannel",
+          "callee": "String",
+          "lineNumber": 43
+        },
+        {
+          "caller": "updateChannelFilePath",
+          "callee": "path.join",
+          "lineNumber": 47
+        },
+        {
+          "caller": "updateChannelFilePath",
+          "callee": "app.getPath",
+          "lineNumber": 47
+        },
+        {
+          "caller": "readUpdateChannelFromDisk",
+          "callee": "JSON.parse",
+          "lineNumber": 52
+        },
+        {
+          "caller": "readUpdateChannelFromDisk",
+          "callee": "fs.readFileSync",
+          "lineNumber": 52
+        },
+        {
+          "caller": "readUpdateChannelFromDisk",
+          "callee": "updateChannelFilePath",
+          "lineNumber": 52
+        },
+        {
+          "caller": "readUpdateChannelFromDisk",
+          "callee": "normalizeUpdateChannel",
+          "lineNumber": 53
+        },
+        {
+          "caller": "writeUpdateChannelToDisk",
+          "callee": "normalizeUpdateChannel",
+          "lineNumber": 60
+        },
+        {
+          "caller": "writeUpdateChannelToDisk",
+          "callee": "fs.writeFileSync",
+          "lineNumber": 62
+        },
+        {
+          "caller": "writeUpdateChannelToDisk",
+          "callee": "updateChannelFilePath",
+          "lineNumber": 62
+        },
+        {
+          "caller": "writeUpdateChannelToDisk",
+          "callee": "JSON.stringify",
+          "lineNumber": 62
+        },
+        {
+          "caller": "applyUpdateChannel",
+          "callee": "normalizeUpdateChannel",
+          "lineNumber": 69
+        },
+        {
+          "caller": "beginReinstallCurrentVersion",
+          "callee": "clearReinstallSession",
+          "lineNumber": 90
+        },
+        {
+          "caller": "beginReinstallCurrentVersion",
+          "callee": "app.getVersion",
+          "lineNumber": 91
+        },
+        {
+          "caller": "beginReinstallCurrentVersion",
+          "callee": "autoUpdater.isUpdateAvailable.bind",
+          "lineNumber": 94
+        },
+        {
+          "caller": "beginReinstallCurrentVersion",
+          "callee": "String((updateInfo && updateInfo.version) || '').replace",
+          "lineNumber": 99
+        },
+        {
+          "caller": "beginReinstallCurrentVersion",
+          "callee": "String",
+          "lineNumber": 99
+        },
+        {
+          "caller": "beginReinstallCurrentVersion",
+          "callee": "originalIsUpdateAvailable",
+          "lineNumber": 104
+        },
+        {
+          "caller": "beginReinstallCurrentVersion",
+          "callee": "autoUpdater.setFeedURL",
+          "lineNumber": 110
+        },
+        {
+          "caller": "beginReinstallCurrentVersion",
+          "callee": "buildGenericFeedUrl",
+          "lineNumber": 112
+        },
+        {
+          "caller": "captureDefaultUpdaterFeed",
+          "callee": "autoUpdater.getFeedURL",
+          "lineNumber": 119
+        },
+        {
+          "caller": "resetUpdaterFeedToDefault",
+          "callee": "clearReinstallSession",
+          "lineNumber": 128
+        },
+        {
+          "caller": "resetUpdaterFeedToDefault",
+          "callee": "applyUpdateChannel",
+          "lineNumber": 130
+        },
+        {
+          "caller": "resetUpdaterFeedToDefault",
+          "callee": "readUpdateChannelFromDisk",
+          "lineNumber": 130
+        },
+        {
+          "caller": "resetUpdaterFeedToDefault",
+          "callee": "captureDefaultUpdaterFeed",
+          "lineNumber": 131
+        },
+        {
+          "caller": "resetUpdaterFeedToDefault",
+          "callee": "autoUpdater.setFeedURL",
+          "lineNumber": 134
+        },
+        {
+          "caller": "beginDowngradeToVersion",
+          "callee": "String(version || '').replace",
+          "lineNumber": 140
+        },
+        {
+          "caller": "beginDowngradeToVersion",
+          "callee": "String",
+          "lineNumber": 140
+        },
+        {
+          "caller": "beginDowngradeToVersion",
+          "callee": "app.getVersion",
+          "lineNumber": 141
+        },
+        {
+          "caller": "beginDowngradeToVersion",
+          "callee": "isValidDowngradeTargetVersion",
+          "lineNumber": 142
+        },
+        {
+          "caller": "beginDowngradeToVersion",
+          "callee": "autoUpdater.setFeedURL",
+          "lineNumber": 148
+        },
+        {
+          "caller": "beginDowngradeToVersion",
+          "callee": "buildGenericFeedUrl",
+          "lineNumber": 150
+        },
+        {
+          "caller": "sendDowngradeFailedFromSession",
+          "callee": "buildManualInstallerUrl",
+          "lineNumber": 159
+        },
+        {
+          "caller": "sendDowngradeFailedFromSession",
+          "callee": "pickMacArch",
+          "lineNumber": 162
+        },
+        {
+          "caller": "sendDowngradeFailedFromSession",
+          "callee": "safeSendToRenderer",
+          "lineNumber": 165
+        },
+        {
+          "caller": "sendDowngradeFailedFromSession",
+          "callee": "resetUpdaterFeedToDefault",
+          "lineNumber": 171
+        },
+        {
+          "caller": "serializeReleaseNotes",
+          "callee": "Array.isArray",
+          "lineNumber": 185
+        },
+        {
+          "caller": "serializeReleaseNotes",
+          "callee": "n\n      .map((x) => (typeof x === 'string' ? x : x && x.note ? String(x.note) : ''))\n      .filter(Boolean)\n      .join",
+          "lineNumber": 186
+        },
+        {
+          "caller": "serializeReleaseNotes",
+          "callee": "n\n      .map((x) => (typeof x === 'string' ? x : x && x.note ? String(x.note) : ''))\n      .filter",
+          "lineNumber": 186
+        },
+        {
+          "caller": "serializeReleaseNotes",
+          "callee": "n\n      .map",
+          "lineNumber": 186
+        },
+        {
+          "caller": "serializeReleaseNotes",
+          "callee": "String",
+          "lineNumber": 187
+        },
+        {
+          "caller": "serializeReleaseNotes",
+          "callee": "String",
+          "lineNumber": 191
+        },
+        {
+          "caller": "createWindow",
+          "callee": "path.join",
+          "lineNumber": 205
+        },
+        {
+          "caller": "createWindow",
+          "callee": "mainWindow.loadURL",
+          "lineNumber": 219
+        },
+        {
+          "caller": "createWindow",
+          "callee": "mainWindow.webContents.setWindowOpenHandler",
+          "lineNumber": 221
+        },
+        {
+          "caller": "createWindow",
+          "callee": "isAllowedExternalUrl",
+          "lineNumber": 222
+        },
+        {
+          "caller": "createWindow",
+          "callee": "shell.openExternal",
+          "lineNumber": 222
+        },
+        {
+          "caller": "createWindow",
+          "callee": "setTimeout",
+          "lineNumber": 226
+        },
+        {
+          "caller": "createWindow",
+          "callee": "mainWindow.isDestroyed",
+          "lineNumber": 227
+        },
+        {
+          "caller": "createWindow",
+          "callee": "mainWindow.isVisible",
+          "lineNumber": 227
+        },
+        {
+          "caller": "createWindow",
+          "callee": "mainWindow.show",
+          "lineNumber": 228
+        },
+        {
+          "caller": "createWindow",
+          "callee": "mainWindow.once",
+          "lineNumber": 232
+        },
+        {
+          "caller": "createWindow",
+          "callee": "clearTimeout",
+          "lineNumber": 233
+        },
+        {
+          "caller": "createWindow",
+          "callee": "mainWindow.show",
+          "lineNumber": 234
+        },
+        {
+          "caller": "createWindow",
+          "callee": "mainWindow.webContents.once",
+          "lineNumber": 238
+        },
+        {
+          "caller": "createWindow",
+          "callee": "mainWindow.webContents.send",
+          "lineNumber": 243
+        },
+        {
+          "caller": "createWindow",
+          "callee": "mainWindow.webContents.send",
+          "lineNumber": 249
+        },
+        {
+          "caller": "createWindow",
+          "callee": "mainWindow.webContents.send",
+          "lineNumber": 256
+        },
+        {
+          "caller": "createWindow",
+          "callee": "console.error",
+          "lineNumber": 259
+        },
+        {
+          "caller": "createWindow",
+          "callee": "scheduleUpdateCheck",
+          "lineNumber": 262
+        },
+        {
+          "caller": "createWindow",
+          "callee": "mainWindow.on",
+          "lineNumber": 265
+        },
+        {
+          "caller": "safeSendToRenderer",
+          "callee": "mainWindow.isDestroyed",
+          "lineNumber": 271
+        },
+        {
+          "caller": "safeSendToRenderer",
+          "callee": "mainWindow.webContents.send",
+          "lineNumber": 272
+        },
+        {
+          "caller": "safeSendToRenderer",
+          "callee": "console.error",
+          "lineNumber": 275
+        },
+        {
+          "caller": "scheduleUpdateCheck",
+          "callee": "clearTimeout",
+          "lineNumber": 382
+        },
+        {
+          "caller": "scheduleUpdateCheck",
+          "callee": "setTimeout",
+          "lineNumber": 383
+        },
+        {
+          "caller": "scheduleUpdateCheck",
+          "callee": "mainWindow.isDestroyed",
+          "lineNumber": 385
+        },
+        {
+          "caller": "scheduleUpdateCheck",
+          "callee": "autoUpdater.checkForUpdates().catch",
+          "lineNumber": 387
+        },
+        {
+          "caller": "scheduleUpdateCheck",
+          "callee": "autoUpdater.checkForUpdates",
+          "lineNumber": 387
+        },
+        {
+          "caller": "perfConfigFilePath",
+          "callee": "path.join",
+          "lineNumber": 436
+        },
+        {
+          "caller": "perfConfigFilePath",
+          "callee": "app.getPath",
+          "lineNumber": 436
+        },
+        {
+          "caller": "defaultDownloadsDir",
+          "callee": "app.getPath",
+          "lineNumber": 504
+        },
+        {
+          "caller": "validateOutputDir",
+          "callee": "String(dir).trim",
+          "lineNumber": 508
+        },
+        {
+          "caller": "validateOutputDir",
+          "callee": "String",
+          "lineNumber": 508
+        },
+        {
+          "caller": "validateOutputDir",
+          "callee": "path.resolve",
+          "lineNumber": 508
+        },
+        {
+          "caller": "validateOutputDir",
+          "callee": "String(dir).trim",
+          "lineNumber": 508
+        },
+        {
+          "caller": "validateOutputDir",
+          "callee": "String",
+          "lineNumber": 508
+        },
+        {
+          "caller": "validateOutputDir",
+          "callee": "defaultDownloadsDir",
+          "lineNumber": 508
+        },
+        {
+          "caller": "validateOutputDir",
+          "callee": "fs.promises.access",
+          "lineNumber": 509
+        },
+        {
+          "caller": "ensureLanMdnsClientId",
+          "callee": "path.join",
+          "lineNumber": 673
+        },
+        {
+          "caller": "ensureLanMdnsClientId",
+          "callee": "String",
+          "lineNumber": 673
+        },
+        {
+          "caller": "ensureLanMdnsClientId",
+          "callee": "fs.readFileSync(idPath, 'utf8').trim",
+          "lineNumber": 675
+        },
+        {
+          "caller": "ensureLanMdnsClientId",
+          "callee": "fs.readFileSync",
+          "lineNumber": 675
+        },
+        {
+          "caller": "ensureLanMdnsClientId",
+          "callee": "crypto.randomBytes(6).toString",
+          "lineNumber": 678
+        },
+        {
+          "caller": "ensureLanMdnsClientId",
+          "callee": "crypto.randomBytes",
+          "lineNumber": 678
+        },
+        {
+          "caller": "ensureLanMdnsClientId",
+          "callee": "fs.writeFileSync",
+          "lineNumber": 680
+        },
+        {
+          "caller": "startLanMdnsIfHosting",
+          "callee": "app.getPath",
+          "lineNumber": 687
+        },
+        {
+          "caller": "startLanMdnsIfHosting",
+          "callee": "require",
+          "lineNumber": 688
+        },
+        {
+          "caller": "startLanMdnsIfHosting",
+          "callee": "readLanTeamCodeFile",
+          "lineNumber": 689
+        },
+        {
+          "caller": "startLanMdnsIfHosting",
+          "callee": "require",
+          "lineNumber": 691
+        },
+        {
+          "caller": "startLanMdnsIfHosting",
+          "callee": "readHostClinicalMeta",
+          "lineNumber": 692
+        },
+        {
+          "caller": "startLanMdnsIfHosting",
+          "callee": "ensureLanMdnsClientId",
+          "lineNumber": 693
+        },
+        {
+          "caller": "startLanMdnsIfHosting",
+          "callee": "Date.now",
+          "lineNumber": 694
+        },
+        {
+          "caller": "startLanMdnsIfHosting",
+          "callee": "buildTeamHashSync",
+          "lineNumber": 696
+        },
+        {
+          "caller": "startLanMdnsIfHosting",
+          "callee": "_lanMdnsService.stop",
+          "lineNumber": 697
+        },
+        {
+          "caller": "startLanMdnsIfHosting",
+          "callee": "createLanMdnsService",
+          "lineNumber": 698
+        },
+        {
+          "caller": "startLanMdnsIfHosting",
+          "callee": "JSON.stringify",
+          "lineNumber": 699
+        },
+        {
+          "caller": "startLanMdnsIfHosting",
+          "callee": "Date.now",
+          "lineNumber": 700
+        },
+        {
+          "caller": "startLanMdnsIfHosting",
+          "callee": "safeSendToRenderer",
+          "lineNumber": 704
+        },
+        {
+          "caller": "startLanMdnsIfHosting",
+          "callee": "_lanMdnsService.start",
+          "lineNumber": 706
+        },
+        {
+          "caller": "startUdpBeaconIfHosting",
+          "callee": "app.getPath",
+          "lineNumber": 714
+        },
+        {
+          "caller": "startUdpBeaconIfHosting",
+          "callee": "require",
+          "lineNumber": 715
+        },
+        {
+          "caller": "startUdpBeaconIfHosting",
+          "callee": "readLanTeamCodeFile",
+          "lineNumber": 716
+        },
+        {
+          "caller": "startUdpBeaconIfHosting",
+          "callee": "require",
+          "lineNumber": 718
+        },
+        {
+          "caller": "startUdpBeaconIfHosting",
+          "callee": "readHostClinicalMeta",
+          "lineNumber": 719
+        },
+        {
+          "caller": "startUdpBeaconIfHosting",
+          "callee": "ensureLanMdnsClientId",
+          "lineNumber": 720
+        },
+        {
+          "caller": "startUdpBeaconIfHosting",
+          "callee": "Date.now",
+          "lineNumber": 721
+        },
+        {
+          "caller": "startUdpBeaconIfHosting",
+          "callee": "buildTeamHashSync",
+          "lineNumber": 723
+        },
+        {
+          "caller": "startUdpBeaconIfHosting",
+          "callee": "_udpBeacon.stop",
+          "lineNumber": 724
+        },
+        {
+          "caller": "startUdpBeaconIfHosting",
+          "callee": "createUdpBeacon",
+          "lineNumber": 725
+        },
+        {
+          "caller": "startUdpBeaconIfHosting",
+          "callee": "_udpBeacon.startListening().catch",
+          "lineNumber": 726
+        },
+        {
+          "caller": "startUdpBeaconIfHosting",
+          "callee": "_udpBeacon.startListening",
+          "lineNumber": 726
+        },
+        {
+          "caller": "getWardHostRegistryForIpc",
+          "callee": "createWardHostRegistry",
+          "lineNumber": 840
+        },
+        {
+          "caller": "getWardHostRegistryForIpc",
+          "callee": "path.join",
+          "lineNumber": 841
+        },
+        {
+          "caller": "getWardHostRegistryForIpc",
+          "callee": "app.getPath",
+          "lineNumber": 841
+        },
+        {
+          "caller": "getTargetWebContents",
+          "callee": "BrowserWindow.getFocusedWindow",
+          "lineNumber": 914
+        },
+        {
+          "caller": "getTargetWebContents",
+          "callee": "focused.isDestroyed",
+          "lineNumber": 915
+        },
+        {
+          "caller": "getTargetWebContents",
+          "callee": "BrowserWindow.getAllWindows().filter",
+          "lineNumber": 916
+        },
+        {
+          "caller": "getTargetWebContents",
+          "callee": "BrowserWindow.getAllWindows",
+          "lineNumber": 916
+        },
+        {
+          "caller": "getTargetWebContents",
+          "callee": "w.isDestroyed",
+          "lineNumber": 916
+        },
+        {
+          "caller": "webContentsMenuAction",
+          "callee": "getTargetWebContents",
+          "lineNumber": 924
+        },
+        {
+          "caller": "webContentsMenuAction",
+          "callee": "wc.isDestroyed",
+          "lineNumber": 925
+        },
+        {
+          "caller": "webContentsMenuAction",
+          "callee": "fn.call",
+          "lineNumber": 927
+        },
+        {
+          "caller": "webContentsMenuAction",
+          "callee": "console.warn",
+          "lineNumber": 929
+        },
+        {
+          "caller": "buildMenu",
+          "callee": "app.getVersion",
+          "lineNumber": 935
+        },
+        {
+          "caller": "checkUpdate",
+          "callee": "scheduleUpdateCheck",
+          "lineNumber": 937
+        },
+        {
+          "caller": "buildMenu",
+          "callee": "webContentsMenuAction",
+          "lineNumber": 953
+        },
+        {
+          "caller": "buildMenu",
+          "callee": "webContentsMenuAction",
+          "lineNumber": 954
+        },
+        {
+          "caller": "buildMenu",
+          "callee": "webContentsMenuAction",
+          "lineNumber": 956
+        },
+        {
+          "caller": "buildMenu",
+          "callee": "webContentsMenuAction",
+          "lineNumber": 957
+        },
+        {
+          "caller": "buildMenu",
+          "callee": "webContentsMenuAction",
+          "lineNumber": 958
+        },
+        {
+          "caller": "buildMenu",
+          "callee": "webContentsMenuAction",
+          "lineNumber": 959
+        },
+        {
+          "caller": "buildMenu",
+          "callee": "webContentsMenuAction",
+          "lineNumber": 965
+        },
+        {
+          "caller": "buildMenu",
+          "callee": "webContentsMenuAction",
+          "lineNumber": 966
+        },
+        {
+          "caller": "buildMenu",
+          "callee": "webContentsMenuAction",
+          "lineNumber": 967
+        },
+        {
+          "caller": "buildMenu",
+          "callee": "Menu.setApplicationMenu",
+          "lineNumber": 987
+        },
+        {
+          "caller": "buildMenu",
+          "callee": "Menu.buildFromTemplate",
+          "lineNumber": 987
+        },
+        {
+          "caller": "unlockClinicalDbAtStartup",
+          "callee": "dbManager.ensureUnlocked",
+          "lineNumber": 999
+        },
+        {
+          "caller": "unlockClinicalDbAtStartup",
+          "callee": "setTimeout",
+          "lineNumber": 1004
+        },
+        {
+          "caller": "destroyAllBrowserWindows",
+          "callee": "BrowserWindow.getAllWindows",
+          "lineNumber": 1109
+        },
+        {
+          "caller": "destroyAllBrowserWindows",
+          "callee": "win.isDestroyed",
+          "lineNumber": 1110
+        },
+        {
+          "caller": "destroyAllBrowserWindows",
+          "callee": "win.destroy",
+          "lineNumber": 1110
+        }
+      ],
+      "metrics": {
+        "importCount": 16,
+        "exportCount": 0,
+        "functionCount": 27,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "scripts/lan-virtual-peer.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 352,
+      "nonEmptyLines": 316,
+      "functions": [
+        {
+          "name": "parseArgs",
+          "startLine": 19,
+          "endLine": 51,
+          "params": [
+            "argv"
+          ]
+        },
+        {
+          "name": "printHelp",
+          "startLine": 53,
+          "endLine": 74,
+          "params": []
+        },
+        {
+          "name": "defaultHostUserDataCandidates",
+          "startLine": 76,
+          "endLine": 87,
+          "params": []
+        },
+        {
+          "name": "readTeamCodeFromUserData",
+          "startLine": 89,
+          "endLine": 100,
+          "params": []
+        },
+        {
+          "name": "authHeaders",
+          "startLine": 102,
+          "endLine": 104,
+          "params": [
+            "code"
+          ]
+        },
+        {
+          "name": "lanFetch",
+          "startLine": 106,
+          "endLine": 123,
+          "params": [
+            "base",
+            "code",
+            "pathname"
+          ]
+        },
+        {
+          "name": "rosterSummary",
+          "startLine": 125,
+          "endLine": 131,
+          "params": [
+            "snapshot"
+          ]
+        },
+        {
+          "name": "buildPeerSnapshot",
+          "startLine": 133,
+          "endLine": 151,
+          "params": [
+            "opts"
+          ]
+        },
+        {
+          "name": "runDeltaSmoke",
+          "startLine": 153,
+          "endLine": 225,
+          "params": [
+            "opts"
+          ]
+        },
+        {
+          "name": "runLanVirtualPeer",
+          "startLine": 227,
+          "endLine": 345,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "runLanVirtualPeer",
+          "line": 227,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "parseArgs",
+          "callee": "String(argv[++i] || '').trim",
+          "lineNumber": 40
+        },
+        {
+          "caller": "parseArgs",
+          "callee": "String",
+          "lineNumber": 40
+        },
+        {
+          "caller": "parseArgs",
+          "callee": "String(argv[++i] || '').trim",
+          "lineNumber": 41
+        },
+        {
+          "caller": "parseArgs",
+          "callee": "String",
+          "lineNumber": 41
+        },
+        {
+          "caller": "parseArgs",
+          "callee": "String(argv[++i] || '').trim",
+          "lineNumber": 42
+        },
+        {
+          "caller": "parseArgs",
+          "callee": "String",
+          "lineNumber": 42
+        },
+        {
+          "caller": "parseArgs",
+          "callee": "String(argv[++i] || '').trim",
+          "lineNumber": 43
+        },
+        {
+          "caller": "parseArgs",
+          "callee": "String",
+          "lineNumber": 43
+        },
+        {
+          "caller": "parseArgs",
+          "callee": "String(argv[++i] || '').trim",
+          "lineNumber": 44
+        },
+        {
+          "caller": "parseArgs",
+          "callee": "String",
+          "lineNumber": 44
+        },
+        {
+          "caller": "parseArgs",
+          "callee": "String(argv[++i] || '').trim",
+          "lineNumber": 45
+        },
+        {
+          "caller": "parseArgs",
+          "callee": "String",
+          "lineNumber": 45
+        },
+        {
+          "caller": "parseArgs",
+          "callee": "String(argv[++i] || '').trim",
+          "lineNumber": 46
+        },
+        {
+          "caller": "parseArgs",
+          "callee": "String",
+          "lineNumber": 46
+        },
+        {
+          "caller": "parseArgs",
+          "callee": "String(argv[++i] || '').trim",
+          "lineNumber": 47
+        },
+        {
+          "caller": "parseArgs",
+          "callee": "String",
+          "lineNumber": 47
+        },
+        {
+          "caller": "parseArgs",
+          "callee": "opts.host.replace",
+          "lineNumber": 49
+        },
+        {
+          "caller": "printHelp",
+          "callee": "console.log",
+          "lineNumber": 54
+        },
+        {
+          "caller": "defaultHostUserDataCandidates",
+          "callee": "path.join",
+          "lineNumber": 78
+        },
+        {
+          "caller": "defaultHostUserDataCandidates",
+          "callee": "os.homedir",
+          "lineNumber": 78
+        },
+        {
+          "caller": "defaultHostUserDataCandidates",
+          "callee": "path.join",
+          "lineNumber": 79
+        },
+        {
+          "caller": "defaultHostUserDataCandidates",
+          "callee": "path.join",
+          "lineNumber": 79
+        },
+        {
+          "caller": "defaultHostUserDataCandidates",
+          "callee": "path.join",
+          "lineNumber": 82
+        },
+        {
+          "caller": "defaultHostUserDataCandidates",
+          "callee": "os.homedir",
+          "lineNumber": 82
+        },
+        {
+          "caller": "defaultHostUserDataCandidates",
+          "callee": "path.join",
+          "lineNumber": 83
+        },
+        {
+          "caller": "defaultHostUserDataCandidates",
+          "callee": "path.join",
+          "lineNumber": 83
+        },
+        {
+          "caller": "defaultHostUserDataCandidates",
+          "callee": "path.join",
+          "lineNumber": 85
+        },
+        {
+          "caller": "defaultHostUserDataCandidates",
+          "callee": "os.homedir",
+          "lineNumber": 85
+        },
+        {
+          "caller": "defaultHostUserDataCandidates",
+          "callee": "path.join",
+          "lineNumber": 86
+        },
+        {
+          "caller": "defaultHostUserDataCandidates",
+          "callee": "path.join",
+          "lineNumber": 86
+        },
+        {
+          "caller": "readTeamCodeFromUserData",
+          "callee": "defaultHostUserDataCandidates",
+          "lineNumber": 90
+        },
+        {
+          "caller": "readTeamCodeFromUserData",
+          "callee": "path.join",
+          "lineNumber": 91
+        },
+        {
+          "caller": "readTeamCodeFromUserData",
+          "callee": "fs.readFileSync(file, 'utf8').split('\\n')[0].trim",
+          "lineNumber": 93
+        },
+        {
+          "caller": "readTeamCodeFromUserData",
+          "callee": "fs.readFileSync(file, 'utf8').split",
+          "lineNumber": 93
+        },
+        {
+          "caller": "readTeamCodeFromUserData",
+          "callee": "fs.readFileSync",
+          "lineNumber": 93
+        },
+        {
+          "caller": "lanFetch",
+          "callee": "fetch",
+          "lineNumber": 108
+        },
+        {
+          "caller": "lanFetch",
+          "callee": "authHeaders",
+          "lineNumber": 111
+        },
+        {
+          "caller": "lanFetch",
+          "callee": "res.text",
+          "lineNumber": 115
+        },
+        {
+          "caller": "lanFetch",
+          "callee": "JSON.parse",
+          "lineNumber": 118
+        },
+        {
+          "caller": "rosterSummary",
+          "callee": "Array.isArray",
+          "lineNumber": 126
+        },
+        {
+          "caller": "rosterSummary",
+          "callee": "users.map((u) => u.username).filter",
+          "lineNumber": 129
+        },
+        {
+          "caller": "rosterSummary",
+          "callee": "users.map",
+          "lineNumber": 129
+        },
+        {
+          "caller": "buildPeerSnapshot",
+          "callee": "new Date().toISOString",
+          "lineNumber": 134
+        },
+        {
+          "caller": "buildPeerSnapshot",
+          "callee": "randomUUID",
+          "lineNumber": 139
+        },
+        {
+          "caller": "runDeltaSmoke",
+          "callee": "String(opts.patientId || 'pat_smoke_virtual').trim",
+          "lineNumber": 154
+        },
+        {
+          "caller": "runDeltaSmoke",
+          "callee": "String",
+          "lineNumber": 154
+        },
+        {
+          "caller": "runDeltaSmoke",
+          "callee": "Date.now().toString",
+          "lineNumber": 156
+        },
+        {
+          "caller": "runDeltaSmoke",
+          "callee": "Date.now",
+          "lineNumber": 156
+        },
+        {
+          "caller": "runDeltaSmoke",
+          "callee": "Date.now",
+          "lineNumber": 157
+        },
+        {
+          "caller": "runDeltaSmoke",
+          "callee": "Date.now",
+          "lineNumber": 158
+        },
+        {
+          "caller": "runDeltaSmoke",
+          "callee": "encodeURIComponent",
+          "lineNumber": 159
+        },
+        {
+          "caller": "runDeltaSmoke",
+          "callee": "console.log",
+          "lineNumber": 161
+        },
+        {
+          "caller": "runDeltaSmoke",
+          "callee": "lanFetch",
+          "lineNumber": 163
+        },
+        {
+          "caller": "runDeltaSmoke",
+          "callee": "JSON.stringify",
+          "lineNumber": 166
+        },
+        {
+          "caller": "runDeltaSmoke",
+          "callee": "JSON.stringify",
+          "lineNumber": 178
+        },
+        {
+          "caller": "runDeltaSmoke",
+          "callee": "JSON.stringify",
+          "lineNumber": 181
+        },
+        {
+          "caller": "runDeltaSmoke",
+          "callee": "lanFetch",
+          "lineNumber": 184
+        },
+        {
+          "caller": "runDeltaSmoke",
+          "callee": "encodeURIComponent",
+          "lineNumber": 187
+        },
+        {
+          "caller": "runDeltaSmoke",
+          "callee": "encodeURIComponent",
+          "lineNumber": 187
+        },
+        {
+          "caller": "runDeltaSmoke",
+          "callee": "JSON.stringify",
+          "lineNumber": 190
+        },
+        {
+          "caller": "runDeltaSmoke",
+          "callee": "Number",
+          "lineNumber": 193
+        },
+        {
+          "caller": "runDeltaSmoke",
+          "callee": "JSON.stringify",
+          "lineNumber": 194
+        },
+        {
+          "caller": "runDeltaSmoke",
+          "callee": "lanFetch",
+          "lineNumber": 197
+        },
+        {
+          "caller": "runDeltaSmoke",
+          "callee": "Math.max",
+          "lineNumber": 200
+        },
+        {
+          "caller": "runDeltaSmoke",
+          "callee": "Number",
+          "lineNumber": 200
+        },
+        {
+          "caller": "runDeltaSmoke",
+          "callee": "JSON.stringify",
+          "lineNumber": 203
+        },
+        {
+          "caller": "runDeltaSmoke",
+          "callee": "Array.isArray",
+          "lineNumber": 205
+        },
+        {
+          "caller": "runDeltaSmoke",
+          "callee": "deltas.some",
+          "lineNumber": 206
+        },
+        {
+          "caller": "runDeltaSmoke",
+          "callee": "console.log",
+          "lineNumber": 211
+        },
+        {
+          "caller": "runDeltaSmoke",
+          "callee": "console.log",
+          "lineNumber": 212
+        },
+        {
+          "caller": "runDeltaSmoke",
+          "callee": "console.log",
+          "lineNumber": 213
+        },
+        {
+          "caller": "runDeltaSmoke",
+          "callee": "Number",
+          "lineNumber": 213
+        },
+        {
+          "caller": "runDeltaSmoke",
+          "callee": "console.log",
+          "lineNumber": 214
+        },
+        {
+          "caller": "runLanVirtualPeer",
+          "callee": "process.argv.slice",
+          "lineNumber": 227
+        },
+        {
+          "caller": "runLanVirtualPeer",
+          "callee": "parseArgs",
+          "lineNumber": 228
+        },
+        {
+          "caller": "runLanVirtualPeer",
+          "callee": "printHelp",
+          "lineNumber": 230
+        },
+        {
+          "caller": "runLanVirtualPeer",
+          "callee": "readTeamCodeFromUserData",
+          "lineNumber": 234
+        },
+        {
+          "caller": "runLanVirtualPeer",
+          "callee": "lanFetch",
+          "lineNumber": 241
+        },
+        {
+          "caller": "runLanVirtualPeer",
+          "callee": "JSON.stringify",
+          "lineNumber": 243
+        },
+        {
+          "caller": "runLanVirtualPeer",
+          "callee": "lanFetch",
+          "lineNumber": 246
+        },
+        {
+          "caller": "runLanVirtualPeer",
+          "callee": "Array.isArray",
+          "lineNumber": 250
+        },
+        {
+          "caller": "runLanVirtualPeer",
+          "callee": "String(rooms[0].id || '').trim",
+          "lineNumber": 253
+        },
+        {
+          "caller": "runLanVirtualPeer",
+          "callee": "String",
+          "lineNumber": 253
+        },
+        {
+          "caller": "runLanVirtualPeer",
+          "callee": "rooms.map((r) => r.id).join",
+          "lineNumber": 256
+        },
+        {
+          "caller": "runLanVirtualPeer",
+          "callee": "rooms.map",
+          "lineNumber": 256
+        },
+        {
+          "caller": "runLanVirtualPeer",
+          "callee": "lanFetch",
+          "lineNumber": 263
+        },
+        {
+          "caller": "runLanVirtualPeer",
+          "callee": "encodeURIComponent",
+          "lineNumber": 263
+        },
+        {
+          "caller": "runLanVirtualPeer",
+          "callee": "JSON.stringify",
+          "lineNumber": 265
+        },
+        {
+          "caller": "runLanVirtualPeer",
+          "callee": "rosterSummary",
+          "lineNumber": 268
+        },
+        {
+          "caller": "runLanVirtualPeer",
+          "callee": "console.log",
+          "lineNumber": 269
+        },
+        {
+          "caller": "runLanVirtualPeer",
+          "callee": "console.log",
+          "lineNumber": 270
+        },
+        {
+          "caller": "runLanVirtualPeer",
+          "callee": "console.log",
+          "lineNumber": 271
+        },
+        {
+          "caller": "runLanVirtualPeer",
+          "callee": "beforeRoster.handles.join",
+          "lineNumber": 271
+        },
+        {
+          "caller": "runLanVirtualPeer",
+          "callee": "runDeltaSmoke",
+          "lineNumber": 284
+        },
+        {
+          "caller": "runLanVirtualPeer",
+          "callee": "Number",
+          "lineNumber": 287
+        },
+        {
+          "caller": "runLanVirtualPeer",
+          "callee": "buildPeerSnapshot",
+          "lineNumber": 288
+        },
+        {
+          "caller": "runLanVirtualPeer",
+          "callee": "lanFetch",
+          "lineNumber": 289
+        },
+        {
+          "caller": "runLanVirtualPeer",
+          "callee": "encodeURIComponent",
+          "lineNumber": 289
+        },
+        {
+          "caller": "runLanVirtualPeer",
+          "callee": "JSON.stringify",
+          "lineNumber": 292
+        },
+        {
+          "caller": "runLanVirtualPeer",
+          "callee": "JSON.stringify",
+          "lineNumber": 300
+        },
+        {
+          "caller": "runLanVirtualPeer",
+          "callee": "Number",
+          "lineNumber": 304
+        },
+        {
+          "caller": "runLanVirtualPeer",
+          "callee": "lanFetch",
+          "lineNumber": 305
+        },
+        {
+          "caller": "runLanVirtualPeer",
+          "callee": "encodeURIComponent",
+          "lineNumber": 305
+        },
+        {
+          "caller": "runLanVirtualPeer",
+          "callee": "lanFetch",
+          "lineNumber": 310
+        },
+        {
+          "caller": "runLanVirtualPeer",
+          "callee": "encodeURIComponent",
+          "lineNumber": 310
+        },
+        {
+          "caller": "runLanVirtualPeer",
+          "callee": "JSON.stringify",
+          "lineNumber": 313
+        },
+        {
+          "caller": "runLanVirtualPeer",
+          "callee": "JSON.stringify",
+          "lineNumber": 322
+        },
+        {
+          "caller": "runLanVirtualPeer",
+          "callee": "console.log",
+          "lineNumber": 324
+        },
+        {
+          "caller": "runLanVirtualPeer",
+          "callee": "lanFetch",
+          "lineNumber": 327
+        },
+        {
+          "caller": "runLanVirtualPeer",
+          "callee": "encodeURIComponent",
+          "lineNumber": 327
+        },
+        {
+          "caller": "runLanVirtualPeer",
+          "callee": "rosterSummary",
+          "lineNumber": 328
+        },
+        {
+          "caller": "runLanVirtualPeer",
+          "callee": "console.log",
+          "lineNumber": 329
+        },
+        {
+          "caller": "runLanVirtualPeer",
+          "callee": "console.log",
+          "lineNumber": 330
+        },
+        {
+          "caller": "runLanVirtualPeer",
+          "callee": "afterRoster.handles.join",
+          "lineNumber": 330
+        },
+        {
+          "caller": "runLanVirtualPeer",
+          "callee": "afterRoster.handles.includes",
+          "lineNumber": 332
+        },
+        {
+          "caller": "runLanVirtualPeer",
+          "callee": "console.log",
+          "lineNumber": 336
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 10,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "scripts/lan-virtual-peer.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 138,
+      "nonEmptyLines": 130,
+      "functions": [
+        {
+          "name": "mountLanRouter",
+          "startLine": 13,
+          "endLine": 18,
+          "params": [
+            "store"
+          ]
+        },
+        {
+          "name": "withEphemeralHost",
+          "startLine": 20,
+          "endLine": 61,
+          "params": [
+            "fn"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "mountLanRouter",
+          "callee": "createConflictResolver",
+          "lineNumber": 14
+        },
+        {
+          "caller": "mountLanRouter",
+          "callee": "express",
+          "lineNumber": 15
+        },
+        {
+          "caller": "mountLanRouter",
+          "callee": "app.use",
+          "lineNumber": 16
+        },
+        {
+          "caller": "mountLanRouter",
+          "callee": "createLanRouter",
+          "lineNumber": 16
+        },
+        {
+          "caller": "withEphemeralHost",
+          "callee": "fs.mkdtempSync",
+          "lineNumber": 21
+        },
+        {
+          "caller": "withEphemeralHost",
+          "callee": "path.join",
+          "lineNumber": 21
+        },
+        {
+          "caller": "withEphemeralHost",
+          "callee": "os.tmpdir",
+          "lineNumber": 21
+        },
+        {
+          "caller": "withEphemeralHost",
+          "callee": "path.join",
+          "lineNumber": 22
+        },
+        {
+          "caller": "withEphemeralHost",
+          "callee": "Date.now",
+          "lineNumber": 23
+        },
+        {
+          "caller": "withEphemeralHost",
+          "callee": "'-'.repeat",
+          "lineNumber": 23
+        },
+        {
+          "caller": "withEphemeralHost",
+          "callee": "createHostStore",
+          "lineNumber": 24
+        },
+        {
+          "caller": "withEphemeralHost",
+          "callee": "store.createRoom",
+          "lineNumber": 25
+        },
+        {
+          "caller": "withEphemeralHost",
+          "callee": "store.putRoomSyncBundle",
+          "lineNumber": 26
+        },
+        {
+          "caller": "withEphemeralHost",
+          "callee": "mountLanRouter",
+          "lineNumber": 46
+        },
+        {
+          "caller": "withEphemeralHost",
+          "callee": "http.createServer",
+          "lineNumber": 47
+        },
+        {
+          "caller": "withEphemeralHost",
+          "callee": "server.listen",
+          "lineNumber": 49
+        },
+        {
+          "caller": "withEphemeralHost",
+          "callee": "reject",
+          "lineNumber": 49
+        },
+        {
+          "caller": "withEphemeralHost",
+          "callee": "resolve",
+          "lineNumber": 49
+        },
+        {
+          "caller": "withEphemeralHost",
+          "callee": "server.address",
+          "lineNumber": 51
+        },
+        {
+          "caller": "withEphemeralHost",
+          "callee": "fn",
+          "lineNumber": 55
+        },
+        {
+          "caller": "withEphemeralHost",
+          "callee": "server.close",
+          "lineNumber": 57
+        },
+        {
+          "caller": "withEphemeralHost",
+          "callee": "store.flush",
+          "lineNumber": 58
+        },
+        {
+          "caller": "withEphemeralHost",
+          "callee": "fs.rmSync",
+          "lineNumber": 59
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 0,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "server.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 509,
+      "nonEmptyLines": 461,
+      "functions": [
+        {
+          "name": "isPrivateIpv4Host",
+          "startLine": 37,
+          "endLine": 47,
+          "params": [
+            "host"
+          ]
+        },
+        {
+          "name": "isAllowedLanCorsOrigin",
+          "startLine": 50,
+          "endLine": 60,
+          "params": [
+            "originUrl",
+            "requestHost"
+          ]
+        },
+        {
+          "name": "applyLanCorsHeaders",
+          "startLine": 63,
+          "endLine": 77,
+          "params": [
+            "req",
+            "res"
+          ]
+        },
+        {
+          "name": "rateLimitHandler",
+          "startLine": 85,
+          "endLine": 88,
+          "params": [
+            "req",
+            "res"
+          ]
+        },
+        {
+          "name": "getLanHostUrl",
+          "startLine": 193,
+          "endLine": 194,
+          "params": []
+        },
+        {
+          "name": "exportPaths",
+          "startLine": 201,
+          "endLine": 201,
+          "params": []
+        },
+        {
+          "name": "docExportHttpError",
+          "startLine": 203,
+          "endLine": 214,
+          "params": [
+            "res",
+            "e",
+            "meta"
+          ]
+        },
+        {
+          "name": "portInUseProcessHint",
+          "startLine": 277,
+          "endLine": 292,
+          "params": [
+            "port"
+          ]
+        },
+        {
+          "name": "getClinicalDbForInterno",
+          "startLine": 384,
+          "endLine": 388,
+          "params": []
+        },
+        {
+          "name": "setOnInternoHostSync",
+          "startLine": 393,
+          "endLine": 395,
+          "params": [
+            "fn"
+          ]
+        },
+        {
+          "name": "listenErrorMessage",
+          "startLine": 422,
+          "endLine": 431,
+          "params": [
+            "err"
+          ]
+        },
+        {
+          "name": "startLanServer",
+          "startLine": 433,
+          "endLine": 451,
+          "params": []
+        },
+        {
+          "name": "flushHostStoreNow",
+          "startLine": 453,
+          "endLine": 460,
+          "params": []
+        },
+        {
+          "name": "stopLanServer",
+          "startLine": 462,
+          "endLine": 497,
+          "params": []
+        },
+        {
+          "name": "getLanWardHostRegistry",
+          "startLine": 499,
+          "endLine": 501,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "isPrivateIpv4Host",
+          "callee": "String(host || '').split",
+          "lineNumber": 38
+        },
+        {
+          "caller": "isPrivateIpv4Host",
+          "callee": "String",
+          "lineNumber": 38
+        },
+        {
+          "caller": "isPrivateIpv4Host",
+          "callee": "/^(\\d+)\\.(\\d+)\\.(\\d+)\\.(\\d+)$/.exec",
+          "lineNumber": 39
+        },
+        {
+          "caller": "isAllowedLanCorsOrigin",
+          "callee": "String(originUrl.host || '').toLowerCase",
+          "lineNumber": 52
+        },
+        {
+          "caller": "isAllowedLanCorsOrigin",
+          "callee": "String",
+          "lineNumber": 52
+        },
+        {
+          "caller": "isAllowedLanCorsOrigin",
+          "callee": "String(requestHost || '').toLowerCase",
+          "lineNumber": 53
+        },
+        {
+          "caller": "isAllowedLanCorsOrigin",
+          "callee": "String",
+          "lineNumber": 53
+        },
+        {
+          "caller": "isAllowedLanCorsOrigin",
+          "callee": "rh.split",
+          "lineNumber": 56
+        },
+        {
+          "caller": "isAllowedLanCorsOrigin",
+          "callee": "String(originUrl.hostname || '').toLowerCase",
+          "lineNumber": 57
+        },
+        {
+          "caller": "isAllowedLanCorsOrigin",
+          "callee": "String",
+          "lineNumber": 57
+        },
+        {
+          "caller": "isAllowedLanCorsOrigin",
+          "callee": "isPrivateIpv4Host",
+          "lineNumber": 58
+        },
+        {
+          "caller": "isAllowedLanCorsOrigin",
+          "callee": "isPrivateIpv4Host",
+          "lineNumber": 58
+        },
+        {
+          "caller": "applyLanCorsHeaders",
+          "callee": "isAllowedLanCorsOrigin",
+          "lineNumber": 68
+        },
+        {
+          "caller": "applyLanCorsHeaders",
+          "callee": "res.setHeader",
+          "lineNumber": 69
+        },
+        {
+          "caller": "applyLanCorsHeaders",
+          "callee": "res.setHeader",
+          "lineNumber": 70
+        },
+        {
+          "caller": "applyLanCorsHeaders",
+          "callee": "res.setHeader",
+          "lineNumber": 71
+        },
+        {
+          "caller": "applyLanCorsHeaders",
+          "callee": "res.setHeader",
+          "lineNumber": 72
+        },
+        {
+          "caller": "rateLimitHandler",
+          "callee": "applyLanCorsHeaders",
+          "lineNumber": 86
+        },
+        {
+          "caller": "rateLimitHandler",
+          "callee": "res.status(429).json",
+          "lineNumber": 87
+        },
+        {
+          "caller": "rateLimitHandler",
+          "callee": "res.status",
+          "lineNumber": 87
+        },
+        {
+          "caller": "getLanHostUrl",
+          "callee": "pickLanCandidateBaseUrl",
+          "lineNumber": 194
+        },
+        {
+          "caller": "docExportHttpError",
+          "callee": "logDocExport",
+          "lineNumber": 204
+        },
+        {
+          "caller": "docExportHttpError",
+          "callee": "Object.assign",
+          "lineNumber": 204
+        },
+        {
+          "caller": "docExportHttpError",
+          "callee": "res.status(400).json",
+          "lineNumber": 206
+        },
+        {
+          "caller": "docExportHttpError",
+          "callee": "res.status",
+          "lineNumber": 206
+        },
+        {
+          "caller": "docExportHttpError",
+          "callee": "res.status(400).json",
+          "lineNumber": 209
+        },
+        {
+          "caller": "docExportHttpError",
+          "callee": "res.status",
+          "lineNumber": 209
+        },
+        {
+          "caller": "docExportHttpError",
+          "callee": "res.status(500).json",
+          "lineNumber": 212
+        },
+        {
+          "caller": "docExportHttpError",
+          "callee": "res.status",
+          "lineNumber": 212
+        },
+        {
+          "caller": "portInUseProcessHint",
+          "callee": "execSync(`lsof -nP -iTCP:${port} -sTCP:LISTEN -t`, { encoding: 'utf8' }).trim",
+          "lineNumber": 279
+        },
+        {
+          "caller": "portInUseProcessHint",
+          "callee": "execSync",
+          "lineNumber": 279
+        },
+        {
+          "caller": "portInUseProcessHint",
+          "callee": "out.split",
+          "lineNumber": 281
+        },
+        {
+          "caller": "portInUseProcessHint",
+          "callee": "execSync(`ps -p ${pid} -o comm=`, { encoding: 'utf8' }).trim",
+          "lineNumber": 284
+        },
+        {
+          "caller": "portInUseProcessHint",
+          "callee": "execSync",
+          "lineNumber": 284
+        },
+        {
+          "caller": "getClinicalDbForInterno",
+          "callee": "lanDbManager.isUnlocked",
+          "lineNumber": 386
+        },
+        {
+          "caller": "getClinicalDbForInterno",
+          "callee": "lanDbManager.getDb",
+          "lineNumber": 387
+        },
+        {
+          "caller": "listenErrorMessage",
+          "callee": "portInUseProcessHint",
+          "lineNumber": 425
+        },
+        {
+          "caller": "startLanServer",
+          "callee": "Promise.resolve",
+          "lineNumber": 435
+        },
+        {
+          "caller": "startLanServer",
+          "callee": "httpServer.listen",
+          "lineNumber": 440
+        },
+        {
+          "caller": "startLanServer",
+          "callee": "console.log",
+          "lineNumber": 441
+        },
+        {
+          "caller": "startLanServer",
+          "callee": "resolve",
+          "lineNumber": 443
+        },
+        {
+          "caller": "startLanServer",
+          "callee": "srv.once",
+          "lineNumber": 445
+        },
+        {
+          "caller": "startLanServer",
+          "callee": "reject",
+          "lineNumber": 447
+        },
+        {
+          "caller": "startLanServer",
+          "callee": "listenErrorMessage",
+          "lineNumber": 447
+        },
+        {
+          "caller": "flushHostStoreNow",
+          "callee": "lanStore.flushCacheNow",
+          "lineNumber": 456
+        },
+        {
+          "caller": "flushHostStoreNow",
+          "callee": "console.error",
+          "lineNumber": 458
+        },
+        {
+          "caller": "finish",
+          "callee": "resolve",
+          "lineNumber": 469
+        },
+        {
+          "caller": "stopLanServer",
+          "callee": "finish",
+          "lineNumber": 472
+        },
+        {
+          "caller": "stopLanServer",
+          "callee": "setTimeout",
+          "lineNumber": 475
+        },
+        {
+          "caller": "stopLanServer",
+          "callee": "timer.unref",
+          "lineNumber": 476
+        },
+        {
+          "caller": "stopLanServer",
+          "callee": "Promise.resolve()\n      .then(() => (typeof closeWsHub === 'function' ? closeWsHub() : undefined))\n      .then(() => {\n        if (typeof httpServer.closeAllConnections === 'function') {\n          httpServer.closeAllConnections();\n        }\n      })\n      .then(\n        () =>\n          new Promise((resolveClose) => {\n            httpServer.close(() => resolveClose());\n          })\n      )\n      .catch(() => {})\n      .finally",
+          "lineNumber": 478
+        },
+        {
+          "caller": "stopLanServer",
+          "callee": "Promise.resolve()\n      .then(() => (typeof closeWsHub === 'function' ? closeWsHub() : undefined))\n      .then(() => {\n        if (typeof httpServer.closeAllConnections === 'function') {\n          httpServer.closeAllConnections();\n        }\n      })\n      .then(\n        () =>\n          new Promise((resolveClose) => {\n            httpServer.close(() => resolveClose());\n          })\n      )\n      .catch",
+          "lineNumber": 478
+        },
+        {
+          "caller": "stopLanServer",
+          "callee": "Promise.resolve()\n      .then(() => (typeof closeWsHub === 'function' ? closeWsHub() : undefined))\n      .then(() => {\n        if (typeof httpServer.closeAllConnections === 'function') {\n          httpServer.closeAllConnections();\n        }\n      })\n      .then",
+          "lineNumber": 478
+        },
+        {
+          "caller": "stopLanServer",
+          "callee": "Promise.resolve()\n      .then(() => (typeof closeWsHub === 'function' ? closeWsHub() : undefined))\n      .then",
+          "lineNumber": 478
+        },
+        {
+          "caller": "stopLanServer",
+          "callee": "Promise.resolve()\n      .then",
+          "lineNumber": 478
+        },
+        {
+          "caller": "stopLanServer",
+          "callee": "Promise.resolve",
+          "lineNumber": 478
+        },
+        {
+          "caller": "stopLanServer",
+          "callee": "closeWsHub",
+          "lineNumber": 479
+        },
+        {
+          "caller": "stopLanServer",
+          "callee": "httpServer.closeAllConnections",
+          "lineNumber": 482
+        },
+        {
+          "caller": "stopLanServer",
+          "callee": "httpServer.close",
+          "lineNumber": 488
+        },
+        {
+          "caller": "stopLanServer",
+          "callee": "resolveClose",
+          "lineNumber": 488
+        },
+        {
+          "caller": "stopLanServer",
+          "callee": "clearTimeout",
+          "lineNumber": 493
+        },
+        {
+          "caller": "stopLanServer",
+          "callee": "finish",
+          "lineNumber": 494
+        }
+      ],
+      "metrics": {
+        "importCount": 20,
+        "exportCount": 0,
+        "functionCount": 15,
+        "classCount": 0
+      }
+    }
+  ]
+}

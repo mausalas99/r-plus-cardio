@@ -1,0 +1,33 @@
+R+ 7.3.4 (perf, pendientes con vencimiento y censo virtual)
+============================================================
+
+Fecha: 2026-06-12
+
+## Resumen
+
+Sobre **7.3.3**: arranque y censo más fluidos (chunks perezosos de labs/gráficas, scroll virtual en lista activa >30), pendientes con **fecha de vencimiento**, recordatorios del sistema y filtro **Entrega**; iPad/PWA refleja solo pacientes de equipos unidos (+ guardia activa); pulido visual en laboratorio y motion.
+
+## Nuevo / mejorado
+
+- **Rendimiento — arranque** — Labs, gráficas de Estado actual y Tendencias cargan con `import()` y chunks de esbuild; menos código en el boot inicial.
+- **Rendimiento — censo virtual** — Lista activa con scroll virtual cuando hay más de 30 pacientes; repintado incremental conservado en listas cortas.
+- **Rendimiento — LiveSync** — Marcas de perfilado en reconcile; refresco acotado de pendientes tras merge LAN (sin repintar toda la UI del turno).
+- **Pendientes — vencimiento** — Fecha/hora opcional por tarea, orden por vencidos primero, modal de fecha y recordatorio nativo de Electron cuando corresponde.
+- **Pendientes — entrega** — Filtro **Entrega** para tareas dejadas por otro residente; chip «De @usuario» y acuse al completar.
+- **Guardia v7** — Barra de progreso del currículo y aviso en tablero cuando hay módulos pendientes.
+- **Laboratorio** — Estilos premium alineados al Workbench; extracción de `labs-display` para listados más ligeros.
+- **iPad / PWA — alcance por equipo** — El espejo móvil muestra solo pacientes asignados a equipos a los que te uniste, más cobertura de guardia activa; sin censo completo de sala por rango.
+- **Motion y skeleton** — Presets de movimiento refinados; placeholders skeleton en cargas largas.
+
+## Operación en guardia
+
+Instala **7.3.4 en todas** las estaciones del turno el mismo día. Sin cambio de esquema SQLCipher (sigue **v17**). Actualiza también iPads que usen el enlace móvil para el nuevo alcance por equipo.
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v7.3.4
+
+- Mac: `R+-7.3.4-arm64.dmg`, `R+-7.3.4-x64.dmg` (y zip para auto-update).
+- Windows: `R+-7.3.4-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye write-release-yml.js).

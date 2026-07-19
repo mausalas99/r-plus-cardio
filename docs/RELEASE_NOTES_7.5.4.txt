@@ -1,0 +1,29 @@
+R+ 7.5.4 (iPad signos vitales LAN)
+====================================
+
+Fecha: 2026-06-27
+
+## Resumen
+
+Sobre **7.5.3**: corrige la sincronización de **signos vitales** desde **R+ Móvil (iPad)** al anfitrión LAN — **Guardar** en Estado Actual empuja al outbox, bundles grandes ya no devuelven 500, y hay **recuperación** desde la cola local si el censo se borró antes de sincronizar.
+
+## Nuevo / mejorado
+
+- **Guardar empuja LAN** — Registrar medición, **Guardar** texto EA, eliminar medición y persistencia clínico disparan `scheduleLiveSyncPush` (antes solo guardaban en localStorage).
+- **sync-bundle 16 MB** — El parser JSON global de `server.js` ya no limita a 2 MB las rutas LAN; evita `PUT sync-bundle rechazado (500)` con censos grandes.
+- **Merge monitoreo por id** — Al reconciliar LAN, el historial de signos hace **unión por medicion id** (no gana solo el lado con más filas).
+- **iPad: censo al refrescar** — Mientras el ámbito clínico carga, ya no se vacía el censo móvil ni se pisa el snapshot LAN con entradas vacías.
+- **Recuperar signos** — En ⇄ → **Estado de sincronización**: botón **Recuperar signos desde caché LAN** (outbox + snapshot + undo). Script de consola en `scripts/recover-ipad-vitals-console.js` para emergencias sin rebuild.
+
+## Operación en guardia
+
+Instala **7.5.4** en **Mac anfitrión** e **iPad** el mismo turno si usas signos en móvil. Tras actualizar el host, **reinicia R+** en la Mac anfitriona para el fix del servidor. **Sin migración de base** (SQLCipher v20).
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v7.5.4
+
+- Mac: `R+-7.5.4-arm64.dmg`, `R+-7.5.4-x64.dmg` (y zip para auto-update).
+- Windows: `R+-7.5.4-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye write-release-yml.js).

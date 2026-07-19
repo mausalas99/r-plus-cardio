@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "skills": {
+    "improve": {
+      "source": "shadcn/improve",
+      "sourceType": "github",
+      "skillPath": "skills/improve/SKILL.md",
+      "computedHash": "7a0f09dd535fc84391dc63bea826d6aeab985b92423fa4dd93edacb5dfb82524"
+    },
+    "make-interfaces-feel-better": {
+      "source": "jakubkrehel/make-interfaces-feel-better",
+      "sourceType": "github",
+      "skillPath": "skills/make-interfaces-feel-better/SKILL.md",
+      "computedHash": "54b6e221bbe4e2d1a8461c3f9ecabe69daf891f964e9ee5e699c323daa018f2e"
+    }
+  }
+}

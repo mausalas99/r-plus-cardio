@@ -1,0 +1,47 @@
+R+ 6.0.0 (expediente reorganizado, Manejo y Receta HU)
+======================================================
+
+Fecha: 2026-05-25
+
+## Resumen
+
+Versión mayor centrada en el **Expediente**: cuatro pestañas consolidadas en Sala e Interconsulta, **Manejo electrolítico/gasométrico**, **Receta médica HU** (PDF oficial) y datos del paciente en bloque colapsable. El **Modo Pase** mantiene el mismo resumen de ronda en pantalla principal; la nueva organización aparece al abrir el detalle en pestañas (vista Normal).
+
+## Nuevo / mejorado
+
+### Expediente (vista Normal — pestañas completas)
+
+- **Cuatro pestañas** en Sala e Interconsulta:
+  - **Paciente** — *Datos del paciente* (colapsable, cerrado por defecto) + **Pendientes**.
+  - **Clínico** — Sala: **Manejo** electrolítico. Interconsulta: **Nota**, **Indicaciones** y **Manejo** (barra de segmentos).
+  - **Resultados** — **Tendencias** y **Cultivos**.
+  - **Salida** — Sala: **Listado de problemas**. Interconsulta: **Receta médica HU** (PDF 000-061-R-06-12).
+- **Datos del paciente** — Peso, talla y vía para Manejo; edición en el bloque colapsable de **Paciente** (Interconsulta ya no duplica el formulario en Nota).
+- **Manejo** — Interpretación de alteraciones electrolíticas y gasométricas: dosis adultas, dilución, vía, bloque SOME copiable y envío a Pendientes.
+- **Receta HU** — Formulario unificado (una sola hoja visual), medicamentos y estudios con **Agregar** / **Enter**, exportación PDF vía servidor local.
+- **Deep links** — Atajos y enlaces internos (`switchInnerTab('notas')`, etc.) resuelven a la pestaña compuesta correcta.
+
+### Modo Pase (sin cambios en el resumen)
+
+- El **tablero de ronda** (pendientes, laboratorio, cultivos, medicamentos en columnas) **no cambia** en 6.0.
+- Al pulsar un bloque o usar **Ctrl/⌘+1…4** para abrir el detalle, entras a **Expediente** en vista Normal y ahí ves las **cuatro pestañas** nuevas.
+
+### Tutorial y ayuda
+
+- Onboarding inicial y tour guiado actualizados para Sala e Interconsulta (paso de pestañas del expediente, Manejo, Receta / Listado).
+- Notas de versión in-app al actualizar.
+
+## Correcciones
+
+- **Receta HU:** scroll en pestaña Salida; botón **Exportar PDF** ya no arrastra la ventana en macOS (región de arrastre acotada al header principal).
+- **Datos del paciente:** el formulario se renderiza al abrir el bloque colapsable y al estar en **Paciente**, no solo en la pestaña Datos antigua.
+- **Exportar PDF:** ya no queda deshabilitado por estado offline del servidor RPC.
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v6.0.0
+
+- Mac: `R+-6.0.0-arm64.dmg`, `R+-6.0.0-x64.dmg` (y zip para auto-update).
+- Windows: `R+-6.0.0-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye write-release-yml.js).

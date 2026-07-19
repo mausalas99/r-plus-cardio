@@ -1,0 +1,34 @@
+---
+description: Reduce context bloat — MCPs, logs, large files, and ignored paths
+alwaysApply: true
+---
+
+# Context & Token Management
+
+Keep sessions focused: less noise in context means faster, more accurate answers.
+
+## MCP servers
+
+- Prefer **only MCP servers needed for the current task**. Idle servers add tool schemas and instructions to every turn.
+- When a task no longer needs an MCP (browser, wiki, external APIs), tell the user they can disable it in **Cursor Settings → MCP** until the next task that needs it.
+
+## Large files
+
+- **Do not read entire huge files** when a targeted search, grep, or a small line range is enough.
+- When adding features, **prefer new modules** over growing monoliths (especially renderer features under `public/js/features/` and shared logic under `lib/`).
+- **Do not hand-edit generated artifacts** (e.g. `public/js/app.bundle.mjs`, `*.map`); change sources and run `npm run build:ui`.
+
+## Terminal output
+
+- After a failed command, **use the failing lines only** — file, line, error type, and the immediate cause. Do not dump full build logs into context.
+- For long-running commands, rely on **exit code + tail of stderr** unless the failure is non-local (e.g. missing dependency).
+
+## Ignored paths
+
+- Respect **`.cursorignore`** — do not read, search, or cite excluded paths unless the user explicitly asks for a specific file.
+- Default exclusions in this repo: lockfiles, source maps, bundles, `node_modules/`, `dist/`, large JSON catalogs, and binaries. Extend `.cursorignore` when new generated or vendor blobs appear.
+
+## User ↔ agent habits
+
+- User: paste **one error block** (or a screenshot), not pages of CI output.
+- Agent: ask for a **narrow repro or file path** before broad repo exploration when `project-context.mdc` already maps the area.

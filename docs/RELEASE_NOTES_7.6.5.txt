@@ -1,0 +1,29 @@
+R+ 7.6.5 (LAN token fix + invite empaquetado)
+=================================================
+
+Fecha: 2026-07-03
+
+## Resumen
+
+Sobre **7.6.4**: corrige el **401 invalid_token** en anfitriones cuando `rpc-lan-config` tenía un bearer distinto al de `lan-team-code.txt`, y empaqueta un **enlace de sala** opcional que aparece pre-llenado en ⇄ tras actualizar.
+
+## Nuevo / mejorado
+
+- **LAN — token anfitrión** — El host alinea el bearer con `lan-team-code.txt` al conectar; `sync-bundle` reintenta tras 401.
+- **LAN — invite empaquetado** — `bundledWardInviteUrl()` en `clinical-settings.mjs`: el enlace del turno se pre-llena en ⇄ → **Unirse con enlace** (rotar cuando el R4 genere ticket nuevo).
+- **LAN — host empaquetado** — Sigue en `http://10.0.57.65:3738` para auto-connect sin código.
+
+## Antes del build del turno
+
+1. En la Mac R4: ⇄ → **Copiar enlace de sala** (Otra Mac del equipo).
+2. Pegar ese URL en `bundledWardInviteUrl()` dentro de `public/js/clinical-settings.mjs`.
+3. `npm run build:ui` y publicar **7.6.5** en todas las Macs el mismo día.
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v7.6.5
+
+- Mac: `R+-7.6.5-arm64.dmg`, `R+-7.6.5-x64.dmg` (y zip para auto-update).
+- Windows: `R+-7.6.5-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye write-release-yml.js).

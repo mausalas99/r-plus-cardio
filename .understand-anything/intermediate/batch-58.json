@@ -1,0 +1,285 @@
+{
+  "nodes": [
+    {
+      "id": "file:public/styles/base.css",
+      "type": "file",
+      "name": "base.css",
+      "filePath": "public/styles/base.css",
+      "summary": "Global resets, typography, and shared utility classes for the renderer workbench.",
+      "tags": [
+        "markup",
+        "css",
+        "design-system",
+        "ui"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:public/styles/cmdk.css",
+      "type": "file",
+      "name": "cmdk.css",
+      "filePath": "public/styles/cmdk.css",
+      "summary": "Command palette (cmdk) overlay styling and keyboard navigation affordances.",
+      "tags": [
+        "markup",
+        "css",
+        "design-system",
+        "ui"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:public/styles/components.css",
+      "type": "file",
+      "name": "components.css",
+      "filePath": "public/styles/components.css",
+      "summary": "Shared component primitives: buttons, chips, badges, and form controls.",
+      "tags": [
+        "markup",
+        "css",
+        "design-system",
+        "ui"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:public/styles/estado-actual.css",
+      "type": "file",
+      "name": "estado-actual.css",
+      "filePath": "public/styles/estado-actual.css",
+      "summary": "Estado Actual panel: vitals grid, I/O charts, tabs, and monitoreo modal styles.",
+      "tags": [
+        "markup",
+        "css",
+        "design-system",
+        "ui"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:public/styles/eventualidades.css",
+      "type": "file",
+      "name": "eventualidades.css",
+      "filePath": "public/styles/eventualidades.css",
+      "summary": "Eventualidades (incident) timeline and alert chip styling.",
+      "tags": [
+        "markup",
+        "css",
+        "design-system",
+        "ui"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:public/styles/expediente.css",
+      "type": "file",
+      "name": "expediente.css",
+      "filePath": "public/styles/expediente.css",
+      "summary": "Expediente tab shell, HC sidebar, and clinical record layout.",
+      "tags": [
+        "markup",
+        "css",
+        "design-system",
+        "ui"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:public/styles/group-row.css",
+      "type": "file",
+      "name": "group-row.css",
+      "filePath": "public/styles/group-row.css",
+      "summary": "Grouped census row layout for team-scoped patient lists.",
+      "tags": [
+        "markup",
+        "css",
+        "design-system",
+        "ui"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:public/styles/historia-clinica.css",
+      "type": "file",
+      "name": "historia-clinica.css",
+      "filePath": "public/styles/historia-clinica.css",
+      "summary": "Historia cl\u00ednica panel forms, catalog pickers, and section editors.",
+      "tags": [
+        "markup",
+        "css",
+        "design-system",
+        "ui"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:public/styles/lab.css",
+      "type": "file",
+      "name": "lab.css",
+      "filePath": "public/styles/lab.css",
+      "summary": "Lab panel tables, bulk paste preview, trend colors, and section headers.",
+      "tags": [
+        "markup",
+        "css",
+        "design-system",
+        "ui"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:public/styles/layout.css",
+      "type": "file",
+      "name": "layout.css",
+      "filePath": "public/styles/layout.css",
+      "summary": "App shell grid: sidebar, main stage, responsive breakpoints.",
+      "tags": [
+        "markup",
+        "css",
+        "design-system",
+        "ui"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:public/styles/med-pharm-profile.css",
+      "type": "file",
+      "name": "med-pharm-profile.css",
+      "filePath": "public/styles/med-pharm-profile.css",
+      "summary": "Pharmacotherapeutic profile editor and preview surfaces.",
+      "tags": [
+        "markup",
+        "css",
+        "design-system",
+        "ui"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:public/styles/mobile-surfaces.css",
+      "type": "file",
+      "name": "mobile-surfaces.css",
+      "filePath": "public/styles/mobile-surfaces.css",
+      "summary": "Shared mobile-specific layout overrides for LAN-served pages.",
+      "tags": [
+        "markup",
+        "css",
+        "design-system",
+        "ui"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:public/styles/mobile.css",
+      "type": "file",
+      "name": "mobile.css",
+      "filePath": "public/styles/mobile.css",
+      "summary": "Legacy mobile layout rules for narrow viewports.",
+      "tags": [
+        "markup",
+        "css",
+        "design-system",
+        "ui"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:public/styles/modals.css",
+      "type": "file",
+      "name": "modals.css",
+      "filePath": "public/styles/modals.css",
+      "summary": "Modal stack, scrims, z-index layers, and dialog animations.",
+      "tags": [
+        "markup",
+        "css",
+        "design-system",
+        "ui"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:public/styles/motion.css",
+      "type": "file",
+      "name": "motion.css",
+      "filePath": "public/styles/motion.css",
+      "summary": "Reduced-motion-safe transitions and micro-interaction keyframes.",
+      "tags": [
+        "markup",
+        "css",
+        "design-system",
+        "ui"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:public/styles/overlays.css",
+      "type": "file",
+      "name": "overlays.css",
+      "filePath": "public/styles/overlays.css",
+      "summary": "Toast, tooltip, and lightweight overlay positioning.",
+      "tags": [
+        "markup",
+        "css",
+        "design-system",
+        "ui"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/styles/pase-board.css",
+      "type": "file",
+      "name": "pase-board.css",
+      "filePath": "public/styles/pase-board.css",
+      "summary": "Pase de guardia board: cards, lanes, handoff chips, and ward chrome.",
+      "tags": [
+        "markup",
+        "css",
+        "design-system",
+        "ui"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:public/styles/receta-hu.css",
+      "type": "file",
+      "name": "receta-hu.css",
+      "filePath": "public/styles/receta-hu.css",
+      "summary": "Receta HU print preview and prescription form styling.",
+      "tags": [
+        "markup",
+        "css",
+        "design-system",
+        "ui"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:public/styles/rpc-date-picker.css",
+      "type": "file",
+      "name": "rpc-date-picker.css",
+      "filePath": "public/styles/rpc-date-picker.css",
+      "summary": "RPC-style date picker widget used in clinical date fields.",
+      "tags": [
+        "markup",
+        "css",
+        "design-system",
+        "ui"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:public/styles/settings.css",
+      "type": "file",
+      "name": "settings.css",
+      "filePath": "public/styles/settings.css",
+      "summary": "Ajustes panel: teams, LAN, updates, help tours, and release notes.",
+      "tags": [
+        "markup",
+        "css",
+        "design-system",
+        "ui"
+      ],
+      "complexity": "complex"
+    }
+  ],
+  "edges": []
+}

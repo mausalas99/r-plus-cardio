@@ -1,0 +1,5604 @@
+/* New rules: use var(--*) only; no raw hex */
+/* Guardia census grid — high-density patient chips with R4 ward partitioning */
+.patient-chips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.r4-section-divider {
+  grid-column: 1 / -1;
+  border-bottom: 2px solid var(--border);
+  color: var(--text-muted);
+  font-weight: 700;
+  padding: 1rem 0 0.5rem 0;
+  font-size: 0.8rem;
+  letter-spacing: 0.02em;
+}
+
+#appcontent-guardia .r4-section-divider,
+.guardia-census-panel .r4-section-divider {
+  padding: 0.5rem 0 0.35rem;
+  margin-top: 4px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  border-bottom-width: 1px;
+  color: var(--text-muted);
+}
+
+.dnr-badge {
+  background: var(--surface);
+  color: var(--error);
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  font-size: 0.65rem;
+  border: 1px solid color-mix(in oklab, var(--error) 55%, var(--border));
+  margin-right: 5px;
+}
+
+.priority-critical {
+  border-color: color-mix(in oklab, var(--error) 45%, var(--border)) !important;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .priority-critical:not(#appcontent-guardia .priority-critical) {
+    animation: criticalPulseHighlight 2.5s infinite;
+  }
+}
+
+#appcontent-guardia .priority-critical {
+  animation: none !important;
+}
+
+@keyframes criticalPulseHighlight {
+  0%,
+  100% {
+    box-shadow: 0 0 4px color-mix(in oklab, var(--error) 22%, transparent);
+  }
+  50% {
+    box-shadow: 0 0 10px color-mix(in oklab, var(--error) 38%, transparent);
+  }
+}
+
+.vitals-banner.breached {
+  color: var(--error);
+  font-weight: 700;
+}
+
+.vitals-banner.warning {
+  color: var(--todo-prio-media);
+}
+
+.vitals-banner.nominal-gray {
+  color: var(--text-muted);
+}
+
+.guardia-census-panel {
+  flex-shrink: 0;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+  max-height: min(68vh, 680px);
+  overflow: auto;
+}
+
+.guardia-census-panel[hidden] {
+  display: none !important;
+}
+
+.guardia-census-panel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.65rem 1rem 0.25rem;
+}
+
+.guardia-census-panel-head h2 {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.patient-chip-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 0.75rem;
+  cursor: pointer;
+}
+
+.patient-chip-card:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+/* —— Modo Guardia (full dashboard) —— */
+
+html.ui-density-guardia aside.patient-sidebar,
+html.ui-density-guardia #sidebar-hover-strip {
+  display: none !important;
+}
+
+html.ui-density-guardia .app {
+  gap: 0;
+}
+
+html.ui-density-guardia .main-col {
+  flex: 1;
+  min-width: 0;
+  padding: 0;
+}
+
+html.ui-density-guardia #main-area {
+  border-top-left-radius: var(--radius-lg);
+}
+
+html.ui-density-guardia #main-area > :not(#appcontent-guardia) {
+  display: none !important;
+}
+
+html.ui-density-guardia .appcontent-guardia {
+  flex: 1;
+  min-height: 0;
+  display: flex !important;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+html.ui-density-guardia .guardia-board-scroll {
+  flex: 1;
+  min-height: 0;
+}
+
+html.ui-density-guardia #lan-connection-banner {
+  display: none !important;
+}
+
+.guardia-board-scroll {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: clip;
+  padding: 1rem 1.125rem 1.5rem;
+}
+
+.guardia-rotation-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0 0 0.75rem;
+  align-items: center;
+}
+
+.btn-guardia-entrega-phase {
+  margin-left: auto;
+  flex-shrink: 0;
+  border: 1px solid color-mix(in oklab, var(--action) 45%, var(--border));
+  border-radius: var(--radius-md);
+  background: color-mix(in oklab, var(--action) 10%, var(--surface));
+  color: var(--text);
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+#appcontent-guardia .btn-guardia-entrega-phase {
+  padding: 6px 12px;
+  font-size: 0.75rem;
+}
+
+.btn-guardia-entrega-phase.is-active {
+  background: color-mix(in oklab, var(--action) 22%, var(--surface));
+  border-color: var(--action);
+}
+
+.btn-guardia-entrega-phase:focus-visible {
+  outline: 2px solid var(--action);
+  outline-offset: 1px;
+}
+
+.guardia-entrega-phase-status {
+  flex: 1 1 100%;
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-align: right;
+}
+
+.guardia-entrega-phase-status[hidden] {
+  display: none !important;
+}
+
+.guardia-entrega-phase-status--error {
+  color: var(--danger);
+  font-weight: 600;
+}
+
+.guardia-hoy-modal-backdrop.open {
+  z-index: 205;
+}
+
+.guardia-hoy-modal {
+  width: min(96vw, 520px);
+  max-height: min(80vh, 560px);
+  display: flex;
+  flex-direction: column;
+}
+
+.guardia-hoy-modal-lead {
+  margin: 0 0 12px;
+}
+
+.guardia-hoy-modal-body {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.guardia-hoy-team-row {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.guardia-hoy-team-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.guardia-hoy-cycle-today {
+  margin: 0;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  font-size: 0.82rem;
+  color: var(--text);
+}
+
+.guardia-hoy-cycle-badge {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+
+.guardia-hoy-cycle-badge.is-on-cycle {
+  color: var(--accent);
+}
+
+.guardia-hoy-on-cycle-note {
+  margin: 0;
+  font-size: 0.78rem;
+  color: var(--accent);
+}
+
+.guardia-hoy-select-label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.guardia-hoy-self-btn {
+  align-self: flex-start;
+}
+
+.guardia-hoy-modal-actions {
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.guardia-hoy-empty {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.entrega-proc-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.entrega-proc-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.75rem;
+}
+
+.entrega-proc-header label {
+  flex: 1 1 auto;
+  margin: 0;
+}
+
+.entrega-proc-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.entrega-proc-form.hidden {
+  display: none;
+}
+
+.entrega-proc-empty {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  padding: 0.25rem 0;
+}
+
+.entrega-proc-card {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+}
+
+.entrega-proc-card-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.entrega-proc-title-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.35rem 0.6rem;
+}
+
+.entrega-proc-label {
+  font-weight: 600;
+}
+
+.entrega-proc-time {
+  font-variant-numeric: tabular-nums;
+  color: var(--text-muted);
+}
+
+.entrega-proc-kind,
+.entrega-proc-meta {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.entrega-proc-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.35rem;
+}
+
+.entrega-proc-chip {
+  display: inline-block;
+  padding: 0.1rem 0.45rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.72rem;
+  background: color-mix(in oklab, var(--action) 10%, var(--surface));
+}
+
+.entrega-proc-chip--req {
+  background: color-mix(in oklab, var(--warn) 18%, var(--surface));
+}
+
+.entrega-proc-chip--lock {
+  background: color-mix(in oklab, var(--text) 8%, var(--surface));
+}
+
+.entrega-proc-flags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.75rem;
+  margin-top: 0.45rem;
+  font-size: 0.85rem;
+}
+
+#entrega-modal-backdrop.entrega-modal-backdrop {
+  background: color-mix(in oklab, var(--color-ink) 52%, transparent);
+}
+
+#entrega-modal-backdrop.entrega-modal-backdrop.open {
+  z-index: 210;
+  align-items: center;
+  justify-content: center;
+  padding: max(10px, env(safe-area-inset-top, 0px)) 14px
+    max(10px, env(safe-area-inset-bottom, 0px));
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+
+#entrega-modal-backdrop .modal.entrega-modal {
+  --entrega-modal-h: min(92dvh, calc(var(--app-height) - 28px));
+  width: min(98vw, 1140px);
+  max-width: none;
+  max-height: var(--entrega-modal-h);
+  margin: 0;
+  flex-shrink: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  gap: 0;
+  background: var(--surface);
+  color: var(--text);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-md);
+  animation: modal-in var(--dur-normal) var(--ease-out);
+}
+
+#entrega-modal-backdrop .entrega-modal-nav {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 16px;
+  background: color-mix(in oklab, var(--bg) 55%, var(--surface));
+  border-bottom: 1px solid var(--divider);
+}
+
+#entrega-modal-backdrop .entrega-nav-btn {
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: color-mix(in oklab, var(--bg) 40%, var(--surface));
+  color: var(--action);
+  cursor: pointer;
+  padding: 0;
+}
+
+#entrega-modal-backdrop .entrega-nav-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+#entrega-modal-backdrop .entrega-nav-patient {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+#entrega-modal-backdrop .entrega-nav-patient-name {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#entrega-modal-backdrop .entrega-nav-patient-dx {
+  font-size: 0.6875rem;
+  color: var(--text-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#entrega-modal-backdrop .entrega-nav-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+#entrega-modal-backdrop .entrega-nav-counter {
+  font-size: 0.625rem;
+  color: var(--text-muted);
+}
+
+#entrega-modal-backdrop .entrega-active-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.625rem;
+  color: var(--action);
+  background: color-mix(in oklab, var(--action) 12%, var(--surface));
+  border: 1px solid color-mix(in oklab, var(--action) 45%, var(--border));
+  padding: 2px 8px;
+  border-radius: 20px;
+}
+
+#entrega-modal-backdrop .entrega-active-badge.hidden {
+  display: none;
+}
+
+#entrega-modal-backdrop .entrega-modal-lead {
+  margin: 0;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+#entrega-modal-backdrop .entrega-modal-lead.hidden {
+  display: none;
+}
+
+#entrega-modal-backdrop .entrega-modal-form {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+}
+
+#entrega-modal-backdrop .entrega-form-body {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-x: clip;
+  overflow-y: auto;
+  padding: 16px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  -webkit-overflow-scrolling: touch;
+}
+
+#entrega-modal-backdrop .entrega-top-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  align-items: end;
+  margin: 0;
+}
+
+#entrega-modal-backdrop .entrega-top-strip.entrega-top-strip--phase-covering-set {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+#entrega-modal-backdrop
+  .entrega-top-strip.entrega-top-strip--phase-covering-set
+  .entrega-field-group--r1 {
+  display: none;
+}
+
+#entrega-modal-backdrop .entrega-top-strip .field-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0;
+  width: 100%;
+  max-width: none;
+}
+
+#entrega-modal-backdrop .entrega-top-strip .field-group label,
+#entrega-modal-backdrop .entrega-field-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0.01em;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+#entrega-modal-backdrop .entrega-top-strip .entrega-field-hint {
+  margin: 0 0 4px;
+  font-size: 0.6875rem;
+  line-height: 1.45;
+}
+
+#entrega-modal-backdrop .entrega-top-strip .entrega-field-hint.hidden {
+  display: none;
+}
+
+#entrega-modal-backdrop select.profile-input {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  max-width: 100%;
+  min-height: 32px;
+  padding: 6px 2.1rem 6px 10px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%2394a3b8' d='M1.5 1.5 6 6 10.5 1.5' stroke='%2394a3b8' stroke-width='1.2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 12px 8px;
+}
+
+#entrega-modal-backdrop .entrega-handoff-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#entrega-modal-backdrop .entrega-markers-block {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+#entrega-modal-backdrop .entrega-markers-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+#entrega-modal-backdrop .entrega-section-divider {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0.02em;
+  color: var(--text-muted);
+}
+
+#entrega-modal-backdrop .entrega-section-divider::before,
+#entrega-modal-backdrop .entrega-section-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--divider);
+}
+
+#entrega-modal-backdrop .entrega-middle-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 12px;
+  align-items: start;
+}
+
+#entrega-modal-backdrop .entrega-vitals-col .entrega-vitals-form__scroll {
+  max-height: none;
+  overflow: visible;
+}
+
+#entrega-modal-backdrop .entrega-vitals-col .entrega-vitals-section {
+  margin-bottom: 8px;
+}
+
+#entrega-modal-backdrop .entrega-proc-details {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0 10px 8px;
+}
+
+#entrega-modal-backdrop .entrega-proc-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  cursor: pointer;
+  list-style: none;
+  padding: 8px 0;
+  margin: 0;
+  user-select: none;
+}
+
+#entrega-modal-backdrop .entrega-proc-summary::-webkit-details-marker {
+  display: none;
+}
+
+#entrega-modal-backdrop .entrega-proc-summary::after {
+  content: '';
+  flex-shrink: 0;
+  width: 7px;
+  height: 7px;
+  border-right: 2px solid var(--text-muted);
+  border-bottom: 2px solid var(--text-muted);
+  transform: rotate(45deg);
+  margin-right: 4px;
+  transition: transform var(--dur-fast) var(--ease-out);
+}
+
+#entrega-modal-backdrop .entrega-proc-details[open] .entrega-proc-summary::after {
+  transform: rotate(-135deg);
+  margin-top: 4px;
+}
+
+#entrega-modal-backdrop .entrega-proc-summary .clinical-teams-section-title {
+  margin: 0;
+}
+
+#entrega-modal-backdrop .entrega-proc-toolbar {
+  margin-bottom: 8px;
+}
+
+#entrega-modal-backdrop .entrega-proc-details:not([open]) .entrega-panel-body {
+  display: none;
+}
+
+#entrega-modal-backdrop .entrega-support-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+#entrega-modal-backdrop .entrega-vitals-col {
+  min-width: 0;
+}
+
+#entrega-modal-backdrop .entrega-handoff-support-card {
+  padding: 9px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--divider);
+  background: color-mix(in oklab, var(--bg) 40%, var(--surface));
+}
+
+#entrega-modal-backdrop .entrega-handoff-support-card.is-active {
+  border-color: color-mix(in oklab, var(--action) 26%, var(--border));
+  background: color-mix(in oklab, var(--action) 6%, var(--surface));
+  box-shadow: none;
+}
+
+#entrega-modal-backdrop .entrega-handoff-support-card__head {
+  margin-bottom: 0;
+}
+
+#entrega-modal-backdrop .entrega-handoff-support-detail {
+  display: grid;
+  gap: 8px;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px dashed var(--divider);
+}
+
+#entrega-modal-backdrop .entrega-handoff-support-detail.is-hidden {
+  display: none;
+}
+
+#entrega-modal-backdrop .entrega-handoff-support-detail .field-group {
+  margin: 0;
+}
+
+#entrega-modal-backdrop .entrega-vaso-dose {
+  display: grid;
+  gap: 10px;
+}
+
+#entrega-modal-backdrop .entrega-vaso-dose-input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  max-width: 100%;
+}
+
+#entrega-modal-backdrop .entrega-vaso-dose-input {
+  flex: 0 1 5.25rem;
+  width: 5.25rem;
+  min-width: 4.5rem;
+  max-width: 6rem;
+}
+
+#entrega-modal-backdrop .entrega-handoff-support-card select.profile-input {
+  max-width: 100%;
+}
+
+#entrega-modal-backdrop .entrega-vaso-unit-inline {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+#entrega-modal-backdrop .entrega-vaso-unit-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin: 0;
+}
+
+#entrega-modal-backdrop .entrega-vaso-unit-pill {
+  padding: 0.35rem 0.55rem;
+  font-size: 0.72rem;
+  white-space: nowrap;
+}
+
+#entrega-modal-backdrop .entrega-vaso-unit-pill-fixed {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.65rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid color-mix(in oklab, var(--action) 28%, var(--border));
+  background: var(--lab-chip-bg);
+  color: var(--action);
+  font-size: 0.72rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+#entrega-modal-backdrop .entrega-vaso-unit-chips.is-hidden,
+#entrega-modal-backdrop .entrega-vaso-unit-pill-fixed.is-hidden {
+  display: none;
+}
+
+#entrega-modal-backdrop .entrega-handoff-notes {
+  margin: 0;
+}
+
+#entrega-modal-backdrop .entrega-handoff-notes-input {
+  width: 100%;
+  min-height: 40px;
+  resize: none;
+  line-height: 1.45;
+  font-family: inherit;
+}
+
+#entrega-modal-backdrop .entrega-handoff-summary {
+  margin: 0;
+  padding: 7px 12px;
+  font-size: 0.6875rem;
+  line-height: 1.45;
+  color: var(--action);
+  border: 1px solid color-mix(in oklab, var(--action) 22%, var(--border));
+  border-radius: 6px;
+  background: color-mix(in oklab, var(--action) 8%, var(--surface));
+}
+
+#entrega-modal-backdrop .entrega-handoff-summary:empty {
+  display: none;
+}
+
+#entrega-modal-backdrop .entrega-check-pill--alert input:checked + span {
+  border-color: color-mix(in oklab, var(--danger) 45%, var(--border));
+  background: color-mix(in oklab, var(--danger) 14%, var(--surface));
+  color: var(--danger);
+}
+
+@media (max-width: 720px) {
+  #entrega-modal-backdrop .entrega-top-strip,
+  #entrega-modal-backdrop .entrega-middle-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+#entrega-modal-backdrop .clinical-teams-section.entrega-panel {
+  border: none;
+  background: transparent;
+  padding: 0;
+  gap: 10px;
+}
+
+#entrega-modal-backdrop .entrega-panel {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+  height: auto;
+}
+
+#entrega-modal-backdrop .entrega-panel-body {
+  flex: 1;
+  min-height: 0;
+}
+
+#entrega-modal-backdrop .entrega-panel--pendientes .entrega-panel-body.entrega-proc-block {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 0;
+  overflow-x: clip;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+#entrega-modal-backdrop .entrega-panel--pendientes .entrega-proc-list {
+  flex: 0 1 auto;
+  min-height: 0;
+  max-height: 100%;
+  overflow-x: clip;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+#entrega-modal-backdrop .entrega-panel--pendientes .entrega-proc-form:not(.hidden) {
+  flex: 0 0 auto;
+  overflow: visible;
+}
+
+#entrega-modal-backdrop .entrega-panel--pendientes:has(.entrega-proc-form:not(.hidden)) .entrega-proc-list {
+  flex: 0 0 auto;
+  max-height: 9rem;
+}
+
+#entrega-modal-backdrop .entrega-inline-form {
+  display: flex;
+  flex-direction: column;
+  overflow: visible;
+}
+
+#entrega-modal-backdrop .entrega-inline-form__foot {
+  flex-shrink: 0;
+}
+
+#entrega-modal-backdrop .entrega-panel--pendientes {
+  flex-shrink: 0;
+}
+
+#entrega-modal-backdrop .entrega-panel--vitals {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  padding: 0;
+  gap: 10px;
+}
+
+#entrega-modal-backdrop .entrega-panel--vitals .entrega-panel-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+}
+
+#entrega-modal-backdrop .entrega-vitals-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  border: none;
+  padding: 0;
+  background: transparent;
+}
+
+#entrega-modal-backdrop .entrega-panel--pendientes .clinical-teams-section-head-row {
+  margin-bottom: 2px;
+}
+
+#entrega-modal-backdrop .entrega-proc-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+#entrega-modal-backdrop .entrega-proc-toolbar .btn-med-secondary {
+  min-height: 36px;
+  font-size: 0.8125rem;
+}
+
+/* Vitals: stacked sections, label → controls, detail card for interval/shift */
+#entrega-modal-backdrop .entrega-vitals-form {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  min-width: 0;
+  gap: 0;
+}
+
+#entrega-modal-backdrop .entrega-vitals-form__scroll {
+  flex: 0 1 auto;
+  min-height: 0;
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-bottom: 0;
+}
+
+#entrega-modal-backdrop .entrega-vitals-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+#entrega-modal-backdrop .entrega-vitals-section__title {
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  line-height: 1.3;
+}
+
+#entrega-modal-backdrop .entrega-vitals-metrics {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+}
+
+#entrega-modal-backdrop .entrega-vitals-metrics .entrega-check-pill {
+  flex: 1 1 auto;
+  min-width: 2.75rem;
+  max-width: calc(33.333% - 4px);
+}
+
+#entrega-modal-backdrop .entrega-vitals-metrics .entrega-check-pill span {
+  width: 100%;
+  text-align: center;
+}
+
+#entrega-modal-backdrop .entrega-vitals-freq {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 6px;
+  margin: 0;
+  min-width: 0;
+}
+
+#entrega-modal-backdrop .entrega-vitals-freq-detail-slot {
+  flex: 0 0 auto;
+  min-width: 0;
+}
+
+#entrega-modal-backdrop .entrega-vitals-freq-detail-slot[aria-hidden='true'] {
+  display: none;
+}
+
+#entrega-modal-backdrop .entrega-freq-routine-hint {
+  margin: 0.5rem 0 0;
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--text-muted);
+}
+
+#entrega-modal-backdrop .entrega-vitals-freq-detail-slot .entrega-freq-panel {
+  margin: 0;
+}
+
+#entrega-modal-backdrop .entrega-vitals-freq-detail-slot .entrega-freq-panel.is-hidden {
+  display: none;
+}
+
+#entrega-modal-backdrop .entrega-freq-segment {
+  display: flex;
+  width: 100%;
+  margin: 0;
+  padding: 2px;
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  background: color-mix(in oklab, var(--bg) 88%, var(--surface));
+}
+
+#entrega-modal-backdrop .entrega-freq-segment .entrega-freq-mode-pill {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+#entrega-modal-backdrop .entrega-freq-segment .entrega-freq-mode-pill span {
+  width: 100%;
+  min-width: 0;
+  padding: 0.4rem 0.5rem;
+  border: none;
+  border-radius: calc(var(--radius-pill) - 2px);
+  background: transparent;
+  text-align: center;
+}
+
+#entrega-modal-backdrop .entrega-freq-segment .entrega-freq-mode-pill input:checked + span {
+  background: var(--surface);
+  box-shadow: 0 1px 2px color-mix(in oklab, var(--color-ink) 12%, transparent);
+}
+
+#entrega-modal-backdrop .entrega-freq-detail-card {
+  padding: 7px 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: color-mix(in oklab, var(--bg) 45%, var(--surface));
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+#entrega-modal-backdrop .entrega-freq-detail__row {
+  display: grid;
+  grid-template-columns: 3rem minmax(0, 1fr);
+  gap: 4px 8px;
+  align-items: center;
+}
+
+#entrega-modal-backdrop .entrega-freq-detail__row-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  line-height: 1.3;
+}
+
+#entrega-modal-backdrop .entrega-freq-detail__row-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 6px 10px;
+  align-items: center;
+}
+
+#entrega-modal-backdrop .entrega-freq-detail__cell {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+}
+
+#entrega-modal-backdrop .entrega-freq-detail__cell-label {
+  flex: 0 0 100%;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  line-height: 1.3;
+}
+
+#entrega-modal-backdrop .entrega-freq-detail__row-split .entrega-freq-detail__cell-label {
+  flex: 0 0 auto;
+  width: auto;
+}
+
+#entrega-modal-backdrop .entrega-freq-detail__row-split .entrega-freq-detail__cell:first-child {
+  flex-wrap: nowrap;
+}
+
+#entrega-modal-backdrop .entrega-freq-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+#entrega-modal-backdrop .entrega-freq-stepper {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+#entrega-modal-backdrop .entrega-freq-interval-suffix {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+}
+
+#entrega-modal-backdrop .entrega-freq-detail__cell--until .entrega-freq-until {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  border: none;
+  width: 100%;
+}
+
+#entrega-modal-backdrop .entrega-freq-until-toggle span {
+  white-space: nowrap;
+}
+
+#entrega-modal-backdrop .entrega-freq-until .entrega-time-picker {
+  width: auto;
+  min-width: 0;
+  flex-shrink: 0;
+  padding: 0.15rem 0.4rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md, 8px);
+  background: var(--surface);
+}
+
+#entrega-modal-backdrop .entrega-freq-until .entrega-time-picker--compact {
+  display: inline-flex;
+  align-items: center;
+}
+
+#entrega-modal-backdrop .entrega-freq-until .entrega-time-picker--compact .entrega-time-picker__part {
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  min-width: 0;
+  flex: 0 1 auto;
+}
+
+#entrega-modal-backdrop .entrega-freq-until .entrega-time-picker--compact .entrega-time-picker__hint {
+  flex: 0 0 auto;
+  font-size: 0.65rem;
+  text-align: center;
+  min-width: 0.85rem;
+}
+
+#entrega-modal-backdrop .entrega-freq-until .entrega-time-picker--compact .entrega-time-select {
+  flex: 0 0 auto;
+  width: 2.85rem;
+  min-width: 2.85rem;
+  min-height: 2rem;
+  padding-block: 0.2rem;
+  padding-inline: 1.1rem;
+  text-align: center;
+  text-align-last: center;
+  font-size: 0.8125rem;
+  background-position: right 0.3rem center;
+}
+
+#entrega-modal-backdrop .entrega-freq-until .entrega-time-sep {
+  padding-top: 0;
+  font-size: 0.95rem;
+}
+
+#entrega-modal-backdrop .entrega-freq-until-time.is-disabled {
+  opacity: 0.45;
+}
+
+#entrega-modal-backdrop .entrega-check-pill span {
+  padding: 0.3rem 0.6rem;
+  font-size: 0.8125rem;
+}
+
+#entrega-modal-backdrop .entrega-freq-chip {
+  min-height: 2rem;
+  padding: 0.3rem 0.65rem;
+  font-size: 0.8125rem;
+}
+
+#entrega-modal-backdrop .entrega-freq-step {
+  width: 2rem;
+  height: 2rem;
+  font-size: 1rem;
+}
+
+#entrega-modal-backdrop .entrega-freq-hours-input {
+  width: 2.75rem;
+  min-width: 2.75rem;
+  height: 2rem;
+  font-size: 0.875rem;
+}
+
+#entrega-modal-backdrop .entrega-vitals-summary {
+  flex: 0 0 auto;
+  margin: 0;
+  padding: 6px 8px;
+  border: 1px solid color-mix(in oklab, var(--border) 90%, transparent);
+  border-radius: var(--radius-md);
+  background: color-mix(in oklab, var(--bg) 35%, var(--surface));
+  font-size: 0.75rem;
+  line-height: 1.35;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 520px) {
+  #entrega-modal-backdrop .entrega-vitals-metrics .entrega-check-pill {
+    max-width: calc(50% - 4px);
+  }
+
+  #entrega-modal-backdrop .entrega-freq-detail__row-split {
+    grid-template-columns: 1fr;
+  }
+}
+
+#entrega-modal-backdrop .entrega-modal-foot {
+  flex-shrink: 0;
+  margin: 0;
+  padding: 10px 18px;
+  border-top: 1px solid var(--divider);
+  background: color-mix(in oklab, var(--bg) 55%, var(--surface));
+  justify-content: stretch;
+  gap: 10px;
+}
+
+#entrega-modal-backdrop .entrega-modal-foot .btn-cancel,
+#entrega-modal-backdrop .entrega-modal-foot .btn-save {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+/* lab.css .modal h3 — no aplicar margen/color legacy dentro de entrega */
+#entrega-modal-backdrop .modal.entrega-modal h3 {
+  margin-bottom: 6px;
+  color: var(--text);
+}
+
+#entrega-modal-backdrop .entrega-proc-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+}
+
+#entrega-modal-backdrop .entrega-proc-delete.btn-med-secondary {
+  min-height: 32px;
+  padding: 6px 12px;
+  font-size: 0.75rem;
+}
+
+#entrega-modal-backdrop .entrega-check-section__label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0.01em;
+  color: var(--text-muted);
+}
+
+#entrega-modal-backdrop .entrega-check-pill input:checked + span {
+  border-color: color-mix(in oklab, var(--action) 28%, var(--border));
+  background: var(--lab-chip-bg);
+  color: var(--action);
+}
+
+#entrega-modal-backdrop .entrega-freq-chip.is-selected {
+  border-color: color-mix(in oklab, var(--action) 28%, var(--border));
+  background: var(--lab-chip-bg);
+  color: var(--action);
+}
+
+#entrega-modal-backdrop .entrega-inline-form {
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+
+#entrega-modal-backdrop .entrega-inline-form__head {
+  background: color-mix(in oklab, var(--surface) 98%, var(--bg));
+}
+
+#entrega-modal-backdrop .entrega-inline-form__grid .field-group label {
+  text-transform: none;
+  letter-spacing: 0.01em;
+  font-size: 0.75rem;
+}
+
+html.dark #entrega-modal-backdrop.entrega-modal-backdrop {
+  background: color-mix(in oklab, var(--color-ink) 58%, transparent);
+}
+
+html.dark #entrega-modal-backdrop .modal.entrega-modal {
+  border-color: color-mix(in oklab, var(--color-ink) 35%, var(--border));
+  box-shadow: 0 28px 56px color-mix(in oklab, var(--color-ink) 48%, transparent);
+}
+
+html.dark #entrega-modal-backdrop .entrega-modal-head {
+  background: var(--surface);
+  border-bottom-color: var(--divider);
+}
+
+html.dark #entrega-modal-backdrop .entrega-modal-foot {
+  background: var(--surface);
+  border-top-color: var(--divider);
+}
+
+@media (max-width: 720px) {
+  #entrega-modal-backdrop .modal.entrega-modal {
+    width: min(98vw, 1140px);
+  }
+}
+
+.entrega-inline-form {
+  margin-top: 0.35rem;
+  border: 1px solid color-mix(in oklab, var(--action) 22%, var(--border));
+  border-radius: var(--radius-lg, 12px);
+  background: color-mix(in oklab, var(--surface) 94%, var(--bg));
+  overflow: hidden;
+}
+
+.entrega-inline-form__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.55rem 0.75rem;
+  border-bottom: 1px solid var(--border);
+  background: color-mix(in oklab, var(--action) 6%, var(--surface));
+}
+
+.entrega-inline-form__title {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.entrega-inline-form__close {
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 1.35rem;
+  line-height: 1;
+  width: 2rem;
+  height: 2rem;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+
+.entrega-inline-form__close:hover {
+  color: var(--text);
+  background: color-mix(in oklab, var(--text) 8%, transparent);
+}
+
+.entrega-inline-form__grid {
+  display: grid;
+  grid-template-columns: minmax(7.5rem, auto) minmax(0, 1fr) minmax(10.5rem, auto);
+  gap: 0.65rem 0.75rem;
+  padding: 0.75rem 0.75rem 0.35rem;
+  align-items: end;
+}
+
+.entrega-inline-form__grid .field-group {
+  margin: 0;
+}
+
+.entrega-inline-form__grid .field-group label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0.01em;
+  color: var(--text-muted);
+}
+
+.entrega-inline-form__label-wide {
+  grid-column: span 1;
+}
+
+@media (max-width: 480px) {
+  .entrega-inline-form__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .entrega-inline-form__label-wide {
+    grid-column: 1 / -1;
+  }
+  .entrega-inline-form__time {
+    grid-column: span 1;
+  }
+}
+
+.entrega-field-label-block {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+}
+
+.entrega-time-combo,
+.entrega-time-picker {
+  display: flex;
+  align-items: stretch;
+  gap: 0.3rem;
+  width: 100%;
+}
+
+.entrega-time-picker {
+  box-sizing: border-box;
+  min-width: 10rem;
+  padding: 0.15rem 0.4rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md, 8px);
+  background: var(--surface);
+}
+
+.entrega-time-picker__part {
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.1rem;
+  min-width: 3.35rem;
+}
+
+.entrega-time-picker__hint {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  text-align: center;
+  line-height: 1;
+}
+
+.entrega-time-select {
+  flex: 1 1 auto;
+  width: 100%;
+  min-width: 3.1rem;
+  min-height: 2.15rem;
+  padding-block: 0.3rem;
+  padding-inline: 1.35rem;
+  text-align: center;
+  text-align-last: center;
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  border: none;
+  background-color: transparent;
+  color: var(--text);
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.35rem center;
+  background-size: 0.75rem;
+}
+
+.entrega-time-picker .entrega-time-select {
+  border-radius: var(--radius-sm, 6px);
+}
+
+.entrega-time-picker .entrega-time-select:hover {
+  background-color: color-mix(in oklab, var(--action) 6%, transparent);
+}
+
+.entrega-time-picker .entrega-time-select:focus {
+  outline: 2px solid color-mix(in oklab, var(--action) 45%, transparent);
+  outline-offset: 1px;
+}
+
+.entrega-inline-form__time .entrega-time-picker {
+  min-width: 10.25rem;
+}
+
+.entrega-inline-form__grid .field-group select.profile-input {
+  min-width: 0;
+  width: 100%;
+}
+
+.entrega-time-sep {
+  flex: 0 0 auto;
+  align-self: center;
+  padding-top: 0.85rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  line-height: 1;
+  user-select: none;
+}
+
+.entrega-check-section {
+  padding: 0.35rem 0.75rem 0.55rem;
+}
+
+.entrega-check-section__label {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0.01em;
+  color: var(--text-muted);
+}
+
+.entrega-check-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.entrega-check-pill {
+  position: relative;
+  display: inline-flex;
+  cursor: pointer;
+  user-select: none;
+}
+
+.entrega-check-pill input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+.entrega-check-pill span {
+  display: inline-block;
+  padding: 0.3rem 0.65rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border);
+  background: var(--bg);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  transition:
+    background 0.15s,
+    border-color 0.15s,
+    color 0.15s;
+}
+
+.entrega-check-pill input:checked + span {
+  border-color: color-mix(in oklab, var(--action) 50%, var(--border));
+  background: color-mix(in oklab, var(--action) 16%, var(--surface));
+  color: var(--text);
+}
+
+.entrega-check-pill input:focus-visible + span {
+  outline: 2px solid var(--action);
+  outline-offset: 1px;
+}
+
+.entrega-inline-form__foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 0.75rem;
+  padding: 0.65rem 0.75rem;
+  border-top: 1px solid var(--border);
+  background: color-mix(in oklab, var(--surface) 88%, var(--bg));
+}
+
+.entrega-inline-form__foot-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-left: auto;
+}
+
+.entrega-inline-form__foot-actions--end {
+  width: 100%;
+}
+
+.entrega-foot-muted {
+  border: none;
+  background: none;
+  padding: 0.35rem 0.25rem;
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.entrega-foot-muted:hover {
+  color: var(--action);
+}
+
+.entrega-inline-form__foot .btn-cancel,
+.entrega-inline-form__foot .btn-save {
+  min-height: 38px;
+  padding: 0.4rem 1.1rem;
+  font-size: 0.875rem;
+}
+
+.entrega-field-hint {
+  margin: 0 0 0.35rem;
+  font-size: 0.8rem;
+  line-height: 1.35;
+  color: var(--text-muted);
+}
+
+.entrega-proc-toolbar {
+  display: inline-flex;
+  gap: 0.35rem;
+  margin-left: auto;
+}
+
+.entrega-toolbar-btn {
+  border-radius: var(--radius-md);
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.35rem 0.65rem;
+  cursor: pointer;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+}
+
+.entrega-toolbar-btn--ghost {
+  background: transparent;
+  color: var(--text-muted);
+  border-color: transparent;
+}
+
+.entrega-toolbar-btn--ghost:hover {
+  color: var(--text);
+  background: color-mix(in oklab, var(--action) 8%, var(--surface));
+}
+
+.entrega-toolbar-btn--primary {
+  border-color: color-mix(in oklab, var(--action) 40%, var(--border));
+  background: color-mix(in oklab, var(--action) 12%, var(--surface));
+}
+
+.entrega-vitals-panel {
+  border: 1px solid color-mix(in oklab, var(--action) 18%, var(--border));
+  border-radius: var(--radius-lg, 12px);
+  padding: 0.65rem 0.75rem;
+  background: color-mix(in oklab, var(--surface) 94%, var(--bg));
+}
+
+.entrega-vitals-metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-bottom: 0.65rem;
+}
+
+.entrega-vitals-metrics .entrega-check-pill span {
+  min-width: 4.5rem;
+  text-align: center;
+}
+
+.entrega-vitals-freq {
+  margin-top: 0.35rem;
+}
+
+.entrega-freq-modes {
+  margin-bottom: 0.5rem;
+}
+
+.entrega-freq-mode-pill span {
+  min-width: 5.5rem;
+  text-align: center;
+}
+
+.entrega-freq-panel {
+  margin-top: 0.35rem;
+}
+
+.entrega-freq-panel.is-hidden {
+  display: none;
+}
+
+.entrega-freq-interval-card {
+  border: 1px solid color-mix(in oklab, var(--border) 85%, transparent);
+  border-radius: var(--radius-lg, 12px);
+  padding: 0.6rem 0.65rem;
+  background: color-mix(in oklab, var(--surface) 96%, var(--bg));
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.entrega-freq-interval-hint {
+  margin: 0;
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+.entrega-freq-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.entrega-freq-chip {
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.entrega-freq-chip:hover {
+  border-color: color-mix(in oklab, var(--action) 35%, var(--border));
+}
+
+.entrega-freq-chip.is-selected {
+  border-color: color-mix(in oklab, var(--action) 50%, var(--border));
+  background: color-mix(in oklab, var(--action) 14%, var(--surface));
+  color: var(--action);
+}
+
+.entrega-freq-interval-custom {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.65rem;
+}
+
+.entrega-freq-interval-label,
+.entrega-freq-interval-suffix {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.entrega-freq-stepper {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex-shrink: 0;
+}
+
+.entrega-freq-step {
+  width: 2.1rem;
+  height: 2.1rem;
+  flex-shrink: 0;
+  border-radius: var(--radius-md, 8px);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  font-size: 1.05rem;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--text);
+}
+
+.entrega-freq-step:hover {
+  border-color: color-mix(in oklab, var(--action) 35%, var(--border));
+}
+
+.entrega-freq-hours-input {
+  box-sizing: border-box;
+  width: 3.75rem;
+  min-width: 3.75rem;
+  height: 2.1rem;
+  flex-shrink: 0;
+  text-align: center;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md, 8px);
+  padding: 0 0.35rem;
+  font-size: 1rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  background: var(--surface);
+  color: var(--text);
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+.entrega-freq-hours-input::-webkit-outer-spin-button,
+.entrega-freq-hours-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.entrega-freq-until {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.5rem;
+}
+
+.entrega-freq-until-toggle {
+  cursor: pointer;
+  user-select: none;
+}
+
+.entrega-freq-until-time.is-disabled {
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.entrega-freq-until .entrega-time-picker {
+  min-width: 9.5rem;
+}
+
+.entrega-vitals-summary {
+  margin: 0.5rem 0 0;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.entrega-proc-delete {
+  flex-shrink: 0;
+  font-size: 0.8rem;
+  padding: 0.25rem 0.5rem;
+}
+
+.guardia-incoming-strip {
+  margin: 0 0 1rem;
+}
+
+.guardia-incoming-strip[hidden] {
+  display: none !important;
+}
+
+.guardia-orphan-entregas-strip {
+  margin: 0 0 1rem;
+}
+
+.guardia-orphan-entregas-strip[hidden] {
+  display: none !important;
+}
+
+.guardia-orphan-details {
+  background: color-mix(in srgb, var(--danger) 6%, var(--surface));
+  border: 1px solid color-mix(in srgb, var(--danger) 28%, var(--border));
+  border-radius: var(--radius-md);
+  padding: 8px 10px 10px;
+}
+
+.guardia-orphan-summary {
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--text);
+  list-style: none;
+}
+
+.guardia-orphan-summary::-webkit-details-marker {
+  display: none;
+}
+
+.guardia-orphan-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.4rem;
+  padding: 0 6px;
+  margin-left: 6px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  background: color-mix(in srgb, var(--danger) 18%, transparent);
+  color: var(--danger);
+}
+
+.guardia-orphan-hint {
+  margin: 6px 0 8px;
+  font-size: 0.82rem;
+  color: var(--text-muted, var(--text-secondary));
+  line-height: 1.35;
+}
+
+.guardia-orphan-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.guardia-orphan-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 6px 8px;
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+
+.guardia-orphan-row-main {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.guardia-orphan-id {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.78rem;
+  color: var(--text);
+}
+
+.guardia-orphan-vitals {
+  font-size: 0.75rem;
+  color: var(--danger);
+}
+
+.guardia-orphan-row-actions {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 6px;
+}
+
+.guardia-orphan-open-btn,
+.guardia-orphan-delete-btn {
+  font-size: 0.78rem;
+  padding: 0.3rem 0.55rem;
+  white-space: nowrap;
+}
+
+.guardia-orphan-delete-btn {
+  color: var(--danger);
+  border-color: color-mix(in srgb, var(--danger) 40%, var(--border));
+}
+
+.guardia-incoming-details {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 8px 10px 10px;
+}
+
+.guardia-incoming-summary {
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--text);
+  list-style: none;
+}
+
+.guardia-incoming-summary::-webkit-details-marker {
+  display: none;
+}
+
+.guardia-incoming-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.4rem;
+  padding: 0 6px;
+  margin-left: 6px;
+  border-radius: var(--radius-pill);
+  background: color-mix(in oklab, var(--action) 12%, var(--surface));
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.guardia-incoming-hint {
+  margin: 6px 0 10px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.guardia-incoming-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.guardia-incoming-chip {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  padding: 8px 12px;
+  border-radius: var(--radius-md);
+  border: 1px dashed color-mix(in oklab, var(--action) 35%, var(--border));
+  background: color-mix(in oklab, var(--surface) 92%, var(--bg));
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+  max-width: 220px;
+}
+
+.guardia-incoming-chip:hover {
+  border-color: color-mix(in oklab, var(--action) 50%, var(--border));
+  background: color-mix(in oklab, var(--action) 6%, var(--surface));
+}
+
+.guardia-incoming-chip-bed {
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.guardia-incoming-chip-dx {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+/* Hallmark · guardia dashboard — quiet workbench (#appcontent-guardia) */
+.guardia-panel {
+  margin-bottom: 14px;
+}
+
+.guardia-panel--metrics {
+  padding: 5px 10px;
+  margin-bottom: 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid color-mix(in oklab, var(--border) 65%, transparent);
+  background: color-mix(in oklab, var(--surface) 97%, var(--bg));
+}
+
+.guardia-panel--vitals {
+  padding: 0;
+}
+
+.guardia-panel--census {
+  padding: 0;
+}
+
+.guardia-metrics-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 12px;
+  flex-wrap: wrap;
+  min-height: 28px;
+}
+
+#appcontent-guardia .guardia-summary--compact {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0;
+  margin: 0;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+#appcontent-guardia .guardia-stat {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 4px;
+  padding: 1px 0;
+}
+
+#appcontent-guardia .guardia-stat-sep {
+  margin: 0 7px;
+  color: var(--text-muted);
+  opacity: 0.45;
+  user-select: none;
+  font-size: 0.75rem;
+  line-height: 1;
+}
+
+#appcontent-guardia .guardia-stat-value {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  font-family: var(--font-mono, ui-monospace, monospace);
+  line-height: 1.2;
+  font-variant-numeric: tabular-nums;
+  color: var(--text);
+}
+
+#appcontent-guardia .guardia-stat-label {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+#appcontent-guardia .guardia-stat--hot .guardia-stat-value {
+  color: var(--error);
+}
+
+#appcontent-guardia .guardia-stat--warn .guardia-stat-value {
+  color: var(--todo-prio-media);
+}
+
+#appcontent-guardia .btn-guardia-mode--compact {
+  padding: 3px 9px;
+  font-size: 0.6875rem;
+  gap: 7px;
+}
+
+#appcontent-guardia .btn-guardia-mode--compact .guardia-mode-switch {
+  width: 26px;
+  height: 15px;
+}
+
+.guardia-census-head {
+  margin: 0 0 10px;
+}
+
+.guardia-census-head-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 4px 12px;
+}
+
+.guardia-section-title {
+  margin: 0;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.guardia-census-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.5rem;
+  margin-left: 4px;
+  padding: 1px 8px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  background: color-mix(in oklab, var(--action) 10%, var(--surface));
+  border: 1px solid color-mix(in oklab, var(--action) 22%, var(--border));
+  color: var(--action);
+}
+
+.guardia-section-sub {
+  margin: 0;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+#appcontent-guardia .patient-chips-grid,
+.guardia-census-panel .patient-chips-grid {
+  padding: 0;
+}
+
+#appcontent-guardia .patient-chips-grid--guardia,
+.guardia-census-panel .patient-chips-grid--guardia {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(224px, 1fr));
+  gap: 8px;
+  align-items: stretch;
+}
+
+#appcontent-guardia .patient-chips-grid--guardia .patient-chip-card,
+.guardia-census-panel .patient-chips-grid--guardia .patient-chip-card {
+  position: relative;
+  padding: 10px 11px 9px;
+  min-height: 122px;
+  height: 100%;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  border-left-width: 3px;
+  border-left-color: color-mix(in oklab, var(--border) 80%, transparent);
+  background: var(--surface);
+  box-shadow: none;
+  transition:
+    border-color var(--dur-fast) var(--ease-out),
+    box-shadow var(--dur-fast) var(--ease-out),
+    background var(--dur-fast) var(--ease-out);
+}
+
+#appcontent-guardia .patient-chips-grid--guardia .patient-chip-card:hover,
+.guardia-census-panel .patient-chips-grid--guardia .patient-chip-card:hover {
+  transform: none;
+  border-color: color-mix(in oklab, var(--action) 28%, var(--border));
+  box-shadow: var(--shadow-sm);
+}
+
+#appcontent-guardia .patient-chips-grid--guardia .patient-chip-card:focus-visible,
+.guardia-census-panel .patient-chips-grid--guardia .patient-chip-card:focus-visible {
+  outline: 2px solid var(--color-focus-ring, color-mix(in oklab, var(--action) 35%, transparent));
+  outline-offset: 1px;
+}
+
+#appcontent-guardia .patient-chips-grid--guardia .priority-critical,
+.guardia-census-panel .patient-chips-grid--guardia .priority-critical {
+  border-left-color: var(--error);
+  border-color: color-mix(in oklab, var(--error) 22%, var(--border));
+}
+
+#appcontent-guardia .patient-chip-head,
+.guardia-census-panel .patient-chip-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+  min-height: 18px;
+  min-width: 0;
+}
+
+#appcontent-guardia .patient-chip-bed,
+.guardia-census-panel .patient-chip-bed {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 58%;
+}
+
+#appcontent-guardia .patient-chip-badges,
+.guardia-census-panel .patient-chip-badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 5px;
+  min-height: 18px;
+  min-width: 0;
+  flex: 1;
+}
+
+#appcontent-guardia .patient-chip-badges .patient-chip-symbols,
+.guardia-census-panel .patient-chip-badges .patient-chip-symbols {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+#appcontent-guardia .patient-chip-badges .dnr-badge,
+.guardia-census-panel .patient-chip-badges .dnr-badge {
+  margin: 0;
+  padding: 0 5px;
+  font-size: 0.625rem;
+  font-weight: 700;
+  border-radius: var(--radius-pill);
+  background: color-mix(in oklab, var(--error) 8%, var(--surface));
+  border: 1px solid color-mix(in oklab, var(--error) 35%, var(--border));
+}
+
+#appcontent-guardia .patient-chip-symbol,
+.guardia-census-panel .patient-chip-symbol {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+#appcontent-guardia .patient-chip-critical-hint,
+.guardia-census-panel .patient-chip-critical-hint {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--error);
+  flex-shrink: 0;
+}
+
+.patient-chip-symbol--critico {
+  border-color: color-mix(in oklab, var(--error) 45%, var(--border));
+  color: var(--error);
+}
+
+.patient-chip-symbol--negativas {
+  border-color: color-mix(in oklab, var(--todo-prio-media) 40%, var(--border));
+  color: var(--todo-prio-media);
+}
+
+.patient-chip-symbol--show {
+  border-color: color-mix(in oklab, var(--action) 35%, var(--border));
+  color: var(--action);
+}
+
+.priority-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.dot-alta {
+  background: var(--error);
+}
+
+.dot-media {
+  background: var(--todo-prio-media);
+}
+
+#appcontent-guardia .patient-chip-name,
+.guardia-census-panel .patient-chip-name {
+  margin: 0;
+  font-weight: 600;
+  font-size: 0.8125rem;
+  line-height: 1.3;
+  letter-spacing: 0.01em;
+  color: var(--text);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  word-break: break-word;
+}
+
+#appcontent-guardia .patient-chip-dx,
+.guardia-census-panel .patient-chip-dx {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.35;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  flex: 1 1 auto;
+}
+
+#appcontent-guardia .patient-chip-vitals,
+.guardia-census-panel .patient-chip-vitals {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+  width: 100%;
+  margin-top: auto;
+  padding: 5px 8px;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  line-height: 1.2;
+  border-radius: var(--radius-sm);
+  box-sizing: border-box;
+}
+
+#appcontent-guardia .patient-chip-vitals__text,
+.guardia-census-panel .patient-chip-vitals__text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+  flex: 1;
+}
+
+#appcontent-guardia .patient-chip-vitals.nominal,
+.guardia-census-panel .patient-chip-vitals.nominal {
+  background: color-mix(in oklab, var(--success) 10%, var(--surface));
+  color: var(--success);
+}
+
+#appcontent-guardia .patient-chip-vitals.breached,
+.guardia-census-panel .patient-chip-vitals.breached {
+  background: color-mix(in oklab, var(--error) 10%, var(--surface));
+  color: var(--error);
+}
+
+#appcontent-guardia .patient-chip-vitals.warning,
+.guardia-census-panel .patient-chip-vitals.warning {
+  background: color-mix(in oklab, var(--todo-prio-media) 12%, var(--surface));
+  color: var(--todo-prio-media);
+  animation: none;
+}
+
+#appcontent-guardia .patient-chip-vitals.nominal-gray,
+.guardia-census-panel .patient-chip-vitals.nominal-gray {
+  background: color-mix(in oklab, var(--text-muted) 8%, var(--surface));
+  color: var(--text-muted);
+}
+
+.vitals-altered-badge {
+  margin-left: 4px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--todo-prio-media);
+}
+
+.vitals-banner {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 6px;
+  width: fit-content;
+}
+
+.vitals-banner.nominal {
+  background: color-mix(in oklab, var(--success) 14%, var(--surface));
+  color: var(--success);
+}
+
+.vitals-banner.breached {
+  background: color-mix(in oklab, var(--error) 12%, var(--surface));
+  color: var(--error);
+  font-weight: 800;
+}
+
+.vitals-banner.warning {
+  background: color-mix(in oklab, var(--todo-prio-media) 14%, var(--surface));
+  color: var(--todo-prio-media);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .vitals-banner.warning {
+    animation: guardia-vitals-blink 1.5s infinite;
+  }
+}
+
+.vitals-banner.nominal-gray {
+  background: color-mix(in oklab, var(--text-muted) 10%, var(--surface));
+  color: var(--text-muted);
+}
+
+@keyframes guardia-vitals-blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.55;
+  }
+}
+
+#appcontent-guardia .patient-chip-footer,
+.guardia-census-panel .patient-chip-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  padding-top: 5px;
+  border-top: 1px solid var(--divider);
+  font-size: 0.6875rem;
+  min-width: 0;
+}
+
+#appcontent-guardia .patient-chip-tasks,
+.guardia-census-panel .patient-chip-tasks {
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+#appcontent-guardia .patient-chip-labs,
+.guardia-census-panel .patient-chip-labs {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  color: var(--error);
+  text-align: right;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+  min-width: 0;
+}
+
+#appcontent-guardia .vitals-altered-badge,
+.guardia-census-panel .vitals-altered-badge {
+  flex-shrink: 0;
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: var(--todo-prio-media);
+  text-transform: none;
+}
+
+@media (min-width: 1400px) {
+  #appcontent-guardia .patient-chips-grid--guardia,
+  .guardia-census-panel .patient-chips-grid--guardia {
+    grid-template-columns: repeat(auto-fill, minmax(208px, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  #appcontent-guardia .patient-chips-grid--guardia,
+  .guardia-census-panel .patient-chips-grid--guardia {
+    grid-template-columns: repeat(auto-fill, minmax(176px, 1fr));
+    gap: 7px;
+  }
+
+  #appcontent-guardia .patient-chips-grid--guardia .patient-chip-card,
+  .guardia-census-panel .patient-chips-grid--guardia .patient-chip-card {
+    min-height: 116px;
+  }
+}
+
+/* Guardia phase bar — turno activo (pre-turno CTAs live in metrics toolbar) */
+.guardia-phase-bar[hidden] {
+  display: none !important;
+}
+
+.guardia-phase-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px 14px;
+  margin: 0 0 12px;
+  padding: 10px 14px;
+  border-radius: var(--radius-lg);
+  border: var(--border-hairline);
+  background: var(--surface);
+  box-shadow: var(--elev-raised);
+}
+
+.guardia-phase-bar--turno {
+  border-color: color-mix(in oklab, var(--color-success-emphasis) 35%, var(--border));
+  background: color-mix(in oklab, var(--color-success-emphasis) 8%, var(--surface));
+}
+
+.guardia-phase-bar--preturno {
+  border-style: dashed;
+  background: color-mix(in oklab, var(--action) 4%, var(--surface));
+}
+
+.guardia-phase-bar-main {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 14px;
+  min-width: 0;
+}
+
+.guardia-phase-bar-hint {
+  margin: 0;
+  flex: 1 1 12rem;
+  font-size: 0.8125rem;
+  line-height: 1.35;
+  color: var(--text-muted);
+}
+
+.guardia-phase-bar-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+}
+
+.guardia-turno-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--color-update-banner-fg);
+  background: var(--color-success-emphasis);
+  border: 1px solid color-mix(in oklab, var(--success) 55%, var(--color-success-emphasis));
+}
+
+.guardia-turno-clock {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-muted);
+}
+
+.guardia-turno-clock-value {
+  color: var(--text);
+}
+
+.btn-guardia-phase-ghost {
+  border: var(--border-hairline);
+  border-radius: var(--radius-md);
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  padding: 7px 14px;
+  cursor: pointer;
+}
+
+.btn-guardia-phase-ghost:hover {
+  border-color: color-mix(in oklab, var(--action) 40%, var(--border));
+  background: var(--state-hover-bg);
+}
+
+.btn-guardia-phase-ghost:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+.btn-guardia-phase-primary {
+  border: 1px solid color-mix(in oklab, var(--action) 45%, var(--border));
+  border-radius: var(--radius-md);
+  background: color-mix(in oklab, var(--action) 12%, var(--surface));
+  color: var(--text);
+  font: inherit;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  padding: 7px 14px;
+  cursor: pointer;
+}
+
+.btn-guardia-phase-primary:hover {
+  border-color: var(--action);
+  background: color-mix(in oklab, var(--action) 18%, var(--surface));
+}
+
+.btn-guardia-phase-primary:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+.btn-guardia-phase-end {
+  border: 1px solid color-mix(in oklab, var(--error) 45%, var(--border));
+  border-radius: var(--radius-md);
+  background: color-mix(in oklab, var(--error) 8%, var(--surface));
+  color: var(--error);
+  font: inherit;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  padding: 7px 14px;
+  cursor: pointer;
+}
+
+.btn-guardia-phase-end:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+.guardia-phase-bar-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1 1 14rem;
+  min-width: 0;
+}
+
+.guardia-phase-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.8125rem;
+  line-height: 1.35;
+  color: var(--text-muted);
+}
+
+.guardia-phase-step-num {
+  flex-shrink: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  background: color-mix(in oklab, var(--action) 10%, var(--surface));
+  border: 1px solid color-mix(in oklab, var(--action) 25%, var(--border));
+  color: var(--action);
+}
+
+.guardia-phase-step-text strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+#appcontent-guardia .btn-guardia-mode {
+  flex-shrink: 0;
+}
+
+#appcontent-guardia .btn-guardia-mode.is-active {
+  background: var(--color-success-emphasis);
+  color: var(--color-on-success);
+  border-color: var(--color-success-emphasis);
+}
+
+#appcontent-guardia .btn-guardia-mode.is-active .guardia-mode-switch {
+  background: color-mix(in oklab, var(--color-on-success) 75%, transparent);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  #appcontent-guardia .patient-chip-card--pulse {
+    animation: guardia-chip-pulse 1.1s var(--ease-out, ease-out);
+  }
+}
+
+@keyframes guardia-chip-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 color-mix(in oklab, var(--action) 0%, transparent);
+  }
+  35% {
+    box-shadow: 0 0 0 3px color-mix(in oklab, var(--action) 35%, transparent);
+  }
+}
+
+html.guardia-entrega-roster-open #guardia-board-scroll {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* Guardia vitals feed (turno activo) */
+.guardia-panel--vitals .guardia-vitals-feed {
+  padding: 12px 14px;
+  border-radius: var(--radius-md);
+  border: 1px solid color-mix(in oklab, var(--color-success-emphasis) 22%, var(--border));
+  background: color-mix(in oklab, var(--color-success-emphasis) 5%, var(--surface));
+}
+
+.vfeed-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 8px;
+  margin-bottom: 8px;
+}
+
+.vfeed-title {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.vfeed-count {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  margin-left: 2px;
+}
+
+.vfeed-live-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color-livesync-live);
+  margin-left: auto;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .vfeed-live-dot {
+    animation: vfeed-pulse 1.8s ease-in-out infinite;
+  }
+}
+
+@keyframes vfeed-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.25; }
+}
+
+.vfeed-strip {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 4px;
+  scroll-snap-type: x proximity;
+  -webkit-overflow-scrolling: touch;
+}
+
+.vfeed-chip {
+  flex: 0 0 auto;
+  width: min(220px, 72vw);
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
+  padding: 9px 11px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+  color: var(--text);
+  transition:
+    border-color var(--dur-fast, 150ms) var(--ease-out, ease-out),
+    box-shadow var(--dur-fast, 150ms) var(--ease-out, ease-out);
+}
+
+.vfeed-chip:hover {
+  border-color: color-mix(in oklab, var(--action) 30%, var(--border));
+  box-shadow: var(--shadow-sm);
+}
+
+.vfeed-chip:focus-visible {
+  outline: 2px solid var(--color-focus-ring);
+  outline-offset: 1px;
+}
+
+.vfeed-chip--alert {
+  border-color: color-mix(in oklab, var(--todo-prio-media) 45%, var(--border));
+  background: color-mix(in oklab, var(--todo-prio-media) 7%, var(--surface));
+}
+
+.vfeed-chip-bed {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: var(--action);
+}
+
+.vfeed-chip-name {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.vfeed-chip-vals {
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--text);
+}
+
+.vfeed-chip-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  margin-top: 2px;
+}
+
+.vfeed-chip-alert {
+  display: inline-flex;
+  color: var(--todo-prio-media);
+}
+
+.vfeed-chip-time {
+  margin-left: auto;
+  font-size: 0.6875rem;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+}
+
+.vfeed-altered {
+  color: var(--todo-prio-media);
+  font-weight: 700;
+}
+
+.vfeed-footnote {
+  margin: 8px 0 0;
+  font-size: 0.6875rem;
+  color: var(--text-muted);
+}
+
+.vfeed-empty {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 4px 0 2px;
+}
+
+.vfeed-empty .empty-state-title {
+  font-size: calc(14px * var(--density-font));
+  font-weight: 600;
+  color: var(--text);
+}
+
+.vfeed-empty .empty-state-lead {
+  font-size: calc(13px * var(--density-font));
+  line-height: 1.45;
+  color: var(--text-muted);
+  max-width: 36ch;
+}
+
+/* Entrega roster panel — tokens + shared modal actions (design.md) */
+.entrega-roster-panel-host:empty {
+  display: none;
+}
+
+.entrega-roster-panel-host:not(:empty) {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  pointer-events: auto;
+}
+
+.roster-panel {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: var(--color-paper);
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-ui);
+}
+
+.roster-panel-header {
+  padding: 12px 16px 10px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--color-surface);
+  flex-shrink: 0;
+}
+
+html.electron-macos-inset-bar .roster-panel-header {
+  padding-top: max(var(--electron-macos-chrome-top, 52px), 12px);
+  padding-left: max(var(--titlebar-traffic-gap, 96px), 16px);
+}
+
+.roster-panel-title {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.roster-panel-sub {
+  font-size: 0.6875rem;
+  color: var(--text-muted);
+}
+
+.roster-active-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-left: auto;
+  font-size: 0.625rem;
+  color: var(--action);
+  background: color-mix(in oklab, var(--action) 12%, var(--surface));
+  border: 1px solid color-mix(in oklab, var(--action) 45%, var(--border));
+  padding: 2px 9px;
+  border-radius: var(--radius-pill);
+}
+
+.roster-list {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.roster-section {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0.02em;
+  color: var(--text-muted);
+  padding: 10px 16px 4px;
+  border-bottom: 1px solid var(--divider);
+}
+
+.roster-row {
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--divider);
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  cursor: pointer;
+  transition: background var(--dur-fast) var(--ease-out);
+}
+
+.roster-row:hover,
+.roster-row:focus-visible {
+  background: color-mix(in oklab, var(--action) 6%, var(--surface));
+  outline: none;
+}
+
+.roster-row:focus-visible {
+  box-shadow: inset 0 0 0 2px var(--color-focus-ring);
+}
+
+.roster-row--ctx {
+  border-left: 2px solid color-mix(in oklab, var(--action) 38%, transparent);
+}
+
+.roster-row-bed {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--action);
+  width: 44px;
+  flex-shrink: 0;
+}
+
+.roster-row-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.roster-row-name {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--text);
+}
+
+.roster-row-dx {
+  font-size: 0.6875rem;
+  color: var(--text-muted);
+  margin-top: 1px;
+}
+
+.roster-row-ctx {
+  font-size: 0.75rem;
+  color: var(--color-accent-soft-text);
+  margin-top: 3px;
+  line-height: 1.4;
+}
+
+.roster-row-empty {
+  font-size: 0.6875rem;
+  color: var(--text-muted);
+  margin-top: 3px;
+  opacity: 0.72;
+}
+
+.roster-row-right {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+}
+
+.roster-sbadge {
+  font-size: 0.625rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  border: 1px solid transparent;
+}
+
+.roster-sbadge--critical {
+  background: color-mix(in oklab, var(--error) 12%, var(--surface));
+  border-color: color-mix(in oklab, var(--error) 28%, var(--border));
+  color: var(--error);
+}
+
+.roster-sbadge--unstable {
+  background: color-mix(in oklab, var(--todo-prio-media) 12%, var(--surface));
+  border-color: color-mix(in oklab, var(--todo-prio-media) 28%, var(--border));
+  color: var(--todo-prio-media);
+}
+
+.roster-sbadge--stable {
+  background: color-mix(in oklab, var(--success) 12%, var(--surface));
+  border-color: color-mix(in oklab, var(--success) 28%, var(--border));
+  color: var(--success);
+}
+
+.roster-sbadge--none {
+  background: color-mix(in oklab, var(--text) 6%, var(--surface));
+  border-color: var(--border);
+  color: var(--text-muted);
+}
+
+.roster-icon-flags {
+  display: flex;
+  gap: 3px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.roster-icon-flag {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  font-size: 0.625rem;
+  color: var(--color-accent-soft-text);
+  background: var(--lab-chip-bg);
+  border: 1px solid color-mix(in oklab, var(--action) 22%, var(--border));
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+}
+
+.roster-panel-footer {
+  margin: 0;
+  padding: 10px 16px max(10px, env(safe-area-inset-bottom, 0px));
+  border-top: 1px solid var(--divider);
+  background: var(--color-surface);
+  flex-shrink: 0;
+  justify-content: stretch;
+}
+
+.roster-panel-footer .roster-foot-btn {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+/* Roster queda detrás del modal de paciente — ocultar pie duplicado */
+body:has(#entrega-modal-backdrop.entrega-modal-backdrop.open) .roster-panel-footer {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.clinical-registration-modal {
+  width: min(96vw, 32rem);
+  max-width: none;
+  padding: clamp(22px, 3vw, 28px);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-md);
+}
+
+.clinical-registration-modal .clinical-onboarding-title {
+  margin-bottom: 8px;
+}
+
+.clinical-registration-lead {
+  font-size: 0.9375rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  margin: 0 0 20px;
+  max-width: 52rem;
+}
+
+.clinical-registration-error {
+  color: var(--error);
+  font-size: 0.8125rem;
+  margin: 0.5rem 0 0;
+}
+
+#clinical-teams-backdrop.clinical-teams-backdrop {
+  background: color-mix(in oklab, var(--color-ink) 42%, transparent);
+}
+
+#clinical-teams-backdrop.clinical-teams-backdrop.open {
+  align-items: center;
+  justify-content: center;
+  padding: max(12px, env(safe-area-inset-top, 0px)) 12px
+    max(12px, env(safe-area-inset-bottom, 0px));
+  overflow: hidden;
+  overscroll-behavior: none;
+  animation: fade-in var(--dur-fast) var(--ease-out);
+}
+
+body.clinical-teams-modal-open {
+  overflow: hidden;
+}
+
+html.electron-macos-inset-bar #clinical-teams-backdrop.clinical-teams-backdrop.open {
+  padding-top: max(
+    var(--electron-macos-chrome-top, 52px),
+    12px,
+    env(safe-area-inset-top, 0px)
+  );
+}
+
+/* lab.css define .modal { width: 500px } después — hace falta mayor especificidad */
+#clinical-teams-backdrop .modal.clinical-teams-modal {
+  width: min(96vw, 1180px);
+  max-width: none;
+  max-height: min(88dvh, calc(var(--app-height) - 48px));
+  margin: 0;
+  flex-shrink: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  gap: 0;
+  background: var(--surface);
+  color: var(--text);
+  border-radius: var(--radius-container);
+  border: 1px solid color-mix(in oklab, var(--border) 90%, transparent);
+  box-shadow: var(--shadow-md);
+  animation: modal-in var(--dur-normal) var(--ease-out);
+}
+
+.clinical-teams-modal-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 18px;
+  min-height: 56px;
+  box-sizing: border-box;
+  border-bottom: 1px solid var(--divider);
+  flex-shrink: 0;
+  background: color-mix(in oklab, var(--surface) 98%, var(--bg));
+}
+
+.clinical-teams-modal h3,
+.clinical-teams-modal h3#clinical-teams-title {
+  margin: 0;
+  padding: 0;
+  flex: 1;
+  min-width: 0;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+.clinical-teams-dismiss {
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  background: color-mix(in oklab, var(--surface) 92%, var(--bg));
+  color: var(--text-muted);
+  font-size: 1.35rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.clinical-teams-dismiss:hover {
+  color: var(--text);
+  border-color: color-mix(in oklab, var(--action) 35%, var(--border));
+  background: color-mix(in oklab, var(--action) 10%, var(--surface));
+}
+
+.clinical-teams-dismiss:focus-visible {
+  outline: 2px solid color-mix(in oklab, var(--action) 45%, transparent);
+  outline-offset: 1px;
+}
+
+#clinical-teams-backdrop .clinical-teams-panel-body {
+  overflow-x: clip;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  flex: 1;
+  min-height: 0;
+  max-height: calc(min(88dvh, calc(var(--app-height) - 48px)) - 56px);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  column-gap: clamp(20px, 2.5vw, 28px);
+  row-gap: 1.25rem;
+  align-items: start;
+  padding: clamp(18px, 2.5vw, 28px);
+  scrollbar-gutter: stable;
+}
+
+#clinical-teams-backdrop .clinical-teams-panel-body > .clinical-teams-handle-hint,
+#clinical-teams-backdrop .clinical-teams-panel-body > .clinical-teams-section--create,
+#clinical-teams-backdrop .clinical-teams-panel-body > .clinical-teams-section--more,
+#clinical-teams-backdrop .clinical-teams-panel-body > .clinical-teams-section--join-code {
+  grid-column: 1 / -1;
+}
+
+#clinical-teams-backdrop .clinical-teams-panel-body > .clinical-teams-section--joined {
+  grid-column: 1;
+}
+
+#clinical-teams-backdrop .clinical-teams-panel-body > .clinical-teams-section--directory {
+  grid-column: 2;
+}
+
+#clinical-teams-backdrop .clinical-teams-section--more {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: clamp(16px, 2vw, 24px);
+  row-gap: 12px;
+  align-items: start;
+}
+
+#clinical-teams-backdrop .clinical-teams-section--more > .clinical-teams-collapse,
+#clinical-teams-backdrop .clinical-teams-section--more .clinical-teams-advanced-rotation {
+  grid-column: 1 / -1;
+}
+
+#clinical-teams-backdrop .clinical-teams-section--more .clinical-teams-profile-panel {
+  grid-column: 1 / -1;
+  min-width: 0;
+}
+
+@media (max-width: 860px) {
+  #clinical-teams-backdrop .clinical-teams-panel-body {
+    grid-template-columns: 1fr;
+  }
+
+  #clinical-teams-backdrop .clinical-teams-panel-body > .clinical-teams-section--joined,
+  #clinical-teams-backdrop .clinical-teams-panel-body > .clinical-teams-section--directory {
+    grid-column: 1 / -1;
+  }
+
+  #clinical-teams-backdrop .clinical-teams-section--more {
+    grid-template-columns: 1fr;
+  }
+
+  #clinical-teams-backdrop .clinical-teams-section--more .clinical-teams-profile-panel {
+    grid-column: 1 / -1;
+  }
+}
+
+#clinical-teams-backdrop .clinical-teams-panel-body .clinical-teams-profile-panel .clinical-teams-create-form,
+#clinical-teams-backdrop .clinical-teams-create-panel .clinical-teams-create-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 20px;
+  row-gap: 12px;
+}
+
+#clinical-teams-backdrop
+  .clinical-teams-panel-body
+  .clinical-teams-profile-panel
+  .clinical-teams-create-form
+  .field-group {
+  margin-bottom: 0;
+  grid-column: 1 / -1;
+}
+
+#clinical-teams-backdrop
+  .clinical-teams-panel-body
+  .clinical-teams-profile-panel
+  .clinical-teams-profile-save,
+#clinical-teams-backdrop
+  .clinical-teams-panel-body
+  .clinical-teams-profile-panel
+  .clinical-teams-legacy-banner,
+#clinical-teams-backdrop
+  .clinical-teams-panel-body
+  .clinical-teams-profile-panel
+  .clinical-teams-profile-handle,
+#clinical-teams-backdrop
+  .clinical-teams-panel-body
+  .clinical-teams-profile-panel
+  .clinical-teams-lan-directory-note,
+#clinical-teams-backdrop
+  .clinical-teams-create-panel
+  .clinical-teams-create-form
+  .modal-actions,
+#clinical-teams-backdrop
+  .clinical-teams-create-panel
+  .clinical-teams-create-form
+  .clinical-teams-create-service-row,
+#clinical-teams-backdrop
+  .clinical-teams-create-panel
+  .clinical-teams-create-form
+  .clinical-teams-create-cycle-hint {
+  grid-column: 1 / -1;
+}
+
+#clinical-teams-backdrop
+  .clinical-teams-create-panel
+  .clinical-teams-create-form
+  .clinical-teams-create-service-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  column-gap: 20px;
+  row-gap: 0;
+}
+
+#clinical-teams-backdrop
+  .clinical-teams-create-panel
+  .clinical-teams-create-form
+  .clinical-teams-create-service-row
+  .field-group {
+  margin-bottom: 0;
+}
+
+#clinical-teams-backdrop
+  .clinical-teams-create-panel
+  .clinical-teams-create-form
+  .clinical-teams-create-cycle-hint {
+  margin: -4px 0 0;
+}
+
+@media (max-width: 860px) {
+  #clinical-teams-backdrop
+    .clinical-teams-panel-body
+    .clinical-teams-profile-panel
+    .clinical-teams-create-form,
+  #clinical-teams-backdrop
+    .clinical-teams-create-panel
+    .clinical-teams-create-form {
+    grid-template-columns: 1fr;
+  }
+
+  #clinical-teams-backdrop
+    .clinical-teams-create-panel
+    .clinical-teams-create-form
+    .clinical-teams-create-service-row {
+    grid-template-columns: 1fr;
+    row-gap: 12px;
+  }
+}
+
+.clinical-teams-lead {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.clinical-teams-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.clinical-teams-section--joined,
+.clinical-teams-section--directory {
+  padding: 16px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background: color-mix(in oklab, var(--surface) 98%, var(--bg));
+}
+
+.clinical-teams-top-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: stretch;
+}
+
+.clinical-teams-top-actions--split .clinical-teams-create-open-btn,
+.clinical-teams-top-actions--split .clinical-teams-open-lan-users-btn {
+  flex: 1 1 12rem;
+  width: auto;
+  min-height: 40px;
+  justify-content: center;
+}
+
+.clinical-teams-open-lan-users-btn {
+  min-height: 40px;
+}
+
+.clinical-teams-section--joined {
+  background: color-mix(in oklab, var(--action) 7%, var(--surface));
+  border-color: color-mix(in oklab, var(--action) 18%, var(--border));
+}
+
+.clinical-teams-section--more {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.clinical-teams-section-intro {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.clinical-teams-section-head-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.clinical-teams-section-head-row .clinical-teams-section-intro {
+  flex: 1;
+  min-width: 12rem;
+}
+
+.clinical-teams-section-title {
+  margin: 0;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  text-transform: none;
+  color: var(--text);
+}
+
+.clinical-teams-section--joined .clinical-teams-section-title {
+  color: var(--text);
+}
+
+.clinical-teams-section-desc {
+  margin: 0;
+  font-size: 0.75rem;
+  line-height: 1.45;
+  color: var(--text-muted);
+}
+
+.clinical-teams-collapse {
+  display: block;
+}
+
+.clinical-teams-collapse--section {
+  margin: 0;
+}
+
+.clinical-teams-collapse-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+}
+
+.clinical-teams-collapse-summary::-webkit-details-marker {
+  display: none;
+}
+
+.clinical-teams-collapse-summary::marker {
+  content: '';
+  font-size: 0;
+}
+
+.clinical-teams-collapse--section > .clinical-teams-collapse-summary {
+  position: relative;
+  padding-left: 1.15rem;
+}
+
+.clinical-teams-collapse--section > .clinical-teams-collapse-summary::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  top: 0.1em;
+  color: var(--text-muted);
+  transition: transform 0.15s ease;
+}
+
+.clinical-teams-collapse--section[open] > .clinical-teams-collapse-summary::before {
+  transform: rotate(90deg);
+}
+
+.clinical-teams-collapse-summary-head {
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.clinical-teams-collapse-summary-head .clinical-teams-section-intro {
+  flex: 1;
+  min-width: 12rem;
+}
+
+.clinical-teams-collapse-summary-actions {
+  flex-shrink: 0;
+}
+
+.clinical-teams-collapse-body {
+  margin-top: 12px;
+}
+
+.clinical-teams-collapse--card-block {
+  border-top: 1px solid var(--divider);
+}
+
+.clinical-teams-collapse--card-block > .clinical-teams-collapse-summary {
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  margin: 0;
+}
+
+.clinical-teams-collapse--card-block > .clinical-teams-collapse-summary::before {
+  content: '▸';
+  flex-shrink: 0;
+  color: var(--text-muted);
+  transition: transform 0.15s ease;
+}
+
+.clinical-teams-collapse--card-block[open] > .clinical-teams-collapse-summary::before {
+  transform: rotate(90deg);
+}
+
+.clinical-teams-collapse--card-block > .clinical-teams-collapse-body {
+  margin-top: 0;
+  padding: 0 16px 14px;
+}
+
+.clinical-teams-collapse--card-block.clinical-teams-card-members > .clinical-teams-collapse-body {
+  padding-top: 0;
+}
+
+.clinical-teams-collapse--card-block.clinical-teams-my-cycle-box > .clinical-teams-collapse-body {
+  padding-bottom: 12px;
+}
+
+.clinical-teams-collapse--card-block .clinical-teams-members-heading,
+.clinical-teams-collapse--card-block .clinical-teams-my-cycle-title,
+.clinical-teams-collapse--card-block .clinical-teams-invite-summary {
+  margin: 0;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+.clinical-teams-invite-summary {
+  display: block;
+}
+
+.clinical-lan-users-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+}
+
+.clinical-lan-users-backdrop {
+  z-index: var(--z-clinical-lan-users);
+  background: color-mix(in oklab, var(--color-ink) 48%, transparent);
+}
+
+.clinical-lan-users-backdrop.open {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Directorio LAN debe quedar encima de Mi rotación cuando ambos están abiertos */
+body.clinical-lan-directory-open #clinical-lan-users-backdrop.clinical-lan-users-backdrop.open {
+  z-index: var(--z-clinical-lan-directory);
+}
+
+body.clinical-lan-directory-open #clinical-teams-backdrop.clinical-teams-backdrop.open {
+  z-index: var(--z-clinical-teams-lower);
+}
+
+.clinical-admin-code-backdrop {
+  z-index: var(--z-clinical-admin);
+  background: color-mix(in oklab, var(--color-ink) 48%, transparent);
+}
+
+.clinical-admin-code-backdrop.open {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#clinical-admin-code-backdrop .modal.clinical-admin-code-modal {
+  width: min(92vw, 420px);
+  margin: 0;
+  padding: 0 20px 20px;
+  background: var(--surface);
+  color: var(--text);
+  border-radius: var(--radius-container);
+  border: 1px solid color-mix(in oklab, var(--border) 90%, transparent);
+  box-shadow: var(--shadow-md);
+}
+
+.clinical-admin-code-lead {
+  margin: 0 0 12px;
+  color: var(--text-muted, var(--muted));
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.clinical-admin-code-error {
+  margin: 0 0 12px;
+  color: var(--danger);
+  font-size: 0.88rem;
+}
+
+#clinical-lan-users-backdrop .modal.clinical-lan-users-modal {
+  width: min(96vw, 1240px);
+  max-width: none;
+  max-height: min(86dvh, calc(var(--app-height) - 48px));
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--surface);
+  color: var(--text);
+  border-radius: var(--radius-container);
+  border: 1px solid color-mix(in oklab, var(--border) 90%, transparent);
+  box-shadow: var(--shadow-md);
+}
+
+.clinical-lan-users-modal-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--divider);
+  flex-shrink: 0;
+}
+
+.clinical-lan-users-modal-head h3 {
+  margin: 0;
+  font-size: 1.0625rem;
+  font-weight: 700;
+}
+
+.clinical-lan-users-panel-body {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  flex: 1;
+  min-height: 0;
+  padding: 18px 20px 22px;
+}
+
+.clinical-lan-users-modal-lead {
+  margin: 0;
+  font-size: 0.8125rem;
+  line-height: 1.45;
+  color: var(--text-muted);
+}
+
+.clinical-lan-directory-head {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.clinical-lan-directory-head .clinical-lan-directory-refresh-btn {
+  margin-left: 8px;
+  vertical-align: baseline;
+}
+
+.clinical-lan-directory-toolbar {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) repeat(3, minmax(0, 0.72fr)) auto;
+  gap: 10px;
+  align-items: end;
+}
+
+.clinical-lan-directory-search-wrap {
+  min-width: 0;
+}
+
+.clinical-lan-directory-search {
+  width: 100%;
+  min-height: 36px;
+}
+
+.clinical-lan-directory-filter {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.clinical-lan-directory-filter-label {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.clinical-lan-directory-match-count {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  padding-bottom: 8px;
+  justify-self: end;
+}
+
+@media (max-width: 900px) {
+  .clinical-lan-directory-toolbar {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .clinical-lan-directory-search-wrap {
+    grid-column: 1 / -1;
+  }
+
+  .clinical-lan-directory-match-count {
+    grid-column: 1 / -1;
+    justify-self: start;
+    padding-bottom: 0;
+  }
+}
+
+.clinical-lan-rank-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.clinical-lan-rank-group {
+  border: 1px solid color-mix(in oklab, var(--border) 85%, transparent);
+  border-radius: var(--radius-lg);
+  background: color-mix(in oklab, var(--surface) 96%, var(--bg));
+  overflow: hidden;
+}
+
+.clinical-lan-user-card[hidden],
+.clinical-lan-user-card--filtered-out,
+.clinical-lan-rank-group[hidden],
+.clinical-lan-rank-group--filtered-out {
+  display: none !important;
+}
+
+.clinical-lan-rank-group-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 14px;
+  cursor: pointer;
+  list-style: none;
+  font-weight: 700;
+  color: var(--text);
+  background: color-mix(in oklab, var(--action) 6%, var(--surface));
+  border-bottom: 1px solid transparent;
+}
+
+.clinical-lan-rank-group[open] .clinical-lan-rank-group-summary {
+  border-bottom-color: color-mix(in oklab, var(--border) 75%, transparent);
+}
+
+.clinical-lan-rank-group-summary::-webkit-details-marker {
+  display: none;
+}
+.clinical-lan-rank-group-summary::marker {
+  content: '';
+  font-size: 0;
+}
+
+.clinical-lan-rank-group-summary::before {
+  content: '▸';
+  margin-right: 8px;
+  color: var(--text-muted);
+  transition: transform 0.15s ease;
+}
+
+.clinical-lan-rank-group[open] .clinical-lan-rank-group-summary::before {
+  transform: rotate(90deg);
+}
+
+.clinical-lan-rank-group-title {
+  flex: 1;
+  font-size: 0.875rem;
+  letter-spacing: 0.03em;
+}
+
+.clinical-lan-rank-group-count {
+  min-width: 1.75rem;
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-align: center;
+  color: var(--text-muted);
+  background: color-mix(in oklab, var(--surface) 90%, var(--bg));
+  border: 1px solid color-mix(in oklab, var(--border) 80%, transparent);
+}
+
+.clinical-lan-user-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px 14px 14px;
+}
+
+.clinical-lan-user-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(420px, 38%);
+  gap: 12px 18px;
+  align-items: center;
+  padding: 12px 14px;
+  border: 1px solid color-mix(in oklab, var(--border) 80%, transparent);
+  border-radius: var(--radius-md);
+  background: color-mix(in oklab, var(--surface) 98%, var(--bg));
+}
+
+.clinical-lan-user-card-main {
+  min-width: 0;
+}
+
+.clinical-lan-user-card-identity {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 10px;
+}
+
+.clinical-lan-user-sala-chip {
+  flex-shrink: 0;
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: color-mix(in oklab, var(--action) 8%, var(--surface));
+  border: 1px solid color-mix(in oklab, var(--border) 75%, transparent);
+}
+
+.clinical-lan-user-activity-chip {
+  flex-shrink: 0;
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+}
+
+.clinical-lan-user-activity-chip--active {
+  color: color-mix(in oklab, var(--success) 88%, var(--text));
+  background: color-mix(in oklab, var(--success) 12%, var(--surface));
+  border-color: color-mix(in oklab, var(--success) 28%, var(--border));
+}
+
+.clinical-lan-user-activity-chip--recent {
+  color: color-mix(in oklab, var(--todo-prio-media) 90%, var(--text));
+  background: color-mix(in oklab, var(--todo-prio-media) 12%, var(--surface));
+  border-color: color-mix(in oklab, var(--todo-prio-media) 28%, var(--border));
+}
+
+.clinical-lan-user-activity-chip--stale {
+  color: color-mix(in oklab, var(--error) 82%, var(--text));
+  background: color-mix(in oklab, var(--error) 8%, var(--surface));
+  border-color: color-mix(in oklab, var(--error) 24%, var(--border));
+}
+
+.clinical-lan-user-activity-chip--unknown {
+  color: var(--text-muted);
+  background: color-mix(in oklab, var(--surface) 94%, var(--bg));
+  border-color: color-mix(in oklab, var(--border) 80%, transparent);
+  font-style: italic;
+  text-transform: none;
+  font-weight: 600;
+}
+
+.clinical-lan-user-card-activity {
+  margin: 4px 0 0;
+  font-size: 0.6875rem;
+  line-height: 1.35;
+  color: var(--text-muted);
+}
+
+.clinical-lan-user-card-placement {
+  margin: 6px 0 0;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.clinical-lan-users-placement--none {
+  font-style: italic;
+}
+
+.clinical-lan-user-card-assign {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr) 156px;
+  gap: 8px;
+  align-items: center;
+  min-width: 0;
+}
+
+.clinical-lan-user-card-assign .clinical-lan-assign-team,
+.clinical-lan-user-card-assign .clinical-lan-assign-cycle {
+  width: 100%;
+  min-height: 34px;
+  font-size: 0.8125rem;
+}
+
+.clinical-lan-assign-actions {
+  display: inline-flex;
+  align-items: stretch;
+  justify-content: flex-end;
+  gap: 2px;
+  min-width: 156px;
+  padding: 2px;
+  border: var(--border-hairline, 1px solid var(--border));
+  border-radius: var(--radius-pill, 999px);
+  background: color-mix(in oklab, var(--surface) 65%, var(--bg));
+}
+
+.clinical-lan-assign-actions .clinical-lan-assign-btn,
+.clinical-lan-assign-actions .clinical-lan-delete-user-btn {
+  min-height: 32px;
+  padding-inline: 12px;
+  white-space: nowrap;
+  border: none;
+  box-shadow: none;
+}
+
+.clinical-lan-assign-actions .clinical-lan-assign-btn + .clinical-lan-delete-user-btn {
+  border-left: 1px solid color-mix(in oklab, var(--border) 80%, var(--action));
+}
+
+.clinical-lan-delete-user-btn--placeholder {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+@media (max-width: 1040px) {
+  .clinical-lan-user-card {
+    grid-template-columns: 1fr;
+  }
+
+  .clinical-lan-user-card-assign {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .clinical-lan-assign-actions {
+    grid-column: 1 / -1;
+    justify-self: stretch;
+    min-width: 0;
+  }
+
+  .clinical-lan-assign-actions .clinical-lan-assign-btn,
+  .clinical-lan-assign-actions .clinical-lan-delete-user-btn {
+    flex: 1 1 0;
+  }
+}
+
+.clinical-lan-rank-group .clinical-lan-users-table-wrap {
+  border: none;
+  border-radius: 0;
+  background: transparent;
+}
+
+.clinical-lan-users-table--assign {
+  width: 100%;
+  table-layout: auto;
+  min-width: 980px;
+}
+
+.clinical-lan-users-table--assign .clinical-lan-users-col-handle {
+  width: 1%;
+  white-space: nowrap;
+}
+
+.clinical-lan-users-table--assign .clinical-lan-users-col-name {
+  width: 14%;
+  min-width: 128px;
+}
+
+.clinical-lan-users-table--assign .clinical-lan-users-col-placement {
+  width: 24%;
+  min-width: 220px;
+}
+
+.clinical-lan-users-table--assign .clinical-lan-users-col-sala {
+  width: 1%;
+  white-space: nowrap;
+}
+
+.clinical-lan-users-table--assign .clinical-lan-users-col-team {
+  width: 22%;
+  min-width: 180px;
+}
+
+.clinical-lan-users-table--assign .clinical-lan-users-col-cycle {
+  width: 16%;
+  min-width: 148px;
+}
+
+.clinical-lan-users-table--assign .clinical-lan-users-col-action {
+  width: 1%;
+  white-space: nowrap;
+  text-align: right;
+}
+
+.clinical-lan-user-row td {
+  vertical-align: middle;
+}
+
+.clinical-lan-users-handle {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.clinical-lan-users-handle--pending {
+  font-weight: 500;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.clinical-lan-users-name,
+.clinical-lan-users-placement {
+  display: block;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.clinical-lan-users-name {
+  font-size: 0.8125rem;
+  color: var(--text);
+}
+
+.clinical-lan-users-placement {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.clinical-lan-users-table--assign .clinical-lan-assign-team,
+.clinical-lan-users-table--assign .clinical-lan-assign-cycle {
+  width: 100%;
+  min-height: 34px;
+  font-size: 0.8125rem;
+}
+
+.clinical-lan-users-table--assign .clinical-lan-assign-btn {
+  min-height: 34px;
+  padding-inline: 12px;
+  white-space: nowrap;
+}
+
+.clinical-lan-users-action-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.clinical-lan-users-table--assign .clinical-lan-delete-user-btn {
+  min-height: 34px;
+  padding-inline: 10px;
+  white-space: nowrap;
+}
+
+.clinical-teams-create-form--elevated {
+  grid-template-columns: 1fr !important;
+}
+
+.clinical-teams-create-form--elevated .clinical-teams-create-elevated-hint,
+.clinical-teams-create-form--elevated .clinical-teams-create-submit-wrap {
+  grid-column: 1 / -1;
+}
+
+.clinical-lan-users-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8125rem;
+}
+
+.clinical-lan-users-table th,
+.clinical-lan-users-table td {
+  padding: 8px 10px;
+  text-align: left;
+  border-bottom: 1px solid color-mix(in oklab, var(--border) 70%, transparent);
+  vertical-align: top;
+}
+
+.clinical-lan-users-table th {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  background: color-mix(in oklab, var(--surface) 92%, var(--bg));
+}
+
+.clinical-lan-users-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.clinical-teams-browse-label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.clinical-teams-browse-select {
+  min-width: 9.5rem;
+  max-width: 100%;
+  font-size: 0.8125rem;
+  min-height: 36px;
+  padding: 6px 10px;
+}
+
+.clinical-teams-hint {
+  margin: 0.35rem 0 0;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+}
+
+.clinical-teams-details {
+  border: 1px solid color-mix(in oklab, var(--border) 90%, transparent);
+  border-radius: var(--radius-md);
+  background: color-mix(in oklab, var(--surface) 96%, var(--bg));
+  overflow: hidden;
+}
+
+.clinical-teams-details > summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 8px 10px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  user-select: none;
+}
+
+.clinical-teams-details > summary::-webkit-details-marker {
+  display: none;
+}
+.clinical-teams-details > summary::marker {
+  content: '';
+  font-size: 0;
+}
+
+.clinical-teams-details > summary::after {
+  content: '▾';
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  transition: transform 0.15s ease;
+}
+
+.clinical-teams-details:not([open]) > summary::after {
+  transform: rotate(-90deg);
+}
+
+.clinical-teams-details[open] {
+  overflow: visible;
+}
+
+.clinical-teams-details[open] > .clinical-teams-details-body {
+  display: block;
+}
+
+.clinical-teams-details:not([open]) > .clinical-teams-details-body {
+  display: none;
+}
+
+.clinical-teams-details-body {
+  padding: 10px 10px 12px;
+  border-top: 1px solid color-mix(in oklab, var(--border) 65%, transparent);
+}
+
+.clinical-teams-details-body .clinical-teams-create-form .field-group:last-of-type {
+  margin-bottom: 0;
+}
+
+.clinical-teams-profile-panel {
+  padding: 14px 16px 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+}
+
+.clinical-teams-subsection-title {
+  margin: 0 0 12px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.clinical-teams-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.clinical-teams-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 0;
+  background: var(--surface);
+  overflow: hidden;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.clinical-teams-card--mine {
+  border-color: color-mix(in oklab, var(--action) 22%, var(--border));
+  background: color-mix(in oklab, var(--surface) 96%, var(--action) 4%);
+}
+
+.clinical-teams-card--directory {
+  background: color-mix(in oklab, var(--surface) 98%, var(--bg));
+}
+
+.clinical-teams-card-top {
+  display: block;
+  padding: 14px 16px 12px;
+}
+
+.clinical-teams-card-top--directory {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.clinical-teams-card-top-text {
+  min-width: 0;
+  flex: 1;
+}
+
+.clinical-teams-card-actions {
+  flex-shrink: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: 8px;
+  padding-top: 2px;
+  max-width: min(100%, 12rem);
+}
+
+.clinical-teams-manage-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.clinical-teams-card-join-reason {
+  margin: 0;
+  padding: 0 16px 12px;
+  font-size: 0.75rem;
+  line-height: 1.45;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--divider);
+}
+
+.clinical-teams-card-patients {
+  margin-top: 4px;
+}
+
+.clinical-teams-card-eyebrow {
+  display: block;
+  margin: 0 0 4px;
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  color: var(--text-muted);
+}
+
+.clinical-teams-card-title {
+  display: block;
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--text);
+}
+
+.clinical-teams-card-meta {
+  display: block;
+  margin: 6px 0 0;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--text-muted);
+}
+
+.clinical-teams-card-members {
+  display: block;
+  padding: 12px 16px 14px;
+  border-top: 1px solid var(--divider);
+}
+
+.clinical-teams-card-members.clinical-teams-collapse--card-block {
+  padding: 0;
+  border-top: none;
+}
+
+.clinical-teams-card-members--compact {
+  padding-bottom: 12px;
+}
+
+.clinical-teams-members-heading {
+  display: block;
+  margin: 0 0 8px;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+.clinical-teams-member-rows {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.clinical-teams-member-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--divider);
+  font-size: 0.8125rem;
+  line-height: 1.35;
+}
+
+.clinical-teams-member-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.clinical-teams-member-row-name {
+  font-weight: 600;
+  color: var(--text);
+  min-width: 0;
+}
+
+.clinical-teams-member-row-meta {
+  flex-shrink: 0;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.clinical-teams-member-cycle {
+  color: var(--color-accent);
+  font-weight: 500;
+}
+
+.clinical-teams-invite-link-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.clinical-teams-invite-code-line {
+  margin: 0 0 10px;
+  font-size: 0.875rem;
+}
+
+.clinical-teams-invite-code {
+  font-family: var(--font-mono, 'IBM Plex Mono', monospace);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--color-accent);
+}
+
+.clinical-teams-section--create {
+  padding: 16px;
+  border-radius: var(--radius-lg);
+  border: 1px solid color-mix(in oklab, var(--action) 32%, var(--border));
+  background: color-mix(in oklab, var(--action) 6%, var(--surface));
+}
+
+.clinical-teams-top-actions:not(.clinical-teams-top-actions--split) .clinical-teams-create-open-btn {
+  width: 100%;
+  justify-content: center;
+}
+
+.clinical-teams-create-panel {
+  margin-top: 12px;
+  padding: 14px 16px 16px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.clinical-teams-section--join-code {
+  padding: 16px;
+  border-radius: var(--radius-lg);
+  border: 1px solid color-mix(in oklab, var(--color-accent) 35%, var(--border));
+  background: color-mix(in oklab, var(--color-accent) 5%, var(--surface));
+}
+
+.clinical-teams-join-code-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.clinical-teams-join-code-code-row {
+  display: block;
+  margin: 0;
+}
+
+.clinical-teams-join-code-code-row .profile-input {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.clinical-teams-join-submit-wrap .btn-save {
+  width: 100%;
+}
+
+@media (min-width: 720px) {
+  .clinical-teams-join-code-form {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr) auto;
+    gap: 12px 16px;
+    align-items: end;
+  }
+
+  .clinical-teams-join-code-form .clinical-teams-join-code-code-row {
+    grid-column: 1;
+  }
+
+  .clinical-teams-join-code-form .clinical-teams-add-cycle-group {
+    grid-column: 2;
+    margin: 0;
+  }
+
+  .clinical-teams-join-submit-wrap {
+    grid-column: 3;
+    align-self: end;
+  }
+
+  .clinical-teams-join-submit-wrap .btn-save {
+    width: auto;
+    min-width: 7rem;
+    white-space: nowrap;
+  }
+}
+
+.clinical-team-invite-browser-gate {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-modal-nested);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: color-mix(in oklab, var(--bg) 55%, transparent);
+  backdrop-filter: blur(6px);
+}
+
+.clinical-team-invite-browser-gate-card {
+  max-width: 420px;
+  padding: 20px 22px;
+  border-radius: 12px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+}
+
+.clinical-team-invite-browser-gate-card h2 {
+  margin: 0 0 10px;
+  font-size: 1.125rem;
+}
+
+.clinical-team-invite-browser-gate-card p,
+.clinical-team-invite-browser-gate-card li {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+.clinical-team-invite-browser-gate-code {
+  font-size: 1rem !important;
+  color: var(--text) !important;
+}
+
+.clinical-team-invite-browser-gate-card .btn-save {
+  margin-top: 14px;
+  width: 100%;
+}
+
+.clinical-teams-add-cycle-group {
+  margin-top: 4px;
+}
+
+.clinical-teams-my-cycle-box {
+  margin: 0;
+  padding: 12px 16px;
+  border-top: 1px solid var(--divider);
+  background: color-mix(in oklab, var(--color-accent) 6%, var(--surface));
+}
+
+.clinical-teams-leave-box {
+  margin: 0;
+  padding: 10px 16px 14px;
+  border-top: 1px solid var(--divider);
+}
+
+.clinical-teams-leave-box .clinical-teams-leave-btn {
+  width: 100%;
+}
+
+.clinical-teams-my-cycle-title {
+  margin: 0 0 4px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.clinical-teams-my-cycle-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.clinical-teams-my-cycle-row .clinical-teams-cycle-select {
+  flex: 1 1 120px;
+  min-width: 100px;
+}
+
+.clinical-teams-guardia-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.875rem;
+  cursor: pointer;
+  padding: 6px 0;
+}
+
+.clinical-teams-invite-box {
+  margin: 0;
+  padding: 12px 16px 16px;
+  border-top: 1px solid var(--divider);
+  background: color-mix(in oklab, var(--bg) 40%, var(--surface));
+}
+
+.clinical-teams-add-member-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.clinical-teams-add-member-label {
+  margin: 0;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.clinical-teams-add-member-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.clinical-teams-add-member-fields .field-group {
+  margin: 0;
+}
+
+.clinical-teams-add-member-fields .clinical-teams-add-cycle-group select {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.clinical-teams-add-member-fields .clinical-teams-btn-add {
+  width: 100%;
+  min-height: 40px;
+}
+
+@media (min-width: 640px) {
+  .clinical-teams-add-member-fields {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr) auto;
+    gap: 10px 12px;
+    align-items: end;
+  }
+
+  .clinical-teams-add-member-fields .clinical-teams-btn-add {
+    width: auto;
+    min-width: 6.5rem;
+    align-self: end;
+  }
+}
+
+.clinical-teams-invite-hint {
+  margin: 0;
+  font-size: 0.6875rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.clinical-teams-invite-row {
+  display: flex;
+  gap: 8px;
+  align-items: stretch;
+}
+
+.clinical-teams-add-member-input {
+  flex: 1;
+  min-width: 0;
+  min-height: 40px;
+}
+
+.clinical-teams-btn-add {
+  flex-shrink: 0;
+  min-height: 40px;
+  padding-inline: 16px;
+  font-size: 0.8125rem;
+}
+
+.clinical-teams-empty {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  margin: 0;
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  background: color-mix(in oklab, var(--surface) 92%, var(--bg));
+  border: 1px dashed color-mix(in oklab, var(--border) 85%, transparent);
+  text-align: center;
+  line-height: 1.45;
+  flex: 1 1 100%;
+}
+
+.clinical-teams-empty--inline {
+  border-style: solid;
+  border-color: var(--divider);
+  background: transparent;
+  text-align: left;
+  flex: none;
+}
+
+.clinical-teams-empty--section {
+  text-align: left;
+  padding: 12px 14px;
+  line-height: 1.5;
+}
+
+.clinical-onboarding-progress {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.clinical-onboarding-progress span {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+}
+
+.clinical-onboarding-progress span.is-active {
+  background: var(--action);
+  color: var(--color-on-accent);
+  border-color: transparent;
+}
+
+.clinical-teams-legacy-banner {
+  background: rgba(255, 159, 10, 0.12);
+  border: 1px solid rgba(255, 159, 10, 0.35);
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 0.85rem;
+  margin: 0 0 10px;
+}
+
+.clinical-teams-handle-display {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.clinical-teams-joined-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 10px;
+  border-radius: var(--radius-pill);
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--success);
+  background: color-mix(in oklab, var(--success) 16%, transparent);
+  border: 1px solid color-mix(in oklab, var(--success) 38%, transparent);
+  white-space: nowrap;
+}
+
+.clinical-teams-join-hint {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  line-height: 1.35;
+  max-width: 10rem;
+  text-align: right;
+}
+
+.clinical-teams-join-btn {
+  flex-shrink: 0;
+  min-height: 36px;
+  font-size: 0.8125rem;
+}
+
+.clinical-teams-create-form .field-group {
+  margin-bottom: 12px;
+}
+
+#clinical-team-r1-line-group[hidden] {
+  display: none !important;
+}
+
+.clinical-teams-create-form .field-group label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.clinical-teams-profile-save {
+  margin-top: 4px;
+  padding-top: 8px;
+  border-top: 1px solid var(--divider);
+}
+
+.clinical-teams-profile-save .btn-save {
+  width: 100%;
+  min-height: 42px;
+}
+
+html.dark .clinical-teams-profile-panel {
+  background: color-mix(in oklab, var(--surface) 96%, var(--color-ink));
+}
+
+html.dark #clinical-teams-backdrop .modal.clinical-teams-modal {
+  border-color: color-mix(in oklab, var(--border) 120%, transparent);
+}
+
+html.dark .clinical-teams-modal-head {
+  background: color-mix(in oklab, var(--surface) 94%, var(--color-ink));
+}
+
+html.dark .clinical-teams-section--joined {
+  background: color-mix(in oklab, var(--action) 12%, var(--surface));
+  border-color: color-mix(in oklab, var(--action) 28%, var(--border));
+}
+
+html.dark .clinical-teams-card--mine {
+  background: color-mix(in oklab, var(--surface) 90%, var(--action) 10%);
+}
+
+html.dark .clinical-teams-invite-box {
+  background: color-mix(in oklab, var(--color-paper) 35%, var(--surface));
+}
+
+html.dark .clinical-teams-section--directory {
+  background: color-mix(in oklab, var(--surface) 96%, var(--color-ink));
+}
+
+html.dark #clinical-lan-users-backdrop .modal.clinical-lan-users-modal {
+  border-color: color-mix(in oklab, var(--border) 120%, transparent);
+}
+
+html.dark .clinical-lan-rank-group {
+  background: color-mix(in oklab, var(--surface) 94%, var(--color-ink));
+}
+
+html.dark .clinical-lan-rank-group-summary {
+  background: color-mix(in oklab, var(--action) 8%, var(--surface));
+}
+
+.clinical-context-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 16px;
+  flex-shrink: 0;
+  padding: calc(8px * var(--density-space)) calc(20px * var(--density-space));
+  margin-left: calc(-1 * var(--shell-frame-inset));
+  margin-right: calc(-1 * var(--shell-frame-inset));
+  background: var(--surface);
+  border-bottom: 1px solid color-mix(in oklab, var(--border) 55%, transparent);
+}
+
+.clinical-context-bar[hidden] {
+  display: none;
+}
+
+.clinical-census-filters-mount {
+  flex: 1 1 220px;
+  min-width: 0;
+}
+
+.clinical-census-filters-mount[hidden] {
+  display: none;
+}
+
+.clinical-census-filters {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 8px 12px 4px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.clinical-census-filters--toolbar {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+  padding: 0;
+  border-bottom: none;
+}
+
+.clinical-census-filters--toolbar .clinical-census-filters-body {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+  flex: 1;
+  min-width: 0;
+}
+
+.clinical-census-filters--toolbar .clinical-census-filter {
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+}
+
+.clinical-census-filters--toolbar .clinical-census-filter .profile-input {
+  min-width: 7rem;
+  max-width: 11rem;
+}
+
+.clinical-census-filters--toolbar .clinical-census-filters-toggle {
+  width: auto;
+  flex-shrink: 0;
+  padding: 6px 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+}
+
+.clinical-census-filters--toolbar.is-collapsed .clinical-census-filters-body {
+  display: none;
+}
+
+.clinical-census-filters-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 4px 0;
+  border: 0;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  cursor: pointer;
+  text-align: left;
+}
+
+.clinical-census-filters-toggle:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 1px;
+}
+
+.clinical-census-filters-chevron::before {
+  content: '▾';
+}
+
+.clinical-census-filters.is-collapsed .clinical-census-filters-chevron::before {
+  content: '▸';
+}
+
+.clinical-census-filters-body {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.clinical-census-filters-body[hidden] {
+  display: none;
+}
+
+/* Clinical onboarding hides app chrome unless the guided tour needs those targets. */
+html.clinical-onboarding-active:not(.guided-tour-running) #patient-sidebar,
+html.clinical-onboarding-active:not(.guided-tour-running) .app-tabs-row,
+html.clinical-onboarding-active:not(.guided-tour-running) #guardia-census-panel,
+html.clinical-onboarding-active:not(.guided-tour-running) #main-area > [id^='appcontent-'] {
+  display: none !important;
+}
+
+html.clinical-onboarding-active:not(.guided-tour-running) #clinical-context-bar {
+  display: none;
+}
+
+html.guided-tour-running #clinical-onboarding-main {
+  display: none !important;
+}
+
+html.clinical-onboarding-active #main-area {
+  overflow: hidden;
+  min-height: 0;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-paper);
+}
+
+.clinical-onboarding-main {
+  position: relative;
+  z-index: 2;
+  flex: 1 1 auto;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  min-height: 0;
+  overflow-y: auto;
+  background: var(--color-paper);
+}
+
+.clinical-onboarding-stage {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  min-height: min(100%, 100%);
+  padding: clamp(28px, 6vh, 56px) clamp(20px, 5vw, 48px) clamp(32px, 8vh, 64px);
+  box-sizing: border-box;
+}
+
+.clinical-onboarding-stage-inner {
+  width: 100%;
+  max-width: min(52rem, 100%);
+}
+
+.clinical-onboarding-lead {
+  margin: 0 0 clamp(20px, 3vh, 28px);
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: var(--text-muted);
+  max-width: 42rem;
+}
+
+.clinical-onboarding-lead p {
+  margin: 0;
+}
+
+.clinical-onboarding-lead p + p {
+  margin-top: 0.65rem;
+}
+
+.clinical-onboard-gate-lead strong {
+  color: var(--text);
+}
+
+.clinical-onboarding-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: clamp(22px, 3vw, 32px) clamp(20px, 4vw, 40px);
+  box-shadow: var(--shadow-md);
+  color: var(--text);
+  width: 100%;
+  max-width: min(920px, 100%);
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.guardia-census-head-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 10px 16px;
+}
+
+.guardia-learn-nudge-btn {
+  margin-left: auto;
+  font-size: 0.8125rem;
+  white-space: nowrap;
+}
+
+.guardia-v7-upgrade-card {
+  margin: 12px auto 16px;
+  max-width: min(720px, calc(100% - 24px));
+  pointer-events: auto;
+}
+
+.guardia-v7-upgrade-bullets {
+  margin: 0 0 16px;
+  padding-left: 1.2rem;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: var(--text-muted);
+}
+
+.guardia-v7-upgrade-bullets li {
+  margin-bottom: 6px;
+}
+
+.guardia-v7-upgrade-bullets strong {
+  color: var(--text);
+}
+
+.guardia-v7-upgrade-progress {
+  margin: 0 0 8px;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.guardia-v7-upgrade-meter {
+  height: 6px;
+  border-radius: 999px;
+  background: color-mix(in oklab, var(--border) 70%, transparent);
+  overflow: hidden;
+  margin: 0 0 14px;
+}
+
+.guardia-v7-upgrade-meter-fill {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--action);
+  transition: width 0.25s ease;
+}
+
+.guardia-v7-upgrade-actions {
+  margin-top: 4px;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.clinical-onboarding-status {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+.clinical-onboard-session-actions {
+  margin-top: 20px;
+  justify-content: flex-start;
+}
+
+.clinical-onboarding-title,
+.clinical-teams-panel-body .clinical-onboarding-title {
+  margin: 0 0 10px;
+  font-size: clamp(1.35rem, 2.8vw, 1.65rem);
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+}
+
+.clinical-onboarding-card .clinical-teams-section-title {
+  margin: 0 0 10px;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.clinical-onboarding-card .clinical-teams-lead {
+  margin: 0 0 20px;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  max-width: 52rem;
+}
+
+.clinical-onboard-mode-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: clamp(12px, 2vw, 16px);
+}
+
+.clinical-onboard-mode-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  min-height: 9.5rem;
+  padding: clamp(18px, 2.5vw, 22px) clamp(18px, 2.5vw, 24px);
+  text-align: left;
+  font-family: inherit;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  transition:
+    border-color var(--dur-fast) var(--ease-out),
+    box-shadow var(--dur-fast) var(--ease-out),
+    transform var(--dur-fast) var(--ease-out),
+    background var(--dur-fast) var(--ease-out);
+}
+
+.clinical-onboard-mode-card-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.clinical-onboard-mode-card-icon {
+  flex-shrink: 0;
+  color: var(--text-muted);
+}
+
+.clinical-onboard-mode-card--primary {
+  border-color: color-mix(in oklab, var(--color-accent) 28%, var(--border));
+  background: color-mix(in oklab, var(--color-accent) 4%, var(--surface));
+}
+
+.clinical-onboard-mode-card--primary .clinical-onboard-mode-card-icon {
+  color: var(--color-accent);
+}
+
+.clinical-onboard-mode-card:hover,
+.clinical-onboard-mode-card:focus-visible {
+  border-color: color-mix(in oklab, var(--color-accent) 45%, var(--border));
+  box-shadow: var(--shadow-sm);
+  outline: none;
+}
+
+.clinical-onboard-mode-card:active {
+  transform: translateY(1px);
+}
+
+.clinical-onboard-mode-card-title {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.clinical-onboard-mode-card-desc {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+.clinical-onboard-form-shell {
+  padding: clamp(18px, 3vw, 24px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  color: var(--text);
+  width: 100%;
+  max-width: min(52rem, 100%);
+  box-sizing: border-box;
+}
+
+.clinical-onboard-form-shell--narrow {
+  max-width: min(28rem, 100%);
+}
+
+.clinical-onboard-form-shell--in-modal {
+  margin-top: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  max-width: none;
+}
+
+.clinical-registration-modal .clinical-onboard-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.clinical-registration-modal .clinical-onboard-form .field-group {
+  margin-bottom: 0;
+}
+
+.clinical-onboarding-main .clinical-onboard-form,
+.clinical-onboarding-main .clinical-onboard-form-shell .clinical-teams-create-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.clinical-onboarding-main .clinical-onboard-form .field-group,
+.clinical-onboarding-main .clinical-onboard-form-shell .field-group {
+  margin-bottom: 0;
+}
+
+.clinical-onboard-form-actions {
+  margin-top: 4px;
+  padding-top: 16px;
+  border-top: 1px solid var(--divider);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 12px;
+  justify-content: flex-end;
+}
+
+.clinical-onboard-form-actions .btn-save {
+  min-width: 10rem;
+}
+
+#clinical-onboard-local-form.clinical-onboard-form--local {
+  max-width: none;
+}
+
+.clinical-teams-panel-body .clinical-teams-section-title,
+.clinical-teams-panel-body .clinical-teams-lead,
+.clinical-teams-panel-body .clinical-teams-hint,
+.clinical-teams-panel-body label {
+  color: inherit;
+}
+
+.clinical-teams-panel-body .clinical-teams-section-title {
+  color: var(--text);
+}
+
+.clinical-teams-handle-hint {
+  padding: 10px 12px;
+  border-radius: var(--radius-md);
+  background: color-mix(in oklab, var(--action) 8%, var(--surface));
+  border: 1px solid color-mix(in oklab, var(--action) 20%, var(--border));
+}
+
+.clinical-teams-profile-handle {
+  margin: 0 0 8px;
+  padding: 8px 10px;
+  font-size: 0.8125rem;
+  border-radius: var(--radius-md);
+  background: color-mix(in oklab, var(--action) 6%, var(--surface));
+  border: 1px solid color-mix(in oklab, var(--action) 14%, var(--border));
+}
+
+.clinical-teams-lan-directory-note {
+  margin: 0 0 10px;
+  font-size: 0.75rem;
+  line-height: 1.45;
+  color: var(--text-muted);
+}
+
+.clinical-teams-panel-body .profile-input,
+.clinical-teams-panel-body select.profile-input {
+  background: var(--input-fill, var(--bg));
+  color: var(--text);
+  border-color: var(--border);
+}
+
+/* Mi rotación — barra superior clínica + Mi Perfil */
+.clinical-rotation-section {
+  flex-shrink: 0;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.clinical-rotation-section .app-bar-mi-rotacion {
+  width: 100%;
+  max-width: none;
+}
+
+/* Guardia: no Mi rotación in the top bar — only Filtros censo (equipos via Mi Perfil). */
+html.ui-density-guardia .clinical-context-bar .clinical-rotation-section,
+html.ui-density-guardia #btn-clinical-lan-connect {
+  display: none !important;
+}
+
+.app-bar-mi-rotacion {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  max-width: min(320px, 42vw);
+  padding: 6px 14px;
+  border: 1px solid color-mix(in oklab, var(--color-accent) 45%, var(--border));
+  border-radius: var(--radius-pill);
+  background: color-mix(in oklab, var(--color-accent) 10%, var(--surface));
+  color: var(--text);
+  cursor: pointer;
+  font-family: inherit;
+  text-align: left;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.app-bar-mi-rotacion:hover {
+  border-color: color-mix(in oklab, var(--color-accent) 70%, var(--border));
+  background: color-mix(in oklab, var(--color-accent) 16%, var(--surface));
+}
+
+.app-bar-mi-rotacion.is-pending {
+  border-color: color-mix(in oklab, var(--warn) 65%, var(--border));
+  background: color-mix(in oklab, var(--warn) 12%, var(--surface));
+}
+
+.app-bar-mi-rotacion-icon {
+  font-size: 0.95rem;
+  line-height: 1;
+  opacity: 0.88;
+  flex-shrink: 0;
+}
+
+.app-bar-mi-rotacion-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  flex-shrink: 0;
+}
+
+.app-bar-mi-rotacion-meta {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+
+@media (max-width: 720px) {
+  .app-bar-mi-rotacion-label {
+    display: none;
+  }
+  .app-bar-mi-rotacion {
+    max-width: min(200px, 50vw);
+  }
+}
+
+.app-bar-lan-connect-cta {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  border: 1px solid color-mix(in oklab, var(--warn) 55%, var(--border));
+  border-radius: var(--radius-pill);
+  background: color-mix(in oklab, var(--warn) 14%, var(--surface));
+  color: var(--text);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.app-bar-lan-connect-cta:hover {
+  border-color: color-mix(in oklab, var(--warn) 75%, var(--border));
+  background: color-mix(in oklab, var(--warn) 22%, var(--surface));
+}
+
+.clinical-teams-advanced-rotation {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px dashed color-mix(in oklab, var(--border) 70%, transparent);
+}
+
+.clinical-teams-advanced-rotation-summary {
+  cursor: pointer;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  list-style: none;
+  user-select: none;
+}
+
+.clinical-teams-advanced-rotation-summary::-webkit-details-marker {
+  display: none;
+}
+
+.clinical-teams-advanced-rotation-summary::before {
+  content: '▸ ';
+  opacity: 0.7;
+}
+
+.clinical-teams-advanced-rotation[open] .clinical-teams-advanced-rotation-summary::before {
+  content: '▾ ';
+}
+
+.clinical-teams-advanced-rotation-body {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.clinical-teams-advanced-rotation-hint {
+  margin: 0;
+  font-size: 0.72rem;
+  line-height: 1.45;
+  color: var(--text-muted);
+}
+
+.clinical-teams-advanced-rotation-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.clinical-teams-nueva-rotacion-btn {
+  align-self: flex-start;
+  border-color: color-mix(in oklab, var(--error) 45%, var(--border));
+  color: var(--error);
+}
+
+.clinical-teams-nueva-rotacion-btn:hover {
+  border-color: var(--error);
+  background: color-mix(in oklab, var(--error) 10%, var(--surface));
+}
+
+.clinical-census-filter {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.clinical-census-filter .profile-input {
+  font-size: 0.8rem;
+  padding: 4px 8px;
+}

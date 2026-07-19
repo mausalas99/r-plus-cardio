@@ -1,0 +1,35 @@
+R+ 7.0.3 (estable — LAN antes de delta sync)
+================================================
+
+Fecha: 2026-06-05
+
+## Resumen
+
+Release de estabilización antes del overhaul de delta sync: reduce el ruido visual del censo al sincronizar por LAN, limita el intercambio de pacientes al alcance clínico del equipo y deja herramientas de prueba para validar directorio/roster sin tocar una guardia real.
+
+## Nuevo / mejorado
+
+- **Censo sin parpadeo** — La lista lateral de pacientes se actualiza de forma incremental cuando llegan cambios por LAN; evita redibujar la lista completa si solo cambió una tarjeta, un conteo o un paciente nuevo.
+- **Pacientes por equipo** — El sync LAN y la lista lateral respetan alcance clínico: R4/Admin ven el censo completo (con filtro Equipo opcional); R2/R3 se acotan a sus equipos; **R1 en equipo** solo ve pacientes de su equipo (la sala completa vuelve en fase entrega o modo guardia).
+- **Asignar equipo desde el paciente** — En Datos del paciente aparece selector de equipo para usuarios con permisos/equipos disponibles; al cambiarlo se refresca contexto clínico y se empuja clinical-ops por LAN.
+- **PIN del turno más estable** — El PIN se conserva durante el mes calendario, sobrevive reinicios del host y el PIN anterior queda en gracia cuando se regenera manualmente.
+- **Validación LAN local** — Nuevo harness de peer virtual para probar directorio, push y churn de roster contra un host efímero antes de publicar cambios más grandes de sync.
+
+## Correcciones (republish 7.0.3)
+
+- **Alcance R1** — Quita el censo compartido de sala para R1 con equipo: la barra lateral y el sync LAN ya no muestran pacientes de otros equipos en la misma sala (solo en fase entrega o modo guardia).
+- **Arranque / ⇄** — Corrige import circular que dejaba la app sin pacientes ni botones (`clinicalSessionContext` indefinido al iniciar LAN).
+- **Filtro Equipo (R4/Admin)** — Por defecto tu equipo activo; «Todos los equipos» limpia el filtro y se recuerda.
+
+## Operación en guardia
+
+Actualiza desde **7.0.2** en todas las estaciones antes de empezar turno. El PIN y la sala siguen siendo compatibles, pero conviene homogeneizar en **7.0.3** para que el filtro por equipo y la lista incremental se comporten igual en todas las Macs/PCs.
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v7.0.3
+
+- Mac: `R+-7.0.3-arm64.dmg`, `R+-7.0.3-x64.dmg` (y zip para auto-update).
+- Windows: `R+-7.0.3-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye write-release-yml.js).

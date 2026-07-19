@@ -1,0 +1,22 @@
+R+ 6.4.2 (Corrección arranque · censo PDF en instalador)
+============================================================
+
+Fecha: 2026-05-30
+
+## Resumen
+
+Corrección de empaquetado del módulo de **censo PDF** en el instalador de escritorio y un arreglo menor de **arranque** en builds recientes. Sin pantallas nuevas respecto a **6.4.1** / **6.4.0**.
+
+## Nuevo / mejorado
+
+- **Censo PDF** — El export de censo vuelve a incluirse correctamente en el build de Mac/Windows.
+- **Arranque** — Corrección que impedía abrir la app en algunos instaladores.
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v6.4.2
+
+- Mac: `R+-6.4.2-arm64.dmg`, `R+-6.4.2-x64.dmg` (y zip para auto-update).
+- Windows: `R+-6.4.2-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye write-release-yml.js).

@@ -1,0 +1,38 @@
+R+ 6.3.4 (Estado Actual multilectura, bomba de insulina y Sala en vivo)
+========================================================================
+
+Fecha: 2026-05-28
+
+## Resumen
+
+Parche de monitoreo en **Sala**: en **Estado Actual** puedes registrar hasta cuatro lecturas del mismo signo vital en el turno (T°, TA, FC, etc.), llevar **bomba de insulina** en el SOAP, y las gráficas de glucometría respetan la ventana del registro. Al cambiar de paciente se conserva la pestaña del expediente (p. ej. Estado Actual o Tendencias). Además, en **Sala en vivo (⇄)** vuelve a funcionar copiar la invitación al portapapeles.
+
+## Nuevo / mejorado
+
+### Estado Actual (Sala)
+
+- **Multilectura por signo** — Botón **+1** en cada chip de signo vital (no solo temperatura): hasta 4 lecturas por signo en el modal y hasta 4 en el mismo día de turno; hora opcional por lectura.
+- **Bomba de insulina** — Bloque opcional con glucometría, unidades y hora; varias filas; el texto SOAP incluye `BOMBA DE INSULINA (…)`.
+- **Historial y snapshot** — Las lecturas extra se guardan en `vitalSeries` con compatibilidad hacia atrás (`tempPeak`, `*Extra` en registros antiguos).
+- **Gráficas** — Glucometrías fuera de la ventana del turno no se mezclan en la tendencia del registro actual.
+
+### Expediente (Sala)
+
+- **Pestaña al cambiar paciente** — Si estabas en **Estado actual**, **Tendencias** o **Cultivos**, al seleccionar otro paciente permaneces en esa vista (ya no vuelves siempre a Pendientes).
+
+## Correcciones
+
+### Sala en vivo (⇄)
+
+- **Copiar invitación para enviar** — Vuelve a copiar el enlace `…/join?code=…` (con sala activa, incluye `room=…`).
+- **Copiar enlace móvil** — Vuelve a copiar la URL para iPad/Safari en la misma Wi‑Fi.
+- **Activar y copiar invitación** — Tras activar el anfitrión, la invitación se copia de nuevo al portapapeles cuando el servidor responde.
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v6.3.4
+
+- Mac: `R+-6.3.4-arm64.dmg`, `R+-6.3.4-x64.dmg` (y zip para auto-update).
+- Windows: `R+-6.3.4-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye write-release-yml.js).

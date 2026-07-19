@@ -1,0 +1,24 @@
+R+ 7.6.6 (QR imprimible + host estable)
+===========================================
+
+Fecha: 2026-07-06
+
+## Resumen
+
+Sobre **7.6.5**: QR de interno y equipos en **alta resolución** (copiar o descargar PNG listo para imprimir), y el R4 **ya no pierde rol de anfitrión** cuando ⇄ re-renderiza con un pin remoto obsoleto.
+
+## Nuevo / mejorado
+
+- **QR — imprimible** — Copiar QR y nuevo **Descargar QR** generan PNG ~2048px (interno por sala + lista de espera equipos).
+- **QR — enlace limpio** — Lista de espera equipos usa `/equipos` sin token en la URL (LAN y cloud).
+- **LAN — host estable** — Rol **host** repinea la IP local en lugar de unirse a un pin remoto viejo; botones del hero ⇄ delegados sin duplicar handlers.
+- **Parche sobre 7.6.5** — Token anfitrión, invite empaquetado y auto-connect sin PIN.
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v7.6.6
+
+- Mac: `R+-7.6.6-arm64.dmg`, `R+-7.6.6-x64.dmg` (y zip para auto-update).
+- Windows: `R+-7.6.6-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye write-release-yml.js).

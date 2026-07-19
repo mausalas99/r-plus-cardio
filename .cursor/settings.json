@@ -1,0 +1,15 @@
+{
+  "plugins": {
+    "cursor-team-kit": {
+      "enabled": true
+    },
+    "vibe-app-wiki/vibe-app-wiki": {
+      "enabled": true,
+      "gitUrl": "https://github.com/CMC-27/Vibe-App-Wiki",
+      "gitRef": "main"
+    },
+    "cloudflare": {
+      "enabled": true
+    }
+  }
+}

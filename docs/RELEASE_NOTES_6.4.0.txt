@@ -1,0 +1,51 @@
+R+ 6.4.0 (Valoración preoperatoria · formatos en expediente)
+============================================================
+
+Fecha: 2026-05-29
+
+## Resumen
+
+Nueva pestaña **VPO** (valoración preoperatoria) en el expediente: calculadora de riesgo alineada al Excel institucional (ASA, RCRI/Lee, Gupta MICA, ARISCAT, Caprini), plantillas editables de EKG y Rx, fármacos perioperatorios desde la receta SOME y bloques copiables para la nota externa. Persistencia por paciente; incluida en respaldos, exportación e importación.
+
+**Mi Perfil** reorganizado: los **formatos clínicos en blanco** se editan en las pestañas **Nota** e **Indicaciones** del expediente (misma vista que al atender), con botón **Guardar** visible al final del formulario.
+
+## Nuevo / mejorado
+
+### Valoración preoperatoria (VPO)
+
+- **Ubicación** — **Interconsulta:** segmento **VPO** en **Clínico** (junto Nota e Indicaciones). **Sala:** segmento **VPO** en **Salida** (junto Listado y Receta HU).
+- **Calculadora** — ASA, RCRI (Lee), Gupta MICA, ARISCAT y Caprini; duración del procedimiento; AHA quirúrgico y clínico editables.
+- **Procedimiento Gupta** — Catálogo con **búsqueda**; al elegir procedimiento se rellenan coeficiente Gupta, sitio ARISCAT y banderas de alto riesgo (override manual permitido).
+- **Diagnósticos** — Lista editable; importar desde la nota, pegar texto o inferir factores de riesgo (RCRI, Caprini, ARISCAT, ASA) desde el listado.
+- **Laboratorio y monitoreo** — Botones **Tomar del laboratorio** (creatinina, hemoglobina, eTFG) y **Tomar del monitoreo** (FC, TA, etc.) sin sobrescribir lo ya escrito.
+- **EKG y Rx** — Textareas con plantilla institucional; FC sugerida desde la nota.
+- **Fármacos perioperatorios** — Lista desde **Medicamentos** (SOME); sugerencias por nombre/clase; **Actualizar desde receta** solo agrega ítems nuevos (no pisa ediciones).
+- **Copiar** — Bloques para valoración completa, riesgos, fármacos y diagnósticos (portapapeles; no volcado automático a Nota/Indicaciones ni Casiopea).
+
+### Formatos clínicos (plantillas en blanco)
+
+- **Edición en expediente** — Desde Mi Perfil, **Editar formatos de nota →** o **Editar formatos de indicaciones →** abre la pestaña correspondiente en modo plantilla.
+- **Guardar** — Botón **Guardar** fijo al final del formulario; **Volver al expediente** restaura la vista del paciente activo.
+- **Plantillas por defecto** — Esquemas N/V/HD/HI/NM y bloques de estudios sin datos identificables; se aplican solo en secciones vacías de pacientes nuevos.
+- **Restablecer** — **Restablecer formatos en blanco** en Mi Perfil limpia las plantillas guardadas.
+
+### Mi Perfil
+
+- Modal reorganizado por bloques (identificación, modo de trabajo, listado de problemas, formatos).
+- Migración suave de plantillas antiguas con contenido demasiado específico (demo).
+
+## Regresión
+
+- Tests en `public/js/vpo-calculator.test.mjs`, `vpo-data.test.mjs`, `vpo-lookups.test.mjs`, `vpo-dx-inference.test.mjs`, `vpo-periop-meds.test.mjs`, `vpo-text.test.mjs`.
+- Tests en `public/js/profile-templates.test.mjs`.
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v6.4.0
+
+- Mac: `R+-6.4.0-arm64.dmg`, `R+-6.4.0-x64.dmg` (y zip para auto-update).
+- Windows: `R+-6.4.0-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye `build:ui` y bundle del renderer).
+
+Publicar: `npm run release:publish` (o `--yes` / `--mac-only` según necesites).

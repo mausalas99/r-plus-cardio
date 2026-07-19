@@ -1,0 +1,334 @@
+{
+  "demoSome": {
+    "patient": {
+      "name": "DEMO PÉREZ JUAN",
+      "expediente": "0008421-7",
+      "sexo": "M",
+      "edad": "67 años",
+      "fecha": "11/04/2026",
+      "hora": "09:42",
+      "ubicacion": "SERVICIO DEMO"
+    },
+    "resLabs": [
+      "BH\tHb 11.85*  Hto 38.4  VCM 82  HCM 26.1*  Leu 6.12  Neu 3.88  Eos 0.11  Plt 248",
+      "QS\tGlu 94 Cr 1.35 BUN 22* AU 7.4 TGL 118 COL 142",
+      "ESC\tNa 138 Cl 102 K 3.9 Ca 8.8 F 3.8",
+      "PFHs\tAlb 4.1 AST 19 ALT 14 FA 118 BT 1.2* BD 0.5* BI 0.7 LDH 142 Amil 68"
+    ],
+    "bhExtras": {
+      "Lin": "1.05",
+      "Mono": "0.71",
+      "Baso": "0.12",
+      "NeuPct": "63.4",
+      "LinPct": "17.2",
+      "MonoPct": "11.6",
+      "EosPct": "1.8",
+      "BasoPct": "2.0",
+      "RBC": "4.71",
+      "CHCM": "32",
+      "RDW": "13.2",
+      "MPV": "7.2*"
+    },
+    "refsBySection": {
+      "BH": {
+        "Hb": [
+          12.2,
+          18.1
+        ],
+        "Hto": [
+          37.7,
+          53.7
+        ],
+        "VCM": [
+          80,
+          97
+        ],
+        "HCM": [
+          27,
+          31.2
+        ],
+        "CHCM": [
+          29.9,
+          34.2
+        ],
+        "RDW": [
+          11.6,
+          14.8
+        ],
+        "Leu": [
+          4,
+          11
+        ],
+        "Neu": [
+          2,
+          6.9
+        ],
+        "Eos": [
+          0,
+          0.7
+        ],
+        "Lin": [
+          0.6,
+          3.4
+        ],
+        "Mono": [
+          0,
+          0.9
+        ],
+        "Baso": [
+          0,
+          0.2
+        ],
+        "Plt": [
+          142,
+          424
+        ],
+        "MPV": [
+          7.4,
+          10.4
+        ],
+        "RBC": [
+          4.04,
+          6.13
+        ]
+      },
+      "QS": {
+        "Glu": [
+          60,
+          100
+        ],
+        "Cr": [
+          0.6,
+          1.4
+        ],
+        "BUN": [
+          7,
+          20
+        ],
+        "PCT": [
+          0,
+          0.05
+        ],
+        "AU": [
+          4.8,
+          8.7
+        ],
+        "TGL": [
+          35,
+          150
+        ],
+        "COL": [
+          130,
+          200
+        ]
+      },
+      "ESC": {
+        "Na": [
+          135,
+          145
+        ],
+        "Cl": [
+          101,
+          110
+        ],
+        "K": [
+          3.6,
+          5
+        ],
+        "Ca": [
+          8.4,
+          10.2
+        ],
+        "F": [
+          2.5,
+          4.6
+        ]
+      },
+      "PFHs": {
+        "Alb": [
+          3.2,
+          5.5
+        ],
+        "AST": [
+          10,
+          42
+        ],
+        "ALT": [
+          10,
+          42
+        ],
+        "FA": [
+          38,
+          126
+        ],
+        "BT": [
+          0.2,
+          1
+        ],
+        "BD": [
+          0,
+          0.2
+        ],
+        "BI": [
+          0.2,
+          0.8
+        ],
+        "LDH": [
+          91,
+          180
+        ],
+        "Amil": [
+          28,
+          100
+        ]
+      }
+    }
+  },
+  "olderDemoSome": {
+    "patient": {
+      "name": "DEMO PÉREZ JUAN",
+      "expediente": "0008421-7",
+      "sexo": "M",
+      "edad": "67 años",
+      "fecha": "05/03/2026",
+      "hora": "07:18",
+      "ubicacion": "SERVICIO DEMO"
+    },
+    "resLabs": [
+      "BH\tHb 10.2*  Hto 35.8*  VCM 81  Leu 5.4  Plt 198",
+      "QS\tGlu 108* Cr 1.55* BUN 28* TGL 132 COL 155",
+      "ESC\tNa 134* K 3.5*"
+    ],
+    "bhExtras": {
+      "RBC": "4.55"
+    },
+    "refsBySection": {
+      "BH": {
+        "Hb": [
+          12.2,
+          18.1
+        ],
+        "Hto": [
+          37.7,
+          53.7
+        ],
+        "VCM": [
+          80,
+          97
+        ],
+        "Leu": [
+          4,
+          11
+        ],
+        "Plt": [
+          142,
+          424
+        ],
+        "RBC": [
+          4.04,
+          6.13
+        ]
+      },
+      "QS": {
+        "Glu": [
+          60,
+          100
+        ],
+        "Cr": [
+          0.6,
+          1.4
+        ],
+        "BUN": [
+          7,
+          20
+        ],
+        "PCT": [
+          0,
+          0.05
+        ],
+        "TGL": [
+          35,
+          150
+        ],
+        "COL": [
+          130,
+          200
+        ]
+      },
+      "ESC": {
+        "Na": [
+          135,
+          145
+        ],
+        "K": [
+          3.6,
+          5
+        ]
+      }
+    }
+  },
+  "gasoVenosaSolo": {
+    "patient": {
+      "name": "BENITO CASTILLO JUAREZ",
+      "expediente": "2213511-4",
+      "sexo": "M",
+      "edad": "58 años",
+      "fecha": "07/05/2026",
+      "hora": "06:43",
+      "ubicacion": "SERVICIO CLÍNICO 1"
+    },
+    "resLabs": [
+      "GASES\tpH 7.39 pCO2 35* pO2 60* Lactato 0.7* Bica 21.2* iCa 0.92*"
+    ],
+    "bhExtras": {},
+    "refsBySection": {
+      "GASES": {
+        "pH": [
+          7.32,
+          7.43
+        ],
+        "pCO2": [
+          40,
+          45
+        ],
+        "pO2": [
+          0.9,
+          1.9
+        ],
+        "Lactato": [
+          0.9,
+          1.9
+        ],
+        "Bica": [
+          24,
+          30
+        ],
+        "iCa": [
+          1.12,
+          1.32
+        ]
+      }
+    }
+  },
+  "headerVariants": {
+    "patient": {
+      "name": "MARIA LOPEZ HERNANDEZ",
+      "expediente": "9988776-1",
+      "sexo": "F",
+      "edad": "8 meses",
+      "fecha": "11/06/2026",
+      "hora": "09:15",
+      "ubicacion": "URGENCIAS PEDIATRIA"
+    },
+    "resLabs": [],
+    "bhExtras": {},
+    "refsBySection": {
+      "QS": {
+        "PCT": [
+          0,
+          0.05
+        ]
+      }
+    }
+  }
+}

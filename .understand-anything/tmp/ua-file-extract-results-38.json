@@ -1,0 +1,286 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 20,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "docs/INSTALLER_EXIT_CODES.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 13,
+      "nonEmptyLines": 10,
+      "sections": [
+        {
+          "heading": "R+ Windows installer exit codes (NSIS)",
+          "level": 1,
+          "line": 1
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": "docs/LAN_SYNC_6.6.1_RISK_ANALYSIS.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 167,
+      "nonEmptyLines": 106,
+      "sections": [
+        {
+          "heading": "LiveSync risk analysis — 6.6.1 (LAN sync Phases 0–3)",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "1. What changed in the LiveSync hot path",
+          "level": 2,
+          "line": 11
+        },
+        {
+          "heading": "2. Failure modes (how LiveSync can break)",
+          "level": 2,
+          "line": 31
+        },
+        {
+          "heading": "2.1 Mixed-version turno (HIGH — operational)",
+          "level": 3,
+          "line": 33
+        },
+        {
+          "heading": "2.2 Revision-hint race / latency (MEDIUM — UX)",
+          "level": 3,
+          "line": 54
+        },
+        {
+          "heading": "2.3 SQL schema v9 migration (MEDIUM — startup)",
+          "level": 3,
+          "line": 68
+        },
+        {
+          "heading": "2.4 Host IM-13 dual persistence (MEDIUM — directorio)",
+          "level": 3,
+          "line": 79
+        },
+        {
+          "heading": "2.5 Module split / bridge init (LOW — catastrophic if hit)",
+          "level": 3,
+          "line": 92
+        },
+        {
+          "heading": "2.6 Merge registry semantic drift (LOW)",
+          "level": 3,
+          "line": 101
+        },
+        {
+          "heading": "2.7 Pinned host / confirm auto-join (LOW — perceived “broken sync”)",
+          "level": 3,
+          "line": 110
+        },
+        {
+          "heading": "2.8 `liveSyncBundleHasPayload` false negative (LOW)",
+          "level": 3,
+          "line": 121
+        },
+        {
+          "heading": "3. What we expect to improve (why ship)",
+          "level": 2,
+          "line": 129
+        },
+        {
+          "heading": "4. Pre-ship checklist (manual, ~20 min, 2 Macs + host)",
+          "level": 2,
+          "line": 140
+        },
+        {
+          "heading": "5. Rollback",
+          "level": 2,
+          "line": 155
+        },
+        {
+          "heading": "6. References",
+          "level": 2,
+          "line": 163
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 15
+      }
+    },
+    {
+      "path": "docs/README.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 37,
+      "nonEmptyLines": 30,
+      "sections": [
+        {
+          "heading": "R+ Documentation",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Start here",
+          "level": 2,
+          "line": 3
+        },
+        {
+          "heading": "Structure",
+          "level": 2,
+          "line": 16
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 3
+      }
+    },
+    {
+      "path": "docs/RELEASE_NOTES_5.0.4.txt",
+      "language": "txt",
+      "fileCategory": "docs",
+      "totalLines": 21,
+      "nonEmptyLines": 12,
+      "metrics": {}
+    },
+    {
+      "path": "docs/RELEASE_NOTES_5.1.0.txt",
+      "language": "txt",
+      "fileCategory": "docs",
+      "totalLines": 24,
+      "nonEmptyLines": 15,
+      "metrics": {}
+    },
+    {
+      "path": "docs/RELEASE_NOTES_5.2.0.txt",
+      "language": "txt",
+      "fileCategory": "docs",
+      "totalLines": 21,
+      "nonEmptyLines": 13,
+      "metrics": {}
+    },
+    {
+      "path": "docs/RELEASE_NOTES_5.2.1.txt",
+      "language": "txt",
+      "fileCategory": "docs",
+      "totalLines": 31,
+      "nonEmptyLines": 20,
+      "metrics": {}
+    },
+    {
+      "path": "docs/RELEASE_NOTES_5.2.txt",
+      "language": "txt",
+      "fileCategory": "docs",
+      "totalLines": 21,
+      "nonEmptyLines": 13,
+      "metrics": {}
+    },
+    {
+      "path": "docs/RELEASE_NOTES_5.6.3.txt",
+      "language": "txt",
+      "fileCategory": "docs",
+      "totalLines": 24,
+      "nonEmptyLines": 15,
+      "metrics": {}
+    },
+    {
+      "path": "docs/RELEASE_NOTES_6.0.0.txt",
+      "language": "txt",
+      "fileCategory": "docs",
+      "totalLines": 47,
+      "nonEmptyLines": 31,
+      "metrics": {}
+    },
+    {
+      "path": "docs/RELEASE_NOTES_6.0.1.txt",
+      "language": "txt",
+      "fileCategory": "docs",
+      "totalLines": 43,
+      "nonEmptyLines": 27,
+      "metrics": {}
+    },
+    {
+      "path": "docs/RELEASE_NOTES_6.1.0.txt",
+      "language": "txt",
+      "fileCategory": "docs",
+      "totalLines": 59,
+      "nonEmptyLines": 39,
+      "metrics": {}
+    },
+    {
+      "path": "docs/RELEASE_NOTES_6.2.0.txt",
+      "language": "txt",
+      "fileCategory": "docs",
+      "totalLines": 47,
+      "nonEmptyLines": 31,
+      "metrics": {}
+    },
+    {
+      "path": "docs/RELEASE_NOTES_6.2.1.txt",
+      "language": "txt",
+      "fileCategory": "docs",
+      "totalLines": 45,
+      "nonEmptyLines": 29,
+      "metrics": {}
+    },
+    {
+      "path": "docs/RELEASE_NOTES_6.3.0.txt",
+      "language": "txt",
+      "fileCategory": "docs",
+      "totalLines": 32,
+      "nonEmptyLines": 20,
+      "metrics": {}
+    },
+    {
+      "path": "docs/RELEASE_NOTES_6.3.1.txt",
+      "language": "txt",
+      "fileCategory": "docs",
+      "totalLines": 34,
+      "nonEmptyLines": 20,
+      "metrics": {}
+    },
+    {
+      "path": "docs/RELEASE_NOTES_6.3.2.txt",
+      "language": "txt",
+      "fileCategory": "docs",
+      "totalLines": 47,
+      "nonEmptyLines": 30,
+      "metrics": {}
+    },
+    {
+      "path": "docs/RELEASE_NOTES_6.3.3.txt",
+      "language": "txt",
+      "fileCategory": "docs",
+      "totalLines": 51,
+      "nonEmptyLines": 30,
+      "metrics": {}
+    },
+    {
+      "path": "docs/RELEASE_NOTES_6.3.4.txt",
+      "language": "txt",
+      "fileCategory": "docs",
+      "totalLines": 38,
+      "nonEmptyLines": 23,
+      "metrics": {}
+    },
+    {
+      "path": "docs/RELEASE_NOTES_6.3.5.txt",
+      "language": "txt",
+      "fileCategory": "docs",
+      "totalLines": 35,
+      "nonEmptyLines": 20,
+      "metrics": {}
+    }
+  ]
+}

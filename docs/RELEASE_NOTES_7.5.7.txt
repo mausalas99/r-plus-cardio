@@ -1,0 +1,23 @@
+R+ 7.5.7 (EA suplemento confirm)
+====================================
+
+Fecha: 2026-06-30
+
+## Resumen
+
+Parche sobre **7.5.6**: corrige **Confirmar dieta** en **Estado actual** cuando la propuesta SOME es **SUPLEMENTO** — la barra de propuesta ya no reaparece tras confirmar.
+
+## Nuevo / mejorado
+
+- **Suplemento confirmado** — Al aceptar dieta SUPLEMENTO importada desde SOME, desaparecen el badge Propuesta y los botones Confirmar/Descartar.
+- **Sync pasivo** — Refrescar el panel EA o re-sincronizar Manejo ya no vuelve a proponer el mismo suplemento por kcal/proteína residuales del SOME.
+- **Sin migración** — SQLCipher sigue en v20.
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v7.5.7
+
+- Mac: `R+-7.5.7-arm64.dmg`, `R+-7.5.7-x64.dmg` (y zip para auto-update).
+- Windows: `R+-7.5.7-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye write-release-yml.js).

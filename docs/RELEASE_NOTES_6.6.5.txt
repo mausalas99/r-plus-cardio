@@ -1,0 +1,35 @@
+R+ 6.6.5 (LAN — un solo anfitrión por turno)
+================================================
+
+Fecha: 2026-06-04
+
+## Resumen
+
+Una guardia en la misma Wi‑Fi converge en **un solo servidor R+** por turno: elección por rango clínico (R4/admin), desempate con marca de tiempo y, si hace falta, **combinación** de datos y clientes hacia el anfitrión ganador. El plug and play sigue: R1–R3 se unen solos al R4; el **enlace de invitación** queda para iPad, Windows o cuando el barrido no detecta al anfitrión.
+
+## Nuevo / mejorado
+
+- **Elección de anfitrión** — Meta clínica en disco (`startedAt`); `GET /host-rank` expone rango y antigüedad; desempate determinista (sin dos servidores eligiendo distinto ganador).
+- **Consolidación** — Si un R4/admin debe ceder: primero sube el bundle al ganador (LWW), luego `livesync:host-handoff` redirige clientes; si el push falla, esta Mac **sigue** como servidor (sin pérdida de datos).
+- **Descubrimiento** — Barrido de subred cada 25 s además de peers WS cada 5 s; detecta split-brain formado después de unirse a la sala equivocada.
+- **Plug and play** — R1–R3: auto-cliente al anfitrión de mayor rango sin pegar enlace; R4: confirmación antes de combinar con otro servidor activo.
+- **⇄ invitación (UX)** — Bloque **Invitación al turno** con **Copiar enlace de invitación** y **Generar enlace / PIN**; en escritorio, sección **Unirme con enlace** para pegar `http://…/join/req_…` (misma URL sirve para otra Mac o iPad).
+- **Anfitrión fijado** — Sigue respetando «Fijar anfitrión del turno»; no cede automáticamente si está fijado.
+
+## Operación en guardia
+
+1. Instala **6.6.5 en todas** las Macs y PCs del turno el **mismo día**.
+2. **Una** Mac R4/admin: ⇄ → **Unirse** en su sala → **Copiar enlace de invitación** solo para quien no se detecte solo o para iPad.
+3. Resto del equipo: dejar que R+ se conecte sola; si no, pegar enlace en ⇄ o abrirlo en el navegador.
+4. Windows: permitir R+ en el firewall (puerto **3738**) la primera vez en sala ⇄.
+
+No mezclar **6.6.4** o anterior en la misma guardia si ya hay sala en vivo activa.
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v6.6.5
+
+- Mac: `R+-6.6.5-arm64.dmg`, `R+-6.6.5-x64.dmg` (y zip para auto-update).
+- Windows: `R+-6.6.5-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye write-release-yml.js).

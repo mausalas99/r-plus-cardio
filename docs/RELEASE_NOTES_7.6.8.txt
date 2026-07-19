@@ -1,0 +1,28 @@
+R+ 7.6.8 (bomba insulina EA + filtro censo)
+===========================================
+
+Fecha: 2026-07-11
+
+## Resumen
+
+Sobre **7.6.7**: **Estado actual** registra bomba de insulina IV desde SOME (algoritmos 1–4), y los **filtros de censo** por sala aplican al instante sin esperar sync LAN.
+
+## Nuevo / mejorado
+
+- **EA — bomba de insulina** — Detección en SOME (`BOMBA EN ALGORITMO n` + insulina IV); toggle en registro, lecturas en snapshot, texto NM y SOAP de medicamentos.
+- **Filtros censo — sala** — Al cambiar sala/equipo/servicio la lista y el tablero Guardia se actualizan de inmediato; reconcilia equipo fuera de sala; pull LAN en segundo plano.
+- **Medicamentos** — Receta hospitalaria consolidada en pestaña **Manejo** del expediente (sin tab Manejo separado).
+- **Parche sobre 7.6.7** — Equipos push, troponina hs y consolidación de labs.
+
+## Correcciones (republish 7.6.8)
+
+- **Confirmar bomba de insulina** — Tras confirmar la propuesta NM (`BOMBA DE INSULINA EN ALGORITMO n`), ya no reaparece el badge Propuesta al refrescar el panel (mismo patrón que dieta).
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v7.6.8
+
+- Mac: `R+-7.6.8-arm64.dmg`, `R+-7.6.8-x64.dmg` (y zip para auto-update).
+- Windows: `R+-7.6.8-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye write-release-yml.js).

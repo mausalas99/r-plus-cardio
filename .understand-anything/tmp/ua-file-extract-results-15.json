@@ -1,0 +1,5597 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 28,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "lib/admin-access-code.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 7,
+      "nonEmptyLines": 6,
+      "functions": [
+        {
+          "name": "verifyAdminAccessCode",
+          "startLine": 5,
+          "endLine": 7,
+          "params": [
+            "input"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ADMIN_ACCESS_CODE",
+          "line": 2,
+          "isDefault": false
+        },
+        {
+          "name": "verifyAdminAccessCode",
+          "line": 5,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "verifyAdminAccessCode",
+          "callee": "String(input ?? '').trim",
+          "lineNumber": 6
+        },
+        {
+          "caller": "verifyAdminAccessCode",
+          "callee": "String",
+          "lineNumber": 6
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/admin-access-code.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 16,
+      "nonEmptyLines": 14,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/clinical-team-composition.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 55,
+      "nonEmptyLines": 49,
+      "functions": [
+        {
+          "name": "normalizeServiceKey",
+          "startLine": 2,
+          "endLine": 9,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "getTeamCompositionLimits",
+          "startLine": 21,
+          "endLine": 24,
+          "params": [
+            "service"
+          ]
+        },
+        {
+          "name": "validateTeamRankSlot",
+          "startLine": 35,
+          "endLine": 50,
+          "params": [
+            "service",
+            "rank",
+            "members"
+          ]
+        },
+        {
+          "name": "serviceUsesStructuredComposition",
+          "startLine": 53,
+          "endLine": 55,
+          "params": [
+            "service"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "TEAM_COMPOSITION_BY_SERVICE",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "getTeamCompositionLimits",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "OFF_CALL_INTERCONSULTAS_SERVICES",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "validateTeamRankSlot",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "serviceUsesStructuredComposition",
+          "line": 53,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "normalizeServiceKey",
+          "callee": "String(value || '')\n    .trim()\n    .toLowerCase()\n    .normalize('NFD')\n    .replace(/[\\u0300-\\u036f]/g, '')\n    .replace",
+          "lineNumber": 3
+        },
+        {
+          "caller": "normalizeServiceKey",
+          "callee": "String(value || '')\n    .trim()\n    .toLowerCase()\n    .normalize('NFD')\n    .replace",
+          "lineNumber": 3
+        },
+        {
+          "caller": "normalizeServiceKey",
+          "callee": "String(value || '')\n    .trim()\n    .toLowerCase()\n    .normalize",
+          "lineNumber": 3
+        },
+        {
+          "caller": "normalizeServiceKey",
+          "callee": "String(value || '')\n    .trim()\n    .toLowerCase",
+          "lineNumber": 3
+        },
+        {
+          "caller": "normalizeServiceKey",
+          "callee": "String(value || '')\n    .trim",
+          "lineNumber": 3
+        },
+        {
+          "caller": "normalizeServiceKey",
+          "callee": "String",
+          "lineNumber": 3
+        },
+        {
+          "caller": "getTeamCompositionLimits",
+          "callee": "normalizeServiceKey",
+          "lineNumber": 22
+        },
+        {
+          "caller": "validateTeamRankSlot",
+          "callee": "getTeamCompositionLimits",
+          "lineNumber": 36
+        },
+        {
+          "caller": "validateTeamRankSlot",
+          "callee": "String(rank || '').trim().toUpperCase",
+          "lineNumber": 38
+        },
+        {
+          "caller": "validateTeamRankSlot",
+          "callee": "String(rank || '').trim",
+          "lineNumber": 38
+        },
+        {
+          "caller": "validateTeamRankSlot",
+          "callee": "String",
+          "lineNumber": 38
+        },
+        {
+          "caller": "validateTeamRankSlot",
+          "callee": "r.toLowerCase",
+          "lineNumber": 39
+        },
+        {
+          "caller": "validateTeamRankSlot",
+          "callee": "Object.prototype.hasOwnProperty.call",
+          "lineNumber": 40
+        },
+        {
+          "caller": "validateTeamRankSlot",
+          "callee": "String(service || '').trim",
+          "lineNumber": 43
+        },
+        {
+          "caller": "validateTeamRankSlot",
+          "callee": "String",
+          "lineNumber": 43
+        },
+        {
+          "caller": "validateTeamRankSlot",
+          "callee": "(members || []).filter",
+          "lineNumber": 45
+        },
+        {
+          "caller": "validateTeamRankSlot",
+          "callee": "String(m?.rank || '').toUpperCase",
+          "lineNumber": 45
+        },
+        {
+          "caller": "validateTeamRankSlot",
+          "callee": "String",
+          "lineNumber": 45
+        },
+        {
+          "caller": "serviceUsesStructuredComposition",
+          "callee": "getTeamCompositionLimits",
+          "lineNumber": 54
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 5,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/clinical-team-composition.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 29,
+      "nonEmptyLines": 25,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/clinical-user-activity.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 65,
+      "nonEmptyLines": 60,
+      "functions": [
+        {
+          "name": "mergeLastActivityIso",
+          "startLine": 11,
+          "endLine": 17,
+          "params": [
+            "a",
+            "b"
+          ]
+        },
+        {
+          "name": "clinicalUserActivityTier",
+          "startLine": 24,
+          "endLine": 34,
+          "params": [
+            "iso"
+          ]
+        },
+        {
+          "name": "formatClinicalUserLastActivity",
+          "startLine": 41,
+          "endLine": 57,
+          "params": [
+            "iso"
+          ]
+        },
+        {
+          "name": "clinicalUserActivityLabel",
+          "startLine": 60,
+          "endLine": 65,
+          "params": [
+            "tier"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "CLINICAL_USER_ACTIVITY_ACTIVE_MS",
+          "line": 3,
+          "isDefault": false
+        },
+        {
+          "name": "CLINICAL_USER_ACTIVITY_RECENT_MS",
+          "line": 4,
+          "isDefault": false
+        },
+        {
+          "name": "mergeLastActivityIso",
+          "line": 11,
+          "isDefault": false
+        },
+        {
+          "name": "clinicalUserActivityTier",
+          "line": 24,
+          "isDefault": false
+        },
+        {
+          "name": "formatClinicalUserLastActivity",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "clinicalUserActivityLabel",
+          "line": 60,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "mergeLastActivityIso",
+          "callee": "String(a || '').trim",
+          "lineNumber": 12
+        },
+        {
+          "caller": "mergeLastActivityIso",
+          "callee": "String",
+          "lineNumber": 12
+        },
+        {
+          "caller": "mergeLastActivityIso",
+          "callee": "String(b || '').trim",
+          "lineNumber": 13
+        },
+        {
+          "caller": "mergeLastActivityIso",
+          "callee": "String",
+          "lineNumber": 13
+        },
+        {
+          "caller": "clinicalUserActivityTier",
+          "callee": "Date.now",
+          "lineNumber": 24
+        },
+        {
+          "caller": "clinicalUserActivityTier",
+          "callee": "String(iso || '').trim",
+          "lineNumber": 25
+        },
+        {
+          "caller": "clinicalUserActivityTier",
+          "callee": "String",
+          "lineNumber": 25
+        },
+        {
+          "caller": "clinicalUserActivityTier",
+          "callee": "new Date(raw).getTime",
+          "lineNumber": 27
+        },
+        {
+          "caller": "clinicalUserActivityTier",
+          "callee": "Number.isFinite",
+          "lineNumber": 28
+        },
+        {
+          "caller": "formatClinicalUserLastActivity",
+          "callee": "Date.now",
+          "lineNumber": 41
+        },
+        {
+          "caller": "formatClinicalUserLastActivity",
+          "callee": "clinicalUserActivityTier",
+          "lineNumber": 42
+        },
+        {
+          "caller": "formatClinicalUserLastActivity",
+          "callee": "new Date(String(iso)).getTime",
+          "lineNumber": 44
+        },
+        {
+          "caller": "formatClinicalUserLastActivity",
+          "callee": "String",
+          "lineNumber": 44
+        },
+        {
+          "caller": "formatClinicalUserLastActivity",
+          "callee": "Math.floor",
+          "lineNumber": 45
+        },
+        {
+          "caller": "formatClinicalUserLastActivity",
+          "callee": "Math.floor",
+          "lineNumber": 48
+        },
+        {
+          "caller": "formatClinicalUserLastActivity",
+          "callee": "Math.floor",
+          "lineNumber": 53
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 6,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/clinical-user-activity.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 41,
+      "nonEmptyLines": 37,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/clinical-access-runtime.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 969,
+      "nonEmptyLines": 904,
+      "functions": [
+        {
+          "name": "markClinicalAccessBootReady",
+          "startLine": 60,
+          "endLine": 69,
+          "params": []
+        },
+        {
+          "name": "waitForClinicalAccessReady",
+          "startLine": 71,
+          "endLine": 80,
+          "params": []
+        },
+        {
+          "name": "isClinicalScopeReadyForLanPatientApply",
+          "startLine": 83,
+          "endLine": 91,
+          "params": []
+        },
+        {
+          "name": "applyClinicalScopeFromLanOpsSnapshot",
+          "startLine": 98,
+          "endLine": 148,
+          "params": [
+            "snapshot"
+          ]
+        },
+        {
+          "name": "prunePatientsOutsideClinicalScope",
+          "startLine": 154,
+          "endLine": 156,
+          "params": []
+        },
+        {
+          "name": "electronApi",
+          "startLine": 158,
+          "endLine": 161,
+          "params": []
+        },
+        {
+          "name": "resolveClinicalRank",
+          "startLine": 167,
+          "endLine": 172,
+          "params": [
+            "settings",
+            "clientId"
+          ]
+        },
+        {
+          "name": "mapPatientForGuardiaGrid",
+          "startLine": 175,
+          "endLine": 188,
+          "params": [
+            "p"
+          ]
+        },
+        {
+          "name": "buildGuardiasMap",
+          "startLine": 191,
+          "endLine": 197,
+          "params": [
+            "guardias"
+          ]
+        },
+        {
+          "name": "applyBootstrapResult",
+          "startLine": 204,
+          "endLine": 258,
+          "params": [
+            "res"
+          ]
+        },
+        {
+          "name": "migrateLocalPatientsClinicalSala",
+          "startLine": 261,
+          "endLine": 279,
+          "params": []
+        },
+        {
+          "name": "bootstrapClinicalAccess",
+          "startLine": 281,
+          "endLine": 297,
+          "params": [
+            "settings",
+            "clientId"
+          ]
+        },
+        {
+          "name": "lookupClinicalUserByUsername",
+          "startLine": 303,
+          "endLine": 317,
+          "params": [
+            "username"
+          ]
+        },
+        {
+          "name": "resumeClinicalIdentityByUsername",
+          "startLine": 323,
+          "endLine": 378,
+          "params": [
+            "username",
+            "settings",
+            "clientId"
+          ]
+        },
+        {
+          "name": "touchClinicalUserActivityRemote",
+          "startLine": 384,
+          "endLine": 406,
+          "params": [
+            "userId"
+          ]
+        },
+        {
+          "name": "scheduleClinicalActivityLanPush",
+          "startLine": 408,
+          "endLine": 420,
+          "params": []
+        },
+        {
+          "name": "touchClinicalSessionActivity",
+          "startLine": 426,
+          "endLine": 430,
+          "params": []
+        },
+        {
+          "name": "refreshClinicalUserProfile",
+          "startLine": 433,
+          "endLine": 455,
+          "params": []
+        },
+        {
+          "name": "scheduleLanPatientReconcile",
+          "startLine": 458,
+          "endLine": 474,
+          "params": [
+            "reason",
+            "delayMs"
+          ]
+        },
+        {
+          "name": "ensureTeamAssignedPatientsOnDevice",
+          "startLine": 477,
+          "endLine": 511,
+          "params": [
+            "options"
+          ]
+        },
+        {
+          "name": "ensureElevatedWardCensusOnDevice",
+          "startLine": 517,
+          "endLine": 531,
+          "params": []
+        },
+        {
+          "name": "refreshClinicalPatientListForScope",
+          "startLine": 537,
+          "endLine": 558,
+          "params": [
+            "options"
+          ]
+        },
+        {
+          "name": "pullHostPatientsAfterAssignmentMerge",
+          "startLine": 561,
+          "endLine": 580,
+          "params": [
+            "event"
+          ]
+        },
+        {
+          "name": "wireClinicalOpsSyncRefresh",
+          "startLine": 582,
+          "endLine": 594,
+          "params": []
+        },
+        {
+          "name": "initClinicalAccessRuntime",
+          "startLine": 596,
+          "endLine": 644,
+          "params": [
+            "settings",
+            "clientId"
+          ]
+        },
+        {
+          "name": "stopClinicalAccessRuntime",
+          "startLine": 646,
+          "endLine": 662,
+          "params": []
+        },
+        {
+          "name": "syncGuardiaCensusPanelVisibility",
+          "startLine": 667,
+          "endLine": 670,
+          "params": [
+            "_settings"
+          ]
+        },
+        {
+          "name": "refreshGuardiaCensusFromDb",
+          "startLine": 675,
+          "endLine": 687,
+          "params": [
+            "settings"
+          ]
+        },
+        {
+          "name": "renderGuardiaCensusGrid",
+          "startLine": 692,
+          "endLine": 694,
+          "params": [
+            "settings"
+          ]
+        },
+        {
+          "name": "assertClinicalWriteAllowed",
+          "startLine": 700,
+          "endLine": 717,
+          "params": [
+            "patientId",
+            "settings"
+          ]
+        },
+        {
+          "name": "signOutgoingLiveSyncMutation",
+          "startLine": 723,
+          "endLine": 746,
+          "params": [
+            "mutation",
+            "actionType"
+          ]
+        },
+        {
+          "name": "verifyIncomingClinicalLedger",
+          "startLine": 752,
+          "endLine": 759,
+          "params": [
+            "clinicalLedger",
+            "publicKeyPem"
+          ]
+        },
+        {
+          "name": "guardAndSignLiveSyncMutation",
+          "startLine": 765,
+          "endLine": 773,
+          "params": [
+            "mutation",
+            "envelope"
+          ]
+        },
+        {
+          "name": "getClinicalUser",
+          "startLine": 775,
+          "endLine": 777,
+          "params": []
+        },
+        {
+          "name": "scopeContextForEvaluateFromParts",
+          "startLine": 779,
+          "endLine": 795,
+          "params": [
+            "parts"
+          ]
+        },
+        {
+          "name": "getClinicalScopeContextForEvaluate",
+          "startLine": 798,
+          "endLine": 837,
+          "params": []
+        },
+        {
+          "name": "dropPatientSidecars",
+          "startLine": 839,
+          "endLine": 845,
+          "params": [
+            "pid"
+          ]
+        },
+        {
+          "name": "pruneMobilePatientsOutsideTeamScope",
+          "startLine": 848,
+          "endLine": 878,
+          "params": []
+        },
+        {
+          "name": "finalizeMobileLanPatientCensus",
+          "startLine": 881,
+          "endLine": 898,
+          "params": []
+        },
+        {
+          "name": "fetchClinicalScopeContextFromDb",
+          "startLine": 901,
+          "endLine": 918,
+          "params": []
+        },
+        {
+          "name": "fetchClinicalTeamsFromDb",
+          "startLine": 921,
+          "endLine": 935,
+          "params": []
+        },
+        {
+          "name": "fetchActiveRotationCycleFromDb",
+          "startLine": 938,
+          "endLine": 944,
+          "params": []
+        },
+        {
+          "name": "fetchIncomingAssignmentsFromDb",
+          "startLine": 947,
+          "endLine": 953,
+          "params": []
+        },
+        {
+          "name": "unlockClinicalSessionOverlay",
+          "startLine": 955,
+          "endLine": 958,
+          "params": []
+        },
+        {
+          "name": "resumeClinicalSession",
+          "startLine": 961,
+          "endLine": 969,
+          "params": [
+            "settings",
+            "clientId"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "clinicalSessionContext",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "markClinicalAccessBootReady",
+          "line": 60,
+          "isDefault": false
+        },
+        {
+          "name": "waitForClinicalAccessReady",
+          "line": 71,
+          "isDefault": false
+        },
+        {
+          "name": "isClinicalScopeReadyForLanPatientApply",
+          "line": 83,
+          "isDefault": false
+        },
+        {
+          "name": "applyClinicalScopeFromLanOpsSnapshot",
+          "line": 98,
+          "isDefault": false
+        },
+        {
+          "name": "prunePatientsOutsideClinicalScope",
+          "line": 154,
+          "isDefault": false
+        },
+        {
+          "name": "resolveClinicalRank",
+          "line": 167,
+          "isDefault": false
+        },
+        {
+          "name": "mapPatientForGuardiaGrid",
+          "line": 175,
+          "isDefault": false
+        },
+        {
+          "name": "buildGuardiasMap",
+          "line": 191,
+          "isDefault": false
+        },
+        {
+          "name": "migrateLocalPatientsClinicalSala",
+          "line": 261,
+          "isDefault": false
+        },
+        {
+          "name": "bootstrapClinicalAccess",
+          "line": 281,
+          "isDefault": false
+        },
+        {
+          "name": "lookupClinicalUserByUsername",
+          "line": 303,
+          "isDefault": false
+        },
+        {
+          "name": "resumeClinicalIdentityByUsername",
+          "line": 323,
+          "isDefault": false
+        },
+        {
+          "name": "touchClinicalSessionActivity",
+          "line": 426,
+          "isDefault": false
+        },
+        {
+          "name": "refreshClinicalUserProfile",
+          "line": 433,
+          "isDefault": false
+        },
+        {
+          "name": "ensureTeamAssignedPatientsOnDevice",
+          "line": 477,
+          "isDefault": false
+        },
+        {
+          "name": "ensureElevatedWardCensusOnDevice",
+          "line": 517,
+          "isDefault": false
+        },
+        {
+          "name": "refreshClinicalPatientListForScope",
+          "line": 537,
+          "isDefault": false
+        },
+        {
+          "name": "wireClinicalOpsSyncRefresh",
+          "line": 582,
+          "isDefault": false
+        },
+        {
+          "name": "initClinicalAccessRuntime",
+          "line": 596,
+          "isDefault": false
+        },
+        {
+          "name": "stopClinicalAccessRuntime",
+          "line": 646,
+          "isDefault": false
+        },
+        {
+          "name": "syncGuardiaCensusPanelVisibility",
+          "line": 667,
+          "isDefault": false
+        },
+        {
+          "name": "refreshGuardiaCensusFromDb",
+          "line": 675,
+          "isDefault": false
+        },
+        {
+          "name": "renderGuardiaCensusGrid",
+          "line": 692,
+          "isDefault": false
+        },
+        {
+          "name": "assertClinicalWriteAllowed",
+          "line": 700,
+          "isDefault": false
+        },
+        {
+          "name": "signOutgoingLiveSyncMutation",
+          "line": 723,
+          "isDefault": false
+        },
+        {
+          "name": "verifyIncomingClinicalLedger",
+          "line": 752,
+          "isDefault": false
+        },
+        {
+          "name": "guardAndSignLiveSyncMutation",
+          "line": 765,
+          "isDefault": false
+        },
+        {
+          "name": "getClinicalUser",
+          "line": 775,
+          "isDefault": false
+        },
+        {
+          "name": "getClinicalScopeContextForEvaluate",
+          "line": 798,
+          "isDefault": false
+        },
+        {
+          "name": "pruneMobilePatientsOutsideTeamScope",
+          "line": 848,
+          "isDefault": false
+        },
+        {
+          "name": "finalizeMobileLanPatientCensus",
+          "line": 881,
+          "isDefault": false
+        },
+        {
+          "name": "fetchClinicalScopeContextFromDb",
+          "line": 901,
+          "isDefault": false
+        },
+        {
+          "name": "fetchClinicalTeamsFromDb",
+          "line": 921,
+          "isDefault": false
+        },
+        {
+          "name": "fetchActiveRotationCycleFromDb",
+          "line": 938,
+          "isDefault": false
+        },
+        {
+          "name": "fetchIncomingAssignmentsFromDb",
+          "line": 947,
+          "isDefault": false
+        },
+        {
+          "name": "unlockClinicalSessionOverlay",
+          "line": 955,
+          "isDefault": false
+        },
+        {
+          "name": "resumeClinicalSession",
+          "line": 961,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "markClinicalAccessBootReady",
+          "callee": "resolve",
+          "lineNumber": 65
+        },
+        {
+          "caller": "markClinicalAccessBootReady",
+          "callee": "document.dispatchEvent",
+          "lineNumber": 67
+        },
+        {
+          "caller": "waitForClinicalAccessReady",
+          "callee": "isDbMode",
+          "lineNumber": 72
+        },
+        {
+          "caller": "waitForClinicalAccessReady",
+          "callee": "Promise.resolve",
+          "lineNumber": 72
+        },
+        {
+          "caller": "waitForClinicalAccessReady",
+          "callee": "setTimeout",
+          "lineNumber": 74
+        },
+        {
+          "caller": "waitForClinicalAccessReady",
+          "callee": "clinicalAccessBootWaiters.push",
+          "lineNumber": 75
+        },
+        {
+          "caller": "waitForClinicalAccessReady",
+          "callee": "clearTimeout",
+          "lineNumber": 76
+        },
+        {
+          "caller": "waitForClinicalAccessReady",
+          "callee": "resolve",
+          "lineNumber": 77
+        },
+        {
+          "caller": "isClinicalScopeReadyForLanPatientApply",
+          "callee": "shouldUseElevatedPatientCensus",
+          "lineNumber": 86
+        },
+        {
+          "caller": "isClinicalScopeReadyForLanPatientApply",
+          "callee": "shouldEnforceTeamPatientMirror",
+          "lineNumber": 89
+        },
+        {
+          "caller": "isClinicalScopeReadyForLanPatientApply",
+          "callee": "joinedTeamIdsForUser",
+          "lineNumber": 90
+        },
+        {
+          "caller": "applyClinicalScopeFromLanOpsSnapshot",
+          "callee": "isDbMode",
+          "lineNumber": 99
+        },
+        {
+          "caller": "applyClinicalScopeFromLanOpsSnapshot",
+          "callee": "readRpcSettings",
+          "lineNumber": 101
+        },
+        {
+          "caller": "applyClinicalScopeFromLanOpsSnapshot",
+          "callee": "resolveClinicalUserRowFromOpsSnapshot",
+          "lineNumber": 102
+        },
+        {
+          "caller": "applyClinicalScopeFromLanOpsSnapshot",
+          "callee": "String(resolved.rank || sessionUser?.rank || 'R1').trim",
+          "lineNumber": 107
+        },
+        {
+          "caller": "applyClinicalScopeFromLanOpsSnapshot",
+          "callee": "String",
+          "lineNumber": 107
+        },
+        {
+          "caller": "applyClinicalScopeFromLanOpsSnapshot",
+          "callee": "String",
+          "lineNumber": 109
+        },
+        {
+          "caller": "applyClinicalScopeFromLanOpsSnapshot",
+          "callee": "persistClinicalUserBinding",
+          "lineNumber": 118
+        },
+        {
+          "caller": "applyClinicalScopeFromLanOpsSnapshot",
+          "callee": "buildClinicalScopeContextFromOpsSnapshot",
+          "lineNumber": 128
+        },
+        {
+          "caller": "applyClinicalScopeFromLanOpsSnapshot",
+          "callee": "readEntregaPhaseActive",
+          "lineNumber": 130
+        },
+        {
+          "caller": "applyClinicalScopeFromLanOpsSnapshot",
+          "callee": "buildGuardiasMap",
+          "lineNumber": 137
+        },
+        {
+          "caller": "applyClinicalScopeFromLanOpsSnapshot",
+          "callee": "import('./features/patients.mjs')\n      .then((mod) => {\n        if (typeof mod.invalidateMobileSidebarPatientCache === 'function') {\n          mod.invalidateMobileSidebarPatientCache();\n        }\n      })\n      .catch",
+          "lineNumber": 139
+        },
+        {
+          "caller": "applyClinicalScopeFromLanOpsSnapshot",
+          "callee": "import('./features/patients.mjs')\n      .then",
+          "lineNumber": 139
+        },
+        {
+          "caller": "applyClinicalScopeFromLanOpsSnapshot",
+          "callee": "import",
+          "lineNumber": 139
+        },
+        {
+          "caller": "applyClinicalScopeFromLanOpsSnapshot",
+          "callee": "mod.invalidateMobileSidebarPatientCache",
+          "lineNumber": 142
+        },
+        {
+          "caller": "resolveClinicalRank",
+          "callee": "String",
+          "lineNumber": 169
+        },
+        {
+          "caller": "resolveClinicalRank",
+          "callee": "allowed.has",
+          "lineNumber": 171
+        },
+        {
+          "caller": "mapPatientForGuardiaGrid",
+          "callee": "String",
+          "lineNumber": 176
+        },
+        {
+          "caller": "mapPatientForGuardiaGrid",
+          "callee": "String",
+          "lineNumber": 177
+        },
+        {
+          "caller": "mapPatientForGuardiaGrid",
+          "callee": "String",
+          "lineNumber": 179
+        },
+        {
+          "caller": "mapPatientForGuardiaGrid",
+          "callee": "[cuarto, cama].filter(Boolean).join",
+          "lineNumber": 180
+        },
+        {
+          "caller": "mapPatientForGuardiaGrid",
+          "callee": "[cuarto, cama].filter",
+          "lineNumber": 180
+        },
+        {
+          "caller": "mapPatientForGuardiaGrid",
+          "callee": "String",
+          "lineNumber": 181
+        },
+        {
+          "caller": "mapPatientForGuardiaGrid",
+          "callee": "String",
+          "lineNumber": 182
+        },
+        {
+          "caller": "mapPatientForGuardiaGrid",
+          "callee": "String",
+          "lineNumber": 183
+        },
+        {
+          "caller": "mapPatientForGuardiaGrid",
+          "callee": "Number",
+          "lineNumber": 184
+        },
+        {
+          "caller": "mapPatientForGuardiaGrid",
+          "callee": "String",
+          "lineNumber": 185
+        },
+        {
+          "caller": "mapPatientForGuardiaGrid",
+          "callee": "String",
+          "lineNumber": 186
+        },
+        {
+          "caller": "buildGuardiasMap",
+          "callee": "(guardias || []).forEach",
+          "lineNumber": 193
+        },
+        {
+          "caller": "buildGuardiasMap",
+          "callee": "map.set",
+          "lineNumber": 194
+        },
+        {
+          "caller": "buildGuardiasMap",
+          "callee": "String",
+          "lineNumber": 194
+        },
+        {
+          "caller": "applyBootstrapResult",
+          "callee": "electronApi",
+          "lineNumber": 205
+        },
+        {
+          "caller": "applyBootstrapResult",
+          "callee": "api.dbClinicalProfileGet",
+          "lineNumber": 215
+        },
+        {
+          "caller": "applyBootstrapResult",
+          "callee": "String",
+          "lineNumber": 218
+        },
+        {
+          "caller": "applyBootstrapResult",
+          "callee": "Array.isArray",
+          "lineNumber": 229
+        },
+        {
+          "caller": "applyBootstrapResult",
+          "callee": "buildGuardiasMap",
+          "lineNumber": 230
+        },
+        {
+          "caller": "applyBootstrapResult",
+          "callee": "Array.isArray",
+          "lineNumber": 231
+        },
+        {
+          "caller": "applyBootstrapResult",
+          "callee": "readRpcSettings",
+          "lineNumber": 232
+        },
+        {
+          "caller": "applyBootstrapResult",
+          "callee": "String",
+          "lineNumber": 233
+        },
+        {
+          "caller": "applyBootstrapResult",
+          "callee": "isLegacyMachineUsername",
+          "lineNumber": 238
+        },
+        {
+          "caller": "applyBootstrapResult",
+          "callee": "persistClinicalUserBinding",
+          "lineNumber": 241
+        },
+        {
+          "caller": "applyBootstrapResult",
+          "callee": "refreshClinicalUserProfile",
+          "lineNumber": 242
+        },
+        {
+          "caller": "applyBootstrapResult",
+          "callee": "fetchClinicalTeamsFromDb",
+          "lineNumber": 243
+        },
+        {
+          "caller": "applyBootstrapResult",
+          "callee": "fetchClinicalScopeContextFromDb",
+          "lineNumber": 244
+        },
+        {
+          "caller": "applyBootstrapResult",
+          "callee": "hasElevatedTeamPrivileges",
+          "lineNumber": 245
+        },
+        {
+          "caller": "applyBootstrapResult",
+          "callee": "ensureElevatedWardCensusOnDevice",
+          "lineNumber": 246
+        },
+        {
+          "caller": "applyBootstrapResult",
+          "callee": "import('./clinical-profile-lan-sync.mjs')\n      .then((mod) => mod.flushClinicalProfileToLan())\n      .catch",
+          "lineNumber": 253
+        },
+        {
+          "caller": "applyBootstrapResult",
+          "callee": "import('./clinical-profile-lan-sync.mjs')\n      .then",
+          "lineNumber": 253
+        },
+        {
+          "caller": "applyBootstrapResult",
+          "callee": "import",
+          "lineNumber": 253
+        },
+        {
+          "caller": "applyBootstrapResult",
+          "callee": "mod.flushClinicalProfileToLan",
+          "lineNumber": 254
+        },
+        {
+          "caller": "applyBootstrapResult",
+          "callee": "migrateLocalPatientsClinicalSala",
+          "lineNumber": 257
+        },
+        {
+          "caller": "migrateLocalPatientsClinicalSala",
+          "callee": "readRpcSettings",
+          "lineNumber": 263
+        },
+        {
+          "caller": "migrateLocalPatientsClinicalSala",
+          "callee": "String(user?.sala || '').trim",
+          "lineNumber": 265
+        },
+        {
+          "caller": "migrateLocalPatientsClinicalSala",
+          "callee": "String",
+          "lineNumber": 265
+        },
+        {
+          "caller": "migrateLocalPatientsClinicalSala",
+          "callee": "String(settings.clinicalSala || '').trim",
+          "lineNumber": 265
+        },
+        {
+          "caller": "migrateLocalPatientsClinicalSala",
+          "callee": "String",
+          "lineNumber": 265
+        },
+        {
+          "caller": "migrateLocalPatientsClinicalSala",
+          "callee": "migratePatientsClinicalSala",
+          "lineNumber": 269
+        },
+        {
+          "caller": "migrateLocalPatientsClinicalSala",
+          "callee": "saveState",
+          "lineNumber": 271
+        },
+        {
+          "caller": "migrateLocalPatientsClinicalSala",
+          "callee": "import('./features/patients.mjs')\n        .then((mod) => mod.renderPatientList({ silent: true }))\n        .catch",
+          "lineNumber": 273
+        },
+        {
+          "caller": "migrateLocalPatientsClinicalSala",
+          "callee": "import('./features/patients.mjs')\n        .then",
+          "lineNumber": 273
+        },
+        {
+          "caller": "migrateLocalPatientsClinicalSala",
+          "callee": "import",
+          "lineNumber": 273
+        },
+        {
+          "caller": "migrateLocalPatientsClinicalSala",
+          "callee": "mod.renderPatientList",
+          "lineNumber": 274
+        },
+        {
+          "caller": "bootstrapClinicalAccess",
+          "callee": "isDbMode",
+          "lineNumber": 282
+        },
+        {
+          "caller": "bootstrapClinicalAccess",
+          "callee": "electronApi",
+          "lineNumber": 283
+        },
+        {
+          "caller": "bootstrapClinicalAccess",
+          "callee": "readRpcSettings",
+          "lineNumber": 286
+        },
+        {
+          "caller": "bootstrapClinicalAccess",
+          "callee": "api.dbClinicalAccessBootstrap",
+          "lineNumber": 287
+        },
+        {
+          "caller": "bootstrapClinicalAccess",
+          "callee": "resolveClinicalRank",
+          "lineNumber": 289
+        },
+        {
+          "caller": "bootstrapClinicalAccess",
+          "callee": "String",
+          "lineNumber": 290
+        },
+        {
+          "caller": "bootstrapClinicalAccess",
+          "callee": "String",
+          "lineNumber": 291
+        },
+        {
+          "caller": "bootstrapClinicalAccess",
+          "callee": "applyBootstrapResult",
+          "lineNumber": 295
+        },
+        {
+          "caller": "lookupClinicalUserByUsername",
+          "callee": "isDbMode",
+          "lineNumber": 304
+        },
+        {
+          "caller": "lookupClinicalUserByUsername",
+          "callee": "electronApi",
+          "lineNumber": 305
+        },
+        {
+          "caller": "lookupClinicalUserByUsername",
+          "callee": "normalizeUsername",
+          "lineNumber": 306
+        },
+        {
+          "caller": "lookupClinicalUserByUsername",
+          "callee": "isValidUsernameFormat",
+          "lineNumber": 307
+        },
+        {
+          "caller": "lookupClinicalUserByUsername",
+          "callee": "api.dbClinicalUserLookup",
+          "lineNumber": 311
+        },
+        {
+          "caller": "resumeClinicalIdentityByUsername",
+          "callee": "isDbMode",
+          "lineNumber": 325
+        },
+        {
+          "caller": "resumeClinicalIdentityByUsername",
+          "callee": "electronApi",
+          "lineNumber": 326
+        },
+        {
+          "caller": "resumeClinicalIdentityByUsername",
+          "callee": "normalizeUsername",
+          "lineNumber": 327
+        },
+        {
+          "caller": "resumeClinicalIdentityByUsername",
+          "callee": "readRpcSettings",
+          "lineNumber": 331
+        },
+        {
+          "caller": "resumeClinicalIdentityByUsername",
+          "callee": "String",
+          "lineNumber": 334
+        },
+        {
+          "caller": "resumeClinicalIdentityByUsername",
+          "callee": "String",
+          "lineNumber": 335
+        },
+        {
+          "caller": "resumeClinicalIdentityByUsername",
+          "callee": "String",
+          "lineNumber": 337
+        },
+        {
+          "caller": "resumeClinicalIdentityByUsername",
+          "callee": "api.dbClinicalIdentityResume",
+          "lineNumber": 340
+        },
+        {
+          "caller": "resumeClinicalIdentityByUsername",
+          "callee": "applyBootstrapResult",
+          "lineNumber": 347
+        },
+        {
+          "caller": "resumeClinicalIdentityByUsername",
+          "callee": "persistClinicalUserBinding",
+          "lineNumber": 348
+        },
+        {
+          "caller": "resumeClinicalIdentityByUsername",
+          "callee": "Number",
+          "lineNumber": 352
+        },
+        {
+          "caller": "resumeClinicalIdentityByUsername",
+          "callee": "fetchClinicalTeamsFromDb",
+          "lineNumber": 353
+        },
+        {
+          "caller": "resumeClinicalIdentityByUsername",
+          "callee": "api.dbClinicalAccessBootstrap",
+          "lineNumber": 361
+        },
+        {
+          "caller": "resumeClinicalIdentityByUsername",
+          "callee": "String",
+          "lineNumber": 362
+        },
+        {
+          "caller": "resumeClinicalIdentityByUsername",
+          "callee": "resolveClinicalRank",
+          "lineNumber": 363
+        },
+        {
+          "caller": "resumeClinicalIdentityByUsername",
+          "callee": "String",
+          "lineNumber": 363
+        },
+        {
+          "caller": "resumeClinicalIdentityByUsername",
+          "callee": "normalizeUsername",
+          "lineNumber": 370
+        },
+        {
+          "caller": "resumeClinicalIdentityByUsername",
+          "callee": "applyBootstrapResult",
+          "lineNumber": 376
+        },
+        {
+          "caller": "touchClinicalUserActivityRemote",
+          "callee": "electronApi",
+          "lineNumber": 385
+        },
+        {
+          "caller": "touchClinicalUserActivityRemote",
+          "callee": "String(userId || resolveClinicalSessionUserId() || '').trim",
+          "lineNumber": 386
+        },
+        {
+          "caller": "touchClinicalUserActivityRemote",
+          "callee": "String",
+          "lineNumber": 386
+        },
+        {
+          "caller": "touchClinicalUserActivityRemote",
+          "callee": "resolveClinicalSessionUserId",
+          "lineNumber": 386
+        },
+        {
+          "caller": "touchClinicalUserActivityRemote",
+          "callee": "Date.now",
+          "lineNumber": 388
+        },
+        {
+          "caller": "touchClinicalUserActivityRemote",
+          "callee": "api.dbClinicalUserTouch",
+          "lineNumber": 394
+        },
+        {
+          "caller": "touchClinicalUserActivityRemote",
+          "callee": "scheduleClinicalActivityLanPush",
+          "lineNumber": 396
+        },
+        {
+          "caller": "touchClinicalUserActivityRemote",
+          "callee": "document.dispatchEvent",
+          "lineNumber": 398
+        },
+        {
+          "caller": "scheduleClinicalActivityLanPush",
+          "callee": "setTimeout",
+          "lineNumber": 410
+        },
+        {
+          "caller": "scheduleClinicalActivityLanPush",
+          "callee": "import('./features/lan-sync.mjs')\n      .then((mod) => {\n        if (typeof mod.pushClinicalOpsLanNow === 'function') {\n          return mod.pushClinicalOpsLanNow();\n        }\n      })\n      .catch",
+          "lineNumber": 412
+        },
+        {
+          "caller": "scheduleClinicalActivityLanPush",
+          "callee": "import('./features/lan-sync.mjs')\n      .then",
+          "lineNumber": 412
+        },
+        {
+          "caller": "scheduleClinicalActivityLanPush",
+          "callee": "import",
+          "lineNumber": 412
+        },
+        {
+          "caller": "scheduleClinicalActivityLanPush",
+          "callee": "mod.pushClinicalOpsLanNow",
+          "lineNumber": 415
+        },
+        {
+          "caller": "touchClinicalSessionActivity",
+          "callee": "resolveClinicalSessionUserId",
+          "lineNumber": 427
+        },
+        {
+          "caller": "touchClinicalSessionActivity",
+          "callee": "touchClinicalUserActivityRemote",
+          "lineNumber": 429
+        },
+        {
+          "caller": "refreshClinicalUserProfile",
+          "callee": "import",
+          "lineNumber": 434
+        },
+        {
+          "caller": "refreshClinicalUserProfile",
+          "callee": "ensureLanProfileGateDeviceReset",
+          "lineNumber": 435
+        },
+        {
+          "caller": "refreshClinicalUserProfile",
+          "callee": "electronApi",
+          "lineNumber": 436
+        },
+        {
+          "caller": "refreshClinicalUserProfile",
+          "callee": "String",
+          "lineNumber": 437
+        },
+        {
+          "caller": "refreshClinicalUserProfile",
+          "callee": "api.dbClinicalProfileGet",
+          "lineNumber": 440
+        },
+        {
+          "caller": "refreshClinicalUserProfile",
+          "callee": "persistClinicalUserBinding",
+          "lineNumber": 449
+        },
+        {
+          "caller": "refreshClinicalUserProfile",
+          "callee": "touchClinicalUserActivityRemote",
+          "lineNumber": 452
+        },
+        {
+          "caller": "refreshClinicalUserProfile",
+          "callee": "migrateLocalPatientsClinicalSala",
+          "lineNumber": 454
+        },
+        {
+          "caller": "scheduleLanPatientReconcile",
+          "callee": "import",
+          "lineNumber": 460
+        },
+        {
+          "caller": "scheduleLanPatientReconcile",
+          "callee": "lan.isLanSessionConfiguredForRest",
+          "lineNumber": 461
+        },
+        {
+          "caller": "scheduleLanPatientReconcile",
+          "callee": "String(lan.getActiveLiveSyncRoomId() || '').trim",
+          "lineNumber": 466
+        },
+        {
+          "caller": "scheduleLanPatientReconcile",
+          "callee": "String",
+          "lineNumber": 466
+        },
+        {
+          "caller": "scheduleLanPatientReconcile",
+          "callee": "lan.getActiveLiveSyncRoomId",
+          "lineNumber": 466
+        },
+        {
+          "caller": "scheduleLanPatientReconcile",
+          "callee": "import",
+          "lineNumber": 469
+        },
+        {
+          "caller": "scheduleLanPatientReconcile",
+          "callee": "push.scheduleReconcileLiveSyncRoom",
+          "lineNumber": 471
+        },
+        {
+          "caller": "ensureTeamAssignedPatientsOnDevice",
+          "callee": "getClinicalScopeContextForEvaluate",
+          "lineNumber": 480
+        },
+        {
+          "caller": "ensureTeamAssignedPatientsOnDevice",
+          "callee": "Array.isArray",
+          "lineNumber": 481
+        },
+        {
+          "caller": "ensureTeamAssignedPatientsOnDevice",
+          "callee": "Array.isArray",
+          "lineNumber": 482
+        },
+        {
+          "caller": "ensureTeamAssignedPatientsOnDevice",
+          "callee": "new Date().toISOString",
+          "lineNumber": 483
+        },
+        {
+          "caller": "ensureTeamAssignedPatientsOnDevice",
+          "callee": "(patients || []).map",
+          "lineNumber": 484
+        },
+        {
+          "caller": "ensureTeamAssignedPatientsOnDevice",
+          "callee": "String",
+          "lineNumber": 484
+        },
+        {
+          "caller": "ensureTeamAssignedPatientsOnDevice",
+          "callee": "hasElevatedTeamPrivileges",
+          "lineNumber": 485
+        },
+        {
+          "caller": "ensureTeamAssignedPatientsOnDevice",
+          "callee": "String",
+          "lineNumber": 490
+        },
+        {
+          "caller": "ensureTeamAssignedPatientsOnDevice",
+          "callee": "localIds.has",
+          "lineNumber": 491
+        },
+        {
+          "caller": "ensureTeamAssignedPatientsOnDevice",
+          "callee": "userHasJoinedClinicalTeams",
+          "lineNumber": 494
+        },
+        {
+          "caller": "ensureTeamAssignedPatientsOnDevice",
+          "callee": "import",
+          "lineNumber": 495
+        },
+        {
+          "caller": "ensureTeamAssignedPatientsOnDevice",
+          "callee": "import",
+          "lineNumber": 496
+        },
+        {
+          "caller": "ensureTeamAssignedPatientsOnDevice",
+          "callee": "filterJoinedTeams",
+          "lineNumber": 497
+        },
+        {
+          "caller": "ensureTeamAssignedPatientsOnDevice",
+          "callee": "joined.map",
+          "lineNumber": 498
+        },
+        {
+          "caller": "ensureTeamAssignedPatientsOnDevice",
+          "callee": "String",
+          "lineNumber": 498
+        },
+        {
+          "caller": "ensureTeamAssignedPatientsOnDevice",
+          "callee": "String",
+          "lineNumber": 501
+        },
+        {
+          "caller": "ensureTeamAssignedPatientsOnDevice",
+          "callee": "localIds.has",
+          "lineNumber": 502
+        },
+        {
+          "caller": "ensureTeamAssignedPatientsOnDevice",
+          "callee": "resolvePatientTeamIdFromAssignments",
+          "lineNumber": 503
+        },
+        {
+          "caller": "ensureTeamAssignedPatientsOnDevice",
+          "callee": "teamIds.has",
+          "lineNumber": 504
+        },
+        {
+          "caller": "ensureTeamAssignedPatientsOnDevice",
+          "callee": "scheduleLanPatientReconcile",
+          "lineNumber": 510
+        },
+        {
+          "caller": "ensureElevatedWardCensusOnDevice",
+          "callee": "hasElevatedTeamPrivileges",
+          "lineNumber": 519
+        },
+        {
+          "caller": "ensureElevatedWardCensusOnDevice",
+          "callee": "String",
+          "lineNumber": 521
+        },
+        {
+          "caller": "ensureElevatedWardCensusOnDevice",
+          "callee": "ensureTeamAssignedPatientsOnDevice",
+          "lineNumber": 524
+        },
+        {
+          "caller": "ensureElevatedWardCensusOnDevice",
+          "callee": "scheduleLanPatientReconcile",
+          "lineNumber": 527
+        },
+        {
+          "caller": "refreshClinicalPatientListForScope",
+          "callee": "(async function () {\n    if (isDbMode()) {\n      await fetchClinicalTeamsFromDb();\n      await fetchClinicalScopeContextFromDb();\n      await ensureTeamAssignedPatientsOnDevice({ allowLanPull: !!opts.allowLanPull });\n    }\n    if (typeof document === 'undefined') return;\n    try {\n      const mod = await import('./features/patients.mjs');\n      if (typeof mod.renderPatientList === 'function') {\n        mod.renderPatientList({ silent: true });\n      }\n    } catch (_e) {}\n  })().finally",
+          "lineNumber": 541
+        },
+        {
+          "caller": "refreshClinicalPatientListForScope",
+          "callee": "(async function () {\n    if (isDbMode()) {\n      await fetchClinicalTeamsFromDb();\n      await fetchClinicalScopeContextFromDb();\n      await ensureTeamAssignedPatientsOnDevice({ allowLanPull: !!opts.allowLanPull });\n    }\n    if (typeof document === 'undefined') return;\n    try {\n      const mod = await import('./features/patients.mjs');\n      if (typeof mod.renderPatientList === 'function') {\n        mod.renderPatientList({ silent: true });\n      }\n    } catch (_e) {}\n  })",
+          "lineNumber": 541
+        },
+        {
+          "caller": "refreshClinicalPatientListForScope",
+          "callee": "isDbMode",
+          "lineNumber": 542
+        },
+        {
+          "caller": "refreshClinicalPatientListForScope",
+          "callee": "fetchClinicalTeamsFromDb",
+          "lineNumber": 543
+        },
+        {
+          "caller": "refreshClinicalPatientListForScope",
+          "callee": "fetchClinicalScopeContextFromDb",
+          "lineNumber": 544
+        },
+        {
+          "caller": "refreshClinicalPatientListForScope",
+          "callee": "ensureTeamAssignedPatientsOnDevice",
+          "lineNumber": 545
+        },
+        {
+          "caller": "refreshClinicalPatientListForScope",
+          "callee": "import",
+          "lineNumber": 549
+        },
+        {
+          "caller": "refreshClinicalPatientListForScope",
+          "callee": "mod.renderPatientList",
+          "lineNumber": 551
+        },
+        {
+          "caller": "pullHostPatientsAfterAssignmentMerge",
+          "callee": "Number",
+          "lineNumber": 563
+        },
+        {
+          "caller": "pullHostPatientsAfterAssignmentMerge",
+          "callee": "isDbMode",
+          "lineNumber": 564
+        },
+        {
+          "caller": "pullHostPatientsAfterAssignmentMerge",
+          "callee": "import",
+          "lineNumber": 566
+        },
+        {
+          "caller": "pullHostPatientsAfterAssignmentMerge",
+          "callee": "lan.isLanSessionConfiguredForRest",
+          "lineNumber": 567
+        },
+        {
+          "caller": "pullHostPatientsAfterAssignmentMerge",
+          "callee": "String(lan.getActiveLiveSyncRoomId() || '').trim",
+          "lineNumber": 571
+        },
+        {
+          "caller": "pullHostPatientsAfterAssignmentMerge",
+          "callee": "String",
+          "lineNumber": 571
+        },
+        {
+          "caller": "pullHostPatientsAfterAssignmentMerge",
+          "callee": "lan.getActiveLiveSyncRoomId",
+          "lineNumber": 571
+        },
+        {
+          "caller": "pullHostPatientsAfterAssignmentMerge",
+          "callee": "import",
+          "lineNumber": 573
+        },
+        {
+          "caller": "pullHostPatientsAfterAssignmentMerge",
+          "callee": "push.scheduleReconcileLiveSyncRoom",
+          "lineNumber": 575
+        },
+        {
+          "caller": "pullHostPatientsAfterAssignmentMerge",
+          "callee": "push.reconcileLiveSyncRoom",
+          "lineNumber": 577
+        },
+        {
+          "caller": "wireClinicalOpsSyncRefresh",
+          "callee": "document.addEventListener",
+          "lineNumber": 585
+        },
+        {
+          "caller": "wireClinicalOpsSyncRefresh",
+          "callee": "document.body.classList.contains",
+          "lineNumber": 586
+        },
+        {
+          "caller": "wireClinicalOpsSyncRefresh",
+          "callee": "clearTimeout",
+          "lineNumber": 587
+        },
+        {
+          "caller": "wireClinicalOpsSyncRefresh",
+          "callee": "setTimeout",
+          "lineNumber": 588
+        },
+        {
+          "caller": "wireClinicalOpsSyncRefresh",
+          "callee": "refreshClinicalPatientListForScope",
+          "lineNumber": 590
+        },
+        {
+          "caller": "wireClinicalOpsSyncRefresh",
+          "callee": "pullHostPatientsAfterAssignmentMerge",
+          "lineNumber": 591
+        },
+        {
+          "caller": "initClinicalAccessRuntime",
+          "callee": "bootstrapClinicalAccess",
+          "lineNumber": 597
+        },
+        {
+          "caller": "initClinicalAccessRuntime",
+          "callee": "markClinicalAccessBootReady",
+          "lineNumber": 598
+        },
+        {
+          "caller": "initClinicalAccessRuntime",
+          "callee": "wireClinicalOpsSyncRefresh",
+          "lineNumber": 600
+        },
+        {
+          "caller": "initClinicalAccessRuntime",
+          "callee": "vitalsLoop.stop",
+          "lineNumber": 602
+        },
+        {
+          "caller": "initClinicalAccessRuntime",
+          "callee": "electronApi",
+          "lineNumber": 606
+        },
+        {
+          "caller": "initClinicalAccessRuntime",
+          "callee": "api.dbGuardiaCensus",
+          "lineNumber": 608
+        },
+        {
+          "caller": "initClinicalAccessRuntime",
+          "callee": "Array.isArray",
+          "lineNumber": 610
+        },
+        {
+          "caller": "initClinicalAccessRuntime",
+          "callee": "String",
+          "lineNumber": 613
+        },
+        {
+          "caller": "initClinicalAccessRuntime",
+          "callee": "String",
+          "lineNumber": 616
+        },
+        {
+          "caller": "initClinicalAccessRuntime",
+          "callee": "effectiveClinicalRank",
+          "lineNumber": 618
+        },
+        {
+          "caller": "initClinicalAccessRuntime",
+          "callee": "userIsOnGuardiaCallToday",
+          "lineNumber": 624
+        },
+        {
+          "caller": "initClinicalAccessRuntime",
+          "callee": "patients.find",
+          "lineNumber": 627
+        },
+        {
+          "caller": "initClinicalAccessRuntime",
+          "callee": "String",
+          "lineNumber": 627
+        },
+        {
+          "caller": "initClinicalAccessRuntime",
+          "callee": "String",
+          "lineNumber": 627
+        },
+        {
+          "caller": "initClinicalAccessRuntime",
+          "callee": "String(p.nombre || '').trim",
+          "lineNumber": 629
+        },
+        {
+          "caller": "initClinicalAccessRuntime",
+          "callee": "String",
+          "lineNumber": 629
+        },
+        {
+          "caller": "initClinicalAccessRuntime",
+          "callee": "[p.cuarto, p.cama].filter(Boolean).join",
+          "lineNumber": 630
+        },
+        {
+          "caller": "initClinicalAccessRuntime",
+          "callee": "[p.cuarto, p.cama].filter",
+          "lineNumber": 630
+        },
+        {
+          "caller": "initClinicalAccessRuntime",
+          "callee": "vitalsLoop.start",
+          "lineNumber": 636
+        },
+        {
+          "caller": "initClinicalAccessRuntime",
+          "callee": "sessionLocker.stop",
+          "lineNumber": 638
+        },
+        {
+          "caller": "initClinicalAccessRuntime",
+          "callee": "sessionLocker.start",
+          "lineNumber": 640
+        },
+        {
+          "caller": "initClinicalAccessRuntime",
+          "callee": "syncGuardiaCensusPanelVisibility",
+          "lineNumber": 642
+        },
+        {
+          "caller": "initClinicalAccessRuntime",
+          "callee": "isGuardiaMode",
+          "lineNumber": 643
+        },
+        {
+          "caller": "initClinicalAccessRuntime",
+          "callee": "renderGuardiaBoard",
+          "lineNumber": 643
+        },
+        {
+          "caller": "stopClinicalAccessRuntime",
+          "callee": "vitalsLoop.stop",
+          "lineNumber": 648
+        },
+        {
+          "caller": "stopClinicalAccessRuntime",
+          "callee": "sessionLocker.stop",
+          "lineNumber": 652
+        },
+        {
+          "caller": "syncGuardiaCensusPanelVisibility",
+          "callee": "document.getElementById",
+          "lineNumber": 668
+        },
+        {
+          "caller": "refreshGuardiaCensusFromDb",
+          "callee": "isDbMode",
+          "lineNumber": 676
+        },
+        {
+          "caller": "refreshGuardiaCensusFromDb",
+          "callee": "electronApi",
+          "lineNumber": 677
+        },
+        {
+          "caller": "refreshGuardiaCensusFromDb",
+          "callee": "api.dbGuardiaCensus",
+          "lineNumber": 679
+        },
+        {
+          "caller": "refreshGuardiaCensusFromDb",
+          "callee": "Array.isArray",
+          "lineNumber": 681
+        },
+        {
+          "caller": "refreshGuardiaCensusFromDb",
+          "callee": "buildGuardiasMap",
+          "lineNumber": 682
+        },
+        {
+          "caller": "refreshGuardiaCensusFromDb",
+          "callee": "Array.isArray",
+          "lineNumber": 683
+        },
+        {
+          "caller": "refreshGuardiaCensusFromDb",
+          "callee": "fetchClinicalTeamsFromDb",
+          "lineNumber": 684
+        },
+        {
+          "caller": "refreshGuardiaCensusFromDb",
+          "callee": "fetchClinicalScopeContextFromDb",
+          "lineNumber": 685
+        },
+        {
+          "caller": "refreshGuardiaCensusFromDb",
+          "callee": "renderGuardiaCensusGrid",
+          "lineNumber": 686
+        },
+        {
+          "caller": "renderGuardiaCensusGrid",
+          "callee": "isGuardiaMode",
+          "lineNumber": 693
+        },
+        {
+          "caller": "renderGuardiaCensusGrid",
+          "callee": "renderGuardiaBoard",
+          "lineNumber": 693
+        },
+        {
+          "caller": "assertClinicalWriteAllowed",
+          "callee": "patients.find",
+          "lineNumber": 702
+        },
+        {
+          "caller": "assertClinicalWriteAllowed",
+          "callee": "String",
+          "lineNumber": 702
+        },
+        {
+          "caller": "assertClinicalWriteAllowed",
+          "callee": "String",
+          "lineNumber": 702
+        },
+        {
+          "caller": "assertClinicalWriteAllowed",
+          "callee": "clinicalSessionContext.guardiasMap.get",
+          "lineNumber": 704
+        },
+        {
+          "caller": "assertClinicalWriteAllowed",
+          "callee": "String",
+          "lineNumber": 704
+        },
+        {
+          "caller": "assertClinicalWriteAllowed",
+          "callee": "evaluateClinicalScope",
+          "lineNumber": 705
+        },
+        {
+          "caller": "assertClinicalWriteAllowed",
+          "callee": "getClinicalScopeContextForEvaluate",
+          "lineNumber": 709
+        },
+        {
+          "caller": "signOutgoingLiveSyncMutation",
+          "callee": "String",
+          "lineNumber": 728
+        },
+        {
+          "caller": "signOutgoingLiveSyncMutation",
+          "callee": "clinicalSessionContext.lastBlockHashByPatient.get",
+          "lineNumber": 733
+        },
+        {
+          "caller": "signOutgoingLiveSyncMutation",
+          "callee": "signClinicalChange",
+          "lineNumber": 735
+        },
+        {
+          "caller": "signOutgoingLiveSyncMutation",
+          "callee": "clinicalSessionContext.lastBlockHashByPatient.set",
+          "lineNumber": 744
+        },
+        {
+          "caller": "verifyIncomingClinicalLedger",
+          "callee": "verifyIncomingPeerChange",
+          "lineNumber": 754
+        },
+        {
+          "caller": "guardAndSignLiveSyncMutation",
+          "callee": "assertClinicalWriteAllowed",
+          "lineNumber": 767
+        },
+        {
+          "caller": "guardAndSignLiveSyncMutation",
+          "callee": "String",
+          "lineNumber": 767
+        },
+        {
+          "caller": "guardAndSignLiveSyncMutation",
+          "callee": "signOutgoingLiveSyncMutation",
+          "lineNumber": 768
+        },
+        {
+          "caller": "scopeContextForEvaluateFromParts",
+          "callee": "shouldEnforceTeamPatientMirror",
+          "lineNumber": 783
+        },
+        {
+          "caller": "getClinicalScopeContextForEvaluate",
+          "callee": "scopeContextForEvaluateFromParts",
+          "lineNumber": 801
+        },
+        {
+          "caller": "getClinicalScopeContextForEvaluate",
+          "callee": "Array.isArray",
+          "lineNumber": 802
+        },
+        {
+          "caller": "getClinicalScopeContextForEvaluate",
+          "callee": "Array.isArray",
+          "lineNumber": 803
+        },
+        {
+          "caller": "getClinicalScopeContextForEvaluate",
+          "callee": "Array.isArray",
+          "lineNumber": 807
+        },
+        {
+          "caller": "getClinicalScopeContextForEvaluate",
+          "callee": "Array.isArray",
+          "lineNumber": 808
+        },
+        {
+          "caller": "getClinicalScopeContextForEvaluate",
+          "callee": "readEntregaPhaseActive",
+          "lineNumber": 816
+        },
+        {
+          "caller": "getClinicalScopeContextForEvaluate",
+          "callee": "shouldEnforceTeamPatientMirror",
+          "lineNumber": 817
+        },
+        {
+          "caller": "getClinicalScopeContextForEvaluate",
+          "callee": "new Date().toISOString",
+          "lineNumber": 820
+        },
+        {
+          "caller": "getClinicalScopeContextForEvaluate",
+          "callee": "Array.isArray",
+          "lineNumber": 823
+        },
+        {
+          "caller": "getClinicalScopeContextForEvaluate",
+          "callee": "scopeContextForEvaluateFromParts",
+          "lineNumber": 826
+        },
+        {
+          "caller": "getClinicalScopeContextForEvaluate",
+          "callee": "readEntregaPhaseActive",
+          "lineNumber": 833
+        },
+        {
+          "caller": "getClinicalScopeContextForEvaluate",
+          "callee": "shouldEnforceTeamPatientMirror",
+          "lineNumber": 834
+        },
+        {
+          "caller": "getClinicalScopeContextForEvaluate",
+          "callee": "new Date().toISOString",
+          "lineNumber": 835
+        },
+        {
+          "caller": "dropPatientSidecars",
+          "callee": "String",
+          "lineNumber": 840
+        },
+        {
+          "caller": "pruneMobilePatientsOutsideTeamScope",
+          "callee": "shouldEnforceTeamPatientMirror",
+          "lineNumber": 849
+        },
+        {
+          "caller": "pruneMobilePatientsOutsideTeamScope",
+          "callee": "isClinicalScopeReadyForLanPatientApply",
+          "lineNumber": 852
+        },
+        {
+          "caller": "pruneMobilePatientsOutsideTeamScope",
+          "callee": "setPatients",
+          "lineNumber": 855
+        },
+        {
+          "caller": "pruneMobilePatientsOutsideTeamScope",
+          "callee": "Object.keys",
+          "lineNumber": 856
+        },
+        {
+          "caller": "pruneMobilePatientsOutsideTeamScope",
+          "callee": "dropPatientSidecars",
+          "lineNumber": 856
+        },
+        {
+          "caller": "pruneMobilePatientsOutsideTeamScope",
+          "callee": "getClinicalScopeContextForEvaluate",
+          "lineNumber": 860
+        },
+        {
+          "caller": "pruneMobilePatientsOutsideTeamScope",
+          "callee": "filterPatientsForClinicalSidebar",
+          "lineNumber": 861
+        },
+        {
+          "caller": "pruneMobilePatientsOutsideTeamScope",
+          "callee": "visible.map((p) => String(p?.id || '')).filter",
+          "lineNumber": 867
+        },
+        {
+          "caller": "pruneMobilePatientsOutsideTeamScope",
+          "callee": "visible.map",
+          "lineNumber": 867
+        },
+        {
+          "caller": "pruneMobilePatientsOutsideTeamScope",
+          "callee": "String",
+          "lineNumber": 867
+        },
+        {
+          "caller": "pruneMobilePatientsOutsideTeamScope",
+          "callee": "Math.max",
+          "lineNumber": 868
+        },
+        {
+          "caller": "pruneMobilePatientsOutsideTeamScope",
+          "callee": "Object.keys",
+          "lineNumber": 869
+        },
+        {
+          "caller": "pruneMobilePatientsOutsideTeamScope",
+          "callee": "visibleIds.has",
+          "lineNumber": 870
+        },
+        {
+          "caller": "pruneMobilePatientsOutsideTeamScope",
+          "callee": "dropPatientSidecars",
+          "lineNumber": 870
+        },
+        {
+          "caller": "pruneMobilePatientsOutsideTeamScope",
+          "callee": "String",
+          "lineNumber": 873
+        },
+        {
+          "caller": "pruneMobilePatientsOutsideTeamScope",
+          "callee": "visibleIds.has",
+          "lineNumber": 874
+        },
+        {
+          "caller": "pruneMobilePatientsOutsideTeamScope",
+          "callee": "dropPatientSidecars",
+          "lineNumber": 874
+        },
+        {
+          "caller": "pruneMobilePatientsOutsideTeamScope",
+          "callee": "setPatients",
+          "lineNumber": 876
+        },
+        {
+          "caller": "finalizeMobileLanPatientCensus",
+          "callee": "shouldEnforceTeamPatientMirror",
+          "lineNumber": 882
+        },
+        {
+          "caller": "finalizeMobileLanPatientCensus",
+          "callee": "pruneMobilePatientsOutsideTeamScope",
+          "lineNumber": 883
+        },
+        {
+          "caller": "finalizeMobileLanPatientCensus",
+          "callee": "import",
+          "lineNumber": 886
+        },
+        {
+          "caller": "finalizeMobileLanPatientCensus",
+          "callee": "mod.invalidateMobileSidebarPatientCache",
+          "lineNumber": 888
+        },
+        {
+          "caller": "finalizeMobileLanPatientCensus",
+          "callee": "mod.ensureActivePatientInSidebarScope",
+          "lineNumber": 891
+        },
+        {
+          "caller": "finalizeMobileLanPatientCensus",
+          "callee": "mod.renderPatientList",
+          "lineNumber": 894
+        },
+        {
+          "caller": "fetchClinicalScopeContextFromDb",
+          "callee": "electronApi",
+          "lineNumber": 902
+        },
+        {
+          "caller": "fetchClinicalScopeContextFromDb",
+          "callee": "api.dbClinicalScopeContext",
+          "lineNumber": 908
+        },
+        {
+          "caller": "fetchClinicalScopeContextFromDb",
+          "callee": "Array.isArray",
+          "lineNumber": 914
+        },
+        {
+          "caller": "fetchClinicalTeamsFromDb",
+          "callee": "electronApi",
+          "lineNumber": 922
+        },
+        {
+          "caller": "fetchClinicalTeamsFromDb",
+          "callee": "api.dbClinicalTeamsList",
+          "lineNumber": 927
+        },
+        {
+          "caller": "fetchClinicalTeamsFromDb",
+          "callee": "Array.isArray",
+          "lineNumber": 932
+        },
+        {
+          "caller": "fetchActiveRotationCycleFromDb",
+          "callee": "electronApi",
+          "lineNumber": 939
+        },
+        {
+          "caller": "fetchActiveRotationCycleFromDb",
+          "callee": "api.dbRotationCycleGet",
+          "lineNumber": 941
+        },
+        {
+          "caller": "fetchIncomingAssignmentsFromDb",
+          "callee": "electronApi",
+          "lineNumber": 948
+        },
+        {
+          "caller": "fetchIncomingAssignmentsFromDb",
+          "callee": "api.dbRotationIncomingAssignments",
+          "lineNumber": 950
+        },
+        {
+          "caller": "fetchIncomingAssignmentsFromDb",
+          "callee": "Array.isArray",
+          "lineNumber": 952
+        },
+        {
+          "caller": "unlockClinicalSessionOverlay",
+          "callee": "document.getElementById",
+          "lineNumber": 956
+        },
+        {
+          "caller": "unlockClinicalSessionOverlay",
+          "callee": "overlay.classList.remove",
+          "lineNumber": 957
+        },
+        {
+          "caller": "resumeClinicalSession",
+          "callee": "bootstrapClinicalAccess",
+          "lineNumber": 962
+        },
+        {
+          "caller": "resumeClinicalSession",
+          "callee": "unlockClinicalSessionOverlay",
+          "lineNumber": 963
+        },
+        {
+          "caller": "resumeClinicalSession",
+          "callee": "sessionLocker.stop",
+          "lineNumber": 965
+        },
+        {
+          "caller": "resumeClinicalSession",
+          "callee": "sessionLocker.start",
+          "lineNumber": 967
+        }
+      ],
+      "metrics": {
+        "importCount": 15,
+        "exportCount": 38,
+        "functionCount": 45,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/clinical-access-runtime.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 74,
+      "nonEmptyLines": 68,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/clinical-privileges-mobile.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 93,
+      "nonEmptyLines": 85,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/clinical-privileges.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 81,
+      "nonEmptyLines": 68,
+      "functions": [
+        {
+          "name": "shouldEnforceTeamPatientMirror",
+          "startLine": 7,
+          "endLine": 9,
+          "params": []
+        },
+        {
+          "name": "hasProgramAdminPrivileges",
+          "startLine": 14,
+          "endLine": 18,
+          "params": [
+            "user"
+          ]
+        },
+        {
+          "name": "effectiveClinicalRank",
+          "startLine": 21,
+          "endLine": 26,
+          "params": [
+            "user"
+          ]
+        },
+        {
+          "name": "canConfigureRotation",
+          "startLine": 29,
+          "endLine": 33,
+          "params": [
+            "user"
+          ]
+        },
+        {
+          "name": "canManageInternoQr",
+          "startLine": 36,
+          "endLine": 38,
+          "params": [
+            "user"
+          ]
+        },
+        {
+          "name": "hasElevatedTeamPrivileges",
+          "startLine": 44,
+          "endLine": 48,
+          "params": [
+            "user"
+          ]
+        },
+        {
+          "name": "shouldUseElevatedPatientCensus",
+          "startLine": 55,
+          "endLine": 59,
+          "params": [
+            "user"
+          ]
+        },
+        {
+          "name": "shouldShowClinicalCensusFilters",
+          "startLine": 62,
+          "endLine": 66,
+          "params": [
+            "user"
+          ]
+        },
+        {
+          "name": "canViewLanUserDirectory",
+          "startLine": 69,
+          "endLine": 71,
+          "params": [
+            "user"
+          ]
+        },
+        {
+          "name": "canManageTeamRoster",
+          "startLine": 74,
+          "endLine": 76,
+          "params": [
+            "user"
+          ]
+        },
+        {
+          "name": "canDeleteLanDirectoryUser",
+          "startLine": 79,
+          "endLine": 81,
+          "params": [
+            "user"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "shouldEnforceTeamPatientMirror",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "hasProgramAdminPrivileges",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "effectiveClinicalRank",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "canConfigureRotation",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "canManageInternoQr",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "hasElevatedTeamPrivileges",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "shouldUseElevatedPatientCensus",
+          "line": 55,
+          "isDefault": false
+        },
+        {
+          "name": "shouldShowClinicalCensusFilters",
+          "line": 62,
+          "isDefault": false
+        },
+        {
+          "name": "canViewLanUserDirectory",
+          "line": 69,
+          "isDefault": false
+        },
+        {
+          "name": "canManageTeamRoster",
+          "line": 74,
+          "isDefault": false
+        },
+        {
+          "name": "canDeleteLanDirectoryUser",
+          "line": 79,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "shouldEnforceTeamPatientMirror",
+          "callee": "isMobileWeb",
+          "lineNumber": 8
+        },
+        {
+          "caller": "shouldEnforceTeamPatientMirror",
+          "callee": "isWebClinicalClient",
+          "lineNumber": 8
+        },
+        {
+          "caller": "hasProgramAdminPrivileges",
+          "callee": "String",
+          "lineNumber": 17
+        },
+        {
+          "caller": "effectiveClinicalRank",
+          "callee": "String",
+          "lineNumber": 22
+        },
+        {
+          "caller": "effectiveClinicalRank",
+          "callee": "CLINICAL_RANKS.has",
+          "lineNumber": 23
+        },
+        {
+          "caller": "canConfigureRotation",
+          "callee": "effectiveClinicalRank",
+          "lineNumber": 30
+        },
+        {
+          "caller": "canConfigureRotation",
+          "callee": "hasProgramAdminPrivileges",
+          "lineNumber": 32
+        },
+        {
+          "caller": "canManageInternoQr",
+          "callee": "canConfigureRotation",
+          "lineNumber": 37
+        },
+        {
+          "caller": "hasElevatedTeamPrivileges",
+          "callee": "hasProgramAdminPrivileges",
+          "lineNumber": 46
+        },
+        {
+          "caller": "hasElevatedTeamPrivileges",
+          "callee": "effectiveClinicalRank",
+          "lineNumber": 47
+        },
+        {
+          "caller": "shouldUseElevatedPatientCensus",
+          "callee": "hasElevatedTeamPrivileges",
+          "lineNumber": 56
+        },
+        {
+          "caller": "shouldUseElevatedPatientCensus",
+          "callee": "shouldEnforceTeamPatientMirror",
+          "lineNumber": 57
+        },
+        {
+          "caller": "shouldShowClinicalCensusFilters",
+          "callee": "shouldUseElevatedPatientCensus",
+          "lineNumber": 64
+        },
+        {
+          "caller": "shouldShowClinicalCensusFilters",
+          "callee": "shouldEnforceTeamPatientMirror",
+          "lineNumber": 65
+        },
+        {
+          "caller": "canViewLanUserDirectory",
+          "callee": "hasElevatedTeamPrivileges",
+          "lineNumber": 70
+        },
+        {
+          "caller": "canManageTeamRoster",
+          "callee": "hasElevatedTeamPrivileges",
+          "lineNumber": 75
+        },
+        {
+          "caller": "canDeleteLanDirectoryUser",
+          "callee": "canManageTeamRoster",
+          "lineNumber": 80
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 11,
+        "functionCount": 11,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/clinical-profile-lan-sync.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 232,
+      "nonEmptyLines": 199,
+      "functions": [
+        {
+          "name": "isLanProfileNeedsConnectCode",
+          "startLine": 21,
+          "endLine": 24,
+          "params": [
+            "code"
+          ]
+        },
+        {
+          "name": "traceFlushClinicalProfilePushSkip",
+          "startLine": 27,
+          "endLine": 29,
+          "params": [
+            "code"
+          ]
+        },
+        {
+          "name": "isBenignLanPushSkipCode",
+          "startLine": 32,
+          "endLine": 35,
+          "params": [
+            "code"
+          ]
+        },
+        {
+          "name": "rememberLiveSyncRoomMembership",
+          "startLine": 38,
+          "endLine": 47,
+          "params": [
+            "roomId",
+            "label"
+          ]
+        },
+        {
+          "name": "resolveRoomIdForUsernameRegister",
+          "startLine": 53,
+          "endLine": 82,
+          "params": []
+        },
+        {
+          "name": "ensureLiveSyncRoomForUsernameRegister",
+          "startLine": 88,
+          "endLine": 114,
+          "params": []
+        },
+        {
+          "name": "seedDevPeerLanConfigIfNeeded",
+          "startLine": 117,
+          "endLine": 128,
+          "params": []
+        },
+        {
+          "name": "applyPendingLanInviteFromPage",
+          "startLine": 131,
+          "endLine": 147,
+          "params": []
+        },
+        {
+          "name": "assertLanRoomForUsernameRegister",
+          "startLine": 154,
+          "endLine": 175,
+          "params": []
+        },
+        {
+          "name": "flushClinicalProfileToLan",
+          "startLine": 182,
+          "endLine": 220,
+          "params": []
+        },
+        {
+          "name": "notifyLanProfilePushResult",
+          "startLine": 226,
+          "endLine": 232,
+          "params": [
+            "lanPush",
+            "showToast"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "LAN_USERNAME_REGISTER_REQUIRES_ROOM_MSG",
+          "line": 11,
+          "isDefault": false
+        },
+        {
+          "name": "LAN_PROFILE_PUSH_FAILED_MSG",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "LAN_PROFILE_NEEDS_CONNECT_MSG",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "isLanProfileNeedsConnectCode",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "isBenignLanPushSkipCode",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "rememberLiveSyncRoomMembership",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "resolveRoomIdForUsernameRegister",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "ensureLiveSyncRoomForUsernameRegister",
+          "line": 88,
+          "isDefault": false
+        },
+        {
+          "name": "seedDevPeerLanConfigIfNeeded",
+          "line": 117,
+          "isDefault": false
+        },
+        {
+          "name": "applyPendingLanInviteFromPage",
+          "line": 131,
+          "isDefault": false
+        },
+        {
+          "name": "assertLanRoomForUsernameRegister",
+          "line": 154,
+          "isDefault": false
+        },
+        {
+          "name": "flushClinicalProfileToLan",
+          "line": 182,
+          "isDefault": false
+        },
+        {
+          "name": "notifyLanProfilePushResult",
+          "line": 226,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "isLanProfileNeedsConnectCode",
+          "callee": "String",
+          "lineNumber": 22
+        },
+        {
+          "caller": "traceFlushClinicalProfilePushSkip",
+          "callee": "recordClinicalOpsTrace",
+          "lineNumber": 28
+        },
+        {
+          "caller": "isBenignLanPushSkipCode",
+          "callee": "String",
+          "lineNumber": 33
+        },
+        {
+          "caller": "rememberLiveSyncRoomMembership",
+          "callee": "String(roomId || '').trim",
+          "lineNumber": 39
+        },
+        {
+          "caller": "rememberLiveSyncRoomMembership",
+          "callee": "String",
+          "lineNumber": 39
+        },
+        {
+          "caller": "rememberLiveSyncRoomMembership",
+          "callee": "setRoomMembership",
+          "lineNumber": 41
+        },
+        {
+          "caller": "rememberLiveSyncRoomMembership",
+          "callee": "String(label || '').trim",
+          "lineNumber": 43
+        },
+        {
+          "caller": "rememberLiveSyncRoomMembership",
+          "callee": "String",
+          "lineNumber": 43
+        },
+        {
+          "caller": "rememberLiveSyncRoomMembership",
+          "callee": "liveSyncRoomLabel",
+          "lineNumber": 43
+        },
+        {
+          "caller": "rememberLiveSyncRoomMembership",
+          "callee": "new Date().toISOString",
+          "lineNumber": 44
+        },
+        {
+          "caller": "resolveRoomIdForUsernameRegister",
+          "callee": "String(opts.roomId || '').trim",
+          "lineNumber": 54
+        },
+        {
+          "caller": "resolveRoomIdForUsernameRegister",
+          "callee": "String",
+          "lineNumber": 54
+        },
+        {
+          "caller": "resolveRoomIdForUsernameRegister",
+          "callee": "resolveLiveSyncRoomIdFromSala",
+          "lineNumber": 56
+        },
+        {
+          "caller": "resolveRoomIdForUsernameRegister",
+          "callee": "getRoomMembership",
+          "lineNumber": 60
+        },
+        {
+          "caller": "resolveRoomIdForUsernameRegister",
+          "callee": "String(mem?.roomId || '').trim",
+          "lineNumber": 61
+        },
+        {
+          "caller": "resolveRoomIdForUsernameRegister",
+          "callee": "String",
+          "lineNumber": 61
+        },
+        {
+          "caller": "resolveRoomIdForUsernameRegister",
+          "callee": "parseLanJoinQuery",
+          "lineNumber": 68
+        },
+        {
+          "caller": "resolveRoomIdForUsernameRegister",
+          "callee": "String(parsed.roomId || '').trim",
+          "lineNumber": 69
+        },
+        {
+          "caller": "resolveRoomIdForUsernameRegister",
+          "callee": "String",
+          "lineNumber": 69
+        },
+        {
+          "caller": "resolveRoomIdForUsernameRegister",
+          "callee": "JSON.parse",
+          "lineNumber": 74
+        },
+        {
+          "caller": "resolveRoomIdForUsernameRegister",
+          "callee": "localStorage.getItem",
+          "lineNumber": 74
+        },
+        {
+          "caller": "resolveRoomIdForUsernameRegister",
+          "callee": "resolveLiveSyncRoomIdFromSala",
+          "lineNumber": 75
+        },
+        {
+          "caller": "resolveRoomIdForUsernameRegister",
+          "callee": "resolveLiveSyncRoomIdFromSala",
+          "lineNumber": 81
+        },
+        {
+          "caller": "ensureLiveSyncRoomForUsernameRegister",
+          "callee": "import",
+          "lineNumber": 89
+        },
+        {
+          "caller": "ensureLiveSyncRoomForUsernameRegister",
+          "callee": "lan.isLanSessionConfiguredForRest",
+          "lineNumber": 90
+        },
+        {
+          "caller": "ensureLiveSyncRoomForUsernameRegister",
+          "callee": "resolveRoomIdForUsernameRegister",
+          "lineNumber": 94
+        },
+        {
+          "caller": "ensureLiveSyncRoomForUsernameRegister",
+          "callee": "String(lan.getActiveLiveSyncRoomId?.() || '').trim",
+          "lineNumber": 96
+        },
+        {
+          "caller": "ensureLiveSyncRoomForUsernameRegister",
+          "callee": "String",
+          "lineNumber": 96
+        },
+        {
+          "caller": "ensureLiveSyncRoomForUsernameRegister",
+          "callee": "lan.getActiveLiveSyncRoomId",
+          "lineNumber": 96
+        },
+        {
+          "caller": "ensureLiveSyncRoomForUsernameRegister",
+          "callee": "rememberLiveSyncRoomMembership",
+          "lineNumber": 103
+        },
+        {
+          "caller": "ensureLiveSyncRoomForUsernameRegister",
+          "callee": "lan.joinLanRoom",
+          "lineNumber": 107
+        },
+        {
+          "caller": "ensureLiveSyncRoomForUsernameRegister",
+          "callee": "liveSyncRoomLabel",
+          "lineNumber": 107
+        },
+        {
+          "caller": "seedDevPeerLanConfigIfNeeded",
+          "callee": "window.electronAPI.getLanDevPeerSeedConfig",
+          "lineNumber": 120
+        },
+        {
+          "caller": "seedDevPeerLanConfigIfNeeded",
+          "callee": "import",
+          "lineNumber": 122
+        },
+        {
+          "caller": "seedDevPeerLanConfigIfNeeded",
+          "callee": "lan.isLanSessionConfiguredForRest",
+          "lineNumber": 123
+        },
+        {
+          "caller": "seedDevPeerLanConfigIfNeeded",
+          "callee": "lan.persistLanClientConfig",
+          "lineNumber": 124
+        },
+        {
+          "caller": "applyPendingLanInviteFromPage",
+          "callee": "seedDevPeerLanConfigIfNeeded",
+          "lineNumber": 133
+        },
+        {
+          "caller": "applyPendingLanInviteFromPage",
+          "callee": "parseLanJoinQuery",
+          "lineNumber": 134
+        },
+        {
+          "caller": "applyPendingLanInviteFromPage",
+          "callee": "String(parsed.hostUrl || '').trim",
+          "lineNumber": 135
+        },
+        {
+          "caller": "applyPendingLanInviteFromPage",
+          "callee": "String",
+          "lineNumber": 135
+        },
+        {
+          "caller": "applyPendingLanInviteFromPage",
+          "callee": "String(parsed.teamCode || '').trim",
+          "lineNumber": 136
+        },
+        {
+          "caller": "applyPendingLanInviteFromPage",
+          "callee": "String",
+          "lineNumber": 136
+        },
+        {
+          "caller": "applyPendingLanInviteFromPage",
+          "callee": "import",
+          "lineNumber": 139
+        },
+        {
+          "caller": "applyPendingLanInviteFromPage",
+          "callee": "lan.persistLanClientConfig",
+          "lineNumber": 141
+        },
+        {
+          "caller": "applyPendingLanInviteFromPage",
+          "callee": "String(parsed.roomId || '').trim",
+          "lineNumber": 143
+        },
+        {
+          "caller": "applyPendingLanInviteFromPage",
+          "callee": "String",
+          "lineNumber": 143
+        },
+        {
+          "caller": "applyPendingLanInviteFromPage",
+          "callee": "rememberLiveSyncRoomMembership",
+          "lineNumber": 145
+        },
+        {
+          "caller": "assertLanRoomForUsernameRegister",
+          "callee": "import",
+          "lineNumber": 155
+        },
+        {
+          "caller": "assertLanRoomForUsernameRegister",
+          "callee": "lan.isLanSessionConfiguredForRest",
+          "lineNumber": 156
+        },
+        {
+          "caller": "assertLanRoomForUsernameRegister",
+          "callee": "applyPendingLanInviteFromPage",
+          "lineNumber": 158
+        },
+        {
+          "caller": "assertLanRoomForUsernameRegister",
+          "callee": "ensureLiveSyncRoomForUsernameRegister",
+          "lineNumber": 159
+        },
+        {
+          "caller": "assertLanRoomForUsernameRegister",
+          "callee": "String(lan.getActiveLiveSyncRoomId?.() || '').trim",
+          "lineNumber": 165
+        },
+        {
+          "caller": "assertLanRoomForUsernameRegister",
+          "callee": "String",
+          "lineNumber": 165
+        },
+        {
+          "caller": "assertLanRoomForUsernameRegister",
+          "callee": "lan.getActiveLiveSyncRoomId",
+          "lineNumber": 165
+        },
+        {
+          "caller": "assertLanRoomForUsernameRegister",
+          "callee": "String(ensured.roomId || '').trim",
+          "lineNumber": 166
+        },
+        {
+          "caller": "assertLanRoomForUsernameRegister",
+          "callee": "String",
+          "lineNumber": 166
+        },
+        {
+          "caller": "assertLanRoomForUsernameRegister",
+          "callee": "String(getRoomMembership()?.roomId || '').trim",
+          "lineNumber": 167
+        },
+        {
+          "caller": "assertLanRoomForUsernameRegister",
+          "callee": "String",
+          "lineNumber": 167
+        },
+        {
+          "caller": "assertLanRoomForUsernameRegister",
+          "callee": "getRoomMembership",
+          "lineNumber": 167
+        },
+        {
+          "caller": "flushClinicalProfileToLan",
+          "callee": "import",
+          "lineNumber": 183
+        },
+        {
+          "caller": "flushClinicalProfileToLan",
+          "callee": "isClinicalLocalOnlyMode",
+          "lineNumber": 184
+        },
+        {
+          "caller": "flushClinicalProfileToLan",
+          "callee": "traceFlushClinicalProfilePushSkip",
+          "lineNumber": 185
+        },
+        {
+          "caller": "flushClinicalProfileToLan",
+          "callee": "applyPendingLanInviteFromPage",
+          "lineNumber": 189
+        },
+        {
+          "caller": "flushClinicalProfileToLan",
+          "callee": "resolveRoomIdForUsernameRegister",
+          "lineNumber": 191
+        },
+        {
+          "caller": "flushClinicalProfileToLan",
+          "callee": "rememberLiveSyncRoomMembership",
+          "lineNumber": 196
+        },
+        {
+          "caller": "flushClinicalProfileToLan",
+          "callee": "liveSyncRoomLabel",
+          "lineNumber": 196
+        },
+        {
+          "caller": "flushClinicalProfileToLan",
+          "callee": "import",
+          "lineNumber": 199
+        },
+        {
+          "caller": "flushClinicalProfileToLan",
+          "callee": "lan.isLanSessionConfiguredForRest",
+          "lineNumber": 200
+        },
+        {
+          "caller": "flushClinicalProfileToLan",
+          "callee": "traceFlushClinicalProfilePushSkip",
+          "lineNumber": 201
+        },
+        {
+          "caller": "flushClinicalProfileToLan",
+          "callee": "import",
+          "lineNumber": 205
+        },
+        {
+          "caller": "flushClinicalProfileToLan",
+          "callee": "pushMod.ensureEffectiveLiveSyncRoomId",
+          "lineNumber": 206
+        },
+        {
+          "caller": "flushClinicalProfileToLan",
+          "callee": "traceFlushClinicalProfilePushSkip",
+          "lineNumber": 208
+        },
+        {
+          "caller": "flushClinicalProfileToLan",
+          "callee": "import",
+          "lineNumber": 213
+        },
+        {
+          "caller": "flushClinicalProfileToLan",
+          "callee": "lanClient.connectSyncChannel",
+          "lineNumber": 214
+        },
+        {
+          "caller": "flushClinicalProfileToLan",
+          "callee": "lan.pushClinicalOpsLanNow",
+          "lineNumber": 219
+        },
+        {
+          "caller": "notifyLanProfilePushResult",
+          "callee": "isBenignLanPushSkipCode",
+          "lineNumber": 228
+        },
+        {
+          "caller": "notifyLanProfilePushResult",
+          "callee": "showToast",
+          "lineNumber": 230
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 13,
+        "functionCount": 11,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/clinical-profile-lan-sync.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 36,
+      "nonEmptyLines": 31,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/clinical-scope-from-ops.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 167,
+      "nonEmptyLines": 155,
+      "functions": [
+        {
+          "name": "clinicalUsersById",
+          "startLine": 6,
+          "endLine": 15,
+          "params": [
+            "snapshot"
+          ]
+        },
+        {
+          "name": "membershipRemovalKeys",
+          "startLine": 17,
+          "endLine": 25,
+          "params": [
+            "snapshot"
+          ]
+        },
+        {
+          "name": "archivedTeamIds",
+          "startLine": 27,
+          "endLine": 37,
+          "params": [
+            "snapshot"
+          ]
+        },
+        {
+          "name": "effectiveTeamSala",
+          "startLine": 39,
+          "endLine": 46,
+          "params": [
+            "team",
+            "usersById"
+          ]
+        },
+        {
+          "name": "buildTeamsWithMembers",
+          "startLine": 48,
+          "endLine": 86,
+          "params": [
+            "snapshot"
+          ]
+        },
+        {
+          "name": "activeRotationCycle",
+          "startLine": 88,
+          "endLine": 93,
+          "params": [
+            "snapshot"
+          ]
+        },
+        {
+          "name": "activeGuardiasFromSnapshot",
+          "startLine": 95,
+          "endLine": 104,
+          "params": [
+            "snapshot"
+          ]
+        },
+        {
+          "name": "resolveClinicalUserRowFromOpsSnapshot",
+          "startLine": 110,
+          "endLine": 138,
+          "params": [
+            "snapshot"
+          ]
+        },
+        {
+          "name": "buildClinicalScopeContextFromOpsSnapshot",
+          "startLine": 144,
+          "endLine": 167,
+          "params": [
+            "snapshot"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "resolveClinicalUserRowFromOpsSnapshot",
+          "line": 110,
+          "isDefault": false
+        },
+        {
+          "name": "buildClinicalScopeContextFromOpsSnapshot",
+          "line": 144,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "clinicalUsersById",
+          "callee": "(snapshot?.clinical_users_deleted || []).map",
+          "lineNumber": 7
+        },
+        {
+          "caller": "clinicalUsersById",
+          "callee": "String",
+          "lineNumber": 7
+        },
+        {
+          "caller": "clinicalUsersById",
+          "callee": "String(row?.user_id || '').trim",
+          "lineNumber": 10
+        },
+        {
+          "caller": "clinicalUsersById",
+          "callee": "String",
+          "lineNumber": 10
+        },
+        {
+          "caller": "clinicalUsersById",
+          "callee": "deleted.has",
+          "lineNumber": 11
+        },
+        {
+          "caller": "clinicalUsersById",
+          "callee": "map.set",
+          "lineNumber": 12
+        },
+        {
+          "caller": "membershipRemovalKeys",
+          "callee": "String(row?.team_id || '').trim",
+          "lineNumber": 20
+        },
+        {
+          "caller": "membershipRemovalKeys",
+          "callee": "String",
+          "lineNumber": 20
+        },
+        {
+          "caller": "membershipRemovalKeys",
+          "callee": "String(row?.user_id || '').trim",
+          "lineNumber": 21
+        },
+        {
+          "caller": "membershipRemovalKeys",
+          "callee": "String",
+          "lineNumber": 21
+        },
+        {
+          "caller": "membershipRemovalKeys",
+          "callee": "keys.add",
+          "lineNumber": 22
+        },
+        {
+          "caller": "archivedTeamIds",
+          "callee": "ids.add",
+          "lineNumber": 30
+        },
+        {
+          "caller": "archivedTeamIds",
+          "callee": "String(row.team_id || '').trim",
+          "lineNumber": 30
+        },
+        {
+          "caller": "archivedTeamIds",
+          "callee": "String",
+          "lineNumber": 30
+        },
+        {
+          "caller": "archivedTeamIds",
+          "callee": "String(row?.team_id || '').trim",
+          "lineNumber": 33
+        },
+        {
+          "caller": "archivedTeamIds",
+          "callee": "String",
+          "lineNumber": 33
+        },
+        {
+          "caller": "archivedTeamIds",
+          "callee": "ids.add",
+          "lineNumber": 34
+        },
+        {
+          "caller": "effectiveTeamSala",
+          "callee": "String(team?.sala || '').trim",
+          "lineNumber": 40
+        },
+        {
+          "caller": "effectiveTeamSala",
+          "callee": "String",
+          "lineNumber": 40
+        },
+        {
+          "caller": "effectiveTeamSala",
+          "callee": "String(team?.created_by || '').trim",
+          "lineNumber": 42
+        },
+        {
+          "caller": "effectiveTeamSala",
+          "callee": "String",
+          "lineNumber": 42
+        },
+        {
+          "caller": "effectiveTeamSala",
+          "callee": "usersById.get",
+          "lineNumber": 44
+        },
+        {
+          "caller": "effectiveTeamSala",
+          "callee": "String(creator.sala).trim",
+          "lineNumber": 45
+        },
+        {
+          "caller": "effectiveTeamSala",
+          "callee": "String",
+          "lineNumber": 45
+        },
+        {
+          "caller": "buildTeamsWithMembers",
+          "callee": "clinicalUsersById",
+          "lineNumber": 49
+        },
+        {
+          "caller": "buildTeamsWithMembers",
+          "callee": "membershipRemovalKeys",
+          "lineNumber": 50
+        },
+        {
+          "caller": "buildTeamsWithMembers",
+          "callee": "archivedTeamIds",
+          "lineNumber": 51
+        },
+        {
+          "caller": "buildTeamsWithMembers",
+          "callee": "String(row?.team_id || '').trim",
+          "lineNumber": 55
+        },
+        {
+          "caller": "buildTeamsWithMembers",
+          "callee": "String",
+          "lineNumber": 55
+        },
+        {
+          "caller": "buildTeamsWithMembers",
+          "callee": "String(row?.user_id || '').trim",
+          "lineNumber": 56
+        },
+        {
+          "caller": "buildTeamsWithMembers",
+          "callee": "String",
+          "lineNumber": 56
+        },
+        {
+          "caller": "buildTeamsWithMembers",
+          "callee": "archived.has",
+          "lineNumber": 57
+        },
+        {
+          "caller": "buildTeamsWithMembers",
+          "callee": "removals.has",
+          "lineNumber": 58
+        },
+        {
+          "caller": "buildTeamsWithMembers",
+          "callee": "usersById.get",
+          "lineNumber": 59
+        },
+        {
+          "caller": "buildTeamsWithMembers",
+          "callee": "membersByTeam.has",
+          "lineNumber": 68
+        },
+        {
+          "caller": "buildTeamsWithMembers",
+          "callee": "membersByTeam.set",
+          "lineNumber": 68
+        },
+        {
+          "caller": "buildTeamsWithMembers",
+          "callee": "membersByTeam.get(teamId).push",
+          "lineNumber": 69
+        },
+        {
+          "caller": "buildTeamsWithMembers",
+          "callee": "membersByTeam.get",
+          "lineNumber": 69
+        },
+        {
+          "caller": "buildTeamsWithMembers",
+          "callee": "(snapshot?.teams || [])\n    .filter((team) => {\n      const teamId = String(team?.team_id || '').trim();\n      return teamId && !archived.has(teamId);\n    })\n    .map",
+          "lineNumber": 72
+        },
+        {
+          "caller": "buildTeamsWithMembers",
+          "callee": "(snapshot?.teams || [])\n    .filter",
+          "lineNumber": 72
+        },
+        {
+          "caller": "buildTeamsWithMembers",
+          "callee": "String(team?.team_id || '').trim",
+          "lineNumber": 74
+        },
+        {
+          "caller": "buildTeamsWithMembers",
+          "callee": "String",
+          "lineNumber": 74
+        },
+        {
+          "caller": "buildTeamsWithMembers",
+          "callee": "archived.has",
+          "lineNumber": 75
+        },
+        {
+          "caller": "buildTeamsWithMembers",
+          "callee": "String",
+          "lineNumber": 78
+        },
+        {
+          "caller": "buildTeamsWithMembers",
+          "callee": "effectiveTeamSala",
+          "lineNumber": 79
+        },
+        {
+          "caller": "buildTeamsWithMembers",
+          "callee": "membersByTeam.get",
+          "lineNumber": 83
+        },
+        {
+          "caller": "activeRotationCycle",
+          "callee": "(snapshot?.rotation_cycles || []).filter",
+          "lineNumber": 89
+        },
+        {
+          "caller": "activeRotationCycle",
+          "callee": "rows.sort",
+          "lineNumber": 91
+        },
+        {
+          "caller": "activeRotationCycle",
+          "callee": "String(b.created_at || '').localeCompare",
+          "lineNumber": 91
+        },
+        {
+          "caller": "activeRotationCycle",
+          "callee": "String",
+          "lineNumber": 91
+        },
+        {
+          "caller": "activeRotationCycle",
+          "callee": "String",
+          "lineNumber": 91
+        },
+        {
+          "caller": "activeGuardiasFromSnapshot",
+          "callee": "(snapshot?.active_guardias_resolved || []).map",
+          "lineNumber": 97
+        },
+        {
+          "caller": "activeGuardiasFromSnapshot",
+          "callee": "String",
+          "lineNumber": 97
+        },
+        {
+          "caller": "activeGuardiasFromSnapshot",
+          "callee": "(snapshot?.active_guardias || []).filter",
+          "lineNumber": 99
+        },
+        {
+          "caller": "activeGuardiasFromSnapshot",
+          "callee": "String",
+          "lineNumber": 100
+        },
+        {
+          "caller": "activeGuardiasFromSnapshot",
+          "callee": "resolved.has",
+          "lineNumber": 101
+        },
+        {
+          "caller": "activeGuardiasFromSnapshot",
+          "callee": "String",
+          "lineNumber": 102
+        },
+        {
+          "caller": "resolveClinicalUserRowFromOpsSnapshot",
+          "callee": "(snapshot.clinical_users_deleted || []).map",
+          "lineNumber": 113
+        },
+        {
+          "caller": "resolveClinicalUserRowFromOpsSnapshot",
+          "callee": "String",
+          "lineNumber": 113
+        },
+        {
+          "caller": "resolveClinicalUserRowFromOpsSnapshot",
+          "callee": "String(hints.userId || '').trim",
+          "lineNumber": 114
+        },
+        {
+          "caller": "resolveClinicalUserRowFromOpsSnapshot",
+          "callee": "String",
+          "lineNumber": 114
+        },
+        {
+          "caller": "resolveClinicalUserRowFromOpsSnapshot",
+          "callee": "normalizeUsername",
+          "lineNumber": 115
+        },
+        {
+          "caller": "resolveClinicalUserRowFromOpsSnapshot",
+          "callee": "String(hints.username || '').replace",
+          "lineNumber": 115
+        },
+        {
+          "caller": "resolveClinicalUserRowFromOpsSnapshot",
+          "callee": "String",
+          "lineNumber": 115
+        },
+        {
+          "caller": "resolveClinicalUserRowFromOpsSnapshot",
+          "callee": "deleted.has",
+          "lineNumber": 117
+        },
+        {
+          "caller": "resolveClinicalUserRowFromOpsSnapshot",
+          "callee": "users.find",
+          "lineNumber": 118
+        },
+        {
+          "caller": "resolveClinicalUserRowFromOpsSnapshot",
+          "callee": "String",
+          "lineNumber": 118
+        },
+        {
+          "caller": "resolveClinicalUserRowFromOpsSnapshot",
+          "callee": "users.find",
+          "lineNumber": 122
+        },
+        {
+          "caller": "resolveClinicalUserRowFromOpsSnapshot",
+          "callee": "String",
+          "lineNumber": 123
+        },
+        {
+          "caller": "resolveClinicalUserRowFromOpsSnapshot",
+          "callee": "deleted.has",
+          "lineNumber": 124
+        },
+        {
+          "caller": "resolveClinicalUserRowFromOpsSnapshot",
+          "callee": "normalizeUsername",
+          "lineNumber": 125
+        },
+        {
+          "caller": "resolveClinicalUserRowFromOpsSnapshot",
+          "callee": "users.find",
+          "lineNumber": 130
+        },
+        {
+          "caller": "resolveClinicalUserRowFromOpsSnapshot",
+          "callee": "String",
+          "lineNumber": 131
+        },
+        {
+          "caller": "resolveClinicalUserRowFromOpsSnapshot",
+          "callee": "deleted.has",
+          "lineNumber": 132
+        },
+        {
+          "caller": "resolveClinicalUserRowFromOpsSnapshot",
+          "callee": "normalizeUsername",
+          "lineNumber": 133
+        },
+        {
+          "caller": "resolveClinicalUserRowFromOpsSnapshot",
+          "callee": "normalizeUsername",
+          "lineNumber": 133
+        },
+        {
+          "caller": "buildClinicalScopeContextFromOpsSnapshot",
+          "callee": "(snapshot.clinical_users_deleted || []).map",
+          "lineNumber": 146
+        },
+        {
+          "caller": "buildClinicalScopeContextFromOpsSnapshot",
+          "callee": "String",
+          "lineNumber": 146
+        },
+        {
+          "caller": "buildClinicalScopeContextFromOpsSnapshot",
+          "callee": "(snapshot.clinical_users || []).filter",
+          "lineNumber": 147
+        },
+        {
+          "caller": "buildClinicalScopeContextFromOpsSnapshot",
+          "callee": "String",
+          "lineNumber": 148
+        },
+        {
+          "caller": "buildClinicalScopeContextFromOpsSnapshot",
+          "callee": "deleted.has",
+          "lineNumber": 149
+        },
+        {
+          "caller": "buildClinicalScopeContextFromOpsSnapshot",
+          "callee": "buildTeamsWithMembers",
+          "lineNumber": 152
+        },
+        {
+          "caller": "buildClinicalScopeContextFromOpsSnapshot",
+          "callee": "activeGuardiasFromSnapshot",
+          "lineNumber": 153
+        },
+        {
+          "caller": "buildClinicalScopeContextFromOpsSnapshot",
+          "callee": "activeRotationCycle",
+          "lineNumber": 154
+        },
+        {
+          "caller": "buildClinicalScopeContextFromOpsSnapshot",
+          "callee": "Array.isArray",
+          "lineNumber": 155
+        },
+        {
+          "caller": "buildClinicalScopeContextFromOpsSnapshot",
+          "callee": "snapshot.patient_team_assignment.slice",
+          "lineNumber": 156
+        },
+        {
+          "caller": "buildClinicalScopeContextFromOpsSnapshot",
+          "callee": "Array.isArray",
+          "lineNumber": 158
+        },
+        {
+          "caller": "buildClinicalScopeContextFromOpsSnapshot",
+          "callee": "snapshot.team_guardia_today.slice",
+          "lineNumber": 159
+        },
+        {
+          "caller": "buildClinicalScopeContextFromOpsSnapshot",
+          "callee": "new Date().toISOString",
+          "lineNumber": 165
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 2,
+        "functionCount": 9,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/clinical-scope-from-ops.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 114,
+      "nonEmptyLines": 110,
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/clinical-settings.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 163,
+      "nonEmptyLines": 147,
+      "functions": [
+        {
+          "name": "isClinicalLocalOnlyMode",
+          "startLine": 24,
+          "endLine": 26,
+          "params": []
+        },
+        {
+          "name": "isClinicalSyncModeChosen",
+          "startLine": 29,
+          "endLine": 31,
+          "params": []
+        },
+        {
+          "name": "setClinicalSyncModeLocalOnly",
+          "startLine": 37,
+          "endLine": 44,
+          "params": [
+            "localOnly"
+          ]
+        },
+        {
+          "name": "isLocalOnlyPlaceholderUsername",
+          "startLine": 47,
+          "endLine": 49,
+          "params": [
+            "raw"
+          ]
+        },
+        {
+          "name": "bundledWardShiftPin",
+          "startLine": 55,
+          "endLine": 59,
+          "params": []
+        },
+        {
+          "name": "bundledWardHostUrl",
+          "startLine": 65,
+          "endLine": 67,
+          "params": []
+        },
+        {
+          "name": "readRpcSettings",
+          "startLine": 70,
+          "endLine": 76,
+          "params": []
+        },
+        {
+          "name": "resolveClinicalClientId",
+          "startLine": 79,
+          "endLine": 88,
+          "params": []
+        },
+        {
+          "name": "needsClinicalLanProfileGate",
+          "startLine": 91,
+          "endLine": 96,
+          "params": []
+        },
+        {
+          "name": "markClinicalLanProfileGateComplete",
+          "startLine": 99,
+          "endLine": 105,
+          "params": []
+        },
+        {
+          "name": "ensureLanProfileGateDeviceReset",
+          "startLine": 112,
+          "endLine": 128,
+          "params": []
+        },
+        {
+          "name": "persistClinicalUserBinding",
+          "startLine": 142,
+          "endLine": 163,
+          "params": [
+            "patch"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "CLINICAL_LAN_PROFILE_GATE_VERSION",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "CLINICAL_LAN_PROFILE_GATE_LEAD_HTML",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "CLINICAL_LAN_USERNAME_HINT_HTML",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "CLINICAL_LAN_DISPLAY_NAME_HINT_HTML",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "isClinicalLocalOnlyMode",
+          "line": 24,
+          "isDefault": false
+        },
+        {
+          "name": "isClinicalSyncModeChosen",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "setClinicalSyncModeLocalOnly",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "isLocalOnlyPlaceholderUsername",
+          "line": 47,
+          "isDefault": false
+        },
+        {
+          "name": "bundledWardShiftPin",
+          "line": 55,
+          "isDefault": false
+        },
+        {
+          "name": "bundledWardHostUrl",
+          "line": 65,
+          "isDefault": false
+        },
+        {
+          "name": "readRpcSettings",
+          "line": 70,
+          "isDefault": false
+        },
+        {
+          "name": "resolveClinicalClientId",
+          "line": 79,
+          "isDefault": false
+        },
+        {
+          "name": "needsClinicalLanProfileGate",
+          "line": 91,
+          "isDefault": false
+        },
+        {
+          "name": "markClinicalLanProfileGateComplete",
+          "line": 99,
+          "isDefault": false
+        },
+        {
+          "name": "ensureLanProfileGateDeviceReset",
+          "line": 112,
+          "isDefault": false
+        },
+        {
+          "name": "persistClinicalUserBinding",
+          "line": 142,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "isClinicalLocalOnlyMode",
+          "callee": "readRpcSettings",
+          "lineNumber": 24
+        },
+        {
+          "caller": "isClinicalSyncModeChosen",
+          "callee": "readRpcSettings",
+          "lineNumber": 29
+        },
+        {
+          "caller": "setClinicalSyncModeLocalOnly",
+          "callee": "readRpcSettings",
+          "lineNumber": 38
+        },
+        {
+          "caller": "setClinicalSyncModeLocalOnly",
+          "callee": "localStorage.setItem",
+          "lineNumber": 41
+        },
+        {
+          "caller": "setClinicalSyncModeLocalOnly",
+          "callee": "JSON.stringify",
+          "lineNumber": 41
+        },
+        {
+          "caller": "isLocalOnlyPlaceholderUsername",
+          "callee": "/^local_[a-z0-9_]+$/.test",
+          "lineNumber": 48
+        },
+        {
+          "caller": "isLocalOnlyPlaceholderUsername",
+          "callee": "normalizeUsername",
+          "lineNumber": 48
+        },
+        {
+          "caller": "bundledWardShiftPin",
+          "callee": "now.getFullYear",
+          "lineNumber": 57
+        },
+        {
+          "caller": "bundledWardShiftPin",
+          "callee": "now.getMonth",
+          "lineNumber": 57
+        },
+        {
+          "caller": "readRpcSettings",
+          "callee": "JSON.parse",
+          "lineNumber": 72
+        },
+        {
+          "caller": "readRpcSettings",
+          "callee": "localStorage.getItem",
+          "lineNumber": 72
+        },
+        {
+          "caller": "resolveClinicalClientId",
+          "callee": "readRpcSettings",
+          "lineNumber": 79
+        },
+        {
+          "caller": "resolveClinicalClientId",
+          "callee": "String(settings?.clientId || '').trim",
+          "lineNumber": 80
+        },
+        {
+          "caller": "resolveClinicalClientId",
+          "callee": "String",
+          "lineNumber": 80
+        },
+        {
+          "caller": "resolveClinicalClientId",
+          "callee": "localStorage.getItem",
+          "lineNumber": 83
+        },
+        {
+          "caller": "resolveClinicalClientId",
+          "callee": "String(raw || '').trim",
+          "lineNumber": 84
+        },
+        {
+          "caller": "resolveClinicalClientId",
+          "callee": "String",
+          "lineNumber": 84
+        },
+        {
+          "caller": "needsClinicalLanProfileGate",
+          "callee": "readRpcSettings",
+          "lineNumber": 91
+        },
+        {
+          "caller": "needsClinicalLanProfileGate",
+          "callee": "isClinicalLocalOnlyMode",
+          "lineNumber": 92
+        },
+        {
+          "caller": "needsClinicalLanProfileGate",
+          "callee": "String",
+          "lineNumber": 94
+        },
+        {
+          "caller": "markClinicalLanProfileGateComplete",
+          "callee": "readRpcSettings",
+          "lineNumber": 99
+        },
+        {
+          "caller": "markClinicalLanProfileGateComplete",
+          "callee": "localStorage.setItem",
+          "lineNumber": 102
+        },
+        {
+          "caller": "markClinicalLanProfileGateComplete",
+          "callee": "JSON.stringify",
+          "lineNumber": 102
+        },
+        {
+          "caller": "ensureLanProfileGateDeviceReset",
+          "callee": "readRpcSettings",
+          "lineNumber": 112
+        },
+        {
+          "caller": "ensureLanProfileGateDeviceReset",
+          "callee": "needsClinicalLanProfileGate",
+          "lineNumber": 113
+        },
+        {
+          "caller": "ensureLanProfileGateDeviceReset",
+          "callee": "localStorage.setItem",
+          "lineNumber": 124
+        },
+        {
+          "caller": "ensureLanProfileGateDeviceReset",
+          "callee": "JSON.stringify",
+          "lineNumber": 124
+        },
+        {
+          "caller": "persistClinicalUserBinding",
+          "callee": "readRpcSettings",
+          "lineNumber": 143
+        },
+        {
+          "caller": "persistClinicalUserBinding",
+          "callee": "String",
+          "lineNumber": 144
+        },
+        {
+          "caller": "persistClinicalUserBinding",
+          "callee": "String",
+          "lineNumber": 146
+        },
+        {
+          "caller": "persistClinicalUserBinding",
+          "callee": "String",
+          "lineNumber": 148
+        },
+        {
+          "caller": "persistClinicalUserBinding",
+          "callee": "String",
+          "lineNumber": 149
+        },
+        {
+          "caller": "persistClinicalUserBinding",
+          "callee": "String",
+          "lineNumber": 150
+        },
+        {
+          "caller": "persistClinicalUserBinding",
+          "callee": "String",
+          "lineNumber": 151
+        },
+        {
+          "caller": "persistClinicalUserBinding",
+          "callee": "localStorage.setItem",
+          "lineNumber": 160
+        },
+        {
+          "caller": "persistClinicalUserBinding",
+          "callee": "JSON.stringify",
+          "lineNumber": 160
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 16,
+        "functionCount": 12,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/clinical-settings.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 104,
+      "nonEmptyLines": 96,
+      "callGraph": [
+        {
+          "caller": "getItem",
+          "callee": "memory.has",
+          "lineNumber": 20
+        },
+        {
+          "caller": "getItem",
+          "callee": "memory.get",
+          "lineNumber": 20
+        },
+        {
+          "caller": "setItem",
+          "callee": "memory.set",
+          "lineNumber": 23
+        },
+        {
+          "caller": "setItem",
+          "callee": "String",
+          "lineNumber": 23
+        },
+        {
+          "caller": "removeItem",
+          "callee": "memory.delete",
+          "lineNumber": 26
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/clinical-team-invite.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 225,
+      "nonEmptyLines": 209,
+      "functions": [
+        {
+          "name": "teamInviteCode",
+          "startLine": 10,
+          "endLine": 15,
+          "params": [
+            "teamId"
+          ]
+        },
+        {
+          "name": "normalizeTeamInviteCode",
+          "startLine": 20,
+          "endLine": 26,
+          "params": [
+            "raw"
+          ]
+        },
+        {
+          "name": "isLikelyLanBearerToken",
+          "startLine": 32,
+          "endLine": 35,
+          "params": [
+            "raw"
+          ]
+        },
+        {
+          "name": "parseClinicalTeamJoinQuery",
+          "startLine": 37,
+          "endLine": 54,
+          "params": [
+            "search"
+          ]
+        },
+        {
+          "name": "resolveTeamIdFromInviteCode",
+          "startLine": 60,
+          "endLine": 73,
+          "params": [
+            "code",
+            "teams"
+          ]
+        },
+        {
+          "name": "diagnoseInviteCodeFailure",
+          "startLine": 80,
+          "endLine": 96,
+          "params": [
+            "code",
+            "teams"
+          ]
+        },
+        {
+          "name": "inviteCodeFailureMessage",
+          "startLine": 99,
+          "endLine": 114,
+          "params": [
+            "diag"
+          ]
+        },
+        {
+          "name": "resolveClinicalInviteLanHostUrl",
+          "startLine": 119,
+          "endLine": 132,
+          "params": []
+        },
+        {
+          "name": "isClinicalTeamJoinDesktopApp",
+          "startLine": 134,
+          "endLine": 137,
+          "params": []
+        },
+        {
+          "name": "buildClinicalTeamInviteMessage",
+          "startLine": 142,
+          "endLine": 163,
+          "params": [
+            "team"
+          ]
+        },
+        {
+          "name": "buildClinicalTeamInviteUrl",
+          "startLine": 168,
+          "endLine": 171,
+          "params": [
+            "team"
+          ]
+        },
+        {
+          "name": "mountClinicalTeamInviteBrowserGate",
+          "startLine": 179,
+          "endLine": 216,
+          "params": [
+            "code"
+          ]
+        },
+        {
+          "name": "tryMountClinicalTeamInviteBrowserGate",
+          "startLine": 221,
+          "endLine": 225,
+          "params": [
+            "search"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "teamInviteCode",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "normalizeTeamInviteCode",
+          "line": 20,
+          "isDefault": false
+        },
+        {
+          "name": "isLikelyLanBearerToken",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "parseClinicalTeamJoinQuery",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "resolveTeamIdFromInviteCode",
+          "line": 60,
+          "isDefault": false
+        },
+        {
+          "name": "diagnoseInviteCodeFailure",
+          "line": 80,
+          "isDefault": false
+        },
+        {
+          "name": "inviteCodeFailureMessage",
+          "line": 99,
+          "isDefault": false
+        },
+        {
+          "name": "resolveClinicalInviteLanHostUrl",
+          "line": 119,
+          "isDefault": false
+        },
+        {
+          "name": "isClinicalTeamJoinDesktopApp",
+          "line": 134,
+          "isDefault": false
+        },
+        {
+          "name": "buildClinicalTeamInviteMessage",
+          "line": 142,
+          "isDefault": false
+        },
+        {
+          "name": "buildClinicalTeamInviteUrl",
+          "line": 168,
+          "isDefault": false
+        },
+        {
+          "name": "mountClinicalTeamInviteBrowserGate",
+          "line": 179,
+          "isDefault": false
+        },
+        {
+          "name": "tryMountClinicalTeamInviteBrowserGate",
+          "line": 221,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "teamInviteCode",
+          "callee": "String(teamId || '')\n    .replace(/-/g, '')\n    .slice(0, 8)\n    .toLowerCase",
+          "lineNumber": 11
+        },
+        {
+          "caller": "teamInviteCode",
+          "callee": "String(teamId || '')\n    .replace(/-/g, '')\n    .slice",
+          "lineNumber": 11
+        },
+        {
+          "caller": "teamInviteCode",
+          "callee": "String(teamId || '')\n    .replace",
+          "lineNumber": 11
+        },
+        {
+          "caller": "teamInviteCode",
+          "callee": "String",
+          "lineNumber": 11
+        },
+        {
+          "caller": "normalizeTeamInviteCode",
+          "callee": "String(raw || '')\n    .trim()\n    .toLowerCase()\n    .replace(/[^a-f0-9-]/g, '')\n    .replace",
+          "lineNumber": 21
+        },
+        {
+          "caller": "normalizeTeamInviteCode",
+          "callee": "String(raw || '')\n    .trim()\n    .toLowerCase()\n    .replace",
+          "lineNumber": 21
+        },
+        {
+          "caller": "normalizeTeamInviteCode",
+          "callee": "String(raw || '')\n    .trim()\n    .toLowerCase",
+          "lineNumber": 21
+        },
+        {
+          "caller": "normalizeTeamInviteCode",
+          "callee": "String(raw || '')\n    .trim",
+          "lineNumber": 21
+        },
+        {
+          "caller": "normalizeTeamInviteCode",
+          "callee": "String",
+          "lineNumber": 21
+        },
+        {
+          "caller": "isLikelyLanBearerToken",
+          "callee": "normalizeTeamInviteCode",
+          "lineNumber": 33
+        },
+        {
+          "caller": "parseClinicalTeamJoinQuery",
+          "callee": "String(search || '').replace",
+          "lineNumber": 38
+        },
+        {
+          "caller": "parseClinicalTeamJoinQuery",
+          "callee": "String",
+          "lineNumber": 38
+        },
+        {
+          "caller": "parseClinicalTeamJoinQuery",
+          "callee": "String(params.get('code') || '').trim",
+          "lineNumber": 39
+        },
+        {
+          "caller": "parseClinicalTeamJoinQuery",
+          "callee": "String",
+          "lineNumber": 39
+        },
+        {
+          "caller": "parseClinicalTeamJoinQuery",
+          "callee": "params.get",
+          "lineNumber": 39
+        },
+        {
+          "caller": "parseClinicalTeamJoinQuery",
+          "callee": "isLikelyLanBearerToken",
+          "lineNumber": 40
+        },
+        {
+          "caller": "parseClinicalTeamJoinQuery",
+          "callee": "normalizeTeamInviteCode",
+          "lineNumber": 43
+        },
+        {
+          "caller": "parseClinicalTeamJoinQuery",
+          "callee": "params.get",
+          "lineNumber": 44
+        },
+        {
+          "caller": "parseClinicalTeamJoinQuery",
+          "callee": "params.get",
+          "lineNumber": 44
+        },
+        {
+          "caller": "parseClinicalTeamJoinQuery",
+          "callee": "params.get",
+          "lineNumber": 44
+        },
+        {
+          "caller": "parseClinicalTeamJoinQuery",
+          "callee": "String(params.get('joinTeam') || params.get('clinicalTeam') || '').trim",
+          "lineNumber": 49
+        },
+        {
+          "caller": "parseClinicalTeamJoinQuery",
+          "callee": "String",
+          "lineNumber": 49
+        },
+        {
+          "caller": "parseClinicalTeamJoinQuery",
+          "callee": "params.get",
+          "lineNumber": 49
+        },
+        {
+          "caller": "parseClinicalTeamJoinQuery",
+          "callee": "params.get",
+          "lineNumber": 49
+        },
+        {
+          "caller": "parseClinicalTeamJoinQuery",
+          "callee": "teamInviteCode",
+          "lineNumber": 52
+        },
+        {
+          "caller": "resolveTeamIdFromInviteCode",
+          "callee": "normalizeTeamInviteCode",
+          "lineNumber": 61
+        },
+        {
+          "caller": "resolveTeamIdFromInviteCode",
+          "callee": "norm.slice",
+          "lineNumber": 63
+        },
+        {
+          "caller": "resolveTeamIdFromInviteCode",
+          "callee": "Array.isArray",
+          "lineNumber": 64
+        },
+        {
+          "caller": "resolveTeamIdFromInviteCode",
+          "callee": "list.filter",
+          "lineNumber": 65
+        },
+        {
+          "caller": "resolveTeamIdFromInviteCode",
+          "callee": "String(t?.team_id || '')\n      .replace(/-/g, '')\n      .toLowerCase",
+          "lineNumber": 66
+        },
+        {
+          "caller": "resolveTeamIdFromInviteCode",
+          "callee": "String(t?.team_id || '')\n      .replace",
+          "lineNumber": 66
+        },
+        {
+          "caller": "resolveTeamIdFromInviteCode",
+          "callee": "String",
+          "lineNumber": 66
+        },
+        {
+          "caller": "resolveTeamIdFromInviteCode",
+          "callee": "id.startsWith",
+          "lineNumber": 69
+        },
+        {
+          "caller": "resolveTeamIdFromInviteCode",
+          "callee": "String",
+          "lineNumber": 71
+        },
+        {
+          "caller": "diagnoseInviteCodeFailure",
+          "callee": "normalizeTeamInviteCode",
+          "lineNumber": 81
+        },
+        {
+          "caller": "diagnoseInviteCodeFailure",
+          "callee": "isLikelyLanBearerToken",
+          "lineNumber": 83
+        },
+        {
+          "caller": "diagnoseInviteCodeFailure",
+          "callee": "norm.slice",
+          "lineNumber": 85
+        },
+        {
+          "caller": "diagnoseInviteCodeFailure",
+          "callee": "Array.isArray",
+          "lineNumber": 86
+        },
+        {
+          "caller": "diagnoseInviteCodeFailure",
+          "callee": "list.filter",
+          "lineNumber": 87
+        },
+        {
+          "caller": "diagnoseInviteCodeFailure",
+          "callee": "String(t?.team_id || '')\n      .replace(/-/g, '')\n      .toLowerCase",
+          "lineNumber": 88
+        },
+        {
+          "caller": "diagnoseInviteCodeFailure",
+          "callee": "String(t?.team_id || '')\n      .replace",
+          "lineNumber": 88
+        },
+        {
+          "caller": "diagnoseInviteCodeFailure",
+          "callee": "String",
+          "lineNumber": 88
+        },
+        {
+          "caller": "diagnoseInviteCodeFailure",
+          "callee": "id.startsWith",
+          "lineNumber": 91
+        },
+        {
+          "caller": "diagnoseInviteCodeFailure",
+          "callee": "String",
+          "lineNumber": 94
+        },
+        {
+          "caller": "resolveClinicalInviteLanHostUrl",
+          "callee": "JSON.parse",
+          "lineNumber": 122
+        },
+        {
+          "caller": "resolveClinicalInviteLanHostUrl",
+          "callee": "localStorage.getItem",
+          "lineNumber": 122
+        },
+        {
+          "caller": "resolveClinicalInviteLanHostUrl",
+          "callee": "String(cfg?.hostUrl || '')\n      .trim()\n      .replace",
+          "lineNumber": 123
+        },
+        {
+          "caller": "resolveClinicalInviteLanHostUrl",
+          "callee": "String(cfg?.hostUrl || '')\n      .trim",
+          "lineNumber": 123
+        },
+        {
+          "caller": "resolveClinicalInviteLanHostUrl",
+          "callee": "String",
+          "lineNumber": 123
+        },
+        {
+          "caller": "resolveClinicalInviteLanHostUrl",
+          "callee": "/^https?:\\/\\/(localhost|127\\.0\\.0\\.1)(:\\d+)?$/i.test",
+          "lineNumber": 127
+        },
+        {
+          "caller": "buildClinicalTeamInviteMessage",
+          "callee": "String(team?.name || 'Equipo').trim",
+          "lineNumber": 143
+        },
+        {
+          "caller": "buildClinicalTeamInviteMessage",
+          "callee": "String",
+          "lineNumber": 143
+        },
+        {
+          "caller": "buildClinicalTeamInviteMessage",
+          "callee": "String(team?.sala || '').trim",
+          "lineNumber": 144
+        },
+        {
+          "caller": "buildClinicalTeamInviteMessage",
+          "callee": "String",
+          "lineNumber": 144
+        },
+        {
+          "caller": "buildClinicalTeamInviteMessage",
+          "callee": "teamInviteCode",
+          "lineNumber": 145
+        },
+        {
+          "caller": "buildClinicalTeamInviteMessage",
+          "callee": "resolveClinicalInviteLanHostUrl",
+          "lineNumber": 146
+        },
+        {
+          "caller": "buildClinicalTeamInviteMessage",
+          "callee": "lines.push",
+          "lineNumber": 160
+        },
+        {
+          "caller": "buildClinicalTeamInviteMessage",
+          "callee": "lines.join",
+          "lineNumber": 162
+        },
+        {
+          "caller": "mountClinicalTeamInviteBrowserGate",
+          "callee": "normalizeTeamInviteCode",
+          "lineNumber": 181
+        },
+        {
+          "caller": "mountClinicalTeamInviteBrowserGate",
+          "callee": "isClinicalTeamJoinDesktopApp",
+          "lineNumber": 182
+        },
+        {
+          "caller": "mountClinicalTeamInviteBrowserGate",
+          "callee": "document.getElementById",
+          "lineNumber": 183
+        },
+        {
+          "caller": "mountClinicalTeamInviteBrowserGate",
+          "callee": "document.createElement",
+          "lineNumber": 185
+        },
+        {
+          "caller": "mountClinicalTeamInviteBrowserGate",
+          "callee": "wrap.setAttribute",
+          "lineNumber": 188
+        },
+        {
+          "caller": "mountClinicalTeamInviteBrowserGate",
+          "callee": "wrap.setAttribute",
+          "lineNumber": 189
+        },
+        {
+          "caller": "mountClinicalTeamInviteBrowserGate",
+          "callee": "document.body.appendChild",
+          "lineNumber": 202
+        },
+        {
+          "caller": "mountClinicalTeamInviteBrowserGate",
+          "callee": "document.getElementById",
+          "lineNumber": 203
+        },
+        {
+          "caller": "mountClinicalTeamInviteBrowserGate",
+          "callee": "btn.addEventListener",
+          "lineNumber": 205
+        },
+        {
+          "caller": "mountClinicalTeamInviteBrowserGate",
+          "callee": "wrap.remove",
+          "lineNumber": 206
+        },
+        {
+          "caller": "mountClinicalTeamInviteBrowserGate",
+          "callee": "url.searchParams.delete",
+          "lineNumber": 209
+        },
+        {
+          "caller": "mountClinicalTeamInviteBrowserGate",
+          "callee": "url.searchParams.delete",
+          "lineNumber": 210
+        },
+        {
+          "caller": "mountClinicalTeamInviteBrowserGate",
+          "callee": "url.searchParams.delete",
+          "lineNumber": 211
+        },
+        {
+          "caller": "mountClinicalTeamInviteBrowserGate",
+          "callee": "window.history.replaceState",
+          "lineNumber": 212
+        },
+        {
+          "caller": "tryMountClinicalTeamInviteBrowserGate",
+          "callee": "parseClinicalTeamJoinQuery",
+          "lineNumber": 222
+        },
+        {
+          "caller": "tryMountClinicalTeamInviteBrowserGate",
+          "callee": "teamInviteCode",
+          "lineNumber": 223
+        },
+        {
+          "caller": "tryMountClinicalTeamInviteBrowserGate",
+          "callee": "mountClinicalTeamInviteBrowserGate",
+          "lineNumber": 224
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 13,
+        "functionCount": 13,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/clinical-team-invite.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 66,
+      "nonEmptyLines": 58,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/clinical-username.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 38,
+      "nonEmptyLines": 34,
+      "functions": [
+        {
+          "name": "normalizeUsername",
+          "startLine": 4,
+          "endLine": 9,
+          "params": [
+            "raw"
+          ]
+        },
+        {
+          "name": "isValidUsernameFormat",
+          "startLine": 11,
+          "endLine": 13,
+          "params": [
+            "raw"
+          ]
+        },
+        {
+          "name": "isLegacyMachineUsername",
+          "startLine": 16,
+          "endLine": 22,
+          "params": [
+            "username",
+            "clientId"
+          ]
+        },
+        {
+          "name": "shouldClaimClinicalUsername",
+          "startLine": 30,
+          "endLine": 38,
+          "params": [
+            "currentHandle",
+            "desiredHandle",
+            "clientId"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "normalizeUsername",
+          "line": 4,
+          "isDefault": false
+        },
+        {
+          "name": "isValidUsernameFormat",
+          "line": 11,
+          "isDefault": false
+        },
+        {
+          "name": "isLegacyMachineUsername",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "shouldClaimClinicalUsername",
+          "line": 30,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "normalizeUsername",
+          "callee": "String(raw || '')\n    .trim()\n    .replace(/^@+/, '')\n    .toLowerCase",
+          "lineNumber": 5
+        },
+        {
+          "caller": "normalizeUsername",
+          "callee": "String(raw || '')\n    .trim()\n    .replace",
+          "lineNumber": 5
+        },
+        {
+          "caller": "normalizeUsername",
+          "callee": "String(raw || '')\n    .trim",
+          "lineNumber": 5
+        },
+        {
+          "caller": "normalizeUsername",
+          "callee": "String",
+          "lineNumber": 5
+        },
+        {
+          "caller": "isValidUsernameFormat",
+          "callee": "USERNAME_RE.test",
+          "lineNumber": 12
+        },
+        {
+          "caller": "isValidUsernameFormat",
+          "callee": "normalizeUsername",
+          "lineNumber": 12
+        },
+        {
+          "caller": "isLegacyMachineUsername",
+          "callee": "String",
+          "lineNumber": 17
+        },
+        {
+          "caller": "isLegacyMachineUsername",
+          "callee": "String",
+          "lineNumber": 18
+        },
+        {
+          "caller": "isLegacyMachineUsername",
+          "callee": "/^lc_[a-z0-9_]+$/i.test",
+          "lineNumber": 21
+        },
+        {
+          "caller": "shouldClaimClinicalUsername",
+          "callee": "normalizeUsername",
+          "lineNumber": 31
+        },
+        {
+          "caller": "shouldClaimClinicalUsername",
+          "callee": "normalizeUsername",
+          "lineNumber": 32
+        },
+        {
+          "caller": "shouldClaimClinicalUsername",
+          "callee": "isValidUsernameFormat",
+          "lineNumber": 34
+        },
+        {
+          "caller": "shouldClaimClinicalUsername",
+          "callee": "isLegacyMachineUsername",
+          "lineNumber": 35
+        },
+        {
+          "caller": "shouldClaimClinicalUsername",
+          "callee": "String",
+          "lineNumber": 35
+        },
+        {
+          "caller": "shouldClaimClinicalUsername",
+          "callee": "/^local_[a-z0-9_]+$/.test",
+          "lineNumber": 36
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/clinical-username.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 22,
+      "nonEmptyLines": 20,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/clinico-access-scope/evaluate-clinical-scope.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 47,
+      "nonEmptyLines": 40,
+      "functions": [
+        {
+          "name": "runEvaluateClinicalScope",
+          "startLine": 25,
+          "endLine": 47,
+          "params": [
+            "currentUser",
+            "targetPatient",
+            "activeGuardia",
+            "context"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "runEvaluateClinicalScope",
+          "line": 25,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "runEvaluateClinicalScope",
+          "callee": "buildScopeContext",
+          "lineNumber": 26
+        },
+        {
+          "caller": "runEvaluateClinicalScope",
+          "callee": "evaluate",
+          "lineNumber": 30
+        },
+        {
+          "caller": "runEvaluateClinicalScope",
+          "callee": "attachJoinedTeamScope",
+          "lineNumber": 34
+        },
+        {
+          "caller": "runEvaluateClinicalScope",
+          "callee": "evaluateScopeInterconsultas",
+          "lineNumber": 36
+        },
+        {
+          "caller": "runEvaluateClinicalScope",
+          "callee": "evaluate",
+          "lineNumber": 41
+        },
+        {
+          "caller": "runEvaluateClinicalScope",
+          "callee": "evaluateTeamScope",
+          "lineNumber": 46
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/clinico-access-scope/guardia-fallback.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 12,
+      "nonEmptyLines": 10,
+      "functions": [
+        {
+          "name": "evaluateGuardiaFallback",
+          "startLine": 6,
+          "endLine": 12,
+          "params": [
+            "ctx"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "evaluateGuardiaFallback",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "evaluateGuardiaFallback",
+          "callee": "deny",
+          "lineNumber": 11
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/clinico-access-scope/guardia-r1.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 57,
+      "nonEmptyLines": 54,
+      "functions": [
+        {
+          "name": "evaluateGuardiaR1",
+          "startLine": 7,
+          "endLine": 57,
+          "params": [
+            "ctx"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "evaluateGuardiaR1",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "evaluateGuardiaR1",
+          "callee": "patientCoveredByGuardia",
+          "lineNumber": 28
+        },
+        {
+          "caller": "evaluateGuardiaR1",
+          "callee": "allow",
+          "lineNumber": 29
+        },
+        {
+          "caller": "evaluateGuardiaR1",
+          "callee": "deny",
+          "lineNumber": 31
+        },
+        {
+          "caller": "evaluateGuardiaR1",
+          "callee": "patientInJoinedTeamScope",
+          "lineNumber": 35
+        },
+        {
+          "caller": "evaluateGuardiaR1",
+          "callee": "allow",
+          "lineNumber": 45
+        },
+        {
+          "caller": "evaluateGuardiaR1",
+          "callee": "patientCoveredByGuardia",
+          "lineNumber": 47
+        },
+        {
+          "caller": "evaluateGuardiaR1",
+          "callee": "allow",
+          "lineNumber": 48
+        },
+        {
+          "caller": "evaluateGuardiaR1",
+          "callee": "deny",
+          "lineNumber": 50
+        },
+        {
+          "caller": "evaluateGuardiaR1",
+          "callee": "allow",
+          "lineNumber": 54
+        },
+        {
+          "caller": "evaluateGuardiaR1",
+          "callee": "deny",
+          "lineNumber": 56
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/clinico-access-scope/guardia-r2.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 16,
+      "nonEmptyLines": 13,
+      "functions": [
+        {
+          "name": "evaluateGuardiaR2",
+          "startLine": 7,
+          "endLine": 16,
+          "params": [
+            "ctx"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "evaluateGuardiaR2",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "evaluateGuardiaR2",
+          "callee": "patientCoveredByGuardia",
+          "lineNumber": 12
+        },
+        {
+          "caller": "evaluateGuardiaR2",
+          "callee": "allow",
+          "lineNumber": 13
+        },
+        {
+          "caller": "evaluateGuardiaR2",
+          "callee": "deny",
+          "lineNumber": 15
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/clinico-access-scope/guardia-r4.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 17,
+      "nonEmptyLines": 14,
+      "functions": [
+        {
+          "name": "evaluateGuardiaR4",
+          "startLine": 7,
+          "endLine": 17,
+          "params": [
+            "ctx"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "evaluateGuardiaR4",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "evaluateGuardiaR4",
+          "callee": "normalizeServiceKey",
+          "lineNumber": 12
+        },
+        {
+          "caller": "evaluateGuardiaR4",
+          "callee": "svc.includes",
+          "lineNumber": 13
+        },
+        {
+          "caller": "evaluateGuardiaR4",
+          "callee": "svc.includes",
+          "lineNumber": 13
+        },
+        {
+          "caller": "evaluateGuardiaR4",
+          "callee": "allow",
+          "lineNumber": 14
+        },
+        {
+          "caller": "evaluateGuardiaR4",
+          "callee": "deny",
+          "lineNumber": 16
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/clinico-access-scope/preamble.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 79,
+      "nonEmptyLines": 73,
+      "functions": [
+        {
+          "name": "evaluateScopeIdentity",
+          "startLine": 11,
+          "endLine": 17,
+          "params": [
+            "ctx"
+          ]
+        },
+        {
+          "name": "evaluateScopeAdmin",
+          "startLine": 20,
+          "endLine": 31,
+          "params": [
+            "ctx"
+          ]
+        },
+        {
+          "name": "evaluateScopeActiveGuardia",
+          "startLine": 34,
+          "endLine": 40,
+          "params": [
+            "ctx"
+          ]
+        },
+        {
+          "name": "evaluateScopeIncomingPreview",
+          "startLine": 43,
+          "endLine": 59,
+          "params": [
+            "ctx"
+          ]
+        },
+        {
+          "name": "evaluateScopeInterconsultas",
+          "startLine": 62,
+          "endLine": 72,
+          "params": [
+            "ctx"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "evaluateScopeIdentity",
+          "line": 11,
+          "isDefault": false
+        },
+        {
+          "name": "evaluateScopeAdmin",
+          "line": 20,
+          "isDefault": false
+        },
+        {
+          "name": "evaluateScopeActiveGuardia",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "evaluateScopeIncomingPreview",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "evaluateScopeInterconsultas",
+          "line": 62,
+          "isDefault": false
+        },
+        {
+          "name": "SCOPE_PREAMBLE_EVALUATORS",
+          "line": 74,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "evaluateScopeIdentity",
+          "callee": "deny",
+          "lineNumber": 14
+        },
+        {
+          "caller": "evaluateScopeAdmin",
+          "callee": "allow",
+          "lineNumber": 28
+        },
+        {
+          "caller": "evaluateScopeActiveGuardia",
+          "callee": "isActiveGuardiaCoveringUser",
+          "lineNumber": 36
+        },
+        {
+          "caller": "evaluateScopeActiveGuardia",
+          "callee": "allow",
+          "lineNumber": 37
+        },
+        {
+          "caller": "evaluateScopeIncomingPreview",
+          "callee": "isIncomingPreviewWindow",
+          "lineNumber": 45
+        },
+        {
+          "caller": "evaluateScopeIncomingPreview",
+          "callee": "assignments.find",
+          "lineNumber": 46
+        },
+        {
+          "caller": "evaluateScopeIncomingPreview",
+          "callee": "String",
+          "lineNumber": 46
+        },
+        {
+          "caller": "evaluateScopeIncomingPreview",
+          "callee": "toMillis",
+          "lineNumber": 48
+        },
+        {
+          "caller": "evaluateScopeIncomingPreview",
+          "callee": "toMillis",
+          "lineNumber": 49
+        },
+        {
+          "caller": "evaluateScopeIncomingPreview",
+          "callee": "Number.isFinite",
+          "lineNumber": 50
+        },
+        {
+          "caller": "evaluateScopeIncomingPreview",
+          "callee": "Number.isFinite",
+          "lineNumber": 50
+        },
+        {
+          "caller": "evaluateScopeIncomingPreview",
+          "callee": "allow",
+          "lineNumber": 51
+        },
+        {
+          "caller": "evaluateScopeInterconsultas",
+          "callee": "isInterconsultasPatient",
+          "lineNumber": 64
+        },
+        {
+          "caller": "evaluateScopeInterconsultas",
+          "callee": "userOffCallFromInterconsultasRotationServices",
+          "lineNumber": 65
+        },
+        {
+          "caller": "evaluateScopeInterconsultas",
+          "callee": "allow",
+          "lineNumber": 66
+        },
+        {
+          "caller": "evaluateScopeInterconsultas",
+          "callee": "userOnCallForInterconsultasTeam",
+          "lineNumber": 68
+        },
+        {
+          "caller": "evaluateScopeInterconsultas",
+          "callee": "allow",
+          "lineNumber": 69
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 6,
+        "functionCount": 5,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/clinico-access-scope/scope-context.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 77,
+      "nonEmptyLines": 73,
+      "functions": [
+        {
+          "name": "resolveScopeNow",
+          "startLine": 5,
+          "endLine": 9,
+          "params": [
+            "ctxNow"
+          ]
+        },
+        {
+          "name": "buildScopeContext",
+          "startLine": 17,
+          "endLine": 65,
+          "params": [
+            "currentUser",
+            "targetPatient",
+            "activeGuardia",
+            "context"
+          ]
+        },
+        {
+          "name": "attachJoinedTeamScope",
+          "startLine": 68,
+          "endLine": 77,
+          "params": [
+            "built",
+            "userId"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "resolveScopeNow",
+          "line": 5,
+          "isDefault": false
+        },
+        {
+          "name": "buildScopeContext",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "attachJoinedTeamScope",
+          "line": 68,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "resolveScopeNow",
+          "callee": "String",
+          "lineNumber": 8
+        },
+        {
+          "caller": "buildScopeContext",
+          "callee": "Array.isArray",
+          "lineNumber": 19
+        },
+        {
+          "caller": "buildScopeContext",
+          "callee": "Array.isArray",
+          "lineNumber": 20
+        },
+        {
+          "caller": "buildScopeContext",
+          "callee": "Array.isArray",
+          "lineNumber": 21
+        },
+        {
+          "caller": "buildScopeContext",
+          "callee": "resolveScopeNow",
+          "lineNumber": 24
+        },
+        {
+          "caller": "buildScopeContext",
+          "callee": "String",
+          "lineNumber": 25
+        },
+        {
+          "caller": "buildScopeContext",
+          "callee": "String",
+          "lineNumber": 26
+        },
+        {
+          "caller": "buildScopeContext",
+          "callee": "String",
+          "lineNumber": 27
+        },
+        {
+          "caller": "buildScopeContext",
+          "callee": "String",
+          "lineNumber": 28
+        },
+        {
+          "caller": "buildScopeContext",
+          "callee": "makeAllowDeny",
+          "lineNumber": 30
+        },
+        {
+          "caller": "attachJoinedTeamScope",
+          "callee": "getJoinedTeams",
+          "lineNumber": 70
+        },
+        {
+          "caller": "attachJoinedTeamScope",
+          "callee": "joinedTeams.map",
+          "lineNumber": 71
+        },
+        {
+          "caller": "attachJoinedTeamScope",
+          "callee": "String",
+          "lineNumber": 71
+        },
+        {
+          "caller": "attachJoinedTeamScope",
+          "callee": "userHasJoinedClinicalTeams",
+          "lineNumber": 74
+        },
+        {
+          "caller": "attachJoinedTeamScope",
+          "callee": "Object.assign",
+          "lineNumber": 75
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/clinico-access-scope/scope-utils.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 7,
+      "nonEmptyLines": 7,
+      "functions": [
+        {
+          "name": "toMillis",
+          "startLine": 2,
+          "endLine": 7,
+          "params": [
+            "value",
+            "fallbackIso"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "toMillis",
+          "line": 2,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "toMillis",
+          "callee": "value.getTime",
+          "lineNumber": 3
+        },
+        {
+          "caller": "toMillis",
+          "callee": "new Date(String(value)).getTime",
+          "lineNumber": 4
+        },
+        {
+          "caller": "toMillis",
+          "callee": "String",
+          "lineNumber": 4
+        },
+        {
+          "caller": "toMillis",
+          "callee": "new Date(String(fallbackIso)).getTime",
+          "lineNumber": 5
+        },
+        {
+          "caller": "toMillis",
+          "callee": "String",
+          "lineNumber": 5
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    }
+  ]
+}

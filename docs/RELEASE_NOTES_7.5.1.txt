@@ -1,0 +1,31 @@
+R+ 7.5.1 (push equipos, eTFG paciente y UI Rams)
+====================================================
+
+Fecha: 2026-06-25
+
+## Resumen
+
+Sobre **7.5.0**: notificaciones **Web Push** en la cola de equipos (LAN y cloud); **eTFG** en química usa sexo y edad del expediente; pegado masivo de labs agrupa por ventana de **2 h**; superficies más planas (tokens Rams/Tufte).
+
+## Nuevo / mejorado
+
+- **Equipos — notificaciones push** — En `/equipos` (móvil) puedes activar avisos cuando un Lumify/EKG/US queda libre, al devolver Lumify (con % de carga si eres el siguiente) o cuando hay reporte de material/falla. Funciona en cola **LAN** y en **cloud** (VAPID en Worker).
+- **Equipos — código compartido** — Misma lógica de mensajes y API entre escritorio, móvil LAN y páginas cloud; script `build:equipos-pages` para empaquetar la micro-app.
+- **Laboratorio — eTFG** — CKD-EPI 2021 toma **sexo y edad del paciente en R+** (no el encabezado SOME); si falta sexo en expediente, no calcula eTFG.
+- **Laboratorio — pegado masivo** — Consolidación por día + tipo dentro de ventana de **2 horas** (menos duplicados al pegar varios bloques del mismo turno).
+- **UI — Rams/Tufte** — Papel cálido, bordes hairline, sin sombras en tarjetas; gráficas EA con menos tinta decorativa.
+- **Seguridad renderer** — Escape HTML centralizado en `dom-escape.mjs` (expediente, LAN, interno, equipos).
+- **Base clínica** — Esquema SQLCipher **v19 → v20** (suscripciones push de equipos en host LAN).
+
+## Operación en guardia
+
+Instala **7.5.1** si usas cola de equipos y quieres avisos en el celular sin refrescar `/equipos`, o si pegas labs masivos del mismo turno. Push LAN requiere Mac anfitrión con R+ abierto y VAPID configurado; push cloud depende del Worker. Migra la base al desbloquear (automático). Recomendable el mismo build en estaciones con ⇄ activo.
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v7.5.1
+
+- Mac: `R+-7.5.1-arm64.dmg`, `R+-7.5.1-x64.dmg` (y zip para auto-update).
+- Windows: `R+-7.5.1-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye write-release-yml.js).

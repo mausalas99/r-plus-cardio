@@ -1,0 +1,38 @@
+R+ 7.3.2 (Premium UI, gráficas EA y endurecimiento)
+=======================================================
+
+Fecha: 2026-06-11
+
+## Resumen
+
+Sobre **7.3.1**: renovación visual **Workbench Refinado** en escritorio, móvil e interno (tokens, vidrio en overlays, navegación agrupada y **⌘K**); modal de **gráficas en Estado actual** con pestañas y tooltips completos; endurecimiento de seguridad (CSP, `window.open`, borrado PHI en web móvil); purga LAN más segura en el anfitrión.
+
+## Corrección (republicación 2026-06-11)
+
+- **Arranque en Mac/Windows** — El empaquetado omitía `lib/**/*.cjs` (`window-open-policy.cjs`, `lan-db-bridge.cjs`); la app fallaba al abrir con *Cannot find module*. Reinstala el instalador de esta republicación (mismo **7.3.2**).
+
+## Nuevo / mejorado
+
+- **Diseño — tokens y elevación** — Escala tipográfica clínica, sombras unificadas, números tabulares en labs/tendencias y presets de movimiento (**Sobrio / Mixto / Expresivo**) en Ajustes.
+- **Diseño — overlays de vidrio** — Modales, menús, ⌘K y toasts con tratamiento translúcido; fallback sólido si el blur no es viable (Electron sin GPU).
+- **Navegación — fila agrupada** — En expediente ancho: grupos Paciente · Clínico · Resultados · Salida con expansión al hover/foco; fallback automático a tabs en ventana estrecha.
+- **Navegación — contexto y modo** — Paciente + cama + diagnóstico siempre visibles; selector segmentado Sala · Interconsulta · Guardia · Pase.
+- **Navegación — ⌘K** — Paleta con búsqueda difusa de secciones y pacientes.
+- **Superficies premium** — Expediente, laboratorio, sidebar, pase/guardia, manejo, onboarding y Learn Hub alineados al nuevo sistema.
+- **Móvil e interno** — Filas agrupadas táctiles, targets ≥44px y tokens compartidos en `/mobile/` e interno iPad.
+- **Estado actual — gráficas** — Modal con pestañas (signos, balance, labs); downsampling a 100 puntos con tooltip de serie completa; curvas y canvas de vitals alineados a Tendencias.
+- **LAN — purga anfitrión** — Elimina entradas bundle-only huérfanas con guard de propiedad (`audit_log`); el borrado local ya no purga pacientes ajenos en el host.
+- **Seguridad** — Allowlist `http(s)://` en ventanas externas; CSP meta en entradas HTML; borrado de claves clínicas en localStorage al cerrar sesión web; puente DB LAN sin `globalThis`.
+
+## Operación en guardia
+
+Instala **7.3.2 en todas** las estaciones del turno el mismo día. Sin cambio de esquema SQLCipher (sigue **v17**). El iPad no requiere actualización obligatoria, pero interno/móvil se benefician del restyle.
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v7.3.2
+
+- Mac: `R+-7.3.2-arm64.dmg`, `R+-7.3.2-x64.dmg` (y zip para auto-update).
+- Windows: `R+-7.3.2-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye write-release-yml.js).

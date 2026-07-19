@@ -1,0 +1,34 @@
+R+ 7.1.0 (guardia workbench + LAN delta sync)
+=================================================
+
+Fecha: 2026-06-06
+
+## Resumen
+
+Reorganiza la vista Guardia para dejar más espacio al censo y signos vitales, mejora el flujo entrega → turno activo, y añade sincronización LAN por deltas (historia clínica y outbox) además del bundle completo.
+
+## Nuevo / mejorado
+
+- **Guardia más compacta** — Resumen del turno en una sola barra (`7 censo · 4 críticos…`) en lugar de cuatro tarjetas grandes; se eliminan botones duplicados (Mi rotación, Configuración rotación, Entrega) de la vista Guardia.
+- **Flujo entrega / turno** — La barra de fases concentra **Iniciar entrega** e **Iniciar turno sin entrega** (antes «Saltar a turno activo»); panel lateral de entrega a pantalla completa y modal de entrega más ancho (soporte + signos lado a lado).
+- **Turno activo** — Feed de signos vitales del turno, reloj de turno, cuenta regresiva de signos en las tarjetas del censo y estado crítico basado en toggle explícito + signos + vaso/vent.
+- **Configuración rotación (R4/Admin)** — Calendario del ciclo vive en **Mi rotación → Zona avanzada** (ya no en la barra de Guardia).
+- **LAN delta sync** — Emisión y aplicación de deltas de historia clínica por WebSocket; outbox SQL/local con ítems `delta`; menos tráfico que reenviar el bundle entero en cada cambio.
+
+## Correcciones
+
+- **Entrega** — El botón de entrega abre el roster de handoff (no solo cambia fase en memoria); vasopresor respeta `active: false` explícito en pendientes.
+- **Críticos** — Deja de marcar crítico por heurísticas sueltas; alinea con toggle clínico y alarmas reales.
+
+## Operación en guardia
+
+Actualiza desde **7.0.3** en todas las estaciones del turno. El PIN, la sala y Mi rotación en la barra lateral no cambian; la entrada a entrega pasa por la barra de fases bajo el censo.
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v7.1.0
+
+- Mac: `R+-7.1.0-arm64.dmg`, `R+-7.1.0-x64.dmg` (y zip para auto-update).
+- Windows: `R+-7.1.0-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye write-release-yml.js).

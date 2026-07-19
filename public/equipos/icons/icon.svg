@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Lista de espera">
+  <defs>
+    <linearGradient id="lista-field" x1="256" y1="0" x2="256" y2="512" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#4a52e8"/>
+      <stop offset="100%" stop-color="#3b42c9"/>
+    </linearGradient>
+    <clipPath id="lista-squircle">
+      <rect width="512" height="512" rx="113" ry="113"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#lista-squircle)">
+    <rect width="512" height="512" fill="url(#lista-field)"/>
+    <!-- Simple queue: front slot solid, waiting slots behind -->
+    <g transform="translate(256 256)">
+      <rect x="-108" y="-58" width="216" height="20" rx="10" fill="#ffffff"/>
+      <rect x="-108" y="-14" width="216" height="20" rx="10" fill="#ffffff" opacity="0.5"/>
+      <rect x="-108" y="30" width="216" height="20" rx="10" fill="#ffffff" opacity="0.5"/>
+    </g>
+  </g>
+</svg>

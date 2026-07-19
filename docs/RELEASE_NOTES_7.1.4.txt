@@ -1,0 +1,32 @@
+R+ 7.1.4 (guardia censo + directorio LAN)
+=============================================
+
+Fecha: 2026-06-06
+
+## Resumen
+
+Parche sobre 7.1.3: corrige el censo de guardia para Admin/R4 (filtros, sectores y pacientes del host), y hace usable el directorio LAN (menos lag, secciones colapsables, perfiles pendientes en ⇄).
+
+## Nuevo / mejorado
+
+- **Censo guardia (Admin/R4)** — Los filtros «Sala / Equipo / Alcance» aplican al tablero; sectores R4 usan `servicio`+`area` reales; Admin ve el censo completo y puede traer pacientes asignados que faltaban en esta Mac.
+- **Filtro por equipo** — «Dra. Melissa» (y otros equipos) ya no devuelve 0 pacientes por error de ciclo del viewer.
+- **Directorio LAN** — Deja de re-pintar toda la lista en cada sync (solo si cambian datos); las secciones por rango (R1, R2…) **permanecen colapsadas**; menos tirones al asignar integrantes.
+- **⇄ Directorio** — Exporta perfiles con nombre+sala aunque falte @usuario; en red local intenta fusionar roster de otra Mac en la misma sala (throttle 30 s). **No sustituye** un solo anfitrión: si cada Mac tiene distinto `hostUrl`, una debe ser servidor y las demás **Unirse** con el enlace ⇄.
+- **⇄ Restablecer conexión al turno** — Botón en ⇄ para salir de split-brain: abandona la sala, quita anfitrión fijado y deja de usar esta Mac como servidor; luego PIN del R4 o enlace de invitación. La base clínica no se borra.
+- **⇄ PIN del turno** — Campo visible tras registro y cuando esta Mac actúa como servidor local sin ser el anfitrión del turno.
+- **Rendimiento LAN** — Menos peticiones en bucle a sync-bundle/clinical-ops (reconcile con cooldown y sin pull redundante).
+- **Guardia UI** — Barra de fase vacía oculta; Mi rotación no reaparece en modo Guardia.
+
+## Operación en guardia
+
+Parche sobre **7.1.3**: instala en **todas** las estaciones del turno el mismo día. Si el directorio no lista a alguien en la misma sala, en ⇄ usa **Restablecer conexión al turno** y conecta con el PIN del R4; el anfitrión debe ser una sola Mac (mismo `hostUrl` en el informe de ⇄).
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v7.1.4
+
+- Mac: `R+-7.1.4-arm64.dmg`, `R+-7.1.4-x64.dmg` (y zip para auto-update).
+- Windows: `R+-7.1.4-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye write-release-yml.js).

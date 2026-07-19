@@ -1,0 +1,22 @@
+R+ 7.5.8 (catálogo downgrade 7.5.7)
+====================================
+
+Fecha: 2026-06-30
+
+## Resumen
+
+Parche sobre **7.5.7**: corrige el catálogo **Restaurar versión estable anterior** para incluir **7.5.7** como release curada recomendada.
+
+## Nuevo / mejorado
+
+- **Catálogo downgrade** — En Ajustes → **Restaurar versión estable anterior**, **7.5.7** aparece como opción recomendada para volver desde versiones más nuevas.
+- **Parche sobre 7.5.7** — Incluye confirmación de dieta **SUPLEMENTO** en Estado actual (sin re-propuesta tras sync). Sin migración (SQLCipher v20).
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v7.5.8
+
+- Mac: `R+-7.5.8-arm64.dmg`, `R+-7.5.8-x64.dmg` (y zip para auto-update).
+- Windows: `R+-7.5.8-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye write-release-yml.js).

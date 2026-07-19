@@ -1,0 +1,26 @@
+R+ 7.6.1 (Interconsultas en DB + Mi rotación sin perder borrador)
+============================================================
+
+Fecha: 2026-07-01
+
+## Resumen
+
+Sobre **7.6.0**: migración **SQLCipher v21** alinea el CHECK de sala con **Interconsultas**, **UX** y **Eme**; **Mi rotación** conserva el borrador del formulario al refrescar el panel en segundo plano; equipos exige estar en cola para activar notificaciones push; el downgrade a versión estable tolera mejor fallos de red.
+
+## Nuevo / mejorado
+
+- **SQLCipher v21** — `users`, `teams` y `sala_interno_access` aceptan las salas Interconsultas, UX y Eme (migración automática al desbloquear la base).
+- **Mi rotación — borrador** — Crear equipo, editar perfil y código de unión no se pierden cuando el panel se refresca por sync LAN o directorio.
+- **Equipos push** — La suscripción a notificaciones solo se acepta si ya estás en la cola del dispositivo (Lumify/EKG/US).
+- **Downgrade estable** — Catálogo de versiones con timeout de 12 s y enlace directo al instalador en GitHub si falla la red.
+- **Onboarding** — Perfil persistido válido reconocido aunque nombre o sala lleguen desde IPC con retraso.
+- **Parche sobre 7.6.0** — Incluye ⇄ sin PIN de turno y censo abierto por equipo de la línea anterior.
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v7.6.1
+
+- Mac: `R+-7.6.1-arm64.dmg`, `R+-7.6.1-x64.dmg` (y zip para auto-update).
+- Windows: `R+-7.6.1-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye write-release-yml.js).

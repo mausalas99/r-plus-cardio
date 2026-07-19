@@ -1,0 +1,878 @@
+/* Premium UI · Workbench Refinado · desktop surface rollout
+ * Scoped overrides only — loads after feature CSS. Phase-1 tokens required.
+ * Sections: 1 Expediente · 2 Lab · 3 Sidebar · 4 Pase/Guardia · 5 Manejo/Agenda · 6–7 Tour/Learn
+ */
+
+/* ── Shared shell frames (Normal density) ─────────────────── */
+html.ui-density-normal #appcontent-lab > .main-work-scroll,
+html.ui-density-normal #appcontent-agenda > .rpc-proc-agenda-root,
+html.ui-density-normal #appcontent-med > .med-active-shell,
+html.ui-density-normal .patient-expediente-classic {
+  border: none;
+  box-shadow: var(--shadow-border);
+}
+
+html.high-contrast.ui-density-normal #appcontent-lab > .main-work-scroll,
+html.high-contrast.ui-density-normal #appcontent-agenda > .rpc-proc-agenda-root,
+html.high-contrast.ui-density-normal #appcontent-med > .med-active-shell,
+html.high-contrast.ui-density-normal .patient-expediente-classic {
+  border: var(--border-hairline);
+  box-shadow: none;
+}
+
+/* ── Toolbar → content section gap (hallmark P2-A) ─────────── */
+#appcontent-lab .main-work-scroll > #lab-input-section {
+  margin-bottom: var(--density-gap-section);
+}
+
+#appcontent-lab .lab-some-table-toolbar {
+  margin-bottom: var(--density-gap-section);
+}
+
+#appcontent-med > .med-active-shell > #med-subview-tabs-bar {
+  margin-bottom: var(--density-gap-section);
+}
+
+#appcontent-agenda .rpc-proc-agenda-header {
+  margin-bottom: var(--density-gap-section);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   1 · EXPEDIENTE PANES
+   ═══════════════════════════════════════════════════════════ */
+
+.patient-expediente-classic > .expediente-panes-host {
+  gap: calc(12px * var(--density-space, 1));
+  padding: calc(10px * var(--density-space, 1)) calc(12px * var(--density-space, 1)) calc(14px * var(--density-space, 1));
+}
+
+.patient-expediente-classic .exp-composite-pane {
+  gap: var(--density-gap-section);
+}
+
+.patient-expediente-classic .exp-composite-pane > .exp-segment-bar {
+  margin-bottom: var(--density-gap-section);
+}
+
+.patient-expediente-classic .exp-datos-tab-action {
+  font: var(--type-body);
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+.patient-expediente-classic .tab-content:not(.exp-composite-pane) {
+  padding: calc(16px * var(--density-space, 1)) calc(18px * var(--density-space, 1)) calc(20px * var(--density-space, 1));
+}
+
+#patient-expediente .card,
+.patient-expediente-classic .card,
+#patient-expediente .listado-section,
+.patient-expediente-classic .listado-section {
+  border: none;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-border);
+  overflow: hidden;
+  background: var(--surface);
+  transition: box-shadow var(--dur-fast) var(--ease-out);
+}
+
+html.high-contrast #patient-expediente .card,
+html.high-contrast .patient-expediente-classic .card,
+html.high-contrast #patient-expediente .listado-section,
+html.high-contrast .patient-expediente-classic .listado-section {
+  border: var(--border-hairline);
+  box-shadow: none;
+}
+
+#patient-expediente .card:hover,
+.patient-expediente-classic .card:hover,
+#patient-expediente .listado-section:hover,
+.patient-expediente-classic .listado-section:hover {
+  box-shadow: var(--shadow-border-hover);
+}
+
+html.high-contrast #patient-expediente .card:hover,
+html.high-contrast .patient-expediente-classic .card:hover,
+html.high-contrast #patient-expediente .listado-section:hover,
+html.high-contrast .patient-expediente-classic .listado-section:hover {
+  box-shadow: none;
+}
+
+#patient-expediente .card-header,
+.patient-expediente-classic .card-header,
+#patient-expediente .listado-section-header,
+.patient-expediente-classic .listado-section-header {
+  font: var(--type-section);
+  letter-spacing: var(--tracking-section);
+  text-transform: uppercase;
+  color: var(--text-muted);
+  border-bottom: var(--border-hairline);
+  background: color-mix(in oklab, var(--surface) 92%, var(--section-header-bg));
+}
+
+#patient-expediente .card-body,
+.patient-expediente-classic .card-body,
+#patient-expediente .listado-section-body,
+.patient-expediente-classic .listado-section-body {
+  font: var(--type-body);
+  background: var(--card-body-bg);
+}
+
+.patient-expediente-classic .listado-row {
+  border-radius: var(--radius-md);
+  transition:
+    background var(--dur-fast) var(--ease-out),
+    border-color var(--dur-fast) var(--ease-out),
+    box-shadow var(--dur-fast) var(--ease-out);
+}
+
+.patient-expediente-classic .listado-row:hover {
+  background: var(--state-hover-bg);
+  border-color: color-mix(in oklab, var(--action) 12%, transparent);
+}
+
+.patient-expediente-classic .listado-row textarea:focus-visible,
+.patient-expediente-classic .listado-row input[type="date"]:focus-visible {
+  box-shadow: var(--focus-ring);
+  outline: none;
+}
+
+.patient-expediente-classic .exp-segment-panel {
+  border: var(--border-hairline);
+  border-radius: var(--radius-lg);
+  background: var(--card-body-bg);
+  box-shadow: var(--elev-raised);
+  padding: calc(16px * var(--density-space, 1)) calc(18px * var(--density-space, 1))
+    calc(20px * var(--density-space, 1));
+  gap: calc(12px * var(--density-space, 1));
+}
+
+/* Pendientes: sin ventana contenedora — filas flotantes */
+.patient-expediente-classic .exp-pendientes-mount > .exp-segment-panel,
+.exp-pendientes-mount > .exp-segment-panel.active {
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  overflow: visible;
+  padding: 0;
+  gap: 0;
+}
+
+/* Hojas autocontenidas: un solo marco (evita ventana-dentro-de-ventana) */
+.patient-expediente-classic .exp-segment-panel .receta-hu-sheet,
+.patient-expediente-classic .exp-segment-panel .ev-panel,
+.patient-expediente-classic .exp-segment-panel .vpo-panel {
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent;
+}
+
+.patient-expediente-classic .exp-segment-panel #vpo-container {
+  gap: calc(10px * var(--density-space, 1));
+}
+
+.patient-expediente-classic .exp-segment-panel .vpo-panel {
+  padding: 0;
+  gap: calc(10px * var(--density-space, 1));
+}
+
+.patient-expediente-classic .exp-segment-panel .vpo-section.ea-card {
+  border: var(--border-hairline);
+  border-radius: var(--radius-md);
+  box-shadow: none;
+  background: color-mix(in oklab, var(--surface) 72%, var(--bg));
+}
+
+.patient-expediente-classic .exp-segment-panel #receta-hu-container {
+  padding: 0;
+  max-width: none;
+  margin: 0;
+}
+
+.patient-expediente-classic .exp-segment-panel .hc-read-view {
+  gap: calc(10px * var(--density-space, 1));
+}
+
+.patient-expediente-classic .exp-segment-panel .card-body,
+.patient-expediente-classic .exp-segment-panel .hc-read-body {
+  padding: calc(14px * var(--density-space, 1)) calc(18px * var(--density-space, 1));
+}
+
+.exp-pendientes-mount {
+  padding: calc(2px * var(--density-space, 1)) 0 calc(12px * var(--density-space, 1));
+}
+
+.exp-pendientes-mount #todo-form.todo-shell,
+.exp-pendientes-mount .todo-shell {
+  display: flex;
+  flex-direction: column;
+  gap: calc(8px * var(--density-space, 1));
+  flex: 1;
+  min-height: 0;
+}
+
+.exp-pendientes-mount .todo-toolbar {
+  order: 1;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 2rem;
+  margin-bottom: var(--density-gap-section);
+}
+
+.exp-pendientes-mount .todo-list {
+  order: 2;
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+}
+
+.exp-pendientes-mount .todo-empty {
+  order: 2;
+  flex: 0 0 auto;
+  min-height: 0;
+  overflow: visible;
+}
+
+.exp-pendientes-mount .todo-composer {
+  order: 3;
+  flex-shrink: 0;
+  margin-top: auto;
+  display: grid;
+  grid-template-columns: var(--todo-grid-prio) var(--todo-grid-check) minmax(0, 1fr) var(--todo-grid-actions);
+  column-gap: 10px;
+  row-gap: 4px;
+  align-items: center;
+  padding: 10px 12px;
+  border: none;
+  border-top: 1px solid var(--divider);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.exp-pendientes-mount .todo-composer > .todo-add-row {
+  display: contents;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+}
+
+.exp-pendientes-mount .todo-composer .todo-prio-chip {
+  width: 100%;
+  max-width: 100%;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.exp-pendientes-mount .todo-composer input[type='text'] {
+  min-width: 0;
+  width: 100%;
+  padding: 6px 8px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-control);
+  background: transparent;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.exp-pendientes-mount .todo-composer input[type='text']:hover:not(:focus) {
+  border-color: color-mix(in oklab, var(--border) 70%, transparent);
+  background: color-mix(in oklab, var(--surface) 35%, transparent);
+}
+
+.exp-pendientes-mount .todo-composer input[type='text']:focus {
+  outline: none;
+  border-color: var(--action);
+  background: var(--surface);
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--action) 18%, transparent);
+}
+
+.exp-pendientes-mount .todo-composer .todo-add-btn {
+  justify-self: stretch;
+  width: 100%;
+  min-height: 0;
+  padding: 8px 10px;
+  font-size: 13px;
+}
+
+.exp-pendientes-mount .todo-composer .todo-due-section {
+  grid-column: 3 / 4;
+  margin: 0;
+  padding: 0 8px;
+  border-top: none;
+  align-self: start;
+  gap: 4px;
+}
+
+.exp-pendientes-mount .todo-composer .todo-due-section-primary {
+  width: 100%;
+}
+
+.exp-pendientes-mount .todo-composer .todo-due-presets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  width: 100%;
+}
+
+.exp-pendientes-mount .todo-composer .todo-due-preset-chip {
+  font-size: 11px;
+  padding: 3px 8px;
+  line-height: 1.2;
+}
+
+.exp-pendientes-mount .todo-list {
+  display: flex;
+  flex-direction: column;
+  gap: calc(6px * var(--density-space, 1));
+}
+
+.exp-pendientes-mount .todo-row {
+  border: none;
+  border-left: 3px solid transparent;
+  border-bottom: 1px solid var(--divider);
+  border-radius: var(--radius-md);
+  box-shadow: none;
+  margin: 0;
+  background: transparent;
+  transition: background var(--dur-fast) var(--ease-out);
+}
+
+.exp-pendientes-mount .todo-row.prio-alta,
+.exp-pendientes-mount .todo-row.prio-media,
+.exp-pendientes-mount .todo-row.prio-baja {
+  background: transparent;
+}
+
+.exp-pendientes-mount .todo-row--handoff {
+  background: color-mix(in oklab, var(--action) 6%, transparent);
+}
+
+.exp-pendientes-mount .todo-row:hover {
+  background: color-mix(in oklab, var(--action) 4%, transparent);
+}
+
+.exp-pendientes-mount .todo-empty {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 0;
+  padding: calc(6px * var(--density-space, 1)) calc(4px * var(--density-space, 1)) calc(10px * var(--density-space, 1));
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  text-align: left;
+  align-items: flex-start;
+}
+
+.exp-pendientes-mount .todo-empty .empty-state-title {
+  font-size: calc(14px * var(--density-font, 1));
+  font-weight: 600;
+  color: var(--text);
+}
+
+.exp-pendientes-mount .todo-empty .empty-state-lead {
+  font-size: calc(13px * var(--density-font, 1));
+  line-height: 1.45;
+  color: var(--text-muted);
+  max-width: 36ch;
+}
+
+/* Estado actual (mounted under Clínico) */
+#patient-expediente .ea-card,
+.patient-expediente-classic .ea-card {
+  border: var(--border-hairline);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--elev-raised);
+  background: var(--surface);
+}
+
+#patient-expediente .ea-action-bar,
+.patient-expediente-classic .ea-action-bar {
+  margin-bottom: var(--density-gap-section);
+}
+
+#patient-expediente .ea-section-title,
+.patient-expediente-classic .ea-section-title {
+  font: var(--type-section);
+  letter-spacing: var(--tracking-section);
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+#patient-expediente .ea-btn,
+.patient-expediente-classic .ea-btn {
+  transition:
+    background var(--dur-fast) var(--ease-out),
+    border-color var(--dur-fast) var(--ease-out),
+    box-shadow var(--dur-fast) var(--ease-out);
+}
+
+#patient-expediente .ea-btn:focus-visible,
+.patient-expediente-classic .ea-btn:focus-visible {
+  box-shadow: var(--focus-ring);
+}
+
+/* Historia / eventualidades / VPO mounts (fuera de segment-panel o modal) */
+#patient-expediente .hc-step-body,
+.patient-expediente-classic .hc-step-body,
+#patient-expediente .vpo-panel,
+.patient-expediente-classic .vpo-panel {
+  border: var(--border-hairline);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--elev-raised);
+  background: var(--surface);
+}
+
+#patient-expediente .ev-panel,
+.patient-expediente-classic .ev-panel {
+  border: var(--border-hairline);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--elev-raised);
+  background: var(--surface);
+}
+
+/* Tendencias / cultivos segment bodies */
+.patient-expediente-classic .exp-segment-body--resultados .card,
+.patient-expediente-classic .exp-segment-body--clinico .card {
+  border: var(--border-hairline);
+  box-shadow: var(--elev-raised);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   2 · LABORATORIO WORKBENCH
+   ═══════════════════════════════════════════════════════════ */
+
+#appcontent-lab > .main-work-scroll {
+  background: color-mix(in oklab, var(--bg) 94%, var(--surface));
+}
+
+/* Lab cards: one radius tier (lg) — overrides soft-ui xl blanket + base .card xl */
+#appcontent-lab .main-work-scroll > .card,
+#appcontent-lab #lab-input-section,
+#appcontent-lab #lab-output-section,
+#appcontent-lab #lab-history-card,
+#appcontent-lab #lab-diagrams-section,
+#appcontent-lab #lab-banner {
+  border: var(--border-hairline);
+  border-radius: var(--radius-lg) !important;
+  box-shadow: var(--elev-raised);
+  background: var(--surface);
+  isolation: isolate;
+}
+
+#appcontent-lab .card > .card-header:first-child {
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  overflow: visible;
+  position: relative;
+  z-index: 2;
+}
+
+#appcontent-lab .card > .card-body:last-child {
+  overflow: hidden;
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+}
+
+#appcontent-lab #lab-banner > .card-body:only-child {
+  border-radius: var(--radius-lg);
+}
+
+#appcontent-lab #lab-output-section > .card-header,
+#appcontent-lab #lab-history-card > .card-header,
+#appcontent-lab #lab-input-section > .card-header,
+#appcontent-lab .main-work-scroll > .card > .card-header,
+#appcontent-lab #lab-diagrams-section > .card-header {
+  font: var(--type-section);
+  letter-spacing: var(--tracking-section);
+  text-transform: uppercase;
+  color: var(--text-muted);
+  border-bottom: var(--border-hairline);
+  background: color-mix(in oklab, var(--surface) 92%, var(--section-header-bg));
+}
+
+#appcontent-lab .card-body {
+  font: var(--type-body);
+  background: var(--card-body-bg);
+}
+
+#appcontent-lab .lab-title {
+  font: var(--type-section);
+  letter-spacing: var(--tracking-section);
+  text-transform: uppercase;
+  color: var(--text-muted);
+  border-bottom: var(--border-hairline);
+}
+
+#appcontent-lab .lab-item {
+  border: var(--border-hairline);
+  background: color-mix(in oklab, var(--lab-chip-bg) 65%, var(--surface));
+  box-shadow: var(--elev-flat);
+  transition: box-shadow var(--dur-fast) var(--ease-out);
+}
+
+#appcontent-lab .lab-item:hover {
+  box-shadow: var(--elev-raised);
+}
+
+#appcontent-lab .lab-history-row {
+  border: var(--border-hairline);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--elev-flat);
+  transition:
+    background var(--dur-fast) var(--ease-out),
+    box-shadow var(--dur-fast) var(--ease-out);
+}
+
+#appcontent-lab .lab-history-row:hover {
+  background: var(--state-hover-bg);
+  box-shadow: var(--elev-raised);
+}
+
+#appcontent-lab .btn-generate,
+#appcontent-lab .btn-med-secondary {
+  transition:
+    background var(--dur-fast) var(--ease-out),
+    border-color var(--dur-fast) var(--ease-out),
+    box-shadow var(--dur-fast) var(--ease-out);
+}
+
+#appcontent-lab .btn-generate:focus-visible,
+#appcontent-lab .btn-med-secondary:focus-visible {
+  box-shadow: var(--focus-ring);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   3 · PATIENT SIDEBAR
+   ═══════════════════════════════════════════════════════════ */
+
+aside.patient-sidebar .sidebar-header h2 {
+  font: var(--type-section);
+  letter-spacing: var(--tracking-section);
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+aside.patient-sidebar #patient-search {
+  border: var(--border-hairline);
+  background: var(--input-fill);
+  border-radius: var(--radius-control);
+  font: var(--type-caption);
+  padding: calc(6px * var(--density-space)) calc(10px * var(--density-space));
+  min-height: 30px;
+  transition:
+    border-color var(--dur-fast) var(--ease-out),
+    box-shadow var(--dur-fast) var(--ease-out);
+}
+
+aside.patient-sidebar #patient-search:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+  border-color: color-mix(in oklab, var(--action) 35%, transparent);
+}
+
+aside.patient-sidebar .patient-card {
+  border: var(--border-hairline);
+  box-shadow: var(--elev-flat);
+  transition:
+    background var(--dur-fast) var(--ease-out),
+    border-color var(--dur-fast) var(--ease-out),
+    box-shadow var(--dur-fast) var(--ease-out);
+}
+
+aside.patient-sidebar .patient-card:hover {
+  background: var(--state-hover-bg);
+  box-shadow: var(--elev-raised);
+}
+
+aside.patient-sidebar .patient-card.active {
+  border-color: color-mix(in oklab, var(--action) 32%, transparent);
+  box-shadow: var(--elev-raised);
+  background: color-mix(in oklab, var(--action) 6%, var(--surface));
+}
+
+aside.patient-sidebar .patient-card .p-name {
+  font: var(--type-body);
+  font-weight: 600;
+}
+
+aside.patient-sidebar .patient-card .p-meta {
+  font: var(--type-caption);
+}
+
+/* High contrast: flatten decorative elevation */
+html.high-contrast .patient-expediente-classic .card,
+html.high-contrast #appcontent-lab #lab-output-section,
+html.high-contrast aside.patient-sidebar .patient-card {
+  box-shadow: none;
+  border: 1px solid var(--border);
+}
+
+html.motion-sobrio .patient-expediente-classic .listado-row,
+html.motion-sobrio #appcontent-lab .lab-history-row,
+html.motion-sobrio aside.patient-sidebar .patient-card {
+  transition: none;
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   4 · PASE & GUARDIA
+   ═══════════════════════════════════════════════════════════ */
+
+html.ui-density-guardia .guardia-panel,
+html.ui-density-guardia .guardia-census-panel {
+  border: var(--border-hairline);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--elev-raised);
+  background: var(--surface);
+}
+
+html.ui-density-guardia .guardia-census-panel-head h2,
+html.ui-density-guardia .guardia-panel h2 {
+  font: var(--type-section);
+  letter-spacing: var(--tracking-section);
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+html.ui-density-guardia .patient-chip-card {
+  border: var(--border-hairline);
+  box-shadow: var(--elev-flat);
+  transition:
+    background var(--dur-fast) var(--ease-out),
+    box-shadow var(--dur-fast) var(--ease-out);
+}
+
+html.ui-density-guardia .patient-chip-card:hover {
+  box-shadow: var(--elev-raised);
+  background: var(--state-hover-bg);
+}
+
+html:not(.ui-density-normal) .pase-patient-banner,
+html:not(.ui-density-normal) .pase-section {
+  border: var(--border-hairline);
+  box-shadow: var(--elev-raised);
+}
+
+html:not(.ui-density-normal) .pase-section-head {
+  border-bottom: var(--border-hairline);
+}
+
+html:not(.ui-density-normal) .pase-patient-name {
+  font: var(--type-title);
+}
+
+
+html.ui-density-guardia .guardia-metrics-toolbar {
+  padding: 6px 10px;
+  border: var(--border-hairline);
+  border-radius: var(--radius-lg);
+  background: color-mix(in oklab, var(--surface) 96%, var(--bg));
+  box-shadow: var(--elev-flat);
+}
+
+html.ui-density-guardia .guardia-phase-bar {
+  border: var(--border-hairline);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--elev-raised);
+}
+
+html.ui-density-guardia .guardia-phase-step-num {
+  box-shadow: var(--elev-flat);
+}
+
+html.ui-density-guardia .entrega-proc-chip,
+html.ui-density-guardia .entrega-proc-card {
+  border: var(--border-hairline);
+  box-shadow: var(--elev-flat);
+}
+
+html.ui-density-guardia .entrega-proc-card:hover {
+  box-shadow: var(--elev-raised);
+  background: var(--state-hover-bg);
+}
+
+html.ui-density-guardia .guardia-census-count {
+  border: var(--border-hairline);
+  box-shadow: var(--elev-flat);
+}
+
+html.ui-density-guardia .btn-guardia-entrega-phase {
+  border: var(--border-hairline);
+  transition:
+    background var(--dur-fast) var(--ease-out),
+    border-color var(--dur-fast) var(--ease-out),
+    box-shadow var(--dur-fast) var(--ease-out);
+}
+
+html.ui-density-guardia .btn-guardia-entrega-phase.is-active {
+  box-shadow: var(--elev-raised);
+}
+
+html.ui-density-pase .pase-board-scroll .card,
+html.ui-density-pase #pase-board-root .card {
+  border: var(--border-hairline);
+  box-shadow: var(--elev-raised);
+}
+
+html.ui-density-pase .pase-section-head h3 {
+  font: var(--type-section);
+  letter-spacing: var(--tracking-section);
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+html.high-contrast .guardia-panel,
+html.high-contrast:not(.ui-density-normal) .pase-section {
+  box-shadow: none;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   5 · MANEJO + AGENDA
+   ═══════════════════════════════════════════════════════════ */
+
+#appcontent-med > .med-active-shell > #med-work-area .card,
+#appcontent-med .med-pharm-root .card,
+#appcontent-med #med-work-area .manejo-guia-panel {
+  border: var(--border-hairline);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--elev-raised);
+  background: var(--surface);
+}
+
+#appcontent-med .manejo-subtabs {
+  border-bottom: var(--border-hairline);
+}
+
+#appcontent-med .manejo-subtab {
+  transition: color var(--dur-fast) var(--ease-out);
+}
+
+#appcontent-med .manejo-subtab:focus-visible {
+  box-shadow: var(--focus-ring);
+  outline: none;
+}
+
+#appcontent-agenda .rpc-proc-agenda-board-head {
+  border: var(--border-hairline);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  box-shadow: var(--elev-flat);
+  background: var(--surface);
+}
+
+#appcontent-agenda .rpc-proc-agenda-board-body {
+  border: var(--border-hairline);
+  border-top: none;
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+  box-shadow: var(--elev-raised);
+  overflow: hidden;
+}
+
+#appcontent-agenda .rpc-proc-agenda-title {
+  font: var(--type-title);
+  letter-spacing: var(--tracking-title, -0.02em);
+}
+
+#appcontent-agenda .rpc-proc-agenda-block {
+  border: var(--border-hairline);
+  box-shadow: var(--elev-flat);
+  transition:
+    transform var(--dur-fast) var(--ease-out),
+    border-color var(--dur-fast) var(--ease-out),
+    box-shadow var(--dur-fast) var(--ease-out);
+}
+
+#appcontent-agenda .rpc-proc-agenda-block:hover {
+  box-shadow: var(--elev-raised);
+  background: var(--state-hover-bg);
+}
+
+html.high-contrast #appcontent-med .card,
+html.high-contrast #appcontent-agenda .rpc-proc-agenda-board-body {
+  box-shadow: none;
+}
+
+html.motion-sobrio #appcontent-agenda .rpc-proc-agenda-block {
+  transition: none;
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   6 · FLOATING CHROME (tour dock, learn hub)
+   ═══════════════════════════════════════════════════════════ */
+
+#tour-dock .tour-dock-inner {
+  border: var(--overlay-border, var(--border-hairline));
+  border-radius: var(--radius-lg);
+  box-shadow: var(--elev-overlay, var(--elev-raised));
+  background: var(--overlay-bg, var(--surface));
+  -webkit-backdrop-filter: blur(var(--overlay-blur, 0px));
+  backdrop-filter: blur(var(--overlay-blur, 0px));
+}
+
+html.no-blur #tour-dock .tour-dock-inner {
+  background: var(--surface);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  border: var(--border-hairline);
+}
+
+#tour-dock .tour-dock-head {
+  border-bottom: var(--border-hairline);
+}
+
+#tour-dock #tour-step-badge .tour-dock-badge-module {
+  font: var(--type-section);
+  letter-spacing: var(--tracking-section);
+}
+
+.learn-hub-sheet {
+  border-left: var(--border-hairline);
+  box-shadow: var(--elev-overlay);
+  background: var(--overlay-bg, var(--surface));
+  -webkit-backdrop-filter: blur(var(--overlay-blur, 0px));
+  backdrop-filter: blur(var(--overlay-blur, 0px));
+}
+
+html.no-blur .learn-hub-sheet {
+  background: var(--surface);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
+.learn-hub-head {
+  border-bottom: var(--border-hairline);
+}
+
+.learn-hub-module-card {
+  border: var(--border-hairline);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--elev-flat);
+  transition:
+    border-color var(--dur-fast) var(--ease-out),
+    box-shadow var(--dur-fast) var(--ease-out),
+    background var(--dur-fast) var(--ease-out);
+}
+
+.learn-hub-module-card:hover {
+  background: var(--state-hover-bg);
+  box-shadow: var(--elev-raised);
+}
+
+.learn-hub-module-card.is-active {
+  box-shadow: var(--elev-raised);
+}
+
+html.high-contrast #tour-dock .tour-dock-inner,
+html.high-contrast .learn-hub-sheet,
+html.high-contrast .learn-hub-module-card {
+  box-shadow: none;
+  border: 1px solid var(--border);
+}
+

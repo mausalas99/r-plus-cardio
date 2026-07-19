@@ -1,0 +1,426 @@
+/* Hallmark · phase 4 · utilitarian clinical · theme: Quiet workbench
+ * Rams (equipment chrome) + Tufte (chart data-ink) · 2026-06-24
+ * contrast: pass (tokens + HC)
+ */
+
+:root {
+  --color-paper: #e4e1dc;
+  --color-surface: #f5f4f0;
+  --color-ink: #191919;
+  --color-ink-muted: #5c5c5c;
+  --color-accent: #4a52e8;
+  --color-accent-hover: #3b42c9;
+  --color-accent-soft: color-mix(in oklab, var(--color-accent) 9%, transparent);
+  --color-accent-soft-text: #3b42c9;
+  --color-on-accent: #ffffff;
+  --color-section-header-bg: color-mix(in oklab, var(--color-accent) 6%, var(--color-surface));
+  --color-section-accent: var(--color-accent);
+  --color-channel-pill-bg: color-mix(in oklab, var(--color-accent) 78%, #4338ca);
+  --color-channel-pill-fg: #ffffff;
+  --color-focus-ring: color-mix(in oklab, var(--color-accent) 26%, transparent);
+  --color-success-emphasis: #047857;
+  --color-success-emphasis-hover: #065f46;
+  --color-on-success: #ffffff;
+  /* LiveSync header · estado de conexión */
+  --color-livesync-live: var(--color-success-emphasis);
+  --color-livesync-syncing: #b45309;
+  --color-livesync-degraded: #c2410c;
+  --color-livesync-local: var(--color-accent);
+  --color-livesync-idle: var(--text-muted);
+  --color-agenda-block-bg: color-mix(in oklab, var(--color-accent) 11%, var(--color-surface));
+  --color-agenda-block-border: color-mix(in oklab, var(--color-accent) 32%, var(--border));
+  --color-update-banner-bg: #166534;
+  --color-update-banner-fg: #bbf7d0;
+  --color-update-banner-track: rgba(255, 255, 255, 0.2);
+  --color-update-banner-fill: #4ade80;
+  --color-update-banner-btn-bg: #ffffff;
+  --color-update-banner-btn-fg: #166534;
+  --color-update-banner-btn-border: rgba(255, 255, 255, 0.4);
+
+  /* Legacy aliases (app CSS) */
+  --primary: #334155;
+  --action: var(--color-accent);
+  --action-hover: var(--color-accent-hover);
+  --bg: var(--color-paper);
+  --surface: var(--color-surface);
+  --border: color-mix(in oklab, var(--color-ink) 14%, transparent);
+  --divider: color-mix(in oklab, var(--color-ink) 8%, transparent);
+  --text: var(--color-ink);
+  --text-muted: var(--color-ink-muted);
+  --error: #c62828;
+  --danger: var(--error);
+  --color-danger-hover-bg: color-mix(in oklab, var(--error) 14%, var(--surface));
+  --warn: var(--color-livesync-syncing);
+  --color-warn-surface: color-mix(in oklab, var(--warn) 7%, transparent);
+  --color-warn-border: color-mix(in oklab, var(--warn) 20%, transparent);
+  --color-warn-border-strong: color-mix(in oklab, var(--warn) 35%, transparent);
+  --surface-elevated: color-mix(in oklab, var(--color-surface) 94%, var(--color-ink));
+  --success: #15803d;
+  --lab-header-slate: #374151;
+  --lab-header-green: #065f46;
+  --lab-header-indigo: #3730a3;
+  --lab-header-rose: #881337;
+  --lab-header-amber: #78350f;
+  --lab-header-teal: #134e4a;
+  --lab-header-teal-md: #0f766e;
+  --lab-header-violet: #4a1d96;
+  --lab-chip-bg: var(--color-accent-soft);
+  --lab-chip-txt: var(--color-accent-soft-text);
+  --section-header-bg: var(--color-section-header-bg);
+  --section-accent: var(--color-section-accent);
+
+  --radius-sm: 16px;
+  --radius-md: 20px;
+  --radius-lg: 28px;
+  /* Onboarding / marketing shells only — workbench cards use --radius-container */
+  --radius-xl: 36px;
+  --radius-shell: 28px;
+  --radius-pill: 999px;
+  /* Controls + inner workbench frame (Arc-style radial default) */
+  --radius-control: var(--radius-pill);
+  --radius-field: 12px;
+  --radius-chip: 8px;
+  --radius-inner: var(--radius-md);
+  --radius-container: var(--radius-lg);
+  --radius-frame-outer: var(--radius-shell);
+  --shell-inset: 6px;
+  --shell-frame-inset: 4px;
+  /* Modal / panel readable gutters (settings, ⇄, team modals) */
+  --content-gutter: 14px;
+  --content-gutter-lg: 18px;
+  --stack-inner-pad: 16px;
+  --shell-frame-border: 1px solid color-mix(in oklab, var(--border) 42%, transparent);
+  --shell-gap: color-mix(in oklab, var(--color-ink) 5.5%, var(--color-paper));
+  --shadow-sm: none;
+  --shadow: none;
+  --shadow-md: 0 8px 24px rgba(15, 23, 42, 0.12);
+  /* Rams · flat equipment — hairline borders, no card lift */
+  --elev-flat: none;
+  --elev-raised: none;
+  --elev-floating: none;
+  --elev-overlay: 0 12px 32px rgba(15, 23, 42, 0.14), 0 2px 8px rgba(15, 23, 42, 0.08);
+  --shadow-border: 0 0 0 1px color-mix(in oklab, var(--color-ink) 12%, transparent);
+  --shadow-border-hover: 0 0 0 1px color-mix(in oklab, var(--color-ink) 18%, transparent);
+  --border-hairline: 1px solid color-mix(in oklab, var(--color-ink) 14%, transparent);
+  /* Interaction-state fills, layered over any surface */
+  --state-hover-bg: color-mix(in oklab, var(--color-ink) 4%, transparent);
+  --state-active-bg: color-mix(in oklab, var(--color-ink) 7%, transparent);
+  /* Glass overlay surfaces (modals, dropdowns, palette, toasts) */
+  --overlay-bg: color-mix(in oklab, var(--surface) 78%, transparent);
+  --overlay-blur: 14px;
+  --overlay-border: 1px solid color-mix(in oklab, #ffffff 65%, transparent);
+  --focus-ring: 0 0 0 3px var(--color-focus-ring);
+  --scrim-bg: color-mix(in oklab, var(--color-ink) 52%, transparent);
+  --app-height: 100vh;
+  /* Overlay z-index scale (ui audit track 1) */
+  --z-base: 0;
+  --z-sticky: 10;
+  --z-dropdown: 100;
+  --z-sidebar-rail: 450;
+  --z-floating: 1000;
+  --z-modal: 9000;
+  --z-modal-nested: 9010;
+  --z-clinical-teams-lower: 9005;
+  --z-clinical-lan-users: 9020;
+  --z-clinical-admin: 9030;
+  --z-clinical-lan-directory: 9040;
+  --z-header-backdrop: 9100;
+  --z-header-dropdown: 9101;
+  --z-header-dropdown-front: 9102;
+  --z-popover: 9200;
+  --z-banner: 9400;
+  --z-toast: 9500;
+  --z-celebration: 9600;
+  --z-cmdk: 9800;
+  --z-db-unlock: 9900;
+  --input-fill: color-mix(in oklab, var(--color-paper) 65%, var(--surface));
+  --card-body-bg: color-mix(in oklab, var(--surface) 94%, var(--bg));
+  --diagram-line: #64748b;
+  --diagram-label: #64748b;
+  --diagram-value: #1e293b;
+  --todo-prio-alta: #cf6060;
+  --todo-prio-media: #b45309;
+  --todo-prio-baja: #15803d;
+
+  /* Estado Actual · chart series */
+  --ea-chart-vital-1: var(--color-accent);
+  --ea-chart-vital-2: var(--error);
+  --ea-chart-vital-3: var(--color-success-emphasis);
+  --ea-chart-vital-4: var(--todo-prio-media);
+  --ea-chart-vital-5: color-mix(in oklab, var(--color-success-emphasis) 42%, var(--color-accent));
+  --ea-chart-vital-6: color-mix(in oklab, var(--color-accent) 58%, var(--error));
+  --ea-chart-glu: var(--color-success-emphasis);
+  --ea-chart-io-ing: color-mix(in oklab, var(--color-accent) 52%, var(--color-success-emphasis));
+  --ea-chart-io-egr: var(--error);
+  --ea-chart-io-balance: var(--color-accent);
+  --ea-chart-altered: var(--todo-prio-media);
+
+  /* Tufte · clinical charts — max data-ink (EA + Tendencias) */
+  --chart-grid-line: color-mix(in oklab, var(--color-ink) 12%, transparent);
+  --chart-axis-ink: var(--color-ink-muted);
+  --chart-tick-size: 10px;
+  --chart-line-width: 2px;
+  --chart-point-radius: 3px;
+
+  /* Rams · equipment surfaces (workbench cards, chart frames) */
+  --equipment-radius: var(--radius-inner);
+  --equipment-border: var(--border-hairline);
+  --equipment-surface: color-mix(in oklab, var(--surface) 97%, var(--bg));
+  --equipment-shadow: none;
+  --equipment-active-dot: var(--color-accent);
+
+  /* Med pharm calendar */
+  --med-pharm-indicated: color-mix(in oklab, var(--color-accent) 18%, var(--input-fill));
+  --med-pharm-indicated-border: color-mix(in oklab, var(--color-accent) 48%, var(--text-muted));
+  --med-pharm-today: color-mix(in oklab, var(--warn) 22%, var(--color-paper));
+  --med-pharm-today-fg: var(--lab-header-amber);
+  --med-pharm-not-admin: color-mix(in oklab, var(--bg) 72%, var(--surface));
+  --med-pharm-not-admin-border: var(--error);
+  --titlebar-traffic-gap: 96px;
+  /* Altura de la franja arrastrable (hiddenInset) en macOS Electron */
+  --electron-macos-chrome-top: 52px;
+  color-scheme: light;
+  --density-space: 1;
+  --density-font: 1;
+  --density-gap-section: calc(12px * var(--density-space, 1));
+  --sidebar-width: 240px;
+  --sidebar-rail-width: 5px;
+  --sidebar-rail-color: color-mix(in oklab, #5c4a52 18%, var(--color-paper));
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --dur-fast: 150ms;
+  --dur-normal: 220ms;
+  --dur-slow: 320ms;
+  --font-ui: "IBM Plex Sans", Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Type scale (font shorthand: weight size/line-height family) */
+  --type-display: 600 calc(22px * var(--density-font)) / 1.25 var(--font-ui);
+  --type-title: 600 calc(17px * var(--density-font)) / 1.3 var(--font-ui);
+  --type-section: 700 calc(12.5px * var(--density-font)) / 1.35 var(--font-ui);
+  --type-body: 400 calc(13.5px * var(--density-font)) / 1.5 var(--font-ui);
+  --type-caption: 500 calc(11.5px * var(--density-font)) / 1.4 var(--font-ui);
+  --tracking-section: 0.04em;
+}
+
+html.ui-density-normal {
+  --density-space: 1.1;
+  --density-font: 1.03;
+  --sidebar-width: min(280px, 34vw);
+}
+
+html.dark {
+  --color-paper: #0c0e14;
+  --color-surface: #161922;
+  --color-ink: #e6eaf0;
+  --color-ink-muted: #9aa3b2;
+  --color-accent: #7b82f5;
+  --color-accent-hover: #959bf8;
+  --color-accent-soft: color-mix(in oklab, var(--color-accent) 14%, transparent);
+  --color-accent-soft-text: #b8bdfc;
+  --color-on-accent: #0c0e14;
+  --color-section-header-bg: color-mix(in oklab, var(--color-surface) 92%, var(--color-accent) 8%);
+  --color-channel-pill-bg: color-mix(in oklab, var(--color-accent) 55%, #4c1d95);
+  --color-channel-pill-fg: #f5f3ff;
+  --color-focus-ring: color-mix(in oklab, var(--color-accent) 22%, transparent);
+  --color-success-emphasis: #059669;
+  --color-success-emphasis-hover: #10b981;
+  --color-on-success: #ffffff;
+  --color-livesync-live: #34d399;
+  --color-livesync-syncing: #fbbf24;
+  --color-livesync-degraded: #fb923c;
+  --color-livesync-local: var(--color-accent-soft-text);
+  --color-livesync-idle: var(--text-muted);
+  --color-agenda-block-bg: color-mix(in oklab, var(--color-accent) 16%, var(--color-surface));
+  --color-agenda-block-border: color-mix(in oklab, var(--color-accent) 38%, var(--border));
+  --color-update-banner-bg: #14532d;
+  --color-update-banner-fg: #bbf7d0;
+
+  --primary: #c8d0dc;
+  --action: var(--color-accent);
+  --action-hover: var(--color-accent-hover);
+  --bg: var(--color-paper);
+  --surface: var(--color-surface);
+  --border: rgba(148, 163, 184, 0.14);
+  --divider: rgba(148, 163, 184, 0.09);
+  --text: var(--color-ink);
+  --text-muted: var(--color-ink-muted);
+  --error: #f87171;
+  --danger: var(--error);
+  --color-danger-hover-bg: color-mix(in oklab, var(--error) 14%, var(--surface));
+  --warn: var(--color-livesync-syncing);
+  --success: #6ee7a8;
+  --lab-header-slate: color-mix(in oklab, #4b5563 36%, var(--surface));
+  --lab-header-green: color-mix(in oklab, #065f46 40%, var(--surface));
+  --lab-header-indigo: color-mix(in oklab, #4338ca 38%, var(--surface));
+  --lab-header-rose: color-mix(in oklab, #9f1239 36%, var(--surface));
+  --lab-header-amber: color-mix(in oklab, #92400e 38%, var(--surface));
+  --lab-header-teal: color-mix(in oklab, #115e59 38%, var(--surface));
+  --lab-header-teal-md: color-mix(in oklab, #0d9488 36%, var(--surface));
+  --lab-header-violet: color-mix(in oklab, #6d28d9 36%, var(--surface));
+  --lab-chip-bg: var(--color-accent-soft);
+  --lab-chip-txt: var(--color-accent-soft-text);
+  --shadow-sm: none;
+  --shadow: none;
+  --shadow-md: 0 10px 28px rgba(0, 0, 0, 0.45);
+  --elev-raised: none;
+  --elev-floating: none;
+  --elev-overlay: 0 14px 36px rgba(0, 0, 0, 0.5), 0 2px 8px rgba(0, 0, 0, 0.35);
+  --shadow-border: 0 0 0 1px rgba(148, 163, 184, 0.2);
+  --shadow-border-hover: 0 0 0 1px rgba(148, 163, 184, 0.32);
+  --border-hairline: 1px solid rgba(148, 163, 184, 0.16);
+  --state-hover-bg: color-mix(in oklab, var(--color-ink) 6%, transparent);
+  --state-active-bg: color-mix(in oklab, var(--color-ink) 10%, transparent);
+  --overlay-bg: color-mix(in oklab, var(--surface) 84%, transparent);
+  --scrim-bg: color-mix(in oklab, var(--color-ink) 68%, transparent);
+  --overlay-border: 1px solid rgba(148, 163, 184, 0.18);
+  --input-fill: color-mix(in oklab, var(--surface) 88%, var(--bg));
+  --card-body-bg: color-mix(in oklab, var(--surface) 97%, var(--bg));
+  --diagram-line: #cbd5e1;
+  --diagram-label: #e2e8f0;
+  --diagram-value: #f8fafc;
+  --todo-prio-alta: #fca5a5;
+  --todo-prio-media: #facc15;
+  --todo-prio-baja: #86efac;
+
+  --med-pharm-indicated: color-mix(in oklab, var(--color-accent) 26%, var(--surface));
+  --med-pharm-indicated-border: color-mix(in oklab, var(--color-accent) 62%, var(--text-muted));
+  --med-pharm-today: color-mix(in oklab, var(--warn) 24%, var(--surface));
+  --med-pharm-today-fg: var(--warn);
+  --med-pharm-not-admin: color-mix(in oklab, var(--bg) 88%, var(--surface));
+  --med-pharm-not-admin-border: color-mix(in oklab, var(--error) 88%, var(--surface));
+  --chart-grid-line: color-mix(in oklab, var(--color-ink) 11%, transparent);
+  --chart-axis-ink: var(--color-ink-muted);
+  --equipment-surface: color-mix(in oklab, var(--surface) 98%, var(--bg));
+  --shell-gap: color-mix(in oklab, #3d2430 42%, var(--color-paper));
+  --sidebar-rail-color: color-mix(in oklab, #6b4456 58%, var(--color-surface));
+  color-scheme: dark;
+}
+
+/* Alto contraste — legibilidad primero (WCAG), sin "marco" blanco en cada caja */
+html.high-contrast {
+  --color-paper: #ffffff;
+  --color-surface: #ffffff;
+  --color-ink: #000000;
+  --color-ink-muted: #262626;
+  --color-accent: #0000b8;
+  --color-accent-hover: #000090;
+  --color-on-accent: #ffffff;
+  --color-on-success: #ffffff;
+  --primary: #000000;
+  --action: var(--color-accent);
+  --action-hover: var(--color-accent-hover);
+  --bg: var(--color-paper);
+  --surface: var(--color-surface);
+  --border: #000000;
+  --divider: var(--border);
+  --text: var(--color-ink);
+  --text-muted: var(--color-ink-muted);
+  --error: #b00000;
+  --success: #006400;
+  --color-livesync-live: #006400;
+  --color-livesync-syncing: #8a5a00;
+  --color-livesync-degraded: #b00000;
+  --color-livesync-local: var(--color-accent);
+  --color-livesync-idle: var(--text-muted);
+  --lab-chip-bg: #e8e8ff;
+  --lab-chip-txt: #000000;
+  --input-fill: #ffffff;
+  --card-body-bg: #f4f4f4;
+  --section-header-bg: #ececec;
+  --shadow: none;
+  --shadow-md: none;
+  --shadow-sm: none;
+  --elev-flat: none;
+  --elev-raised: none;
+  --elev-floating: none;
+  --elev-overlay: none;
+  --shadow-border: none;
+  --shadow-border-hover: none;
+  --border-hairline: 1px solid var(--border);
+  --state-hover-bg: color-mix(in oklab, var(--color-accent) 12%, transparent);
+  --state-active-bg: color-mix(in oklab, var(--color-accent) 20%, transparent);
+  --overlay-bg: var(--surface);
+  --overlay-blur: 0px;
+  --overlay-border: 1px solid var(--border);
+  --color-focus-ring: var(--color-accent);
+  --diagram-line: #000000;
+  --diagram-label: #000000;
+  --diagram-value: #000000;
+  --shell-gap: var(--color-paper);
+  --sidebar-rail-color: var(--border);
+}
+
+html.high-contrast.dark {
+  --color-paper: #0a0a0a;
+  --color-surface: #161616;
+  --color-ink: #ffffff;
+  --color-ink-muted: #d1d5db;
+  --color-accent: #6ec6ff;
+  --color-accent-hover: #9edaff;
+  --color-on-accent: #000000;
+  --color-on-success: #000000;
+  --primary: #ffffff;
+  --action: var(--color-accent);
+  --action-hover: var(--color-accent-hover);
+  --bg: var(--color-paper);
+  --surface: var(--color-surface);
+  --border: #e5e5e5;
+  --divider: #c4c4c4;
+  --text: var(--color-ink);
+  --text-muted: var(--color-ink-muted);
+  --error: #ff6b6b;
+  --success: #5eea7a;
+  --color-livesync-live: #5eea7a;
+  --color-livesync-syncing: #ffd54f;
+  --color-livesync-degraded: #ff9e6b;
+  --color-livesync-local: var(--color-accent);
+  --color-livesync-idle: var(--text-muted);
+  --lab-chip-bg: #1e3a5f;
+  --lab-chip-txt: #ffffff;
+  --input-fill: #1c1c1c;
+  --card-body-bg: #121212;
+  --section-header-bg: #1f1f1f;
+  --shadow: none;
+  --shadow-md: none;
+  --shadow-sm: none;
+  --diagram-line: #ffffff;
+  --diagram-label: #ffffff;
+  --diagram-value: #ffffff;
+  --shell-gap: var(--color-paper);
+  --sidebar-rail-color: var(--border);
+  --color-focus-ring: var(--color-accent);
+}
+
+/* ── Motion presets (Ajustes → Animaciones). Mixto = :root defaults ── */
+html.motion-sobrio {
+  --dur-fast: 100ms;
+  --dur-normal: 160ms;
+  --dur-slow: 200ms;
+  --ease-spring: cubic-bezier(0.16, 1, 0.3, 1); /* = --ease-out; no springs in Sobrio */
+}
+
+html.motion-expresivo {
+  --dur-fast: 190ms;
+  --dur-normal: 300ms;
+  --dur-slow: 420ms;
+  --ease-spring: cubic-bezier(0.34, 1.72, 0.64, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root,
+  html.motion-sobrio,
+  html.motion-expresivo {
+    --dur-fast: 1ms;
+    --dur-normal: 1ms;
+    --dur-slow: 1ms;
+    --ease-spring: linear;
+  }
+}
+
+@supports (height: 100dvh) {
+  :root {
+    --app-height: 100dvh;
+  }
+}

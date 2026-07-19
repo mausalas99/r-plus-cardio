@@ -1,0 +1,176 @@
+{
+  "name": "r-plus",
+  "version": "7.7.1",
+  "description": "R+ — Laboratoriazo + Notas de Evolución",
+  "main": "main.js",
+  "scripts": {
+    "build:ui": "node scripts/build-ui.mjs && node scripts/bundle-renderer.mjs",
+    "build:equipos-pages": "node scripts/build-equipos-pages.mjs",
+    "build:ui:check": "node scripts/build-ui.mjs --check && node scripts/bundle-renderer.mjs --check",
+    "bundle:renderer": "node scripts/bundle-renderer.mjs",
+    "bundle:renderer:prod": "node scripts/bundle-renderer.mjs --prod",
+    "bundle:renderer:watch": "node scripts/bundle-renderer.mjs --watch",
+    "export:demo-patients": "node scripts/export-pitch-demo-patients.mjs",
+    "test": "node scripts/run-with-electron-node.mjs --test cloud/equipos-pages/public/equipos/equipos-push.test.mjs cloud/equipos-pages/public/equipos/equipos-token.test.mjs generate-censo.layout.test.js generate-censo.test.js lan-squad/audit-log.test.js lan-squad/auth-failure-lockout.test.js lan-squad/bundle-merge.test.js lan-squad/client-identity-store.test.js lan-squad/command-registry.test.js lan-squad/command-resolver.test.js lan-squad/conflict-resolver.test.js lan-squad/delta-paths.test.js lan-squad/delta-resolver.test.js lan-squad/effective-team-code.test.js lan-squad/entity-keys.test.js lan-squad/historia-clinica-validate.test.js lan-squad/host-clinical-meta.test.js lan-squad/host-patient-ownership.test.js lan-squad/host-store-clinical-ops-db.test.js lan-squad/lan-candidate-url.test.js lan-squad/lan-mdns-service.test.js lan-squad/lan-network-watch.test.js lan-squad/lan-request-host.test.js lan-squad/lan-sse-hub.test.js lan-squad/lan-udp-beacon.test.js lan-squad/lww-utils.test.js lan-squad/migrate-host-state.test.js lan-squad/persistence/commit-barrier.test.js lan-squad/persistence/lab-sidecar-persistence.test.js lan-squad/persistence/lab-sidecar.test.js lan-squad/persistence/sharded-host-persistence.test.js lan-squad/persistence/sqlite-host-repositories.test.js lan-squad/put-historia-clinica-queued.test.js lan-squad/redact-secrets.test.js lan-squad/shift-pin-store.test.js lan-squad/sync-scheduler.test.js lan-squad/team-code.test.js lan-squad/ticket-store.test.js lan-squad/ward-host-registry.test.js lan-squad/write-queue.test.js lan-squad/ws-hub.test.js lib/admin-access-code.test.mjs lib/censo-export-file.test.mjs lib/clinical-salas.test.mjs lib/clinical-team-composition.test.mjs lib/clinical-user-activity.test.mjs lib/db/audit-hooks.test.mjs lib/db/canonical-json.test.mjs lib/db/clinical-crypto.test.mjs lib/db/clinical-ops-fk-repro.test.mjs lib/db/clinical-privileges.test.mjs lib/db/clinical-username.test.mjs lib/db/crypto.test.mjs lib/db/db-manager.test.mjs lib/db/forensic-audit.test.mjs lib/db/ipc-handlers.test.mjs lib/db/lan-sync-outbox.test.mjs lib/db/migrate-from-legacy.test.mjs lib/db/migration-probe.test.mjs lib/db/schema-v18-equipos.test.mjs lib/db/schema-v19-equipos-alert-photos.test.mjs lib/db/schema-v20-equipos-push.test.mjs lib/db/schema-v21-clinical-sala-check.test.mjs lib/db/schema.test.mjs lib/doc-generators/indicaciones.test.js lib/doc-generators/listado.test.js lib/doc-generators/note.test.js lib/doc-generators/shared.test.js lib/drive-import/drive-import-review.test.mjs lib/drive-import/filter-ficha-patient-fields.test.mjs lib/drive-import/hc-structured-extract.test.mjs lib/drive-import/map-to-eventualidades.test.mjs lib/drive-import/map-universal-hc.test.mjs lib/drive-import/merge-drive-labs.test.mjs lib/drive-import/merge-eventualidades.test.mjs lib/drive-import/merge-hc-patch.test.mjs lib/drive-import/parse-drive-document.test.mjs lib/drive-import/parse-drive-labs.test.mjs lib/drive-import/parse-header.test.mjs lib/drive-import/segment.test.mjs lib/entrega/entrega-chip-markers.test.mjs lib/entrega/entrega-handoff-context.test.mjs lib/entrega/entrega-pendientes.test.mjs lib/entrega/entrega-vitals-plan.test.mjs lib/entrega/guardia-chip-critical.test.mjs lib/equipos/equipos-board-stamp.test.mjs lib/equipos/equipos-db.test.mjs lib/equipos/equipos-format.test.mjs lib/equipos/equipos-host-merge.test.mjs lib/equipos/equipos-photo-purge.test.mjs lib/equipos/equipos-queue-custody.test.mjs lib/equipos/equipos-webpush.test.mjs lib/historia-clinica/apnp-calculators.test.mjs lib/historia-clinica/clinical-text.test.mjs lib/historia-clinica/compile-ahf.test.mjs lib/historia-clinica/compile-narrative.test.mjs lib/historia-clinica/defaults.test.mjs lib/historia-clinica/erc-detail.test.mjs lib/historia-clinica/genero-options.test.mjs lib/historia-clinica/migrate-legacy.test.mjs lib/historia-clinica/normalize-app.test.mjs lib/historia-clinica/signos-vitales-ingreso.test.mjs lib/historia-clinica/toxicomanias.test.mjs lib/interno/interno-pendientes.test.mjs lib/interno/interno-scope.test.mjs lib/interno/interno-vitals.test.mjs lib/interno/qr-svg.test.mjs lib/interno/sala-interno-access.test.mjs lib/lab-repo/fetch-run.test.mjs lib/lab-repo/impresion-html.test.mjs lib/lab-repo/pdf-text.test.mjs lib/lab-repo/portal-client.test.mjs lib/lab-repo/portal-html.test.mjs lib/native-runtime-probe.test.js lib/output-dir-policy.test.js lib/patient-priority-sort.test.mjs lib/perf-config.test.js lib/server-http-security.test.js lib/stable-versions-catalog.test.js lib/update-downgrade.test.js lib/window-open-policy.test.mjs main-lan-boot.test.mjs public/equipos/equipos-push.test.mjs public/equipos/equipos-token.test.mjs public/interno/host-discovery.test.mjs public/js/age-calc.test.mjs public/js/app-boot-imports.test.mjs public/js/app-shell-exports.test.mjs public/js/app-shell-modals.test.mjs public/js/app-state.test.mjs public/js/boot/boot-steps.test.mjs public/js/censo-build.test.mjs public/js/censo-cultivo-format.test.mjs public/js/censo-header-format.test.mjs public/js/censo-labs-format.test.mjs public/js/censo-meds-format.test.mjs public/js/censo-pendientes-format.test.mjs public/js/censo-signos-format.test.mjs public/js/censo-table-columns.test.mjs public/js/censo-table-style.test.mjs public/js/chart-clinical-tufte.test.mjs public/js/clinical-access-runtime.test.mjs public/js/clinical-access-runtime/mobile.test.mjs public/js/clinical-access-runtime/scope-db.test.mjs public/js/clinical-access-runtime/scope-lan.test.mjs public/js/clinical-ops-lan.test.mjs public/js/clinical-privileges-mobile.test.mjs public/js/clinical-profile-lan-sync.test.mjs public/js/clinical-scope-from-ops.test.mjs public/js/clinical-settings.test.mjs public/js/clinical-team-invite.test.mjs public/js/clinical-username.test.mjs public/js/command-palette-model.test.mjs public/js/cultivo-block-core.test.mjs public/js/deferred-work.test.mjs public/js/document-export-client.test.mjs public/js/draft-conflict-store.test.mjs public/js/expediente-group-row.test.mjs public/js/expediente-tabs.test.mjs public/js/features/clinical-census-filters-ui.test.mjs public/js/features/clinical-conflict-viewer.test.mjs public/js/features/clinical-entrega.test.mjs public/js/features/clinical-onboarding-main.test.mjs public/js/features/clinical-onboarding.test.mjs public/js/features/clinical-rotation.test.mjs public/js/features/clinical-sync-mode-settings.test.mjs public/js/features/clinical-teams.test.mjs public/js/features/clinical-teams/lan-directory-filters.test.mjs public/js/features/crypto-signer.test.mjs public/js/features/db-unlock.test.mjs public/js/features/estado-actual-charts.test.mjs public/js/features/estado-actual-data.test.mjs public/js/features/estado-actual-diet-text.test.mjs public/js/features/estado-actual-glu-rescue.test.mjs public/js/features/estado-actual-io.test.mjs public/js/features/estado-actual-med-soap-split.test.mjs public/js/features/estado-actual-med-ui.test.mjs public/js/features/estado-actual-meds.test.mjs public/js/features/estado-actual-panel-snapshot-html.test.mjs public/js/features/estado-actual-panel.test.mjs public/js/features/estado-actual-parse-variants.test.mjs public/js/features/estado-actual-parser.test.mjs public/js/features/estado-actual-ranges.test.mjs public/js/features/estado-actual-registro-defaults.test.mjs public/js/features/estado-actual-text.test.mjs public/js/features/estado-actual-vital-series.test.mjs public/js/features/eventualidades-panel.test.mjs public/js/features/guardia-patient-action-sheet.test.mjs public/js/features/header-context.test.mjs public/js/features/lab-bulk-preview-modal.test.mjs public/js/features/lab-repo-import-gate.test.mjs public/js/features/lab-repo-import.test.mjs public/js/features/lan-command-builders.test.mjs public/js/features/lan-command-room.test.mjs public/js/features/lan-delta-wiring.test.mjs public/js/features/lan-sync-clinical-ops.test.mjs public/js/features/lan/host-patients-bundle-entry.test.mjs public/js/features/lan/host-patients-enrich.test.mjs public/js/features/lan/host-patients-panel.test.mjs public/js/features/lan/host-patients-purge-backup.test.mjs public/js/features/lan/host-patients-snapshot.test.mjs public/js/features/lan/lan-patient-delete.test.mjs public/js/features/lan/orchestrator-interno.test.mjs public/js/features/lan/orchestrator.test.mjs public/js/features/lan/push.test.mjs public/js/features/lan/room.test.mjs public/js/features/lan/transport-host-election.test.mjs public/js/features/lan/transport.test.mjs public/js/features/lan/vitals-recovery.test.mjs public/js/features/patients-clinical-filter.test.mjs public/js/features/patients-select.test.mjs public/js/features/patients-tab-preserve.test.mjs public/js/features/platform/import-backup/backup-host-merge.test.mjs public/js/features/platform/import-backup/export-patients-selection.test.mjs public/js/features/platform/platform-imports.test.mjs public/js/features/session-manager.test.mjs public/js/features/settings-help-imports.test.mjs public/js/features/settings-help/release-notes.test.mjs public/js/features/settings-help/tour-intro.test.mjs public/js/features/settings-help/tour-runtime.test.mjs public/js/features/settings-help/tour-state.test.mjs public/js/features/soap-estado.test.mjs public/js/features/unified-patient-grid-board.test.mjs public/js/fundamentos-progress.test.mjs public/js/fuzzy-match.test.mjs public/js/gaso-extended.test.mjs public/js/guardia-mode-sync.test.mjs public/js/guardia-v7-gating.test.mjs public/js/guardia-v7-progress.test.mjs public/js/historia-clinica-lan-sync.test.mjs public/js/host-bundle-bases.test.mjs public/js/insulin-pump-receta-display.test.mjs public/js/insulin-pump-some-detect.test.mjs public/js/insulin-rescate-display.test.mjs public/js/interno-qr-render.test.mjs public/js/lab-bulk-paste.test.mjs public/js/lab-consolidation-cluster.test.mjs public/js/lab-consolidation-plan.test.mjs public/js/lab-history-auto-store-core.test.mjs public/js/lab-history-cache.test.mjs public/js/lab-history-lan-sync.test.mjs public/js/lab-history-repair.test.mjs public/js/lab-history-set.test.mjs public/js/labs-bh-extended.test.mjs public/js/labs-bh-trend-parse.test.mjs public/js/labs-citoquimico-interpret.test.mjs public/js/labs-citoquimico-liquidos.test.mjs public/js/labs-coag.test.mjs public/js/labs-diff-coag.test.mjs public/js/labs-differential-manual.test.mjs public/js/labs-display.test.mjs public/js/labs-egfr.test.mjs public/js/labs-ego-plt-cit.test.mjs public/js/labs-fecha-hora.test.mjs public/js/labs-frotis.test.mjs public/js/labs-anion-gap.test.mjs public/js/labs-gases.test.mjs public/js/labs-heces.test.mjs public/js/labs-lcr-parse.test.mjs public/js/labs-lipasa.test.mjs public/js/labs-pct.test.mjs public/js/labs-procesar-characterization.test.mjs public/js/labs-serologia.test.mjs public/js/labs-some-detect.test.mjs public/js/labs-some-refs.test.mjs public/js/labs-trend-order.test.mjs public/js/labs-troponin.test.mjs public/js/lan-client.test.mjs public/js/lan-command-client.test.mjs public/js/lan-command-diagnostics.test.mjs public/js/lan-conflict-draft-resolution.test.mjs public/js/lan-connection-manager.test.mjs public/js/lan-delta-client.test.mjs public/js/lan-host-consolidation.test.mjs public/js/lan-host-detect-guard.test.mjs public/js/lan-host-escalation.test.mjs public/js/lan-host-pin.test.mjs public/js/lan-host-rank.test.mjs public/js/lan-host-registry.test.mjs public/js/lan-host-subnet-discovery.test.mjs public/js/lan-join-link.test.mjs public/js/lan-lww-toast.test.mjs public/js/lan-merge-registry.test.mjs public/js/lan-mutation-registry.test.mjs public/js/lan-network-profile.test.mjs public/js/lan-network-roam.test.mjs public/js/lan-patient-merge.test.mjs public/js/lan-patient-team-scope.test.mjs public/js/lan-safety-bundle-builder.test.mjs public/js/lan-shift-pin-connect.test.mjs public/js/lan-sse-client.test.mjs public/js/lan-surrogate-host.test.mjs public/js/lan-sync-bundle-push.test.mjs public/js/lan-sync-diagnostics.test.mjs public/js/lan-sync-state.test.mjs public/js/lan-sync-wiring.test.mjs public/js/lan-turn-reset.test.mjs public/js/lan-ward-host-registry.test.mjs public/js/listado-problemas-core.test.mjs public/js/live-sync-membership.test.mjs public/js/live-sync-outbox.test.mjs public/js/live-sync-room.test.mjs public/js/livesync-patient-ids.test.mjs public/js/med-pharm-profile-core.test.mjs public/js/med-pharm-some-catalog.test.mjs public/js/med-pharm-view-window.test.mjs public/js/min-version-fetch.test.mjs public/js/mobile-lan-boot.test.mjs public/js/mobile-lan-query-persist.test.mjs public/js/mobile-sharer-sync.test.mjs public/js/mobile-team-patient-scope.test.mjs public/js/mobile-web.test.mjs public/js/modal-dismiss.test.mjs public/js/mode-features.test.mjs public/js/motion-mode.test.mjs public/js/onboarding-curriculum.guardia-v7.test.mjs public/js/onboarding-curriculum.test.mjs public/js/onboarding-progress.test.mjs public/js/output-dir-fallback.test.mjs public/js/patient-accesos.test.mjs public/js/patient-date-fields.test.mjs public/js/patient-delete-sync.test.mjs public/js/patient-diagnosticos.test.mjs public/js/patient-export-format.test.mjs public/js/patient-list-incremental.test.mjs public/js/patient-list-virtual.test.mjs public/js/patient-registration-meta.test.mjs public/js/patient-sala-ui.test.mjs public/js/patient-sidebar-card.test.mjs public/js/patient-team-assign-ui.test.mjs public/js/patient-validation.test.mjs public/js/perf-markers.test.mjs public/js/pitch-demo-export.test.mjs public/js/presentation-mode-shortcut.test.mjs public/js/procedure-agenda-week.test.mjs public/js/profile-templates.test.mjs public/js/quick-output.test.mjs public/js/receta-hu-core.test.mjs public/js/session-clinical-wipe.test.mjs public/js/stable-downgrade-ui.test.mjs public/js/storage-quota.test.mjs public/js/tend-core.test.mjs public/js/tend-prefs.test.mjs public/js/todos-due.test.mjs public/js/todos-handoff.test.mjs public/js/todos-priority.test.mjs public/js/todos-refresh.test.mjs public/js/todos-reminder-scheduler.test.mjs public/js/tour-demo-dates.test.mjs public/js/tour-demo-eventualidades.test.mjs public/js/tour-demo-listado-problemas.test.mjs public/js/tour-demo-monitoreo.test.mjs public/js/tour-demo-patient.test.mjs public/js/tour-demo-some-lab.test.mjs public/js/tour-demo-todos.test.mjs public/js/tour-guards.test.mjs public/js/tour-pitch-cultivos-some.test.mjs public/js/tour-pitch-demo-sandbox.test.mjs public/js/tour-pitch-demo-seed.test.mjs public/js/tour-pitch-demo-todos.test.mjs public/js/tour-targets.guardia-v7.test.mjs public/js/tour-targets.test.mjs public/js/trend-spark-canvas.test.mjs public/js/ui-motion.test.mjs public/js/ui-tab-motion.test.mjs public/js/update-helpers.test.mjs public/js/vendor-loader.test.mjs public/js/versioned-mutation.test.mjs public/js/virtual-scroll.test.mjs public/js/vpo-lookups.test.mjs public/js/vpo-text.test.mjs scripts/build-ui.test.mjs scripts/bundle-renderer.test.mjs scripts/fetch-sqlite-win.test.mjs scripts/lan-virtual-peer.test.mjs scripts/lib/artifact-names.test.js scripts/lib/electron-pack-files.test.js scripts/lib/release-build-log.test.js scripts/lib/release-notes-body.test.js scripts/lib/release-notes-plain.test.js scripts/lib/release-progress.test.js scripts/lib/sqlcipher-native.test.mjs scripts/lib/test-manifest.test.mjs scripts/metrics/boot-graph.test.mjs scripts/metrics/changed-files.test.mjs scripts/metrics/check.test.mjs scripts/metrics/score.test.mjs tests/clinico-access.test.mjs tests/lan-squad/auth-router.test.js tests/lan-squad/host-router.test.js tests/lan-squad/host-store.test.js tests/lib/db/clinical-access-db.test.mjs tests/lib/db/clinical-ops-sync.test.mjs tests/public/js/labs-cultivo.test.mjs tests/public/js/labs-some-table.test.mjs tests/public/js/med-receta-core.test.mjs tests/public/js/storage.test.mjs",
+    "prestart": "R_PLUS_STRICT_NATIVE=1 node scripts/rebuild-native-db.mjs && node scripts/bundle-renderer.mjs",
+    "start": "electron .",
+    "recover:census": "R_PLUS_RECOVER_CENSUS=1 electron .",
+    "build:mac": "npm run prebuild:mac && electron-builder --mac",
+    "build:mac:signed": "npm run build:mac",
+    "build:mac:unsigned": "npm run prebuild:mac && CSC_IDENTITY_AUTO_DISCOVERY=false electron-builder --mac",
+    "build:mac:arm64-only": "npm run prebuild:mac && CSC_IDENTITY_AUTO_DISCOVERY=false electron-builder --mac --arm64",
+    "prebuild:mac": "node scripts/ensure-argon2-pack-natives.mjs && npm run build:ui && node scripts/bundle-renderer.mjs --prod",
+    "prebuild:win": "node scripts/fetch-argon2-win.mjs && npm run build:ui && node scripts/bundle-renderer.mjs --prod",
+    "build:win": "npm run prebuild:win && electron-builder --win",
+    "build:changelog": "node scripts/build-changelog.js",
+    "release:write-yml": "node scripts/write-release-yml.js",
+    "release:write-yml:mac": "node scripts/write-release-yml.js --mac-only",
+    "release:sync-pack": "node scripts/lib/electron-pack-files.js --write",
+    "release:bump": "node scripts/release.js bump",
+    "release:publish": "node scripts/release.js publish",
+    "release:republish": "node scripts/release.js publish -- --yes --allow-existing-gh",
+    "build": "electron-builder",
+    "test:one": "node scripts/run-with-electron-node.mjs --test",
+    "rebuild:db-native": "node scripts/rebuild-native-db.mjs",
+    "postinstall": "node scripts/rebuild-native-db.mjs || true",
+    "metrics": "node scripts/metrics/run.mjs",
+    "metrics:check": "node scripts/metrics/check.mjs",
+    "lint:tier1": "node scripts/metrics/lint-tier1.mjs",
+    "lint:tier1:full": "node scripts/metrics/lint-tier1.mjs --full",
+    "lint:tier1:changed": "node scripts/metrics/lint-tier1.mjs",
+    "metrics:top-complexity": "npx eslint public/js lib lan-squad --format json --max-warnings 99999 | node scripts/metrics/top-complexity.mjs",
+    "lint": "eslint main.js server.js preload.js generate-censo.js generate-receta-hu.js \"scripts/**/*.{mjs,js,cjs}\"",
+    "metrics:baseline": "node scripts/metrics/run.mjs --write-baseline",
+    "dev:lan-virtual-peer": "node scripts/lan-virtual-peer.mjs",
+    "dev:lan-peer-app": "node scripts/dev-lan-peer-app.mjs",
+    "dev:lan-peer-fresh": "node scripts/dev-lan-peer-app.mjs --fresh",
+    "vibedrift:scan": "vibedrift . --local-only",
+    "vibedrift:check": "vibedrift . --local-only --fail-on-score 45"
+  },
+  "author": "Mauricio Salas",
+  "license": "ISC",
+  "dependencies": {
+    "@node-rs/argon2": "2.0.2",
+    "@pushforge/builder": "^2.0.5",
+    "better-sqlite3-multiple-ciphers": "12.10.0",
+    "bonjour-service": "^1.4.0",
+    "compression": "^1.8.1",
+    "electron-updater": "^6.8.3",
+    "express": "^5.2.1",
+    "express-rate-limit": "^7.5.1",
+    "jszip": "^3.10.1",
+    "pdf-lib": "^1.17.1",
+    "pdf-parse": "^1.1.1",
+    "qrcode-generator": "^2.0.4",
+    "sortablejs": "^1.15.7",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "@electron/rebuild": "3.7.2",
+    "@eslint/js": "^9.39.1",
+    "@vibedrift/cli": "^0.14.0",
+    "chart.js": "^4.5.1",
+    "dependency-cruiser": "^16.10.4",
+    "electron": "^41.2.0",
+    "electron-builder": "^26.8.1",
+    "esbuild": "^0.25.12",
+    "eslint": "^9.39.1",
+    "eslint-plugin-sonarjs": "^3.0.5",
+    "globals": "^16.2.0",
+    "jscpd": "^4.0.5",
+    "ts-api-utils": "^2.5.0"
+  },
+  "build": {
+    "appId": "com.hospitaluniversitario.rplusclinical",
+    "productName": "R+",
+    "npmRebuild": false,
+    "beforePack": "scripts/electron-builder-before-pack.cjs",
+    "afterPack": "scripts/electron-builder-after-pack.cjs",
+    "afterAllArtifactBuild": "scripts/after-all-artifact-build.cjs",
+    "artifactName": "${productName}-${version}-${arch}.${ext}",
+    "icon": "AppIcon.icns",
+    "mac": {
+      "icon": "AppIcon.icns",
+      "category": "public.app-category.medical",
+      "notarize": true,
+      "hardenedRuntime": true,
+      "signIgnore": [
+        "\\.exe$"
+      ],
+      "entitlements": "build/entitlements.mac.plist",
+      "entitlementsInherit": "build/entitlements.mac.plist",
+      "target": [
+        {
+          "target": "dmg",
+          "arch": [
+            "arm64",
+            "x64"
+          ]
+        },
+        {
+          "target": "zip",
+          "arch": [
+            "arm64",
+            "x64"
+          ]
+        }
+      ]
+    },
+    "win": {
+      "icon": "build/icon.ico",
+      "artifactName": "${productName}-${version}-${arch}.${ext}",
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": false
+    },
+    "publish": {
+      "provider": "github",
+      "owner": "mausalas99",
+      "repo": "r-mas"
+    },
+    "files": [
+      "main.js",
+      "scripts/lib/release-notes-body.js",
+      "preload.js",
+      "server.js",
+      "lan-squad/**/*",
+      "lib/**/*.js",
+      "lib/**/*.mjs",
+      "lib/**/*.cjs",
+      "generate-receta-hu.js",
+      "generate-censo.js",
+      "template.docx",
+      "template_indicaciones.docx",
+      "template_listado.docx",
+      "templates/receta-hu-000-061-R-06-12.pdf",
+      "public/**/*",
+      "build/AppIcon.icns",
+      "build/icon.ico",
+      "node_modules/better-sqlite3-multiple-ciphers/**/*",
+      "node_modules/@node-rs/argon2*/**/*.node"
+    ],
+    "asarUnpack": [
+      "lib/doc-generators/**/*",
+      "generate-receta-hu.js",
+      "generate-censo.js",
+      "template.docx",
+      "template_indicaciones.docx",
+      "template_listado.docx",
+      "templates/receta-hu-000-061-R-06-12.pdf",
+      "node_modules/better-sqlite3-multiple-ciphers/**/*",
+      "node_modules/@node-rs/argon2*/**/*.node"
+    ]
+  },
+  "allowScripts": {
+    "better-sqlite3-multiple-ciphers@12.10.0": true
+  }
+}

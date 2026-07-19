@@ -1,0 +1,482 @@
+{
+  "schema": 1,
+  "updatedAt": "2026-07-19",
+  "entries": [
+    {
+      "version": "7.7.1",
+      "label": "7.7.1",
+      "publishedAt": "2026-07-19",
+      "summary": "Release estable 7.7.1",
+      "recommended": true
+    },
+    {
+      "version": "7.7.0",
+      "label": "7.7.0",
+      "publishedAt": "2026-07-16",
+      "summary": "Release estable 7.7.0",
+      "recommended": false
+    },
+    {
+      "version": "7.6.9",
+      "label": "7.6.9",
+      "publishedAt": "2026-07-15",
+      "summary": "Release estable 7.6.9",
+      "recommended": false
+    },
+    {
+      "version": "7.6.8",
+      "label": "7.6.8",
+      "publishedAt": "2026-07-11",
+      "summary": "Release estable 7.6.8",
+      "recommended": false
+    },
+    {
+      "version": "7.6.7",
+      "label": "7.6.7",
+      "publishedAt": "2026-07-07",
+      "summary": "Release estable 7.6.7",
+      "recommended": false
+    },
+    {
+      "version": "7.6.5",
+      "label": "7.6.5",
+      "publishedAt": "2026-07-04",
+      "summary": "Release estable 7.6.5",
+      "recommended": false
+    },
+    {
+      "version": "7.6.4",
+      "label": "7.6.4",
+      "publishedAt": "2026-07-02",
+      "summary": "Release estable 7.6.4",
+      "recommended": false
+    },
+    {
+      "version": "7.6.3",
+      "label": "7.6.3",
+      "publishedAt": "2026-07-02",
+      "summary": "Release estable 7.6.3",
+      "recommended": false
+    },
+    {
+      "version": "7.6.1",
+      "label": "7.6.1",
+      "publishedAt": "2026-07-01",
+      "summary": "Release estable 7.6.1",
+      "recommended": false
+    },
+    {
+      "version": "7.6.0",
+      "label": "7.6.0",
+      "publishedAt": "2026-07-01",
+      "summary": "Release estable 7.6.0",
+      "recommended": false
+    },
+    {
+      "version": "7.5.9",
+      "label": "7.5.9",
+      "publishedAt": "2026-06-30",
+      "summary": "Recuperación censo SQLCipher + tombstones/fantasmas LAN",
+      "recommended": false
+    },
+    {
+      "version": "7.5.8",
+      "label": "7.5.8",
+      "publishedAt": "2026-06-30",
+      "summary": "Catálogo downgrade 7.5.7",
+      "recommended": false
+    },
+    {
+      "version": "7.5.7",
+      "label": "7.5.7",
+      "publishedAt": "2026-06-30",
+      "summary": "EA suplemento confirm — confirmar dieta SOME sin re-propuesta",
+      "recommended": false
+    },
+    {
+      "version": "7.5.6",
+      "label": "7.5.6",
+      "publishedAt": "2026-06-28",
+      "summary": "Release estable 7.5.6",
+      "recommended": false
+    },
+    {
+      "version": "7.5.5",
+      "label": "7.5.5",
+      "publishedAt": "2026-06-27",
+      "summary": "Release estable 7.5.5",
+      "recommended": false
+    },
+    {
+      "version": "7.5.4",
+      "label": "7.5.4",
+      "publishedAt": "2026-06-27",
+      "summary": "Release estable 7.5.4",
+      "recommended": false
+    },
+    {
+      "version": "7.5.3",
+      "label": "7.5.3",
+      "publishedAt": "2026-06-27",
+      "summary": "Release estable 7.5.3",
+      "recommended": false
+    },
+    {
+      "version": "7.5.1",
+      "label": "7.5.1",
+      "publishedAt": "2026-06-25",
+      "summary": "Push equipos, eTFG paciente y UI Rams",
+      "recommended": false
+    },
+    {
+      "version": "7.5.0",
+      "label": "7.5.0",
+      "publishedAt": "2026-06-24",
+      "summary": "Release estable 7.5.0",
+      "recommended": false
+    },
+    {
+      "version": "7.4.1",
+      "label": "7.4.1",
+      "publishedAt": "2026-06-23",
+      "summary": "Release estable 7.4.1",
+      "recommended": false
+    },
+    {
+      "version": "7.4.0",
+      "label": "7.4.0",
+      "publishedAt": "2026-06-22",
+      "summary": "Release estable 7.4.0",
+      "recommended": false
+    },
+    {
+      "version": "7.3.8",
+      "label": "7.3.8",
+      "publishedAt": "2026-06-20",
+      "summary": "Release estable 7.3.8",
+      "recommended": false
+    },
+    {
+      "version": "7.3.7",
+      "label": "7.3.7",
+      "publishedAt": "2026-06-14",
+      "summary": "Censo LAN estable (readmisión registro) + Importar Drive en expediente",
+      "recommended": false
+    },
+    {
+      "version": "7.3.6",
+      "label": "7.3.6",
+      "publishedAt": "2026-06-13",
+      "summary": "Release estable 7.3.6",
+      "recommended": false
+    },
+    {
+      "version": "7.3.5",
+      "label": "7.3.5",
+      "publishedAt": "2026-06-12",
+      "summary": "Release estable 7.3.5",
+      "recommended": false
+    },
+    {
+      "version": "7.3.4",
+      "label": "7.3.4",
+      "publishedAt": "2026-06-12",
+      "summary": "Release estable 7.3.4",
+      "recommended": false
+    },
+    {
+      "version": "7.3.3",
+      "label": "7.3.3",
+      "publishedAt": "2026-06-11",
+      "summary": "Release estable 7.3.3",
+      "recommended": false
+    },
+    {
+      "version": "7.3.2",
+      "label": "7.3.2",
+      "publishedAt": "2026-06-11",
+      "summary": "Release estable 7.3.2",
+      "recommended": false
+    },
+    {
+      "version": "7.3.1",
+      "label": "7.3.1",
+      "publishedAt": "2026-06-10",
+      "summary": "Release estable 7.3.1",
+      "recommended": false
+    },
+    {
+      "version": "7.3.0",
+      "label": "7.3.0",
+      "publishedAt": "2026-06-10",
+      "summary": "Release estable 7.3.0",
+      "recommended": false
+    },
+    {
+      "version": "7.2.9",
+      "label": "7.2.9",
+      "publishedAt": "2026-06-10",
+      "summary": "Release estable 7.2.9",
+      "recommended": false
+    },
+    {
+      "version": "7.2.8",
+      "label": "7.2.8",
+      "publishedAt": "2026-06-10",
+      "summary": "Release estable 7.2.8",
+      "recommended": false
+    },
+    {
+      "version": "7.2.7",
+      "label": "7.2.7",
+      "publishedAt": "2026-06-09",
+      "summary": "Release estable 7.2.7",
+      "recommended": false
+    },
+    {
+      "version": "7.2.6",
+      "label": "7.2.6",
+      "publishedAt": "2026-06-09",
+      "summary": "Release estable 7.2.6",
+      "recommended": false
+    },
+    {
+      "version": "7.2.5",
+      "label": "7.2.5",
+      "publishedAt": "2026-06-08",
+      "summary": "Release estable 7.2.5",
+      "recommended": false
+    },
+    {
+      "version": "7.2.4",
+      "label": "7.2.4",
+      "publishedAt": "2026-06-08",
+      "summary": "Release estable 7.2.4",
+      "recommended": false
+    },
+    {
+      "version": "7.2.3",
+      "label": "7.2.3",
+      "publishedAt": "2026-06-08",
+      "summary": "Anfitrión ward empaquetado (10.0.57.52:3738)",
+      "recommended": false
+    },
+    {
+      "version": "7.2.2",
+      "label": "7.2.2",
+      "publishedAt": "2026-06-08",
+      "summary": "Release estable 7.2.2",
+      "recommended": false
+    },
+    {
+      "version": "7.2.1",
+      "label": "7.2.1",
+      "publishedAt": "2026-06-08",
+      "summary": "Release estable 7.2.1",
+      "recommended": false
+    },
+    {
+      "version": "7.1.10",
+      "label": "7.1.10",
+      "publishedAt": "2026-06-08",
+      "summary": "LAN mDNS resiliente y diagnóstico ⇄ ampliado",
+      "recommended": false
+    },
+    {
+      "version": "7.1.9",
+      "label": "7.1.9",
+      "publishedAt": "2026-06-08",
+      "summary": "Release estable 7.1.9",
+      "recommended": false
+    },
+    {
+      "version": "7.1.8",
+      "label": "7.1.8",
+      "publishedAt": "2026-06-07",
+      "summary": "Release estable 7.1.8",
+      "recommended": false
+    },
+    {
+      "version": "7.1.7",
+      "label": "7.1.7",
+      "publishedAt": "2026-06-07",
+      "summary": "LAN roam entre redes — detección Wi‑Fi y escaneo multi-subred",
+      "recommended": false
+    },
+    {
+      "version": "7.1.6",
+      "label": "7.1.6",
+      "publishedAt": "2026-06-07",
+      "summary": "Release estable 7.1.6",
+      "recommended": false
+    },
+    {
+      "version": "7.1.5",
+      "label": "7.1.5",
+      "publishedAt": "2026-06-07",
+      "summary": "Release estable 7.1.5",
+      "recommended": false
+    },
+    {
+      "version": "7.1.4",
+      "label": "7.1.4",
+      "publishedAt": "2026-06-06",
+      "summary": "Guardia censo Admin/R4 + directorio LAN",
+      "recommended": false
+    },
+    {
+      "version": "7.1.3",
+      "label": "7.1.3",
+      "publishedAt": "2026-06-06",
+      "summary": "Release estable 7.1.3",
+      "recommended": false
+    },
+    {
+      "version": "7.1.2",
+      "label": "7.1.2",
+      "publishedAt": "2026-06-06",
+      "summary": "Release estable 7.1.2",
+      "recommended": false
+    },
+    {
+      "version": "7.1.1",
+      "label": "7.1.1",
+      "publishedAt": "2026-06-06",
+      "summary": "Release estable 7.1.1",
+      "recommended": false
+    },
+    {
+      "version": "7.1.0",
+      "label": "7.1.0",
+      "publishedAt": "2026-06-06",
+      "summary": "Release estable 7.1.0",
+      "recommended": false
+    },
+    {
+      "version": "7.0.3",
+      "label": "7.0.3",
+      "publishedAt": "2026-06-05",
+      "summary": "Release estable 7.0.3",
+      "recommended": false
+    },
+    {
+      "version": "7.0.2",
+      "label": "7.0.2",
+      "publishedAt": "2026-06-05",
+      "summary": "Release estable 7.0.2",
+      "recommended": false
+    },
+    {
+      "version": "7.0.1",
+      "label": "7.0.1",
+      "publishedAt": "2026-06-05",
+      "summary": "Release estable 7.0.1",
+      "recommended": false
+    },
+    {
+      "version": "6.7.0",
+      "label": "6.7.0",
+      "publishedAt": "2026-06-05",
+      "summary": "Release estable 6.7.0",
+      "recommended": false
+    },
+    {
+      "version": "6.6.9",
+      "label": "6.6.9",
+      "publishedAt": "2026-06-05",
+      "summary": "Release estable 6.6.9",
+      "recommended": false
+    },
+    {
+      "version": "6.6.8",
+      "label": "6.6.8",
+      "publishedAt": "2026-06-05",
+      "summary": "Release estable 6.6.8",
+      "recommended": false
+    },
+    {
+      "version": "6.6.7",
+      "label": "6.6.7",
+      "publishedAt": "2026-06-04",
+      "summary": "Release estable 6.6.7",
+      "recommended": false
+    },
+    {
+      "version": "6.6.6",
+      "label": "6.6.6",
+      "publishedAt": "2026-06-04",
+      "summary": "Release estable 6.6.6",
+      "recommended": false
+    },
+    {
+      "version": "6.6.5",
+      "label": "6.6.5",
+      "publishedAt": "2026-06-04",
+      "summary": "Release estable 6.6.5",
+      "recommended": false
+    },
+    {
+      "version": "6.6.4",
+      "label": "6.6.4",
+      "publishedAt": "2026-06-04",
+      "summary": "Release estable 6.6.4",
+      "recommended": false
+    },
+    {
+      "version": "6.6.3",
+      "label": "6.6.3",
+      "publishedAt": "2026-06-04",
+      "summary": "Release estable 6.6.3",
+      "recommended": false
+    },
+    {
+      "version": "6.5.9",
+      "label": "6.5.9",
+      "publishedAt": "2026-06-03",
+      "summary": "LAN directorio, fusión usuarios Mac/Windows, entrega y equipos.",
+      "recommended": false
+    },
+    {
+      "version": "6.5.8",
+      "label": "6.5.8",
+      "publishedAt": "2026-06-03",
+      "summary": "Release estable 6.5.8",
+      "recommended": false
+    },
+    {
+      "version": "6.5.7",
+      "label": "6.5.7",
+      "publishedAt": "2026-06-03",
+      "summary": "Release estable 6.5.7",
+      "recommended": false
+    },
+    {
+      "version": "6.5.6",
+      "label": "6.5.6",
+      "publishedAt": "2026-06-02",
+      "summary": "Release estable 6.5.6",
+      "recommended": false
+    },
+    {
+      "version": "6.5.5",
+      "label": "6.5.5",
+      "publishedAt": "2026-06-02",
+      "summary": "Release estable 6.5.5",
+      "recommended": false
+    },
+    {
+      "version": "6.5.0",
+      "label": "6.5.0",
+      "publishedAt": "2026-05-31",
+      "summary": "Última 6.5.x publicada en GitHub (Historia Clínica · expediente Sala).",
+      "recommended": false
+    },
+    {
+      "version": "6.4.2",
+      "label": "6.4.2",
+      "publishedAt": "2026-05-30",
+      "summary": "Estable anterior si necesitas volver más atrás.",
+      "recommended": false
+    }
+  ]
+}

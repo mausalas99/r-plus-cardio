@@ -1,0 +1,25 @@
+# Lockfiles & package manager trees
+package-lock.json
+**/node_modules/
+
+# Build output
+dist/
+**/*.map
+
+# Bundled / generated renderer (edit sources under public/js/)
+public/js/app.bundle.mjs
+public/js/app.bundle.meta.json
+
+# Large static catalogs (read only when task requires)
+stable-versions.json
+public/min-version.json
+min-version.json
+
+# Binaries & archives
+**/*.{dmg,pkg,zip,exe,asar}
+
+# Local / tooling noise
+.worktrees/
+.repowise/
+.DS_Store
+*.log

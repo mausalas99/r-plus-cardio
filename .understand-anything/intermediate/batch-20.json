@@ -1,0 +1,1659 @@
+{
+  "nodes": [
+    {
+      "id": "file:lan-squad/migrate-host-state.test.js",
+      "type": "file",
+      "name": "migrate-host-state.test.js",
+      "filePath": "lan-squad/migrate-host-state.test.js",
+      "summary": "Tests for migrate-host-state.js covering LAN LiveSync.",
+      "tags": [
+        "test",
+        "lan-sync",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:lan-squad/persistence/commit-barrier.js",
+      "type": "file",
+      "name": "commit-barrier.js",
+      "filePath": "lan-squad/persistence/commit-barrier.js",
+      "summary": "LAN LiveSync helpers and wiring in commit-barrier.js.",
+      "tags": [
+        "lan-sync",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:lan-squad/persistence/commit-barrier.js:createCommitBarrier",
+      "type": "function",
+      "name": "createCommitBarrier",
+      "filePath": "lan-squad/persistence/commit-barrier.js",
+      "lineRange": [
+        12,
+        109
+      ],
+      "summary": "Coalesces durable host commits: many scheduleFlush() calls within coalesceMs share one disk flush; all waiters resolve when completedGeneration reaches their targetGeneration.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:lan-squad/persistence/commit-barrier.test.js",
+      "type": "file",
+      "name": "commit-barrier.test.js",
+      "filePath": "lan-squad/persistence/commit-barrier.test.js",
+      "summary": "Tests for commit-barrier.js covering LAN LiveSync.",
+      "tags": [
+        "test",
+        "lan-sync",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:lan-squad/persistence/json-meta-repository.js",
+      "type": "file",
+      "name": "json-meta-repository.js",
+      "filePath": "lan-squad/persistence/json-meta-repository.js",
+      "summary": "LAN LiveSync helpers and wiring in json-meta-repository.js.",
+      "tags": [
+        "lan-sync",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:lan-squad/persistence/json-room-bundle-repository.js",
+      "type": "file",
+      "name": "json-room-bundle-repository.js",
+      "filePath": "lan-squad/persistence/json-room-bundle-repository.js",
+      "summary": "LAN LiveSync helpers and wiring in json-room-bundle-repository.js.",
+      "tags": [
+        "lan-sync",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:lan-squad/persistence/lab-sidecar-persistence.test.js",
+      "type": "file",
+      "name": "lab-sidecar-persistence.test.js",
+      "filePath": "lan-squad/persistence/lab-sidecar-persistence.test.js",
+      "summary": "Tests for lab-sidecar-persistence.js covering LAN LiveSync.",
+      "tags": [
+        "test",
+        "lan-sync",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:lan-squad/persistence/lab-sidecar.js",
+      "type": "file",
+      "name": "lab-sidecar.js",
+      "filePath": "lan-squad/persistence/lab-sidecar.js",
+      "summary": "LAN LiveSync helpers and wiring in lab-sidecar.js.",
+      "tags": [
+        "lan-sync",
+        "utility",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:lan-squad/persistence/lab-sidecar.js:upsertLabSidecar",
+      "type": "function",
+      "name": "upsertLabSidecar",
+      "filePath": "lan-squad/persistence/lab-sidecar.js",
+      "lineRange": [
+        20,
+        44
+      ],
+      "summary": "O(1) amortized upsert — prepend/pop cap; no Array.sort on write path. Caller enforces clientTimestamp LWW before invoking for existing ids.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lan-squad/persistence/lab-sidecar.js:readLabSidecarSync",
+      "type": "function",
+      "name": "readLabSidecarSync",
+      "filePath": "lan-squad/persistence/lab-sidecar.js",
+      "lineRange": [
+        83,
+        97
+      ],
+      "summary": "read lab sidecar sync supporting LAN LiveSync.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lan-squad/persistence/lab-sidecar.js:sidecarFromLabHistory",
+      "type": "function",
+      "name": "sidecarFromLabHistory",
+      "filePath": "lan-squad/persistence/lab-sidecar.js",
+      "lineRange": [
+        112,
+        129
+      ],
+      "summary": "sidecar from lab history supporting LAN LiveSync.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:lan-squad/persistence/lab-sidecar.test.js",
+      "type": "file",
+      "name": "lab-sidecar.test.js",
+      "filePath": "lan-squad/persistence/lab-sidecar.test.js",
+      "summary": "Tests for lab-sidecar.js covering LAN LiveSync.",
+      "tags": [
+        "test",
+        "lan-sync",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:lan-squad/persistence/sharded-host-persistence.js",
+      "type": "file",
+      "name": "sharded-host-persistence.js",
+      "filePath": "lan-squad/persistence/sharded-host-persistence.js",
+      "summary": "LAN LiveSync helpers and wiring in sharded-host-persistence.js.",
+      "tags": [
+        "lan-sync",
+        "utility",
+        "module"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:lan-squad/persistence/sharded-host-persistence.js:normalizeMonolithShape",
+      "type": "function",
+      "name": "normalizeMonolithShape",
+      "filePath": "lan-squad/persistence/sharded-host-persistence.js",
+      "lineRange": [
+        24,
+        40
+      ],
+      "summary": "normalize monolith shape supporting LAN LiveSync.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lan-squad/persistence/sharded-host-persistence.js:readJsonSync",
+      "type": "function",
+      "name": "readJsonSync",
+      "filePath": "lan-squad/persistence/sharded-host-persistence.js",
+      "lineRange": [
+        52,
+        62
+      ],
+      "summary": "read json sync supporting LAN LiveSync.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lan-squad/persistence/sharded-host-persistence.js:loadShardedState",
+      "type": "function",
+      "name": "loadShardedState",
+      "filePath": "lan-squad/persistence/sharded-host-persistence.js",
+      "lineRange": [
+        74,
+        87
+      ],
+      "summary": "load sharded state supporting LAN LiveSync.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lan-squad/persistence/sharded-host-persistence.js:loadShardedStateSync",
+      "type": "function",
+      "name": "loadShardedStateSync",
+      "filePath": "lan-squad/persistence/sharded-host-persistence.js",
+      "lineRange": [
+        89,
+        102
+      ],
+      "summary": "load sharded state sync supporting LAN LiveSync.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lan-squad/persistence/sharded-host-persistence.js:initEmptyShardedStateSync",
+      "type": "function",
+      "name": "initEmptyShardedStateSync",
+      "filePath": "lan-squad/persistence/sharded-host-persistence.js",
+      "lineRange": [
+        111,
+        121
+      ],
+      "summary": "init empty sharded state sync supporting LAN LiveSync.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lan-squad/persistence/sharded-host-persistence.js:migrateMonolithToShards",
+      "type": "function",
+      "name": "migrateMonolithToShards",
+      "filePath": "lan-squad/persistence/sharded-host-persistence.js",
+      "lineRange": [
+        123,
+        179
+      ],
+      "summary": "migrate monolith to shards supporting LAN LiveSync.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:lan-squad/persistence/sharded-host-persistence.js:commitDirtyShards",
+      "type": "function",
+      "name": "commitDirtyShards",
+      "filePath": "lan-squad/persistence/sharded-host-persistence.js",
+      "lineRange": [
+        195,
+        271
+      ],
+      "summary": "commit dirty shards supporting LAN LiveSync.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:lan-squad/persistence/sharded-host-persistence.js:repairShardsOnBoot",
+      "type": "function",
+      "name": "repairShardsOnBoot",
+      "filePath": "lan-squad/persistence/sharded-host-persistence.js",
+      "lineRange": [
+        273,
+        310
+      ],
+      "summary": "repair shards on boot supporting LAN LiveSync.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lan-squad/persistence/sharded-host-persistence.js:migrateLabSidecarsOnBoot",
+      "type": "function",
+      "name": "migrateLabSidecarsOnBoot",
+      "filePath": "lan-squad/persistence/sharded-host-persistence.js",
+      "lineRange": [
+        312,
+        357
+      ],
+      "summary": "migrate lab sidecars on boot supporting LAN LiveSync.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lan-squad/persistence/sharded-host-persistence.js:repairLabSidecarsOnBoot",
+      "type": "function",
+      "name": "repairLabSidecarsOnBoot",
+      "filePath": "lan-squad/persistence/sharded-host-persistence.js",
+      "lineRange": [
+        359,
+        407
+      ],
+      "summary": "repair lab sidecars on boot supporting LAN LiveSync.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:lan-squad/persistence/sharded-host-persistence.test.js",
+      "type": "file",
+      "name": "sharded-host-persistence.test.js",
+      "filePath": "lan-squad/persistence/sharded-host-persistence.test.js",
+      "summary": "Tests for sharded-host-persistence.js covering LAN LiveSync.",
+      "tags": [
+        "test",
+        "lan-sync",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:lan-squad/persistence/sharded-host-persistence.test.js:fixtureMonolith",
+      "type": "function",
+      "name": "fixtureMonolith",
+      "filePath": "lan-squad/persistence/sharded-host-persistence.test.js",
+      "lineRange": [
+        17,
+        45
+      ],
+      "summary": "fixture monolith supporting LAN LiveSync.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:lan-squad/persistence/sqlite-host-repositories.js",
+      "type": "file",
+      "name": "sqlite-host-repositories.js",
+      "filePath": "lan-squad/persistence/sqlite-host-repositories.js",
+      "summary": "LAN LiveSync helpers and wiring in sqlite-host-repositories.js.",
+      "tags": [
+        "lan-sync",
+        "utility",
+        "module"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:lan-squad/persistence/sqlite-host-repositories.js:dbHasLanHostV15",
+      "type": "function",
+      "name": "dbHasLanHostV15",
+      "filePath": "lan-squad/persistence/sqlite-host-repositories.js",
+      "lineRange": [
+        27,
+        36
+      ],
+      "summary": "db has lan host v15 supporting LAN LiveSync.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lan-squad/persistence/sqlite-host-repositories.js:loadSidecarFromSql",
+      "type": "function",
+      "name": "loadSidecarFromSql",
+      "filePath": "lan-squad/persistence/sqlite-host-repositories.js",
+      "lineRange": [
+        57,
+        80
+      ],
+      "summary": "load sidecar from sql supporting LAN LiveSync.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lan-squad/persistence/sqlite-host-repositories.js:writeSidecarToSql",
+      "type": "function",
+      "name": "writeSidecarToSql",
+      "filePath": "lan-squad/persistence/sqlite-host-repositories.js",
+      "lineRange": [
+        82,
+        108
+      ],
+      "summary": "write sidecar to sql supporting LAN LiveSync.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lan-squad/persistence/sqlite-host-repositories.js:upsertRoomBundleRow",
+      "type": "function",
+      "name": "upsertRoomBundleRow",
+      "filePath": "lan-squad/persistence/sqlite-host-repositories.js",
+      "lineRange": [
+        110,
+        143
+      ],
+      "summary": "upsert room bundle row supporting LAN LiveSync.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lan-squad/persistence/sqlite-host-repositories.js:upsertBundleEntryRow",
+      "type": "function",
+      "name": "upsertBundleEntryRow",
+      "filePath": "lan-squad/persistence/sqlite-host-repositories.js",
+      "lineRange": [
+        145,
+        164
+      ],
+      "summary": "upsert bundle entry row supporting LAN LiveSync.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lan-squad/persistence/sqlite-host-repositories.js:commitRoomBundleSql",
+      "type": "function",
+      "name": "commitRoomBundleSql",
+      "filePath": "lan-squad/persistence/sqlite-host-repositories.js",
+      "lineRange": [
+        166,
+        195
+      ],
+      "summary": "commit room bundle sql supporting LAN LiveSync.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lan-squad/persistence/sqlite-host-repositories.js:commitMetaSql",
+      "type": "function",
+      "name": "commitMetaSql",
+      "filePath": "lan-squad/persistence/sqlite-host-repositories.js",
+      "lineRange": [
+        197,
+        221
+      ],
+      "summary": "commit meta sql supporting LAN LiveSync.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lan-squad/persistence/sqlite-host-repositories.js:loadCacheFromSql",
+      "type": "function",
+      "name": "loadCacheFromSql",
+      "filePath": "lan-squad/persistence/sqlite-host-repositories.js",
+      "lineRange": [
+        223,
+        283
+      ],
+      "summary": "load cache from sql supporting LAN LiveSync.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:lan-squad/persistence/sqlite-host-repositories.js:commitLabUpsertTransaction",
+      "type": "function",
+      "name": "commitLabUpsertTransaction",
+      "filePath": "lan-squad/persistence/sqlite-host-repositories.js",
+      "lineRange": [
+        295,
+        317
+      ],
+      "summary": "commit lab upsert transaction supporting LAN LiveSync.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lan-squad/persistence/sqlite-host-repositories.js:commitDirtyShardsSql",
+      "type": "function",
+      "name": "commitDirtyShardsSql",
+      "filePath": "lan-squad/persistence/sqlite-host-repositories.js",
+      "lineRange": [
+        319,
+        381
+      ],
+      "summary": "commit dirty shards sql supporting LAN LiveSync.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:lan-squad/persistence/sqlite-host-repositories.js:persistFullCacheSql",
+      "type": "function",
+      "name": "persistFullCacheSql",
+      "filePath": "lan-squad/persistence/sqlite-host-repositories.js",
+      "lineRange": [
+        383,
+        402
+      ],
+      "summary": "persist full cache sql supporting LAN LiveSync.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lan-squad/persistence/sqlite-host-repositories.js:backupJsonShardsForSqlImport",
+      "type": "function",
+      "name": "backupJsonShardsForSqlImport",
+      "filePath": "lan-squad/persistence/sqlite-host-repositories.js",
+      "lineRange": [
+        404,
+        425
+      ],
+      "summary": "backup json shards for sql import supporting LAN LiveSync.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lan-squad/persistence/sqlite-host-repositories.js:importFromJsonShards",
+      "type": "function",
+      "name": "importFromJsonShards",
+      "filePath": "lan-squad/persistence/sqlite-host-repositories.js",
+      "lineRange": [
+        427,
+        455
+      ],
+      "summary": "import from json shards supporting LAN LiveSync.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:lan-squad/persistence/sqlite-host-repositories.test.js",
+      "type": "file",
+      "name": "sqlite-host-repositories.test.js",
+      "filePath": "lan-squad/persistence/sqlite-host-repositories.test.js",
+      "summary": "Tests for sqlite-host-repositories.js covering LAN LiveSync.",
+      "tags": [
+        "test",
+        "lan-sync",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:lan-squad/put-historia-clinica-queued.test.js",
+      "type": "file",
+      "name": "put-historia-clinica-queued.test.js",
+      "filePath": "lan-squad/put-historia-clinica-queued.test.js",
+      "summary": "Tests for put-historia-clinica-queued.js covering LAN LiveSync.",
+      "tags": [
+        "test",
+        "lan-sync",
+        "historia-clinica"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:lan-squad/redact-secrets.js",
+      "type": "file",
+      "name": "redact-secrets.js",
+      "filePath": "lan-squad/redact-secrets.js",
+      "summary": "LAN LiveSync helpers and wiring in redact-secrets.js.",
+      "tags": [
+        "lan-sync",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:lan-squad/redact-secrets.js:redactForLog",
+      "type": "function",
+      "name": "redactForLog",
+      "filePath": "lan-squad/redact-secrets.js",
+      "lineRange": [
+        36,
+        56
+      ],
+      "summary": "redact for log supporting LAN LiveSync.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:lan-squad/redact-secrets.test.js",
+      "type": "file",
+      "name": "redact-secrets.test.js",
+      "filePath": "lan-squad/redact-secrets.test.js",
+      "summary": "Tests for redact-secrets.js covering LAN LiveSync.",
+      "tags": [
+        "test",
+        "lan-sync",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:lan-squad/shift-pin-store.js",
+      "type": "file",
+      "name": "shift-pin-store.js",
+      "filePath": "lan-squad/shift-pin-store.js",
+      "summary": "LAN LiveSync helpers and wiring in shift-pin-store.js.",
+      "tags": [
+        "lan-sync",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:lan-squad/shift-pin-store.js:createShiftPinStore",
+      "type": "function",
+      "name": "createShiftPinStore",
+      "filePath": "lan-squad/shift-pin-store.js",
+      "lineRange": [
+        26,
+        170
+      ],
+      "summary": "create shift pin store supporting LAN LiveSync.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:lan-squad/shift-pin-store.test.js",
+      "type": "file",
+      "name": "shift-pin-store.test.js",
+      "filePath": "lan-squad/shift-pin-store.test.js",
+      "summary": "Tests for shift-pin-store.js covering LAN LiveSync.",
+      "tags": [
+        "test",
+        "lan-sync",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:lan-squad/sync-scheduler.js",
+      "type": "file",
+      "name": "sync-scheduler.js",
+      "filePath": "lan-squad/sync-scheduler.js",
+      "summary": "LAN LiveSync helpers and wiring in sync-scheduler.js.",
+      "tags": [
+        "lan-sync",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:lan-squad/sync-scheduler.js:createSyncScheduler",
+      "type": "function",
+      "name": "createSyncScheduler",
+      "filePath": "lan-squad/sync-scheduler.js",
+      "lineRange": [
+        3,
+        66
+      ],
+      "summary": "create sync scheduler supporting LAN LiveSync.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:lan-squad/sync-scheduler.test.js",
+      "type": "file",
+      "name": "sync-scheduler.test.js",
+      "filePath": "lan-squad/sync-scheduler.test.js",
+      "summary": "Tests for sync-scheduler.js covering LAN LiveSync.",
+      "tags": [
+        "test",
+        "lan-sync",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:lan-squad/team-code.js",
+      "type": "file",
+      "name": "team-code.js",
+      "filePath": "lan-squad/team-code.js",
+      "summary": "LAN LiveSync helpers and wiring in team-code.js.",
+      "tags": [
+        "lan-sync",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:lan-squad/team-code.test.js",
+      "type": "file",
+      "name": "team-code.test.js",
+      "filePath": "lan-squad/team-code.test.js",
+      "summary": "Tests for team-code.js covering LAN LiveSync.",
+      "tags": [
+        "test",
+        "lan-sync",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:lan-squad/ticket-store.js",
+      "type": "file",
+      "name": "ticket-store.js",
+      "filePath": "lan-squad/ticket-store.js",
+      "summary": "LAN LiveSync helpers and wiring in ticket-store.js.",
+      "tags": [
+        "lan-sync",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:lan-squad/ticket-store.js:createTicketStore",
+      "type": "function",
+      "name": "createTicketStore",
+      "filePath": "lan-squad/ticket-store.js",
+      "lineRange": [
+        10,
+        81
+      ],
+      "summary": "create ticket store supporting LAN LiveSync.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:lan-squad/ticket-store.test.js",
+      "type": "file",
+      "name": "ticket-store.test.js",
+      "filePath": "lan-squad/ticket-store.test.js",
+      "summary": "Tests for ticket-store.js covering LAN LiveSync.",
+      "tags": [
+        "test",
+        "lan-sync",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:lan-squad/ward-host-registry.js",
+      "type": "file",
+      "name": "ward-host-registry.js",
+      "filePath": "lan-squad/ward-host-registry.js",
+      "summary": "LAN LiveSync helpers and wiring in ward-host-registry.js.",
+      "tags": [
+        "lan-sync",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:lan-squad/ward-host-registry.js:createWardHostRegistry",
+      "type": "function",
+      "name": "createWardHostRegistry",
+      "filePath": "lan-squad/ward-host-registry.js",
+      "lineRange": [
+        53,
+        217
+      ],
+      "summary": "create ward host registry supporting LAN LiveSync.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:lan-squad/ward-host-registry.test.js",
+      "type": "file",
+      "name": "ward-host-registry.test.js",
+      "filePath": "lan-squad/ward-host-registry.test.js",
+      "summary": "Tests for ward-host-registry.js covering LAN LiveSync.",
+      "tags": [
+        "test",
+        "lan-sync",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:lan-squad/ws-hub.js",
+      "type": "file",
+      "name": "ws-hub.js",
+      "filePath": "lan-squad/ws-hub.js",
+      "summary": "LAN LiveSync helpers and wiring in ws-hub.js.",
+      "tags": [
+        "lan-sync",
+        "module"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:lan-squad/ws-hub.js:attachWsHub",
+      "type": "function",
+      "name": "attachWsHub",
+      "filePath": "lan-squad/ws-hub.js",
+      "lineRange": [
+        8,
+        223
+      ],
+      "summary": "attach ws hub supporting LAN LiveSync.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:lan-squad/ws-hub.test.js",
+      "type": "file",
+      "name": "ws-hub.test.js",
+      "filePath": "lan-squad/ws-hub.test.js",
+      "summary": "Tests for ws-hub.js covering LAN LiveSync.",
+      "tags": [
+        "test",
+        "lan-sync",
+        "module"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:lan-squad/ws-hub.test.js:closeWs",
+      "type": "function",
+      "name": "closeWs",
+      "filePath": "lan-squad/ws-hub.test.js",
+      "lineRange": [
+        13,
+        28
+      ],
+      "summary": "close ws supporting LAN LiveSync.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lan-squad/ws-hub.test.js:rmDirSafe",
+      "type": "function",
+      "name": "rmDirSafe",
+      "filePath": "lan-squad/ws-hub.test.js",
+      "lineRange": [
+        30,
+        41
+      ],
+      "summary": "rm dir safe supporting LAN LiveSync.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lan-squad/ws-hub.test.js:connectAuthedLiveWs",
+      "type": "function",
+      "name": "connectAuthedLiveWs",
+      "filePath": "lan-squad/ws-hub.test.js",
+      "lineRange": [
+        55,
+        64
+      ],
+      "summary": "connect authed live ws supporting LAN LiveSync.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lan-squad/ws-hub.test.js:waitForMessage",
+      "type": "function",
+      "name": "waitForMessage",
+      "filePath": "lan-squad/ws-hub.test.js",
+      "lineRange": [
+        66,
+        84
+      ],
+      "summary": "wait for message supporting LAN LiveSync.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:lan-squad/migrate-host-state.test.js",
+      "target": "file:lan-squad/migrate-host-state.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lan-squad/migrate-host-state.js",
+      "target": "file:lan-squad/migrate-host-state.test.js",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:lan-squad/persistence/commit-barrier.js",
+      "target": "function:lan-squad/persistence/commit-barrier.js:createCommitBarrier",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lan-squad/persistence/commit-barrier.test.js",
+      "target": "file:lan-squad/persistence/commit-barrier.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lan-squad/persistence/commit-barrier.js",
+      "target": "file:lan-squad/persistence/commit-barrier.test.js",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:lan-squad/persistence/json-meta-repository.js",
+      "target": "file:lan-squad/atomic-json.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lan-squad/persistence/json-room-bundle-repository.js",
+      "target": "file:lan-squad/atomic-json.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lan-squad/persistence/lab-sidecar-persistence.test.js",
+      "target": "file:lan-squad/conflict-resolver.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lan-squad/persistence/lab-sidecar-persistence.test.js",
+      "target": "file:lan-squad/host-router.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lan-squad/persistence/lab-sidecar-persistence.test.js",
+      "target": "file:lan-squad/host-store.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lan-squad/persistence/lab-sidecar-persistence.test.js",
+      "target": "file:lan-squad/persistence/json-meta-repository.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lan-squad/persistence/lab-sidecar-persistence.test.js",
+      "target": "file:lan-squad/persistence/lab-sidecar.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lan-squad/conflict-resolver.js",
+      "target": "file:lan-squad/persistence/lab-sidecar-persistence.test.js",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:lan-squad/host-router.js",
+      "target": "file:lan-squad/persistence/lab-sidecar-persistence.test.js",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:lan-squad/host-store.js",
+      "target": "file:lan-squad/persistence/lab-sidecar-persistence.test.js",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:lan-squad/persistence/json-meta-repository.js",
+      "target": "file:lan-squad/persistence/lab-sidecar-persistence.test.js",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:lan-squad/persistence/lab-sidecar.js",
+      "target": "file:lan-squad/persistence/lab-sidecar-persistence.test.js",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:lan-squad/persistence/lab-sidecar.js",
+      "target": "file:lan-squad/atomic-json.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lan-squad/persistence/lab-sidecar.js",
+      "target": "function:lan-squad/persistence/lab-sidecar.js:upsertLabSidecar",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lan-squad/persistence/lab-sidecar.js",
+      "target": "function:lan-squad/persistence/lab-sidecar.js:readLabSidecarSync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lan-squad/persistence/lab-sidecar.js",
+      "target": "function:lan-squad/persistence/lab-sidecar.js:sidecarFromLabHistory",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lan-squad/persistence/lab-sidecar.test.js",
+      "target": "file:lan-squad/persistence/lab-sidecar.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lan-squad/persistence/lab-sidecar.js",
+      "target": "file:lan-squad/persistence/lab-sidecar.test.js",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:lan-squad/persistence/sharded-host-persistence.js",
+      "target": "file:lan-squad/atomic-json.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lan-squad/persistence/sharded-host-persistence.js",
+      "target": "file:lan-squad/migrate-host-state.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lan-squad/persistence/sharded-host-persistence.js",
+      "target": "file:lan-squad/persistence/json-meta-repository.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lan-squad/persistence/sharded-host-persistence.js",
+      "target": "file:lan-squad/persistence/json-room-bundle-repository.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lan-squad/persistence/sharded-host-persistence.js",
+      "target": "file:lan-squad/persistence/lab-sidecar.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lan-squad/persistence/sharded-host-persistence.js",
+      "target": "function:lan-squad/persistence/sharded-host-persistence.js:normalizeMonolithShape",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lan-squad/persistence/sharded-host-persistence.js",
+      "target": "function:lan-squad/persistence/sharded-host-persistence.js:readJsonSync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lan-squad/persistence/sharded-host-persistence.js",
+      "target": "function:lan-squad/persistence/sharded-host-persistence.js:loadShardedState",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lan-squad/persistence/sharded-host-persistence.js",
+      "target": "function:lan-squad/persistence/sharded-host-persistence.js:loadShardedStateSync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lan-squad/persistence/sharded-host-persistence.js",
+      "target": "function:lan-squad/persistence/sharded-host-persistence.js:initEmptyShardedStateSync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lan-squad/persistence/sharded-host-persistence.js",
+      "target": "function:lan-squad/persistence/sharded-host-persistence.js:migrateMonolithToShards",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lan-squad/persistence/sharded-host-persistence.js",
+      "target": "function:lan-squad/persistence/sharded-host-persistence.js:commitDirtyShards",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lan-squad/persistence/sharded-host-persistence.js",
+      "target": "function:lan-squad/persistence/sharded-host-persistence.js:repairShardsOnBoot",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lan-squad/persistence/sharded-host-persistence.js",
+      "target": "function:lan-squad/persistence/sharded-host-persistence.js:migrateLabSidecarsOnBoot",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lan-squad/persistence/sharded-host-persistence.js",
+      "target": "function:lan-squad/persistence/sharded-host-persistence.js:repairLabSidecarsOnBoot",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lan-squad/persistence/sharded-host-persistence.test.js",
+      "target": "file:lan-squad/persistence/json-meta-repository.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lan-squad/persistence/sharded-host-persistence.test.js",
+      "target": "file:lan-squad/persistence/json-room-bundle-repository.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lan-squad/persistence/sharded-host-persistence.test.js",
+      "target": "file:lan-squad/persistence/sharded-host-persistence.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lan-squad/persistence/sharded-host-persistence.test.js",
+      "target": "file:lan-squad/team-code.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lan-squad/persistence/sharded-host-persistence.test.js",
+      "target": "function:lan-squad/persistence/sharded-host-persistence.test.js:fixtureMonolith",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lan-squad/persistence/json-meta-repository.js",
+      "target": "file:lan-squad/persistence/sharded-host-persistence.test.js",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:lan-squad/persistence/json-room-bundle-repository.js",
+      "target": "file:lan-squad/persistence/sharded-host-persistence.test.js",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:lan-squad/persistence/sharded-host-persistence.js",
+      "target": "file:lan-squad/persistence/sharded-host-persistence.test.js",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:lan-squad/team-code.js",
+      "target": "file:lan-squad/persistence/sharded-host-persistence.test.js",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:lan-squad/persistence/sqlite-host-repositories.js",
+      "target": "file:lan-squad/persistence/json-meta-repository.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lan-squad/persistence/sqlite-host-repositories.js",
+      "target": "file:lan-squad/persistence/lab-sidecar.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lan-squad/persistence/sqlite-host-repositories.js",
+      "target": "file:lan-squad/persistence/sharded-host-persistence.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lan-squad/persistence/sqlite-host-repositories.js",
+      "target": "function:lan-squad/persistence/sqlite-host-repositories.js:dbHasLanHostV15",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lan-squad/persistence/sqlite-host-repositories.js",
+      "target": "function:lan-squad/persistence/sqlite-host-repositories.js:loadSidecarFromSql",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lan-squad/persistence/sqlite-host-repositories.js",
+      "target": "function:lan-squad/persistence/sqlite-host-repositories.js:writeSidecarToSql",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lan-squad/persistence/sqlite-host-repositories.js",
+      "target": "function:lan-squad/persistence/sqlite-host-repositories.js:upsertRoomBundleRow",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lan-squad/persistence/sqlite-host-repositories.js",
+      "target": "function:lan-squad/persistence/sqlite-host-repositories.js:upsertBundleEntryRow",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lan-squad/persistence/sqlite-host-repositories.js",
+      "target": "function:lan-squad/persistence/sqlite-host-repositories.js:commitRoomBundleSql",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lan-squad/persistence/sqlite-host-repositories.js",
+      "target": "function:lan-squad/persistence/sqlite-host-repositories.js:commitMetaSql",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lan-squad/persistence/sqlite-host-repositories.js",
+      "target": "function:lan-squad/persistence/sqlite-host-repositories.js:loadCacheFromSql",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lan-squad/persistence/sqlite-host-repositories.js",
+      "target": "function:lan-squad/persistence/sqlite-host-repositories.js:commitLabUpsertTransaction",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lan-squad/persistence/sqlite-host-repositories.js",
+      "target": "function:lan-squad/persistence/sqlite-host-repositories.js:commitDirtyShardsSql",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lan-squad/persistence/sqlite-host-repositories.js",
+      "target": "function:lan-squad/persistence/sqlite-host-repositories.js:persistFullCacheSql",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lan-squad/persistence/sqlite-host-repositories.js",
+      "target": "function:lan-squad/persistence/sqlite-host-repositories.js:backupJsonShardsForSqlImport",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lan-squad/persistence/sqlite-host-repositories.js",
+      "target": "function:lan-squad/persistence/sqlite-host-repositories.js:importFromJsonShards",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lan-squad/persistence/sqlite-host-repositories.test.js",
+      "target": "file:lan-squad/persistence/json-meta-repository.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lan-squad/persistence/sqlite-host-repositories.test.js",
+      "target": "file:lan-squad/persistence/json-room-bundle-repository.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lan-squad/persistence/sqlite-host-repositories.test.js",
+      "target": "file:lan-squad/persistence/lab-sidecar.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lan-squad/persistence/sqlite-host-repositories.test.js",
+      "target": "file:lan-squad/persistence/sqlite-host-repositories.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lan-squad/persistence/json-meta-repository.js",
+      "target": "file:lan-squad/persistence/sqlite-host-repositories.test.js",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:lan-squad/persistence/json-room-bundle-repository.js",
+      "target": "file:lan-squad/persistence/sqlite-host-repositories.test.js",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:lan-squad/persistence/lab-sidecar.js",
+      "target": "file:lan-squad/persistence/sqlite-host-repositories.test.js",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:lan-squad/persistence/sqlite-host-repositories.js",
+      "target": "file:lan-squad/persistence/sqlite-host-repositories.test.js",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:lan-squad/put-historia-clinica-queued.test.js",
+      "target": "file:lan-squad/conflict-resolver.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lan-squad/put-historia-clinica-queued.test.js",
+      "target": "file:lan-squad/host-store.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lan-squad/conflict-resolver.js",
+      "target": "file:lan-squad/put-historia-clinica-queued.test.js",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:lan-squad/host-store.js",
+      "target": "file:lan-squad/put-historia-clinica-queued.test.js",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:lan-squad/redact-secrets.js",
+      "target": "function:lan-squad/redact-secrets.js:redactForLog",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lan-squad/redact-secrets.test.js",
+      "target": "file:lan-squad/redact-secrets.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lan-squad/redact-secrets.js",
+      "target": "file:lan-squad/redact-secrets.test.js",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:lan-squad/shift-pin-store.js",
+      "target": "function:lan-squad/shift-pin-store.js:createShiftPinStore",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lan-squad/shift-pin-store.test.js",
+      "target": "file:lan-squad/shift-pin-store.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lan-squad/shift-pin-store.js",
+      "target": "file:lan-squad/shift-pin-store.test.js",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:lan-squad/sync-scheduler.js",
+      "target": "function:lan-squad/sync-scheduler.js:createSyncScheduler",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lan-squad/sync-scheduler.test.js",
+      "target": "file:lan-squad/sync-scheduler.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lan-squad/sync-scheduler.js",
+      "target": "file:lan-squad/sync-scheduler.test.js",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:lan-squad/team-code.test.js",
+      "target": "file:lan-squad/team-code.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lan-squad/team-code.js",
+      "target": "file:lan-squad/team-code.test.js",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:lan-squad/ticket-store.js",
+      "target": "function:lan-squad/ticket-store.js:createTicketStore",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lan-squad/ticket-store.test.js",
+      "target": "file:lan-squad/ticket-store.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lan-squad/ticket-store.js",
+      "target": "file:lan-squad/ticket-store.test.js",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:lan-squad/ward-host-registry.js",
+      "target": "file:lan-squad/lan-candidate-url.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lan-squad/ward-host-registry.js",
+      "target": "function:lan-squad/ward-host-registry.js:createWardHostRegistry",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lan-squad/ward-host-registry.test.js",
+      "target": "file:lan-squad/ward-host-registry.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lan-squad/ward-host-registry.js",
+      "target": "file:lan-squad/ward-host-registry.test.js",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:lan-squad/ws-hub.js",
+      "target": "file:lan-squad/delta-resolver.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lan-squad/ws-hub.js",
+      "target": "file:lan-squad/team-code.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lan-squad/ws-hub.js",
+      "target": "function:lan-squad/ws-hub.js:attachWsHub",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lan-squad/ws-hub.test.js",
+      "target": "file:lan-squad/conflict-resolver.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lan-squad/ws-hub.test.js",
+      "target": "file:lan-squad/host-store.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lan-squad/ws-hub.test.js",
+      "target": "file:lan-squad/ws-hub.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lan-squad/ws-hub.test.js",
+      "target": "function:lan-squad/ws-hub.test.js:closeWs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lan-squad/ws-hub.test.js",
+      "target": "function:lan-squad/ws-hub.test.js:rmDirSafe",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lan-squad/ws-hub.test.js",
+      "target": "function:lan-squad/ws-hub.test.js:connectAuthedLiveWs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lan-squad/ws-hub.test.js",
+      "target": "function:lan-squad/ws-hub.test.js:waitForMessage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lan-squad/conflict-resolver.js",
+      "target": "file:lan-squad/ws-hub.test.js",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:lan-squad/host-store.js",
+      "target": "file:lan-squad/ws-hub.test.js",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:lan-squad/ws-hub.js",
+      "target": "file:lan-squad/ws-hub.test.js",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

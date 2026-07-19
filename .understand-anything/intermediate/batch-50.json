@@ -1,0 +1,266 @@
+{
+  "nodes": [
+    {
+      "id": "document:docs/superpowers/specs/2026-05-23-casiopea-v5.2-design.md",
+      "type": "document",
+      "name": "2026-05-23-casiopea-v5.2-design.md",
+      "filePath": "docs/superpowers/specs/2026-05-23-casiopea-v5.2-design.md",
+      "summary": "Design specification: R+ 5.2 — Integración Casiopea (copy + tour Sala).",
+      "tags": [
+        "documentation",
+        "specification",
+        "reference"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/superpowers/specs/2026-05-25-manejo-electrolitos-gasometria-design.md",
+      "type": "document",
+      "name": "2026-05-25-manejo-electrolitos-gasometria-design.md",
+      "filePath": "docs/superpowers/specs/2026-05-25-manejo-electrolitos-gasometria-design.md",
+      "summary": "Design specification: Manejo electrolítico, gasometría extendida y formato SOME — Design.",
+      "tags": [
+        "documentation",
+        "specification",
+        "reference"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/superpowers/specs/2026-05-25-manejo-protocolos-atb-cad-ehh-design.md",
+      "type": "document",
+      "name": "2026-05-25-manejo-protocolos-atb-cad-ehh-design.md",
+      "filePath": "docs/superpowers/specs/2026-05-25-manejo-protocolos-atb-cad-ehh-design.md",
+      "summary": "Design specification: Manejo — Protocolos, ATB asistido y CAD/EHH — Design.",
+      "tags": [
+        "documentation",
+        "specification",
+        "reference"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/superpowers/specs/2026-05-26-estado-actual-monitoreo-design.md",
+      "type": "document",
+      "name": "2026-05-26-estado-actual-monitoreo-design.md",
+      "filePath": "docs/superpowers/specs/2026-05-26-estado-actual-monitoreo-design.md",
+      "summary": "Design specification: Estado Actual — monitoreo estructurado (SV, glucometrías, I/O) — Spec de diseño.",
+      "tags": [
+        "documentation",
+        "specification",
+        "reference"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/superpowers/specs/2026-05-26-lab-trends-perf-design.md",
+      "type": "document",
+      "name": "2026-05-26-lab-trends-perf-design.md",
+      "filePath": "docs/superpowers/specs/2026-05-26-lab-trends-perf-design.md",
+      "summary": "Design specification: Optimización de rendimiento — laboratorio y tendencias — Spec de diseño.",
+      "tags": [
+        "documentation",
+        "specification",
+        "reference"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/superpowers/specs/2026-05-26-manejo-guia-clinica-design.md",
+      "type": "document",
+      "name": "2026-05-26-manejo-guia-clinica-design.md",
+      "filePath": "docs/superpowers/specs/2026-05-26-manejo-guia-clinica-design.md",
+      "summary": "Design specification: Diseño: Guía clínica unificada (Manejo B/C/D).",
+      "tags": [
+        "documentation",
+        "specification",
+        "design"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/superpowers/specs/2026-05-26-manejo-room-drive-design.md",
+      "type": "document",
+      "name": "2026-05-26-manejo-room-drive-design.md",
+      "filePath": "docs/superpowers/specs/2026-05-26-manejo-room-drive-design.md",
+      "summary": "Design specification: Diseño: Manejo modular + sala LAN persistente (room drive).",
+      "tags": [
+        "documentation",
+        "specification",
+        "reference"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/superpowers/specs/2026-05-28-pitch-tour-design.md",
+      "type": "document",
+      "name": "2026-05-28-pitch-tour-design.md",
+      "filePath": "docs/superpowers/specs/2026-05-28-pitch-tour-design.md",
+      "summary": "Design specification: Tour pitch (presentación) — Spec de diseño.",
+      "tags": [
+        "documentation",
+        "specification",
+        "reference"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/superpowers/specs/2026-05-28-tour-pitch-remediation-design.md",
+      "type": "document",
+      "name": "2026-05-28-tour-pitch-remediation-design.md",
+      "filePath": "docs/superpowers/specs/2026-05-28-tour-pitch-remediation-design.md",
+      "summary": "Design specification: Tour pitch — remediación (flujo, dock, demo, seguridad) — Spec de diseño.",
+      "tags": [
+        "documentation",
+        "specification",
+        "reference"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/superpowers/specs/2026-05-29-censo-pdf-design.md",
+      "type": "document",
+      "name": "2026-05-29-censo-pdf-design.md",
+      "filePath": "docs/superpowers/specs/2026-05-29-censo-pdf-design.md",
+      "summary": "Design specification: Censo de guardia (PDF) — Spec de diseño.",
+      "tags": [
+        "documentation",
+        "specification",
+        "reference"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/superpowers/specs/2026-05-29-vpo-design.md",
+      "type": "document",
+      "name": "2026-05-29-vpo-design.md",
+      "filePath": "docs/superpowers/specs/2026-05-29-vpo-design.md",
+      "summary": "Design specification: Valoración preoperatoria (VPO) — Spec de diseño.",
+      "tags": [
+        "documentation",
+        "specification",
+        "reference"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/superpowers/specs/2026-05-30-clinical-calculator-safety-design.md",
+      "type": "document",
+      "name": "2026-05-30-clinical-calculator-safety-design.md",
+      "filePath": "docs/superpowers/specs/2026-05-30-clinical-calculator-safety-design.md",
+      "summary": "Design specification: Clinical Calculator & Electrolyte Safety — Design.",
+      "tags": [
+        "documentation",
+        "specification",
+        "clinical"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/superpowers/specs/2026-05-30-clinical-conflict-resolution-design.md",
+      "type": "document",
+      "name": "2026-05-30-clinical-conflict-resolution-design.md",
+      "filePath": "docs/superpowers/specs/2026-05-30-clinical-conflict-resolution-design.md",
+      "summary": "Design specification: Clinical Conflict Resolution — Unified Versioned Sync.",
+      "tags": [
+        "documentation",
+        "specification",
+        "clinical"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/superpowers/specs/2026-05-30-lan-host-concurrency-design.md",
+      "type": "document",
+      "name": "2026-05-30-lan-host-concurrency-design.md",
+      "filePath": "docs/superpowers/specs/2026-05-30-lan-host-concurrency-design.md",
+      "summary": "Design specification: LAN host concurrency, versioning, and conflict UX.",
+      "tags": [
+        "documentation",
+        "specification",
+        "lan-sync"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/superpowers/specs/2026-05-30-lan-security-hardening-design.md",
+      "type": "document",
+      "name": "2026-05-30-lan-security-hardening-design.md",
+      "filePath": "docs/superpowers/specs/2026-05-30-lan-security-hardening-design.md",
+      "summary": "Design specification: LAN Security Hardening — Authentication, Pairing, and DoS Protection.",
+      "tags": [
+        "documentation",
+        "specification",
+        "lan-sync",
+        "security"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/superpowers/specs/2026-05-30-native-document-generation-design.md",
+      "type": "document",
+      "name": "2026-05-30-native-document-generation-design.md",
+      "filePath": "docs/superpowers/specs/2026-05-30-native-document-generation-design.md",
+      "summary": "Design specification: Native Document Generation (JSZip + Streaming).",
+      "tags": [
+        "documentation",
+        "specification",
+        "reference"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/superpowers/specs/2026-05-30-r-plus-security-architecture-remediation-design.md",
+      "type": "document",
+      "name": "2026-05-30-r-plus-security-architecture-remediation-design.md",
+      "filePath": "docs/superpowers/specs/2026-05-30-r-plus-security-architecture-remediation-design.md",
+      "summary": "Design specification: R+ Security and Architecture Remediation Design.",
+      "tags": [
+        "documentation",
+        "specification",
+        "security"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/superpowers/specs/2026-05-30-static-clinical-history-design.md",
+      "type": "document",
+      "name": "2026-05-30-static-clinical-history-design.md",
+      "filePath": "docs/superpowers/specs/2026-05-30-static-clinical-history-design.md",
+      "summary": "Design specification: Static Clinical History (Historia Clínica de Ingreso).",
+      "tags": [
+        "documentation",
+        "specification",
+        "clinical"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/superpowers/specs/2026-05-31-clinical-access-controls-design.md",
+      "type": "document",
+      "name": "2026-05-31-clinical-access-controls-design.md",
+      "filePath": "docs/superpowers/specs/2026-05-31-clinical-access-controls-design.md",
+      "summary": "Design specification: Clinical Access Controls & Shared Dashboard UI Design Document.",
+      "tags": [
+        "documentation",
+        "specification",
+        "clinical"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/superpowers/specs/2026-05-31-clinical-teams-handoff-v2-design.md",
+      "type": "document",
+      "name": "2026-05-31-clinical-teams-handoff-v2-design.md",
+      "filePath": "docs/superpowers/specs/2026-05-31-clinical-teams-handoff-v2-design.md",
+      "summary": "Design specification: Clinical Teams, Entrega & Scope V2 Design.",
+      "tags": [
+        "documentation",
+        "specification",
+        "clinical"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": []
+}

@@ -1,0 +1,43 @@
+R+ 6.0.1 (entrada masiva de laboratorios y fixes rápidos)
+============================================================
+
+Fecha: 2026-05-25
+
+## Resumen
+
+Parche sobre 6.0.0: el cuadro principal de **Laboratorio** procesa **varios reportes SOME** a la vez (varios días del mismo paciente o varios pacientes con separador). Incluye **Receta HU PDF** desde servidor local y ajustes menores del tour y la cáscara.
+
+## Nuevo / mejorado
+
+### Laboratorio — entrada masiva integrada
+
+- **Un solo cuadro de pegado** — pega uno o muchos reportes SOME completos (desde «Expediente:») y pulsa **Procesar**.
+- **Vista previa antes de guardar** — si hay varios días, varios pacientes o avisos (expediente no encontrado, error de parseo), se abre una tabla de revisión; confirmas con **Procesar todo** o cancelas.
+- **Varios días, mismo paciente** — reportes seguidos se distinguen por `Fecha Registro`; el mismo día se consolida en un conjunto (la hora es opcional).
+- **Varios pacientes** — botón **Separador de paciente** inserta `--- PACIENTE ---` entre bloques; cada expediente debe existir en la lista.
+- **Historial y nota** — cada conjunto guardado alimenta historial, tendencias y reconstrucción de `estudios` en la nota.
+
+### Receta HU
+
+- **Exportar PDF** — endpoint `/generate-receta-hu` con plantilla oficial HU 000-061-R-06-12.
+- **Tokens de cáscara** — ajustes de radius/shell en la UI (Arc).
+
+### Tutorial
+
+- Onboarding de laboratorio con **dos días de DEMO PÉREZ** precargados.
+- Paso nuevo **separador multi-paciente** con ventana explicativa y ejemplo **DEMO GARCÍA** insertable.
+- Registro demo alineado con el expediente SOME del tour.
+
+## Correcciones
+
+- Mensaje de puerto ocupado más claro al iniciar el servidor local (`lsof` + PID).
+- Duplicados exactos omitidos al procesar pegados masivos (misma fecha + mismas líneas).
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v6.0.1
+
+- Mac: `R+-6.0.1-arm64.dmg`, `R+-6.0.1-x64.dmg` (y zip para auto-update).
+- Windows: `R+-6.0.1-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye write-release-yml.js).

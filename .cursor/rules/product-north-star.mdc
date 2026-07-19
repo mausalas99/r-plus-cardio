@@ -1,0 +1,24 @@
+---
+description: Product North Star — read before proposing features or scope changes
+alwaysApply: true
+---
+
+# Product North Star
+
+Before proposing features, refactors with user-visible scope, or architectural pivots:
+
+1. Read `docs/core/01-vision-north-star.md` (strategy, trade-offs, anti-goals).
+2. Ask: Does this **lower TTD**, improve **LiveSync trust**, or reduce transcription error?
+3. Reject if it violates anti-goals: cloud PHI, EMR replacement, autonomous treatment, unmanaged Internet exposure, or **more tool time vs patient time**.
+
+## Trade-offs (when in conflict)
+
+- Workflow fluidity *even over* stability theater
+- Local-first LAN *even over* cloud convenience
+- Clinical safety (human-in-the-loop) *even over* velocity
+- Turn-wide sync reliability *even over* departmental breadth
+- Adjunct clarity *even over* EMR feature parity
+
+**Ideal user:** R1/R2 on 24h guardia. **Magic moment:** SOME paste → structured data → `.docx` note.
+
+Hub: `docs/core/00-system-index.md`

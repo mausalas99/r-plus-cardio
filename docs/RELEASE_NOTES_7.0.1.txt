@@ -1,0 +1,32 @@
+R+ 7.0.1 (PIN del turno y Wi‑Fi hospital)
+=============================================
+
+Fecha: 2026-06-05
+
+## Resumen
+
+Conectarse al turno en guardia es más simple: el **PIN de 6 dígitos** es la llave principal (sin copiar enlaces ni recordar IPs). R+ busca el anfitrión en **todas las redes Wi‑Fi** de la Mac, reconecta solo al cambiar de red y muestra **Conectar al turno** cuando la sala no está en vivo.
+
+## Nuevo / mejorado
+
+- **PIN primero** — En ⇄: un campo y **Conectar**; el anfitrión comparte 6 dígitos en voz alta. Mismo PIN al registrar @usuario.
+- **Wi‑Fi hospital** — Barrido en cada subred local (varias VLAN/NIC); al volver el Wi‑Fi o quedar en «reconectando…», R+ reintenta con el PIN guardado.
+- **Conectar al turno** — Botón en la barra clínica: intenta el PIN automático; si falla, abre ⇄ con el cursor en el PIN.
+- **Menos fricción** — Enlaces de invitación quedan en opción avanzada; mensajes en lenguaje claro («Buscando anfitrión del turno…»).
+- **Incluye 6.7.0** — Directorio LAN, roster sin borrado en bundle vacío, diagnóstico ⇄ y Windows SQLCipher empaquetado.
+
+## Operación en guardia
+
+1. **Anfitrión (R4+):** ⇄ → copia o dice el **PIN del turno**; **Unirse** a la sala.
+2. **Residentes:** **Conectar al turno** o PIN en registro / ⇄ (6 dígitos).
+3. **Misma red clínica** que el anfitrión (Wi‑Fi invitado o VLAN aislada no alcanza al host).
+4. Instala **7.0.1 en todas** las estaciones el mismo día. Puerto **3738** en firewall Windows la primera vez.
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v7.0.1
+
+- Mac: `R+-7.0.1-arm64.dmg`, `R+-7.0.1-x64.dmg` (y zip para auto-update).
+- Windows: `R+-7.0.1-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye write-release-yml.js).

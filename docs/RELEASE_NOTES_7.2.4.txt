@@ -1,0 +1,29 @@
+R+ 7.2.4 (R4 cliente primero y sin equipo obligatorio)
+==========================================================
+
+Fecha: 2026-06-08
+
+## Resumen
+
+Parche sobre 7.2.3: al registrarse como R4, R+ ya no se convierte en anfitrión del turno antes de buscar la red — conecta al host activo (fijado, PIN o barrido) como cualquier estación. R4 y Admin dejan de requerir unirse a un equipo en Mi rotación. Sin cambio de esquema SQLCipher (sigue v14).
+
+## Nuevo / mejorado
+
+- **R4 como cliente primero** — Tras el registro, R4 permanece en modo cliente: usa PIN del turno, anfitrión fijado o descubrimiento LAN antes de activar el servidor embebido de esta Mac.
+- **Barrido de red para R4** — Deja de omitir el escaneo de subred solo por ser elegible como anfitrión; encuentra el host fijado (`10.0.57.52:3738`) aunque nunca haya sido servidor local.
+- **⇄ sin auto-promoción** — El panel Wi‑Fi intenta el anfitrión fijado primero y solo prepara servidor local si el rol ya es «host» (acción explícita o Mac designada).
+- **Mi rotación sin equipo** — R4 y Admin supervisan todas las rotaciones; no aparecen como «sin equipo» ni bloquean el uso de la app por falta de membresía.
+- **Migración legacy** — Se elimina la promoción automática de R4 de «cliente» a «host» cuando no hay URL guardada (UI antigua de pestañas).
+
+## Operación en guardia
+
+Parche sobre **7.2.3**: instala en **todas** las estaciones del turno el mismo día. Las Macs R4 nuevas deben conectar con PIN o al host fijado; solo una estación debe actuar como anfitrión del turno. Esquema SQLCipher **v14**.
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v7.2.4
+
+- Mac: `R+-7.2.4-arm64.dmg`, `R+-7.2.4-x64.dmg` (y zip para auto-update).
+- Windows: `R+-7.2.4-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye write-release-yml.js).

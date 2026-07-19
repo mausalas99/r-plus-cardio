@@ -1,0 +1,266 @@
+/* Hallmark · utilitarian clinical · theme: Quiet workbench · design.md */
+/* VPO — alineado con Estado Actual y expediente */
+
+#exp-pane-vpo,
+#exp-pane-vpo-inter {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+}
+
+.vpo-panel {
+  display: flex;
+  flex-direction: column;
+  gap: calc(12px * var(--density-space, 1));
+  padding: 0 0 calc(12px * var(--density-space, 1));
+}
+
+.vpo-section {
+  padding: 0;
+  overflow: hidden;
+}
+
+.vpo-section > summary {
+  list-style: none;
+  cursor: pointer;
+  padding: calc(10px * var(--density-space, 1)) calc(14px * var(--density-space, 1));
+  margin: 0;
+  font-size: calc(13px * var(--density-font, 1));
+  font-weight: 600;
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+}
+
+.vpo-section > summary::-webkit-details-marker {
+  display: none;
+}
+
+.vpo-section > summary::after {
+  content: '▾';
+  float: right;
+  opacity: 0.55;
+  font-size: 11px;
+  transition: transform 0.15s ease;
+}
+
+.vpo-section:not([open]) > summary::after {
+  transform: rotate(-90deg);
+}
+
+.vpo-section-body {
+  padding: calc(14px * var(--density-space, 1)) calc(16px * var(--density-space, 1)) calc(16px * var(--density-space, 1));
+  border-top: 1px solid color-mix(in oklab, var(--border) 70%, transparent);
+}
+
+.vpo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: calc(10px * var(--density-space, 1));
+}
+
+.vpo-aha-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: calc(10px * var(--density-space, 1)) 0;
+}
+
+.vpo-aha-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  font-size: calc(12px * var(--density-font, 1));
+  font-weight: 600;
+  background: color-mix(in oklab, var(--accent) 12%, var(--surface));
+  border: 1px solid color-mix(in oklab, var(--accent) 28%, var(--border));
+}
+
+.vpo-scales-results {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(108px, 1fr));
+  gap: calc(8px * var(--density-space, 1));
+  margin-top: calc(6px * var(--density-space, 1));
+}
+
+.vpo-scale-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.vpo-scale-label {
+  font-size: calc(11px * var(--density-font, 1));
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--text-muted);
+}
+
+.vpo-scale-cell .ea-input {
+  font-size: calc(12px * var(--density-font, 1));
+  padding: 4px 8px;
+  min-height: 0;
+}
+
+.vpo-scales-grid-title {
+  margin: 10px 0 4px;
+  font-size: calc(12px * var(--density-font, 1));
+}
+
+.vpo-aha-badge span {
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.vpo-flag-groups {
+  display: flex;
+  flex-direction: column;
+  gap: calc(12px * var(--density-space, 1));
+  margin-top: calc(10px * var(--density-space, 1));
+}
+
+.vpo-flag-group-title {
+  margin: 0 0 6px;
+  font-size: calc(11px * var(--density-font, 1));
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--text-muted);
+}
+
+.vpo-flag-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.vpo-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  margin: 0;
+  cursor: pointer;
+  user-select: none;
+}
+
+.vpo-chip input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+.vpo-chip span {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: calc(12px * var(--density-font, 1));
+  line-height: 1.3;
+  border: 1px solid color-mix(in oklab, var(--border) 90%, transparent);
+  background: color-mix(in oklab, var(--surface) 88%, var(--bg));
+  color: var(--text);
+  transition:
+    background 0.12s ease,
+    border-color 0.12s ease,
+    box-shadow 0.12s ease;
+}
+
+.vpo-chip:hover span {
+  border-color: color-mix(in oklab, var(--accent) 40%, var(--border));
+}
+
+.vpo-chip input:checked + span {
+  background: color-mix(in oklab, var(--accent) 22%, var(--surface));
+  border-color: color-mix(in oklab, var(--accent) 55%, var(--border));
+  box-shadow: 0 0 0 1px color-mix(in oklab, var(--accent) 18%, transparent);
+  font-weight: 600;
+}
+
+.vpo-chip input:focus-visible + span {
+  outline: 2px solid color-mix(in oklab, var(--accent) 70%, transparent);
+  outline-offset: 1px;
+}
+
+.vpo-dx-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.vpo-dx-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.vpo-dx-row input {
+  flex: 1;
+  text-transform: uppercase;
+}
+
+.vpo-dx-row .btn-remove {
+  flex-shrink: 0;
+}
+
+.vpo-dx-paste {
+  margin-top: 4px;
+  padding-top: 12px;
+  border-top: 1px dashed color-mix(in oklab, var(--border) 65%, transparent);
+}
+
+.vpo-dx-paste .ea-label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: calc(11px * var(--density-font, 1));
+  color: var(--text-muted);
+}
+
+.vpo-dx-paste-input {
+  width: 100%;
+  min-height: 56px;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  font-size: calc(12px * var(--density-font, 1));
+}
+
+.vpo-summary-lines {
+  font-size: calc(13px * var(--density-font, 1));
+  line-height: 1.55;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.vpo-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: calc(10px * var(--density-space, 1));
+}
+
+.vpo-farm-row {
+  margin-bottom: calc(10px * var(--density-space, 1));
+}
+
+.vpo-farm-row .vpo-farm-name {
+  font-weight: 600;
+  font-size: calc(12px * var(--density-font, 1));
+}
+
+.vpo-farm-nota {
+  width: 100%;
+  margin-top: 4px;
+}
+
+.vpo-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-top: calc(4px * var(--density-space, 1));
+}
+
+.vpo-section .field-group textarea {
+  width: 100%;
+}

@@ -1,0 +1,603 @@
+<div id="settings-dropdown-backdrop" class="modal-backdrop settings-dropdown-backdrop" aria-hidden="true">
+  <div class="modal settings-dropdown settings-dropdown-modal" id="settings-dropdown" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="settings-dropdown-title" tabindex="-1" onclick="event.stopPropagation()">
+    <header class="settings-dropdown-modal-head">
+      <h3 id="settings-dropdown-title">Ajustes</h3>
+      <div class="settings-dropdown-head-links">
+        <button type="button" class="settings-head-link" onclick="closeSettingsDropdown(); openLearnHub();">Tutoriales</button>
+        <button type="button" class="settings-head-link" onclick="closeSettingsDropdown(); openQuickHelp();" data-i18n="settings.quickHelp">Ayuda</button>
+      </div>
+      <button type="button" class="clinical-teams-dismiss" id="btn-settings-dropdown-close" aria-label="Cerrar">×</button>
+    </header>
+    <div class="settings-dropdown-body" id="settings-dropdown-scroll">
+      <div id="settings-clinical-sync-mode" class="settings-clinical-sync-mode" hidden>
+        <p class="settings-acc-hint settings-clinical-sync-mode-lead">R+ está en modo <strong>solo este equipo</strong> (para médicos ajenos a medicina interna): sin ⇄ LiveSync, Mi rotación ni sala compartida.</p>
+        <button type="button" class="btn-settings-row" onclick="enableClinicalLanFromSettings()">Activar guardia en red (LAN)…</button>
+      </div>
+
+      <div class="settings-accordion-grid">
+      <details class="settings-accordion" id="settings-accordion-appearance" open>
+        <summary data-i18n="settings.appearance">Apariencia</summary>
+        <div class="settings-acc-body settings-form settings-form--compact">
+          <div class="settings-form-row">
+          <div class="settings-form-label" data-i18n="settings.theme">Tema</div>
+          <div class="settings-theme-row settings-theme-row--fit" role="group" aria-label="Tema de la aplicación" data-i18n-aria-label="settings.themeGroup">
+            <button type="button" class="settings-theme-btn" id="settings-theme-light" onclick="setThemeMode('light')" data-i18n="settings.themeLight">Claro</button>
+            <button type="button" class="settings-theme-btn" id="settings-theme-dark" onclick="setThemeMode('dark')" data-i18n="settings.themeDark">Oscuro</button>
+          </div>
+          </div>
+          <div class="settings-form-row">
+          <div class="settings-form-label" data-i18n="settings.fontSize">Tamaño de texto</div>
+          <div class="settings-theme-row settings-theme-row--fit" id="settings-font-zoom-row" role="group" aria-label="Tamaño de texto" data-i18n-aria-label="settings.fontSize">
+            <button type="button" class="settings-theme-btn" id="settings-font-100" onclick="setFontZoom(100)" data-i18n="settings.fontNormal">Normal</button>
+            <button type="button" class="settings-theme-btn" id="settings-font-110" onclick="setFontZoom(110)" data-i18n="settings.fontLarge">Grande</button>
+            <button type="button" class="settings-theme-btn" id="settings-font-125" onclick="setFontZoom(125)" data-i18n="settings.fontXLarge">Más grande</button>
+          </div>
+          </div>
+          <div class="settings-form-row">
+          <div class="settings-form-label" data-i18n="settings.uiDensity">Modo de vista</div>
+          <div class="settings-theme-row settings-theme-row--fit" role="group" aria-label="Modo de vista" data-i18n-aria-label="settings.uiDensity">
+            <button type="button" class="settings-theme-btn" id="settings-density-normal" onclick="setUiDensity('normal')" data-i18n="settings.densityNormal">Normal</button>
+            <button type="button" class="settings-theme-btn" id="settings-density-pase" onclick="setUiDensity('pase')" data-i18n="settings.densityPase">Pase</button>
+          </div>
+          </div>
+          <div class="settings-form-row">
+          <div class="settings-form-label" data-i18n="settings.highContrast">Alto contraste</div>
+          <div class="settings-theme-row settings-theme-row--fit" role="group" aria-label="Alto contraste" data-i18n-aria-label="settings.highContrast">
+            <button type="button" class="settings-theme-btn" id="settings-hc-off" onclick="setHighContrast(false)" data-i18n="settings.hcOff">Desactivado</button>
+            <button type="button" class="settings-theme-btn" id="settings-hc-on" onclick="setHighContrast(true)" data-i18n="settings.hcOn">Activado</button>
+          </div>
+          </div>
+          <div class="settings-form-row settings-form-row--wide">
+          <div class="settings-form-label" data-i18n="settings.motion">Animaciones</div>
+          <div class="settings-theme-row settings-theme-row--fit" role="group" aria-label="Animaciones" data-i18n-aria-label="settings.motion">
+            <button type="button" class="settings-theme-btn" id="settings-motion-sobrio" onclick="setMotionMode('sobrio')" data-i18n="settings.motionSobrio">Sobrio</button>
+            <button type="button" class="settings-theme-btn" id="settings-motion-mixto" onclick="setMotionMode('mixto')" data-i18n="settings.motionMixto">Mixto</button>
+            <button type="button" class="settings-theme-btn" id="settings-motion-expresivo" onclick="setMotionMode('expresivo')" data-i18n="settings.motionExpresivo">Expresivo</button>
+          </div>
+          </div>
+          <p class="settings-form-foot overview-hint settings-acc-hint" data-i18n="settings.appearanceFoot">⌘P alterna Normal/Pase. Tamaño escala toda la interfaz. Mixto equilibra las animaciones.</p>
+        </div>
+      </details>
+
+      <details class="settings-accordion">
+        <summary>Laboratorio</summary>
+        <div class="settings-acc-body settings-acc-compact">
+          <div class="settings-card-stack">
+            <div class="settings-card">
+              <div class="settings-card__copy">
+                <p class="settings-card__title">Duplicados en historial de labs</p>
+                <p class="settings-card__desc settings-acc-hint settings-acc-hint--tight">Busca en <strong>todos los pacientes</strong> entradas repetidas en el historial de labs (misma fecha, hora y bloques de resultados) y permite eliminarlas conservando la copia más antigua.</p>
+              </div>
+              <div class="settings-card__action">
+                <button type="button" class="btn-settings-row" onclick="openLabHistoryDedupeReview('all')">Revisar duplicados…</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <details class="settings-accordion" id="settings-accordion-documents">
+        <summary>Documentos y salida</summary>
+        <div class="settings-acc-body">
+          <div class="settings-card-stack">
+            <div class="settings-card">
+              <div class="settings-card__copy">
+                <p class="settings-card__title">Carpeta de salida</p>
+                <p class="settings-card__desc settings-acc-path" id="settings-output-dir" title="">Descargas (predeterminado)</p>
+              </div>
+              <div class="settings-card__action">
+                <button type="button" class="btn-settings-row" onclick="chooseOutputDir()">Cambiar</button>
+              </div>
+            </div>
+            <div class="settings-card">
+              <div class="settings-card__copy">
+                <p class="settings-card__title">Salida rápida</p>
+                <p class="settings-card__desc settings-acc-hint settings-acc-hint--tight">Formato por defecto para exportar al instante la nota/indicaciones actuales.</p>
+              </div>
+              <div class="settings-card__action">
+                <select id="settings-quick-output-format" class="settings-acc-select settings-acc-select--compact" onchange="saveQuickOutputFormat(this.value)">
+                  <option value="docx">DOCX (flujo actual)</option>
+                  <option value="html">HTML descargable</option>
+                  <option value="txt">Texto plano (.txt)</option>
+                </select>
+              </div>
+            </div>
+            <div class="settings-card settings-card--toggle">
+              <div class="settings-card__copy">
+                <p class="settings-card__title">Ocultar «Copiar prompt IA»</p>
+                <p class="settings-card__desc settings-acc-hint settings-acc-hint--tight">Quita el botón del listado de problemas en el expediente.</p>
+              </div>
+              <label class="settings-card__action settings-card__toggle-label" for="settings-hide-listado-ai-prompt">
+                <input type="checkbox" class="settings-card__toggle" id="settings-hide-listado-ai-prompt" onchange="setHideListadoProblemasAiPrompt(this.checked)">
+              </label>
+            </div>
+            <div class="settings-card" id="btn-export-censo-settings-row" style="display:none;">
+              <div class="settings-card__copy">
+                <p class="settings-card__title">Exportar censo de guardia (PDF)</p>
+                <p class="settings-card__desc settings-acc-hint settings-acc-hint--tight" id="btn-export-censo-settings-hint">Tabla landscape con todos los pacientes activos (diagnósticos en Datos del paciente).</p>
+              </div>
+              <div class="settings-card__action">
+                <button type="button" class="btn-settings-row" id="btn-export-censo-settings" onclick="closeSettingsDropdown(); exportCensoPdfFromHelp();">Exportar censo de guardia (PDF)…</button>
+              </div>
+            </div>
+            <div class="settings-card-stack__foot">
+              <p class="overview-hint" data-i18n="settings.docsFolderHint">Los .docx generados se guardan aquí (si no eliges carpeta, se usa Descargas).</p>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <details class="settings-accordion" id="settings-accordion-lan-host-disk" style="display: none;">
+        <summary>LAN · servidor en esta computadora</summary>
+        <div class="settings-acc-body">
+          <p class="settings-acc-hint settings-acc-hint--tight">
+            Solo si esta R+ es <strong>anfitrión</strong> (puerto 3738). Con la configuración por defecto no hace falta tocar nada aquí: ⇄ genera el enlace con el código incluido. Usa este panel solo si quieres un código distinto de <strong>1234</strong> (se guarda en <code>lan-team-code.txt</code>). Tras cambiarlo, <strong>reinicia R+</strong> y vuelve a copiar la invitación.
+          </p>
+          <div id="lan-host-first-time-hint" class="settings-lan-host-first-hint" style="display:none;" role="status"></div>
+          <div class="settings-card-stack">
+            <div class="settings-card">
+              <div class="settings-card__copy">
+                <p class="settings-card__title">Código en el servidor (archivo)</p>
+              </div>
+              <div class="settings-card__action">
+                <input id="settings-lan-host-team-code-input" class="profile-input settings-acc-select" type="text" autocomplete="off" placeholder="1234 (recomendado; vacío = 1234)" />
+              </div>
+            </div>
+            <div class="settings-card">
+              <div class="settings-card__copy">
+                <p class="settings-card__title">Guardar código en esta computadora</p>
+              </div>
+              <div class="settings-card__action">
+                <button type="button" class="btn-settings-row" onclick="saveLanHostTeamCodeFromUi()">Guardar código en esta computadora</button>
+              </div>
+            </div>
+            <div class="settings-card">
+              <div class="settings-card__copy">
+                <p class="settings-card__title">Restablecer estado LAN del host</p>
+              </div>
+              <div class="settings-card__action">
+                <button type="button" class="btn-settings-row btn-settings-row--danger" onclick="resetLanSquadHostStateFromUi()">Restablecer estado LAN del host…</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <details class="settings-accordion settings-accordion--full" id="settings-accordion-backup-sync">
+        <summary>Respaldos, sync y recuperación</summary>
+        <div class="settings-acc-body">
+          <div class="settings-data-sync-compare">
+            <div class="settings-sync-card">
+              <h4>Sala en vivo (LAN)</h4>
+              <p>Comparte el <strong>mismo turno</strong> en la <strong>misma red Wi‑Fi</strong>: al unirte a una sala se fusionan <strong>pacientes, notas, labs, agenda y pendientes</strong> (sin borrar los que solo tienes tú). No sustituye un respaldo completo entre turnos.</p>
+            </div>
+            <div class="settings-sync-card">
+              <h4>Respaldos y sync entre equipos</h4>
+              <p><strong>Exportar / importar</strong> JSON, paquete sync y auto‑respaldos mueven o resguardan el <strong>historial clínico local</strong> entre computadoras o después del trabajo.</p>
+            </div>
+          </div>
+          <p class="settings-sync-help-link">
+            Más detalle en el centro de ayuda:
+            <button type="button" class="btn-settings-row" onclick="closeSettingsDropdown(); openQuickHelp('lan-vs-respaldo');">LAN vs respaldos</button>
+          </p>
+          <div id="settings-preimport-restore-wrap" class="settings-preimport-box" style="display:none;">
+            <p class="settings-preimport-label">Copia automática antes de importar todo</p>
+            <p class="settings-preimport-meta" id="settings-preimport-meta">—</p>
+            <button type="button" class="btn-settings-row" onclick="restorePreimportBackupPrompt();">Restaurar esa copia…</button>
+          </div>
+          <p class="settings-acc-hint settings-acc-hint--tight settings-acc-lead" data-i18n="settings.backupHint">Exporta o restaura pacientes, notas e indicaciones (JSON).</p>
+          <p class="settings-section-label">Exportar</p>
+          <div class="settings-card-stack">
+            <div class="settings-card">
+              <div class="settings-card__copy">
+                <p class="settings-card__title">Copia de seguridad completa</p>
+              </div>
+              <div class="settings-card__action">
+                <button type="button" class="btn-settings-row" onclick="exportDataBackup()">Exportar copia de seguridad…</button>
+              </div>
+            </div>
+            <div class="settings-card">
+              <div class="settings-card__copy">
+                <p class="settings-card__title">Paciente actual</p>
+              </div>
+              <div class="settings-card__action">
+                <button type="button" class="btn-settings-row" onclick="exportActivePatientBackup()">Exportar paciente actual…</button>
+              </div>
+            </div>
+            <div class="settings-card">
+              <div class="settings-card__copy">
+                <p class="settings-card__title">Varios pacientes</p>
+                <p class="settings-card__desc settings-acc-hint settings-acc-hint--tight">Elige del censo cuáles incluir en un solo JSON.</p>
+              </div>
+              <div class="settings-card__action">
+                <button type="button" class="btn-settings-row" onclick="closeSettingsDropdown(); openExportPatientsModal();">Exportar pacientes…</button>
+              </div>
+            </div>
+            <div class="settings-card">
+              <div class="settings-card__copy">
+                <p class="settings-card__title">Por rango</p>
+              </div>
+              <div class="settings-card__action">
+                <button type="button" class="btn-settings-row" onclick="exportRangeBackupPrompt()">Exportar por rango…</button>
+              </div>
+            </div>
+            <div class="settings-card">
+              <div class="settings-card__copy">
+                <p class="settings-card__title">Recuperar censo desde base</p>
+                <p class="settings-card__desc settings-acc-hint settings-acc-hint--tight">Lee pacientes guardados en SQLCipher (incluye caché LAN) aunque el sidebar esté vacío.</p>
+              </div>
+              <div class="settings-card__action">
+                <button type="button" class="btn-settings-row" onclick="exportRecoverCensusRangeJson()">Exportar censo recuperable…</button>
+              </div>
+            </div>
+            <div class="settings-card">
+              <div class="settings-card__copy">
+                <p class="settings-card__title">Bitácora</p>
+              </div>
+              <div class="settings-card__action">
+                <button type="button" class="btn-settings-row" onclick="exportAuditLog()">Exportar bitácora</button>
+              </div>
+            </div>
+          </div>
+          <p class="settings-section-label">Importar</p>
+          <div class="settings-card-stack">
+            <div class="settings-card">
+              <div class="settings-card__copy">
+                <p class="settings-card__title">Paciente</p>
+              </div>
+              <div class="settings-card__action">
+                <button type="button" class="btn-settings-row" onclick="triggerImportActivePatientBackup()">Importar paciente…</button>
+              </div>
+            </div>
+            <div class="settings-card">
+              <div class="settings-card__copy">
+                <p class="settings-card__title">Por rango</p>
+              </div>
+              <div class="settings-card__action">
+                <button type="button" class="btn-settings-row" onclick="triggerImportRangeBackup()">Importar rango…</button>
+              </div>
+            </div>
+            <div class="settings-card">
+              <div class="settings-card__copy">
+                <p class="settings-card__title">Copia de seguridad completa</p>
+              </div>
+              <div class="settings-card__action">
+                <button type="button" class="btn-settings-row" onclick="triggerImportBackup()">Importar copia de seguridad…</button>
+              </div>
+            </div>
+          </div>
+          <p class="settings-section-label">Auto-respaldo</p>
+          <div class="settings-card-stack">
+            <div class="settings-card">
+              <div class="settings-card__copy">
+                <p class="settings-card__title">Frecuencia</p>
+              </div>
+              <div class="settings-card__action">
+                <select id="auto-backup-frequency" class="settings-acc-select settings-acc-select--compact" onchange="updateAutoBackupSettingsFromUi()">
+                  <option value="off">Desactivado</option>
+                  <option value="daily">Diario</option>
+                  <option value="weekly">Semanal</option>
+                </select>
+              </div>
+            </div>
+            <div class="settings-card">
+              <div class="settings-card__copy">
+                <p class="settings-card__title">Retención</p>
+              </div>
+              <div class="settings-card__action">
+                <select id="auto-backup-retention" class="settings-acc-select settings-acc-select--compact" onchange="updateAutoBackupSettingsFromUi()">
+                  <option value="3">3 archivos</option>
+                  <option value="7">7 archivos</option>
+                  <option value="14">14 archivos</option>
+                </select>
+              </div>
+            </div>
+            <div class="settings-card">
+              <div class="settings-card__copy">
+                <p class="settings-card__title">Generar auto-respaldo ahora</p>
+              </div>
+              <div class="settings-card__action">
+                <button type="button" class="btn-settings-row" onclick="runAutoBackupNow()">Generar auto-respaldo ahora</button>
+              </div>
+            </div>
+          </div>
+          <div class="settings-card-stack">
+            <div class="settings-card">
+              <div class="settings-card__copy">
+                <p class="settings-card__title">Deshacer última operación</p>
+                <p class="settings-card__desc settings-acc-hint settings-acc-hint--tight">El deshacer usa una copia en memoria del momento previo. Si algo salió mal, usa <strong>Restaurar esa copia</strong> (si existe) o un archivo <strong>R-plus-auto-respaldo-</strong> / <strong>R-plus-respaldo-</strong> desde Descargas.</p>
+              </div>
+              <div class="settings-card__action">
+                <button type="button" class="btn-settings-row" id="btn-undo-op" onclick="undoLastOperation()" disabled title="Revierte la última operación destructiva (eliminar paciente o importar).">Deshacer última operación</button>
+              </div>
+            </div>
+          </div>
+          <hr class="profile-divider settings-acc-divider">
+          <p class="settings-section-label">Catálogo medicamentos</p>
+          <p class="settings-acc-hint settings-acc-hint--tight settings-acc-lead">Personaliza <strong>acentos</strong> y <strong>palabras clave</strong> para SOAP (<code>soapTokens</code>) y el perfil farmacoterapéutico (<code>somePharm.tokens</code>: ANTIBIÓTICO, SEDANTE, etc.). Sin datos de pacientes. Si no importas nada, R+ usa reglas integradas.</p>
+          <div class="settings-card-stack">
+            <div class="settings-card">
+              <div class="settings-card__copy">
+                <p class="settings-card__title">Exportar catálogo</p>
+              </div>
+              <div class="settings-card__action">
+                <button type="button" class="btn-settings-row" onclick="exportMedCatalogBundle()">Exportar catálogo…</button>
+              </div>
+            </div>
+            <div class="settings-card">
+              <div class="settings-card__copy">
+                <p class="settings-card__title">Importar catálogo</p>
+              </div>
+              <div class="settings-card__action">
+                <button type="button" class="btn-settings-row" onclick="triggerImportMedCatalog()">Importar catálogo…</button>
+              </div>
+            </div>
+          </div>
+          <hr class="profile-divider settings-acc-divider">
+          <p class="settings-section-label">Sync entre equipos</p>
+          <p class="settings-acc-hint settings-acc-hint--tight settings-acc-lead">Paquetes JSON (opcionalmente cifrados con passphrase).</p>
+          <div class="settings-card-stack">
+            <div class="settings-card">
+              <div class="settings-card__copy">
+                <p class="settings-card__title">Exportar paquete sync</p>
+              </div>
+              <div class="settings-card__action">
+                <button type="button" class="btn-settings-row" onclick="exportSyncBundlePrompt()">Exportar paquete sync…</button>
+              </div>
+            </div>
+            <div class="settings-card">
+              <div class="settings-card__copy">
+                <p class="settings-card__title">Importar paquete sync</p>
+              </div>
+              <div class="settings-card__action">
+                <button type="button" class="btn-settings-row" onclick="triggerImportSyncBundle()">Importar paquete sync…</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <details class="settings-accordion" id="settings-accordion-performance">
+        <summary>Rendimiento</summary>
+        <div class="settings-acc-body">
+          <div class="settings-card-stack">
+            <div class="settings-card settings-card--toggle">
+              <div class="settings-card__copy">
+                <p class="settings-card__title">Aceleración por hardware (GPU)</p>
+                <p class="settings-card__desc settings-acc-hint settings-acc-hint--tight" id="settings-hardware-acceleration-hint">Puede suavizar gráficas y animaciones. Usa más RAM en reposo. Requiere reiniciar R+.</p>
+              </div>
+              <label class="settings-card__action settings-card__toggle-label" for="settings-hardware-acceleration">
+                <input type="checkbox" class="settings-card__toggle" id="settings-hardware-acceleration" onchange="onHardwareAccelerationChange(this.checked)">
+              </label>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <details class="settings-accordion">
+        <summary>Plantillas y flujo de trabajo</summary>
+        <div class="settings-acc-body">
+          <div class="settings-card-stack">
+            <div class="settings-card">
+              <div class="settings-card__copy">
+                <p class="settings-card__title">Administrar plantillas</p>
+                <p class="settings-card__desc settings-acc-hint settings-acc-hint--tight">Combinaciones de dieta, cuidados y medicamentos aplicables desde Indicaciones.</p>
+              </div>
+              <div class="settings-card__action">
+                <button type="button" class="btn-settings-row" onclick="openExtraTemplatesManager()">Administrar plantillas…</button>
+              </div>
+            </div>
+            <div class="settings-card">
+              <div class="settings-card__copy">
+                <p class="settings-card__title">Búsqueda unificada</p>
+                <p class="settings-card__desc settings-acc-hint settings-acc-hint--tight">Pacientes, notas e indicaciones.</p>
+              </div>
+              <div class="settings-card__action">
+                <button type="button" class="btn-settings-row" onclick="openUnifiedSearch()">Abrir búsqueda…</button>
+              </div>
+            </div>
+            <div class="settings-card">
+              <div class="settings-card__copy">
+                <p class="settings-card__title">Modo enfoque</p>
+                <p class="settings-card__desc settings-acc-hint settings-acc-hint--tight">Oculta barra lateral y ajustes. Atajo: F6.</p>
+              </div>
+              <div class="settings-card__action">
+                <button type="button" class="btn-settings-row" id="btn-toggle-focus-mode" onclick="toggleFocusMode()">Activar modo enfoque</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <details class="settings-accordion" id="settings-accordion-db-security" style="display:none;">
+        <summary>Base de datos cifrada</summary>
+        <div class="settings-acc-body">
+          <p class="settings-acc-hint">Datos clínicos en SQLCipher en el perfil local de Electron. Bloquea cuando dejes el equipo desatendido.</p>
+          <div class="settings-card-stack">
+            <div class="settings-card">
+              <div class="settings-card__copy">
+                <p class="settings-card__title">Bloquear base de datos ahora</p>
+              </div>
+              <div class="settings-card__action">
+                <button type="button" class="btn-settings-row" onclick="lockClinicalDatabaseNow()">Bloquear base de datos ahora…</button>
+              </div>
+            </div>
+            <div class="settings-card">
+              <div class="settings-card__copy">
+                <p class="settings-card__title">Verificar bitácora forense</p>
+              </div>
+              <div class="settings-card__action">
+                <button type="button" class="btn-settings-row" onclick="verifyForensicAuditChain()">Verificar bitácora forense</button>
+              </div>
+            </div>
+            <div class="settings-card">
+              <div class="settings-card__copy">
+                <p class="settings-card__title">Exportar respaldo JSON (base cifrada)</p>
+                <p class="settings-card__desc settings-acc-hint settings-acc-hint--tight" id="settings-db-backup-warn">Los respaldos JSON contienen información clínica en texto plano. Guárdalos solo en medios autorizados y cifrados.</p>
+              </div>
+              <div class="settings-card__action">
+                <button type="button" class="btn-settings-row" onclick="exportClinicalDbBackupJson()">Exportar respaldo JSON (base cifrada)…</button>
+              </div>
+            </div>
+            <div class="settings-card">
+              <div class="settings-card__copy">
+                <p class="settings-card__title">Exportar copia .db cifrada</p>
+              </div>
+              <div class="settings-card__action">
+                <button type="button" class="btn-settings-row" onclick="exportClinicalDbBackupDb()">Exportar copia .db cifrada…</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <details class="settings-accordion settings-accordion--full">
+        <summary>Privacidad y datos en este equipo</summary>
+        <div class="settings-acc-body">
+          <p class="settings-acc-hint settings-acc-hint--tight settings-acc-lead">Bloqueo con PIN (hash local SHA-256, no se envía a servidores).</p>
+          <div class="settings-card-stack">
+            <div class="settings-card">
+              <div class="settings-card__copy">
+                <p class="settings-card__title">Bloqueo por inactividad</p>
+              </div>
+              <div class="settings-card__action">
+                <select id="settings-idle-lock" class="settings-acc-select settings-acc-select--compact" onchange="onIdleLockSelectChange(this.value)">
+                  <option value="0">Desactivado</option>
+                  <option value="5">5 minutos</option>
+                  <option value="10">10 minutos</option>
+                  <option value="30">30 minutos</option>
+                </select>
+              </div>
+            </div>
+            <div class="settings-card">
+              <div class="settings-card__copy">
+                <p class="settings-card__title">Cambiar PIN de bloqueo</p>
+              </div>
+              <div class="settings-card__action">
+                <button type="button" class="btn-settings-row" onclick="changeIdleLockPin()">Cambiar PIN de bloqueo…</button>
+              </div>
+            </div>
+            <div class="settings-card">
+              <div class="settings-card__copy">
+                <p class="settings-card__title">Carpeta de datos de R+</p>
+                <p class="settings-card__desc settings-acc-path settings-acc-path--sm" id="settings-user-data-path" title="">—</p>
+              </div>
+              <div class="settings-card__action">
+                <button type="button" class="btn-settings-row" id="settings-open-userdata-btn" onclick="openUserDataFolderFromSettings()">Abrir carpeta…</button>
+              </div>
+            </div>
+          </div>
+          <p class="settings-acc-hint settings-acc-hint--tight settings-acc-lead">R+ guarda pacientes, notas, labs, recetas y ajustes en el perfil local de Electron. Los <code>.docx</code> van a la carpeta de salida que elijas.</p>
+          <p id="settings-userdata-web-hint" class="settings-acc-hint settings-acc-hint--tight settings-acc-inline-help">Solo disponible en la aplicación de escritorio.</p>
+          <p class="settings-acc-danger-label">Acciones irreversibles</p>
+          <p class="settings-acc-hint settings-acc-hint--danger settings-acc-lead">Borrar datos o restablecer LAN no se pueden deshacer desde Deshacer.</p>
+          <div class="settings-card-stack">
+            <div class="settings-card">
+              <div class="settings-card__copy">
+                <p class="settings-card__title">Borrar datos de R+ en este equipo</p>
+              </div>
+              <div class="settings-card__action">
+                <button type="button" class="btn-settings-row btn-settings-row--danger" onclick="openWipeDataModal()">Borrar datos de R+ en este equipo…</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <details class="settings-accordion settings-accordion--full" id="settings-accordion-updates">
+        <summary data-i18n="settings.application">Aplicación y actualizaciones</summary>
+        <div class="settings-acc-body">
+          <div class="settings-card-stack">
+            <div class="settings-card">
+              <div class="settings-card__copy">
+                <p class="settings-card__title" data-i18n="settings.version">Versión</p>
+                <p class="settings-card__desc settings-acc-version" id="settings-app-version">—</p>
+              </div>
+            </div>
+            <div class="settings-card">
+              <div class="settings-card__copy">
+                <p class="settings-card__title">Canal de actualizaciones</p>
+                <p class="settings-card__desc settings-acc-hint settings-acc-hint--tight"><strong>Pre-releases</strong> incluye borradores de GitHub; <strong>Estable</strong> solo versiones oficiales.</p>
+              </div>
+              <div class="settings-card__action">
+                <select id="rpc-update-channel" class="settings-acc-select settings-acc-select--compact" onchange="setUpdateChannel(this.value)">
+                  <option value="estable">Estable</option>
+                  <option value="beta">Pre-releases</option>
+                </select>
+              </div>
+            </div>
+            <div class="settings-card settings-card--toggle">
+              <div class="settings-card__copy">
+                <p class="settings-card__title">Enviar telemetría anónima de actualización</p>
+                <p class="settings-card__desc settings-acc-hint settings-acc-hint--tight">Solo versión, resultado y plataforma. <strong>No</strong> incluye datos clínicos. Desactivado por defecto.</p>
+              </div>
+              <label class="settings-card__action settings-card__toggle-label" for="rpc-update-telemetry-toggle">
+                <input type="checkbox" class="settings-card__toggle" id="rpc-update-telemetry-toggle" onchange="setUpdateTelemetryEnabled(this.checked)">
+              </label>
+            </div>
+            <div class="settings-card">
+              <div class="settings-card__copy">
+                <p class="settings-card__title">Buscar actualizaciones</p>
+                <p class="settings-card__desc settings-acc-hint settings-acc-hint--tight">Si ves «native binding» o una build defectuosa, usa <strong>Reinstalar versión actual</strong> (vuelve a bajar el instalador del mismo número desde GitHub) o <strong>Restaurar versión estable</strong> más abajo.</p>
+              </div>
+              <div class="settings-card__action">
+                <button type="button" class="btn-settings-row" id="settings-check-updates-btn" onclick="checkForAppUpdates()" data-i18n="settings.checkUpdates">Buscar actualizaciones…</button>
+              </div>
+            </div>
+            <div class="settings-card">
+              <div class="settings-card__copy">
+                <p class="settings-card__title">Reinstalar versión actual</p>
+              </div>
+              <div class="settings-card__action">
+                <button type="button" class="btn-settings-row" id="settings-repair-update-btn" onclick="checkForRepairUpdate()">Reinstalar versión actual…</button>
+              </div>
+            </div>
+          </div>
+          <div id="settings-downgrade-section" class="settings-downgrade-section" hidden>
+            <p class="settings-section-label">Restaurar versión estable</p>
+            <p id="settings-downgrade-hint" class="settings-acc-hint settings-acc-hint--tight settings-acc-lead">Si la versión actual falla, restaura una estable anterior. Tus datos locales no se borran.</p>
+            <div class="settings-card-stack">
+              <div class="settings-card">
+                <div class="settings-card__copy">
+                  <p class="settings-card__title">Versión estable</p>
+                </div>
+                <div class="settings-card__action">
+                  <select id="rpc-stable-downgrade-select" class="settings-acc-select settings-acc-select--compact"></select>
+                </div>
+              </div>
+              <div class="settings-card">
+                <div class="settings-card__copy">
+                  <p class="settings-card__title">Restaurar versión seleccionada</p>
+                </div>
+                <div class="settings-card__action">
+                  <button type="button" class="btn-settings-row" id="settings-downgrade-stable-btn">Restaurar versión seleccionada…</button>
+                </div>
+              </div>
+              <div class="settings-card">
+                <div class="settings-card__copy">
+                  <p class="settings-card__title">Abrir instalador en GitHub</p>
+                </div>
+                <div class="settings-card__action">
+                  <button type="button" class="btn-settings-row" id="settings-downgrade-github-btn">Abrir instalador en GitHub…</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p id="settings-updates-hint" class="settings-acc-hint settings-acc-hint--tight settings-acc-inline-help">También en el menú de la aplicación (Mac: R+, Windows: Aplicación).</p>
+        </div>
+      </details>
+      </div>
+
+      <label for="backup-file-input" class="visually-hidden">Archivo de copia de seguridad JSON</label>
+      <input type="file" id="backup-file-input" accept="application/json,.json" aria-label="Archivo de copia de seguridad JSON" style="display:none" onchange="onBackupFileChosen(event)">
+      <label for="patient-backup-file-input" class="visually-hidden">Archivo JSON de respaldo de paciente</label>
+      <input type="file" id="patient-backup-file-input" accept="application/json,.json" aria-label="Archivo JSON de respaldo de paciente" style="display:none" onchange="onPatientBackupFileChosen(event)">
+      <label for="range-backup-file-input" class="visually-hidden">Archivo JSON de respaldo por rango</label>
+      <input type="file" id="range-backup-file-input" accept="application/json,.json" aria-label="Archivo JSON de respaldo por rango" style="display:none" onchange="onRangeBackupFileChosen(event)">
+      <label for="sync-bundle-file-input" class="visually-hidden">Archivo JSON de paquete de sincronización</label>
+      <input type="file" id="sync-bundle-file-input" accept="application/json,.json" aria-label="Archivo JSON de paquete de sincronización" style="display:none" onchange="onSyncBundleFileChosen(event)">
+      <label for="med-catalog-file-input" class="visually-hidden">Archivo JSON de catálogo de medicamentos SOAP</label>
+      <input type="file" id="med-catalog-file-input" accept="application/json,.json" aria-label="Archivo JSON de catálogo de medicamentos SOAP" style="display:none" onchange="onMedCatalogFileChosen(event)">
+    </div>
+  </div>
+</div>

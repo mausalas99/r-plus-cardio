@@ -1,0 +1,89 @@
+{
+  "nodes": [
+    {
+      "id": "file:public/styles/sidebar.css",
+      "type": "file",
+      "name": "sidebar.css",
+      "filePath": "public/styles/sidebar.css",
+      "summary": "Patient sidebar cards, bed-first layout, and quick actions.",
+      "tags": [
+        "markup",
+        "css",
+        "design-system",
+        "ui"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:public/styles/skeleton.css",
+      "type": "file",
+      "name": "skeleton.css",
+      "filePath": "public/styles/skeleton.css",
+      "summary": "Loading skeleton placeholders for async panel hydration.",
+      "tags": [
+        "markup",
+        "css",
+        "design-system",
+        "ui"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:public/styles/soft-ui.css",
+      "type": "file",
+      "name": "soft-ui.css",
+      "filePath": "public/styles/soft-ui.css",
+      "summary": "Soft UI elevation shadows and card surface treatments.",
+      "tags": [
+        "markup",
+        "css",
+        "design-system",
+        "ui"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:public/styles/vpo.css",
+      "type": "file",
+      "name": "vpo.css",
+      "filePath": "public/styles/vpo.css",
+      "summary": "VPO documentation panel typography and section layout.",
+      "tags": [
+        "markup",
+        "css",
+        "design-system",
+        "ui"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:public/styles/workbench-surfaces.css",
+      "type": "file",
+      "name": "workbench-surfaces.css",
+      "filePath": "public/styles/workbench-surfaces.css",
+      "summary": "Workbench surface tokens bridging tokens.css to feature panels.",
+      "tags": [
+        "markup",
+        "css",
+        "design-system",
+        "ui"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:public/styles/workbench-tokens.css",
+      "type": "file",
+      "name": "workbench-tokens.css",
+      "filePath": "public/styles/workbench-tokens.css",
+      "summary": "Supplemental workbench-scoped CSS custom properties.",
+      "tags": [
+        "markup",
+        "css",
+        "design-system",
+        "ui"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": []
+}

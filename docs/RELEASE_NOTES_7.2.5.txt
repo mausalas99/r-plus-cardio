@@ -1,0 +1,29 @@
+R+ 7.2.5 (persistencia LAN anfitrión)
+=========================================
+
+Fecha: 2026-06-08
+
+## Resumen
+
+Parche sobre 7.2.4: el anfitrión LAN deja de reescribir un JSON monolítico en cada guardado. Los commits son **asíncronos y coalescidos**, los bundles van por **sala**, los labs viven en **sidecars** y —con SQLCipher desbloqueado— las tablas normalizadas **v15** sustituyen el blob único. Esquema SQLCipher **v15** (migración automática al desbloquear).
+
+## Nuevo / mejorado
+
+- **Commits coalescidos** — `CommitBarrier` agrupa escrituras (~150 ms); las rutas HTTP tipadas esperan `awaitDurableCommit` antes de responder.
+- **Shards JSON por sala** — `meta.json` + `rooms/<id>/bundle.json`; migración automática desde `lan-squad-host-state.json`.
+- **Sidecars de laboratorio** — `labHistory` fuera del bundle; upserts de labs ya no re-serializan el turno completo.
+- **SQL v15 en anfitrión** — Tablas `lan_host_meta`, `lan_room_bundles`, `lan_bundle_entries`, `lan_lab_sets` cuando la DB clínica está desbloqueada; fallback JSON si está bloqueada.
+- **Rollback de soporte** — Variable de entorno `R_PLUS_LAN_PERSIST_MODE` (`legacy` | `json` | `sql` | `sql-monolith`) para forzar generación anterior sin recompilar.
+
+## Operación en guardia
+
+Parche sobre **7.2.4**: instala en **todas** las estaciones del turno el mismo día. El anfitrión debe actualizar primero (migra estado en disco al arrancar). Esquema SQLCipher **v15** — las Macs cliente con DB bloqueada no migran hasta desbloquear; el host LAN sigue con shards JSON en ese caso.
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v7.2.5
+
+- Mac: `R+-7.2.5-arm64.dmg`, `R+-7.2.5-x64.dmg` (y zip para auto-update).
+- Windows: `R+-7.2.5-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye write-release-yml.js).

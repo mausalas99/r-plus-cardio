@@ -1,0 +1,584 @@
+{
+  "nodes": [
+    {
+      "id": "file:scripts/ensure-sqlcipher-electron-native.mjs",
+      "type": "file",
+      "name": "ensure-sqlcipher-electron-native.mjs",
+      "filePath": "scripts/ensure-sqlcipher-electron-native.mjs",
+      "summary": "Ensures SQLCipher native binary matches Electron ABI during prestart and release builds.",
+      "tags": [
+        "build-system",
+        "native",
+        "sqlcipher",
+        "electron"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:scripts/ensure-sqlcipher-electron-native.mjs:runScript",
+      "type": "function",
+      "name": "runScript",
+      "filePath": "scripts/ensure-sqlcipher-electron-native.mjs",
+      "lineRange": [
+        12,
+        23
+      ],
+      "summary": "Exported function runScript in ensure-sqlcipher-electron-native.mjs.",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:scripts/fetch-argon2-darwin-x64.mjs",
+      "type": "file",
+      "name": "fetch-argon2-darwin-x64.mjs",
+      "filePath": "scripts/fetch-argon2-darwin-x64.mjs",
+      "summary": "fetch-argon2-darwin-x64.mjs (javascript, 72 non-empty lines).",
+      "tags": [
+        "module",
+        "module",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:scripts/fetch-argon2-win.mjs",
+      "type": "file",
+      "name": "fetch-argon2-win.mjs",
+      "filePath": "scripts/fetch-argon2-win.mjs",
+      "summary": "fetch-argon2-win.mjs (javascript, 59 non-empty lines).",
+      "tags": [
+        "module",
+        "module",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:scripts/fetch-sqlite-node.mjs",
+      "type": "file",
+      "name": "fetch-sqlite-node.mjs",
+      "filePath": "scripts/fetch-sqlite-node.mjs",
+      "summary": "Module with 5 function(s) and 0 class(es); 0 internal project import(s).",
+      "tags": [
+        "module",
+        "exports",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:scripts/fetch-sqlite-node.mjs:probeInstalledNative",
+      "type": "function",
+      "name": "probeInstalledNative",
+      "filePath": "scripts/fetch-sqlite-node.mjs",
+      "lineRange": [
+        28,
+        45
+      ],
+      "summary": "Exported function probeInstalledNative in fetch-sqlite-node.mjs.",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:scripts/fetch-sqlite-node.mjs:main",
+      "type": "function",
+      "name": "main",
+      "filePath": "scripts/fetch-sqlite-node.mjs",
+      "lineRange": [
+        67,
+        100
+      ],
+      "summary": "Exported function main in fetch-sqlite-node.mjs.",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:scripts/fetch-sqlite-win.mjs",
+      "type": "file",
+      "name": "fetch-sqlite-win.mjs",
+      "filePath": "scripts/fetch-sqlite-win.mjs",
+      "summary": "Module with 6 function(s) and 0 class(es); 0 internal project import(s).",
+      "tags": [
+        "module",
+        "exports",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:scripts/fetch-sqlite-win.mjs:assertPeBinary",
+      "type": "function",
+      "name": "assertPeBinary",
+      "filePath": "scripts/fetch-sqlite-win.mjs",
+      "lineRange": [
+        40,
+        51
+      ],
+      "summary": "Exported function assertPeBinary in fetch-sqlite-win.mjs.",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:scripts/fetch-sqlite-win.mjs:main",
+      "type": "function",
+      "name": "main",
+      "filePath": "scripts/fetch-sqlite-win.mjs",
+      "lineRange": [
+        60,
+        100
+      ],
+      "summary": "Exported function main in fetch-sqlite-win.mjs.",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:scripts/fetch-sqlite-win.test.mjs",
+      "type": "file",
+      "name": "fetch-sqlite-win.test.mjs",
+      "filePath": "scripts/fetch-sqlite-win.test.mjs",
+      "summary": "Unit/integration tests exercising fetch-sqlite-win.mjs behavior under Electron node test runner.",
+      "tags": [
+        "test",
+        "validation",
+        "electron"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:scripts/fixtures/build-ui/broken.src.html",
+      "type": "file",
+      "name": "broken.src.html",
+      "filePath": "scripts/fixtures/build-ui/broken.src.html",
+      "summary": "broken.src.html (html, 1 non-empty lines).",
+      "tags": [
+        "module",
+        "module",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:scripts/fixtures/build-ui/index.src.html",
+      "type": "file",
+      "name": "index.src.html",
+      "filePath": "scripts/fixtures/build-ui/index.src.html",
+      "summary": "index.src.html (html, 2 non-empty lines).",
+      "tags": [
+        "module",
+        "module",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:scripts/fixtures/build-ui/partials/body.html",
+      "type": "file",
+      "name": "body.html",
+      "filePath": "scripts/fixtures/build-ui/partials/body.html",
+      "summary": "body.html (html, 1 non-empty lines).",
+      "tags": [
+        "module",
+        "module",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:scripts/fixtures/build-ui/partials/head.html",
+      "type": "file",
+      "name": "head.html",
+      "filePath": "scripts/fixtures/build-ui/partials/head.html",
+      "summary": "head.html (html, 1 non-empty lines).",
+      "tags": [
+        "module",
+        "module",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:scripts/lib/git-release.js",
+      "type": "file",
+      "name": "git-release.js",
+      "filePath": "scripts/lib/git-release.js",
+      "summary": "Module with 6 function(s) and 0 class(es); 0 internal project import(s).",
+      "tags": [
+        "module",
+        "exports",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:scripts/lib/git-release.js:gitOutput",
+      "type": "function",
+      "name": "gitOutput",
+      "filePath": "scripts/lib/git-release.js",
+      "lineRange": [
+        6,
+        16
+      ],
+      "summary": "Exported function gitOutput in git-release.js.",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:scripts/lib/git-release.js:listWorkingTreeChanges",
+      "type": "function",
+      "name": "listWorkingTreeChanges",
+      "filePath": "scripts/lib/git-release.js",
+      "lineRange": [
+        27,
+        38
+      ],
+      "summary": "Exported function listWorkingTreeChanges in git-release.js.",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:scripts/lib/git-release.js:stageForRelease",
+      "type": "function",
+      "name": "stageForRelease",
+      "filePath": "scripts/lib/git-release.js",
+      "lineRange": [
+        53,
+        64
+      ],
+      "summary": "Exported function stageForRelease in git-release.js.",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:scripts/lib/test-manifest.mjs",
+      "type": "file",
+      "name": "test-manifest.mjs",
+      "filePath": "scripts/lib/test-manifest.mjs",
+      "summary": "Explicit npm test file manifest with drift guard preventing accidental full-suite file drops.",
+      "tags": [
+        "build-system",
+        "ci-cd",
+        "test",
+        "validation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:scripts/lib/test-manifest.mjs:listedTestFiles",
+      "type": "function",
+      "name": "listedTestFiles",
+      "filePath": "scripts/lib/test-manifest.mjs",
+      "lineRange": [
+        44,
+        53
+      ],
+      "summary": "Exported function listedTestFiles in test-manifest.mjs.",
+      "tags": [
+        "test",
+        "exports"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:scripts/lib/test-manifest.mjs:testFilesOnDisk",
+      "type": "function",
+      "name": "testFilesOnDisk",
+      "filePath": "scripts/lib/test-manifest.mjs",
+      "lineRange": [
+        62,
+        89
+      ],
+      "summary": "Exported function testFilesOnDisk in test-manifest.mjs.",
+      "tags": [
+        "test",
+        "exports"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:scripts/lib/test-manifest.test.mjs",
+      "type": "file",
+      "name": "test-manifest.test.mjs",
+      "filePath": "scripts/lib/test-manifest.test.mjs",
+      "summary": "Unit/integration tests exercising test-manifest.mjs behavior under Electron node test runner.",
+      "tags": [
+        "test",
+        "validation",
+        "electron"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:scripts/metrics/baseline.json",
+      "type": "config",
+      "name": "baseline.json",
+      "filePath": "scripts/metrics/baseline.json",
+      "summary": "Committed technical-debt baseline snapshot: complexity, length, duplication, and boot-graph scores per file.",
+      "tags": [
+        "configuration",
+        "metrics",
+        "technical-debt",
+        "ci-cd"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:scripts/metrics/check.test.mjs",
+      "type": "file",
+      "name": "check.test.mjs",
+      "filePath": "scripts/metrics/check.test.mjs",
+      "summary": "Unit/integration tests exercising check.mjs behavior under Electron node test runner.",
+      "tags": [
+        "test",
+        "validation",
+        "electron"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:scripts/metrics/README.md",
+      "type": "document",
+      "name": "README.md",
+      "filePath": "scripts/metrics/README.md",
+      "summary": "Project documentation covering metrics & technical debt for R+ clinical workbench.",
+      "tags": [
+        "documentation",
+        "development",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:scripts/patch-tour-state-refs.mjs",
+      "type": "file",
+      "name": "patch-tour-state-refs.mjs",
+      "filePath": "scripts/patch-tour-state-refs.mjs",
+      "summary": "patch-tour-state-refs.mjs (javascript, 38 non-empty lines).",
+      "tags": [
+        "module",
+        "module",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:scripts/probe-packaged-sqlcipher.cjs",
+      "type": "file",
+      "name": "probe-packaged-sqlcipher.cjs",
+      "filePath": "scripts/probe-packaged-sqlcipher.cjs",
+      "summary": "probe-packaged-sqlcipher.cjs (javascript, 31 non-empty lines).",
+      "tags": [
+        "module",
+        "module",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:scripts/run-with-electron-node.mjs",
+      "type": "file",
+      "name": "run-with-electron-node.mjs",
+      "filePath": "scripts/run-with-electron-node.mjs",
+      "summary": "run-with-electron-node.mjs (javascript, 28 non-empty lines).",
+      "tags": [
+        "module",
+        "module",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:scripts/split-clinical-teams-roster.mjs",
+      "type": "file",
+      "name": "split-clinical-teams-roster.mjs",
+      "filePath": "scripts/split-clinical-teams-roster.mjs",
+      "summary": "split-clinical-teams-roster.mjs (javascript, 161 non-empty lines).",
+      "tags": [
+        "module",
+        "module",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:scripts/split-clinical-teams.mjs",
+      "type": "file",
+      "name": "split-clinical-teams.mjs",
+      "filePath": "scripts/split-clinical-teams.mjs",
+      "summary": "Module with 3 function(s) and 0 class(es); 0 internal project import(s).",
+      "tags": [
+        "module",
+        "exports",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:scripts/split-platform.mjs",
+      "type": "file",
+      "name": "split-platform.mjs",
+      "filePath": "scripts/split-platform.mjs",
+      "summary": "Module with 1 function(s) and 0 class(es); 0 internal project import(s).",
+      "tags": [
+        "module",
+        "exports",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:scripts/split-tour-runtime-v2.mjs",
+      "type": "file",
+      "name": "split-tour-runtime-v2.mjs",
+      "filePath": "scripts/split-tour-runtime-v2.mjs",
+      "summary": "Module with 2 function(s) and 0 class(es); 0 internal project import(s).",
+      "tags": [
+        "module",
+        "exports",
+        "module"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:scripts/split-tour-runtime.mjs",
+      "type": "file",
+      "name": "split-tour-runtime.mjs",
+      "filePath": "scripts/split-tour-runtime.mjs",
+      "summary": "Module with 2 function(s) and 0 class(es); 0 internal project import(s).",
+      "tags": [
+        "module",
+        "exports",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:template_indicaciones.docx",
+      "type": "file",
+      "name": "template_indicaciones.docx",
+      "filePath": "template_indicaciones.docx",
+      "summary": "template_indicaciones.docx (docx, 344 non-empty lines).",
+      "tags": [
+        "module",
+        "module",
+        "module"
+      ],
+      "complexity": "complex"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:scripts/ensure-sqlcipher-electron-native.mjs",
+      "target": "function:scripts/ensure-sqlcipher-electron-native.mjs:runScript",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:scripts/fetch-sqlite-node.mjs",
+      "target": "function:scripts/fetch-sqlite-node.mjs:probeInstalledNative",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:scripts/fetch-sqlite-node.mjs",
+      "target": "function:scripts/fetch-sqlite-node.mjs:main",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:scripts/fetch-sqlite-win.mjs",
+      "target": "function:scripts/fetch-sqlite-win.mjs:assertPeBinary",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:scripts/fetch-sqlite-win.mjs",
+      "target": "function:scripts/fetch-sqlite-win.mjs:main",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:scripts/lib/git-release.js",
+      "target": "function:scripts/lib/git-release.js:gitOutput",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:scripts/lib/git-release.js",
+      "target": "function:scripts/lib/git-release.js:listWorkingTreeChanges",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:scripts/lib/git-release.js",
+      "target": "function:scripts/lib/git-release.js:stageForRelease",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:scripts/lib/test-manifest.mjs",
+      "target": "function:scripts/lib/test-manifest.mjs:listedTestFiles",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:scripts/lib/test-manifest.mjs",
+      "target": "function:scripts/lib/test-manifest.mjs:listedTestFiles",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:scripts/lib/test-manifest.mjs",
+      "target": "function:scripts/lib/test-manifest.mjs:testFilesOnDisk",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:scripts/lib/test-manifest.mjs",
+      "target": "function:scripts/lib/test-manifest.mjs:testFilesOnDisk",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:scripts/lib/test-manifest.test.mjs",
+      "target": "file:scripts/lib/test-manifest.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:scripts/lib/test-manifest.mjs",
+      "target": "file:scripts/lib/test-manifest.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "name": "rplus-equipos-worker",
+  "private": true,
+  "version": "1.0.0",
+  "description": "R+ equipos queue — Cloudflare Worker + D1 + R2",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "db:migrate:local": "wrangler d1 execute rplus-equipos --local --file=./schema/001-init.sql && wrangler d1 execute rplus-equipos --local --file=./schema/002-push.sql",
+    "db:migrate:remote": "wrangler d1 execute rplus-equipos --remote --file=./schema/001-init.sql && wrangler d1 execute rplus-equipos --remote --file=./schema/002-push.sql"
+  },
+  "devDependencies": {
+    "wrangler": "^4.14.0"
+  }
+}

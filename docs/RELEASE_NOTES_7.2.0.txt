@@ -1,0 +1,31 @@
+R+ 7.2.0 (Estabilización LAN en guardia)
+==========================================
+
+Fecha: 2026-06-08
+
+## Resumen
+
+Consolidación LAN para turno homogéneo: descubrimiento por huella (7.1.9), mDNS resiliente (7.1.10) y corrección al rotar el código del equipo sin perder el estado del anfitrión. Sin cambio de esquema SQLCipher (sigue v14).
+
+## Nuevo / mejorado
+
+- **Código del equipo sin borrar el host** — Si `lan-team-code.txt` cambia, R+ alinea `teamCodeHash` en disco y SQLCipher en lugar de fallar con `LAN_HOST_STATE_HASH_MISMATCH` o dejar datos huérfanos. Aplica al guardar código en ⇄ y al escribir bearer de invitado.
+- **mDNS resiliente** — Bonjour se detiene limpio cuando cae el Wi‑Fi o no hay interfaz LAN; reinicia al volver la red.
+- **Huella de anfitrión** — Registro unificado; roam por `clientId:startedAt` al cambiar de IP.
+- **Descubrimiento** — mDNS `_rplus._tcp`, beacon UDP y escaneo de subred.
+- **Transporte** — WS → SSE → polling HTTP en redes restrictivas.
+- **Diagnóstico ⇄** — Perfil de red, transporte, RTT, hosts en registro y rol en el informe.
+- **Heartbeats estables** — `livesync:hello` y `/health` no tiran el servidor si el store LAN está momentáneamente inconsistente.
+
+## Operación en guardia
+
+Parche sobre **7.1.10**: instala en **todas** las estaciones del turno el mismo día. Sin migración SQLCipher (esquema **v14**). Firewall: TCP **3738**, mDNS **5353**, UDP multicast **3739**. No mezclar versiones en el mismo turno.
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v7.2.0
+
+- Mac: `R+-7.2.0-arm64.dmg`, `R+-7.2.0-x64.dmg` (y zip para auto-update).
+- Windows: `R+-7.2.0-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye write-release-yml.js).

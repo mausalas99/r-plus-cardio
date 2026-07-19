@@ -1,0 +1,62 @@
+R+ 6.5.0 (Historia Clínica · expediente Sala · documentos nativos)
+================================================================
+
+Fecha: 2026-05-31
+
+## Resumen
+
+Versión centrada en **ingreso en Sala**: formulario institucional de **Historia Clínica** con lectura narrativa compilada, registro de **Eventualidades**, y expediente **Clínico** reorganizado (Historia → Estado actual → Eventualidades → Manejo). Los **.docx** de Nota, Indicaciones y Listado se generan en **Node** (sin subprocess Python). La **sala en vivo** usa versiones y fusión por entidad.
+
+## Nuevo / mejorado
+
+### Historia Clínica (modo Sala)
+
+- **Ubicación** — **Expediente → Clínico → Historia Clínica** (solo en **Sala**; no aparece en Interconsulta).
+- **Formulario en 3 pasos** — Identificación y motivo; antecedentes (APP con catálogo, AHF por familiar, APNP con tabaquismo/alcohol/toxicomanías, bloque de género y reproducción); padecimiento actual, datos negados e **IPAS** por sistemas con opción **Negado / Ninguno**.
+- **Vista Lectura** — Compila una historia coherente por secciones; **Copiar texto** al portapapeles con formato clínico.
+- **Laboratorio de ingreso** — Ancla creatinina/eTFG y estudios recientes desde el historial del paciente (ventana configurable en ajustes de HC).
+- **Sala en vivo** — La historia se sincroniza por paciente con el anfitrión LAN (misma sala ⇄).
+
+### Eventualidades (modo Sala)
+
+- **Ubicación** — **Expediente → Clínico → Eventualidades**, entre **Estado actual** y **Manejo**.
+- **Registro diario** — Entradas con fecha y texto libre; orden cronológico; persistencia por paciente y en respaldos.
+
+### Expediente Sala reorganizado
+
+- **Cuatro pestañas** sin cambio de nombre: Paciente, Clínico, Resultados, Salida.
+- **Clínico** agrupa: **Historia Clínica**, **Estado actual**, **Eventualidades** y **Manejo** (sub-barra de segmentos).
+- **Estado actual** ya no es pestaña superior; vive dentro de **Clínico** (mismo panel de monitoreo que en 6.4).
+
+### Documentos Word nativos
+
+- **Nota**, **Indicaciones** y **Listado de problemas** se generan con motor **JavaScript** (plantillas `.docx` + JSZip).
+- **Escritorio** — Guardado directo en la carpeta aprobada vía Electron; sin archivos temporales de PHI en el servidor.
+- **Navegador / móvil** — Descarga del binario como antes.
+- El instalador oficial **no requiere Python** para estos tres documentos.
+
+### Sala en vivo (LAN) — concurrencia
+
+- **Revisiones por entidad** — El anfitrión lleva `revision` y versiones por clave; desaparece el “último timestamp gana” ciego.
+- **Cola de escritura** — Persistencia serializada en el anfitrión con caché en memoria.
+- **Conflictos** — HTTP 409 con panel de diferencias clínicas y borrador local hasta resolver.
+- **Historia Clínica en host** — PUT en cola con validación de esquema anidado.
+
+### Onboarding (Aprender R+)
+
+- **Tutorial reorganizado** — Recorrido lab-first con hub **Aprender R+**, pausa/reanudación por capítulos y módulo Neo opcional. Clínico en orden **Historia → Estado actual → Eventualidades**; pasos **VPO**, **Receta HU** y **Agenda** (22 pasos). Demo **Estado actual** con monitoreo de hoy (turnos enfermería) y gráficas.
+
+## Regresión
+
+- Tests en `lib/historia-clinica/`, `lan-squad/`, `lib/doc-generators/`, `public/js/clinical-safety*.mjs`, `public/js/expediente-tabs.test.mjs`, `public/js/tour-targets.test.mjs`.
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v6.5.0
+
+- Mac: `R+-6.5.0-arm64.dmg`, `R+-6.5.0-x64.dmg` (y zip para auto-update).
+- Windows: `R+-6.5.0-x64.exe`.
+
+Tras el build local: `npm run build:ui` y `npm run build:mac` / `npm run build:win`.
+
+Publicar: `npm run release:publish` (completa highlights en `settings-help.mjs` antes de publicar).

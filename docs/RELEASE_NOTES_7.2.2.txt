@@ -1,0 +1,29 @@
+R+ 7.2.2 (LAN cliente y reconexión)
+=======================================
+
+Fecha: 2026-06-08
+
+## Resumen
+
+Parche sobre 7.2.1: corrige conexión de clientes LAN (bearer de invitado separado del código del host local), reconoce la dirección copiada del anfitrión al pegar en ⇄, mejora el descubrimiento por PIN y elimina el diálogo de confirmación al reconectar. Sin cambio de esquema SQLCipher (sigue v14).
+
+## Nuevo / mejorado
+
+- **Bearer de invitado separado** — El token del anfitrión remoto se guarda en `lan-guest-bearer.txt`; ya no sobrescribe `lan-team-code.txt` del servidor local (regresión 7.2.0). Auto-reparación si ambos archivos coincidían.
+- **Pegar dirección del anfitrión** — ⇄ reconoce `http://…:3738` (o `IP:3738`) en «Unirse con enlace»; opcionalmente PIN en la misma línea. Sin PIN, rellena la tarjeta **PIN del turno** y pide los 6 dígitos.
+- **PIN más rápido** — Antes del barrido /24: URLs ward, registro mDNS/UDP/heartbeat; clientes en rol remoto ya no prueban loopback (menos 401 en consola).
+- **Reconexión silenciosa** — Sin diálogo «¿Reconectar al anfitrión…?»; toast si hay anfitrión fijado distinto.
+- **Errores claros** — Distingue PIN incorrecto vs dirección inalcanzable al conectar con URL manual.
+
+## Operación en guardia
+
+Parche sobre **7.2.1**: instala en **todas** las estaciones del turno el mismo día. El anfitrión copia dirección + PIN desde ⇄; en otra VLAN el cliente pega ambos (o dirección y luego PIN en la tarjeta). Esquema SQLCipher **v14**.
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v7.2.2
+
+- Mac: `R+-7.2.2-arm64.dmg`, `R+-7.2.2-x64.dmg` (y zip para auto-update).
+- Windows: `R+-7.2.2-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye write-release-yml.js).

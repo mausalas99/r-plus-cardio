@@ -1,0 +1,28 @@
+R+ 7.1.5 (LAN reconexión + entregas huérfanas guardia)
+==========================================================
+
+Fecha: 2026-06-07
+
+## Resumen
+
+Parche sobre 7.1.4: deja de reintentar en bucle la búsqueda del anfitrión LAN cuando no hay respuesta, y en guardia muestra entregas activas cuyo expediente ya no está en el censo local.
+
+## Nuevo / mejorado
+
+- **⇄ Reconexión menos ruidosa** — Tras **5 intentos** fallidos de detectar anfitrión (PIN / escaneo), la búsqueda automática se **pausa**; el header muestra «desconectado» en lugar de «reconectando…». Reanuda al abrir ⇄, ingresar PIN, **Restablecer conexión al turno** o restablecer estado del host.
+- **Entregas huérfanas (guardia)** — Franja en el tablero para entregas activas sin fila en el censo local (borrado o solo en otra Mac): abrir expediente, eliminar en host o descartar localmente.
+- **Guardias resueltas en LAN** — Meta `lan_guardias_resolved` en clinical_ops para alinear entregas cerradas entre estaciones sin resurrectar pacientes.
+- **Host bundle** — Mejor preservación de roster clinical_ops al exportar desde SQLCipher.
+
+## Operación en guardia
+
+Parche sobre **7.1.4**: instala en **todas** las estaciones del turno. Si ⇄ queda en pausa, abre el panel o usa PIN del R4; no hace falta reiniciar R+.
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v7.1.5
+
+- Mac: `R+-7.1.5-arm64.dmg`, `R+-7.1.5-x64.dmg` (y zip para auto-update).
+- Windows: `R+-7.1.5-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye write-release-yml.js).

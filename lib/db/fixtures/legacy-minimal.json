@@ -1,0 +1,32 @@
+{
+  "teamCodeHash": "7f3a9c2e1b4d6085a2938471c5e6f0a9b8c7d6e5f4039281a0b9c8d7e6f5a4b3",
+  "lsSnapshot": {
+    "rpc-patients": "[{\"id\":\"p1\",\"nombre\":\"Ana\",\"registro\":\"R-1\"}]",
+    "rpc-notes": "{}",
+    "rpc-todos": "[]"
+  },
+  "hostStateObject": {
+    "version": 2,
+    "teamCodeHash": "7f3a9c2e1b4d6085a2938471c5e6f0a9b8c7d6e5f4039281a0b9c8d7e6f5a4b3",
+    "patients": [
+      {
+        "id": "p1",
+        "nombre": "Ana",
+        "registro": "R-1",
+        "version": 1
+      }
+    ],
+    "rooms": [
+      {
+        "id": "room-1",
+        "displayName": "UCI",
+        "version": 1
+      }
+    ],
+    "roomSyncBundles": {
+      "room-1": {
+        "entities": {}
+      }
+    }
+  }
+}

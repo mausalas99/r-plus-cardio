@@ -1,0 +1,78 @@
+---
+description: Technical debt score, ratchet budgets, and no-regression policy for refactors
+alwaysApply: true
+---
+
+# Technical Debt Accounting
+
+Quantify structural debt with static analysis. **Total debt score must not increase** on any change set unless the user explicitly approves a baseline refresh.
+
+Canonical data: `scripts/metrics/baseline.json` (committed). Generated output: `scripts/metrics/report.json` (gitignored).
+
+---
+
+## Debt score
+
+```
+totalScore = complexityOverage + lengthOverage + duplicationDebt + importSmellDebt + bootGraphDebt
+```
+
+| Component | Weight | Source |
+|-----------|--------|--------|
+| **complexityOverage** | 10 × points over budget per function | ESLint `complexity` (cyclomatic) |
+| **lengthOverage** | 2 × ceil(overageLines / 10) per function or file | ESLint `max-lines-per-function`, file line count |
+| **duplicationDebt** | 1 × ceil(duplicatedTokens / 50) | `jscpd` clones ≥ 8 lines |
+| **importSmellDebt** | 50 per violation | `dependency-cruiser` (cycles, forbidden cross-domain, hub abuse) |
+| **bootGraphDebt** | 25 per new static import | New eager import in `app.js`, `app-runtimes.mjs`, or `app-shell.mjs` of a cold feature without `import()` |
+
+`baseline.json` stores `totalScore`, per-file breakdown (`byFile`), and `bootGraph` import list hash. `report.json` mirrors the same shape after `npm run metrics` (when implemented).
+
+---
+
+## Budgets (ratchet)
+
+**Tier 1 — new or touched files** (`public/js/**/*.mjs`, `lib/**/*.{mjs,js}`, `lan-squad/**/*.js`):
+
+- Cyclomatic complexity per function: **≤ 15**
+- Function length: **≤ 80** lines
+- File length: **≤ 600** lines
+- No new duplication clones ≥ 8 lines
+- No new forbidden imports (see domain map in modularization spec when published)
+
+**Tier 2 — legacy untouched files:** warn-only until edited; then Tier 1 applies to that file.
+
+---
+
+## Hard gates
+
+1. **No debt regression:** `report.totalScore` must be **≤** `baseline.totalScore` (allow −1 tolerance only for rounding).
+2. **Ratchet:** any file in the diff must satisfy Tier 1 budgets after the change.
+3. **Perf coupling:** splitting code must not add static boot imports; extract to existing modules or use dynamic `import()`. Bundle size growth > 2% vs baseline metafile requires explicit user approval.
+
+---
+
+## Agent workflow
+
+Before claiming a refactor is done:
+
+1. Run `npm run metrics` if the script exists; otherwise note that metrics are pending and manually check Tier 1 on touched files.
+2. Ensure the change does not increase `totalScore` or boot-graph debt.
+3. Prefer **paying down** debt in files you touch (lower complexity, dedupe, smaller functions) over drive-by refactors elsewhere.
+4. Do **not** edit `baseline.json` to make CI pass. Baseline updates only when the user requests a **baseline refresh** commit after intentional debt reduction.
+
+---
+
+## Baseline refresh (human-initiated)
+
+When the user asks to refresh the baseline:
+
+1. Run full metrics, verify tests and perf budgets.
+2. Replace `scripts/metrics/baseline.json` with the new snapshot and a short `changelog` entry (date + net score delta).
+3. Commit message: `chore(metrics): refresh debt baseline (<old> → <new>)`.
+
+---
+
+## Related rules
+
+- `project-context.mdc` — update changelog on architectural/module changes.
+- `context-token-management.mdc` — prefer new focused modules over growing god-files.

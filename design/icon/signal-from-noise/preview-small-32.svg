@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 1024 1024" fill="none">
+  <title>R+ icon 32px simplification</title>
+  <defs>
+    <linearGradient id="field-gradient" x1="512" y1="0" x2="512" y2="1024" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#4a52e8"/>
+      <stop offset="100%" stop-color="#3b42c9"/>
+    </linearGradient>
+    <clipPath id="squircle">
+      <rect x="0" y="0" width="1024" height="1024" rx="226" ry="226"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#squircle)">
+    <rect width="1024" height="1024" fill="url(#field-gradient)"/>
+    <g fill="#ffffff">
+      <rect x="160" y="280" width="520" height="56" rx="28"/>
+      <rect x="240" y="380" width="640" height="56" rx="28"/>
+    </g>
+    <path d="M 220 680 L 804 600" fill="none" stroke="#ffffff" stroke-width="88" stroke-linecap="round"/>
+  </g>
+</svg>

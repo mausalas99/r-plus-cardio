@@ -1,0 +1,23 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 2,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "template_listado.docx",
+      "language": "docx",
+      "fileCategory": "code",
+      "totalLines": 298,
+      "nonEmptyLines": 292,
+      "metrics": {}
+    },
+    {
+      "path": "template.docx",
+      "language": "docx",
+      "fileCategory": "code",
+      "totalLines": 294,
+      "nonEmptyLines": 291,
+      "metrics": {}
+    }
+  ]
+}

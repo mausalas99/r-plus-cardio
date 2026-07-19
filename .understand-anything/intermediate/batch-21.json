@@ -1,0 +1,2360 @@
+{
+  "nodes": [
+    {
+      "id": "file:lib/db/lan-db-bridge.cjs",
+      "type": "file",
+      "name": "lan-db-bridge.cjs",
+      "filePath": "lib/db/lan-db-bridge.cjs",
+      "summary": "SQLCipher clinical database helpers and wiring in lan-db-bridge.cjs.",
+      "tags": [
+        "shared-logic",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:lib/doc-export-audit.js",
+      "type": "file",
+      "name": "doc-export-audit.js",
+      "filePath": "lib/doc-export-audit.js",
+      "summary": "clinical document export helpers and wiring in doc-export-audit.js.",
+      "tags": [
+        "shared-logic",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lib/doc-export-audit.js:logDocExport",
+      "type": "function",
+      "name": "logDocExport",
+      "filePath": "lib/doc-export-audit.js",
+      "lineRange": [
+        9,
+        20
+      ],
+      "summary": "log doc export supporting clinical document export.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:lib/doc-export-http.js",
+      "type": "file",
+      "name": "doc-export-http.js",
+      "filePath": "lib/doc-export-http.js",
+      "summary": "clinical document export helpers and wiring in doc-export-http.js.",
+      "tags": [
+        "shared-logic",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:lib/doc-export-http.js:sendDocxBuffer",
+      "type": "function",
+      "name": "sendDocxBuffer",
+      "filePath": "lib/doc-export-http.js",
+      "lineRange": [
+        8,
+        33
+      ],
+      "summary": "send docx buffer supporting clinical document export.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lib/doc-export-http.js:sendPdfBuffer",
+      "type": "function",
+      "name": "sendPdfBuffer",
+      "filePath": "lib/doc-export-http.js",
+      "lineRange": [
+        35,
+        54
+      ],
+      "summary": "send pdf buffer supporting clinical document export.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:lib/doc-export-service.js",
+      "type": "file",
+      "name": "doc-export-service.js",
+      "filePath": "lib/doc-export-service.js",
+      "summary": "clinical document export helpers and wiring in doc-export-service.js.",
+      "tags": [
+        "shared-logic",
+        "utility",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:lib/doc-export-service.js:resolveExportDir",
+      "type": "function",
+      "name": "resolveExportDir",
+      "filePath": "lib/doc-export-service.js",
+      "lineRange": [
+        27,
+        43
+      ],
+      "summary": "resolve export dir supporting clinical document export.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lib/doc-export-service.js:exportListadoDocx",
+      "type": "function",
+      "name": "exportListadoDocx",
+      "filePath": "lib/doc-export-service.js",
+      "lineRange": [
+        59,
+        74
+      ],
+      "summary": "export listado docx supporting clinical document export.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lib/doc-export-service.js:exportRecetaHuPdf",
+      "type": "function",
+      "name": "exportRecetaHuPdf",
+      "filePath": "lib/doc-export-service.js",
+      "lineRange": [
+        85,
+        95
+      ],
+      "summary": "export receta hu pdf supporting clinical document export.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:lib/doc-generators/indicaciones.js",
+      "type": "file",
+      "name": "indicaciones.js",
+      "filePath": "lib/doc-generators/indicaciones.js",
+      "summary": "clinical document export helpers and wiring in indicaciones.js.",
+      "tags": [
+        "shared-logic",
+        "utility",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:lib/doc-generators/indicaciones.js:mkListP",
+      "type": "function",
+      "name": "mkListP",
+      "filePath": "lib/doc-generators/indicaciones.js",
+      "lineRange": [
+        30,
+        39
+      ],
+      "summary": "mk list p supporting clinical document export.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lib/doc-generators/indicaciones.js:sectionXml",
+      "type": "function",
+      "name": "sectionXml",
+      "filePath": "lib/doc-generators/indicaciones.js",
+      "lineRange": [
+        41,
+        52
+      ],
+      "summary": "section xml supporting clinical document export.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lib/doc-generators/indicaciones.js:cellR1c0",
+      "type": "function",
+      "name": "cellR1c0",
+      "filePath": "lib/doc-generators/indicaciones.js",
+      "lineRange": [
+        72,
+        85
+      ],
+      "summary": "cell r1c0 supporting clinical document export.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lib/doc-generators/indicaciones.js:cellR1c1",
+      "type": "function",
+      "name": "cellR1c1",
+      "filePath": "lib/doc-generators/indicaciones.js",
+      "lineRange": [
+        87,
+        117
+      ],
+      "summary": "cell r1c1 supporting clinical document export.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lib/doc-generators/indicaciones.js:generateIndicacionesBuffer",
+      "type": "function",
+      "name": "generateIndicacionesBuffer",
+      "filePath": "lib/doc-generators/indicaciones.js",
+      "lineRange": [
+        147,
+        206
+      ],
+      "summary": "generate indicaciones buffer supporting clinical document export.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:lib/doc-generators/indicaciones.test.js",
+      "type": "file",
+      "name": "indicaciones.test.js",
+      "filePath": "lib/doc-generators/indicaciones.test.js",
+      "summary": "Tests for indicaciones.js covering clinical document export.",
+      "tags": [
+        "test",
+        "shared-logic",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:lib/doc-generators/listado.js",
+      "type": "file",
+      "name": "listado.js",
+      "filePath": "lib/doc-generators/listado.js",
+      "summary": "clinical document export helpers and wiring in listado.js.",
+      "tags": [
+        "shared-logic",
+        "utility",
+        "module"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:lib/doc-generators/listado.js:fmtFecha",
+      "type": "function",
+      "name": "fmtFecha",
+      "filePath": "lib/doc-generators/listado.js",
+      "lineRange": [
+        25,
+        34
+      ],
+      "summary": "fmt fecha supporting clinical document export.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lib/doc-generators/listado.js:bestBreakInWindow",
+      "type": "function",
+      "name": "bestBreakInWindow",
+      "filePath": "lib/doc-generators/listado.js",
+      "lineRange": [
+        50,
+        60
+      ],
+      "summary": "best break in window supporting clinical document export.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lib/doc-generators/listado.js:splitLongCellText",
+      "type": "function",
+      "name": "splitLongCellText",
+      "filePath": "lib/doc-generators/listado.js",
+      "lineRange": [
+        62,
+        87
+      ],
+      "summary": "split long cell text supporting clinical document export.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lib/doc-generators/listado.js:mkListContinuationPara",
+      "type": "function",
+      "name": "mkListContinuationPara",
+      "filePath": "lib/doc-generators/listado.js",
+      "lineRange": [
+        89,
+        101
+      ],
+      "summary": "mk list continuation para supporting clinical document export.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lib/doc-generators/listado.js:mkListPara",
+      "type": "function",
+      "name": "mkListPara",
+      "filePath": "lib/doc-generators/listado.js",
+      "lineRange": [
+        103,
+        126
+      ],
+      "summary": "mk list para supporting clinical document export.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lib/doc-generators/listado.js:textToParagraphs",
+      "type": "function",
+      "name": "textToParagraphs",
+      "filePath": "lib/doc-generators/listado.js",
+      "lineRange": [
+        128,
+        167
+      ],
+      "summary": "text to paragraphs supporting clinical document export.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lib/doc-generators/listado.js:buildProblemRow",
+      "type": "function",
+      "name": "buildProblemRow",
+      "filePath": "lib/doc-generators/listado.js",
+      "lineRange": [
+        181,
+        210
+      ],
+      "summary": "build problem row supporting clinical document export.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lib/doc-generators/listado.js:generateListadoBuffer",
+      "type": "function",
+      "name": "generateListadoBuffer",
+      "filePath": "lib/doc-generators/listado.js",
+      "lineRange": [
+        212,
+        329
+      ],
+      "summary": "generate listado buffer supporting clinical document export.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:lib/doc-generators/listado.test.js",
+      "type": "file",
+      "name": "listado.test.js",
+      "filePath": "lib/doc-generators/listado.test.js",
+      "summary": "Tests for listado.js covering clinical document export.",
+      "tags": [
+        "test",
+        "shared-logic",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:lib/doc-generators/listado.test.js:cellTexts",
+      "type": "function",
+      "name": "cellTexts",
+      "filePath": "lib/doc-generators/listado.test.js",
+      "lineRange": [
+        23,
+        38
+      ],
+      "summary": "cell texts supporting clinical document export.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lib/doc-generators/listado.test.js:problemRows",
+      "type": "function",
+      "name": "problemRows",
+      "filePath": "lib/doc-generators/listado.test.js",
+      "lineRange": [
+        45,
+        58
+      ],
+      "summary": "problem rows supporting clinical document export.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lib/doc-generators/listado.test.js:problemRowElements",
+      "type": "function",
+      "name": "problemRowElements",
+      "filePath": "lib/doc-generators/listado.test.js",
+      "lineRange": [
+        60,
+        73
+      ],
+      "summary": "problem row elements supporting clinical document export.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:lib/doc-generators/note.js",
+      "type": "file",
+      "name": "note.js",
+      "filePath": "lib/doc-generators/note.js",
+      "summary": "clinical document export helpers and wiring in note.js.",
+      "tags": [
+        "shared-logic",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:lib/doc-generators/note.js:normalizeStringList",
+      "type": "function",
+      "name": "normalizeStringList",
+      "filePath": "lib/doc-generators/note.js",
+      "lineRange": [
+        71,
+        82
+      ],
+      "summary": "normalize string list supporting clinical document export.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lib/doc-generators/note.js:generateNoteBuffer",
+      "type": "function",
+      "name": "generateNoteBuffer",
+      "filePath": "lib/doc-generators/note.js",
+      "lineRange": [
+        84,
+        226
+      ],
+      "summary": "generate note buffer supporting clinical document export.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:lib/doc-generators/note.test.js",
+      "type": "file",
+      "name": "note.test.js",
+      "filePath": "lib/doc-generators/note.test.js",
+      "summary": "Tests for note.js covering clinical document export.",
+      "tags": [
+        "test",
+        "shared-logic",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:lib/doc-generators/shared.js",
+      "type": "file",
+      "name": "shared.js",
+      "filePath": "lib/doc-generators/shared.js",
+      "summary": "clinical document export helpers and wiring in shared.js.",
+      "tags": [
+        "shared-logic",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:lib/doc-generators/shared.js:loadDocxTemplate",
+      "type": "function",
+      "name": "loadDocxTemplate",
+      "filePath": "lib/doc-generators/shared.js",
+      "lineRange": [
+        40,
+        50
+      ],
+      "summary": "load docx template supporting clinical document export.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:lib/doc-generators/shared.test.js",
+      "type": "file",
+      "name": "shared.test.js",
+      "filePath": "lib/doc-generators/shared.test.js",
+      "summary": "Tests for shared.js covering clinical document export.",
+      "tags": [
+        "test",
+        "shared-logic",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:lib/historia-clinica/storage.js",
+      "type": "file",
+      "name": "storage.js",
+      "filePath": "lib/historia-clinica/storage.js",
+      "summary": "historia clínica (clinical history) helpers and wiring in storage.js.",
+      "tags": [
+        "historia-clinica",
+        "shared-logic",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lib/historia-clinica/storage.js:writeHistoriaClinicaArchive",
+      "type": "function",
+      "name": "writeHistoriaClinicaArchive",
+      "filePath": "lib/historia-clinica/storage.js",
+      "lineRange": [
+        23,
+        38
+      ],
+      "summary": "write historia clinica archive supporting historia clínica (clinical history).",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:lib/interno/interno-router.js",
+      "type": "file",
+      "name": "interno-router.js",
+      "filePath": "lib/interno/interno-router.js",
+      "summary": "Shared javascript module (5 functions, 0 exports) for the R+ workbench.",
+      "tags": [
+        "shared-logic",
+        "module"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:lib/interno/interno-router.js:esm",
+      "type": "function",
+      "name": "esm",
+      "filePath": "lib/interno/interno-router.js",
+      "lineRange": [
+        9,
+        30
+      ],
+      "summary": "Lazy ESM imports (Node test + server).",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lib/interno/interno-router.js:createInternoRouter",
+      "type": "function",
+      "name": "createInternoRouter",
+      "filePath": "lib/interno/interno-router.js",
+      "lineRange": [
+        57,
+        295
+      ],
+      "summary": "store: { getState: () => { patients: object[] }, upsertPatient: (p: object, v: number) => object }, getDb: () => import('better-sqlite3').Database | null, broadcastSync?: (name: string, obj: object) =.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:lib/interno/interno-router.js:attachInternoWs",
+      "type": "function",
+      "name": "attachInternoWs",
+      "filePath": "lib/interno/interno-router.js",
+      "lineRange": [
+        298,
+        366
+      ],
+      "summary": "Internal attach interno ws in interno-router.js.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:lib/output-dir-policy.js",
+      "type": "file",
+      "name": "output-dir-policy.js",
+      "filePath": "lib/output-dir-policy.js",
+      "summary": "Shared javascript module (4 functions, 0 exports) for the R+ workbench.",
+      "tags": [
+        "shared-logic",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:lib/output-dir-policy.js:readApprovedOutputDir",
+      "type": "function",
+      "name": "readApprovedOutputDir",
+      "filePath": "lib/output-dir-policy.js",
+      "lineRange": [
+        8,
+        19
+      ],
+      "summary": "Internal read approved output dir in output-dir-policy.js.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lib/output-dir-policy.js:writeApprovedOutputDir",
+      "type": "function",
+      "name": "writeApprovedOutputDir",
+      "filePath": "lib/output-dir-policy.js",
+      "lineRange": [
+        21,
+        30
+      ],
+      "summary": "Internal write approved output dir in output-dir-policy.js.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lib/output-dir-policy.js:resolveAllowedOutputDir",
+      "type": "function",
+      "name": "resolveAllowedOutputDir",
+      "filePath": "lib/output-dir-policy.js",
+      "lineRange": [
+        42,
+        89
+      ],
+      "summary": "Resolves a server-side export directory to an allowed, writable path.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:lib/output-dir-policy.test.js",
+      "type": "file",
+      "name": "output-dir-policy.test.js",
+      "filePath": "lib/output-dir-policy.test.js",
+      "summary": "Tests for output-dir-policy.js covering unit tests.",
+      "tags": [
+        "test",
+        "shared-logic",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:lib/perf-config.js",
+      "type": "file",
+      "name": "perf-config.js",
+      "filePath": "lib/perf-config.js",
+      "summary": "Config de rendimiento persistida en userData, leída ANTES de app.whenReady().",
+      "tags": [
+        "shared-logic",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:lib/perf-config.test.js",
+      "type": "file",
+      "name": "perf-config.test.js",
+      "filePath": "lib/perf-config.test.js",
+      "summary": "Tests for perf-config.js covering unit tests.",
+      "tags": [
+        "test",
+        "shared-logic",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:lib/server-http-security.js",
+      "type": "file",
+      "name": "server-http-security.js",
+      "filePath": "lib/server-http-security.js",
+      "summary": "Shared javascript module (7 functions, 0 exports) for the R+ workbench.",
+      "tags": [
+        "shared-logic",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:lib/server-http-security.js:createLanTokenVerifier",
+      "type": "function",
+      "name": "createLanTokenVerifier",
+      "filePath": "lib/server-http-security.js",
+      "lineRange": [
+        24,
+        34
+      ],
+      "summary": "Internal create lan token verifier in server-http-security.js.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lib/server-http-security.js:createDocumentExportAuthMiddleware",
+      "type": "function",
+      "name": "createDocumentExportAuthMiddleware",
+      "filePath": "lib/server-http-security.js",
+      "lineRange": [
+        40,
+        51
+      ],
+      "summary": "Document generation must come from the Electron shell (loopback) or an authenticated LAN client.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lib/server-http-security.js:shouldSkipGlobalRateLimit",
+      "type": "function",
+      "name": "shouldSkipGlobalRateLimit",
+      "filePath": "lib/server-http-security.js",
+      "lineRange": [
+        69,
+        78
+      ],
+      "summary": "Ward LAN discovery issues many GET /ping per client; host loopback shares one IP bucket. Bearer-protected /api/lan and /api/interno use dedicated limiters where needed.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:lib/server-http-security.test.js",
+      "type": "file",
+      "name": "server-http-security.test.js",
+      "filePath": "lib/server-http-security.test.js",
+      "summary": "Tests for server-http-security.js covering unit tests.",
+      "tags": [
+        "test",
+        "shared-logic",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:lib/window-open-policy.cjs",
+      "type": "file",
+      "name": "window-open-policy.cjs",
+      "filePath": "lib/window-open-policy.cjs",
+      "summary": "Shared javascript module (3 functions, 0 exports) for the R+ workbench.",
+      "tags": [
+        "shared-logic",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lib/window-open-policy.cjs:isPrivateLanHost",
+      "type": "function",
+      "name": "isPrivateLanHost",
+      "filePath": "lib/window-open-policy.cjs",
+      "lineRange": [
+        8,
+        22
+      ],
+      "summary": "Electron window.open / shell.openExternal allowlist (audit M1). Mirrors open-external IPC in main.js.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lib/window-open-policy.cjs:isAllowedExternalHost",
+      "type": "function",
+      "name": "isAllowedExternalHost",
+      "filePath": "lib/window-open-policy.cjs",
+      "lineRange": [
+        24,
+        34
+      ],
+      "summary": "Internal is allowed external host in window-open-policy.cjs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lib/window-open-policy.cjs:isAllowedExternalUrl",
+      "type": "function",
+      "name": "isAllowedExternalUrl",
+      "filePath": "lib/window-open-policy.cjs",
+      "lineRange": [
+        36,
+        46
+      ],
+      "summary": "Internal is allowed external url in window-open-policy.cjs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:lib/window-open-policy.test.mjs",
+      "type": "file",
+      "name": "window-open-policy.test.mjs",
+      "filePath": "lib/window-open-policy.test.mjs",
+      "summary": "Tests for window-open-policy.mjs covering unit tests.",
+      "tags": [
+        "test",
+        "shared-logic",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:main-lan-boot.test.mjs",
+      "type": "file",
+      "name": "main-lan-boot.test.mjs",
+      "filePath": "main-lan-boot.test.mjs",
+      "summary": "Static checks for BN-01 main-process boot: parallel unlock + startLanServer before window.",
+      "tags": [
+        "test",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:main.js",
+      "type": "file",
+      "name": "main.js",
+      "filePath": "main.js",
+      "summary": "Dev-only: Electron CSP warning (unsafe-eval from bundled renderer); packaged builds omit it.",
+      "tags": [
+        "entry-point",
+        "utility",
+        "module"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:main.js:beginReinstallCurrentVersion",
+      "type": "function",
+      "name": "beginReinstallCurrentVersion",
+      "filePath": "main.js",
+      "lineRange": [
+        89,
+        114
+      ],
+      "summary": "Re-descarga e instala el tag de release de la versión instalada (mismo semver en latest.yml).",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:main.js:resetUpdaterFeedToDefault",
+      "type": "function",
+      "name": "resetUpdaterFeedToDefault",
+      "filePath": "main.js",
+      "lineRange": [
+        126,
+        137
+      ],
+      "summary": "Internal reset updater feed to default in main.js.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:main.js:beginDowngradeToVersion",
+      "type": "function",
+      "name": "beginDowngradeToVersion",
+      "filePath": "main.js",
+      "lineRange": [
+        139,
+        152
+      ],
+      "summary": "Internal begin downgrade to version in main.js.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:main.js:sendDowngradeFailedFromSession",
+      "type": "function",
+      "name": "sendDowngradeFailedFromSession",
+      "filePath": "main.js",
+      "lineRange": [
+        154,
+        172
+      ],
+      "summary": "Internal send downgrade failed from session in main.js.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:main.js:serializeReleaseNotes",
+      "type": "function",
+      "name": "serializeReleaseNotes",
+      "filePath": "main.js",
+      "lineRange": [
+        180,
+        192
+      ],
+      "summary": "Internal serialize release notes in main.js.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:main.js:createWindow",
+      "type": "function",
+      "name": "createWindow",
+      "filePath": "main.js",
+      "lineRange": [
+        194,
+        266
+      ],
+      "summary": "Internal create window in main.js.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:main.js:scheduleUpdateCheck",
+      "type": "function",
+      "name": "scheduleUpdateCheck",
+      "filePath": "main.js",
+      "lineRange": [
+        381,
+        390
+      ],
+      "summary": "Internal schedule update check in main.js.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:main.js:ensureLanMdnsClientId",
+      "type": "function",
+      "name": "ensureLanMdnsClientId",
+      "filePath": "main.js",
+      "lineRange": [
+        672,
+        683
+      ],
+      "summary": "Internal ensure lan mdns client id in main.js.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:main.js:startLanMdnsIfHosting",
+      "type": "function",
+      "name": "startLanMdnsIfHosting",
+      "filePath": "main.js",
+      "lineRange": [
+        685,
+        710
+      ],
+      "summary": "Internal start lan mdns if hosting in main.js.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:main.js:startUdpBeaconIfHosting",
+      "type": "function",
+      "name": "startUdpBeaconIfHosting",
+      "filePath": "main.js",
+      "lineRange": [
+        712,
+        730
+      ],
+      "summary": "Internal start udp beacon if hosting in main.js.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:main.js:webContentsMenuAction",
+      "type": "function",
+      "name": "webContentsMenuAction",
+      "filePath": "main.js",
+      "lineRange": [
+        921,
+        932
+      ],
+      "summary": "Avoid menu `role:` handlers — they call webContents.getFocusedWebContents() and can crash if no window yet.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:main.js:buildMenu",
+      "type": "function",
+      "name": "buildMenu",
+      "filePath": "main.js",
+      "lineRange": [
+        934,
+        988
+      ],
+      "summary": "Internal build menu in main.js.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:main.js:unlockClinicalDbAtStartup",
+      "type": "function",
+      "name": "unlockClinicalDbAtStartup",
+      "filePath": "main.js",
+      "lineRange": [
+        994,
+        1009
+      ],
+      "summary": "Internal unlock clinical db at startup in main.js.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:scripts/lan-virtual-peer.mjs",
+      "type": "file",
+      "name": "lan-virtual-peer.mjs",
+      "filePath": "scripts/lan-virtual-peer.mjs",
+      "summary": "Shared javascript module (10 functions, 1 exports) for the R+ workbench.",
+      "tags": [
+        "exports",
+        "utility",
+        "module"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:scripts/lan-virtual-peer.mjs:parseArgs",
+      "type": "function",
+      "name": "parseArgs",
+      "filePath": "scripts/lan-virtual-peer.mjs",
+      "lineRange": [
+        19,
+        51
+      ],
+      "summary": "Internal parse args in lan-virtual-peer.mjs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:scripts/lan-virtual-peer.mjs:printHelp",
+      "type": "function",
+      "name": "printHelp",
+      "filePath": "scripts/lan-virtual-peer.mjs",
+      "lineRange": [
+        53,
+        74
+      ],
+      "summary": "Internal print help in lan-virtual-peer.mjs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:scripts/lan-virtual-peer.mjs:defaultHostUserDataCandidates",
+      "type": "function",
+      "name": "defaultHostUserDataCandidates",
+      "filePath": "scripts/lan-virtual-peer.mjs",
+      "lineRange": [
+        76,
+        87
+      ],
+      "summary": "Internal default host user data candidates in lan-virtual-peer.mjs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:scripts/lan-virtual-peer.mjs:readTeamCodeFromUserData",
+      "type": "function",
+      "name": "readTeamCodeFromUserData",
+      "filePath": "scripts/lan-virtual-peer.mjs",
+      "lineRange": [
+        89,
+        100
+      ],
+      "summary": "Internal read team code from user data in lan-virtual-peer.mjs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:scripts/lan-virtual-peer.mjs:lanFetch",
+      "type": "function",
+      "name": "lanFetch",
+      "filePath": "scripts/lan-virtual-peer.mjs",
+      "lineRange": [
+        106,
+        123
+      ],
+      "summary": "Internal lan fetch in lan-virtual-peer.mjs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:scripts/lan-virtual-peer.mjs:buildPeerSnapshot",
+      "type": "function",
+      "name": "buildPeerSnapshot",
+      "filePath": "scripts/lan-virtual-peer.mjs",
+      "lineRange": [
+        133,
+        151
+      ],
+      "summary": "Internal build peer snapshot in lan-virtual-peer.mjs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:scripts/lan-virtual-peer.mjs:runDeltaSmoke",
+      "type": "function",
+      "name": "runDeltaSmoke",
+      "filePath": "scripts/lan-virtual-peer.mjs",
+      "lineRange": [
+        153,
+        225
+      ],
+      "summary": "Internal run delta smoke in lan-virtual-peer.mjs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:scripts/lan-virtual-peer.mjs:runLanVirtualPeer",
+      "type": "function",
+      "name": "runLanVirtualPeer",
+      "filePath": "scripts/lan-virtual-peer.mjs",
+      "lineRange": [
+        227,
+        345
+      ],
+      "summary": "Exported run lan virtual peer used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:scripts/lan-virtual-peer.test.mjs",
+      "type": "file",
+      "name": "lan-virtual-peer.test.mjs",
+      "filePath": "scripts/lan-virtual-peer.test.mjs",
+      "summary": "Tests for lan-virtual-peer.mjs covering unit tests.",
+      "tags": [
+        "test",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:scripts/lan-virtual-peer.test.mjs:withEphemeralHost",
+      "type": "function",
+      "name": "withEphemeralHost",
+      "filePath": "scripts/lan-virtual-peer.test.mjs",
+      "lineRange": [
+        20,
+        61
+      ],
+      "summary": "with ephemeral host supporting unit tests.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:server.js",
+      "type": "file",
+      "name": "server.js",
+      "filePath": "server.js",
+      "summary": "LAN squad (host): escucha en el puerto de abajo en todas las interfaces; los clientes.",
+      "tags": [
+        "entry-point",
+        "utility",
+        "module"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:server.js:isPrivateIpv4Host",
+      "type": "function",
+      "name": "isPrivateIpv4Host",
+      "filePath": "server.js",
+      "lineRange": [
+        37,
+        47
+      ],
+      "summary": "Internal is private ipv4host in server.js.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server.js:isAllowedLanCorsOrigin",
+      "type": "function",
+      "name": "isAllowedLanCorsOrigin",
+      "filePath": "server.js",
+      "lineRange": [
+        50,
+        60
+      ],
+      "summary": "Permite fetch/WebSocket desde el mismo host (p. ej. iPad en http://192.168.x.x:3738).",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server.js:applyLanCorsHeaders",
+      "type": "function",
+      "name": "applyLanCorsHeaders",
+      "filePath": "server.js",
+      "lineRange": [
+        63,
+        77
+      ],
+      "summary": "CORS antes del rate limiter para que 429/OPTIONS sigan exponiendo Access-Control-Allow-Origin.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server.js:docExportHttpError",
+      "type": "function",
+      "name": "docExportHttpError",
+      "filePath": "server.js",
+      "lineRange": [
+        203,
+        214
+      ],
+      "summary": "Internal doc export http error in server.js.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server.js:portInUseProcessHint",
+      "type": "function",
+      "name": "portInUseProcessHint",
+      "filePath": "server.js",
+      "lineRange": [
+        277,
+        292
+      ],
+      "summary": "Internal port in use process hint in server.js.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server.js:listenErrorMessage",
+      "type": "function",
+      "name": "listenErrorMessage",
+      "filePath": "server.js",
+      "lineRange": [
+        422,
+        431
+      ],
+      "summary": "Internal listen error message in server.js.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server.js:startLanServer",
+      "type": "function",
+      "name": "startLanServer",
+      "filePath": "server.js",
+      "lineRange": [
+        433,
+        451
+      ],
+      "summary": "Internal start lan server in server.js.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:server.js:stopLanServer",
+      "type": "function",
+      "name": "stopLanServer",
+      "filePath": "server.js",
+      "lineRange": [
+        462,
+        497
+      ],
+      "summary": "Internal stop lan server in server.js.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:lib/doc-export-audit.js",
+      "target": "function:lib/doc-export-audit.js:logDocExport",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lib/doc-export-http.js",
+      "target": "file:lib/doc-export-audit.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lib/doc-export-http.js",
+      "target": "function:lib/doc-export-http.js:sendDocxBuffer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lib/doc-export-http.js",
+      "target": "function:lib/doc-export-http.js:sendPdfBuffer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lib/doc-export-service.js",
+      "target": "file:generate-censo.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lib/doc-export-service.js",
+      "target": "file:generate-receta-hu.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lib/doc-export-service.js",
+      "target": "file:lib/doc-generators/indicaciones.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lib/doc-export-service.js",
+      "target": "file:lib/doc-generators/listado.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lib/doc-export-service.js",
+      "target": "file:lib/doc-generators/note.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lib/doc-export-service.js",
+      "target": "file:lib/output-dir-policy.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lib/doc-export-service.js",
+      "target": "function:lib/doc-export-service.js:resolveExportDir",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lib/doc-export-service.js",
+      "target": "function:lib/doc-export-service.js:exportListadoDocx",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lib/doc-export-service.js",
+      "target": "function:lib/doc-export-service.js:exportRecetaHuPdf",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lib/doc-generators/indicaciones.js",
+      "target": "file:lib/doc-generators/shared.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lib/doc-generators/indicaciones.js",
+      "target": "function:lib/doc-generators/indicaciones.js:mkListP",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lib/doc-generators/indicaciones.js",
+      "target": "function:lib/doc-generators/indicaciones.js:sectionXml",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lib/doc-generators/indicaciones.js",
+      "target": "function:lib/doc-generators/indicaciones.js:cellR1c0",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lib/doc-generators/indicaciones.js",
+      "target": "function:lib/doc-generators/indicaciones.js:cellR1c1",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lib/doc-generators/indicaciones.js",
+      "target": "function:lib/doc-generators/indicaciones.js:generateIndicacionesBuffer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lib/doc-generators/indicaciones.test.js",
+      "target": "file:lib/doc-generators/indicaciones.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lib/doc-generators/indicaciones.js",
+      "target": "file:lib/doc-generators/indicaciones.test.js",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:lib/doc-generators/listado.js",
+      "target": "file:lib/doc-generators/shared.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lib/doc-generators/listado.js",
+      "target": "function:lib/doc-generators/listado.js:fmtFecha",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lib/doc-generators/listado.js",
+      "target": "function:lib/doc-generators/listado.js:bestBreakInWindow",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lib/doc-generators/listado.js",
+      "target": "function:lib/doc-generators/listado.js:splitLongCellText",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lib/doc-generators/listado.js",
+      "target": "function:lib/doc-generators/listado.js:mkListContinuationPara",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lib/doc-generators/listado.js",
+      "target": "function:lib/doc-generators/listado.js:mkListPara",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lib/doc-generators/listado.js",
+      "target": "function:lib/doc-generators/listado.js:textToParagraphs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lib/doc-generators/listado.js",
+      "target": "function:lib/doc-generators/listado.js:buildProblemRow",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lib/doc-generators/listado.js",
+      "target": "function:lib/doc-generators/listado.js:generateListadoBuffer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lib/doc-generators/listado.test.js",
+      "target": "file:lib/doc-generators/listado.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lib/doc-generators/listado.test.js",
+      "target": "function:lib/doc-generators/listado.test.js:cellTexts",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lib/doc-generators/listado.test.js",
+      "target": "function:lib/doc-generators/listado.test.js:problemRows",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lib/doc-generators/listado.test.js",
+      "target": "function:lib/doc-generators/listado.test.js:problemRowElements",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lib/doc-generators/listado.js",
+      "target": "file:lib/doc-generators/listado.test.js",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:lib/doc-generators/note.js",
+      "target": "file:lib/doc-generators/shared.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lib/doc-generators/note.js",
+      "target": "function:lib/doc-generators/note.js:normalizeStringList",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lib/doc-generators/note.js",
+      "target": "function:lib/doc-generators/note.js:generateNoteBuffer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lib/doc-generators/note.test.js",
+      "target": "file:lib/doc-generators/note.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lib/doc-generators/note.js",
+      "target": "file:lib/doc-generators/note.test.js",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:lib/doc-generators/shared.js",
+      "target": "function:lib/doc-generators/shared.js:loadDocxTemplate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lib/doc-generators/shared.test.js",
+      "target": "file:lib/doc-generators/shared.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lib/doc-generators/shared.js",
+      "target": "file:lib/doc-generators/shared.test.js",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:lib/historia-clinica/storage.js",
+      "target": "function:lib/historia-clinica/storage.js:writeHistoriaClinicaArchive",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lib/interno/interno-router.js",
+      "target": "function:lib/interno/interno-router.js:esm",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lib/interno/interno-router.js",
+      "target": "function:lib/interno/interno-router.js:createInternoRouter",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lib/interno/interno-router.js",
+      "target": "function:lib/interno/interno-router.js:attachInternoWs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lib/output-dir-policy.js",
+      "target": "function:lib/output-dir-policy.js:readApprovedOutputDir",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lib/output-dir-policy.js",
+      "target": "function:lib/output-dir-policy.js:writeApprovedOutputDir",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lib/output-dir-policy.js",
+      "target": "function:lib/output-dir-policy.js:resolveAllowedOutputDir",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lib/output-dir-policy.test.js",
+      "target": "file:lib/output-dir-policy.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lib/output-dir-policy.js",
+      "target": "file:lib/output-dir-policy.test.js",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:lib/perf-config.test.js",
+      "target": "file:lib/perf-config.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lib/perf-config.js",
+      "target": "file:lib/perf-config.test.js",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:lib/server-http-security.js",
+      "target": "file:lan-squad/team-code.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lib/server-http-security.js",
+      "target": "function:lib/server-http-security.js:createLanTokenVerifier",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lib/server-http-security.js",
+      "target": "function:lib/server-http-security.js:createDocumentExportAuthMiddleware",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lib/server-http-security.js",
+      "target": "function:lib/server-http-security.js:shouldSkipGlobalRateLimit",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lib/server-http-security.test.js",
+      "target": "file:lib/server-http-security.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lib/server-http-security.js",
+      "target": "file:lib/server-http-security.test.js",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:lib/window-open-policy.cjs",
+      "target": "function:lib/window-open-policy.cjs:isPrivateLanHost",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lib/window-open-policy.cjs",
+      "target": "function:lib/window-open-policy.cjs:isAllowedExternalHost",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lib/window-open-policy.cjs",
+      "target": "function:lib/window-open-policy.cjs:isAllowedExternalUrl",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lib/window-open-policy.test.mjs",
+      "target": "file:lib/window-open-policy.cjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lib/window-open-policy.cjs",
+      "target": "file:lib/window-open-policy.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:main-lan-boot.test.mjs",
+      "target": "file:server.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server.js",
+      "target": "file:main-lan-boot.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:main.js",
+      "target": "file:lan-squad/effective-team-code.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:main.js",
+      "target": "file:lan-squad/host-clinical-meta.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:main.js",
+      "target": "file:lan-squad/lan-candidate-url.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:main.js",
+      "target": "file:lan-squad/lan-mdns-service.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:main.js",
+      "target": "file:lan-squad/lan-network-watch.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:main.js",
+      "target": "file:lan-squad/lan-udp-beacon.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:main.js",
+      "target": "file:lan-squad/ward-host-registry.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:main.js",
+      "target": "file:lib/db/lan-db-bridge.cjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:main.js",
+      "target": "file:lib/doc-export-audit.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:main.js",
+      "target": "file:lib/doc-export-service.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:main.js",
+      "target": "file:lib/native-runtime-probe.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:main.js",
+      "target": "file:lib/output-dir-policy.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:main.js",
+      "target": "file:lib/perf-config.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:main.js",
+      "target": "file:lib/update-downgrade.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:main.js",
+      "target": "file:lib/window-open-policy.cjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:main.js",
+      "target": "file:server.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:main.js",
+      "target": "function:main.js:beginReinstallCurrentVersion",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:main.js",
+      "target": "function:main.js:resetUpdaterFeedToDefault",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:main.js",
+      "target": "function:main.js:beginDowngradeToVersion",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:main.js",
+      "target": "function:main.js:sendDowngradeFailedFromSession",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:main.js",
+      "target": "function:main.js:serializeReleaseNotes",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:main.js",
+      "target": "function:main.js:createWindow",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:main.js",
+      "target": "function:main.js:scheduleUpdateCheck",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:main.js",
+      "target": "function:main.js:ensureLanMdnsClientId",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:main.js",
+      "target": "function:main.js:startLanMdnsIfHosting",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:main.js",
+      "target": "function:main.js:startUdpBeaconIfHosting",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:main.js",
+      "target": "function:main.js:webContentsMenuAction",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:main.js",
+      "target": "function:main.js:buildMenu",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:main.js",
+      "target": "function:main.js:unlockClinicalDbAtStartup",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:scripts/lan-virtual-peer.mjs",
+      "target": "function:scripts/lan-virtual-peer.mjs:parseArgs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:scripts/lan-virtual-peer.mjs",
+      "target": "function:scripts/lan-virtual-peer.mjs:printHelp",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:scripts/lan-virtual-peer.mjs",
+      "target": "function:scripts/lan-virtual-peer.mjs:defaultHostUserDataCandidates",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:scripts/lan-virtual-peer.mjs",
+      "target": "function:scripts/lan-virtual-peer.mjs:readTeamCodeFromUserData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:scripts/lan-virtual-peer.mjs",
+      "target": "function:scripts/lan-virtual-peer.mjs:lanFetch",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:scripts/lan-virtual-peer.mjs",
+      "target": "function:scripts/lan-virtual-peer.mjs:buildPeerSnapshot",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:scripts/lan-virtual-peer.mjs",
+      "target": "function:scripts/lan-virtual-peer.mjs:runDeltaSmoke",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:scripts/lan-virtual-peer.mjs",
+      "target": "function:scripts/lan-virtual-peer.mjs:runLanVirtualPeer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:scripts/lan-virtual-peer.mjs",
+      "target": "function:scripts/lan-virtual-peer.mjs:runLanVirtualPeer",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:scripts/lan-virtual-peer.test.mjs",
+      "target": "file:lan-squad/conflict-resolver.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:scripts/lan-virtual-peer.test.mjs",
+      "target": "file:lan-squad/host-router.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:scripts/lan-virtual-peer.test.mjs",
+      "target": "file:lan-squad/host-store.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:scripts/lan-virtual-peer.test.mjs",
+      "target": "file:scripts/lan-virtual-peer.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:scripts/lan-virtual-peer.test.mjs",
+      "target": "function:scripts/lan-virtual-peer.test.mjs:withEphemeralHost",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lan-squad/conflict-resolver.js",
+      "target": "file:scripts/lan-virtual-peer.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:lan-squad/host-router.js",
+      "target": "file:scripts/lan-virtual-peer.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:lan-squad/host-store.js",
+      "target": "file:scripts/lan-virtual-peer.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:scripts/lan-virtual-peer.mjs",
+      "target": "file:scripts/lan-virtual-peer.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:server.js",
+      "target": "file:lan-squad/auth-router.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server.js",
+      "target": "file:lan-squad/client-identity-store.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server.js",
+      "target": "file:lan-squad/conflict-resolver.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server.js",
+      "target": "file:lan-squad/effective-team-code.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server.js",
+      "target": "file:lan-squad/host-clinical-meta.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server.js",
+      "target": "file:lan-squad/host-router.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server.js",
+      "target": "file:lan-squad/host-store.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server.js",
+      "target": "file:lan-squad/lan-candidate-url.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server.js",
+      "target": "file:lan-squad/lan-sse-hub.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server.js",
+      "target": "file:lan-squad/redact-secrets.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server.js",
+      "target": "file:lan-squad/shift-pin-store.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server.js",
+      "target": "file:lan-squad/ticket-store.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server.js",
+      "target": "file:lan-squad/ward-host-registry.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server.js",
+      "target": "file:lan-squad/ws-hub.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server.js",
+      "target": "file:lib/db/lan-db-bridge.cjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server.js",
+      "target": "file:lib/doc-export-audit.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server.js",
+      "target": "file:lib/doc-export-http.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server.js",
+      "target": "file:lib/doc-export-service.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server.js",
+      "target": "file:lib/interno/interno-router.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server.js",
+      "target": "file:lib/server-http-security.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:server.js",
+      "target": "function:server.js:isPrivateIpv4Host",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:server.js",
+      "target": "function:server.js:isAllowedLanCorsOrigin",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:server.js",
+      "target": "function:server.js:applyLanCorsHeaders",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:server.js",
+      "target": "function:server.js:docExportHttpError",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:server.js",
+      "target": "function:server.js:portInUseProcessHint",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:server.js",
+      "target": "function:server.js:listenErrorMessage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:server.js",
+      "target": "function:server.js:startLanServer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:server.js",
+      "target": "function:server.js:stopLanServer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    }
+  ]
+}

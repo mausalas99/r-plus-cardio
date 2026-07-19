@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob:; connect-src 'self' http: https: ws: wss:; manifest-src 'self'; base-uri 'self'; form-action 'self'">
+  <title>R+ Móvil</title>
+  <script>
+    (function () {
+      try {
+        localStorage.setItem('rpc-mobile-mode', '1');
+        var q = location.search ? location.search.slice(1) : '';
+        var params = new URLSearchParams(q);
+        var token = String(params.get('token') || params.get('code') || '').trim();
+        if (token) {
+          var hostUrl = String(location.origin || '').replace(/\/+$/, '');
+          var room = String(params.get('room') || '').trim();
+          var sala = String(params.get('sala') || '').trim();
+          if (/^sala-[12e]|torre-hu|area-a-pensionistas$/i.test(sala)) room = room || sala.toLowerCase();
+          else if (sala === 'Sala 1') room = room || 'sala-1';
+          else if (sala === 'Sala 2') room = room || 'sala-2';
+          else if (sala === 'Sala E') room = room || 'sala-e';
+          else if (sala === 'Torre HU') room = room || 'torre-hu';
+          else if (sala === 'Área A/Pensionistas') room = room || 'area-a-pensionistas';
+          var prev = {};
+          try {
+            prev = JSON.parse(localStorage.getItem('rpc-lan-config') || '{}') || {};
+          } catch (_ePrev) {}
+          var cfg = { hostUrl: hostUrl || prev.hostUrl || '', teamCode: token };
+          if (room) cfg.roomId = room;
+          if (sala) cfg.sala = sala;
+          var user = String(params.get('user') || '').trim();
+          var name = String(params.get('name') || '').trim();
+          var rank = String(params.get('rank') || '').trim();
+          if (user || name || rank || sala) {
+            cfg.sharer = { user: user, name: name, rank: rank, sala: sala || undefined };
+          }
+          if (cfg.hostUrl && cfg.teamCode) {
+            localStorage.setItem('rpc-lan-config', JSON.stringify(cfg));
+          }
+        }
+      } catch (_e) {}
+      params.set('rpc-mobile', '1');
+      location.replace('/?' + params.toString());
+    })();
+  </script>
+</head>
+<body>
+  <p style="font-family: system-ui, sans-serif; padding: 1rem;">Abriendo R+ Móvil…</p>
+</body>
+</html>

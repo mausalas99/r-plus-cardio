@@ -1,0 +1,3011 @@
+{
+  "nodes": [
+    {
+      "id": "file:public/js/fundamentos-progress.mjs",
+      "type": "file",
+      "name": "fundamentos-progress.mjs",
+      "filePath": "public/js/fundamentos-progress.mjs",
+      "summary": "fundamentos-progress.mjs — clinical module exporting FUNDAMENTOS_PROGRESS_LS_KEY, loadFundamentosProgress, saveFundamentosProgress, isFundamentosChapterId, ….",
+      "tags": [
+        "utility",
+        "exports"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/fundamentos-progress.mjs:loadFundamentosProgress",
+      "type": "function",
+      "name": "loadFundamentosProgress",
+      "filePath": "public/js/fundamentos-progress.mjs",
+      "lineRange": [
+        6,
+        18
+      ],
+      "summary": "Loads fundamentos progress for fundamentos-progress.mjs.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/fundamentos-progress.mjs:saveFundamentosProgress",
+      "type": "function",
+      "name": "saveFundamentosProgress",
+      "filePath": "public/js/fundamentos-progress.mjs",
+      "lineRange": [
+        20,
+        25
+      ],
+      "summary": "Saves fundamentos progress for fundamentos-progress.mjs.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/fundamentos-progress.mjs:isFundamentosChapterId",
+      "type": "function",
+      "name": "isFundamentosChapterId",
+      "filePath": "public/js/fundamentos-progress.mjs",
+      "lineRange": [
+        27,
+        29
+      ],
+      "summary": "Predicate is fundamentos chapter id used by fundamentos-progress.mjs.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/fundamentos-progress.mjs:fundamentosModuleCount",
+      "type": "function",
+      "name": "fundamentosModuleCount",
+      "filePath": "public/js/fundamentos-progress.mjs",
+      "lineRange": [
+        31,
+        33
+      ],
+      "summary": "fundamentosModuleCount implements guardia/clinical workflow logic in fundamentos-progress.mjs.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/fundamentos-progress.mjs:markFundamentosChapterComplete",
+      "type": "function",
+      "name": "markFundamentosChapterComplete",
+      "filePath": "public/js/fundamentos-progress.mjs",
+      "lineRange": [
+        35,
+        45
+      ],
+      "summary": "markFundamentosChapterComplete implements guardia/clinical workflow logic in fundamentos-progress.mjs.",
+      "tags": [
+        "utility",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/fundamentos-progress.test.mjs",
+      "type": "file",
+      "name": "fundamentos-progress.test.mjs",
+      "filePath": "public/js/fundamentos-progress.test.mjs",
+      "summary": "Unit tests for fundamentos-progress.mjs covering guardia/clinical behavior and edge cases.",
+      "tags": [
+        "test"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/gaso-extended.mjs",
+      "type": "file",
+      "name": "gaso-extended.mjs",
+      "filePath": "public/js/gaso-extended.mjs",
+      "summary": "gaso-extended.mjs — labs module exporting evaluateGasoExtended.",
+      "tags": [
+        "labs",
+        "exports"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:public/js/gaso-extended.mjs:buildPrimaryRationale_",
+      "type": "function",
+      "name": "buildPrimaryRationale_",
+      "filePath": "public/js/gaso-extended.mjs",
+      "lineRange": [
+        70,
+        172
+      ],
+      "summary": "Builds primary rationale  for gaso-extended.mjs.",
+      "tags": [
+        "labs",
+        "function"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:public/js/gaso-extended.mjs:evaluateGasoExtended",
+      "type": "function",
+      "name": "evaluateGasoExtended",
+      "filePath": "public/js/gaso-extended.mjs",
+      "lineRange": [
+        178,
+        460
+      ],
+      "summary": "evaluateGasoExtended implements guardia/clinical workflow logic in gaso-extended.mjs.",
+      "tags": [
+        "labs",
+        "function"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:public/js/gaso-extended.test.mjs",
+      "type": "file",
+      "name": "gaso-extended.test.mjs",
+      "filePath": "public/js/gaso-extended.test.mjs",
+      "summary": "Unit tests for gaso-extended.mjs covering guardia/clinical behavior and edge cases.",
+      "tags": [
+        "test",
+        "labs"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/guardia-v7-progress.mjs",
+      "type": "file",
+      "name": "guardia-v7-progress.mjs",
+      "filePath": "public/js/guardia-v7-progress.mjs",
+      "summary": "guardia-v7-progress.mjs — guardia module exporting GUARDIA_V7_PROGRESS_LS_KEY, loadGuardiaV7Progress, saveGuardiaV7Progress, isGuardiaV7TrackComplete, ….",
+      "tags": [
+        "guardia",
+        "entrega",
+        "exports"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/guardia-v7-progress.mjs:loadGuardiaV7Progress",
+      "type": "function",
+      "name": "loadGuardiaV7Progress",
+      "filePath": "public/js/guardia-v7-progress.mjs",
+      "lineRange": [
+        6,
+        19
+      ],
+      "summary": "Loads guardia v7progress for guardia-v7-progress.mjs.",
+      "tags": [
+        "guardia",
+        "entrega",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/guardia-v7-progress.mjs:saveGuardiaV7Progress",
+      "type": "function",
+      "name": "saveGuardiaV7Progress",
+      "filePath": "public/js/guardia-v7-progress.mjs",
+      "lineRange": [
+        21,
+        26
+      ],
+      "summary": "Saves guardia v7progress for guardia-v7-progress.mjs.",
+      "tags": [
+        "guardia",
+        "entrega",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/guardia-v7-progress.mjs:isGuardiaV7TrackComplete",
+      "type": "function",
+      "name": "isGuardiaV7TrackComplete",
+      "filePath": "public/js/guardia-v7-progress.mjs",
+      "lineRange": [
+        28,
+        31
+      ],
+      "summary": "Predicate is guardia v7track complete used by guardia-v7-progress.mjs.",
+      "tags": [
+        "guardia",
+        "entrega",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/guardia-v7-progress.mjs:guardiaV7ProgressSummary",
+      "type": "function",
+      "name": "guardiaV7ProgressSummary",
+      "filePath": "public/js/guardia-v7-progress.mjs",
+      "lineRange": [
+        34,
+        45
+      ],
+      "summary": "guardiaV7ProgressSummary implements guardia/clinical workflow logic in guardia-v7-progress.mjs.",
+      "tags": [
+        "guardia",
+        "entrega",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/guardia-v7-progress.mjs:markGuardiaV7ChapterComplete",
+      "type": "function",
+      "name": "markGuardiaV7ChapterComplete",
+      "filePath": "public/js/guardia-v7-progress.mjs",
+      "lineRange": [
+        47,
+        54
+      ],
+      "summary": "markGuardiaV7ChapterComplete implements guardia/clinical workflow logic in guardia-v7-progress.mjs.",
+      "tags": [
+        "guardia",
+        "entrega",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/guardia-v7-progress.mjs:resetGuardiaV7Chapter",
+      "type": "function",
+      "name": "resetGuardiaV7Chapter",
+      "filePath": "public/js/guardia-v7-progress.mjs",
+      "lineRange": [
+        56,
+        61
+      ],
+      "summary": "resetGuardiaV7Chapter implements guardia/clinical workflow logic in guardia-v7-progress.mjs.",
+      "tags": [
+        "guardia",
+        "entrega",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/guardia-v7-progress.test.mjs",
+      "type": "file",
+      "name": "guardia-v7-progress.test.mjs",
+      "filePath": "public/js/guardia-v7-progress.test.mjs",
+      "summary": "Unit tests for guardia-v7-progress.mjs covering guardia/clinical behavior and edge cases.",
+      "tags": [
+        "test",
+        "guardia",
+        "entrega"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:public/js/lab-bulk-paste.mjs",
+      "type": "file",
+      "name": "lab-bulk-paste.mjs",
+      "filePath": "public/js/lab-bulk-paste.mjs",
+      "summary": "lab-bulk-paste.mjs — labs module exporting LAB_BULK_PATIENT_SEPARATOR, dayKeyFromResult, isLabBulkPatientSeparatorLine, splitBulkLabTextByPatient, ….",
+      "tags": [
+        "labs",
+        "exports"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:public/js/lab-bulk-paste.mjs:primaryTipoForResLabs",
+      "type": "function",
+      "name": "primaryTipoForResLabs",
+      "filePath": "public/js/lab-bulk-paste.mjs",
+      "lineRange": [
+        13,
+        24
+      ],
+      "summary": "primaryTipoForResLabs implements guardia/clinical workflow logic in lab-bulk-paste.mjs.",
+      "tags": [
+        "labs",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/lab-bulk-paste.mjs:dayKeyFromResult",
+      "type": "function",
+      "name": "dayKeyFromResult",
+      "filePath": "public/js/lab-bulk-paste.mjs",
+      "lineRange": [
+        26,
+        36
+      ],
+      "summary": "dayKeyFromResult implements guardia/clinical workflow logic in lab-bulk-paste.mjs.",
+      "tags": [
+        "labs",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/lab-bulk-paste.mjs:isLabBulkPatientSeparatorLine",
+      "type": "function",
+      "name": "isLabBulkPatientSeparatorLine",
+      "filePath": "public/js/lab-bulk-paste.mjs",
+      "lineRange": [
+        38,
+        40
+      ],
+      "summary": "Predicate is lab bulk patient separator line used by lab-bulk-paste.mjs.",
+      "tags": [
+        "labs",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/lab-bulk-paste.mjs:splitBulkLabTextByPatient",
+      "type": "function",
+      "name": "splitBulkLabTextByPatient",
+      "filePath": "public/js/lab-bulk-paste.mjs",
+      "lineRange": [
+        43,
+        65
+      ],
+      "summary": "splitBulkLabTextByPatient implements guardia/clinical workflow logic in lab-bulk-paste.mjs.",
+      "tags": [
+        "labs",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/lab-bulk-paste.mjs:splitSomeReportsInBlock",
+      "type": "function",
+      "name": "splitSomeReportsInBlock",
+      "filePath": "public/js/lab-bulk-paste.mjs",
+      "lineRange": [
+        68,
+        77
+      ],
+      "summary": "splitSomeReportsInBlock implements guardia/clinical workflow logic in lab-bulk-paste.mjs.",
+      "tags": [
+        "labs",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/lab-bulk-paste.mjs:dedupeConsolidatedLabRows",
+      "type": "function",
+      "name": "dedupeConsolidatedLabRows",
+      "filePath": "public/js/lab-bulk-paste.mjs",
+      "lineRange": [
+        101,
+        143
+      ],
+      "summary": "dedupeConsolidatedLabRows implements guardia/clinical workflow logic in lab-bulk-paste.mjs.",
+      "tags": [
+        "labs",
+        "function"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:public/js/lab-bulk-paste.mjs:parseReportChunk",
+      "type": "function",
+      "name": "parseReportChunk",
+      "filePath": "public/js/lab-bulk-paste.mjs",
+      "lineRange": [
+        154,
+        191
+      ],
+      "summary": "Parses report chunk for lab-bulk-paste.mjs.",
+      "tags": [
+        "labs",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/lab-bulk-paste.mjs:buildBulkLabPreview",
+      "type": "function",
+      "name": "buildBulkLabPreview",
+      "filePath": "public/js/lab-bulk-paste.mjs",
+      "lineRange": [
+        197,
+        259
+      ],
+      "summary": "Builds bulk lab preview for lab-bulk-paste.mjs.",
+      "tags": [
+        "labs",
+        "function"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:public/js/lab-bulk-paste.mjs:buildMergedPayloadFromGroup",
+      "type": "function",
+      "name": "buildMergedPayloadFromGroup",
+      "filePath": "public/js/lab-bulk-paste.mjs",
+      "lineRange": [
+        261,
+        308
+      ],
+      "summary": "Builds merged payload from group for lab-bulk-paste.mjs.",
+      "tags": [
+        "labs",
+        "function"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:public/js/lab-bulk-paste.mjs:mergeBulkParseResults",
+      "type": "function",
+      "name": "mergeBulkParseResults",
+      "filePath": "public/js/lab-bulk-paste.mjs",
+      "lineRange": [
+        314,
+        343
+      ],
+      "summary": "Merges bulk parse results for lab-bulk-paste.mjs.",
+      "tags": [
+        "labs",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/lab-bulk-paste.mjs:latestDayKeyFromParsedItems",
+      "type": "function",
+      "name": "latestDayKeyFromParsedItems",
+      "filePath": "public/js/lab-bulk-paste.mjs",
+      "lineRange": [
+        345,
+        357
+      ],
+      "summary": "latestDayKeyFromParsedItems implements guardia/clinical workflow logic in lab-bulk-paste.mjs.",
+      "tags": [
+        "labs",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/lab-bulk-paste.mjs:wrapSingleParsedLabDisplay",
+      "type": "function",
+      "name": "wrapSingleParsedLabDisplay",
+      "filePath": "public/js/lab-bulk-paste.mjs",
+      "lineRange": [
+        359,
+        369
+      ],
+      "summary": "wrapSingleParsedLabDisplay implements guardia/clinical workflow logic in lab-bulk-paste.mjs.",
+      "tags": [
+        "labs",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/lab-bulk-paste.mjs:pickLatestDayMergedLabDisplay",
+      "type": "function",
+      "name": "pickLatestDayMergedLabDisplay",
+      "filePath": "public/js/lab-bulk-paste.mjs",
+      "lineRange": [
+        377,
+        408
+      ],
+      "summary": "pickLatestDayMergedLabDisplay implements guardia/clinical workflow logic in lab-bulk-paste.mjs.",
+      "tags": [
+        "labs",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/lab-bulk-paste.mjs:shouldShowBulkLabPreview",
+      "type": "function",
+      "name": "shouldShowBulkLabPreview",
+      "filePath": "public/js/lab-bulk-paste.mjs",
+      "lineRange": [
+        423,
+        440
+      ],
+      "summary": "Predicate should show bulk lab preview used by lab-bulk-paste.mjs.",
+      "tags": [
+        "labs",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/lab-bulk-paste.mjs:extractLabPatientFromBulkBlock",
+      "type": "function",
+      "name": "extractLabPatientFromBulkBlock",
+      "filePath": "public/js/lab-bulk-paste.mjs",
+      "lineRange": [
+        443,
+        450
+      ],
+      "summary": "extractLabPatientFromBulkBlock implements guardia/clinical workflow logic in lab-bulk-paste.mjs.",
+      "tags": [
+        "labs",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/lab-bulk-paste.mjs:bulkPreviewStatusLabel",
+      "type": "function",
+      "name": "bulkPreviewStatusLabel",
+      "filePath": "public/js/lab-bulk-paste.mjs",
+      "lineRange": [
+        452,
+        467
+      ],
+      "summary": "bulkPreviewStatusLabel implements guardia/clinical workflow logic in lab-bulk-paste.mjs.",
+      "tags": [
+        "labs",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:public/js/lab-history-auto-store-core.mjs",
+      "type": "file",
+      "name": "lab-history-auto-store-core.mjs",
+      "filePath": "public/js/lab-history-auto-store-core.mjs",
+      "summary": "lab-history-auto-store-core.mjs — labs module exporting normalizedSourceText, normalizeLabLine, normalizeLabLines, areLabSetsEquivalent, ….",
+      "tags": [
+        "labs",
+        "exports"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/lab-history-auto-store-core.mjs:normalizedSourceText",
+      "type": "function",
+      "name": "normalizedSourceText",
+      "filePath": "public/js/lab-history-auto-store-core.mjs",
+      "lineRange": [
+        6,
+        8
+      ],
+      "summary": "Normalizeds source text for lab-history-auto-store-core.mjs.",
+      "tags": [
+        "labs",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/lab-history-auto-store-core.mjs:normalizeLabLine",
+      "type": "function",
+      "name": "normalizeLabLine",
+      "filePath": "public/js/lab-history-auto-store-core.mjs",
+      "lineRange": [
+        10,
+        12
+      ],
+      "summary": "Normalizes lab line for lab-history-auto-store-core.mjs.",
+      "tags": [
+        "labs",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/lab-history-auto-store-core.mjs:normalizeLabLines",
+      "type": "function",
+      "name": "normalizeLabLines",
+      "filePath": "public/js/lab-history-auto-store-core.mjs",
+      "lineRange": [
+        14,
+        16
+      ],
+      "summary": "Normalizes lab lines for lab-history-auto-store-core.mjs.",
+      "tags": [
+        "labs",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/lab-history-auto-store-core.mjs:areLabSetsEquivalent",
+      "type": "function",
+      "name": "areLabSetsEquivalent",
+      "filePath": "public/js/lab-history-auto-store-core.mjs",
+      "lineRange": [
+        18,
+        26
+      ],
+      "summary": "areLabSetsEquivalent implements guardia/clinical workflow logic in lab-history-auto-store-core.mjs.",
+      "tags": [
+        "labs",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/lab-history-auto-store-core.mjs:isDuplicateAgainstLatest",
+      "type": "function",
+      "name": "isDuplicateAgainstLatest",
+      "filePath": "public/js/lab-history-auto-store-core.mjs",
+      "lineRange": [
+        36,
+        41
+      ],
+      "summary": "Predicate is duplicate against latest used by lab-history-auto-store-core.mjs.",
+      "tags": [
+        "labs",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/lab-history-auto-store-core.mjs:areDuplicateLabSets",
+      "type": "function",
+      "name": "areDuplicateLabSets",
+      "filePath": "public/js/lab-history-auto-store-core.mjs",
+      "lineRange": [
+        44,
+        49
+      ],
+      "summary": "areDuplicateLabSets implements guardia/clinical workflow logic in lab-history-auto-store-core.mjs.",
+      "tags": [
+        "labs",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/lab-history-auto-store-core.mjs:compareLabSetIdForDedupe",
+      "type": "function",
+      "name": "compareLabSetIdForDedupe",
+      "filePath": "public/js/lab-history-auto-store-core.mjs",
+      "lineRange": [
+        51,
+        62
+      ],
+      "summary": "compareLabSetIdForDedupe implements guardia/clinical workflow logic in lab-history-auto-store-core.mjs.",
+      "tags": [
+        "labs",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/lab-history-auto-store-core.mjs:findExactDuplicateLabGroups",
+      "type": "function",
+      "name": "findExactDuplicateLabGroups",
+      "filePath": "public/js/lab-history-auto-store-core.mjs",
+      "lineRange": [
+        74,
+        100
+      ],
+      "summary": "findExactDuplicateLabGroups implements guardia/clinical workflow logic in lab-history-auto-store-core.mjs.",
+      "tags": [
+        "labs",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/lab-history-auto-store-core.mjs:findDuplicateLabSetIdsToRemove",
+      "type": "function",
+      "name": "findDuplicateLabSetIdsToRemove",
+      "filePath": "public/js/lab-history-auto-store-core.mjs",
+      "lineRange": [
+        106,
+        113
+      ],
+      "summary": "findDuplicateLabSetIdsToRemove implements guardia/clinical workflow logic in lab-history-auto-store-core.mjs.",
+      "tags": [
+        "labs",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/lab-history-auto-store-core.mjs:findNormalizedSourceDuplicateGroups",
+      "type": "function",
+      "name": "findNormalizedSourceDuplicateGroups",
+      "filePath": "public/js/lab-history-auto-store-core.mjs",
+      "lineRange": [
+        118,
+        147
+      ],
+      "summary": "findNormalizedSourceDuplicateGroups implements guardia/clinical workflow logic in lab-history-auto-store-core.mjs.",
+      "tags": [
+        "labs",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/lab-history-auto-store-core.mjs:findConflictingSameDateTimeGroups",
+      "type": "function",
+      "name": "findConflictingSameDateTimeGroups",
+      "filePath": "public/js/lab-history-auto-store-core.mjs",
+      "lineRange": [
+        152,
+        182
+      ],
+      "summary": "findConflictingSameDateTimeGroups implements guardia/clinical workflow logic in lab-history-auto-store-core.mjs.",
+      "tags": [
+        "labs",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:public/js/lab-history-auto-store-core.test.mjs",
+      "type": "file",
+      "name": "lab-history-auto-store-core.test.mjs",
+      "filePath": "public/js/lab-history-auto-store-core.test.mjs",
+      "summary": "Unit tests for lab-history-auto-store-core.mjs covering guardia/clinical behavior and edge cases.",
+      "tags": [
+        "test",
+        "labs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:public/js/lab-history-cache.mjs",
+      "type": "file",
+      "name": "lab-history-cache.mjs",
+      "filePath": "public/js/lab-history-cache.mjs",
+      "summary": "lab-history-cache.mjs — labs module exporting TREND_SPARK_WINDOW, TREND_CATALOG_WINDOW, TREND_DETAIL_DOWNSAMPLE, TREND_REFRESH_DEBOUNCE_MS, ….",
+      "tags": [
+        "labs",
+        "exports"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/lab-history-cache.mjs:resetLabHistoryCacheForTests",
+      "type": "function",
+      "name": "resetLabHistoryCacheForTests",
+      "filePath": "public/js/lab-history-cache.mjs",
+      "lineRange": [
+        14,
+        17
+      ],
+      "summary": "resetLabHistoryCacheForTests implements guardia/clinical workflow logic in lab-history-cache.mjs.",
+      "tags": [
+        "labs",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/lab-history-cache.mjs:invalidateTrendSeriesIndexCache",
+      "type": "function",
+      "name": "invalidateTrendSeriesIndexCache",
+      "filePath": "public/js/lab-history-cache.mjs",
+      "lineRange": [
+        22,
+        25
+      ],
+      "summary": "invalidateTrendSeriesIndexCache implements guardia/clinical workflow logic in lab-history-cache.mjs.",
+      "tags": [
+        "labs",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/lab-history-cache.mjs:bumpLabHistoryRevision",
+      "type": "function",
+      "name": "bumpLabHistoryRevision",
+      "filePath": "public/js/lab-history-cache.mjs",
+      "lineRange": [
+        27,
+        32
+      ],
+      "summary": "bumpLabHistoryRevision implements guardia/clinical workflow logic in lab-history-cache.mjs.",
+      "tags": [
+        "labs",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/lab-history-cache.mjs:getLabHistoryRevision",
+      "type": "function",
+      "name": "getLabHistoryRevision",
+      "filePath": "public/js/lab-history-cache.mjs",
+      "lineRange": [
+        34,
+        37
+      ],
+      "summary": "Accessor get lab history revision exposing lab-history-cache.mjs state or data.",
+      "tags": [
+        "labs",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/lab-history-cache.mjs:getTrendRenderWindow",
+      "type": "function",
+      "name": "getTrendRenderWindow",
+      "filePath": "public/js/lab-history-cache.mjs",
+      "lineRange": [
+        43,
+        49
+      ],
+      "summary": "Accessor get trend render window exposing lab-history-cache.mjs state or data.",
+      "tags": [
+        "labs",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/lab-history-cache.mjs:trendCatalogSeriesKey",
+      "type": "function",
+      "name": "trendCatalogSeriesKey",
+      "filePath": "public/js/lab-history-cache.mjs",
+      "lineRange": [
+        51,
+        53
+      ],
+      "summary": "trendCatalogSeriesKey implements guardia/clinical workflow logic in lab-history-cache.mjs.",
+      "tags": [
+        "labs",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/lab-history-cache.mjs:buildTrendSeriesIndex",
+      "type": "function",
+      "name": "buildTrendSeriesIndex",
+      "filePath": "public/js/lab-history-cache.mjs",
+      "lineRange": [
+        63,
+        98
+      ],
+      "summary": "Builds trend series index for lab-history-cache.mjs.",
+      "tags": [
+        "labs",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/lab-history-cache.mjs:buildTrendSeriesIndexCached",
+      "type": "function",
+      "name": "buildTrendSeriesIndexCached",
+      "filePath": "public/js/lab-history-cache.mjs",
+      "lineRange": [
+        104,
+        115
+      ],
+      "summary": "Builds trend series index cached for lab-history-cache.mjs.",
+      "tags": [
+        "labs",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/lab-history-cache.test.mjs",
+      "type": "file",
+      "name": "lab-history-cache.test.mjs",
+      "filePath": "public/js/lab-history-cache.test.mjs",
+      "summary": "Unit tests for lab-history-cache.mjs covering guardia/clinical behavior and edge cases.",
+      "tags": [
+        "test",
+        "labs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:public/js/lab-history-set.mjs",
+      "type": "file",
+      "name": "lab-history-set.mjs",
+      "filePath": "public/js/lab-history-set.mjs",
+      "summary": "lab-history-set.mjs — labs module exporting isLabSectionHeaderLine, isCultivoBlockStartLine, splitResLabsByTipo, registerLabHistoryMaintRuntime, ….",
+      "tags": [
+        "labs",
+        "exports"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:public/js/lab-history-set.mjs:registerLabHistoryMaintRuntime",
+      "type": "function",
+      "name": "registerLabHistoryMaintRuntime",
+      "filePath": "public/js/lab-history-set.mjs",
+      "lineRange": [
+        55,
+        57
+      ],
+      "summary": "registerLabHistoryMaintRuntime implements guardia/clinical workflow logic in lab-history-set.mjs.",
+      "tags": [
+        "labs",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/lab-history-set.mjs:labSetParseFingerprint",
+      "type": "function",
+      "name": "labSetParseFingerprint",
+      "filePath": "public/js/lab-history-set.mjs",
+      "lineRange": [
+        61,
+        74
+      ],
+      "summary": "labSetParseFingerprint implements guardia/clinical workflow logic in lab-history-set.mjs.",
+      "tags": [
+        "labs",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/lab-history-set.mjs:isLikelyLabDataLine",
+      "type": "function",
+      "name": "isLikelyLabDataLine",
+      "filePath": "public/js/lab-history-set.mjs",
+      "lineRange": [
+        76,
+        84
+      ],
+      "summary": "Predicate is likely lab data line used by lab-history-set.mjs.",
+      "tags": [
+        "labs",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/lab-history-set.mjs:extractLabDataLines",
+      "type": "function",
+      "name": "extractLabDataLines",
+      "filePath": "public/js/lab-history-set.mjs",
+      "lineRange": [
+        86,
+        88
+      ],
+      "summary": "extractLabDataLines implements guardia/clinical workflow logic in lab-history-set.mjs.",
+      "tags": [
+        "labs",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/lab-history-set.mjs:buildLabSetDateLine",
+      "type": "function",
+      "name": "buildLabSetDateLine",
+      "filePath": "public/js/lab-history-set.mjs",
+      "lineRange": [
+        90,
+        96
+      ],
+      "summary": "Builds lab set date line for lab-history-set.mjs.",
+      "tags": [
+        "labs",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/lab-history-set.mjs:buildLabSetDateLineForNota",
+      "type": "function",
+      "name": "buildLabSetDateLineForNota",
+      "filePath": "public/js/lab-history-set.mjs",
+      "lineRange": [
+        98,
+        105
+      ],
+      "summary": "Builds lab set date line for nota for lab-history-set.mjs.",
+      "tags": [
+        "labs",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/lab-history-set.mjs:formatLabHistoryListMeta",
+      "type": "function",
+      "name": "formatLabHistoryListMeta",
+      "filePath": "public/js/lab-history-set.mjs",
+      "lineRange": [
+        108,
+        128
+      ],
+      "summary": "Formats lab history list meta for lab-history-set.mjs.",
+      "tags": [
+        "labs",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/lab-history-set.mjs:labHistoryTipoLabel",
+      "type": "function",
+      "name": "labHistoryTipoLabel",
+      "filePath": "public/js/lab-history-set.mjs",
+      "lineRange": [
+        130,
+        141
+      ],
+      "summary": "labHistoryTipoLabel implements guardia/clinical workflow logic in lab-history-set.mjs.",
+      "tags": [
+        "labs",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/lab-history-set.mjs:formatLabHistoryDateSelectLabel",
+      "type": "function",
+      "name": "formatLabHistoryDateSelectLabel",
+      "filePath": "public/js/lab-history-set.mjs",
+      "lineRange": [
+        144,
+        172
+      ],
+      "summary": "Formats lab history date select label for lab-history-set.mjs.",
+      "tags": [
+        "labs",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/lab-history-set.mjs:labSetIsFromSome",
+      "type": "function",
+      "name": "labSetIsFromSome",
+      "filePath": "public/js/lab-history-set.mjs",
+      "lineRange": [
+        174,
+        180
+      ],
+      "summary": "labSetIsFromSome implements guardia/clinical workflow logic in lab-history-set.mjs.",
+      "tags": [
+        "labs",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/lab-history-set.mjs:dayKeyFromLabSet",
+      "type": "function",
+      "name": "dayKeyFromLabSet",
+      "filePath": "public/js/lab-history-set.mjs",
+      "lineRange": [
+        182,
+        198
+      ],
+      "summary": "dayKeyFromLabSet implements guardia/clinical workflow logic in lab-history-set.mjs.",
+      "tags": [
+        "labs",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/lab-history-set.mjs:primaryTipoForLabSet",
+      "type": "function",
+      "name": "primaryTipoForLabSet",
+      "filePath": "public/js/lab-history-set.mjs",
+      "lineRange": [
+        210,
+        221
+      ],
+      "summary": "primaryTipoForLabSet implements guardia/clinical workflow logic in lab-history-set.mjs.",
+      "tags": [
+        "labs",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/lab-history-set.mjs:groupLabHistoryByDay",
+      "type": "function",
+      "name": "groupLabHistoryByDay",
+      "filePath": "public/js/lab-history-set.mjs",
+      "lineRange": [
+        251,
+        265
+      ],
+      "summary": "groupLabHistoryByDay implements guardia/clinical workflow logic in lab-history-set.mjs.",
+      "tags": [
+        "labs",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/lab-history-set.mjs:buildEstudiosCopyLinesFromLabSets",
+      "type": "function",
+      "name": "buildEstudiosCopyLinesFromLabSets",
+      "filePath": "public/js/lab-history-set.mjs",
+      "lineRange": [
+        273,
+        328
+      ],
+      "summary": "Builds estudios copy lines from lab sets for lab-history-set.mjs.",
+      "tags": [
+        "labs",
+        "function"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:public/js/lab-history-set.mjs:resolveEstudiosCopyOptions",
+      "type": "function",
+      "name": "resolveEstudiosCopyOptions",
+      "filePath": "public/js/lab-history-set.mjs",
+      "lineRange": [
+        336,
+        341
+      ],
+      "summary": "Resolves estudios copy options for lab-history-set.mjs.",
+      "tags": [
+        "labs",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/lab-history-set.mjs:rebuildEstudiosFromLabHistory",
+      "type": "function",
+      "name": "rebuildEstudiosFromLabHistory",
+      "filePath": "public/js/lab-history-set.mjs",
+      "lineRange": [
+        343,
+        359
+      ],
+      "summary": "rebuildEstudiosFromLabHistory implements guardia/clinical workflow logic in lab-history-set.mjs.",
+      "tags": [
+        "labs",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/lab-history-set.mjs:ensureParsedLabHistory",
+      "type": "function",
+      "name": "ensureParsedLabHistory",
+      "filePath": "public/js/lab-history-set.mjs",
+      "lineRange": [
+        361,
+        477
+      ],
+      "summary": "Ensures parsed lab history for lab-history-set.mjs.",
+      "tags": [
+        "labs",
+        "function"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:public/js/lab-history-set.mjs:ensureParsedLabHistoryCached",
+      "type": "function",
+      "name": "ensureParsedLabHistoryCached",
+      "filePath": "public/js/lab-history-set.mjs",
+      "lineRange": [
+        479,
+        483
+      ],
+      "summary": "Ensures parsed lab history cached for lab-history-set.mjs.",
+      "tags": [
+        "labs",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/lab-history-set.mjs:runLabHistoryPostSaveMaintenance",
+      "type": "function",
+      "name": "runLabHistoryPostSaveMaintenance",
+      "filePath": "public/js/lab-history-set.mjs",
+      "lineRange": [
+        489,
+        547
+      ],
+      "summary": "runLabHistoryPostSaveMaintenance implements guardia/clinical workflow logic in lab-history-set.mjs.",
+      "tags": [
+        "labs",
+        "function"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:public/js/lab-history-set.mjs:scheduleLabHistoryPostSaveMaintenance",
+      "type": "function",
+      "name": "scheduleLabHistoryPostSaveMaintenance",
+      "filePath": "public/js/lab-history-set.mjs",
+      "lineRange": [
+        549,
+        585
+      ],
+      "summary": "scheduleLabHistoryPostSaveMaintenance implements guardia/clinical workflow logic in lab-history-set.mjs.",
+      "tags": [
+        "labs",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/lab-history-set.mjs:installLabHistoryAuditHook",
+      "type": "function",
+      "name": "installLabHistoryAuditHook",
+      "filePath": "public/js/lab-history-set.mjs",
+      "lineRange": [
+        587,
+        616
+      ],
+      "summary": "installLabHistoryAuditHook implements guardia/clinical workflow logic in lab-history-set.mjs.",
+      "tags": [
+        "labs",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:public/js/labs-bh-extended.test.mjs",
+      "type": "file",
+      "name": "labs-bh-extended.test.mjs",
+      "filePath": "public/js/labs-bh-extended.test.mjs",
+      "summary": "Unit tests for labs-bh-extended.mjs covering guardia/clinical behavior and edge cases.",
+      "tags": [
+        "test",
+        "labs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:public/js/labs-bh-trend-parse.test.mjs",
+      "type": "file",
+      "name": "labs-bh-trend-parse.test.mjs",
+      "filePath": "public/js/labs-bh-trend-parse.test.mjs",
+      "summary": "Unit tests for labs-bh-trend-parse.mjs covering guardia/clinical behavior and edge cases.",
+      "tags": [
+        "test",
+        "labs"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/labs-citoquimico-liquidos.test.mjs",
+      "type": "file",
+      "name": "labs-citoquimico-liquidos.test.mjs",
+      "filePath": "public/js/labs-citoquimico-liquidos.test.mjs",
+      "summary": "Unit tests for labs-citoquimico-liquidos.mjs covering guardia/clinical behavior and edge cases.",
+      "tags": [
+        "test",
+        "labs"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:public/js/labs-coag.test.mjs",
+      "type": "file",
+      "name": "labs-coag.test.mjs",
+      "filePath": "public/js/labs-coag.test.mjs",
+      "summary": "Unit tests for labs-coag.mjs covering guardia/clinical behavior and edge cases.",
+      "tags": [
+        "test",
+        "labs"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/labs-cultivo.test.mjs",
+      "type": "file",
+      "name": "labs-cultivo.test.mjs",
+      "filePath": "public/js/labs-cultivo.test.mjs",
+      "summary": "Unit tests for labs-cultivo.mjs covering guardia/clinical behavior and edge cases.",
+      "tags": [
+        "test",
+        "labs"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:public/js/labs-cultivo.test.mjs:countCultivoChunks",
+      "type": "function",
+      "name": "countCultivoChunks",
+      "filePath": "public/js/labs-cultivo.test.mjs",
+      "lineRange": [
+        414,
+        427
+      ],
+      "summary": "countCultivoChunks implements guardia/clinical workflow logic in labs-cultivo.test.mjs.",
+      "tags": [
+        "labs",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/labs-diff-coag.test.mjs",
+      "type": "file",
+      "name": "labs-diff-coag.test.mjs",
+      "filePath": "public/js/labs-diff-coag.test.mjs",
+      "summary": "Unit tests for labs-diff-coag.mjs covering guardia/clinical behavior and edge cases.",
+      "tags": [
+        "test",
+        "labs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:public/js/labs-differential-manual.test.mjs",
+      "type": "file",
+      "name": "labs-differential-manual.test.mjs",
+      "filePath": "public/js/labs-differential-manual.test.mjs",
+      "summary": "Unit tests for labs-differential-manual.mjs covering guardia/clinical behavior and edge cases.",
+      "tags": [
+        "test",
+        "labs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:public/js/labs-display.mjs",
+      "type": "file",
+      "name": "labs-display.mjs",
+      "filePath": "public/js/labs-display.mjs",
+      "summary": "Lab value display formatting, flags, and trend helpers for renderer.",
+      "tags": [
+        "labs",
+        "exports"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/labs-display.mjs:escTxt",
+      "type": "function",
+      "name": "escTxt",
+      "filePath": "public/js/labs-display.mjs",
+      "lineRange": [
+        10,
+        15
+      ],
+      "summary": "escTxt implements guardia/clinical workflow logic in labs-display.mjs.",
+      "tags": [
+        "labs",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/labs-display.mjs:renderToken",
+      "type": "function",
+      "name": "renderToken",
+      "filePath": "public/js/labs-display.mjs",
+      "lineRange": [
+        17,
+        28
+      ],
+      "summary": "Renders token for labs-display.mjs.",
+      "tags": [
+        "labs",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/labs-display.mjs:isLabSectionHeaderHtml",
+      "type": "function",
+      "name": "isLabSectionHeaderHtml",
+      "filePath": "public/js/labs-display.mjs",
+      "lineRange": [
+        44,
+        46
+      ],
+      "summary": "Predicate is lab section header html used by labs-display.mjs.",
+      "tags": [
+        "labs",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/labs-display.mjs:renderEntry",
+      "type": "function",
+      "name": "renderEntry",
+      "filePath": "public/js/labs-display.mjs",
+      "lineRange": [
+        48,
+        78
+      ],
+      "summary": "Renders entry for labs-display.mjs.",
+      "tags": [
+        "labs",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:public/js/labs-display.test.mjs",
+      "type": "file",
+      "name": "labs-display.test.mjs",
+      "filePath": "public/js/labs-display.test.mjs",
+      "summary": "Unit tests for labs-display.mjs covering guardia/clinical behavior and edge cases.",
+      "tags": [
+        "test",
+        "labs"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/labs-egfr.test.mjs",
+      "type": "file",
+      "name": "labs-egfr.test.mjs",
+      "filePath": "public/js/labs-egfr.test.mjs",
+      "summary": "Unit tests for labs-egfr.mjs covering guardia/clinical behavior and edge cases.",
+      "tags": [
+        "test",
+        "labs"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/labs-ego-plt-cit.test.mjs",
+      "type": "file",
+      "name": "labs-ego-plt-cit.test.mjs",
+      "filePath": "public/js/labs-ego-plt-cit.test.mjs",
+      "summary": "Unit tests for labs-ego-plt-cit.mjs covering guardia/clinical behavior and edge cases.",
+      "tags": [
+        "test",
+        "labs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:public/js/labs-fecha-hora.test.mjs",
+      "type": "file",
+      "name": "labs-fecha-hora.test.mjs",
+      "filePath": "public/js/labs-fecha-hora.test.mjs",
+      "summary": "Unit tests for labs-fecha-hora.mjs covering guardia/clinical behavior and edge cases.",
+      "tags": [
+        "test",
+        "labs"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/labs-frotis.test.mjs",
+      "type": "file",
+      "name": "labs-frotis.test.mjs",
+      "filePath": "public/js/labs-frotis.test.mjs",
+      "summary": "Unit tests for labs-frotis.mjs covering guardia/clinical behavior and edge cases.",
+      "tags": [
+        "test",
+        "labs"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/labs-gases.test.mjs",
+      "type": "file",
+      "name": "labs-gases.test.mjs",
+      "filePath": "public/js/labs-gases.test.mjs",
+      "summary": "Unit tests for labs-gases.mjs covering guardia/clinical behavior and edge cases.",
+      "tags": [
+        "test",
+        "labs"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:public/js/labs-heces.test.mjs",
+      "type": "file",
+      "name": "labs-heces.test.mjs",
+      "filePath": "public/js/labs-heces.test.mjs",
+      "summary": "Unit tests for labs-heces.mjs covering guardia/clinical behavior and edge cases.",
+      "tags": [
+        "test",
+        "labs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:public/js/labs-lipasa.test.mjs",
+      "type": "file",
+      "name": "labs-lipasa.test.mjs",
+      "filePath": "public/js/labs-lipasa.test.mjs",
+      "summary": "Unit tests for labs-lipasa.mjs covering guardia/clinical behavior and edge cases.",
+      "tags": [
+        "test",
+        "labs"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/labs-pct.test.mjs",
+      "type": "file",
+      "name": "labs-pct.test.mjs",
+      "filePath": "public/js/labs-pct.test.mjs",
+      "summary": "Unit tests for labs-pct.mjs covering guardia/clinical behavior and edge cases.",
+      "tags": [
+        "test",
+        "labs"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:public/js/labs-procesar-characterization.test.mjs",
+      "type": "file",
+      "name": "labs-procesar-characterization.test.mjs",
+      "filePath": "public/js/labs-procesar-characterization.test.mjs",
+      "summary": "Unit tests for labs-procesar-characterization.mjs covering guardia/clinical behavior and edge cases.",
+      "tags": [
+        "test",
+        "labs"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/labs-procesar-fixtures.mjs",
+      "type": "file",
+      "name": "labs-procesar-fixtures.mjs",
+      "filePath": "public/js/labs-procesar-fixtures.mjs",
+      "summary": "labs-procesar-fixtures.mjs — labs module exporting GASO_VENOSA_SOLO, HEADER_VARIANTS, PROCESAR_LABS_FIXTURES.",
+      "tags": [
+        "labs",
+        "exports"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:public/js/fundamentos-progress.mjs",
+      "target": "file:public/js/onboarding-curriculum.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/fundamentos-progress.mjs",
+      "target": "function:public/js/fundamentos-progress.mjs:loadFundamentosProgress",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/fundamentos-progress.mjs",
+      "target": "function:public/js/fundamentos-progress.mjs:loadFundamentosProgress",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/fundamentos-progress.mjs",
+      "target": "function:public/js/fundamentos-progress.mjs:saveFundamentosProgress",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/fundamentos-progress.mjs",
+      "target": "function:public/js/fundamentos-progress.mjs:saveFundamentosProgress",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/fundamentos-progress.mjs",
+      "target": "function:public/js/fundamentos-progress.mjs:isFundamentosChapterId",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/fundamentos-progress.mjs",
+      "target": "function:public/js/fundamentos-progress.mjs:isFundamentosChapterId",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/fundamentos-progress.mjs",
+      "target": "function:public/js/fundamentos-progress.mjs:fundamentosModuleCount",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/fundamentos-progress.mjs",
+      "target": "function:public/js/fundamentos-progress.mjs:fundamentosModuleCount",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/fundamentos-progress.mjs",
+      "target": "function:public/js/fundamentos-progress.mjs:markFundamentosChapterComplete",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/fundamentos-progress.mjs",
+      "target": "function:public/js/fundamentos-progress.mjs:markFundamentosChapterComplete",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/fundamentos-progress.test.mjs",
+      "target": "file:public/js/fundamentos-progress.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/fundamentos-progress.mjs",
+      "target": "file:public/js/fundamentos-progress.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:public/js/gaso-extended.mjs",
+      "target": "file:public/js/labs.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/gaso-extended.mjs",
+      "target": "function:public/js/gaso-extended.mjs:buildPrimaryRationale_",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/gaso-extended.mjs",
+      "target": "function:public/js/gaso-extended.mjs:evaluateGasoExtended",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/gaso-extended.mjs",
+      "target": "function:public/js/gaso-extended.mjs:evaluateGasoExtended",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/gaso-extended.test.mjs",
+      "target": "file:public/js/gaso-extended.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/gaso-extended.test.mjs",
+      "target": "file:public/js/labs.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/gaso-extended.mjs",
+      "target": "file:public/js/gaso-extended.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:public/js/labs.js",
+      "target": "file:public/js/gaso-extended.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:public/js/guardia-v7-progress.mjs",
+      "target": "file:public/js/onboarding-curriculum.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/guardia-v7-progress.mjs",
+      "target": "function:public/js/guardia-v7-progress.mjs:loadGuardiaV7Progress",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/guardia-v7-progress.mjs",
+      "target": "function:public/js/guardia-v7-progress.mjs:loadGuardiaV7Progress",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/guardia-v7-progress.mjs",
+      "target": "function:public/js/guardia-v7-progress.mjs:saveGuardiaV7Progress",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/guardia-v7-progress.mjs",
+      "target": "function:public/js/guardia-v7-progress.mjs:saveGuardiaV7Progress",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/guardia-v7-progress.mjs",
+      "target": "function:public/js/guardia-v7-progress.mjs:isGuardiaV7TrackComplete",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/guardia-v7-progress.mjs",
+      "target": "function:public/js/guardia-v7-progress.mjs:isGuardiaV7TrackComplete",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/guardia-v7-progress.mjs",
+      "target": "function:public/js/guardia-v7-progress.mjs:guardiaV7ProgressSummary",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/guardia-v7-progress.mjs",
+      "target": "function:public/js/guardia-v7-progress.mjs:guardiaV7ProgressSummary",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/guardia-v7-progress.mjs",
+      "target": "function:public/js/guardia-v7-progress.mjs:markGuardiaV7ChapterComplete",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/guardia-v7-progress.mjs",
+      "target": "function:public/js/guardia-v7-progress.mjs:markGuardiaV7ChapterComplete",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/guardia-v7-progress.mjs",
+      "target": "function:public/js/guardia-v7-progress.mjs:resetGuardiaV7Chapter",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/guardia-v7-progress.mjs",
+      "target": "function:public/js/guardia-v7-progress.mjs:resetGuardiaV7Chapter",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/guardia-v7-progress.test.mjs",
+      "target": "file:public/js/guardia-v7-progress.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/guardia-v7-progress.mjs",
+      "target": "file:public/js/guardia-v7-progress.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:public/js/lab-bulk-paste.mjs",
+      "target": "file:public/js/cultivo-block-core.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/lab-bulk-paste.mjs",
+      "target": "file:public/js/lab-history-auto-store-core.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/lab-bulk-paste.mjs",
+      "target": "file:public/js/labs.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/lab-bulk-paste.mjs",
+      "target": "file:public/js/tend-core.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/lab-bulk-paste.mjs",
+      "target": "function:public/js/lab-bulk-paste.mjs:primaryTipoForResLabs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/lab-bulk-paste.mjs",
+      "target": "function:public/js/lab-bulk-paste.mjs:dayKeyFromResult",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/lab-bulk-paste.mjs",
+      "target": "function:public/js/lab-bulk-paste.mjs:dayKeyFromResult",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/lab-bulk-paste.mjs",
+      "target": "function:public/js/lab-bulk-paste.mjs:isLabBulkPatientSeparatorLine",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/lab-bulk-paste.mjs",
+      "target": "function:public/js/lab-bulk-paste.mjs:isLabBulkPatientSeparatorLine",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/lab-bulk-paste.mjs",
+      "target": "function:public/js/lab-bulk-paste.mjs:splitBulkLabTextByPatient",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/lab-bulk-paste.mjs",
+      "target": "function:public/js/lab-bulk-paste.mjs:splitBulkLabTextByPatient",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/lab-bulk-paste.mjs",
+      "target": "function:public/js/lab-bulk-paste.mjs:splitSomeReportsInBlock",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/lab-bulk-paste.mjs",
+      "target": "function:public/js/lab-bulk-paste.mjs:splitSomeReportsInBlock",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/lab-bulk-paste.mjs",
+      "target": "function:public/js/lab-bulk-paste.mjs:dedupeConsolidatedLabRows",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/lab-bulk-paste.mjs",
+      "target": "function:public/js/lab-bulk-paste.mjs:dedupeConsolidatedLabRows",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/lab-bulk-paste.mjs",
+      "target": "function:public/js/lab-bulk-paste.mjs:parseReportChunk",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/lab-bulk-paste.mjs",
+      "target": "function:public/js/lab-bulk-paste.mjs:buildBulkLabPreview",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/lab-bulk-paste.mjs",
+      "target": "function:public/js/lab-bulk-paste.mjs:buildBulkLabPreview",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/lab-bulk-paste.mjs",
+      "target": "function:public/js/lab-bulk-paste.mjs:buildMergedPayloadFromGroup",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/lab-bulk-paste.mjs",
+      "target": "function:public/js/lab-bulk-paste.mjs:mergeBulkParseResults",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/lab-bulk-paste.mjs",
+      "target": "function:public/js/lab-bulk-paste.mjs:mergeBulkParseResults",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/lab-bulk-paste.mjs",
+      "target": "function:public/js/lab-bulk-paste.mjs:latestDayKeyFromParsedItems",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/lab-bulk-paste.mjs",
+      "target": "function:public/js/lab-bulk-paste.mjs:wrapSingleParsedLabDisplay",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/lab-bulk-paste.mjs",
+      "target": "function:public/js/lab-bulk-paste.mjs:pickLatestDayMergedLabDisplay",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/lab-bulk-paste.mjs",
+      "target": "function:public/js/lab-bulk-paste.mjs:pickLatestDayMergedLabDisplay",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/lab-bulk-paste.mjs",
+      "target": "function:public/js/lab-bulk-paste.mjs:shouldShowBulkLabPreview",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/lab-bulk-paste.mjs",
+      "target": "function:public/js/lab-bulk-paste.mjs:shouldShowBulkLabPreview",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/lab-bulk-paste.mjs",
+      "target": "function:public/js/lab-bulk-paste.mjs:extractLabPatientFromBulkBlock",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/lab-bulk-paste.mjs",
+      "target": "function:public/js/lab-bulk-paste.mjs:extractLabPatientFromBulkBlock",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/lab-bulk-paste.mjs",
+      "target": "function:public/js/lab-bulk-paste.mjs:bulkPreviewStatusLabel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/lab-bulk-paste.mjs",
+      "target": "function:public/js/lab-bulk-paste.mjs:bulkPreviewStatusLabel",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/lab-history-auto-store-core.mjs",
+      "target": "function:public/js/lab-history-auto-store-core.mjs:normalizedSourceText",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/lab-history-auto-store-core.mjs",
+      "target": "function:public/js/lab-history-auto-store-core.mjs:normalizedSourceText",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/lab-history-auto-store-core.mjs",
+      "target": "function:public/js/lab-history-auto-store-core.mjs:normalizeLabLine",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/lab-history-auto-store-core.mjs",
+      "target": "function:public/js/lab-history-auto-store-core.mjs:normalizeLabLine",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/lab-history-auto-store-core.mjs",
+      "target": "function:public/js/lab-history-auto-store-core.mjs:normalizeLabLines",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/lab-history-auto-store-core.mjs",
+      "target": "function:public/js/lab-history-auto-store-core.mjs:normalizeLabLines",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/lab-history-auto-store-core.mjs",
+      "target": "function:public/js/lab-history-auto-store-core.mjs:areLabSetsEquivalent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/lab-history-auto-store-core.mjs",
+      "target": "function:public/js/lab-history-auto-store-core.mjs:areLabSetsEquivalent",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/lab-history-auto-store-core.mjs",
+      "target": "function:public/js/lab-history-auto-store-core.mjs:isDuplicateAgainstLatest",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/lab-history-auto-store-core.mjs",
+      "target": "function:public/js/lab-history-auto-store-core.mjs:isDuplicateAgainstLatest",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/lab-history-auto-store-core.mjs",
+      "target": "function:public/js/lab-history-auto-store-core.mjs:areDuplicateLabSets",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/lab-history-auto-store-core.mjs",
+      "target": "function:public/js/lab-history-auto-store-core.mjs:areDuplicateLabSets",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/lab-history-auto-store-core.mjs",
+      "target": "function:public/js/lab-history-auto-store-core.mjs:compareLabSetIdForDedupe",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/lab-history-auto-store-core.mjs",
+      "target": "function:public/js/lab-history-auto-store-core.mjs:compareLabSetIdForDedupe",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/lab-history-auto-store-core.mjs",
+      "target": "function:public/js/lab-history-auto-store-core.mjs:findExactDuplicateLabGroups",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/lab-history-auto-store-core.mjs",
+      "target": "function:public/js/lab-history-auto-store-core.mjs:findExactDuplicateLabGroups",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/lab-history-auto-store-core.mjs",
+      "target": "function:public/js/lab-history-auto-store-core.mjs:findDuplicateLabSetIdsToRemove",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/lab-history-auto-store-core.mjs",
+      "target": "function:public/js/lab-history-auto-store-core.mjs:findDuplicateLabSetIdsToRemove",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/lab-history-auto-store-core.mjs",
+      "target": "function:public/js/lab-history-auto-store-core.mjs:findNormalizedSourceDuplicateGroups",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/lab-history-auto-store-core.mjs",
+      "target": "function:public/js/lab-history-auto-store-core.mjs:findNormalizedSourceDuplicateGroups",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/lab-history-auto-store-core.mjs",
+      "target": "function:public/js/lab-history-auto-store-core.mjs:findConflictingSameDateTimeGroups",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/lab-history-auto-store-core.mjs",
+      "target": "function:public/js/lab-history-auto-store-core.mjs:findConflictingSameDateTimeGroups",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/lab-history-auto-store-core.test.mjs",
+      "target": "file:public/js/lab-history-auto-store-core.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/lab-history-auto-store-core.mjs",
+      "target": "file:public/js/lab-history-auto-store-core.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:public/js/lab-history-cache.mjs",
+      "target": "file:public/js/tend-core.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/lab-history-cache.mjs",
+      "target": "function:public/js/lab-history-cache.mjs:resetLabHistoryCacheForTests",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/lab-history-cache.mjs",
+      "target": "function:public/js/lab-history-cache.mjs:resetLabHistoryCacheForTests",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/lab-history-cache.mjs",
+      "target": "function:public/js/lab-history-cache.mjs:invalidateTrendSeriesIndexCache",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/lab-history-cache.mjs",
+      "target": "function:public/js/lab-history-cache.mjs:invalidateTrendSeriesIndexCache",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/lab-history-cache.mjs",
+      "target": "function:public/js/lab-history-cache.mjs:bumpLabHistoryRevision",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/lab-history-cache.mjs",
+      "target": "function:public/js/lab-history-cache.mjs:bumpLabHistoryRevision",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/lab-history-cache.mjs",
+      "target": "function:public/js/lab-history-cache.mjs:getLabHistoryRevision",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/lab-history-cache.mjs",
+      "target": "function:public/js/lab-history-cache.mjs:getLabHistoryRevision",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/lab-history-cache.mjs",
+      "target": "function:public/js/lab-history-cache.mjs:getTrendRenderWindow",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/lab-history-cache.mjs",
+      "target": "function:public/js/lab-history-cache.mjs:getTrendRenderWindow",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/lab-history-cache.mjs",
+      "target": "function:public/js/lab-history-cache.mjs:trendCatalogSeriesKey",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/lab-history-cache.mjs",
+      "target": "function:public/js/lab-history-cache.mjs:trendCatalogSeriesKey",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/lab-history-cache.mjs",
+      "target": "function:public/js/lab-history-cache.mjs:buildTrendSeriesIndex",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/lab-history-cache.mjs",
+      "target": "function:public/js/lab-history-cache.mjs:buildTrendSeriesIndex",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/lab-history-cache.mjs",
+      "target": "function:public/js/lab-history-cache.mjs:buildTrendSeriesIndexCached",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/lab-history-cache.mjs",
+      "target": "function:public/js/lab-history-cache.mjs:buildTrendSeriesIndexCached",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/lab-history-cache.test.mjs",
+      "target": "file:public/js/lab-history-cache.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/lab-history-cache.mjs",
+      "target": "file:public/js/lab-history-cache.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:public/js/lab-history-set.mjs",
+      "target": "file:public/js/app-state.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/lab-history-set.mjs",
+      "target": "file:public/js/cultivo-block-core.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/lab-history-set.mjs",
+      "target": "file:public/js/features/diagrams.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/lab-history-set.mjs",
+      "target": "file:public/js/features/tendencias.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/lab-history-set.mjs",
+      "target": "file:public/js/lab-history-auto-store-core.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/lab-history-set.mjs",
+      "target": "file:public/js/lab-history-cache.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/lab-history-set.mjs",
+      "target": "file:public/js/labs.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/lab-history-set.mjs",
+      "target": "file:public/js/mode-features.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/lab-history-set.mjs",
+      "target": "file:public/js/storage.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/lab-history-set.mjs",
+      "target": "file:public/js/tend-core.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/lab-history-set.mjs",
+      "target": "function:public/js/lab-history-set.mjs:registerLabHistoryMaintRuntime",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/lab-history-set.mjs",
+      "target": "function:public/js/lab-history-set.mjs:registerLabHistoryMaintRuntime",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/lab-history-set.mjs",
+      "target": "function:public/js/lab-history-set.mjs:labSetParseFingerprint",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/lab-history-set.mjs",
+      "target": "function:public/js/lab-history-set.mjs:isLikelyLabDataLine",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/lab-history-set.mjs",
+      "target": "function:public/js/lab-history-set.mjs:isLikelyLabDataLine",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/lab-history-set.mjs",
+      "target": "function:public/js/lab-history-set.mjs:extractLabDataLines",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/lab-history-set.mjs",
+      "target": "function:public/js/lab-history-set.mjs:extractLabDataLines",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/lab-history-set.mjs",
+      "target": "function:public/js/lab-history-set.mjs:buildLabSetDateLine",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/lab-history-set.mjs",
+      "target": "function:public/js/lab-history-set.mjs:buildLabSetDateLine",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/lab-history-set.mjs",
+      "target": "function:public/js/lab-history-set.mjs:buildLabSetDateLineForNota",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/lab-history-set.mjs",
+      "target": "function:public/js/lab-history-set.mjs:buildLabSetDateLineForNota",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/lab-history-set.mjs",
+      "target": "function:public/js/lab-history-set.mjs:formatLabHistoryListMeta",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/lab-history-set.mjs",
+      "target": "function:public/js/lab-history-set.mjs:formatLabHistoryListMeta",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/lab-history-set.mjs",
+      "target": "function:public/js/lab-history-set.mjs:labHistoryTipoLabel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/lab-history-set.mjs",
+      "target": "function:public/js/lab-history-set.mjs:formatLabHistoryDateSelectLabel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/lab-history-set.mjs",
+      "target": "function:public/js/lab-history-set.mjs:formatLabHistoryDateSelectLabel",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/lab-history-set.mjs",
+      "target": "function:public/js/lab-history-set.mjs:labSetIsFromSome",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/lab-history-set.mjs",
+      "target": "function:public/js/lab-history-set.mjs:labSetIsFromSome",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/lab-history-set.mjs",
+      "target": "function:public/js/lab-history-set.mjs:dayKeyFromLabSet",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/lab-history-set.mjs",
+      "target": "function:public/js/lab-history-set.mjs:dayKeyFromLabSet",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/lab-history-set.mjs",
+      "target": "function:public/js/lab-history-set.mjs:primaryTipoForLabSet",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/lab-history-set.mjs",
+      "target": "function:public/js/lab-history-set.mjs:primaryTipoForLabSet",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/lab-history-set.mjs",
+      "target": "function:public/js/lab-history-set.mjs:groupLabHistoryByDay",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/lab-history-set.mjs",
+      "target": "function:public/js/lab-history-set.mjs:groupLabHistoryByDay",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/lab-history-set.mjs",
+      "target": "function:public/js/lab-history-set.mjs:buildEstudiosCopyLinesFromLabSets",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/lab-history-set.mjs",
+      "target": "function:public/js/lab-history-set.mjs:buildEstudiosCopyLinesFromLabSets",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/lab-history-set.mjs",
+      "target": "function:public/js/lab-history-set.mjs:resolveEstudiosCopyOptions",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/lab-history-set.mjs",
+      "target": "function:public/js/lab-history-set.mjs:resolveEstudiosCopyOptions",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/lab-history-set.mjs",
+      "target": "function:public/js/lab-history-set.mjs:rebuildEstudiosFromLabHistory",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/lab-history-set.mjs",
+      "target": "function:public/js/lab-history-set.mjs:rebuildEstudiosFromLabHistory",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/lab-history-set.mjs",
+      "target": "function:public/js/lab-history-set.mjs:ensureParsedLabHistory",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/lab-history-set.mjs",
+      "target": "function:public/js/lab-history-set.mjs:ensureParsedLabHistory",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/lab-history-set.mjs",
+      "target": "function:public/js/lab-history-set.mjs:ensureParsedLabHistoryCached",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/lab-history-set.mjs",
+      "target": "function:public/js/lab-history-set.mjs:ensureParsedLabHistoryCached",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/lab-history-set.mjs",
+      "target": "function:public/js/lab-history-set.mjs:runLabHistoryPostSaveMaintenance",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/lab-history-set.mjs",
+      "target": "function:public/js/lab-history-set.mjs:runLabHistoryPostSaveMaintenance",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/lab-history-set.mjs",
+      "target": "function:public/js/lab-history-set.mjs:scheduleLabHistoryPostSaveMaintenance",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/lab-history-set.mjs",
+      "target": "function:public/js/lab-history-set.mjs:scheduleLabHistoryPostSaveMaintenance",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/lab-history-set.mjs",
+      "target": "function:public/js/lab-history-set.mjs:installLabHistoryAuditHook",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/lab-history-set.mjs",
+      "target": "function:public/js/lab-history-set.mjs:installLabHistoryAuditHook",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/labs-bh-extended.test.mjs",
+      "target": "file:public/js/labs.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/labs.js",
+      "target": "file:public/js/labs-bh-extended.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:public/js/labs-bh-trend-parse.test.mjs",
+      "target": "file:public/js/labs.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/labs.js",
+      "target": "file:public/js/labs-bh-trend-parse.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:public/js/labs-citoquimico-liquidos.test.mjs",
+      "target": "file:public/js/labs.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/labs.js",
+      "target": "file:public/js/labs-citoquimico-liquidos.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:public/js/labs-coag.test.mjs",
+      "target": "file:public/js/labs.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/labs.js",
+      "target": "file:public/js/labs-coag.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:public/js/labs-cultivo.test.mjs",
+      "target": "file:public/js/labs.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/labs.js",
+      "target": "file:public/js/labs-cultivo.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:public/js/labs-cultivo.test.mjs",
+      "target": "function:public/js/labs-cultivo.test.mjs:countCultivoChunks",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/labs-diff-coag.test.mjs",
+      "target": "file:public/js/labs.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/labs.js",
+      "target": "file:public/js/labs-diff-coag.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:public/js/labs-differential-manual.test.mjs",
+      "target": "file:public/js/labs.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/labs.js",
+      "target": "file:public/js/labs-differential-manual.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:public/js/labs-display.mjs",
+      "target": "function:public/js/labs-display.mjs:escTxt",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/labs-display.mjs",
+      "target": "function:public/js/labs-display.mjs:escTxt",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/labs-display.mjs",
+      "target": "function:public/js/labs-display.mjs:renderToken",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/labs-display.mjs",
+      "target": "function:public/js/labs-display.mjs:renderToken",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/labs-display.mjs",
+      "target": "function:public/js/labs-display.mjs:isLabSectionHeaderHtml",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/labs-display.mjs",
+      "target": "function:public/js/labs-display.mjs:isLabSectionHeaderHtml",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/labs-display.mjs",
+      "target": "function:public/js/labs-display.mjs:renderEntry",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/labs-display.mjs",
+      "target": "function:public/js/labs-display.mjs:renderEntry",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/labs-display.test.mjs",
+      "target": "file:public/js/labs-display.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/labs-display.mjs",
+      "target": "file:public/js/labs-display.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:public/js/labs-egfr.test.mjs",
+      "target": "file:public/js/labs.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/labs.js",
+      "target": "file:public/js/labs-egfr.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:public/js/labs-ego-plt-cit.test.mjs",
+      "target": "file:public/js/labs.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/labs.js",
+      "target": "file:public/js/labs-ego-plt-cit.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:public/js/labs-fecha-hora.test.mjs",
+      "target": "file:public/js/labs.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/labs.js",
+      "target": "file:public/js/labs-fecha-hora.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:public/js/labs-frotis.test.mjs",
+      "target": "file:public/js/labs.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/labs.js",
+      "target": "file:public/js/labs-frotis.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:public/js/labs-gases.test.mjs",
+      "target": "file:public/js/labs.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/labs.js",
+      "target": "file:public/js/labs-gases.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:public/js/labs-heces.test.mjs",
+      "target": "file:public/js/labs.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/labs.js",
+      "target": "file:public/js/labs-heces.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:public/js/labs-lipasa.test.mjs",
+      "target": "file:public/js/labs.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/labs.js",
+      "target": "file:public/js/labs-lipasa.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:public/js/labs-pct.test.mjs",
+      "target": "file:public/js/labs.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/labs.js",
+      "target": "file:public/js/labs-pct.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:public/js/labs-procesar-characterization.test.mjs",
+      "target": "file:public/js/labs-procesar-fixtures.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/labs-procesar-characterization.test.mjs",
+      "target": "file:public/js/labs.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/labs-procesar-fixtures.mjs",
+      "target": "file:public/js/labs-procesar-characterization.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:public/js/labs.js",
+      "target": "file:public/js/labs-procesar-characterization.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:public/js/labs-procesar-fixtures.mjs",
+      "target": "file:public/js/tour-demo-some-lab.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    }
+  ]
+}

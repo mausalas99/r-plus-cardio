@@ -1,0 +1,28 @@
+R+ 7.3.7 (censo LAN estable y expediente Drive)
+===================================================
+
+Fecha: 2026-06-14
+
+## Resumen
+
+Sobre **7.3.6**: corrige pacientes que desaparecían del censo tras ⇄ LiveSync cuando se reutilizaba el mismo **registro hospitalario** (readmisión o alta/baja en otro equipo). También reubica **Importar desde Drive** en la barra del expediente clínico con estilo alineado al resto de la UI.
+
+## Nuevo / mejorado
+
+- **LAN — censo estable** — Los deletes de paciente en LiveSync aplican solo por **id** del expediente; una readmisión con el mismo registro ya no hereda tombstones ni se borra por coincidencia de registro en otro Mac.
+- **LAN — tombstones** — Al registrar un paciente nuevo se limpian tombstones LAN obsoletos del mismo registro (`clearPatientDeleteTombstoneForAdmit`).
+- **LAN — bundle merge** — Entradas del anfitrión con id distinto al delete remoto se conservan (mismo registro, chart nuevo).
+- **Expediente — Drive** — Botón **Importar desde Drive** en la barra de acciones del bloque **Clínico** (modo sala), visible solo en esa pestaña; estilos pill en `expediente.css`.
+
+## Operación en guardia
+
+Instala **7.3.7 en todas** las estaciones del turno el mismo día si usáis ⇄ con censo compartido. Sin cambio de esquema SQLCipher (sigue **v17**). Prioridad si vieron pacientes que “desaparecían” tras sync sin borrado explícito.
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v7.3.7
+
+- Mac: `R+-7.3.7-arm64.dmg`, `R+-7.3.7-x64.dmg` (y zip para auto-update).
+- Windows: `R+-7.3.7-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye write-release-yml.js).

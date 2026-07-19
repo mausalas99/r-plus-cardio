@@ -1,0 +1,35 @@
+name = "rmas-lista-de-espera"
+main = "src/index.js"
+compatibility_date = "2026-06-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "rplus-equipos"
+database_id = "45e5427e-bf49-4881-92e1-526367fa5c74"
+
+[[r2_buckets]]
+binding = "PHOTOS"
+bucket_name = "rplus-equipos-photos"
+
+[triggers]
+crons = ["0 6 * * *"]
+
+[assets]
+directory = "../equipos-pages/public"
+binding = "ASSETS"
+
+# Custom domain (public URL — no laboratoriazo in the link)
+# 1. Add your domain to Cloudflare (DNS → your site).
+# 2. Dashboard → Workers & Pages → rmas-lista-de-espera → Settings → Domains & Routes → Add.
+# 3. Hostname example: lista-de-espera.tudominio.org
+# 4. Uncomment below, redeploy, then use that URL in R+ ⇄ → Cola en Cloudflare.
+#
+# [[routes]]
+# pattern = "lista-de-espera.tudominio.org"
+# custom_domain = true
+#
+# [vars]
+# EQUIPOS_PUBLIC_ORIGIN = "https://rmas-lista-de-espera.rmas-workersdev.workers.dev"
+
+[vars]
+EQUIPOS_VAPID_PUBLIC_KEY = "BG1y_wrXtoDskOEV5MYXwXKYP_cA_SO2ZkpQr4VugpN_1GpxPfl0cZdNoW72tXJg1h-dONaqYYMukj7xgHtEbg0"

@@ -1,0 +1,229 @@
+/* Premium UI · Mobile web (rpc-mobile-web) · phase 3 rollout
+ * Same tokens as desktop; touch targets ≥44px; flat shell frames stay edge-to-edge.
+ */
+
+/* ── Header: search + mode chip ─────────────────────────── */
+
+html.rpc-mobile-web .header-right {
+  gap: 4px;
+}
+
+html.rpc-mobile-web .header-work-cluster {
+  flex: 0 0 auto;
+  width: fit-content;
+  max-width: none;
+  flex-wrap: nowrap;
+  gap: 4px;
+}
+
+html.rpc-mobile-web .header-cmdk-hint {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+}
+
+/* Collapsed: one touch chip (no pill-in-pill). Expanded: full segment control. */
+html.rpc-mobile-web .header-mode-seg {
+  border: none;
+  padding: 0;
+  background: transparent;
+  gap: 3px;
+  flex-shrink: 0;
+}
+
+html.rpc-mobile-web .header-mode-seg.is-expanded {
+  border: var(--border-hairline);
+  border-radius: var(--radius-md);
+  padding: 3px;
+  background: color-mix(in oklab, var(--surface) 94%, var(--bg));
+}
+
+html.rpc-mobile-web .header-mode-seg-btn {
+  min-height: 36px;
+  min-width: 0;
+  padding: 0 11px;
+  font-size: 12px;
+  border-radius: var(--radius-pill);
+}
+
+html.rpc-mobile-web .header-mode-seg:not(.is-expanded) {
+  gap: 0;
+}
+
+/* Collapsed: only the active chip — no phantom flex gaps from max-width:0 siblings. */
+html.rpc-mobile-web .header-mode-seg:not(.is-expanded) .header-mode-seg-btn:not(.is-active) {
+  display: none !important;
+  max-width: none !important;
+  padding: 0 !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+html.rpc-mobile-web .header-mode-seg:not(.is-expanded) .header-mode-seg-btn.is-active {
+  min-height: 36px;
+  min-width: 44px;
+  border: var(--border-hairline);
+  background: color-mix(in oklab, var(--action) 7%, var(--surface));
+  color: var(--text);
+}
+
+html.rpc-mobile-web .header-mode-seg.is-expanded .header-mode-seg-btn:not([hidden]) {
+  display: inline-flex !important;
+  max-width: 9rem;
+  padding-left: 10px;
+  padding-right: 10px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+html.rpc-mobile-web .header-mode-seg.is-expanded .header-mode-seg-btn {
+  min-height: 40px;
+  padding: 0 10px;
+}
+
+html.rpc-mobile-web .header-mode-seg.is-expanded .header-mode-seg-btn.is-active {
+  background: color-mix(in oklab, var(--action) 10%, var(--surface));
+  color: var(--action);
+}
+
+/* Touch: expand via tap (.is-expanded), not hover. */
+html.rpc-mobile-web .header-mode-seg:hover .header-mode-seg-btn:not(.is-active):not([hidden]) {
+  transition-delay: 0ms;
+}
+
+/* ── Main tab bar (Laboratorio / Expediente / …) ───────── */
+
+html.rpc-mobile-web .workbench-chrome,
+html.rpc-mobile-web.ui-density-normal .workbench-chrome {
+  margin-left: 0;
+  margin-right: 0;
+  border-radius: 0;
+  overflow: visible;
+  background: transparent;
+  box-shadow: none;
+}
+
+html.rpc-mobile-web .app-tabs-row {
+  padding: 0 6px 0 2px;
+  background: var(--surface);
+  border-bottom: var(--border-hairline);
+}
+
+html.rpc-mobile-web .app-tabs {
+  border-bottom: none;
+  padding: 0;
+  position: relative;
+}
+
+html.rpc-mobile-web .app-tab {
+  flex: 1 1 0;
+  justify-content: center;
+  padding: 11px 6px 9px;
+  font-size: 13px;
+  border-radius: 0;
+}
+
+html.rpc-mobile-web .app-tab svg {
+  display: none;
+}
+
+html.rpc-mobile-web .app-tab.active {
+  background: transparent;
+  box-shadow: none;
+}
+
+html.rpc-mobile-web .tab-bar-indicator {
+  height: 2px;
+  bottom: 0;
+  border-radius: 0;
+}
+
+html.rpc-mobile-web .app-tabs-keys-btn {
+  display: none;
+}
+
+html.rpc-mobile-web aside.patient-sidebar .patient-card {
+  border: var(--border-hairline);
+  box-shadow: var(--elev-flat);
+  transition:
+    background var(--dur-fast) var(--ease-out),
+    border-color var(--dur-fast) var(--ease-out),
+    box-shadow var(--dur-fast) var(--ease-out);
+}
+
+html.rpc-mobile-web aside.patient-sidebar .patient-card:hover,
+html.rpc-mobile-web aside.patient-sidebar .patient-card:active {
+  background: var(--state-hover-bg);
+  box-shadow: var(--elev-raised);
+}
+
+html.rpc-mobile-web aside.patient-sidebar .patient-card.active {
+  border-color: color-mix(in oklab, var(--action) 32%, transparent);
+  box-shadow: var(--elev-raised);
+}
+
+html.rpc-mobile-web aside.patient-sidebar #patient-search {
+  border: var(--border-hairline);
+  background: var(--input-fill);
+  border-radius: var(--radius-control);
+  min-height: 44px;
+}
+
+html.rpc-mobile-web aside.patient-sidebar #patient-search:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+html.rpc-mobile-web #appcontent-lab .lab-item {
+  border: var(--border-hairline);
+  box-shadow: var(--elev-flat);
+}
+
+html.rpc-mobile-web #appcontent-lab .lab-history-row {
+  border: var(--border-hairline);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--elev-flat);
+}
+
+html.rpc-mobile-web #appcontent-lab .lab-title {
+  font: var(--type-section);
+  letter-spacing: var(--tracking-section);
+  border-bottom: var(--border-hairline);
+}
+
+html.rpc-mobile-web .patient-expediente-classic .card,
+html.rpc-mobile-web .patient-expediente-classic .listado-section {
+  border: var(--border-hairline);
+  box-shadow: var(--elev-flat);
+}
+
+html.rpc-mobile-web .patient-expediente-classic .card-header,
+html.rpc-mobile-web .patient-expediente-classic .listado-section-header {
+  font: var(--type-section);
+  letter-spacing: var(--tracking-section);
+  border-bottom: var(--border-hairline);
+}
+
+html.rpc-mobile-web #rpc-mobile-boot-banner {
+  border: var(--border-hairline);
+  box-shadow: var(--elev-overlay);
+  background: color-mix(in oklab, var(--color-ink) 88%, transparent);
+  -webkit-backdrop-filter: blur(var(--overlay-blur, 12px));
+  backdrop-filter: blur(var(--overlay-blur, 12px));
+}
+
+@supports not (backdrop-filter: blur(1px)) {
+  html.rpc-mobile-web #rpc-mobile-boot-banner {
+    background: color-mix(in oklab, var(--color-ink) 92%, var(--surface));
+  }
+}
+
+html.high-contrast html.rpc-mobile-web aside.patient-sidebar .patient-card,
+html.high-contrast.rpc-mobile-web aside.patient-sidebar .patient-card {
+  box-shadow: none;
+  border: 1px solid var(--border);
+}
+
+html.motion-sobrio.rpc-mobile-web aside.patient-sidebar .patient-card {
+  transition: none;
+}

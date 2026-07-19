@@ -1,0 +1,28 @@
+R+ 7.3.3 (EA balance, evacuaciones y dieta)
+===============================================
+
+Fecha: 2026-06-11
+
+## Resumen
+
+Parche sobre **7.3.2**: corrige el texto copiado de **balance e I/O** en Estado actual y censo cuando hay egresos parcialmente cuantificados; las **evacuaciones** numéricas dejan de llevar «CC» (son conteo, no volumen); la rejilla de dieta muestra **kcal total** calculadas desde kcal/kg y peso sin pisar valores guardados.
+
+## Nuevo / mejorado
+
+- **Estado actual — balance SOAP** — Si falta el balance del turno pero ingresos y egresos numéricos lo permiten, la cláusula I/O calcula el balance (p. ej. diuresis NC + gastrostomía 120 → **+48 CC**).
+- **Estado actual — evacuaciones** — Valores numéricos en nota e historial sin sufijo **CC**; **NC** y variantes siguen normalizadas.
+- **Censo — columna I/O** — Balance corto con egresos mixtos (diuresis NC + drenaje numérico); evacuaciones numéricas sin **CC** en PDF y listados.
+- **Estado actual — dieta** — Campo **Kcal total** refleja kcal/kg × peso en pantalla; solo persiste al editar kcal/kg o el total manualmente.
+
+## Operación en guardia
+
+Instala **7.3.3 en todas** las estaciones del turno el mismo día. Sin cambio de esquema SQLCipher (sigue **v17**). El iPad no requiere actualización.
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v7.3.3
+
+- Mac: `R+-7.3.3-arm64.dmg`, `R+-7.3.3-x64.dmg` (y zip para auto-update).
+- Windows: `R+-7.3.3-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye write-release-yml.js).

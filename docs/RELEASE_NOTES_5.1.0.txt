@@ -1,0 +1,24 @@
+R+ 5.1.0 (estable — tablas SOME del reporte)
+==============================================
+
+Fecha: 2026-05-22
+
+## Resumen
+
+Tras pegar un reporte SOME, abre **Tablas del reporte** para ver cada departamento en tablas legibles (BH, química, orina, bacteriología, citoquímico de líquidos, etc.) y copiar por sección en TSV o PNG.
+
+## Nuevo / mejorado
+
+- **Laboratorio — tablas SOME:** parser tabular por departamento y subgrupo; columnas Estudio / Resultado / Unidades / Referencia; resalta valores fuera de rango (flags * / A / B / CB / CA).
+- **Modal Tablas del reporte:** botón en la barra de Resultados (junto a Copiar); secciones plegables por departamento; export **Copiar tabla** (TSV) y **Copiar imagen** (PNG) por bloque.
+- **Parser SOME:** química clínica, biometría y EGO en tablas planas; citoquímico de líquidos corporales por fuente; omite comentarios de muestra y observaciones; menos filas duplicadas o vacías.
+- **Historial de labs:** normalización más segura al cargar respaldos (evita historiales corruptos que rompían la vista).
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v5.1.0
+
+- Mac: `R+-5.1.0-arm64.dmg`, `R+-5.1.0-x64.dmg` (y zip para auto-update).
+- Windows: `R+-5.1.0-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye write-release-yml.js).

@@ -1,0 +1,57 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 4,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "public/index.html",
+      "language": "html",
+      "fileCategory": "markup",
+      "totalLines": 2304,
+      "nonEmptyLines": 2206,
+      "metrics": {}
+    },
+    {
+      "path": "public/index.src.html",
+      "language": "html",
+      "fileCategory": "markup",
+      "totalLines": 135,
+      "nonEmptyLines": 135,
+      "metrics": {}
+    },
+    {
+      "path": "public/min-version.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 4,
+      "nonEmptyLines": 4,
+      "sections": [
+        {
+          "heading": "minVersion",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "message",
+          "level": 1,
+          "line": 3
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 2
+      }
+    },
+    {
+      "path": "public/tokens.css",
+      "language": "css",
+      "fileCategory": "markup",
+      "totalLines": 365,
+      "nonEmptyLines": 351,
+      "metrics": {}
+    }
+  ]
+}

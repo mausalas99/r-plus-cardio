@@ -1,0 +1,61 @@
+R+ 6.5.4 (Identidad LAN · equipos persistentes · arranque sin contraseña)
+=======================================================================
+
+Fecha: 2026-06-02
+
+## Resumen
+
+Parche centrado en **identidad clínica en la red (usuario LAN)**, **equipos desacoplados de la guardia del día** y **alcance clínico V3** para R4/Admin. Además, se **elimina por ahora la contraseña maestra** al abrir la base: R+ abre el almacén clínico automáticamente en este equipo (cifrado con contraseña queda diferido hasta un release posterior).
+
+## ⚠️ Aviso: Modo Guardia (prototipo)
+
+El **Modo Guardia** sigue siendo un **prototipo en desarrollo** y **no está listo para uso clínico**. No lo uses para decisiones reales hasta el anuncio oficial.
+
+## Nuevo / mejorado
+
+### Arranque y base de datos
+
+- **Sin contraseña maestra al iniciar** — Ya no se pide crear ni ingresar contraseña para desbloquear la base clínica. La app abre el almacén al arrancar (SQLCipher diferido en instalaciones nuevas).
+- **Recuperación de instalaciones atascadas** — Si quedó un archivo de base a medias de un intento anterior con contraseña, R+ intenta abrir en modo simple o reinicia el archivo local para permitir entrar.
+- **Quien ya tenía “recordar en este dispositivo”** — Sigue funcionando el desbloqueo por llavero del sistema cuando existía.
+
+### Identidad clínica (usuario LAN)
+
+- **Onboarding en pantalla principal** — Tras abrir la base, el asistente (usuario LAN → equipos en tu sala → unirte o crear) aparece en el **área central**, sin depender del Modo Guardia.
+- **Mi rotación visible** — Acceso destacado en la **barra lateral** (debajo de Mi Perfil) y bloque prioritario en **Mi Perfil**; abre el panel de equipos o retoma la configuración pendiente.
+- **Reclamar usuario** — IPC `dbClinicalUsernameClaim` y actualización de perfil sin duplicar filas en la base.
+- **Validación de usuario** — Formato `3–32` caracteres en minúsculas (letras, números, `_`).
+- **Enlace móvil** — Parámetros `?user=&name=&rank=&sala=` prellenan el paso 1 del onboarding.
+- **R1 vs administrador de programa** — El rango clínico **R1** queda separado del rol **Admin** de programa (`is_program_admin`).
+
+### Equipos LAN (desacoplados de “Guardia hoy”)
+
+- **Equipos persistentes** — Crear y unirse a equipos por sala/ciclo sin declarar “Guardia hoy” en el equipo.
+- **Pacientes por coincidencia estructural** — El acceso al censo del equipo usa `patientMatchesTeam`, no el calendario de guardia del día.
+- **Mi rotación** — Gestión de equipos en modal; el onboarding inicial ya no vive solo dentro de Guardia.
+- **Privilegios elevados** — **R4** y **Admin** ven censo global y directorio de equipos en todas las salas; R4/Admin pueden finalizar rotación y gestionar equipos del mes.
+
+### Censo y barra lateral
+
+- **Filtros por alcance** — La lista de pacientes respeta el alcance clínico V3 (sala, equipo, handoffs R2, macros R3).
+- **Filtros censo (solo R4/Admin)** — Sala, Equipo y Servicio en la barra lateral **solo** para R4, Admin y admin de programa; **colapsables** para ganar espacio (R1–R3 no ven ese bloque).
+- **Censo global en el hub LAN** — Panel de conexión guardia con vista de censo ampliada para rangos elevados.
+
+### Administración clínica
+
+- **Admin: todas las salas** — Navegación y equipos en todas las salas del programa.
+- **Limpiar “Guardia hoy”** — Acción para resetear declaraciones de guardia del día cuando haga falta operativamente.
+
+## Correcciones
+
+- Ajustes de sincronización del **Modo Guardia** con el panel LAN.
+- Estabilidad en formularios de equipos y entrega clínica tras el rediseño de alcance.
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v6.5.4
+
+- Mac: `R+-6.5.4-arm64.dmg`, `R+-6.5.4-x64.dmg` (y zip para auto-update).
+- Windows: `R+-6.5.4-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye write-release-yml.js).

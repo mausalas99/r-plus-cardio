@@ -1,0 +1,265 @@
+{
+  "nodes": [
+    {
+      "id": "document:docs/superpowers/specs/2026-04-11-ui-improvements-design.md",
+      "type": "document",
+      "name": "2026-04-11-ui-improvements-design.md",
+      "filePath": "docs/superpowers/specs/2026-04-11-ui-improvements-design.md",
+      "summary": "Design specification: R+ UI Improvements — Design Spec.",
+      "tags": [
+        "documentation",
+        "specification",
+        "design"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/superpowers/specs/2026-04-11-windows-python-textbox-fix-design.md",
+      "type": "document",
+      "name": "2026-04-11-windows-python-textbox-fix-design.md",
+      "filePath": "docs/superpowers/specs/2026-04-11-windows-python-textbox-fix-design.md",
+      "summary": "Documentation file (86 non-empty lines) in 2026-04-11-windows-python-textbox-fix-design.md.",
+      "tags": [
+        "documentation",
+        "specification",
+        "reference"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/superpowers/specs/2026-04-12-copy-labs-soap-template-design.md",
+      "type": "document",
+      "name": "2026-04-12-copy-labs-soap-template-design.md",
+      "filePath": "docs/superpowers/specs/2026-04-12-copy-labs-soap-template-design.md",
+      "summary": "Design specification: Copy Labs + Plantilla SOAP — Spec de diseño.",
+      "tags": [
+        "documentation",
+        "specification",
+        "reference"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/superpowers/specs/2026-04-12-quick-wins-v2-design.md",
+      "type": "document",
+      "name": "2026-04-12-quick-wins-v2-design.md",
+      "filePath": "docs/superpowers/specs/2026-04-12-quick-wins-v2-design.md",
+      "summary": "Design specification: Quick Wins v2 — Spec de diseño.",
+      "tags": [
+        "documentation",
+        "specification",
+        "design"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/superpowers/specs/2026-04-13-code-optimization-design.md",
+      "type": "document",
+      "name": "2026-04-13-code-optimization-design.md",
+      "filePath": "docs/superpowers/specs/2026-04-13-code-optimization-design.md",
+      "summary": "Design specification: R+ Code Optimization & Battery Efficiency Design.",
+      "tags": [
+        "documentation",
+        "specification",
+        "reference"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/superpowers/specs/2026-04-13-output-dir-duplicate-warning-design.md",
+      "type": "document",
+      "name": "2026-04-13-output-dir-duplicate-warning-design.md",
+      "filePath": "docs/superpowers/specs/2026-04-13-output-dir-duplicate-warning-design.md",
+      "summary": "Design specification: Carpeta de salida configurable + Avisos de duplicado de paciente.",
+      "tags": [
+        "documentation",
+        "specification",
+        "reference"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/superpowers/specs/2026-04-13-v1.6.0-design.md",
+      "type": "document",
+      "name": "2026-04-13-v1.6.0-design.md",
+      "filePath": "docs/superpowers/specs/2026-04-13-v1.6.0-design.md",
+      "summary": "Design specification: R+ v1.6.0 — Design Spec.",
+      "tags": [
+        "documentation",
+        "specification",
+        "reference"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/superpowers/specs/2026-04-23-actualizaciones-y-producto-roadmap-design.md",
+      "type": "document",
+      "name": "2026-04-23-actualizaciones-y-producto-roadmap-design.md",
+      "filePath": "docs/superpowers/specs/2026-04-23-actualizaciones-y-producto-roadmap-design.md",
+      "summary": "Design specification: R+ — Roadmap de actualizaciones y producto (inventario).",
+      "tags": [
+        "documentation",
+        "specification",
+        "reference"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/superpowers/specs/2026-04-24-lab-history-desc-order-design.md",
+      "type": "document",
+      "name": "2026-04-24-lab-history-desc-order-design.md",
+      "filePath": "docs/superpowers/specs/2026-04-24-lab-history-desc-order-design.md",
+      "summary": "Design specification: Orden Descendente de Labs en Nota + Historial + Tendencias — Spec de diseno.",
+      "tags": [
+        "documentation",
+        "specification",
+        "reference"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/superpowers/specs/2026-05-01-auto-lab-history-active-patient-design.md",
+      "type": "document",
+      "name": "2026-05-01-auto-lab-history-active-patient-design.md",
+      "filePath": "docs/superpowers/specs/2026-05-01-auto-lab-history-active-patient-design.md",
+      "summary": "Design specification: Auto-ingesta a historial al procesar (paciente activo) — Spec de diseno.",
+      "tags": [
+        "documentation",
+        "specification",
+        "reference"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/superpowers/specs/2026-05-02-medicamentos-receta-design.md",
+      "type": "document",
+      "name": "2026-05-02-medicamentos-receta-design.md",
+      "filePath": "docs/superpowers/specs/2026-05-02-medicamentos-receta-design.md",
+      "summary": "Design specification: Pestaña Medicamentos y botón Receta — Spec de diseño.",
+      "tags": [
+        "documentation",
+        "specification",
+        "reference"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/superpowers/specs/2026-05-03-lab-auto-switch-active-patient-design.md",
+      "type": "document",
+      "name": "2026-05-03-lab-auto-switch-active-patient-design.md",
+      "filePath": "docs/superpowers/specs/2026-05-03-lab-auto-switch-active-patient-design.md",
+      "summary": "Design specification: Diseño: cambio automático de paciente al pegar laboratorios de otro registro.",
+      "tags": [
+        "documentation",
+        "specification",
+        "reference"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/superpowers/specs/2026-05-04-medicamentos-tendencias-design.md",
+      "type": "document",
+      "name": "2026-05-04-medicamentos-tendencias-design.md",
+      "filePath": "docs/superpowers/specs/2026-05-04-medicamentos-tendencias-design.md",
+      "summary": "Design specification: Medicamentos (inclusión amplia + texto corto) y Tendencias (barras por estudio) — Spec de diseño.",
+      "tags": [
+        "documentation",
+        "specification",
+        "reference"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/superpowers/specs/2026-05-04-tendencias-por-seccion-laboratorio-design.md",
+      "type": "document",
+      "name": "2026-05-04-tendencias-por-seccion-laboratorio-design.md",
+      "filePath": "docs/superpowers/specs/2026-05-04-tendencias-por-seccion-laboratorio-design.md",
+      "summary": "Design specification: Tendencias por sección de laboratorio (estudio) — Spec de diseño.",
+      "tags": [
+        "documentation",
+        "specification",
+        "reference"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/superpowers/specs/2026-05-07-v3.0-design.md",
+      "type": "document",
+      "name": "2026-05-07-v3.0-design.md",
+      "filePath": "docs/superpowers/specs/2026-05-07-v3.0-design.md",
+      "summary": "Design specification: R+ 3.0.0 — Modos Sala / Interconsulta, Estado Actual, Listado de Problemas y DOB.",
+      "tags": [
+        "documentation",
+        "specification",
+        "reference"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/superpowers/specs/2026-05-13-todos-shortcuts-bh-extended-design.md",
+      "type": "document",
+      "name": "2026-05-13-todos-shortcuts-bh-extended-design.md",
+      "filePath": "docs/superpowers/specs/2026-05-13-todos-shortcuts-bh-extended-design.md",
+      "summary": "Design specification: Pendientes, Shortcuts y Línea blanca extendida — Design.",
+      "tags": [
+        "documentation",
+        "specification",
+        "reference"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/superpowers/specs/2026-05-14-procedure-agenda-week-view-design.md",
+      "type": "document",
+      "name": "2026-05-14-procedure-agenda-week-view-design.md",
+      "filePath": "docs/superpowers/specs/2026-05-14-procedure-agenda-week-view-design.md",
+      "summary": "Design specification: Agenda de procedimientos (vista semanal, v1 local) — diseño.",
+      "tags": [
+        "documentation",
+        "specification",
+        "reference"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/superpowers/specs/2026-05-16-livesync-agenda-todos-room-design.md",
+      "type": "document",
+      "name": "2026-05-16-livesync-agenda-todos-room-design.md",
+      "filePath": "docs/superpowers/specs/2026-05-16-livesync-agenda-todos-room-design.md",
+      "summary": "Design specification: LiveSync por sala — agenda de procedimientos y pendientes.",
+      "tags": [
+        "documentation",
+        "specification",
+        "lan-sync"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/superpowers/specs/2026-05-18-tendencias-grafica-estudio-tabla-design.md",
+      "type": "document",
+      "name": "2026-05-18-tendencias-grafica-estudio-tabla-design.md",
+      "filePath": "docs/superpowers/specs/2026-05-18-tendencias-grafica-estudio-tabla-design.md",
+      "summary": "Design specification: Tendencias — gráfica por estudio + tabla copiable — Spec de diseño.",
+      "tags": [
+        "documentation",
+        "specification",
+        "reference"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/superpowers/specs/2026-05-19-modular-app-refactor-design.md",
+      "type": "document",
+      "name": "2026-05-19-modular-app-refactor-design.md",
+      "filePath": "docs/superpowers/specs/2026-05-19-modular-app-refactor-design.md",
+      "summary": "Design specification: R+ — Modularización app.js + HTML por dominio — Spec de diseño.",
+      "tags": [
+        "documentation",
+        "specification",
+        "reference"
+      ],
+      "complexity": "complex"
+    }
+  ],
+  "edges": []
+}

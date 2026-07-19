@@ -1,0 +1,33 @@
+R+ 7.1.9 (LAN descubrimiento y reconexión)
+==============================================
+
+Fecha: 2026-06-08
+
+## Resumen
+
+Re-arquitectura de la capa LAN: el anfitrión se identifica por huella digital (no solo por IP), hay descubrimiento mDNS y beacon UDP, reconexión WS→SSE→HTTP y diagnóstico visible en el panel ⇄.
+
+## Nuevo / mejorado
+
+- **Registro de anfitriones** — `lan-host-registry.mjs` unifica escaneo, mDNS, UDP, `/health` y heartbeats; la huella `clientId:startedAt` sobrevive cambios de IP.
+- **mDNS Bonjour** — Anuncia y busca `_rplus._tcp` en el puerto 3738; IPC `lan:mdns-peers` y reinicio al cambiar de NIC.
+- **Beacon UDP** — Multicast `239.255.42.1:3739` como pista adicional en subred.
+- **Roam por huella** — Al cambiar Wi‑Fi, si el anfitrión fijado sigue vivo con la misma huella, salta el barrido completo y reconecta a la URL nueva.
+- **PIN del turno** — Escaneo con backoff exponencial (12→30→60→120 s) para no saturar la red.
+- **SSE + fallback** — `GET /api/lan/v1/sse` con heartbeat; `LanConnectionManager` cae de WS a SSE a polling HTTP si el proxy bloquea upgrades.
+- **`/health`** — Endpoint agregado + `livesync:hello` cada 30 s para estado del host y del turno.
+- **Panel ⇄** — Fila de pre-vuelo (huella, transporte, outbox), badges de outbox y transporte sin abrir diagnóstico.
+- **QR con huella de guardia** — El código incluye `sha256[:8]` del turno; aviso si intentas unirte a otra guardia.
+
+## Operación en guardia
+
+Parche sobre **7.1.8**: instala en **todas** las estaciones del turno. Sin cambio de esquema SQLCipher (sigue v14). En redes restrictivas: puerto **3738** TCP, mDNS (5353) y multicast UDP **3739**.
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v7.1.9
+
+- Mac: `R+-7.1.9-arm64.dmg`, `R+-7.1.9-x64.dmg` (y zip para auto-update).
+- Windows: `R+-7.1.9-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye write-release-yml.js).

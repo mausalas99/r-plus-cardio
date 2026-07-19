@@ -1,0 +1,40 @@
+R+ 6.5.6 (estable — Mi rotación, conflictos LAN y modal HC)
+============================================================
+
+Fecha: 2026-06-02
+
+## Resumen
+
+Mejora **Mi rotación** (equipos por sala, ciclos por integrante, invitación por código), la **sincronización LAN** de historia clínica (menos modales repetidos al refrescar, alineación automática cuando el texto visible coincide) y el **comparador de conflictos** (más ancho y mensajes más claros).
+
+## Nuevo / mejorado
+
+### Mi rotación
+
+- **Equipos en tu sala** — El directorio «Explorar sala» usa la sala efectiva del equipo; los equipos de la misma sala deberían aparecer para unirte (sincronización LAN de equipos y membresías).
+- **Ciclo por integrante** — Cada R1/R2 guarda su subciclo (R2: A–F; R1: A1–D1 o A2–D2). Bloque **Mi ciclo en este equipo** con guardado desde la tarjeta del equipo.
+- **Agregar integrante** — Acepta usuario LAN con o sin `@`; el usuario debe existir en Mi rotación.
+- **Invitar por código** — Código de 8 caracteres + instrucciones para la app R+ del Mac (sin enlace `localhost` ni Safari). Sección **Unirte con código de equipo** en el panel.
+- **Layout del panel** — «Unirte con código» a ancho completo bajo Mis equipos | Explorar sala; formulario alineado (código, ciclo, Unirme).
+- **Safari / web** — Aviso si abres un enlace de invitación en el navegador: la unión solo funciona en la app de escritorio.
+
+### Conflictos de sincronización (historia clínica y sala)
+
+- **Ya no reaparece el modal en cada refresco** — Tras reconectar a la sala, los conflictos en segundo plano se guardan como borrador; un aviso indica **Ajustes → LAN** para resolverlos.
+- **Mismo contenido visible** — Si el resumen legible coincide en tu borrador y en la sala, R+ alinea con el host sin pedirte elegir (versión/metadatos internos).
+- **Modal más usable** — Comparador más ancho; botones en dos columnas; lista de secciones en dos columnas; texto aclaratorio cuando «se ve igual» pero el registro del host no es idéntico.
+- **Elegir versión del servidor** — Al aceptar la sala en historia clínica, se actualiza la copia local y se limpia el pendiente de sync.
+
+### Otros
+
+- **min-version.json** local — Menos 404 al comprobar versión mínima sin red.
+- **WebSocket LAN** — Cierre más limpio al reconectar (menos ruido en consola).
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v6.5.6
+
+- Mac: `R+-6.5.6-arm64.dmg`, `R+-6.5.6-x64.dmg` (y zip para auto-update).
+- Windows: `R+-6.5.6-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye write-release-yml.js).

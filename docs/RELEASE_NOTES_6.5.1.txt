@@ -1,0 +1,55 @@
+R+ 6.5.1 (Perfil farmacoterapéutico · almacén cifrado · sala en vivo)
+=======================================================================
+
+Fecha: 2026-05-31
+
+## Resumen
+
+Versión que añade el **perfil farmacoterapéutico mensual** (calendario SOME) en Medicamentos, mueve los datos clínicos de escritorio a un **almacén local cifrado (SQLCipher)** con contraseña maestra y **cadena de auditoría forense**, y refuerza la **sala en vivo** (sync del perfil, borradores de conflicto y resolución de paquetes de sala).
+
+## Nuevo / mejorado
+
+### Perfil farmacoterapéutico (Medicamentos)
+
+- **Ubicación** — **Medicamentos → Perfil histórico** (junto a **Receta actual**).
+- **Calendario mensual SOME** — Pega el bloque mensual del hospital; tabla unificada por medicamento y días 01–31; doble indicación (`×2`) cuando aplica.
+- **Adherencia** — Días indicados vs **no administrados** (clic en celda); resumen por fila (efectivos / no pasados) y filas con fallos resaltadas.
+- **Vistas** — Lista colapsada con botón **Días**; modal de mes completo en pantalla completa.
+- **Receta** — Tras **Receta** con éxito, merge automático al mes de la fecha de actualización (sin pisar marcas manuales).
+- **Filtros SOME** — Categorías (antibiótico, sedante, etc.) con catálogo personalizable en Ajustes (`somePharm.tokens`).
+- **Persistencia** — Por paciente; incluido en respaldos ZIP, sync LAN y almacén cifrado en escritorio.
+
+### Almacén clínico cifrado (escritorio)
+
+- **SQLCipher** — Pacientes, notas, labs, medicamentos, Historia Clínica, estado LAN del anfitrión y demás blobs clínicos viven en `rplus-clinical.db` cifrada (no en `localStorage` plano).
+- **Contraseña maestra** — Pantalla al arrancar: crear o desbloquear; opción **Recordar en este equipo** (clave envuelta con `safeStorage` del SO).
+- **Migración única** — Al primer desbloqueo, importa automáticamente desde `localStorage` y el JSON del host LAN si existían.
+- **Bloquear** — Menú / Ajustes: bloquea la base hasta volver a introducir la contraseña.
+- **Respaldos** — Export/import JSON del almacén cifrado desde **Ajustes → Respaldos, sync y recuperación** (aviso de PHI en texto plano al exportar).
+
+### Auditoría forense
+
+- **Cadena SHA-256** — Eventos append-only (desbloqueo, bloqueo, migración, export/import de respaldo, etc.).
+- **Verificar integridad** — En Ajustes: comprueba la cadena y avisa si un registro no encadena.
+
+### Sala en vivo (LAN)
+
+- **Perfil farmacoterapéutico** — Se sincroniza por paciente con el anfitrión como el resto del expediente.
+- **Conflictos** — Borradores conservados al cerrar el visor; tarjeta **Borradores de conflicto** en el panel LAN; resolución más fiable de conflictos de **paquete de sala** (usar versión del servidor).
+
+## Regresión
+
+- Tests en `lib/db/`, `public/js/med-pharm-profile-core.test.mjs`, `public/js/med-pharm-some-catalog.test.mjs`, `public/js/features/db-unlock.test.mjs`, `public/js/lan-conflict-draft-resolution.test.mjs`.
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v6.5.1
+
+- Mac: `R+-6.5.1-arm64.dmg`, `R+-6.5.1-x64.dmg` (y zip para auto-update).
+- Windows: `R+-6.5.1-x64.exe`.
+
+Tras el build local: `npm run build:ui` y `npm run build:mac` / `npm run build:win`.
+
+**Nota desarrollo:** si al abrir en modo dev aparece error de módulo SQLCipher, ejecuta `npm run rebuild:db-native` y reinicia R+.
+
+Publicar: `npm run release:publish` (completa highlights en `settings-help.mjs` antes de publicar).

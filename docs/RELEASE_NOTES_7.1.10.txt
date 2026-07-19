@@ -1,0 +1,28 @@
+R+ 7.1.10 (LAN mDNS y diagnóstico ⇄)
+========================================
+
+Fecha: 2026-06-08
+
+## Resumen
+
+Parche sobre 7.1.9: mDNS deja de fallar en silencio cuando el Wi‑Fi cae o cambia de interfaz, y el panel ⇄ expone más contexto en diagnóstico sin duplicar el indicador verde de conexión.
+
+## Nuevo / mejorado
+
+- **mDNS resiliente** — Errores recuperables (`EADDRNOTAVAIL`, `ENETDOWN`, etc.) detienen Bonjour sin crashear; no anuncia si no hay interfaz LAN; al perder red se detiene hasta que vuelva una IP privada.
+- **Reinicio de NIC** — `main.js` solo reinicia mDNS cuando hay `candidateBaseUrl`; si no hay red, para el servicio.
+- **Panel ⇄** — En fase `live`, la fila de pre-vuelo se oculta (el punto verde ya está en la línea de estado).
+- **Diagnóstico ⇄** — Informe incluye perfil de red (FAST/SLOW/OFFLINE), transporte activo (WS/SSE/poll), RTT, hosts en registro y rol (host/client).
+
+## Operación en guardia
+
+Parche sobre **7.1.9**: instala en **todas** las estaciones del turno. Sin cambio de esquema SQLCipher (sigue v14).
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v7.1.10
+
+- Mac: `R+-7.1.10-arm64.dmg`, `R+-7.1.10-x64.dmg` (y zip para auto-update).
+- Windows: `R+-7.1.10-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye write-release-yml.js).

@@ -1,0 +1,26 @@
+R+ 7.6.0 (LAN sin PIN de turno + censo abierto por equipo)
+=============================================================
+
+Fecha: 2026-07-01
+
+## Resumen
+
+Sobre **7.5.9**: el turno LAN se une **sin PIN de 6 dígitos** por defecto (onboarding y registro sin campo PIN; conexión automática al anfitrión). Temporalmente, el censo clínico muestra **todos los pacientes de la sala** sin filtrar por equipo asignado. El anfitrión puede volver a exigir PIN con `R_PLUS_LAN_REQUIRE_SHIFT_PIN=1` al arrancar.
+
+## Nuevo / mejorado
+
+- **⇄ sin PIN (por defecto)** — Al guardar perfil o registrarte en LAN, R+ descubre el anfitrión y obtiene token sin pedir los 6 dígitos. El panel ⇄ oculta entrada y display de PIN de turno.
+- **Onboarding / registro** — Formularios de perfil LAN y modal de registro ya no muestran el campo «PIN del turno» mientras el bypass esté activo.
+- **Servidor LAN** — `POST /auth/exchange` con cuerpo vacío devuelve token del anfitrión cuando no se exige PIN; auditoría `lan.shift_pin.bypass`.
+- **Restaurar PIN (opt-in)** — En el Mac anfitrión, define `R_PLUS_LAN_REQUIRE_SHIFT_PIN=1` antes de abrir R+ (ver `.env.example`). Los clientes vuelven a ver el campo PIN y el intercambio exige credenciales.
+- **Censo sin filtro por equipo (temporal)** — Todos los pacientes de la sala son legibles en guía clínica, independientemente de asignación a equipo. Pensado para despliegue en guardia; el filtro por equipo se reactivará en una versión posterior.
+- **Parche sobre 7.5.9** — Recuperación de censo, tombstones LAN y directorio de equipos de la línea anterior. Sin migración (SQLCipher v20).
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v7.6.0
+
+- Mac: `R+-7.6.0-arm64.dmg`, `R+-7.6.0-x64.dmg` (y zip para auto-update).
+- Windows: `R+-7.6.0-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye write-release-yml.js).

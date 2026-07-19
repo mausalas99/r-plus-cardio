@@ -1,0 +1,48 @@
+R+ 6.3.6 (Cultivos multipaciente SOME · sala en vivo resiliente)
+======================================
+
+Fecha: 2026-05-29
+
+## Resumen
+
+Mejora el parseo de informes **BACTERIOLOGIA** pegados desde SOME cuando hay **varios microorganismos** en el mismo estudio (aspirado, urocultivo, líquidos, etc.): cada aislamiento aparece en la pestaña **Cultivos**, con su cuenta, antibiograma y marcas de resistencia propias. Incluye reportes **preliminares** sin antibiograma y detección de comentarios como carbapenemasa o BLEE por germen.
+
+Además, en **Sala en vivo (LAN)**, si el anfitrión deja de responder (R+ cerrado o sin conexión al servidor), otra computadora con **R+ de escritorio** (Mac o Windows) unida como cliente puede actuar como **anfitrión suplente** hasta que vuelva el equipo original.
+
+## Nuevo / mejorado
+
+### Cultivos (expediente y laboratorio)
+
+- **Una fila por microorganismo** — Todos los aislamientos con nombre reciben cabecera `SITIO dd/mm: GERMEN` (antes solo el primero entraba en la tabla **Cultivos**).
+- **Antibiograma por germen** — Chips R / I / S (y ESBL, etc.) se resuelven desde el `sourceText` del informe para cada organismo, sin mezclar el ATB del vecino.
+- **Marcas por aislamiento** — BLEE, ESBL, Carb-R y similares se toman del comentario y antibiograma **de ese slice**, no del informe entero.
+- **Reporte preliminar** — Si el informe trae `REPORTE PRELIMINAR`, la cabecera incluye **Preliminar**; se listan identificación y **Cuenta** (p. ej. UFC/mL) aunque aún no haya antibiograma.
+- **Cuenta UFC** — Formato legible conservado (`+100,000 UFC/mL`).
+- **Comentarios SOME** — «SE DETECTO CARBAPENEMASA» y variantes marcan **Carb-R** en cabecera.
+- **BLAC** — Interpretación en penicilina (p. ej. Staphylococcus aureus) incluida en el detalle del antibiograma.
+
+### Manejo (ATB)
+
+- **Alertas Carb-R / CRE** — Si la cabecera del cultivo trae esas marcas, **Manejo** puede mostrar la advertencia correspondiente al elegir antibióticos.
+
+### Sala en vivo (LAN) — anfitrión suplente
+
+- **Failover automático** — Si el servidor del anfitrión deja de responder (`/api/lan/v1/ping`), no basta con que alguien salga de la sala en vivo: la sesión sigue mientras el servidor LAN esté arriba.
+- **Mac o Windows (Electron)** — Cualquier R+ de escritorio unida con el **enlace de invitación** puede asumir el servidor local de forma temporal, subir el bundle de la sala y avisar al equipo con `host-handoff`.
+- **Reconexión entre pares** — Los demás clientes intentan primero el anfitrión original, luego URLs de pares conocidos en la sala, y cambian solos si reciben el handoff.
+- **Vuelta del anfitrión** — Cuando el equipo original responde otra vez, la Mac/Windows suplente devuelve el rol, sincroniza el bundle y restaura la URL guardada.
+- **Límites** — R+ solo en navegador (móvil o web) no puede ser suplente; en **Windows** puede pedirse permitir R+ en redes privadas (puerto **3738**) la primera vez que esa PC actúe como servidor.
+
+## Regresión
+
+- Tests golden G1–G5 en `public/js/labs-cultivo.test.mjs` (multipaciente con ATB, urocultivo carbapenemasa, preliminar sin ATB).
+- Tests de elección de anfitrión suplente en `public/js/lan-surrogate-host.test.mjs`.
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v6.3.6
+
+- Mac: `R+-6.3.6-arm64.dmg`, `R+-6.3.6-x64.dmg` (y zip para auto-update).
+- Windows: `R+-6.3.6-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye `build:ui` y bundle del renderer).

@@ -1,0 +1,4354 @@
+{
+  "nodes": [
+    {
+      "id": "file:lib/admin-access-code.mjs",
+      "type": "file",
+      "name": "admin-access-code.mjs",
+      "filePath": "lib/admin-access-code.mjs",
+      "summary": "Código personal para activar privilegios de administración del programa.",
+      "tags": [
+        "shared-logic",
+        "exports",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lib/admin-access-code.mjs:verifyAdminAccessCode",
+      "type": "function",
+      "name": "verifyAdminAccessCode",
+      "filePath": "lib/admin-access-code.mjs",
+      "lineRange": [
+        5,
+        7
+      ],
+      "summary": "Código personal para activar privilegios de administración del programa.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:lib/admin-access-code.test.mjs",
+      "type": "file",
+      "name": "admin-access-code.test.mjs",
+      "filePath": "lib/admin-access-code.test.mjs",
+      "summary": "Tests for admin-access-code.mjs covering unit tests.",
+      "tags": [
+        "test",
+        "shared-logic",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:lib/clinical-team-composition.mjs",
+      "type": "file",
+      "name": "clinical-team-composition.mjs",
+      "filePath": "lib/clinical-team-composition.mjs",
+      "summary": "Shared javascript module (4 functions, 5 exports) for the R+ workbench.",
+      "tags": [
+        "shared-logic",
+        "exports",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lib/clinical-team-composition.mjs:getTeamCompositionLimits",
+      "type": "function",
+      "name": "getTeamCompositionLimits",
+      "filePath": "lib/clinical-team-composition.mjs",
+      "lineRange": [
+        21,
+        24
+      ],
+      "summary": "Exported get team composition limits used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lib/clinical-team-composition.mjs:validateTeamRankSlot",
+      "type": "function",
+      "name": "validateTeamRankSlot",
+      "filePath": "lib/clinical-team-composition.mjs",
+      "lineRange": [
+        35,
+        50
+      ],
+      "summary": "Services where UX/Eme staff rotate to Interconsultas on off-call days.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lib/clinical-team-composition.mjs:serviceUsesStructuredComposition",
+      "type": "function",
+      "name": "serviceUsesStructuredComposition",
+      "filePath": "lib/clinical-team-composition.mjs",
+      "lineRange": [
+        53,
+        55
+      ],
+      "summary": "Exported service uses structured composition used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:lib/clinical-team-composition.test.mjs",
+      "type": "file",
+      "name": "clinical-team-composition.test.mjs",
+      "filePath": "lib/clinical-team-composition.test.mjs",
+      "summary": "Tests for clinical-team-composition.mjs covering unit tests.",
+      "tags": [
+        "test",
+        "shared-logic",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:lib/clinical-user-activity.mjs",
+      "type": "file",
+      "name": "clinical-user-activity.mjs",
+      "filePath": "lib/clinical-user-activity.mjs",
+      "summary": "Shared LAN directory activity helpers (Node + renderer).",
+      "tags": [
+        "shared-logic",
+        "exports",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:lib/clinical-user-activity.mjs:mergeLastActivityIso",
+      "type": "function",
+      "name": "mergeLastActivityIso",
+      "filePath": "lib/clinical-user-activity.mjs",
+      "lineRange": [
+        11,
+        17
+      ],
+      "summary": "Exported merge last activity iso used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lib/clinical-user-activity.mjs:clinicalUserActivityTier",
+      "type": "function",
+      "name": "clinicalUserActivityTier",
+      "filePath": "lib/clinical-user-activity.mjs",
+      "lineRange": [
+        24,
+        34
+      ],
+      "summary": "Exported clinical user activity tier used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lib/clinical-user-activity.mjs:formatClinicalUserLastActivity",
+      "type": "function",
+      "name": "formatClinicalUserLastActivity",
+      "filePath": "lib/clinical-user-activity.mjs",
+      "lineRange": [
+        41,
+        57
+      ],
+      "summary": "Exported format clinical user last activity used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lib/clinical-user-activity.mjs:clinicalUserActivityLabel",
+      "type": "function",
+      "name": "clinicalUserActivityLabel",
+      "filePath": "lib/clinical-user-activity.mjs",
+      "lineRange": [
+        60,
+        65
+      ],
+      "summary": "Exported clinical user activity label used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:lib/clinical-user-activity.test.mjs",
+      "type": "file",
+      "name": "clinical-user-activity.test.mjs",
+      "filePath": "lib/clinical-user-activity.test.mjs",
+      "summary": "Tests for clinical-user-activity.mjs covering unit tests.",
+      "tags": [
+        "test",
+        "shared-logic",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/clinical-access-runtime.mjs",
+      "type": "file",
+      "name": "clinical-access-runtime.mjs",
+      "filePath": "public/js/clinical-access-runtime.mjs",
+      "summary": "Wires clinical access modules into the running app (Guardia grid, session, signing).",
+      "tags": [
+        "exports",
+        "utility",
+        "module"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:public/js/clinical-access-runtime.mjs:markClinicalAccessBootReady",
+      "type": "function",
+      "name": "markClinicalAccessBootReady",
+      "filePath": "public/js/clinical-access-runtime.mjs",
+      "lineRange": [
+        60,
+        69
+      ],
+      "summary": "Exported mark clinical access boot ready used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-access-runtime.mjs:waitForClinicalAccessReady",
+      "type": "function",
+      "name": "waitForClinicalAccessReady",
+      "filePath": "public/js/clinical-access-runtime.mjs",
+      "lineRange": [
+        71,
+        80
+      ],
+      "summary": "Exported wait for clinical access ready used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-access-runtime.mjs:isClinicalScopeReadyForLanPatientApply",
+      "type": "function",
+      "name": "isClinicalScopeReadyForLanPatientApply",
+      "filePath": "public/js/clinical-access-runtime.mjs",
+      "lineRange": [
+        83,
+        91
+      ],
+      "summary": "True when LAN may apply/filter patient bundle rows for the signed-in user.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-access-runtime.mjs:applyClinicalScopeFromLanOpsSnapshot",
+      "type": "function",
+      "name": "applyClinicalScopeFromLanOpsSnapshot",
+      "filePath": "public/js/clinical-access-runtime.mjs",
+      "lineRange": [
+        98,
+        148
+      ],
+      "summary": "iPad/PWA: hydrate teams/assignments from LAN clinicalOps (no SQLCipher merge).",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/clinical-access-runtime.mjs:prunePatientsOutsideClinicalScope",
+      "type": "function",
+      "name": "prunePatientsOutsideClinicalScope",
+      "filePath": "public/js/clinical-access-runtime.mjs",
+      "lineRange": [
+        154,
+        156
+      ],
+      "summary": "Sidebar scope is enforced in patientsVisibleInSidebar — do not delete charts from storage.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-access-runtime.mjs:resolveClinicalRank",
+      "type": "function",
+      "name": "resolveClinicalRank",
+      "filePath": "public/js/clinical-access-runtime.mjs",
+      "lineRange": [
+        167,
+        172
+      ],
+      "summary": "Exported resolve clinical rank used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-access-runtime.mjs:mapPatientForGuardiaGrid",
+      "type": "function",
+      "name": "mapPatientForGuardiaGrid",
+      "filePath": "public/js/clinical-access-runtime.mjs",
+      "lineRange": [
+        175,
+        188
+      ],
+      "summary": "Exported map patient for guardia grid used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-access-runtime.mjs:buildGuardiasMap",
+      "type": "function",
+      "name": "buildGuardiasMap",
+      "filePath": "public/js/clinical-access-runtime.mjs",
+      "lineRange": [
+        191,
+        197
+      ],
+      "summary": "Exported build guardias map used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-access-runtime.mjs:applyBootstrapResult",
+      "type": "function",
+      "name": "applyBootstrapResult",
+      "filePath": "public/js/clinical-access-runtime.mjs",
+      "lineRange": [
+        204,
+        258
+      ],
+      "summary": "Internal apply bootstrap result in clinical-access-runtime.mjs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/clinical-access-runtime.mjs:migrateLocalPatientsClinicalSala",
+      "type": "function",
+      "name": "migrateLocalPatientsClinicalSala",
+      "filePath": "public/js/clinical-access-runtime.mjs",
+      "lineRange": [
+        261,
+        279
+      ],
+      "summary": "Exported migrate local patients clinical sala used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-access-runtime.mjs:bootstrapClinicalAccess",
+      "type": "function",
+      "name": "bootstrapClinicalAccess",
+      "filePath": "public/js/clinical-access-runtime.mjs",
+      "lineRange": [
+        281,
+        297
+      ],
+      "summary": "Exported bootstrap clinical access used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-access-runtime.mjs:lookupClinicalUserByUsername",
+      "type": "function",
+      "name": "lookupClinicalUserByUsername",
+      "filePath": "public/js/clinical-access-runtime.mjs",
+      "lineRange": [
+        303,
+        317
+      ],
+      "summary": "Resolve a LAN @usuario row in the local DB (exact handle; no device bootstrap).",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-access-runtime.mjs:resumeClinicalIdentityByUsername",
+      "type": "function",
+      "name": "resumeClinicalIdentityByUsername",
+      "filePath": "public/js/clinical-access-runtime.mjs",
+      "lineRange": [
+        323,
+        378
+      ],
+      "summary": "Reattach this device to an existing LAN username already stored in the DB.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/clinical-access-runtime.mjs:touchClinicalUserActivityRemote",
+      "type": "function",
+      "name": "touchClinicalUserActivityRemote",
+      "filePath": "public/js/clinical-access-runtime.mjs",
+      "lineRange": [
+        384,
+        406
+      ],
+      "summary": "Internal touch clinical user activity remote in clinical-access-runtime.mjs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-access-runtime.mjs:scheduleClinicalActivityLanPush",
+      "type": "function",
+      "name": "scheduleClinicalActivityLanPush",
+      "filePath": "public/js/clinical-access-runtime.mjs",
+      "lineRange": [
+        408,
+        420
+      ],
+      "summary": "Internal schedule clinical activity lan push in clinical-access-runtime.mjs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-access-runtime.mjs:touchClinicalSessionActivity",
+      "type": "function",
+      "name": "touchClinicalSessionActivity",
+      "filePath": "public/js/clinical-access-runtime.mjs",
+      "lineRange": [
+        426,
+        430
+      ],
+      "summary": "Record session activity after clinical edits.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-access-runtime.mjs:refreshClinicalUserProfile",
+      "type": "function",
+      "name": "refreshClinicalUserProfile",
+      "filePath": "public/js/clinical-access-runtime.mjs",
+      "lineRange": [
+        433,
+        455
+      ],
+      "summary": "Reload username, rank, sala, admin flag from DB into session.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-access-runtime.mjs:scheduleLanPatientReconcile",
+      "type": "function",
+      "name": "scheduleLanPatientReconcile",
+      "filePath": "public/js/clinical-access-runtime.mjs",
+      "lineRange": [
+        458,
+        474
+      ],
+      "summary": "Internal schedule lan patient reconcile in clinical-access-runtime.mjs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-access-runtime.mjs:ensureTeamAssignedPatientsOnDevice",
+      "type": "function",
+      "name": "ensureTeamAssignedPatientsOnDevice",
+      "filePath": "public/js/clinical-access-runtime.mjs",
+      "lineRange": [
+        477,
+        511
+      ],
+      "summary": "Pull host census rows for team assignments missing on this device.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-access-runtime.mjs:ensureElevatedWardCensusOnDevice",
+      "type": "function",
+      "name": "ensureElevatedWardCensusOnDevice",
+      "filePath": "public/js/clinical-access-runtime.mjs",
+      "lineRange": [
+        517,
+        531
+      ],
+      "summary": "Elevated census: reconcile full ward from LAN host when viewing all teams.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-access-runtime.mjs:refreshClinicalPatientListForScope",
+      "type": "function",
+      "name": "refreshClinicalPatientListForScope",
+      "filePath": "public/js/clinical-access-runtime.mjs",
+      "lineRange": [
+        537,
+        558
+      ],
+      "summary": "Reload teams + scope from DB and re-filter the patient sidebar (LAN join / team roster).",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-access-runtime.mjs:pullHostPatientsAfterAssignmentMerge",
+      "type": "function",
+      "name": "pullHostPatientsAfterAssignmentMerge",
+      "filePath": "public/js/clinical-access-runtime.mjs",
+      "lineRange": [
+        561,
+        580
+      ],
+      "summary": "One-shot host bundle pull when new team assignments arrive (not on every no-op merge).",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-access-runtime.mjs:wireClinicalOpsSyncRefresh",
+      "type": "function",
+      "name": "wireClinicalOpsSyncRefresh",
+      "filePath": "public/js/clinical-access-runtime.mjs",
+      "lineRange": [
+        582,
+        594
+      ],
+      "summary": "Exported wire clinical ops sync refresh used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-access-runtime.mjs:initClinicalAccessRuntime",
+      "type": "function",
+      "name": "initClinicalAccessRuntime",
+      "filePath": "public/js/clinical-access-runtime.mjs",
+      "lineRange": [
+        596,
+        644
+      ],
+      "summary": "Exported init clinical access runtime used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-access-runtime.mjs:stopClinicalAccessRuntime",
+      "type": "function",
+      "name": "stopClinicalAccessRuntime",
+      "filePath": "public/js/clinical-access-runtime.mjs",
+      "lineRange": [
+        646,
+        662
+      ],
+      "summary": "Exported stop clinical access runtime used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-access-runtime.mjs:syncGuardiaCensusPanelVisibility",
+      "type": "function",
+      "name": "syncGuardiaCensusPanelVisibility",
+      "filePath": "public/js/clinical-access-runtime.mjs",
+      "lineRange": [
+        667,
+        670
+      ],
+      "summary": "Exported sync guardia census panel visibility used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-access-runtime.mjs:refreshGuardiaCensusFromDb",
+      "type": "function",
+      "name": "refreshGuardiaCensusFromDb",
+      "filePath": "public/js/clinical-access-runtime.mjs",
+      "lineRange": [
+        675,
+        687
+      ],
+      "summary": "Exported refresh guardia census from db used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-access-runtime.mjs:renderGuardiaCensusGrid",
+      "type": "function",
+      "name": "renderGuardiaCensusGrid",
+      "filePath": "public/js/clinical-access-runtime.mjs",
+      "lineRange": [
+        692,
+        694
+      ],
+      "summary": "Exported render guardia census grid used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-access-runtime.mjs:assertClinicalWriteAllowed",
+      "type": "function",
+      "name": "assertClinicalWriteAllowed",
+      "filePath": "public/js/clinical-access-runtime.mjs",
+      "lineRange": [
+        700,
+        717
+      ],
+      "summary": "Test helper assertClinicalWriteAllowed validating expected behavior.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-access-runtime.mjs:signOutgoingLiveSyncMutation",
+      "type": "function",
+      "name": "signOutgoingLiveSyncMutation",
+      "filePath": "public/js/clinical-access-runtime.mjs",
+      "lineRange": [
+        723,
+        746
+      ],
+      "summary": "Exported sign outgoing live sync mutation used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-access-runtime.mjs:verifyIncomingClinicalLedger",
+      "type": "function",
+      "name": "verifyIncomingClinicalLedger",
+      "filePath": "public/js/clinical-access-runtime.mjs",
+      "lineRange": [
+        752,
+        759
+      ],
+      "summary": "Exported verify incoming clinical ledger used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-access-runtime.mjs:guardAndSignLiveSyncMutation",
+      "type": "function",
+      "name": "guardAndSignLiveSyncMutation",
+      "filePath": "public/js/clinical-access-runtime.mjs",
+      "lineRange": [
+        765,
+        773
+      ],
+      "summary": "Exported guard and sign live sync mutation used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-access-runtime.mjs:getClinicalUser",
+      "type": "function",
+      "name": "getClinicalUser",
+      "filePath": "public/js/clinical-access-runtime.mjs",
+      "lineRange": [
+        775,
+        777
+      ],
+      "summary": "Exported get clinical user used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-access-runtime.mjs:scopeContextForEvaluateFromParts",
+      "type": "function",
+      "name": "scopeContextForEvaluateFromParts",
+      "filePath": "public/js/clinical-access-runtime.mjs",
+      "lineRange": [
+        779,
+        795
+      ],
+      "summary": "Internal scope context for evaluate from parts in clinical-access-runtime.mjs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-access-runtime.mjs:getClinicalScopeContextForEvaluate",
+      "type": "function",
+      "name": "getClinicalScopeContextForEvaluate",
+      "filePath": "public/js/clinical-access-runtime.mjs",
+      "lineRange": [
+        798,
+        837
+      ],
+      "summary": "Exported get clinical scope context for evaluate used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-access-runtime.mjs:pruneMobilePatientsOutsideTeamScope",
+      "type": "function",
+      "name": "pruneMobilePatientsOutsideTeamScope",
+      "filePath": "public/js/clinical-access-runtime.mjs",
+      "lineRange": [
+        848,
+        878
+      ],
+      "summary": "Replace in-memory census with team-scoped rows only (web/iPad).",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-access-runtime.mjs:finalizeMobileLanPatientCensus",
+      "type": "function",
+      "name": "finalizeMobileLanPatientCensus",
+      "filePath": "public/js/clinical-access-runtime.mjs",
+      "lineRange": [
+        881,
+        898
+      ],
+      "summary": "Prune + one sidebar refresh after LAN scope/patients settle (avoids 3↔11 flash).",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-access-runtime.mjs:fetchClinicalScopeContextFromDb",
+      "type": "function",
+      "name": "fetchClinicalScopeContextFromDb",
+      "filePath": "public/js/clinical-access-runtime.mjs",
+      "lineRange": [
+        901,
+        918
+      ],
+      "summary": "Exported fetch clinical scope context from db used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-access-runtime.mjs:fetchClinicalTeamsFromDb",
+      "type": "function",
+      "name": "fetchClinicalTeamsFromDb",
+      "filePath": "public/js/clinical-access-runtime.mjs",
+      "lineRange": [
+        921,
+        935
+      ],
+      "summary": "Exported fetch clinical teams from db used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-access-runtime.mjs:fetchActiveRotationCycleFromDb",
+      "type": "function",
+      "name": "fetchActiveRotationCycleFromDb",
+      "filePath": "public/js/clinical-access-runtime.mjs",
+      "lineRange": [
+        938,
+        944
+      ],
+      "summary": "Exported fetch active rotation cycle from db used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-access-runtime.mjs:fetchIncomingAssignmentsFromDb",
+      "type": "function",
+      "name": "fetchIncomingAssignmentsFromDb",
+      "filePath": "public/js/clinical-access-runtime.mjs",
+      "lineRange": [
+        947,
+        953
+      ],
+      "summary": "Exported fetch incoming assignments from db used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-access-runtime.mjs:unlockClinicalSessionOverlay",
+      "type": "function",
+      "name": "unlockClinicalSessionOverlay",
+      "filePath": "public/js/clinical-access-runtime.mjs",
+      "lineRange": [
+        955,
+        958
+      ],
+      "summary": "Exported unlock clinical session overlay used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-access-runtime.mjs:resumeClinicalSession",
+      "type": "function",
+      "name": "resumeClinicalSession",
+      "filePath": "public/js/clinical-access-runtime.mjs",
+      "lineRange": [
+        961,
+        969
+      ],
+      "summary": "Exported resume clinical session used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/clinical-access-runtime.test.mjs",
+      "type": "file",
+      "name": "clinical-access-runtime.test.mjs",
+      "filePath": "public/js/clinical-access-runtime.test.mjs",
+      "summary": "Tests for clinical-access-runtime.mjs covering unit tests.",
+      "tags": [
+        "test",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:public/js/clinical-privileges-mobile.test.mjs",
+      "type": "file",
+      "name": "clinical-privileges-mobile.test.mjs",
+      "filePath": "public/js/clinical-privileges-mobile.test.mjs",
+      "summary": "Tests for clinical-privileges-mobile.mjs covering unit tests.",
+      "tags": [
+        "test",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:public/js/clinical-privileges.mjs",
+      "type": "file",
+      "name": "clinical-privileges.mjs",
+      "filePath": "public/js/clinical-privileges.mjs",
+      "summary": "Renderer mirror of lib/db/clinical-privileges.mjs.",
+      "tags": [
+        "exports",
+        "utility",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/clinical-privileges.mjs:shouldEnforceTeamPatientMirror",
+      "type": "function",
+      "name": "shouldEnforceTeamPatientMirror",
+      "filePath": "public/js/clinical-privileges.mjs",
+      "lineRange": [
+        7,
+        9
+      ],
+      "summary": "Renderer mirror of lib/db/clinical-privileges.mjs.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-privileges.mjs:hasProgramAdminPrivileges",
+      "type": "function",
+      "name": "hasProgramAdminPrivileges",
+      "filePath": "public/js/clinical-privileges.mjs",
+      "lineRange": [
+        14,
+        18
+      ],
+      "summary": "iPad/PWA or any browser LAN session — never full Admin/R4 ward census.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-privileges.mjs:effectiveClinicalRank",
+      "type": "function",
+      "name": "effectiveClinicalRank",
+      "filePath": "public/js/clinical-privileges.mjs",
+      "lineRange": [
+        21,
+        26
+      ],
+      "summary": "Exported effective clinical rank used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-privileges.mjs:canConfigureRotation",
+      "type": "function",
+      "name": "canConfigureRotation",
+      "filePath": "public/js/clinical-privileges.mjs",
+      "lineRange": [
+        29,
+        33
+      ],
+      "summary": "Exported can configure rotation used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-privileges.mjs:canManageInternoQr",
+      "type": "function",
+      "name": "canManageInternoQr",
+      "filePath": "public/js/clinical-privileges.mjs",
+      "lineRange": [
+        36,
+        38
+      ],
+      "summary": "Exported can manage interno qr used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-privileges.mjs:hasElevatedTeamPrivileges",
+      "type": "function",
+      "name": "hasElevatedTeamPrivileges",
+      "filePath": "public/js/clinical-privileges.mjs",
+      "lineRange": [
+        44,
+        48
+      ],
+      "summary": "Exported has elevated team privileges used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-privileges.mjs:shouldUseElevatedPatientCensus",
+      "type": "function",
+      "name": "shouldUseElevatedPatientCensus",
+      "filePath": "public/js/clinical-privileges.mjs",
+      "lineRange": [
+        55,
+        59
+      ],
+      "summary": "Desktop elevated census (R4/Admin): full ward + Filtros censo. iPad/PWA always uses joined-team scope regardless of rank.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-privileges.mjs:shouldShowClinicalCensusFilters",
+      "type": "function",
+      "name": "shouldShowClinicalCensusFilters",
+      "filePath": "public/js/clinical-privileges.mjs",
+      "lineRange": [
+        62,
+        66
+      ],
+      "summary": "Filtros censo toolbar — desktop elevated census or iPad/PWA team mirror.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-privileges.mjs:canViewLanUserDirectory",
+      "type": "function",
+      "name": "canViewLanUserDirectory",
+      "filePath": "public/js/clinical-privileges.mjs",
+      "lineRange": [
+        69,
+        71
+      ],
+      "summary": "Filtros censo toolbar — desktop elevated census or iPad/PWA team mirror.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-privileges.mjs:canManageTeamRoster",
+      "type": "function",
+      "name": "canManageTeamRoster",
+      "filePath": "public/js/clinical-privileges.mjs",
+      "lineRange": [
+        74,
+        76
+      ],
+      "summary": "Exported can manage team roster used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-privileges.mjs:canDeleteLanDirectoryUser",
+      "type": "function",
+      "name": "canDeleteLanDirectoryUser",
+      "filePath": "public/js/clinical-privileges.mjs",
+      "lineRange": [
+        79,
+        81
+      ],
+      "summary": "Exported can delete lan directory user used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/clinical-profile-lan-sync.mjs",
+      "type": "file",
+      "name": "clinical-profile-lan-sync.mjs",
+      "filePath": "public/js/clinical-profile-lan-sync.mjs",
+      "summary": "LAN push when registering @usuario / saving clinical profile.",
+      "tags": [
+        "lan-sync",
+        "exports",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/clinical-profile-lan-sync.mjs:isLanProfileNeedsConnectCode",
+      "type": "function",
+      "name": "isLanProfileNeedsConnectCode",
+      "filePath": "public/js/clinical-profile-lan-sync.mjs",
+      "lineRange": [
+        21,
+        24
+      ],
+      "summary": "Exported is lan profile needs connect code for LAN LiveSync.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-profile-lan-sync.mjs:isBenignLanPushSkipCode",
+      "type": "function",
+      "name": "isBenignLanPushSkipCode",
+      "filePath": "public/js/clinical-profile-lan-sync.mjs",
+      "lineRange": [
+        32,
+        35
+      ],
+      "summary": "Exported is benign lan push skip code for LAN LiveSync.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-profile-lan-sync.mjs:rememberLiveSyncRoomMembership",
+      "type": "function",
+      "name": "rememberLiveSyncRoomMembership",
+      "filePath": "public/js/clinical-profile-lan-sync.mjs",
+      "lineRange": [
+        38,
+        47
+      ],
+      "summary": "LAN push codes that are expected offline / sin sala — no toast de error.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-profile-lan-sync.mjs:resolveRoomIdForUsernameRegister",
+      "type": "function",
+      "name": "resolveRoomIdForUsernameRegister",
+      "filePath": "public/js/clinical-profile-lan-sync.mjs",
+      "lineRange": [
+        53,
+        82
+      ],
+      "summary": "Exported resolve room id for username register for LAN LiveSync.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-profile-lan-sync.mjs:ensureLiveSyncRoomForUsernameRegister",
+      "type": "function",
+      "name": "ensureLiveSyncRoomForUsernameRegister",
+      "filePath": "public/js/clinical-profile-lan-sync.mjs",
+      "lineRange": [
+        88,
+        114
+      ],
+      "summary": "Maps clinical Sala / invite / membership to LiveSync room before @usuario gate.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-profile-lan-sync.mjs:seedDevPeerLanConfigIfNeeded",
+      "type": "function",
+      "name": "seedDevPeerLanConfigIfNeeded",
+      "filePath": "public/js/clinical-profile-lan-sync.mjs",
+      "lineRange": [
+        117,
+        128
+      ],
+      "summary": "Dev peer (second window): pre-seed host URL + team code from main process env.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-profile-lan-sync.mjs:applyPendingLanInviteFromPage",
+      "type": "function",
+      "name": "applyPendingLanInviteFromPage",
+      "filePath": "public/js/clinical-profile-lan-sync.mjs",
+      "lineRange": [
+        131,
+        147
+      ],
+      "summary": "Apply host/code/room from invite URL before username registration gate.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-profile-lan-sync.mjs:assertLanRoomForUsernameRegister",
+      "type": "function",
+      "name": "assertLanRoomForUsernameRegister",
+      "filePath": "public/js/clinical-profile-lan-sync.mjs",
+      "lineRange": [
+        154,
+        175
+      ],
+      "summary": "Best-effort LAN context before @usuario (invite URL, sala → membership). Never blocks registration.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-profile-lan-sync.mjs:flushClinicalProfileToLan",
+      "type": "function",
+      "name": "flushClinicalProfileToLan",
+      "filePath": "public/js/clinical-profile-lan-sync.mjs",
+      "lineRange": [
+        182,
+        220
+      ],
+      "summary": "Export clinical ops and push immediately to the LAN room (HTTP + live channel when connected).",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-profile-lan-sync.mjs:notifyLanProfilePushResult",
+      "type": "function",
+      "name": "notifyLanProfilePushResult",
+      "filePath": "public/js/clinical-profile-lan-sync.mjs",
+      "lineRange": [
+        226,
+        232
+      ],
+      "summary": "Exported notify lan profile push result for LAN LiveSync.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/clinical-profile-lan-sync.test.mjs",
+      "type": "file",
+      "name": "clinical-profile-lan-sync.test.mjs",
+      "filePath": "public/js/clinical-profile-lan-sync.test.mjs",
+      "summary": "Tests for clinical-profile-lan-sync.mjs covering LAN LiveSync.",
+      "tags": [
+        "test",
+        "lan-sync",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/clinical-scope-from-ops.mjs",
+      "type": "file",
+      "name": "clinical-scope-from-ops.mjs",
+      "filePath": "public/js/clinical-scope-from-ops.mjs",
+      "summary": "Build renderer scope context from LAN clinicalOps snapshots (iPad/PWA — no SQLCipher).",
+      "tags": [
+        "exports",
+        "utility",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/clinical-scope-from-ops.mjs:clinicalUsersById",
+      "type": "function",
+      "name": "clinicalUsersById",
+      "filePath": "public/js/clinical-scope-from-ops.mjs",
+      "lineRange": [
+        6,
+        15
+      ],
+      "summary": "Build renderer scope context from LAN clinicalOps snapshots (iPad/PWA — no SQLCipher).",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-scope-from-ops.mjs:archivedTeamIds",
+      "type": "function",
+      "name": "archivedTeamIds",
+      "filePath": "public/js/clinical-scope-from-ops.mjs",
+      "lineRange": [
+        27,
+        37
+      ],
+      "summary": "Internal archived team ids in clinical-scope-from-ops.mjs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-scope-from-ops.mjs:buildTeamsWithMembers",
+      "type": "function",
+      "name": "buildTeamsWithMembers",
+      "filePath": "public/js/clinical-scope-from-ops.mjs",
+      "lineRange": [
+        48,
+        86
+      ],
+      "summary": "Internal build teams with members in clinical-scope-from-ops.mjs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-scope-from-ops.mjs:activeGuardiasFromSnapshot",
+      "type": "function",
+      "name": "activeGuardiasFromSnapshot",
+      "filePath": "public/js/clinical-scope-from-ops.mjs",
+      "lineRange": [
+        95,
+        104
+      ],
+      "summary": "Internal active guardias from snapshot in clinical-scope-from-ops.mjs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-scope-from-ops.mjs:resolveClinicalUserRowFromOpsSnapshot",
+      "type": "function",
+      "name": "resolveClinicalUserRowFromOpsSnapshot",
+      "filePath": "public/js/clinical-scope-from-ops.mjs",
+      "lineRange": [
+        110,
+        138
+      ],
+      "summary": "Exported resolve clinical user row from ops snapshot used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-scope-from-ops.mjs:buildClinicalScopeContextFromOpsSnapshot",
+      "type": "function",
+      "name": "buildClinicalScopeContextFromOpsSnapshot",
+      "filePath": "public/js/clinical-scope-from-ops.mjs",
+      "lineRange": [
+        144,
+        167
+      ],
+      "summary": "Exported build clinical scope context from ops snapshot used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/clinical-scope-from-ops.test.mjs",
+      "type": "file",
+      "name": "clinical-scope-from-ops.test.mjs",
+      "filePath": "public/js/clinical-scope-from-ops.test.mjs",
+      "summary": "Tests for clinical-scope-from-ops.mjs covering unit tests.",
+      "tags": [
+        "test",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:public/js/clinical-settings.mjs",
+      "type": "file",
+      "name": "clinical-settings.mjs",
+      "filePath": "public/js/clinical-settings.mjs",
+      "summary": "Persist clinical identity binding in rpc-settings (device ↔ DB user).",
+      "tags": [
+        "exports",
+        "utility",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/clinical-settings.mjs:isClinicalLocalOnlyMode",
+      "type": "function",
+      "name": "isClinicalLocalOnlyMode",
+      "filePath": "public/js/clinical-settings.mjs",
+      "lineRange": [
+        24,
+        26
+      ],
+      "summary": "Device uses SQLCipher only — no LAN LiveSync, Mi rotación, or @usuario in sala.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-settings.mjs:isClinicalSyncModeChosen",
+      "type": "function",
+      "name": "isClinicalSyncModeChosen",
+      "filePath": "public/js/clinical-settings.mjs",
+      "lineRange": [
+        29,
+        31
+      ],
+      "summary": "Device uses SQLCipher only — no LAN LiveSync, Mi rotación, or @usuario in sala.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-settings.mjs:setClinicalSyncModeLocalOnly",
+      "type": "function",
+      "name": "setClinicalSyncModeLocalOnly",
+      "filePath": "public/js/clinical-settings.mjs",
+      "lineRange": [
+        37,
+        44
+      ],
+      "summary": "User chose LAN vs local before first profile save (`clinicalLocalOnly` true | false).",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-settings.mjs:isLocalOnlyPlaceholderUsername",
+      "type": "function",
+      "name": "isLocalOnlyPlaceholderUsername",
+      "filePath": "public/js/clinical-settings.mjs",
+      "lineRange": [
+        47,
+        49
+      ],
+      "summary": "Auto @usuario assigned in solo-equipo mode; must be replaced for LAN.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-settings.mjs:bundledWardShiftPin",
+      "type": "function",
+      "name": "bundledWardShiftPin",
+      "filePath": "public/js/clinical-settings.mjs",
+      "lineRange": [
+        55,
+        59
+      ],
+      "summary": "Auto @usuario assigned in solo-equipo mode; must be replaced for LAN.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-settings.mjs:bundledWardHostUrl",
+      "type": "function",
+      "name": "bundledWardHostUrl",
+      "filePath": "public/js/clinical-settings.mjs",
+      "lineRange": [
+        65,
+        67
+      ],
+      "summary": "Ward LAN host base URL pre-filled for client connect / discovery.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-settings.mjs:readRpcSettings",
+      "type": "function",
+      "name": "readRpcSettings",
+      "filePath": "public/js/clinical-settings.mjs",
+      "lineRange": [
+        70,
+        76
+      ],
+      "summary": "Ward LAN host base URL pre-filled for client connect / discovery.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-settings.mjs:resolveClinicalClientId",
+      "type": "function",
+      "name": "resolveClinicalClientId",
+      "filePath": "public/js/clinical-settings.mjs",
+      "lineRange": [
+        79,
+        88
+      ],
+      "summary": "Device id for clinical bootstrap (rpc-settings → LAN id → desktop default).",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-settings.mjs:needsClinicalLanProfileGate",
+      "type": "function",
+      "name": "needsClinicalLanProfileGate",
+      "filePath": "public/js/clinical-settings.mjs",
+      "lineRange": [
+        91,
+        96
+      ],
+      "summary": "Exported needs clinical lan profile gate used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-settings.mjs:markClinicalLanProfileGateComplete",
+      "type": "function",
+      "name": "markClinicalLanProfileGateComplete",
+      "filePath": "public/js/clinical-settings.mjs",
+      "lineRange": [
+        99,
+        105
+      ],
+      "summary": "Exported mark clinical lan profile gate complete used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-settings.mjs:ensureLanProfileGateDeviceReset",
+      "type": "function",
+      "name": "ensureLanProfileGateDeviceReset",
+      "filePath": "public/js/clinical-settings.mjs",
+      "lineRange": [
+        112,
+        128
+      ],
+      "summary": "Clears cached username/display name on device when the gate is pending so users cannot accept stale prefills (e.g. machine id or placeholder names).",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-settings.mjs:persistClinicalUserBinding",
+      "type": "function",
+      "name": "persistClinicalUserBinding",
+      "filePath": "public/js/clinical-settings.mjs",
+      "lineRange": [
+        142,
+        163
+      ],
+      "summary": "Exported persist clinical user binding used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/clinical-settings.test.mjs",
+      "type": "file",
+      "name": "clinical-settings.test.mjs",
+      "filePath": "public/js/clinical-settings.test.mjs",
+      "summary": "Tests for clinical-settings.mjs covering unit tests.",
+      "tags": [
+        "test",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:public/js/clinical-team-invite.mjs",
+      "type": "file",
+      "name": "clinical-team-invite.mjs",
+      "filePath": "public/js/clinical-team-invite.mjs",
+      "summary": "Team invites: short codes for Mi rotación (desktop DB), not Safari deep links.",
+      "tags": [
+        "exports",
+        "utility",
+        "module"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:public/js/clinical-team-invite.mjs:teamInviteCode",
+      "type": "function",
+      "name": "teamInviteCode",
+      "filePath": "public/js/clinical-team-invite.mjs",
+      "lineRange": [
+        10,
+        15
+      ],
+      "summary": "Team invites: short codes for Mi rotación (desktop DB), not Safari deep links.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-team-invite.mjs:normalizeTeamInviteCode",
+      "type": "function",
+      "name": "normalizeTeamInviteCode",
+      "filePath": "public/js/clinical-team-invite.mjs",
+      "lineRange": [
+        20,
+        26
+      ],
+      "summary": "Exported normalize team invite code used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-team-invite.mjs:isLikelyLanBearerToken",
+      "type": "function",
+      "name": "isLikelyLanBearerToken",
+      "filePath": "public/js/clinical-team-invite.mjs",
+      "lineRange": [
+        32,
+        35
+      ],
+      "summary": "Exported is likely lan bearer token used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-team-invite.mjs:parseClinicalTeamJoinQuery",
+      "type": "function",
+      "name": "parseClinicalTeamJoinQuery",
+      "filePath": "public/js/clinical-team-invite.mjs",
+      "lineRange": [
+        37,
+        54
+      ],
+      "summary": "Exported parse clinical team join query used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-team-invite.mjs:resolveTeamIdFromInviteCode",
+      "type": "function",
+      "name": "resolveTeamIdFromInviteCode",
+      "filePath": "public/js/clinical-team-invite.mjs",
+      "lineRange": [
+        60,
+        73
+      ],
+      "summary": "Exported resolve team id from invite code used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-team-invite.mjs:diagnoseInviteCodeFailure",
+      "type": "function",
+      "name": "diagnoseInviteCodeFailure",
+      "filePath": "public/js/clinical-team-invite.mjs",
+      "lineRange": [
+        80,
+        96
+      ],
+      "summary": "Exported diagnose invite code failure used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-team-invite.mjs:inviteCodeFailureMessage",
+      "type": "function",
+      "name": "inviteCodeFailureMessage",
+      "filePath": "public/js/clinical-team-invite.mjs",
+      "lineRange": [
+        99,
+        114
+      ],
+      "summary": "Exported invite code failure message used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-team-invite.mjs:resolveClinicalInviteLanHostUrl",
+      "type": "function",
+      "name": "resolveClinicalInviteLanHostUrl",
+      "filePath": "public/js/clinical-team-invite.mjs",
+      "lineRange": [
+        119,
+        132
+      ],
+      "summary": "LAN host URL for optional hint (never localhost).",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-team-invite.mjs:isClinicalTeamJoinDesktopApp",
+      "type": "function",
+      "name": "isClinicalTeamJoinDesktopApp",
+      "filePath": "public/js/clinical-team-invite.mjs",
+      "lineRange": [
+        134,
+        137
+      ],
+      "summary": "Exported is clinical team join desktop app used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-team-invite.mjs:buildClinicalTeamInviteMessage",
+      "type": "function",
+      "name": "buildClinicalTeamInviteMessage",
+      "filePath": "public/js/clinical-team-invite.mjs",
+      "lineRange": [
+        142,
+        163
+      ],
+      "summary": "Exported build clinical team invite message used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-team-invite.mjs:buildClinicalTeamInviteUrl",
+      "type": "function",
+      "name": "buildClinicalTeamInviteUrl",
+      "filePath": "public/js/clinical-team-invite.mjs",
+      "lineRange": [
+        168,
+        171
+      ],
+      "summary": "Exported build clinical team invite url used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-team-invite.mjs:mountClinicalTeamInviteBrowserGate",
+      "type": "function",
+      "name": "mountClinicalTeamInviteBrowserGate",
+      "filePath": "public/js/clinical-team-invite.mjs",
+      "lineRange": [
+        179,
+        216
+      ],
+      "summary": "Safari / browser: explain desktop app + code (do not boot mobile LAN join).",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-team-invite.mjs:tryMountClinicalTeamInviteBrowserGate",
+      "type": "function",
+      "name": "tryMountClinicalTeamInviteBrowserGate",
+      "filePath": "public/js/clinical-team-invite.mjs",
+      "lineRange": [
+        221,
+        225
+      ],
+      "summary": "Exported try mount clinical team invite browser gate used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/clinical-team-invite.test.mjs",
+      "type": "file",
+      "name": "clinical-team-invite.test.mjs",
+      "filePath": "public/js/clinical-team-invite.test.mjs",
+      "summary": "Tests for clinical-team-invite.mjs covering unit tests.",
+      "tags": [
+        "test",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:public/js/clinical-username.mjs",
+      "type": "file",
+      "name": "clinical-username.mjs",
+      "filePath": "public/js/clinical-username.mjs",
+      "summary": "Renderer mirror of lib/db/clinical-username.mjs.",
+      "tags": [
+        "exports",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-username.mjs:normalizeUsername",
+      "type": "function",
+      "name": "normalizeUsername",
+      "filePath": "public/js/clinical-username.mjs",
+      "lineRange": [
+        4,
+        9
+      ],
+      "summary": "Renderer mirror of lib/db/clinical-username.mjs.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-username.mjs:isValidUsernameFormat",
+      "type": "function",
+      "name": "isValidUsernameFormat",
+      "filePath": "public/js/clinical-username.mjs",
+      "lineRange": [
+        11,
+        13
+      ],
+      "summary": "Exported is valid username format used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-username.mjs:isLegacyMachineUsername",
+      "type": "function",
+      "name": "isLegacyMachineUsername",
+      "filePath": "public/js/clinical-username.mjs",
+      "lineRange": [
+        16,
+        22
+      ],
+      "summary": "Exported is legacy machine username used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinical-username.mjs:shouldClaimClinicalUsername",
+      "type": "function",
+      "name": "shouldClaimClinicalUsername",
+      "filePath": "public/js/clinical-username.mjs",
+      "lineRange": [
+        30,
+        38
+      ],
+      "summary": "Whether @usuario must be claimed on the current session row before profile save.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/clinical-username.test.mjs",
+      "type": "file",
+      "name": "clinical-username.test.mjs",
+      "filePath": "public/js/clinical-username.test.mjs",
+      "summary": "Tests for clinical-username.mjs covering unit tests.",
+      "tags": [
+        "test",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/clinico-access-scope/evaluate-clinical-scope.mjs",
+      "type": "file",
+      "name": "evaluate-clinical-scope.mjs",
+      "filePath": "public/js/clinico-access-scope/evaluate-clinical-scope.mjs",
+      "summary": "clinical access scope evaluation module exporting 1 symbol(s) with 1 helper(s) in evaluate-clinical-scope.mjs.",
+      "tags": [
+        "clinical-access",
+        "exports",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinico-access-scope/evaluate-clinical-scope.mjs:runEvaluateClinicalScope",
+      "type": "function",
+      "name": "runEvaluateClinicalScope",
+      "filePath": "public/js/clinico-access-scope/evaluate-clinical-scope.mjs",
+      "lineRange": [
+        25,
+        47
+      ],
+      "summary": "Exported run evaluate clinical scope for clinical access scope evaluation.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/clinico-access-scope/guardia-fallback.mjs",
+      "type": "file",
+      "name": "guardia-fallback.mjs",
+      "filePath": "public/js/clinico-access-scope/guardia-fallback.mjs",
+      "summary": "Guardia mode ranks without dedicated evaluators (R3, R5, …).",
+      "tags": [
+        "clinical-access",
+        "exports",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinico-access-scope/guardia-fallback.mjs:evaluateGuardiaFallback",
+      "type": "function",
+      "name": "evaluateGuardiaFallback",
+      "filePath": "public/js/clinico-access-scope/guardia-fallback.mjs",
+      "lineRange": [
+        6,
+        12
+      ],
+      "summary": "Guardia mode ranks without dedicated evaluators (R3, R5, …).",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/clinico-access-scope/guardia-r1.mjs",
+      "type": "file",
+      "name": "guardia-r1.mjs",
+      "filePath": "public/js/clinico-access-scope/guardia-r1.mjs",
+      "summary": "clinical access scope evaluation module exporting 1 symbol(s) with 1 helper(s) in guardia-r1.mjs.",
+      "tags": [
+        "clinical-access",
+        "exports",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/clinico-access-scope/guardia-r1.mjs:evaluateGuardiaR1",
+      "type": "function",
+      "name": "evaluateGuardiaR1",
+      "filePath": "public/js/clinico-access-scope/guardia-r1.mjs",
+      "lineRange": [
+        7,
+        57
+      ],
+      "summary": "Exported evaluate guardia r1 for clinical access scope evaluation.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:public/js/clinico-access-scope/guardia-r2.mjs",
+      "type": "file",
+      "name": "guardia-r2.mjs",
+      "filePath": "public/js/clinico-access-scope/guardia-r2.mjs",
+      "summary": "clinical access scope evaluation module exporting 1 symbol(s) with 1 helper(s) in guardia-r2.mjs.",
+      "tags": [
+        "clinical-access",
+        "exports",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinico-access-scope/guardia-r2.mjs:evaluateGuardiaR2",
+      "type": "function",
+      "name": "evaluateGuardiaR2",
+      "filePath": "public/js/clinico-access-scope/guardia-r2.mjs",
+      "lineRange": [
+        7,
+        16
+      ],
+      "summary": "Exported evaluate guardia r2 for clinical access scope evaluation.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/clinico-access-scope/guardia-r4.mjs",
+      "type": "file",
+      "name": "guardia-r4.mjs",
+      "filePath": "public/js/clinico-access-scope/guardia-r4.mjs",
+      "summary": "clinical access scope evaluation module exporting 1 symbol(s) with 1 helper(s) in guardia-r4.mjs.",
+      "tags": [
+        "clinical-access",
+        "exports",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinico-access-scope/guardia-r4.mjs:evaluateGuardiaR4",
+      "type": "function",
+      "name": "evaluateGuardiaR4",
+      "filePath": "public/js/clinico-access-scope/guardia-r4.mjs",
+      "lineRange": [
+        7,
+        17
+      ],
+      "summary": "Exported evaluate guardia r4 for clinical access scope evaluation.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/clinico-access-scope/preamble.mjs",
+      "type": "file",
+      "name": "preamble.mjs",
+      "filePath": "public/js/clinico-access-scope/preamble.mjs",
+      "summary": "clinical access scope evaluation module exporting 6 symbol(s) with 5 helper(s) in preamble.mjs.",
+      "tags": [
+        "clinical-access",
+        "exports",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/clinico-access-scope/preamble.mjs:evaluateScopeIdentity",
+      "type": "function",
+      "name": "evaluateScopeIdentity",
+      "filePath": "public/js/clinico-access-scope/preamble.mjs",
+      "lineRange": [
+        11,
+        17
+      ],
+      "summary": "Exported evaluate scope identity for clinical access scope evaluation.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinico-access-scope/preamble.mjs:evaluateScopeAdmin",
+      "type": "function",
+      "name": "evaluateScopeAdmin",
+      "filePath": "public/js/clinico-access-scope/preamble.mjs",
+      "lineRange": [
+        20,
+        31
+      ],
+      "summary": "Exported evaluate scope admin for clinical access scope evaluation.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinico-access-scope/preamble.mjs:evaluateScopeActiveGuardia",
+      "type": "function",
+      "name": "evaluateScopeActiveGuardia",
+      "filePath": "public/js/clinico-access-scope/preamble.mjs",
+      "lineRange": [
+        34,
+        40
+      ],
+      "summary": "Exported evaluate scope active guardia for clinical access scope evaluation.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinico-access-scope/preamble.mjs:evaluateScopeIncomingPreview",
+      "type": "function",
+      "name": "evaluateScopeIncomingPreview",
+      "filePath": "public/js/clinico-access-scope/preamble.mjs",
+      "lineRange": [
+        43,
+        59
+      ],
+      "summary": "Exported evaluate scope incoming preview for clinical access scope evaluation.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinico-access-scope/preamble.mjs:evaluateScopeInterconsultas",
+      "type": "function",
+      "name": "evaluateScopeInterconsultas",
+      "filePath": "public/js/clinico-access-scope/preamble.mjs",
+      "lineRange": [
+        62,
+        72
+      ],
+      "summary": "Exported evaluate scope interconsultas for clinical access scope evaluation.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/clinico-access-scope/scope-context.mjs",
+      "type": "file",
+      "name": "scope-context.mjs",
+      "filePath": "public/js/clinico-access-scope/scope-context.mjs",
+      "summary": "clinical access scope evaluation module exporting 3 symbol(s) with 3 helper(s) in scope-context.mjs.",
+      "tags": [
+        "clinical-access",
+        "exports",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/clinico-access-scope/scope-context.mjs:resolveScopeNow",
+      "type": "function",
+      "name": "resolveScopeNow",
+      "filePath": "public/js/clinico-access-scope/scope-context.mjs",
+      "lineRange": [
+        5,
+        9
+      ],
+      "summary": "Exported resolve scope now for clinical access scope evaluation.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinico-access-scope/scope-context.mjs:buildScopeContext",
+      "type": "function",
+      "name": "buildScopeContext",
+      "filePath": "public/js/clinico-access-scope/scope-context.mjs",
+      "lineRange": [
+        17,
+        65
+      ],
+      "summary": "Exported build scope context for clinical access scope evaluation.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinico-access-scope/scope-context.mjs:attachJoinedTeamScope",
+      "type": "function",
+      "name": "attachJoinedTeamScope",
+      "filePath": "public/js/clinico-access-scope/scope-context.mjs",
+      "lineRange": [
+        68,
+        77
+      ],
+      "summary": "Exported attach joined team scope for clinical access scope evaluation.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/clinico-access-scope/scope-utils.mjs",
+      "type": "file",
+      "name": "scope-utils.mjs",
+      "filePath": "public/js/clinico-access-scope/scope-utils.mjs",
+      "summary": "clinical access scope evaluation module exporting 1 symbol(s) with 1 helper(s) in scope-utils.mjs.",
+      "tags": [
+        "clinical-access",
+        "exports",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/clinico-access-scope/scope-utils.mjs:toMillis",
+      "type": "function",
+      "name": "toMillis",
+      "filePath": "public/js/clinico-access-scope/scope-utils.mjs",
+      "lineRange": [
+        2,
+        7
+      ],
+      "summary": "Exported to millis for clinical access scope evaluation.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:lib/admin-access-code.mjs",
+      "target": "function:lib/admin-access-code.mjs:verifyAdminAccessCode",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lib/admin-access-code.mjs",
+      "target": "function:lib/admin-access-code.mjs:verifyAdminAccessCode",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:lib/admin-access-code.test.mjs",
+      "target": "file:lib/admin-access-code.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lib/admin-access-code.mjs",
+      "target": "file:lib/admin-access-code.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:lib/clinical-team-composition.mjs",
+      "target": "function:lib/clinical-team-composition.mjs:getTeamCompositionLimits",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lib/clinical-team-composition.mjs",
+      "target": "function:lib/clinical-team-composition.mjs:getTeamCompositionLimits",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:lib/clinical-team-composition.mjs",
+      "target": "function:lib/clinical-team-composition.mjs:validateTeamRankSlot",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lib/clinical-team-composition.mjs",
+      "target": "function:lib/clinical-team-composition.mjs:validateTeamRankSlot",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:lib/clinical-team-composition.mjs",
+      "target": "function:lib/clinical-team-composition.mjs:serviceUsesStructuredComposition",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lib/clinical-team-composition.mjs",
+      "target": "function:lib/clinical-team-composition.mjs:serviceUsesStructuredComposition",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:lib/clinical-team-composition.test.mjs",
+      "target": "file:lib/clinical-team-composition.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lib/clinical-team-composition.mjs",
+      "target": "file:lib/clinical-team-composition.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:lib/clinical-user-activity.mjs",
+      "target": "function:lib/clinical-user-activity.mjs:mergeLastActivityIso",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lib/clinical-user-activity.mjs",
+      "target": "function:lib/clinical-user-activity.mjs:mergeLastActivityIso",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:lib/clinical-user-activity.mjs",
+      "target": "function:lib/clinical-user-activity.mjs:clinicalUserActivityTier",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lib/clinical-user-activity.mjs",
+      "target": "function:lib/clinical-user-activity.mjs:clinicalUserActivityTier",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:lib/clinical-user-activity.mjs",
+      "target": "function:lib/clinical-user-activity.mjs:formatClinicalUserLastActivity",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lib/clinical-user-activity.mjs",
+      "target": "function:lib/clinical-user-activity.mjs:formatClinicalUserLastActivity",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:lib/clinical-user-activity.mjs",
+      "target": "function:lib/clinical-user-activity.mjs:clinicalUserActivityLabel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:lib/clinical-user-activity.mjs",
+      "target": "function:lib/clinical-user-activity.mjs:clinicalUserActivityLabel",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:lib/clinical-user-activity.test.mjs",
+      "target": "file:lib/clinical-user-activity.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lib/clinical-user-activity.mjs",
+      "target": "file:lib/clinical-user-activity.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "file:public/js/app-state.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "file:public/js/clinical-privileges.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "file:public/js/clinical-scope-from-ops.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "file:public/js/clinical-session-context.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "file:public/js/clinical-settings.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "file:public/js/clinical-username.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "file:public/js/clinico-access.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "file:public/js/db-storage-bridge.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "file:public/js/features/chrome.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "file:public/js/features/crypto-signer.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "file:public/js/features/guardia-board.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "file:public/js/features/patients-clinical-filter.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "file:public/js/features/session-manager.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "file:public/js/mobile-team-patient-scope.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "file:public/js/mobile-web.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "function:public/js/clinical-access-runtime.mjs:markClinicalAccessBootReady",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "function:public/js/clinical-access-runtime.mjs:markClinicalAccessBootReady",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "function:public/js/clinical-access-runtime.mjs:waitForClinicalAccessReady",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "function:public/js/clinical-access-runtime.mjs:waitForClinicalAccessReady",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "function:public/js/clinical-access-runtime.mjs:isClinicalScopeReadyForLanPatientApply",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "function:public/js/clinical-access-runtime.mjs:isClinicalScopeReadyForLanPatientApply",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "function:public/js/clinical-access-runtime.mjs:applyClinicalScopeFromLanOpsSnapshot",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "function:public/js/clinical-access-runtime.mjs:applyClinicalScopeFromLanOpsSnapshot",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "function:public/js/clinical-access-runtime.mjs:prunePatientsOutsideClinicalScope",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "function:public/js/clinical-access-runtime.mjs:prunePatientsOutsideClinicalScope",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "function:public/js/clinical-access-runtime.mjs:resolveClinicalRank",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "function:public/js/clinical-access-runtime.mjs:resolveClinicalRank",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "function:public/js/clinical-access-runtime.mjs:mapPatientForGuardiaGrid",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "function:public/js/clinical-access-runtime.mjs:mapPatientForGuardiaGrid",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "function:public/js/clinical-access-runtime.mjs:buildGuardiasMap",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "function:public/js/clinical-access-runtime.mjs:buildGuardiasMap",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "function:public/js/clinical-access-runtime.mjs:applyBootstrapResult",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "function:public/js/clinical-access-runtime.mjs:migrateLocalPatientsClinicalSala",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "function:public/js/clinical-access-runtime.mjs:migrateLocalPatientsClinicalSala",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "function:public/js/clinical-access-runtime.mjs:bootstrapClinicalAccess",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "function:public/js/clinical-access-runtime.mjs:bootstrapClinicalAccess",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "function:public/js/clinical-access-runtime.mjs:lookupClinicalUserByUsername",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "function:public/js/clinical-access-runtime.mjs:lookupClinicalUserByUsername",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "function:public/js/clinical-access-runtime.mjs:resumeClinicalIdentityByUsername",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "function:public/js/clinical-access-runtime.mjs:resumeClinicalIdentityByUsername",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "function:public/js/clinical-access-runtime.mjs:touchClinicalUserActivityRemote",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "function:public/js/clinical-access-runtime.mjs:scheduleClinicalActivityLanPush",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "function:public/js/clinical-access-runtime.mjs:touchClinicalSessionActivity",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "function:public/js/clinical-access-runtime.mjs:touchClinicalSessionActivity",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "function:public/js/clinical-access-runtime.mjs:refreshClinicalUserProfile",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "function:public/js/clinical-access-runtime.mjs:refreshClinicalUserProfile",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "function:public/js/clinical-access-runtime.mjs:scheduleLanPatientReconcile",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "function:public/js/clinical-access-runtime.mjs:ensureTeamAssignedPatientsOnDevice",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "function:public/js/clinical-access-runtime.mjs:ensureTeamAssignedPatientsOnDevice",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "function:public/js/clinical-access-runtime.mjs:ensureElevatedWardCensusOnDevice",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "function:public/js/clinical-access-runtime.mjs:ensureElevatedWardCensusOnDevice",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "function:public/js/clinical-access-runtime.mjs:refreshClinicalPatientListForScope",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "function:public/js/clinical-access-runtime.mjs:refreshClinicalPatientListForScope",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "function:public/js/clinical-access-runtime.mjs:pullHostPatientsAfterAssignmentMerge",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "function:public/js/clinical-access-runtime.mjs:wireClinicalOpsSyncRefresh",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "function:public/js/clinical-access-runtime.mjs:wireClinicalOpsSyncRefresh",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "function:public/js/clinical-access-runtime.mjs:initClinicalAccessRuntime",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "function:public/js/clinical-access-runtime.mjs:initClinicalAccessRuntime",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "function:public/js/clinical-access-runtime.mjs:stopClinicalAccessRuntime",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "function:public/js/clinical-access-runtime.mjs:stopClinicalAccessRuntime",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "function:public/js/clinical-access-runtime.mjs:syncGuardiaCensusPanelVisibility",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "function:public/js/clinical-access-runtime.mjs:syncGuardiaCensusPanelVisibility",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "function:public/js/clinical-access-runtime.mjs:refreshGuardiaCensusFromDb",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "function:public/js/clinical-access-runtime.mjs:refreshGuardiaCensusFromDb",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "function:public/js/clinical-access-runtime.mjs:renderGuardiaCensusGrid",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "function:public/js/clinical-access-runtime.mjs:renderGuardiaCensusGrid",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "function:public/js/clinical-access-runtime.mjs:assertClinicalWriteAllowed",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "function:public/js/clinical-access-runtime.mjs:assertClinicalWriteAllowed",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "function:public/js/clinical-access-runtime.mjs:signOutgoingLiveSyncMutation",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "function:public/js/clinical-access-runtime.mjs:signOutgoingLiveSyncMutation",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "function:public/js/clinical-access-runtime.mjs:verifyIncomingClinicalLedger",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "function:public/js/clinical-access-runtime.mjs:verifyIncomingClinicalLedger",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "function:public/js/clinical-access-runtime.mjs:guardAndSignLiveSyncMutation",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "function:public/js/clinical-access-runtime.mjs:guardAndSignLiveSyncMutation",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "function:public/js/clinical-access-runtime.mjs:getClinicalUser",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "function:public/js/clinical-access-runtime.mjs:getClinicalUser",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "function:public/js/clinical-access-runtime.mjs:scopeContextForEvaluateFromParts",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "function:public/js/clinical-access-runtime.mjs:getClinicalScopeContextForEvaluate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "function:public/js/clinical-access-runtime.mjs:getClinicalScopeContextForEvaluate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "function:public/js/clinical-access-runtime.mjs:pruneMobilePatientsOutsideTeamScope",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "function:public/js/clinical-access-runtime.mjs:pruneMobilePatientsOutsideTeamScope",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "function:public/js/clinical-access-runtime.mjs:finalizeMobileLanPatientCensus",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "function:public/js/clinical-access-runtime.mjs:finalizeMobileLanPatientCensus",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "function:public/js/clinical-access-runtime.mjs:fetchClinicalScopeContextFromDb",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "function:public/js/clinical-access-runtime.mjs:fetchClinicalScopeContextFromDb",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "function:public/js/clinical-access-runtime.mjs:fetchClinicalTeamsFromDb",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "function:public/js/clinical-access-runtime.mjs:fetchClinicalTeamsFromDb",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "function:public/js/clinical-access-runtime.mjs:fetchActiveRotationCycleFromDb",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "function:public/js/clinical-access-runtime.mjs:fetchActiveRotationCycleFromDb",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "function:public/js/clinical-access-runtime.mjs:fetchIncomingAssignmentsFromDb",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "function:public/js/clinical-access-runtime.mjs:fetchIncomingAssignmentsFromDb",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "function:public/js/clinical-access-runtime.mjs:unlockClinicalSessionOverlay",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "function:public/js/clinical-access-runtime.mjs:unlockClinicalSessionOverlay",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "function:public/js/clinical-access-runtime.mjs:resumeClinicalSession",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "function:public/js/clinical-access-runtime.mjs:resumeClinicalSession",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.test.mjs",
+      "target": "file:public/js/clinical-access-runtime.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/clinical-access-runtime.mjs",
+      "target": "file:public/js/clinical-access-runtime.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:public/js/clinical-privileges-mobile.test.mjs",
+      "target": "file:public/js/clinical-privileges.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/clinical-privileges-mobile.test.mjs",
+      "target": "file:public/js/features/patients-clinical-filter.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/clinical-privileges.mjs",
+      "target": "file:public/js/clinical-privileges-mobile.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:public/js/features/patients-clinical-filter.mjs",
+      "target": "file:public/js/clinical-privileges-mobile.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:public/js/clinical-privileges.mjs",
+      "target": "file:public/js/db-storage-bridge.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/clinical-privileges.mjs",
+      "target": "file:public/js/mobile-web.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/clinical-privileges.mjs",
+      "target": "function:public/js/clinical-privileges.mjs:shouldEnforceTeamPatientMirror",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-privileges.mjs",
+      "target": "function:public/js/clinical-privileges.mjs:shouldEnforceTeamPatientMirror",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-privileges.mjs",
+      "target": "function:public/js/clinical-privileges.mjs:hasProgramAdminPrivileges",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-privileges.mjs",
+      "target": "function:public/js/clinical-privileges.mjs:hasProgramAdminPrivileges",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-privileges.mjs",
+      "target": "function:public/js/clinical-privileges.mjs:effectiveClinicalRank",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-privileges.mjs",
+      "target": "function:public/js/clinical-privileges.mjs:effectiveClinicalRank",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-privileges.mjs",
+      "target": "function:public/js/clinical-privileges.mjs:canConfigureRotation",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-privileges.mjs",
+      "target": "function:public/js/clinical-privileges.mjs:canConfigureRotation",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-privileges.mjs",
+      "target": "function:public/js/clinical-privileges.mjs:canManageInternoQr",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-privileges.mjs",
+      "target": "function:public/js/clinical-privileges.mjs:canManageInternoQr",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-privileges.mjs",
+      "target": "function:public/js/clinical-privileges.mjs:hasElevatedTeamPrivileges",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-privileges.mjs",
+      "target": "function:public/js/clinical-privileges.mjs:hasElevatedTeamPrivileges",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-privileges.mjs",
+      "target": "function:public/js/clinical-privileges.mjs:shouldUseElevatedPatientCensus",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-privileges.mjs",
+      "target": "function:public/js/clinical-privileges.mjs:shouldUseElevatedPatientCensus",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-privileges.mjs",
+      "target": "function:public/js/clinical-privileges.mjs:shouldShowClinicalCensusFilters",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-privileges.mjs",
+      "target": "function:public/js/clinical-privileges.mjs:shouldShowClinicalCensusFilters",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-privileges.mjs",
+      "target": "function:public/js/clinical-privileges.mjs:canViewLanUserDirectory",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-privileges.mjs",
+      "target": "function:public/js/clinical-privileges.mjs:canViewLanUserDirectory",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-privileges.mjs",
+      "target": "function:public/js/clinical-privileges.mjs:canManageTeamRoster",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-privileges.mjs",
+      "target": "function:public/js/clinical-privileges.mjs:canManageTeamRoster",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-privileges.mjs",
+      "target": "function:public/js/clinical-privileges.mjs:canDeleteLanDirectoryUser",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-privileges.mjs",
+      "target": "function:public/js/clinical-privileges.mjs:canDeleteLanDirectoryUser",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-profile-lan-sync.mjs",
+      "target": "file:public/js/clinical-access-runtime.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/clinical-profile-lan-sync.mjs",
+      "target": "file:public/js/lan-join-link.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/clinical-profile-lan-sync.mjs",
+      "target": "file:public/js/lan-sync-diagnostics.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/clinical-profile-lan-sync.mjs",
+      "target": "file:public/js/live-sync-membership.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/clinical-profile-lan-sync.mjs",
+      "target": "function:public/js/clinical-profile-lan-sync.mjs:isLanProfileNeedsConnectCode",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-profile-lan-sync.mjs",
+      "target": "function:public/js/clinical-profile-lan-sync.mjs:isLanProfileNeedsConnectCode",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-profile-lan-sync.mjs",
+      "target": "function:public/js/clinical-profile-lan-sync.mjs:isBenignLanPushSkipCode",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-profile-lan-sync.mjs",
+      "target": "function:public/js/clinical-profile-lan-sync.mjs:isBenignLanPushSkipCode",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-profile-lan-sync.mjs",
+      "target": "function:public/js/clinical-profile-lan-sync.mjs:rememberLiveSyncRoomMembership",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-profile-lan-sync.mjs",
+      "target": "function:public/js/clinical-profile-lan-sync.mjs:rememberLiveSyncRoomMembership",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-profile-lan-sync.mjs",
+      "target": "function:public/js/clinical-profile-lan-sync.mjs:resolveRoomIdForUsernameRegister",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-profile-lan-sync.mjs",
+      "target": "function:public/js/clinical-profile-lan-sync.mjs:resolveRoomIdForUsernameRegister",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-profile-lan-sync.mjs",
+      "target": "function:public/js/clinical-profile-lan-sync.mjs:ensureLiveSyncRoomForUsernameRegister",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-profile-lan-sync.mjs",
+      "target": "function:public/js/clinical-profile-lan-sync.mjs:ensureLiveSyncRoomForUsernameRegister",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-profile-lan-sync.mjs",
+      "target": "function:public/js/clinical-profile-lan-sync.mjs:seedDevPeerLanConfigIfNeeded",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-profile-lan-sync.mjs",
+      "target": "function:public/js/clinical-profile-lan-sync.mjs:seedDevPeerLanConfigIfNeeded",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-profile-lan-sync.mjs",
+      "target": "function:public/js/clinical-profile-lan-sync.mjs:applyPendingLanInviteFromPage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-profile-lan-sync.mjs",
+      "target": "function:public/js/clinical-profile-lan-sync.mjs:applyPendingLanInviteFromPage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-profile-lan-sync.mjs",
+      "target": "function:public/js/clinical-profile-lan-sync.mjs:assertLanRoomForUsernameRegister",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-profile-lan-sync.mjs",
+      "target": "function:public/js/clinical-profile-lan-sync.mjs:assertLanRoomForUsernameRegister",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-profile-lan-sync.mjs",
+      "target": "function:public/js/clinical-profile-lan-sync.mjs:flushClinicalProfileToLan",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-profile-lan-sync.mjs",
+      "target": "function:public/js/clinical-profile-lan-sync.mjs:flushClinicalProfileToLan",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-profile-lan-sync.mjs",
+      "target": "function:public/js/clinical-profile-lan-sync.mjs:notifyLanProfilePushResult",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-profile-lan-sync.mjs",
+      "target": "function:public/js/clinical-profile-lan-sync.mjs:notifyLanProfilePushResult",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-profile-lan-sync.test.mjs",
+      "target": "file:public/js/clinical-profile-lan-sync.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/clinical-profile-lan-sync.mjs",
+      "target": "file:public/js/clinical-profile-lan-sync.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:public/js/clinical-scope-from-ops.mjs",
+      "target": "file:public/js/clinical-username.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/clinical-scope-from-ops.mjs",
+      "target": "function:public/js/clinical-scope-from-ops.mjs:clinicalUsersById",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-scope-from-ops.mjs",
+      "target": "function:public/js/clinical-scope-from-ops.mjs:archivedTeamIds",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-scope-from-ops.mjs",
+      "target": "function:public/js/clinical-scope-from-ops.mjs:buildTeamsWithMembers",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-scope-from-ops.mjs",
+      "target": "function:public/js/clinical-scope-from-ops.mjs:activeGuardiasFromSnapshot",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-scope-from-ops.mjs",
+      "target": "function:public/js/clinical-scope-from-ops.mjs:resolveClinicalUserRowFromOpsSnapshot",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-scope-from-ops.mjs",
+      "target": "function:public/js/clinical-scope-from-ops.mjs:resolveClinicalUserRowFromOpsSnapshot",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-scope-from-ops.mjs",
+      "target": "function:public/js/clinical-scope-from-ops.mjs:buildClinicalScopeContextFromOpsSnapshot",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-scope-from-ops.mjs",
+      "target": "function:public/js/clinical-scope-from-ops.mjs:buildClinicalScopeContextFromOpsSnapshot",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-scope-from-ops.test.mjs",
+      "target": "file:public/js/clinical-scope-from-ops.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/clinical-scope-from-ops.test.mjs",
+      "target": "file:public/js/clinico-access.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/clinical-scope-from-ops.test.mjs",
+      "target": "file:public/js/features/patients-clinical-filter.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/clinical-scope-from-ops.mjs",
+      "target": "file:public/js/clinical-scope-from-ops.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:public/js/clinico-access.mjs",
+      "target": "file:public/js/clinical-scope-from-ops.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:public/js/features/patients-clinical-filter.mjs",
+      "target": "file:public/js/clinical-scope-from-ops.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:public/js/clinical-settings.mjs",
+      "target": "file:public/js/clinical-username.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/clinical-settings.mjs",
+      "target": "function:public/js/clinical-settings.mjs:isClinicalLocalOnlyMode",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-settings.mjs",
+      "target": "function:public/js/clinical-settings.mjs:isClinicalLocalOnlyMode",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-settings.mjs",
+      "target": "function:public/js/clinical-settings.mjs:isClinicalSyncModeChosen",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-settings.mjs",
+      "target": "function:public/js/clinical-settings.mjs:isClinicalSyncModeChosen",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-settings.mjs",
+      "target": "function:public/js/clinical-settings.mjs:setClinicalSyncModeLocalOnly",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-settings.mjs",
+      "target": "function:public/js/clinical-settings.mjs:setClinicalSyncModeLocalOnly",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-settings.mjs",
+      "target": "function:public/js/clinical-settings.mjs:isLocalOnlyPlaceholderUsername",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-settings.mjs",
+      "target": "function:public/js/clinical-settings.mjs:isLocalOnlyPlaceholderUsername",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-settings.mjs",
+      "target": "function:public/js/clinical-settings.mjs:bundledWardShiftPin",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-settings.mjs",
+      "target": "function:public/js/clinical-settings.mjs:bundledWardShiftPin",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-settings.mjs",
+      "target": "function:public/js/clinical-settings.mjs:bundledWardHostUrl",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-settings.mjs",
+      "target": "function:public/js/clinical-settings.mjs:bundledWardHostUrl",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-settings.mjs",
+      "target": "function:public/js/clinical-settings.mjs:readRpcSettings",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-settings.mjs",
+      "target": "function:public/js/clinical-settings.mjs:readRpcSettings",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-settings.mjs",
+      "target": "function:public/js/clinical-settings.mjs:resolveClinicalClientId",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-settings.mjs",
+      "target": "function:public/js/clinical-settings.mjs:resolveClinicalClientId",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-settings.mjs",
+      "target": "function:public/js/clinical-settings.mjs:needsClinicalLanProfileGate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-settings.mjs",
+      "target": "function:public/js/clinical-settings.mjs:needsClinicalLanProfileGate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-settings.mjs",
+      "target": "function:public/js/clinical-settings.mjs:markClinicalLanProfileGateComplete",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-settings.mjs",
+      "target": "function:public/js/clinical-settings.mjs:markClinicalLanProfileGateComplete",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-settings.mjs",
+      "target": "function:public/js/clinical-settings.mjs:ensureLanProfileGateDeviceReset",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-settings.mjs",
+      "target": "function:public/js/clinical-settings.mjs:ensureLanProfileGateDeviceReset",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-settings.mjs",
+      "target": "function:public/js/clinical-settings.mjs:persistClinicalUserBinding",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-settings.mjs",
+      "target": "function:public/js/clinical-settings.mjs:persistClinicalUserBinding",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-settings.test.mjs",
+      "target": "file:public/js/clinical-settings.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/clinical-settings.mjs",
+      "target": "file:public/js/clinical-settings.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:public/js/clinical-team-invite.mjs",
+      "target": "function:public/js/clinical-team-invite.mjs:teamInviteCode",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-team-invite.mjs",
+      "target": "function:public/js/clinical-team-invite.mjs:teamInviteCode",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-team-invite.mjs",
+      "target": "function:public/js/clinical-team-invite.mjs:normalizeTeamInviteCode",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-team-invite.mjs",
+      "target": "function:public/js/clinical-team-invite.mjs:normalizeTeamInviteCode",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-team-invite.mjs",
+      "target": "function:public/js/clinical-team-invite.mjs:isLikelyLanBearerToken",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-team-invite.mjs",
+      "target": "function:public/js/clinical-team-invite.mjs:isLikelyLanBearerToken",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-team-invite.mjs",
+      "target": "function:public/js/clinical-team-invite.mjs:parseClinicalTeamJoinQuery",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-team-invite.mjs",
+      "target": "function:public/js/clinical-team-invite.mjs:parseClinicalTeamJoinQuery",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-team-invite.mjs",
+      "target": "function:public/js/clinical-team-invite.mjs:resolveTeamIdFromInviteCode",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-team-invite.mjs",
+      "target": "function:public/js/clinical-team-invite.mjs:resolveTeamIdFromInviteCode",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-team-invite.mjs",
+      "target": "function:public/js/clinical-team-invite.mjs:diagnoseInviteCodeFailure",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-team-invite.mjs",
+      "target": "function:public/js/clinical-team-invite.mjs:diagnoseInviteCodeFailure",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-team-invite.mjs",
+      "target": "function:public/js/clinical-team-invite.mjs:inviteCodeFailureMessage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-team-invite.mjs",
+      "target": "function:public/js/clinical-team-invite.mjs:inviteCodeFailureMessage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-team-invite.mjs",
+      "target": "function:public/js/clinical-team-invite.mjs:resolveClinicalInviteLanHostUrl",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-team-invite.mjs",
+      "target": "function:public/js/clinical-team-invite.mjs:resolveClinicalInviteLanHostUrl",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-team-invite.mjs",
+      "target": "function:public/js/clinical-team-invite.mjs:isClinicalTeamJoinDesktopApp",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-team-invite.mjs",
+      "target": "function:public/js/clinical-team-invite.mjs:isClinicalTeamJoinDesktopApp",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-team-invite.mjs",
+      "target": "function:public/js/clinical-team-invite.mjs:buildClinicalTeamInviteMessage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-team-invite.mjs",
+      "target": "function:public/js/clinical-team-invite.mjs:buildClinicalTeamInviteMessage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-team-invite.mjs",
+      "target": "function:public/js/clinical-team-invite.mjs:buildClinicalTeamInviteUrl",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-team-invite.mjs",
+      "target": "function:public/js/clinical-team-invite.mjs:buildClinicalTeamInviteUrl",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-team-invite.mjs",
+      "target": "function:public/js/clinical-team-invite.mjs:mountClinicalTeamInviteBrowserGate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-team-invite.mjs",
+      "target": "function:public/js/clinical-team-invite.mjs:mountClinicalTeamInviteBrowserGate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-team-invite.mjs",
+      "target": "function:public/js/clinical-team-invite.mjs:tryMountClinicalTeamInviteBrowserGate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-team-invite.mjs",
+      "target": "function:public/js/clinical-team-invite.mjs:tryMountClinicalTeamInviteBrowserGate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-team-invite.test.mjs",
+      "target": "file:public/js/clinical-team-invite.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/clinical-team-invite.mjs",
+      "target": "file:public/js/clinical-team-invite.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:public/js/clinical-username.mjs",
+      "target": "function:public/js/clinical-username.mjs:normalizeUsername",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-username.mjs",
+      "target": "function:public/js/clinical-username.mjs:normalizeUsername",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-username.mjs",
+      "target": "function:public/js/clinical-username.mjs:isValidUsernameFormat",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-username.mjs",
+      "target": "function:public/js/clinical-username.mjs:isValidUsernameFormat",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-username.mjs",
+      "target": "function:public/js/clinical-username.mjs:isLegacyMachineUsername",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-username.mjs",
+      "target": "function:public/js/clinical-username.mjs:isLegacyMachineUsername",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-username.mjs",
+      "target": "function:public/js/clinical-username.mjs:shouldClaimClinicalUsername",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinical-username.mjs",
+      "target": "function:public/js/clinical-username.mjs:shouldClaimClinicalUsername",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinical-username.test.mjs",
+      "target": "file:public/js/clinical-username.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/clinical-username.mjs",
+      "target": "file:public/js/clinical-username.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:public/js/clinico-access-scope/evaluate-clinical-scope.mjs",
+      "target": "file:public/js/clinico-access-scope/guardia-fallback.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/clinico-access-scope/evaluate-clinical-scope.mjs",
+      "target": "file:public/js/clinico-access-scope/guardia-r1.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/clinico-access-scope/evaluate-clinical-scope.mjs",
+      "target": "file:public/js/clinico-access-scope/guardia-r2.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/clinico-access-scope/evaluate-clinical-scope.mjs",
+      "target": "file:public/js/clinico-access-scope/guardia-r4.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/clinico-access-scope/evaluate-clinical-scope.mjs",
+      "target": "file:public/js/clinico-access-scope/preamble.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/clinico-access-scope/evaluate-clinical-scope.mjs",
+      "target": "file:public/js/clinico-access-scope/scope-context.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/clinico-access-scope/evaluate-clinical-scope.mjs",
+      "target": "file:public/js/clinico-access-scope/team-scope.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/clinico-access-scope/evaluate-clinical-scope.mjs",
+      "target": "function:public/js/clinico-access-scope/evaluate-clinical-scope.mjs:runEvaluateClinicalScope",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinico-access-scope/evaluate-clinical-scope.mjs",
+      "target": "function:public/js/clinico-access-scope/evaluate-clinical-scope.mjs:runEvaluateClinicalScope",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinico-access-scope/guardia-fallback.mjs",
+      "target": "function:public/js/clinico-access-scope/guardia-fallback.mjs:evaluateGuardiaFallback",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinico-access-scope/guardia-fallback.mjs",
+      "target": "function:public/js/clinico-access-scope/guardia-fallback.mjs:evaluateGuardiaFallback",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinico-access-scope/guardia-r1.mjs",
+      "target": "file:public/js/clinico-access.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/clinico-access-scope/guardia-r1.mjs",
+      "target": "function:public/js/clinico-access-scope/guardia-r1.mjs:evaluateGuardiaR1",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinico-access-scope/guardia-r1.mjs",
+      "target": "function:public/js/clinico-access-scope/guardia-r1.mjs:evaluateGuardiaR1",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinico-access-scope/guardia-r2.mjs",
+      "target": "file:public/js/clinico-access.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/clinico-access-scope/guardia-r2.mjs",
+      "target": "function:public/js/clinico-access-scope/guardia-r2.mjs:evaluateGuardiaR2",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinico-access-scope/guardia-r2.mjs",
+      "target": "function:public/js/clinico-access-scope/guardia-r2.mjs:evaluateGuardiaR2",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinico-access-scope/guardia-r4.mjs",
+      "target": "file:public/js/clinico-access.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/clinico-access-scope/guardia-r4.mjs",
+      "target": "function:public/js/clinico-access-scope/guardia-r4.mjs:evaluateGuardiaR4",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinico-access-scope/guardia-r4.mjs",
+      "target": "function:public/js/clinico-access-scope/guardia-r4.mjs:evaluateGuardiaR4",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinico-access-scope/preamble.mjs",
+      "target": "file:public/js/clinico-access-scope/scope-utils.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/clinico-access-scope/preamble.mjs",
+      "target": "file:public/js/clinico-access.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/clinico-access-scope/preamble.mjs",
+      "target": "function:public/js/clinico-access-scope/preamble.mjs:evaluateScopeIdentity",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinico-access-scope/preamble.mjs",
+      "target": "function:public/js/clinico-access-scope/preamble.mjs:evaluateScopeIdentity",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinico-access-scope/preamble.mjs",
+      "target": "function:public/js/clinico-access-scope/preamble.mjs:evaluateScopeAdmin",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinico-access-scope/preamble.mjs",
+      "target": "function:public/js/clinico-access-scope/preamble.mjs:evaluateScopeAdmin",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinico-access-scope/preamble.mjs",
+      "target": "function:public/js/clinico-access-scope/preamble.mjs:evaluateScopeActiveGuardia",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinico-access-scope/preamble.mjs",
+      "target": "function:public/js/clinico-access-scope/preamble.mjs:evaluateScopeActiveGuardia",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinico-access-scope/preamble.mjs",
+      "target": "function:public/js/clinico-access-scope/preamble.mjs:evaluateScopeIncomingPreview",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinico-access-scope/preamble.mjs",
+      "target": "function:public/js/clinico-access-scope/preamble.mjs:evaluateScopeIncomingPreview",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinico-access-scope/preamble.mjs",
+      "target": "function:public/js/clinico-access-scope/preamble.mjs:evaluateScopeInterconsultas",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinico-access-scope/preamble.mjs",
+      "target": "function:public/js/clinico-access-scope/preamble.mjs:evaluateScopeInterconsultas",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinico-access-scope/scope-context.mjs",
+      "target": "file:public/js/clinico-access-scope/shared.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/clinico-access-scope/scope-context.mjs",
+      "target": "file:public/js/clinico-access.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/clinico-access-scope/scope-context.mjs",
+      "target": "function:public/js/clinico-access-scope/scope-context.mjs:resolveScopeNow",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinico-access-scope/scope-context.mjs",
+      "target": "function:public/js/clinico-access-scope/scope-context.mjs:resolveScopeNow",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinico-access-scope/scope-context.mjs",
+      "target": "function:public/js/clinico-access-scope/scope-context.mjs:buildScopeContext",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinico-access-scope/scope-context.mjs",
+      "target": "function:public/js/clinico-access-scope/scope-context.mjs:buildScopeContext",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinico-access-scope/scope-context.mjs",
+      "target": "function:public/js/clinico-access-scope/scope-context.mjs:attachJoinedTeamScope",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinico-access-scope/scope-context.mjs",
+      "target": "function:public/js/clinico-access-scope/scope-context.mjs:attachJoinedTeamScope",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/clinico-access-scope/scope-utils.mjs",
+      "target": "function:public/js/clinico-access-scope/scope-utils.mjs:toMillis",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/clinico-access-scope/scope-utils.mjs",
+      "target": "function:public/js/clinico-access-scope/scope-utils.mjs:toMillis",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

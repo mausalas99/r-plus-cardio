@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024" fill="none">
+  <title>R+ icon layer 2 glass mark</title>
+  <g fill="#ffffff" opacity="0.8">
+    <rect x="456" y="248" width="112" height="308"/>
+    <rect x="356" y="456" width="312" height="112"/>
+    <rect x="414" y="592" width="196" height="11" rx="5.5"/>
+    <rect x="450" y="618" width="124" height="11" rx="5.5"/>
+    <rect x="478" y="644" width="68" height="11" rx="5.5"/>
+  </g>
+</svg>

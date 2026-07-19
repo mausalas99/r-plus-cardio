@@ -1,0 +1,252 @@
+/* Grouped expediente navigation (premium UI phase 2).
+ * Wide windows only; <1100px keeps the classic tabs + segment bars.
+ * Expansion animates grid-template-columns 0fr -> 1fr (motion tokens). */
+
+#exp-group-row {
+  display: none;
+}
+
+@media (min-width: 1100px) {
+  #patient-expediente-classic > .exp-expediente-nav > .inner-tab-bar {
+    display: none;
+  }
+  #patient-expediente-classic .exp-segment-bar {
+    display: none !important; /* beats the inline display set by sync code */
+  }
+  #patient-expediente-classic > .exp-expediente-nav > #exp-group-row {
+    display: flex;
+    align-items: center;
+    gap: calc(8px * var(--density-space, 1));
+    padding: calc(6px * var(--density-space, 1)) calc(8px * var(--density-space, 1)) calc(6px * var(--density-space, 1))
+      calc(16px * var(--density-space, 1));
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: thin;
+  }
+}
+
+.exp-group-pill {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  padding: 2px;
+  border: var(--border-hairline);
+  border-radius: var(--radius-pill);
+  background: color-mix(in oklab, var(--surface) 92%, var(--bg));
+  transition:
+    border-color var(--dur-normal) var(--ease-out),
+    background var(--dur-normal) var(--ease-out),
+    box-shadow var(--dur-normal) var(--ease-out);
+}
+
+.exp-group-pill.is-active {
+  border-color: color-mix(in oklab, var(--action) 35%, transparent);
+  background: color-mix(in oklab, var(--action) 7%, var(--surface));
+  box-shadow: var(--elev-raised);
+}
+
+.exp-group-name {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+  font-size: calc(12.5px * var(--density-font, 1));
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--text-muted);
+  padding: calc(5px * var(--density-space, 1)) calc(10px * var(--density-space, 1));
+  border-radius: var(--radius-pill);
+  white-space: nowrap;
+  max-width: 11rem;
+  overflow: hidden;
+  opacity: 1;
+  transition:
+    max-width var(--dur-slow) var(--ease-out),
+    opacity var(--dur-normal) var(--ease-out),
+    padding var(--dur-slow) var(--ease-out),
+    color var(--dur-fast) var(--ease-out),
+    background var(--dur-fast) var(--ease-out);
+}
+
+.exp-group-pill.is-active > .exp-group-name {
+  color: var(--action);
+}
+
+/* Active group with sections: collapse group title, show section pills only */
+.exp-group-pill.is-active:not(.exp-group-pill--leaf) > .exp-group-name {
+  max-width: 0;
+  padding-left: 0;
+  padding-right: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.exp-group-name:hover {
+  background: var(--state-hover-bg);
+  color: var(--text);
+}
+
+.exp-group-name:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+.exp-group-sections {
+  display: grid;
+  grid-template-columns: 0fr;
+  transition: grid-template-columns var(--dur-slow) var(--ease-out);
+}
+
+.exp-group-sections-inner {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  min-width: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateX(-6px);
+  transition:
+    opacity var(--dur-normal) var(--ease-out),
+    transform var(--dur-slow) var(--ease-out);
+}
+
+.exp-group-pill.is-active > .exp-group-sections,
+.exp-group-pill.is-touch-expanded > .exp-group-sections,
+.exp-group-pill:hover > .exp-group-sections,
+.exp-group-pill:focus-within > .exp-group-sections {
+  grid-template-columns: 1fr;
+}
+
+.exp-group-pill.is-active > .exp-group-sections .exp-group-sections-inner,
+.exp-group-pill.is-touch-expanded > .exp-group-sections .exp-group-sections-inner,
+.exp-group-pill:hover > .exp-group-sections .exp-group-sections-inner,
+.exp-group-pill:focus-within > .exp-group-sections .exp-group-sections-inner {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 45ms;
+}
+
+.exp-group-section {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+  font-size: calc(12px * var(--density-font, 1));
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--text-muted);
+  padding: calc(4px * var(--density-space, 1)) calc(9px * var(--density-space, 1));
+  border-radius: var(--radius-pill);
+  white-space: nowrap;
+  transition:
+    color var(--dur-fast) var(--ease-out),
+    background var(--dur-fast) var(--ease-out);
+}
+
+.exp-group-section:hover {
+  background: var(--state-hover-bg);
+  color: var(--text);
+}
+
+.exp-group-section.is-active {
+  background: color-mix(in oklab, var(--action) 14%, var(--surface));
+  color: var(--action);
+}
+
+.exp-group-section:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+html.dark .exp-group-pill {
+  background: color-mix(in oklab, var(--surface) 88%, var(--bg));
+}
+
+html.high-contrast .exp-group-pill {
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+
+html.high-contrast .exp-group-pill.is-active {
+  border-color: var(--color-accent);
+}
+
+html.motion-sobrio .exp-group-sections,
+html.motion-sobrio .exp-group-sections-inner,
+html.motion-sobrio .exp-group-name,
+html.motion-sobrio .exp-group-pill {
+  transition: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .exp-group-sections,
+  .exp-group-sections-inner,
+  .exp-group-name,
+  .exp-group-pill {
+    transition: none !important;
+  }
+  .exp-group-sections-inner {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.exp-group-pill--leaf > .exp-group-sections {
+  display: none;
+}
+
+.exp-group-pill--leaf > .exp-group-name {
+  padding-right: calc(12px * var(--density-space, 1));
+}
+
+/* Mobile web (iPad PWA / LAN): grouped row at all widths; tap-to-expand only */
+html.rpc-mobile-web #patient-expediente-classic > .exp-expediente-nav > .inner-tab-bar {
+  display: none;
+}
+
+html.rpc-mobile-web #patient-expediente-classic .exp-segment-bar {
+  display: none !important;
+}
+
+html.rpc-mobile-web #patient-expediente-classic > .exp-expediente-nav > #exp-group-row {
+  display: flex;
+  align-items: center;
+  gap: calc(8px * var(--density-space, 1));
+  padding: calc(8px * var(--density-space, 1)) calc(8px * var(--density-space, 1)) calc(8px * var(--density-space, 1))
+    calc(12px * var(--density-space, 1));
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
+}
+
+html.rpc-mobile-web .exp-group-name,
+html.rpc-mobile-web .exp-group-section {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (hover: none) {
+  html.rpc-mobile-web .exp-group-pill:hover > .exp-group-sections {
+    grid-template-columns: 0fr;
+  }
+
+  html.rpc-mobile-web .exp-group-pill:hover > .exp-group-sections .exp-group-sections-inner {
+    opacity: 0;
+    transform: translateX(-6px);
+  }
+}
+
+html.rpc-mobile-web .exp-group-pill.is-active > .exp-group-sections,
+html.rpc-mobile-web .exp-group-pill.is-touch-expanded > .exp-group-sections {
+  grid-template-columns: 1fr;
+}
+
+html.rpc-mobile-web .exp-group-pill.is-active > .exp-group-sections .exp-group-sections-inner,
+html.rpc-mobile-web .exp-group-pill.is-touch-expanded > .exp-group-sections .exp-group-sections-inner {
+  opacity: 1;
+  transform: translateX(0);
+}
+

@@ -1,0 +1,15 @@
+{
+  "diabetes": "Diabetes mellitus",
+  "hipertension": "Hipertensión arterial",
+  "neoplasia": "Neoplasia",
+  "cardiopatia": "Cardiopatía isquémica",
+  "enfermedadRenal": "Enfermedad renal",
+  "enfermedadPulmonar": "Enfermedad pulmonar",
+  "tuberculosis": "Tuberculosis",
+  "hepatitis": "Hepatitis",
+  "vih": "VIH/SIDA",
+  "epilepsia": "Epilepsia",
+  "psiquiatrico": "Trastorno psiquiátrico",
+  "tiroideo": "Enfermedad tiroidea",
+  "otro": "Otro"
+}

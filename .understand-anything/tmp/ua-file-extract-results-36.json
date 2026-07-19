@@ -1,0 +1,175 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 3,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": ".agents/skills/improve/references/audit-playbook.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 130,
+      "nonEmptyLines": 92,
+      "sections": [
+        {
+          "heading": "Audit Playbook",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "1. Correctness / Bugs",
+          "level": 2,
+          "line": 9
+        },
+        {
+          "heading": "2. Security",
+          "level": 2,
+          "line": 22
+        },
+        {
+          "heading": "3. Performance",
+          "level": 2,
+          "line": 38
+        },
+        {
+          "heading": "4. Test Coverage",
+          "level": 2,
+          "line": 50
+        },
+        {
+          "heading": "5. Tech Debt & Architecture",
+          "level": 2,
+          "line": 60
+        },
+        {
+          "heading": "6. Dependencies & Migrations",
+          "level": 2,
+          "line": 69
+        },
+        {
+          "heading": "7. DX & Tooling",
+          "level": 2,
+          "line": 78
+        },
+        {
+          "heading": "8. Docs",
+          "level": 2,
+          "line": 86
+        },
+        {
+          "heading": "9. Direction — features & where to take this next",
+          "level": 2,
+          "line": 94
+        },
+        {
+          "heading": "Finding format",
+          "level": 2,
+          "line": 108
+        },
+        {
+          "heading": "Prioritization rubric",
+          "level": 2,
+          "line": 123
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 12
+      }
+    },
+    {
+      "path": ".agents/skills/improve/references/closing-the-loop.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 95,
+      "nonEmptyLines": 64,
+      "sections": [
+        {
+          "heading": "Closing the Loop — execute, reconcile, issues",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "`execute <plan>` — dispatch and review",
+          "level": 2,
+          "line": 9
+        },
+        {
+          "heading": "Preconditions (check all before dispatching)",
+          "level": 3,
+          "line": 11
+        },
+        {
+          "heading": "Dispatch",
+          "level": 3,
+          "line": 17
+        },
+        {
+          "heading": "Review (the advisor's real job here)",
+          "level": 3,
+          "line": 48
+        },
+        {
+          "heading": "Verdict",
+          "level": 3,
+          "line": 59
+        },
+        {
+          "heading": "`reconcile` — keep `plans/` alive",
+          "level": 2,
+          "line": 73
+        },
+        {
+          "heading": "`--issues` — publish plans as GitHub issues",
+          "level": 2,
+          "line": 86
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 8
+      }
+    },
+    {
+      "path": ".agents/skills/improve/references/plan-template.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 197,
+      "nonEmptyLines": 139,
+      "sections": [
+        {
+          "heading": "Handoff Plan Template",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Template",
+          "level": 2,
+          "line": 15
+        },
+        {
+          "heading": "Index file: `plans/README.md`",
+          "level": 2,
+          "line": 160
+        },
+        {
+          "heading": "Quality bar — check before finishing each plan",
+          "level": 2,
+          "line": 189
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 4
+      }
+    }
+  ]
+}

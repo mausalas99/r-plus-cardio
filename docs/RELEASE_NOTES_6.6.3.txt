@@ -1,0 +1,37 @@
+R+ 6.6.3 (cold-start — arranque, chunks, Chart y Windows)
+============================================================
+
+Fecha: 2026-06-03
+
+## Resumen
+
+Parche de **arranque en frío** (chunks esbuild, carga diferida de Ajustes/plataforma), **gráficas Chart** estables vía UMD, y corrección en **Windows** del flujo «Configura tu rotación» cuando la base ya estaba abierta. Incluye la línea LAN **ward-ready** de **6.6.2**.
+
+## Nuevo / mejorado
+
+### Arranque y renderer
+
+- **Cold-start** — Menos JavaScript en el bundle inicial; módulos pesados en chunks con `import()` (Ajustes, plataforma, LAN, equipos, etc.).
+- **Chart.js** — Tendencias y gráficas del expediente usan **Chart UMD** en `index.html` (sin depender de chunks ESM frágiles).
+
+### Windows
+
+- **Configura tu rotación** — Ya no queda atascado en «Desbloquea la base de datos…» si SQLCipher abrió pero la sesión clínica no había arrancado (carrera al boot).
+- **Mensajes claros** — Distingue base bloqueada, instalación sin SQLCipher y «base abierta pero sesión falló».
+- **Nativos** — `db:status` expone `sqlcipherReady` / `argon2Ready`; el unlock no se bloquea solo por fallo de argon2.
+
+### LAN (hereda 6.6.2)
+
+- **Clinical-ops** — Push y cola separados del bundle del turno.
+- **Host** — Historia clínica desde censo del bundle cuando no hay `hc:` dedicado.
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v6.6.3
+
+- Mac: `R+-6.6.3-arm64.dmg`, `R+-6.6.3-x64.dmg` (y zip para auto-update).
+- Windows: `R+-6.6.3-x64.exe`.
+
+**Recomendado:** Todas las estaciones del turno en **6.6.3** el mismo día. Firewall **3738** en Windows la primera vez en sala ⇄.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye write-release-yml.js).

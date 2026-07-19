@@ -1,0 +1,27 @@
+R+ 7.0.2 (perfil Windows y recuperar @usuario)
+================================================
+
+Fecha: 2026-06-05
+
+## Resumen
+
+Corrige un fallo que impedía **guardar el perfil clínico** en Windows (y al **recuperar @usuario**): errores de JavaScript en consola (`Cannot access before initialization`) al pulsar Continuar en el registro.
+
+## Nuevo / mejorado
+
+- **Guardar perfil** — El wizard de onboarding ya no falla al guardar nombre, rango y sala (incluye el paso opcional del PIN del turno).
+- **Recuperar @usuario** — «Recuperar mi usuario» y el flujo automático al reclamar un handle ocupado vuelven a funcionar.
+- **Incluye 7.0.1** — PIN del turno, reconexión Wi‑Fi hospital, directorio LAN y empaquetado Windows SQLCipher.
+
+## Operación en guardia
+
+Actualiza desde **7.0.1** (o anterior) en todas las estaciones. No cambia el PIN ni la sala; solo corrige el guardado de perfil.
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v7.0.2
+
+- Mac: `R+-7.0.2-arm64.dmg`, `R+-7.0.2-x64.dmg` (y zip para auto-update).
+- Windows: `R+-7.0.2-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye write-release-yml.js).

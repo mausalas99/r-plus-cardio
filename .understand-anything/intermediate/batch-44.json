@@ -1,0 +1,267 @@
+{
+  "nodes": [
+    {
+      "id": "document:docs/superpowers/plans/2026-04-11-ui-improvements.md",
+      "type": "document",
+      "name": "2026-04-11-ui-improvements.md",
+      "filePath": "docs/superpowers/plans/2026-04-11-ui-improvements.md",
+      "summary": "Implementation plan: R+ UI Improvements — Implementation Plan.",
+      "tags": [
+        "documentation",
+        "implementation-plan",
+        "lan-sync",
+        "design"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/superpowers/plans/2026-04-12-copy-labs-soap-template.md",
+      "type": "document",
+      "name": "2026-04-12-copy-labs-soap-template.md",
+      "filePath": "docs/superpowers/plans/2026-04-12-copy-labs-soap-template.md",
+      "summary": "Implementation plan: Copy Labs + Plantilla SOAP — Implementation Plan.",
+      "tags": [
+        "documentation",
+        "implementation-plan",
+        "lan-sync"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/superpowers/plans/2026-04-12-quick-wins-v2.md",
+      "type": "document",
+      "name": "2026-04-12-quick-wins-v2.md",
+      "filePath": "docs/superpowers/plans/2026-04-12-quick-wins-v2.md",
+      "summary": "Implementation plan: Quick Wins v2 — Implementation Plan.",
+      "tags": [
+        "documentation",
+        "implementation-plan",
+        "lan-sync",
+        "design"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/superpowers/plans/2026-04-13-output-dir-duplicate-warning.md",
+      "type": "document",
+      "name": "2026-04-13-output-dir-duplicate-warning.md",
+      "filePath": "docs/superpowers/plans/2026-04-13-output-dir-duplicate-warning.md",
+      "summary": "Implementation plan: Carpeta configurable + Avisos de duplicado — Implementation Plan.",
+      "tags": [
+        "documentation",
+        "implementation-plan",
+        "lan-sync"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/superpowers/plans/2026-04-13-v1.6.0-plan.md",
+      "type": "document",
+      "name": "2026-04-13-v1.6.0-plan.md",
+      "filePath": "docs/superpowers/plans/2026-04-13-v1.6.0-plan.md",
+      "summary": "Implementation plan: R+ v1.6.0 — Implementation Plan.",
+      "tags": [
+        "documentation",
+        "implementation-plan",
+        "lan-sync"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/superpowers/plans/2026-04-23-actualizaciones-fase1-modal.md",
+      "type": "document",
+      "name": "2026-04-23-actualizaciones-fase1-modal.md",
+      "filePath": "docs/superpowers/plans/2026-04-23-actualizaciones-fase1-modal.md",
+      "summary": "Implementation plan: Actualizaciones R+ — Fase 1 (modal, progreso, notas, posponer) — Plan de implementación.",
+      "tags": [
+        "documentation",
+        "implementation-plan",
+        "lan-sync"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/superpowers/plans/2026-05-01-auto-lab-history-active-patient.md",
+      "type": "document",
+      "name": "2026-05-01-auto-lab-history-active-patient.md",
+      "filePath": "docs/superpowers/plans/2026-05-01-auto-lab-history-active-patient.md",
+      "summary": "Implementation plan: Auto-lab History for Active Patient Implementation Plan.",
+      "tags": [
+        "documentation",
+        "implementation-plan",
+        "lan-sync"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/superpowers/plans/2026-05-02-medicamentos-receta.md",
+      "type": "document",
+      "name": "2026-05-02-medicamentos-receta.md",
+      "filePath": "docs/superpowers/plans/2026-05-02-medicamentos-receta.md",
+      "summary": "Implementation plan: Medicamentos + Receta Implementation Plan.",
+      "tags": [
+        "documentation",
+        "implementation-plan",
+        "lan-sync"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/superpowers/plans/2026-05-04-medicamentos-tendencias-plan.md",
+      "type": "document",
+      "name": "2026-05-04-medicamentos-tendencias-plan.md",
+      "filePath": "docs/superpowers/plans/2026-05-04-medicamentos-tendencias-plan.md",
+      "summary": "Implementation plan: Medicamentos + Tendencias (barras por estudio) — Implementation Plan.",
+      "tags": [
+        "documentation",
+        "implementation-plan",
+        "lan-sync"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/superpowers/plans/2026-05-07-v3.0-plan.md",
+      "type": "document",
+      "name": "2026-05-07-v3.0-plan.md",
+      "filePath": "docs/superpowers/plans/2026-05-07-v3.0-plan.md",
+      "summary": "Implementation plan: R+ 3.0.0 Implementation Plan.",
+      "tags": [
+        "documentation",
+        "implementation-plan",
+        "lan-sync"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/superpowers/plans/2026-05-13-lan-host-livesync-calendario-global.md",
+      "type": "document",
+      "name": "2026-05-13-lan-host-livesync-calendario-global.md",
+      "filePath": "docs/superpowers/plans/2026-05-13-lan-host-livesync-calendario-global.md",
+      "summary": "Implementation plan: LAN host, LiveSync (salas conocidas) y calendario global — Implementation Plan.",
+      "tags": [
+        "documentation",
+        "implementation-plan",
+        "lan-sync"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/superpowers/plans/2026-05-13-todos-shortcuts-bh-extended.md",
+      "type": "document",
+      "name": "2026-05-13-todos-shortcuts-bh-extended.md",
+      "filePath": "docs/superpowers/plans/2026-05-13-todos-shortcuts-bh-extended.md",
+      "summary": "Implementation plan: Pendientes, Shortcuts y Línea blanca extendida — Implementation Plan.",
+      "tags": [
+        "documentation",
+        "implementation-plan",
+        "lan-sync"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/superpowers/plans/2026-05-16-livesync-agenda-todos-room.md",
+      "type": "document",
+      "name": "2026-05-16-livesync-agenda-todos-room.md",
+      "filePath": "docs/superpowers/plans/2026-05-16-livesync-agenda-todos-room.md",
+      "summary": "Implementation plan: LiveSync por sala — agenda y pendientes — Implementation Plan.",
+      "tags": [
+        "documentation",
+        "implementation-plan",
+        "lan-sync"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/superpowers/plans/2026-05-18-tendencias-grafica-estudio-tabla.md",
+      "type": "document",
+      "name": "2026-05-18-tendencias-grafica-estudio-tabla.md",
+      "filePath": "docs/superpowers/plans/2026-05-18-tendencias-grafica-estudio-tabla.md",
+      "summary": "Implementation plan: Tendencias — gráfica por estudio + tabla copiable — Implementation Plan.",
+      "tags": [
+        "documentation",
+        "implementation-plan",
+        "lan-sync"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/superpowers/plans/2026-05-19-modular-app-refactor.md",
+      "type": "document",
+      "name": "2026-05-19-modular-app-refactor.md",
+      "filePath": "docs/superpowers/plans/2026-05-19-modular-app-refactor.md",
+      "summary": "Implementation plan: Modularización app.js + HTML — Implementation Plan.",
+      "tags": [
+        "documentation",
+        "implementation-plan",
+        "lan-sync"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/superpowers/plans/2026-05-23-casiopea-v5.2-plan.md",
+      "type": "document",
+      "name": "2026-05-23-casiopea-v5.2-plan.md",
+      "filePath": "docs/superpowers/plans/2026-05-23-casiopea-v5.2-plan.md",
+      "summary": "Implementation plan: Casiopea v5.2 Implementation Plan.",
+      "tags": [
+        "documentation",
+        "implementation-plan",
+        "lan-sync"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/superpowers/plans/2026-05-25-manejo-electrolitos-gasometria.md",
+      "type": "document",
+      "name": "2026-05-25-manejo-electrolitos-gasometria.md",
+      "filePath": "docs/superpowers/plans/2026-05-25-manejo-electrolitos-gasometria.md",
+      "summary": "Implementation plan: Manejo electrolítico, gasometría extendida y SOME — Implementation Plan.",
+      "tags": [
+        "documentation",
+        "implementation-plan",
+        "lan-sync"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/superpowers/plans/2026-05-25-manejo-protocolos-atb-cad-ehh.md",
+      "type": "document",
+      "name": "2026-05-25-manejo-protocolos-atb-cad-ehh.md",
+      "filePath": "docs/superpowers/plans/2026-05-25-manejo-protocolos-atb-cad-ehh.md",
+      "summary": "Implementation plan: Manejo — Protocolos, ATB y CAD/EHH — Implementation Plan.",
+      "tags": [
+        "documentation",
+        "implementation-plan",
+        "lan-sync"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/superpowers/plans/2026-05-26-estado-actual-monitoreo.md",
+      "type": "document",
+      "name": "2026-05-26-estado-actual-monitoreo.md",
+      "filePath": "docs/superpowers/plans/2026-05-26-estado-actual-monitoreo.md",
+      "summary": "Implementation plan: Estado Actual — Monitoreo estructurado Implementation Plan.",
+      "tags": [
+        "documentation",
+        "implementation-plan",
+        "lan-sync"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/superpowers/plans/2026-05-26-lab-trends-perf.md",
+      "type": "document",
+      "name": "2026-05-26-lab-trends-perf.md",
+      "filePath": "docs/superpowers/plans/2026-05-26-lab-trends-perf.md",
+      "summary": "Implementation plan: Lab trends performance — Implementation Plan.",
+      "tags": [
+        "documentation",
+        "implementation-plan",
+        "lan-sync"
+      ],
+      "complexity": "complex"
+    }
+  ],
+  "edges": []
+}

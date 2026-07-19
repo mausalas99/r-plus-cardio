@@ -1,0 +1,24 @@
+R+ 5.6.3 (estable — release 5.6.3)
+======================================
+
+Fecha: 2026-06-01
+
+## Resumen
+
+Versión estable de mantenimiento: laboratorio al cambiar paciente, lista ordenable, vista Pase compacta y canal de actualizaciones Estable por defecto.
+
+## Nuevo / mejorado
+
+- **Laboratorio** — Limpieza de resultados al cambiar paciente; historial expandido y scroll a la tarjeta activa.
+- **Pacientes** — Reordenar tarjetas por arrastre (SortableJS); UI de ronda más compacta.
+- **Pase** — Agenda y pendientes en fila; dosis de medicación solo antes de `//`.
+- **Actualizaciones** — Canal Estable predeterminado; pre-releases solo si se activan en Ajustes.
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v5.6.3
+
+- Mac: `R+-5.6.3-arm64.dmg`, `R+-5.6.3-x64.dmg` (y zip para auto-update).
+- Windows: `R+-5.6.3-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye write-release-yml.js).

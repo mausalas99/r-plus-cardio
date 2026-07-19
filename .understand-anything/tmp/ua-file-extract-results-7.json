@@ -1,0 +1,5086 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 31,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "public/js/fundamentos-progress.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 45,
+      "nonEmptyLines": 39,
+      "functions": [
+        {
+          "name": "loadFundamentosProgress",
+          "startLine": 6,
+          "endLine": 18,
+          "params": []
+        },
+        {
+          "name": "saveFundamentosProgress",
+          "startLine": 20,
+          "endLine": 25,
+          "params": [
+            "patch"
+          ]
+        },
+        {
+          "name": "isFundamentosChapterId",
+          "startLine": 27,
+          "endLine": 29,
+          "params": [
+            "chapterId"
+          ]
+        },
+        {
+          "name": "fundamentosModuleCount",
+          "startLine": 31,
+          "endLine": 33,
+          "params": []
+        },
+        {
+          "name": "markFundamentosChapterComplete",
+          "startLine": 35,
+          "endLine": 45,
+          "params": [
+            "chapterId"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "FUNDAMENTOS_PROGRESS_LS_KEY",
+          "line": 3,
+          "isDefault": false
+        },
+        {
+          "name": "loadFundamentosProgress",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "saveFundamentosProgress",
+          "line": 20,
+          "isDefault": false
+        },
+        {
+          "name": "isFundamentosChapterId",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "fundamentosModuleCount",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "markFundamentosChapterComplete",
+          "line": 35,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "loadFundamentosProgress",
+          "callee": "storage.getItem",
+          "lineNumber": 8
+        },
+        {
+          "caller": "loadFundamentosProgress",
+          "callee": "JSON.parse",
+          "lineNumber": 10
+        },
+        {
+          "caller": "loadFundamentosProgress",
+          "callee": "Array.isArray",
+          "lineNumber": 12
+        },
+        {
+          "caller": "saveFundamentosProgress",
+          "callee": "loadFundamentosProgress",
+          "lineNumber": 21
+        },
+        {
+          "caller": "saveFundamentosProgress",
+          "callee": "Date.now",
+          "lineNumber": 22
+        },
+        {
+          "caller": "saveFundamentosProgress",
+          "callee": "storage.setItem",
+          "lineNumber": 23
+        },
+        {
+          "caller": "saveFundamentosProgress",
+          "callee": "JSON.stringify",
+          "lineNumber": 23
+        },
+        {
+          "caller": "isFundamentosChapterId",
+          "callee": "SALA_CHAPTERS.some",
+          "lineNumber": 28
+        },
+        {
+          "caller": "markFundamentosChapterComplete",
+          "callee": "isFundamentosChapterId",
+          "lineNumber": 36
+        },
+        {
+          "caller": "markFundamentosChapterComplete",
+          "callee": "loadFundamentosProgress",
+          "lineNumber": 37
+        },
+        {
+          "caller": "markFundamentosChapterComplete",
+          "callee": "loadFundamentosProgress",
+          "lineNumber": 39
+        },
+        {
+          "caller": "markFundamentosChapterComplete",
+          "callee": "set.has",
+          "lineNumber": 41
+        },
+        {
+          "caller": "markFundamentosChapterComplete",
+          "callee": "set.add",
+          "lineNumber": 42
+        },
+        {
+          "caller": "markFundamentosChapterComplete",
+          "callee": "saveFundamentosProgress",
+          "lineNumber": 43
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 6,
+        "functionCount": 5,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/fundamentos-progress.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 32,
+      "nonEmptyLines": 29,
+      "functions": [
+        {
+          "name": "mockStorage",
+          "startLine": 10,
+          "endLine": 17,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "mockStorage",
+          "callee": "map.has",
+          "lineNumber": 13
+        },
+        {
+          "caller": "mockStorage",
+          "callee": "map.get",
+          "lineNumber": 13
+        },
+        {
+          "caller": "mockStorage",
+          "callee": "map.set",
+          "lineNumber": 14
+        },
+        {
+          "caller": "mockStorage",
+          "callee": "map.delete",
+          "lineNumber": 15
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/gaso-extended.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 460,
+      "nonEmptyLines": 423,
+      "functions": [
+        {
+          "name": "toFiniteNum_",
+          "startLine": 20,
+          "endLine": 27,
+          "params": [
+            "v"
+          ]
+        },
+        {
+          "name": "deltaDeltaValue_",
+          "startLine": 35,
+          "endLine": 40,
+          "params": [
+            "agValue",
+            "hco3"
+          ]
+        },
+        {
+          "name": "fmtLab_",
+          "startLine": 47,
+          "endLine": 52,
+          "params": [
+            "n",
+            "decimals"
+          ]
+        },
+        {
+          "name": "buildPrimaryRationale_",
+          "startLine": 70,
+          "endLine": 172,
+          "params": [
+            "ctx"
+          ]
+        },
+        {
+          "name": "evaluateGasoExtended",
+          "startLine": 178,
+          "endLine": 460,
+          "params": [
+            "input"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "evaluateGasoExtended",
+          "line": 178,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "toFiniteNum_",
+          "callee": "isFinite",
+          "lineNumber": 22
+        },
+        {
+          "caller": "toFiniteNum_",
+          "callee": "String(v).trim().replace(/\\*/g, '').replace",
+          "lineNumber": 23
+        },
+        {
+          "caller": "toFiniteNum_",
+          "callee": "String(v).trim().replace",
+          "lineNumber": 23
+        },
+        {
+          "caller": "toFiniteNum_",
+          "callee": "String(v).trim",
+          "lineNumber": 23
+        },
+        {
+          "caller": "toFiniteNum_",
+          "callee": "String",
+          "lineNumber": 23
+        },
+        {
+          "caller": "toFiniteNum_",
+          "callee": "parseFloat",
+          "lineNumber": 25
+        },
+        {
+          "caller": "toFiniteNum_",
+          "callee": "isFinite",
+          "lineNumber": 26
+        },
+        {
+          "caller": "fmtLab_",
+          "callee": "isFinite",
+          "lineNumber": 48
+        },
+        {
+          "caller": "fmtLab_",
+          "callee": "String",
+          "lineNumber": 49
+        },
+        {
+          "caller": "fmtLab_",
+          "callee": "Math.pow",
+          "lineNumber": 50
+        },
+        {
+          "caller": "fmtLab_",
+          "callee": "String",
+          "lineNumber": 51
+        },
+        {
+          "caller": "fmtLab_",
+          "callee": "Math.round",
+          "lineNumber": 51
+        },
+        {
+          "caller": "buildPrimaryRationale_",
+          "callee": "lines.push",
+          "lineNumber": 89
+        },
+        {
+          "caller": "buildPrimaryRationale_",
+          "callee": "fmtLab_",
+          "lineNumber": 89
+        },
+        {
+          "caller": "buildPrimaryRationale_",
+          "callee": "lines.push",
+          "lineNumber": 90
+        },
+        {
+          "caller": "buildPrimaryRationale_",
+          "callee": "fmtLab_",
+          "lineNumber": 90
+        },
+        {
+          "caller": "buildPrimaryRationale_",
+          "callee": "lines.push",
+          "lineNumber": 91
+        },
+        {
+          "caller": "buildPrimaryRationale_",
+          "callee": "fmtLab_",
+          "lineNumber": 91
+        },
+        {
+          "caller": "buildPrimaryRationale_",
+          "callee": "fmtLab_",
+          "lineNumber": 94
+        },
+        {
+          "caller": "buildPrimaryRationale_",
+          "callee": "lines.push",
+          "lineNumber": 96
+        },
+        {
+          "caller": "buildPrimaryRationale_",
+          "callee": "fmtLab_",
+          "lineNumber": 98
+        },
+        {
+          "caller": "buildPrimaryRationale_",
+          "callee": "fmtLab_",
+          "lineNumber": 102
+        },
+        {
+          "caller": "buildPrimaryRationale_",
+          "callee": "lines.push",
+          "lineNumber": 106
+        },
+        {
+          "caller": "buildPrimaryRationale_",
+          "callee": "fmtLab_",
+          "lineNumber": 108
+        },
+        {
+          "caller": "buildPrimaryRationale_",
+          "callee": "fmtLab_",
+          "lineNumber": 112
+        },
+        {
+          "caller": "buildPrimaryRationale_",
+          "callee": "lines.push",
+          "lineNumber": 117
+        },
+        {
+          "caller": "buildPrimaryRationale_",
+          "callee": "lines.push",
+          "lineNumber": 119
+        },
+        {
+          "caller": "buildPrimaryRationale_",
+          "callee": "lines.join",
+          "lineNumber": 121
+        },
+        {
+          "caller": "buildPrimaryRationale_",
+          "callee": "lines.push",
+          "lineNumber": 125
+        },
+        {
+          "caller": "buildPrimaryRationale_",
+          "callee": "fmtLab_",
+          "lineNumber": 125
+        },
+        {
+          "caller": "buildPrimaryRationale_",
+          "callee": "Math.abs",
+          "lineNumber": 126
+        },
+        {
+          "caller": "buildPrimaryRationale_",
+          "callee": "lines.push",
+          "lineNumber": 127
+        },
+        {
+          "caller": "buildPrimaryRationale_",
+          "callee": "fmtLab_",
+          "lineNumber": 129
+        },
+        {
+          "caller": "buildPrimaryRationale_",
+          "callee": "fmtLab_",
+          "lineNumber": 131
+        },
+        {
+          "caller": "buildPrimaryRationale_",
+          "callee": "lines.push",
+          "lineNumber": 136
+        },
+        {
+          "caller": "buildPrimaryRationale_",
+          "callee": "fmtLab_",
+          "lineNumber": 136
+        },
+        {
+          "caller": "buildPrimaryRationale_",
+          "callee": "lines.push",
+          "lineNumber": 138
+        },
+        {
+          "caller": "buildPrimaryRationale_",
+          "callee": "fmtLab_",
+          "lineNumber": 138
+        },
+        {
+          "caller": "buildPrimaryRationale_",
+          "callee": "lines.push",
+          "lineNumber": 140
+        },
+        {
+          "caller": "buildPrimaryRationale_",
+          "callee": "lines.push",
+          "lineNumber": 143
+        },
+        {
+          "caller": "buildPrimaryRationale_",
+          "callee": "fmtLab_",
+          "lineNumber": 143
+        },
+        {
+          "caller": "buildPrimaryRationale_",
+          "callee": "lines.push",
+          "lineNumber": 145
+        },
+        {
+          "caller": "buildPrimaryRationale_",
+          "callee": "lines.push",
+          "lineNumber": 148
+        },
+        {
+          "caller": "buildPrimaryRationale_",
+          "callee": "lines.push",
+          "lineNumber": 151
+        },
+        {
+          "caller": "buildPrimaryRationale_",
+          "callee": "lines.push",
+          "lineNumber": 152
+        },
+        {
+          "caller": "buildPrimaryRationale_",
+          "callee": "lines.push",
+          "lineNumber": 154
+        },
+        {
+          "caller": "buildPrimaryRationale_",
+          "callee": "lines.push",
+          "lineNumber": 156
+        },
+        {
+          "caller": "buildPrimaryRationale_",
+          "callee": "lines.push",
+          "lineNumber": 160
+        },
+        {
+          "caller": "buildPrimaryRationale_",
+          "callee": "lines.push",
+          "lineNumber": 161
+        },
+        {
+          "caller": "buildPrimaryRationale_",
+          "callee": "lines.push",
+          "lineNumber": 164
+        },
+        {
+          "caller": "buildPrimaryRationale_",
+          "callee": "lines.push",
+          "lineNumber": 165
+        },
+        {
+          "caller": "buildPrimaryRationale_",
+          "callee": "lines.push",
+          "lineNumber": 166
+        },
+        {
+          "caller": "buildPrimaryRationale_",
+          "callee": "lines.push",
+          "lineNumber": 168
+        },
+        {
+          "caller": "buildPrimaryRationale_",
+          "callee": "lines.join",
+          "lineNumber": 171
+        },
+        {
+          "caller": "evaluateGasoExtended",
+          "callee": "toFiniteNum_",
+          "lineNumber": 180
+        },
+        {
+          "caller": "evaluateGasoExtended",
+          "callee": "toFiniteNum_",
+          "lineNumber": 181
+        },
+        {
+          "caller": "evaluateGasoExtended",
+          "callee": "toFiniteNum_",
+          "lineNumber": 182
+        },
+        {
+          "caller": "evaluateGasoExtended",
+          "callee": "toFiniteNum_",
+          "lineNumber": 183
+        },
+        {
+          "caller": "evaluateGasoExtended",
+          "callee": "toFiniteNum_",
+          "lineNumber": 184
+        },
+        {
+          "caller": "evaluateGasoExtended",
+          "callee": "toFiniteNum_",
+          "lineNumber": 185
+        },
+        {
+          "caller": "evaluateGasoExtended",
+          "callee": "toFiniteNum_",
+          "lineNumber": 186
+        },
+        {
+          "caller": "evaluateGasoExtended",
+          "callee": "toFiniteNum_",
+          "lineNumber": 187
+        },
+        {
+          "caller": "evaluateGasoExtended",
+          "callee": "toFiniteNum_",
+          "lineNumber": 188
+        },
+        {
+          "caller": "evaluateGasoExtended",
+          "callee": "isFinite",
+          "lineNumber": 189
+        },
+        {
+          "caller": "strLab",
+          "callee": "isFinite",
+          "lineNumber": 193
+        },
+        {
+          "caller": "strLab",
+          "callee": "String",
+          "lineNumber": 194
+        },
+        {
+          "caller": "evaluateGasoExtended",
+          "callee": "computeAnionGapValue_",
+          "lineNumber": 198
+        },
+        {
+          "caller": "evaluateGasoExtended",
+          "callee": "strLab",
+          "lineNumber": 198
+        },
+        {
+          "caller": "evaluateGasoExtended",
+          "callee": "strLab",
+          "lineNumber": 198
+        },
+        {
+          "caller": "evaluateGasoExtended",
+          "callee": "strLab",
+          "lineNumber": 198
+        },
+        {
+          "caller": "evaluateGasoExtended",
+          "callee": "strLab",
+          "lineNumber": 198
+        },
+        {
+          "caller": "evaluateGasoExtended",
+          "callee": "isFinite",
+          "lineNumber": 233
+        },
+        {
+          "caller": "evaluateGasoExtended",
+          "callee": "buildPrimaryRationale_",
+          "lineNumber": 279
+        },
+        {
+          "caller": "evaluateGasoExtended",
+          "callee": "isFinite",
+          "lineNumber": 302
+        },
+        {
+          "caller": "evaluateGasoExtended",
+          "callee": "Math.round",
+          "lineNumber": 304
+        },
+        {
+          "caller": "evaluateGasoExtended",
+          "callee": "compParts.push",
+          "lineNumber": 305
+        },
+        {
+          "caller": "evaluateGasoExtended",
+          "callee": "compParts.push",
+          "lineNumber": 316
+        },
+        {
+          "caller": "evaluateGasoExtended",
+          "callee": "Math.round",
+          "lineNumber": 324
+        },
+        {
+          "caller": "evaluateGasoExtended",
+          "callee": "Math.round",
+          "lineNumber": 326
+        },
+        {
+          "caller": "evaluateGasoExtended",
+          "callee": "compParts.push",
+          "lineNumber": 327
+        },
+        {
+          "caller": "evaluateGasoExtended",
+          "callee": "Math.abs",
+          "lineNumber": 335
+        },
+        {
+          "caller": "evaluateGasoExtended",
+          "callee": "compParts.push",
+          "lineNumber": 336
+        },
+        {
+          "caller": "evaluateGasoExtended",
+          "callee": "Math.abs",
+          "lineNumber": 337
+        },
+        {
+          "caller": "evaluateGasoExtended",
+          "callee": "compParts.push",
+          "lineNumber": 338
+        },
+        {
+          "caller": "evaluateGasoExtended",
+          "callee": "compParts.join",
+          "lineNumber": 345
+        },
+        {
+          "caller": "evaluateGasoExtended",
+          "callee": "Math.round",
+          "lineNumber": 348
+        },
+        {
+          "caller": "evaluateGasoExtended",
+          "callee": "isFinite",
+          "lineNumber": 350
+        },
+        {
+          "caller": "evaluateGasoExtended",
+          "callee": "deltaDeltaValue_",
+          "lineNumber": 362
+        },
+        {
+          "caller": "evaluateGasoExtended",
+          "callee": "Math.round",
+          "lineNumber": 365
+        },
+        {
+          "caller": "evaluateGasoExtended",
+          "callee": "isFinite",
+          "lineNumber": 391
+        },
+        {
+          "caller": "evaluateGasoExtended",
+          "callee": "Math.round",
+          "lineNumber": 392
+        },
+        {
+          "caller": "evaluateGasoExtended",
+          "callee": "oxBits.push",
+          "lineNumber": 394
+        },
+        {
+          "caller": "evaluateGasoExtended",
+          "callee": "oxBits.push",
+          "lineNumber": 396
+        },
+        {
+          "caller": "evaluateGasoExtended",
+          "callee": "oxBits.push",
+          "lineNumber": 398
+        },
+        {
+          "caller": "evaluateGasoExtended",
+          "callee": "oxBits.push",
+          "lineNumber": 400
+        },
+        {
+          "caller": "evaluateGasoExtended",
+          "callee": "oxBits.push",
+          "lineNumber": 402
+        },
+        {
+          "caller": "evaluateGasoExtended",
+          "callee": "isFinite",
+          "lineNumber": 405
+        },
+        {
+          "caller": "evaluateGasoExtended",
+          "callee": "Math.round",
+          "lineNumber": 409
+        },
+        {
+          "caller": "evaluateGasoExtended",
+          "callee": "oxBits.push",
+          "lineNumber": 411
+        },
+        {
+          "caller": "evaluateGasoExtended",
+          "callee": "Math.round",
+          "lineNumber": 418
+        },
+        {
+          "caller": "evaluateGasoExtended",
+          "callee": "oxBits.push",
+          "lineNumber": 419
+        },
+        {
+          "caller": "evaluateGasoExtended",
+          "callee": "oxBits.join",
+          "lineNumber": 425
+        },
+        {
+          "caller": "evaluateGasoExtended",
+          "callee": "summaryLines.push",
+          "lineNumber": 430
+        },
+        {
+          "caller": "evaluateGasoExtended",
+          "callee": "summaryLines.push",
+          "lineNumber": 431
+        },
+        {
+          "caller": "evaluateGasoExtended",
+          "callee": "summaryLines.push",
+          "lineNumber": 436
+        },
+        {
+          "caller": "evaluateGasoExtended",
+          "callee": "summaryLines.push",
+          "lineNumber": 438
+        },
+        {
+          "caller": "evaluateGasoExtended",
+          "callee": "String",
+          "lineNumber": 438
+        },
+        {
+          "caller": "evaluateGasoExtended",
+          "callee": "summaryLines.push",
+          "lineNumber": 440
+        },
+        {
+          "caller": "evaluateGasoExtended",
+          "callee": "summaryLines.push",
+          "lineNumber": 446
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 5,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/gaso-extended.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 46,
+      "nonEmptyLines": 42,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/guardia-v7-progress.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 61,
+      "nonEmptyLines": 54,
+      "functions": [
+        {
+          "name": "loadGuardiaV7Progress",
+          "startLine": 6,
+          "endLine": 19,
+          "params": []
+        },
+        {
+          "name": "saveGuardiaV7Progress",
+          "startLine": 21,
+          "endLine": 26,
+          "params": [
+            "patch"
+          ]
+        },
+        {
+          "name": "isGuardiaV7TrackComplete",
+          "startLine": 28,
+          "endLine": 31,
+          "params": []
+        },
+        {
+          "name": "guardiaV7ProgressSummary",
+          "startLine": 34,
+          "endLine": 45,
+          "params": []
+        },
+        {
+          "name": "markGuardiaV7ChapterComplete",
+          "startLine": 47,
+          "endLine": 54,
+          "params": [
+            "chapterId"
+          ]
+        },
+        {
+          "name": "resetGuardiaV7Chapter",
+          "startLine": 56,
+          "endLine": 61,
+          "params": [
+            "chapterId"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "GUARDIA_V7_PROGRESS_LS_KEY",
+          "line": 3,
+          "isDefault": false
+        },
+        {
+          "name": "loadGuardiaV7Progress",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "saveGuardiaV7Progress",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "isGuardiaV7TrackComplete",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "guardiaV7ProgressSummary",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "markGuardiaV7ChapterComplete",
+          "line": 47,
+          "isDefault": false
+        },
+        {
+          "name": "resetGuardiaV7Chapter",
+          "line": 56,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "loadGuardiaV7Progress",
+          "callee": "storage.getItem",
+          "lineNumber": 8
+        },
+        {
+          "caller": "loadGuardiaV7Progress",
+          "callee": "JSON.parse",
+          "lineNumber": 10
+        },
+        {
+          "caller": "loadGuardiaV7Progress",
+          "callee": "Array.isArray",
+          "lineNumber": 12
+        },
+        {
+          "caller": "saveGuardiaV7Progress",
+          "callee": "loadGuardiaV7Progress",
+          "lineNumber": 22
+        },
+        {
+          "caller": "saveGuardiaV7Progress",
+          "callee": "Date.now",
+          "lineNumber": 23
+        },
+        {
+          "caller": "saveGuardiaV7Progress",
+          "callee": "storage.setItem",
+          "lineNumber": 24
+        },
+        {
+          "caller": "saveGuardiaV7Progress",
+          "callee": "JSON.stringify",
+          "lineNumber": 24
+        },
+        {
+          "caller": "isGuardiaV7TrackComplete",
+          "callee": "loadGuardiaV7Progress",
+          "lineNumber": 29
+        },
+        {
+          "caller": "isGuardiaV7TrackComplete",
+          "callee": "GUARDIA_V7_CHAPTERS.every",
+          "lineNumber": 30
+        },
+        {
+          "caller": "isGuardiaV7TrackComplete",
+          "callee": "completedChapters.includes",
+          "lineNumber": 30
+        },
+        {
+          "caller": "guardiaV7ProgressSummary",
+          "callee": "loadGuardiaV7Progress",
+          "lineNumber": 36
+        },
+        {
+          "caller": "guardiaV7ProgressSummary",
+          "callee": "GUARDIA_V7_CHAPTERS.filter",
+          "lineNumber": 37
+        },
+        {
+          "caller": "guardiaV7ProgressSummary",
+          "callee": "completedChapters.includes",
+          "lineNumber": 38
+        },
+        {
+          "caller": "guardiaV7ProgressSummary",
+          "callee": "Math.round",
+          "lineNumber": 43
+        },
+        {
+          "caller": "markGuardiaV7ChapterComplete",
+          "callee": "loadGuardiaV7Progress",
+          "lineNumber": 48
+        },
+        {
+          "caller": "markGuardiaV7ChapterComplete",
+          "callee": "set.has",
+          "lineNumber": 50
+        },
+        {
+          "caller": "markGuardiaV7ChapterComplete",
+          "callee": "set.add",
+          "lineNumber": 51
+        },
+        {
+          "caller": "markGuardiaV7ChapterComplete",
+          "callee": "saveGuardiaV7Progress",
+          "lineNumber": 52
+        },
+        {
+          "caller": "resetGuardiaV7Chapter",
+          "callee": "loadGuardiaV7Progress",
+          "lineNumber": 57
+        },
+        {
+          "caller": "resetGuardiaV7Chapter",
+          "callee": "set.delete",
+          "lineNumber": 59
+        },
+        {
+          "caller": "resetGuardiaV7Chapter",
+          "callee": "saveGuardiaV7Progress",
+          "lineNumber": 60
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 7,
+        "functionCount": 6,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/guardia-v7-progress.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 58,
+      "nonEmptyLines": 51,
+      "functions": [
+        {
+          "name": "mockStorage",
+          "startLine": 12,
+          "endLine": 19,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "mockStorage",
+          "callee": "map.has",
+          "lineNumber": 15
+        },
+        {
+          "caller": "mockStorage",
+          "callee": "map.get",
+          "lineNumber": 15
+        },
+        {
+          "caller": "mockStorage",
+          "callee": "map.set",
+          "lineNumber": 16
+        },
+        {
+          "caller": "mockStorage",
+          "callee": "map.delete",
+          "lineNumber": 17
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/lab-bulk-paste.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 467,
+      "nonEmptyLines": 433,
+      "functions": [
+        {
+          "name": "primaryTipoForResLabs",
+          "startLine": 13,
+          "endLine": 24,
+          "params": [
+            "resLabs"
+          ]
+        },
+        {
+          "name": "dayKeyFromResult",
+          "startLine": 26,
+          "endLine": 36,
+          "params": [
+            "result"
+          ]
+        },
+        {
+          "name": "isLabBulkPatientSeparatorLine",
+          "startLine": 38,
+          "endLine": 40,
+          "params": [
+            "line"
+          ]
+        },
+        {
+          "name": "splitBulkLabTextByPatient",
+          "startLine": 43,
+          "endLine": 65,
+          "params": [
+            "text"
+          ]
+        },
+        {
+          "name": "splitSomeReportsInBlock",
+          "startLine": 68,
+          "endLine": 77,
+          "params": [
+            "blockText"
+          ]
+        },
+        {
+          "name": "labRowSectionKey",
+          "startLine": 79,
+          "endLine": 84,
+          "params": [
+            "row"
+          ]
+        },
+        {
+          "name": "labRowRichnessScore",
+          "startLine": 86,
+          "endLine": 93,
+          "params": [
+            "row"
+          ]
+        },
+        {
+          "name": "isBhResLabRow",
+          "startLine": 95,
+          "endLine": 98,
+          "params": [
+            "row"
+          ]
+        },
+        {
+          "name": "dedupeConsolidatedLabRows",
+          "startLine": 101,
+          "endLine": 143,
+          "params": [
+            "rows",
+            "tipo"
+          ]
+        },
+        {
+          "name": "sortDaysDesc",
+          "startLine": 145,
+          "endLine": 152,
+          "params": [
+            "days"
+          ]
+        },
+        {
+          "name": "parseReportChunk",
+          "startLine": 154,
+          "endLine": 191,
+          "params": [
+            "reportText",
+            "reportIndex"
+          ]
+        },
+        {
+          "name": "buildBulkLabPreview",
+          "startLine": 197,
+          "endLine": 259,
+          "params": [
+            "text",
+            "opts"
+          ]
+        },
+        {
+          "name": "buildMergedPayloadFromGroup",
+          "startLine": 261,
+          "endLine": 308,
+          "params": [
+            "items",
+            "tipo"
+          ]
+        },
+        {
+          "name": "mergeBulkParseResults",
+          "startLine": 314,
+          "endLine": 343,
+          "params": [
+            "parsedItems"
+          ]
+        },
+        {
+          "name": "latestDayKeyFromParsedItems",
+          "startLine": 345,
+          "endLine": 357,
+          "params": [
+            "parsedItems"
+          ]
+        },
+        {
+          "name": "wrapSingleParsedLabDisplay",
+          "startLine": 359,
+          "endLine": 369,
+          "params": [
+            "item"
+          ]
+        },
+        {
+          "name": "pickLatestDayMergedLabDisplay",
+          "startLine": 377,
+          "endLine": 408,
+          "params": [
+            "parsedItems"
+          ]
+        },
+        {
+          "name": "bulkBlocksHaveProcessablePatient",
+          "startLine": 410,
+          "endLine": 414,
+          "params": [
+            "blocks"
+          ]
+        },
+        {
+          "name": "bulkBlocksHaveDisplayableReports",
+          "startLine": 416,
+          "endLine": 420,
+          "params": [
+            "blocks"
+          ]
+        },
+        {
+          "name": "shouldShowBulkLabPreview",
+          "startLine": 423,
+          "endLine": 440,
+          "params": [
+            "blocks",
+            "totalOkReports",
+            "opts"
+          ]
+        },
+        {
+          "name": "extractLabPatientFromBulkBlock",
+          "startLine": 443,
+          "endLine": 450,
+          "params": [
+            "block"
+          ]
+        },
+        {
+          "name": "bulkPreviewStatusLabel",
+          "startLine": 452,
+          "endLine": 467,
+          "params": [
+            "status"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "LAB_BULK_PATIENT_SEPARATOR",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "dayKeyFromResult",
+          "line": 26,
+          "isDefault": false
+        },
+        {
+          "name": "isLabBulkPatientSeparatorLine",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "splitBulkLabTextByPatient",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "splitSomeReportsInBlock",
+          "line": 68,
+          "isDefault": false
+        },
+        {
+          "name": "dedupeConsolidatedLabRows",
+          "line": 101,
+          "isDefault": false
+        },
+        {
+          "name": "buildBulkLabPreview",
+          "line": 197,
+          "isDefault": false
+        },
+        {
+          "name": "mergeBulkParseResults",
+          "line": 314,
+          "isDefault": false
+        },
+        {
+          "name": "pickLatestDayMergedLabDisplay",
+          "line": 377,
+          "isDefault": false
+        },
+        {
+          "name": "shouldShowBulkLabPreview",
+          "line": 423,
+          "isDefault": false
+        },
+        {
+          "name": "extractLabPatientFromBulkBlock",
+          "line": 443,
+          "isDefault": false
+        },
+        {
+          "name": "bulkPreviewStatusLabel",
+          "line": 452,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "primaryTipoForResLabs",
+          "callee": "splitResLabsByTipo",
+          "lineNumber": 14
+        },
+        {
+          "caller": "primaryTipoForResLabs",
+          "callee": "sp.labs.some",
+          "lineNumber": 15
+        },
+        {
+          "caller": "primaryTipoForResLabs",
+          "callee": "String(r || '').trim",
+          "lineNumber": 16
+        },
+        {
+          "caller": "primaryTipoForResLabs",
+          "callee": "String",
+          "lineNumber": 16
+        },
+        {
+          "caller": "primaryTipoForResLabs",
+          "callee": "sp.cultivo.some",
+          "lineNumber": 18
+        },
+        {
+          "caller": "primaryTipoForResLabs",
+          "callee": "String(r || '').trim",
+          "lineNumber": 19
+        },
+        {
+          "caller": "primaryTipoForResLabs",
+          "callee": "String",
+          "lineNumber": 19
+        },
+        {
+          "caller": "dayKeyFromResult",
+          "callee": "normalizeFechaLabHistory",
+          "lineNumber": 27
+        },
+        {
+          "caller": "dayKeyFromResult",
+          "callee": "normalizeHoraLabHistory",
+          "lineNumber": 28
+        },
+        {
+          "caller": "dayKeyFromResult",
+          "callee": "parseFechaLabToMs",
+          "lineNumber": 30
+        },
+        {
+          "caller": "dayKeyFromResult",
+          "callee": "isFinite",
+          "lineNumber": 31
+        },
+        {
+          "caller": "dayKeyFromResult",
+          "callee": "d.getFullYear",
+          "lineNumber": 33
+        },
+        {
+          "caller": "dayKeyFromResult",
+          "callee": "d.getMonth",
+          "lineNumber": 33
+        },
+        {
+          "caller": "dayKeyFromResult",
+          "callee": "d.getDate",
+          "lineNumber": 33
+        },
+        {
+          "caller": "isLabBulkPatientSeparatorLine",
+          "callee": "/^\\s*---\\s*PACIENTE\\s*---\\s*$/i.test",
+          "lineNumber": 39
+        },
+        {
+          "caller": "isLabBulkPatientSeparatorLine",
+          "callee": "String(line || '').trim",
+          "lineNumber": 39
+        },
+        {
+          "caller": "isLabBulkPatientSeparatorLine",
+          "callee": "String",
+          "lineNumber": 39
+        },
+        {
+          "caller": "splitBulkLabTextByPatient",
+          "callee": "String",
+          "lineNumber": 44
+        },
+        {
+          "caller": "splitBulkLabTextByPatient",
+          "callee": "raw.trim",
+          "lineNumber": 45
+        },
+        {
+          "caller": "splitBulkLabTextByPatient",
+          "callee": "raw.split",
+          "lineNumber": 46
+        },
+        {
+          "caller": "splitBulkLabTextByPatient",
+          "callee": "lines.forEach",
+          "lineNumber": 49
+        },
+        {
+          "caller": "splitBulkLabTextByPatient",
+          "callee": "isLabBulkPatientSeparatorLine",
+          "lineNumber": 50
+        },
+        {
+          "caller": "splitBulkLabTextByPatient",
+          "callee": "current.join('\\n').trim",
+          "lineNumber": 52
+        },
+        {
+          "caller": "splitBulkLabTextByPatient",
+          "callee": "current.join",
+          "lineNumber": 52
+        },
+        {
+          "caller": "splitBulkLabTextByPatient",
+          "callee": "blocks.push",
+          "lineNumber": 53
+        },
+        {
+          "caller": "splitBulkLabTextByPatient",
+          "callee": "current.push",
+          "lineNumber": 58
+        },
+        {
+          "caller": "splitBulkLabTextByPatient",
+          "callee": "current.join('\\n').trim",
+          "lineNumber": 61
+        },
+        {
+          "caller": "splitBulkLabTextByPatient",
+          "callee": "current.join",
+          "lineNumber": 61
+        },
+        {
+          "caller": "splitBulkLabTextByPatient",
+          "callee": "blocks.push",
+          "lineNumber": 62
+        },
+        {
+          "caller": "splitSomeReportsInBlock",
+          "callee": "String(blockText || '').trim",
+          "lineNumber": 69
+        },
+        {
+          "caller": "splitSomeReportsInBlock",
+          "callee": "String",
+          "lineNumber": 69
+        },
+        {
+          "caller": "splitSomeReportsInBlock",
+          "callee": "raw\n    .split(/(?=^\\s*Expediente\\s*:)/im)\n    .map(function (s) {\n      return s.trim();\n    })\n    .filter",
+          "lineNumber": 71
+        },
+        {
+          "caller": "splitSomeReportsInBlock",
+          "callee": "raw\n    .split(/(?=^\\s*Expediente\\s*:)/im)\n    .map",
+          "lineNumber": 71
+        },
+        {
+          "caller": "splitSomeReportsInBlock",
+          "callee": "raw\n    .split",
+          "lineNumber": 71
+        },
+        {
+          "caller": "splitSomeReportsInBlock",
+          "callee": "s.trim",
+          "lineNumber": 74
+        },
+        {
+          "caller": "labRowSectionKey",
+          "callee": "String(row || '').trim",
+          "lineNumber": 80
+        },
+        {
+          "caller": "labRowSectionKey",
+          "callee": "String",
+          "lineNumber": 80
+        },
+        {
+          "caller": "labRowSectionKey",
+          "callee": "s.match",
+          "lineNumber": 82
+        },
+        {
+          "caller": "labRowSectionKey",
+          "callee": "m[1].toUpperCase",
+          "lineNumber": 83
+        },
+        {
+          "caller": "labRowRichnessScore",
+          "callee": "String",
+          "lineNumber": 87
+        },
+        {
+          "caller": "labRowRichnessScore",
+          "callee": "s.match",
+          "lineNumber": 89
+        },
+        {
+          "caller": "labRowRichnessScore",
+          "callee": "s.match",
+          "lineNumber": 90
+        },
+        {
+          "caller": "labRowRichnessScore",
+          "callee": "/INTERPRETACI[ÓO]N\\s+GASOMETR[IÍ]A/i.test",
+          "lineNumber": 91
+        },
+        {
+          "caller": "isBhResLabRow",
+          "callee": "labRowSectionKey",
+          "lineNumber": 96
+        },
+        {
+          "caller": "isBhResLabRow",
+          "callee": "/^BH:/i.test",
+          "lineNumber": 97
+        },
+        {
+          "caller": "isBhResLabRow",
+          "callee": "String(row || '').trim",
+          "lineNumber": 97
+        },
+        {
+          "caller": "isBhResLabRow",
+          "callee": "String",
+          "lineNumber": 97
+        },
+        {
+          "caller": "dedupeConsolidatedLabRows",
+          "callee": "Object.create",
+          "lineNumber": 103
+        },
+        {
+          "caller": "dedupeConsolidatedLabRows",
+          "callee": "(rows || []).forEach",
+          "lineNumber": 104
+        },
+        {
+          "caller": "dedupeConsolidatedLabRows",
+          "callee": "normalizeLabLine",
+          "lineNumber": 105
+        },
+        {
+          "caller": "dedupeConsolidatedLabRows",
+          "callee": "String",
+          "lineNumber": 105
+        },
+        {
+          "caller": "dedupeConsolidatedLabRows",
+          "callee": "normalized.push",
+          "lineNumber": 109
+        },
+        {
+          "caller": "dedupeConsolidatedLabRows",
+          "callee": "String",
+          "lineNumber": 109
+        },
+        {
+          "caller": "dedupeConsolidatedLabRows",
+          "callee": "normalized.forEach",
+          "lineNumber": 115
+        },
+        {
+          "caller": "dedupeConsolidatedLabRows",
+          "callee": "isBhResLabRow",
+          "lineNumber": 116
+        },
+        {
+          "caller": "dedupeConsolidatedLabRows",
+          "callee": "bhRows.push",
+          "lineNumber": 116
+        },
+        {
+          "caller": "dedupeConsolidatedLabRows",
+          "callee": "otherRows.push",
+          "lineNumber": 117
+        },
+        {
+          "caller": "dedupeConsolidatedLabRows",
+          "callee": "Object.create",
+          "lineNumber": 120
+        },
+        {
+          "caller": "dedupeConsolidatedLabRows",
+          "callee": "otherRows.forEach",
+          "lineNumber": 121
+        },
+        {
+          "caller": "dedupeConsolidatedLabRows",
+          "callee": "labRowSectionKey",
+          "lineNumber": 122
+        },
+        {
+          "caller": "dedupeConsolidatedLabRows",
+          "callee": "labRowRichnessScore",
+          "lineNumber": 124
+        },
+        {
+          "caller": "dedupeConsolidatedLabRows",
+          "callee": "Object.keys(bestBySection).map",
+          "lineNumber": 131
+        },
+        {
+          "caller": "dedupeConsolidatedLabRows",
+          "callee": "Object.keys",
+          "lineNumber": 131
+        },
+        {
+          "caller": "dedupeConsolidatedLabRows",
+          "callee": "mergeBhResLabRows_",
+          "lineNumber": 135
+        },
+        {
+          "caller": "dedupeConsolidatedLabRows",
+          "callee": "out.unshift",
+          "lineNumber": 136
+        },
+        {
+          "caller": "dedupeConsolidatedLabRows",
+          "callee": "out.splice",
+          "lineNumber": 139
+        },
+        {
+          "caller": "sortDaysDesc",
+          "callee": "days.slice().sort",
+          "lineNumber": 146
+        },
+        {
+          "caller": "sortDaysDesc",
+          "callee": "days.slice",
+          "lineNumber": 146
+        },
+        {
+          "caller": "sortDaysDesc",
+          "callee": "parseFechaLabToMs",
+          "lineNumber": 147
+        },
+        {
+          "caller": "sortDaysDesc",
+          "callee": "parseFechaLabToMs",
+          "lineNumber": 148
+        },
+        {
+          "caller": "sortDaysDesc",
+          "callee": "String(b).localeCompare",
+          "lineNumber": 150
+        },
+        {
+          "caller": "sortDaysDesc",
+          "callee": "String",
+          "lineNumber": 150
+        },
+        {
+          "caller": "sortDaysDesc",
+          "callee": "String",
+          "lineNumber": 150
+        },
+        {
+          "caller": "parseReportChunk",
+          "callee": "looksLikeSomeLabReport",
+          "lineNumber": 155
+        },
+        {
+          "caller": "parseReportChunk",
+          "callee": "procesarLabs",
+          "lineNumber": 163
+        },
+        {
+          "caller": "parseReportChunk",
+          "callee": "String((result.patient && result.patient.expediente) || '').trim",
+          "lineNumber": 178
+        },
+        {
+          "caller": "parseReportChunk",
+          "callee": "String",
+          "lineNumber": 178
+        },
+        {
+          "caller": "parseReportChunk",
+          "callee": "String((result.patient && result.patient.name) || '').trim",
+          "lineNumber": 179
+        },
+        {
+          "caller": "parseReportChunk",
+          "callee": "String",
+          "lineNumber": 179
+        },
+        {
+          "caller": "parseReportChunk",
+          "callee": "normalizeFechaLabHistory",
+          "lineNumber": 180
+        },
+        {
+          "caller": "parseReportChunk",
+          "callee": "normalizeHoraLabHistory",
+          "lineNumber": 181
+        },
+        {
+          "caller": "buildBulkLabPreview",
+          "callee": "splitBulkLabTextByPatient",
+          "lineNumber": 199
+        },
+        {
+          "caller": "buildBulkLabPreview",
+          "callee": "String(text || '').trim",
+          "lineNumber": 200
+        },
+        {
+          "caller": "buildBulkLabPreview",
+          "callee": "String",
+          "lineNumber": 200
+        },
+        {
+          "caller": "buildBulkLabPreview",
+          "callee": "String(text).trim",
+          "lineNumber": 201
+        },
+        {
+          "caller": "buildBulkLabPreview",
+          "callee": "String",
+          "lineNumber": 201
+        },
+        {
+          "caller": "buildBulkLabPreview",
+          "callee": "blocks.map",
+          "lineNumber": 203
+        },
+        {
+          "caller": "buildBulkLabPreview",
+          "callee": "splitSomeReportsInBlock",
+          "lineNumber": 204
+        },
+        {
+          "caller": "buildBulkLabPreview",
+          "callee": "chunks.map",
+          "lineNumber": 205
+        },
+        {
+          "caller": "buildBulkLabPreview",
+          "callee": "parseReportChunk",
+          "lineNumber": 206
+        },
+        {
+          "caller": "buildBulkLabPreview",
+          "callee": "reports.filter",
+          "lineNumber": 208
+        },
+        {
+          "caller": "buildBulkLabPreview",
+          "callee": "okReports.forEach",
+          "lineNumber": 212
+        },
+        {
+          "caller": "buildBulkLabPreview",
+          "callee": "expedientes.indexOf",
+          "lineNumber": 213
+        },
+        {
+          "caller": "buildBulkLabPreview",
+          "callee": "expedientes.push",
+          "lineNumber": 213
+        },
+        {
+          "caller": "buildBulkLabPreview",
+          "callee": "findPatient",
+          "lineNumber": 216
+        },
+        {
+          "caller": "buildBulkLabPreview",
+          "callee": "String(match.registro || '').trim",
+          "lineNumber": 217
+        },
+        {
+          "caller": "buildBulkLabPreview",
+          "callee": "String",
+          "lineNumber": 217
+        },
+        {
+          "caller": "buildBulkLabPreview",
+          "callee": "okReports.filter",
+          "lineNumber": 220
+        },
+        {
+          "caller": "buildBulkLabPreview",
+          "callee": "usableReports.forEach",
+          "lineNumber": 225
+        },
+        {
+          "caller": "buildBulkLabPreview",
+          "callee": "days.indexOf",
+          "lineNumber": 226
+        },
+        {
+          "caller": "buildBulkLabPreview",
+          "callee": "days.push",
+          "lineNumber": 226
+        },
+        {
+          "caller": "buildBulkLabPreview",
+          "callee": "mergeBulkParseResults",
+          "lineNumber": 236
+        },
+        {
+          "caller": "buildBulkLabPreview",
+          "callee": "usableReports.map",
+          "lineNumber": 237
+        },
+        {
+          "caller": "buildBulkLabPreview",
+          "callee": "sortDaysDesc",
+          "lineNumber": 252
+        },
+        {
+          "caller": "buildBulkLabPreview",
+          "callee": "sortDaysDesc(days).join",
+          "lineNumber": 253
+        },
+        {
+          "caller": "buildBulkLabPreview",
+          "callee": "sortDaysDesc",
+          "lineNumber": 253
+        },
+        {
+          "caller": "buildMergedPayloadFromGroup",
+          "callee": "(items || []).slice().sort",
+          "lineNumber": 262
+        },
+        {
+          "caller": "buildMergedPayloadFromGroup",
+          "callee": "(items || []).slice",
+          "lineNumber": 262
+        },
+        {
+          "caller": "buildMergedPayloadFromGroup",
+          "callee": "looksLikeSomeLabReport",
+          "lineNumber": 264
+        },
+        {
+          "caller": "buildMergedPayloadFromGroup",
+          "callee": "looksLikeSomeLabReport",
+          "lineNumber": 266
+        },
+        {
+          "caller": "buildMergedPayloadFromGroup",
+          "callee": "mergeOrder.forEach",
+          "lineNumber": 276
+        },
+        {
+          "caller": "buildMergedPayloadFromGroup",
+          "callee": "(result.resLabs || []).slice",
+          "lineNumber": 278
+        },
+        {
+          "caller": "buildMergedPayloadFromGroup",
+          "callee": "merged.push",
+          "lineNumber": 279
+        },
+        {
+          "caller": "buildMergedPayloadFromGroup",
+          "callee": "merged.concat",
+          "lineNumber": 280
+        },
+        {
+          "caller": "buildMergedPayloadFromGroup",
+          "callee": "String(item.reportText).trim",
+          "lineNumber": 281
+        },
+        {
+          "caller": "buildMergedPayloadFromGroup",
+          "callee": "String",
+          "lineNumber": 281
+        },
+        {
+          "caller": "buildMergedPayloadFromGroup",
+          "callee": "sourceParts.push",
+          "lineNumber": 281
+        },
+        {
+          "caller": "buildMergedPayloadFromGroup",
+          "callee": "String(item.reportText).trim",
+          "lineNumber": 281
+        },
+        {
+          "caller": "buildMergedPayloadFromGroup",
+          "callee": "String",
+          "lineNumber": 281
+        },
+        {
+          "caller": "buildMergedPayloadFromGroup",
+          "callee": "Object.keys(result.bhExtras).forEach",
+          "lineNumber": 283
+        },
+        {
+          "caller": "buildMergedPayloadFromGroup",
+          "callee": "Object.keys",
+          "lineNumber": 283
+        },
+        {
+          "caller": "buildMergedPayloadFromGroup",
+          "callee": "Object.keys(result.refsBySection).forEach",
+          "lineNumber": 288
+        },
+        {
+          "caller": "buildMergedPayloadFromGroup",
+          "callee": "Object.keys",
+          "lineNumber": 288
+        },
+        {
+          "caller": "buildMergedPayloadFromGroup",
+          "callee": "normalizeHoraLabHistory",
+          "lineNumber": 292
+        },
+        {
+          "caller": "buildMergedPayloadFromGroup",
+          "callee": "looksLikeSomeLabReport",
+          "lineNumber": 294
+        },
+        {
+          "caller": "buildMergedPayloadFromGroup",
+          "callee": "dedupeConsolidatedLabRows",
+          "lineNumber": 296
+        },
+        {
+          "caller": "buildMergedPayloadFromGroup",
+          "callee": "normalizeFechaLabHistory",
+          "lineNumber": 298
+        },
+        {
+          "caller": "buildMergedPayloadFromGroup",
+          "callee": "sourceParts.join",
+          "lineNumber": 303
+        },
+        {
+          "caller": "mergeBulkParseResults",
+          "callee": "Object.create",
+          "lineNumber": 315
+        },
+        {
+          "caller": "mergeBulkParseResults",
+          "callee": "(parsedItems || []).forEach",
+          "lineNumber": 318
+        },
+        {
+          "caller": "mergeBulkParseResults",
+          "callee": "primaryTipoForResLabs",
+          "lineNumber": 322
+        },
+        {
+          "caller": "mergeBulkParseResults",
+          "callee": "mixedSingles.push",
+          "lineNumber": 324
+        },
+        {
+          "caller": "mergeBulkParseResults",
+          "callee": "dayKeyFromResult",
+          "lineNumber": 327
+        },
+        {
+          "caller": "mergeBulkParseResults",
+          "callee": "groups[gk].push",
+          "lineNumber": 330
+        },
+        {
+          "caller": "mergeBulkParseResults",
+          "callee": "mixedSingles.forEach",
+          "lineNumber": 334
+        },
+        {
+          "caller": "mergeBulkParseResults",
+          "callee": "out.push",
+          "lineNumber": 335
+        },
+        {
+          "caller": "mergeBulkParseResults",
+          "callee": "buildMergedPayloadFromGroup",
+          "lineNumber": 335
+        },
+        {
+          "caller": "mergeBulkParseResults",
+          "callee": "Object.keys(groups).forEach",
+          "lineNumber": 337
+        },
+        {
+          "caller": "mergeBulkParseResults",
+          "callee": "Object.keys",
+          "lineNumber": 337
+        },
+        {
+          "caller": "mergeBulkParseResults",
+          "callee": "gk.split",
+          "lineNumber": 339
+        },
+        {
+          "caller": "mergeBulkParseResults",
+          "callee": "out.push",
+          "lineNumber": 340
+        },
+        {
+          "caller": "mergeBulkParseResults",
+          "callee": "buildMergedPayloadFromGroup",
+          "lineNumber": 340
+        },
+        {
+          "caller": "latestDayKeyFromParsedItems",
+          "callee": "(parsedItems || []).forEach",
+          "lineNumber": 347
+        },
+        {
+          "caller": "latestDayKeyFromParsedItems",
+          "callee": "normalizeFechaLabHistory",
+          "lineNumber": 349
+        },
+        {
+          "caller": "latestDayKeyFromParsedItems",
+          "callee": "normalizeHoraLabHistory",
+          "lineNumber": 350
+        },
+        {
+          "caller": "latestDayKeyFromParsedItems",
+          "callee": "parseFechaLabToMs",
+          "lineNumber": 351
+        },
+        {
+          "caller": "latestDayKeyFromParsedItems",
+          "callee": "isFinite",
+          "lineNumber": 352
+        },
+        {
+          "caller": "latestDayKeyFromParsedItems",
+          "callee": "d.getFullYear",
+          "lineNumber": 356
+        },
+        {
+          "caller": "latestDayKeyFromParsedItems",
+          "callee": "d.getMonth",
+          "lineNumber": 356
+        },
+        {
+          "caller": "latestDayKeyFromParsedItems",
+          "callee": "d.getDate",
+          "lineNumber": 356
+        },
+        {
+          "caller": "pickLatestDayMergedLabDisplay",
+          "callee": "(parsedItems || []).filter",
+          "lineNumber": 378
+        },
+        {
+          "caller": "pickLatestDayMergedLabDisplay",
+          "callee": "wrapSingleParsedLabDisplay",
+          "lineNumber": 382
+        },
+        {
+          "caller": "pickLatestDayMergedLabDisplay",
+          "callee": "latestDayKeyFromParsedItems",
+          "lineNumber": 384
+        },
+        {
+          "caller": "pickLatestDayMergedLabDisplay",
+          "callee": "items.filter",
+          "lineNumber": 386
+        },
+        {
+          "caller": "pickLatestDayMergedLabDisplay",
+          "callee": "dayKeyFromResult",
+          "lineNumber": 387
+        },
+        {
+          "caller": "pickLatestDayMergedLabDisplay",
+          "callee": "items.slice",
+          "lineNumber": 389
+        },
+        {
+          "caller": "pickLatestDayMergedLabDisplay",
+          "callee": "items.slice",
+          "lineNumber": 390
+        },
+        {
+          "caller": "pickLatestDayMergedLabDisplay",
+          "callee": "wrapSingleParsedLabDisplay",
+          "lineNumber": 391
+        },
+        {
+          "caller": "pickLatestDayMergedLabDisplay",
+          "callee": "mergeBulkParseResults",
+          "lineNumber": 393
+        },
+        {
+          "caller": "pickLatestDayMergedLabDisplay",
+          "callee": "mergedSets.forEach",
+          "lineNumber": 398
+        },
+        {
+          "caller": "pickLatestDayMergedLabDisplay",
+          "callee": "parseFechaLabToMs",
+          "lineNumber": 399
+        },
+        {
+          "caller": "pickLatestDayMergedLabDisplay",
+          "callee": "parseFechaLabToMs",
+          "lineNumber": 400
+        },
+        {
+          "caller": "pickLatestDayMergedLabDisplay",
+          "callee": "isFinite",
+          "lineNumber": 401
+        },
+        {
+          "caller": "pickLatestDayMergedLabDisplay",
+          "callee": "isFinite",
+          "lineNumber": 402
+        },
+        {
+          "caller": "bulkBlocksHaveProcessablePatient",
+          "callee": "blocks.some",
+          "lineNumber": 411
+        },
+        {
+          "caller": "bulkBlocksHaveDisplayableReports",
+          "callee": "blocks.some",
+          "lineNumber": 417
+        },
+        {
+          "caller": "shouldShowBulkLabPreview",
+          "callee": "Array.isArray",
+          "lineNumber": 424
+        },
+        {
+          "caller": "shouldShowBulkLabPreview",
+          "callee": "bulkBlocksHaveDisplayableReports",
+          "lineNumber": 430
+        },
+        {
+          "caller": "shouldShowBulkLabPreview",
+          "callee": "bulkBlocksHaveProcessablePatient",
+          "lineNumber": 431
+        },
+        {
+          "caller": "shouldShowBulkLabPreview",
+          "callee": "blocks.some",
+          "lineNumber": 437
+        },
+        {
+          "caller": "extractLabPatientFromBulkBlock",
+          "callee": "Array.isArray",
+          "lineNumber": 444
+        },
+        {
+          "caller": "extractLabPatientFromBulkBlock",
+          "callee": "block.reports.find",
+          "lineNumber": 445
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 12,
+        "functionCount": 22,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/lab-history-auto-store-core.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 182,
+      "nonEmptyLines": 168,
+      "functions": [
+        {
+          "name": "normalizeText",
+          "startLine": 1,
+          "endLine": 3,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "normalizedSourceText",
+          "startLine": 6,
+          "endLine": 8,
+          "params": [
+            "s"
+          ]
+        },
+        {
+          "name": "normalizeLabLine",
+          "startLine": 10,
+          "endLine": 12,
+          "params": [
+            "line"
+          ]
+        },
+        {
+          "name": "normalizeLabLines",
+          "startLine": 14,
+          "endLine": 16,
+          "params": [
+            "lines"
+          ]
+        },
+        {
+          "name": "areLabSetsEquivalent",
+          "startLine": 18,
+          "endLine": 26,
+          "params": [
+            "a",
+            "b"
+          ]
+        },
+        {
+          "name": "normalizeDateValue",
+          "startLine": 28,
+          "endLine": 30,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "normalizeTimeValue",
+          "startLine": 32,
+          "endLine": 34,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "isDuplicateAgainstLatest",
+          "startLine": 36,
+          "endLine": 41,
+          "params": [
+            "latest",
+            "incoming"
+          ]
+        },
+        {
+          "name": "areDuplicateLabSets",
+          "startLine": 44,
+          "endLine": 49,
+          "params": [
+            "a",
+            "b"
+          ]
+        },
+        {
+          "name": "compareLabSetIdForDedupe",
+          "startLine": 51,
+          "endLine": 62,
+          "params": [
+            "a",
+            "b"
+          ]
+        },
+        {
+          "name": "exactSignatureForLabSet",
+          "startLine": 64,
+          "endLine": 68,
+          "params": [
+            "s"
+          ]
+        },
+        {
+          "name": "findExactDuplicateLabGroups",
+          "startLine": 74,
+          "endLine": 100,
+          "params": [
+            "sets"
+          ]
+        },
+        {
+          "name": "findDuplicateLabSetIdsToRemove",
+          "startLine": 106,
+          "endLine": 113,
+          "params": [
+            "sets"
+          ]
+        },
+        {
+          "name": "findNormalizedSourceDuplicateGroups",
+          "startLine": 118,
+          "endLine": 147,
+          "params": [
+            "sets"
+          ]
+        },
+        {
+          "name": "findConflictingSameDateTimeGroups",
+          "startLine": 152,
+          "endLine": 182,
+          "params": [
+            "sets"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "normalizedSourceText",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "normalizeLabLine",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "normalizeLabLines",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "areLabSetsEquivalent",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "isDuplicateAgainstLatest",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "areDuplicateLabSets",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "compareLabSetIdForDedupe",
+          "line": 51,
+          "isDefault": false
+        },
+        {
+          "name": "findExactDuplicateLabGroups",
+          "line": 74,
+          "isDefault": false
+        },
+        {
+          "name": "findDuplicateLabSetIdsToRemove",
+          "line": 106,
+          "isDefault": false
+        },
+        {
+          "name": "findNormalizedSourceDuplicateGroups",
+          "line": 118,
+          "isDefault": false
+        },
+        {
+          "name": "findConflictingSameDateTimeGroups",
+          "line": 152,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "normalizeText",
+          "callee": "String(value == null ? '' : value).trim",
+          "lineNumber": 2
+        },
+        {
+          "caller": "normalizeText",
+          "callee": "String",
+          "lineNumber": 2
+        },
+        {
+          "caller": "normalizedSourceText",
+          "callee": "normalizeText(s && s.sourceText).replace",
+          "lineNumber": 7
+        },
+        {
+          "caller": "normalizedSourceText",
+          "callee": "normalizeText",
+          "lineNumber": 7
+        },
+        {
+          "caller": "normalizeLabLine",
+          "callee": "normalizeText(line).replace",
+          "lineNumber": 11
+        },
+        {
+          "caller": "normalizeLabLine",
+          "callee": "normalizeText",
+          "lineNumber": 11
+        },
+        {
+          "caller": "normalizeLabLines",
+          "callee": "(Array.isArray(lines) ? lines : []).map(normalizeLabLine).filter",
+          "lineNumber": 15
+        },
+        {
+          "caller": "normalizeLabLines",
+          "callee": "(Array.isArray(lines) ? lines : []).map",
+          "lineNumber": 15
+        },
+        {
+          "caller": "normalizeLabLines",
+          "callee": "Array.isArray",
+          "lineNumber": 15
+        },
+        {
+          "caller": "areLabSetsEquivalent",
+          "callee": "normalizeLabLines",
+          "lineNumber": 19
+        },
+        {
+          "caller": "areLabSetsEquivalent",
+          "callee": "normalizeLabLines",
+          "lineNumber": 20
+        },
+        {
+          "caller": "normalizeDateValue",
+          "callee": "normalizeText",
+          "lineNumber": 29
+        },
+        {
+          "caller": "normalizeTimeValue",
+          "callee": "normalizeText",
+          "lineNumber": 33
+        },
+        {
+          "caller": "isDuplicateAgainstLatest",
+          "callee": "normalizeDateValue",
+          "lineNumber": 38
+        },
+        {
+          "caller": "isDuplicateAgainstLatest",
+          "callee": "normalizeDateValue",
+          "lineNumber": 38
+        },
+        {
+          "caller": "isDuplicateAgainstLatest",
+          "callee": "normalizeTimeValue",
+          "lineNumber": 39
+        },
+        {
+          "caller": "isDuplicateAgainstLatest",
+          "callee": "normalizeTimeValue",
+          "lineNumber": 39
+        },
+        {
+          "caller": "isDuplicateAgainstLatest",
+          "callee": "areLabSetsEquivalent",
+          "lineNumber": 40
+        },
+        {
+          "caller": "areDuplicateLabSets",
+          "callee": "normalizeDateValue",
+          "lineNumber": 46
+        },
+        {
+          "caller": "areDuplicateLabSets",
+          "callee": "normalizeDateValue",
+          "lineNumber": 46
+        },
+        {
+          "caller": "areDuplicateLabSets",
+          "callee": "normalizeTimeValue",
+          "lineNumber": 47
+        },
+        {
+          "caller": "areDuplicateLabSets",
+          "callee": "normalizeTimeValue",
+          "lineNumber": 47
+        },
+        {
+          "caller": "areDuplicateLabSets",
+          "callee": "areLabSetsEquivalent",
+          "lineNumber": 48
+        },
+        {
+          "caller": "compareLabSetIdForDedupe",
+          "callee": "String",
+          "lineNumber": 52
+        },
+        {
+          "caller": "compareLabSetIdForDedupe",
+          "callee": "String",
+          "lineNumber": 53
+        },
+        {
+          "caller": "compareLabSetIdForDedupe",
+          "callee": "parseInt",
+          "lineNumber": 54
+        },
+        {
+          "caller": "compareLabSetIdForDedupe",
+          "callee": "parseInt",
+          "lineNumber": 55
+        },
+        {
+          "caller": "compareLabSetIdForDedupe",
+          "callee": "isNaN",
+          "lineNumber": 56
+        },
+        {
+          "caller": "compareLabSetIdForDedupe",
+          "callee": "String",
+          "lineNumber": 56
+        },
+        {
+          "caller": "compareLabSetIdForDedupe",
+          "callee": "isNaN",
+          "lineNumber": 57
+        },
+        {
+          "caller": "compareLabSetIdForDedupe",
+          "callee": "String",
+          "lineNumber": 57
+        },
+        {
+          "caller": "compareLabSetIdForDedupe",
+          "callee": "sa.localeCompare",
+          "lineNumber": 61
+        },
+        {
+          "caller": "exactSignatureForLabSet",
+          "callee": "String",
+          "lineNumber": 65
+        },
+        {
+          "caller": "exactSignatureForLabSet",
+          "callee": "normalizeLabLines",
+          "lineNumber": 66
+        },
+        {
+          "caller": "exactSignatureForLabSet",
+          "callee": "normalizeDateValue",
+          "lineNumber": 67
+        },
+        {
+          "caller": "exactSignatureForLabSet",
+          "callee": "normalizeTimeValue",
+          "lineNumber": 67
+        },
+        {
+          "caller": "exactSignatureForLabSet",
+          "callee": "lines.join",
+          "lineNumber": 67
+        },
+        {
+          "caller": "findExactDuplicateLabGroups",
+          "callee": "(sets || []).filter",
+          "lineNumber": 75
+        },
+        {
+          "caller": "findExactDuplicateLabGroups",
+          "callee": "String",
+          "lineNumber": 76
+        },
+        {
+          "caller": "findExactDuplicateLabGroups",
+          "callee": "Object.create",
+          "lineNumber": 78
+        },
+        {
+          "caller": "findExactDuplicateLabGroups",
+          "callee": "exactSignatureForLabSet",
+          "lineNumber": 81
+        },
+        {
+          "caller": "findExactDuplicateLabGroups",
+          "callee": "bySig[sig].push",
+          "lineNumber": 84
+        },
+        {
+          "caller": "findExactDuplicateLabGroups",
+          "callee": "Object.keys(bySig).forEach",
+          "lineNumber": 87
+        },
+        {
+          "caller": "findExactDuplicateLabGroups",
+          "callee": "Object.keys",
+          "lineNumber": 87
+        },
+        {
+          "caller": "findExactDuplicateLabGroups",
+          "callee": "arr.sort",
+          "lineNumber": 90
+        },
+        {
+          "caller": "findExactDuplicateLabGroups",
+          "callee": "groups.push",
+          "lineNumber": 91
+        },
+        {
+          "caller": "findExactDuplicateLabGroups",
+          "callee": "String",
+          "lineNumber": 93
+        },
+        {
+          "caller": "findExactDuplicateLabGroups",
+          "callee": "arr.slice(1).map",
+          "lineNumber": 94
+        },
+        {
+          "caller": "findExactDuplicateLabGroups",
+          "callee": "arr.slice",
+          "lineNumber": 94
+        },
+        {
+          "caller": "findExactDuplicateLabGroups",
+          "callee": "String",
+          "lineNumber": 95
+        },
+        {
+          "caller": "findDuplicateLabSetIdsToRemove",
+          "callee": "findExactDuplicateLabGroups",
+          "lineNumber": 107
+        },
+        {
+          "caller": "findDuplicateLabSetIdsToRemove",
+          "callee": "remove.concat",
+          "lineNumber": 110
+        },
+        {
+          "caller": "findNormalizedSourceDuplicateGroups",
+          "callee": "(sets || []).filter",
+          "lineNumber": 119
+        },
+        {
+          "caller": "findNormalizedSourceDuplicateGroups",
+          "callee": "String",
+          "lineNumber": 120
+        },
+        {
+          "caller": "findNormalizedSourceDuplicateGroups",
+          "callee": "normalizedSourceText",
+          "lineNumber": 121
+        },
+        {
+          "caller": "findNormalizedSourceDuplicateGroups",
+          "callee": "Object.create",
+          "lineNumber": 123
+        },
+        {
+          "caller": "findNormalizedSourceDuplicateGroups",
+          "callee": "normalizedSourceText",
+          "lineNumber": 126
+        },
+        {
+          "caller": "findNormalizedSourceDuplicateGroups",
+          "callee": "by[k].push",
+          "lineNumber": 128
+        },
+        {
+          "caller": "findNormalizedSourceDuplicateGroups",
+          "callee": "Object.keys(by).forEach",
+          "lineNumber": 131
+        },
+        {
+          "caller": "findNormalizedSourceDuplicateGroups",
+          "callee": "Object.keys",
+          "lineNumber": 131
+        },
+        {
+          "caller": "findNormalizedSourceDuplicateGroups",
+          "callee": "arr.sort",
+          "lineNumber": 134
+        },
+        {
+          "caller": "findNormalizedSourceDuplicateGroups",
+          "callee": "groups.push",
+          "lineNumber": 135
+        },
+        {
+          "caller": "findNormalizedSourceDuplicateGroups",
+          "callee": "k.slice",
+          "lineNumber": 137
+        },
+        {
+          "caller": "findNormalizedSourceDuplicateGroups",
+          "callee": "arr.map",
+          "lineNumber": 138
+        },
+        {
+          "caller": "findNormalizedSourceDuplicateGroups",
+          "callee": "String",
+          "lineNumber": 139
+        },
+        {
+          "caller": "findNormalizedSourceDuplicateGroups",
+          "callee": "arr.map",
+          "lineNumber": 141
+        },
+        {
+          "caller": "findNormalizedSourceDuplicateGroups",
+          "callee": "normalizeDateValue",
+          "lineNumber": 142
+        },
+        {
+          "caller": "findConflictingSameDateTimeGroups",
+          "callee": "(sets || []).filter",
+          "lineNumber": 153
+        },
+        {
+          "caller": "findConflictingSameDateTimeGroups",
+          "callee": "String",
+          "lineNumber": 154
+        },
+        {
+          "caller": "findConflictingSameDateTimeGroups",
+          "callee": "Object.create",
+          "lineNumber": 156
+        },
+        {
+          "caller": "findConflictingSameDateTimeGroups",
+          "callee": "normalizeDateValue",
+          "lineNumber": 159
+        },
+        {
+          "caller": "findConflictingSameDateTimeGroups",
+          "callee": "normalizeTimeValue",
+          "lineNumber": 159
+        },
+        {
+          "caller": "findConflictingSameDateTimeGroups",
+          "callee": "by[k].push",
+          "lineNumber": 161
+        },
+        {
+          "caller": "findConflictingSameDateTimeGroups",
+          "callee": "Object.keys(by).forEach",
+          "lineNumber": 164
+        },
+        {
+          "caller": "findConflictingSameDateTimeGroups",
+          "callee": "Object.keys",
+          "lineNumber": 164
+        },
+        {
+          "caller": "findConflictingSameDateTimeGroups",
+          "callee": "arr.every",
+          "lineNumber": 168
+        },
+        {
+          "caller": "findConflictingSameDateTimeGroups",
+          "callee": "areLabSetsEquivalent",
+          "lineNumber": 169
+        },
+        {
+          "caller": "findConflictingSameDateTimeGroups",
+          "callee": "out.push",
+          "lineNumber": 172
+        },
+        {
+          "caller": "findConflictingSameDateTimeGroups",
+          "callee": "arr.map",
+          "lineNumber": 176
+        },
+        {
+          "caller": "findConflictingSameDateTimeGroups",
+          "callee": "String",
+          "lineNumber": 177
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 11,
+        "functionCount": 15,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/lab-history-auto-store-core.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 102,
+      "nonEmptyLines": 90,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/lab-history-cache.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 115,
+      "nonEmptyLines": 103,
+      "functions": [
+        {
+          "name": "resetLabHistoryCacheForTests",
+          "startLine": 14,
+          "endLine": 17,
+          "params": []
+        },
+        {
+          "name": "invalidateTrendSeriesIndexCache",
+          "startLine": 22,
+          "endLine": 25,
+          "params": []
+        },
+        {
+          "name": "bumpLabHistoryRevision",
+          "startLine": 27,
+          "endLine": 32,
+          "params": [
+            "patientId"
+          ]
+        },
+        {
+          "name": "getLabHistoryRevision",
+          "startLine": 34,
+          "endLine": 37,
+          "params": [
+            "patientId"
+          ]
+        },
+        {
+          "name": "getTrendRenderWindow",
+          "startLine": 43,
+          "endLine": 49,
+          "params": [
+            "historyAsc",
+            "mode"
+          ]
+        },
+        {
+          "name": "trendCatalogSeriesKey",
+          "startLine": 51,
+          "endLine": 53,
+          "params": [
+            "sectionKey",
+            "fieldKey"
+          ]
+        },
+        {
+          "name": "buildTrendSeriesIndex",
+          "startLine": 63,
+          "endLine": 98,
+          "params": [
+            "opts"
+          ]
+        },
+        {
+          "name": "buildTrendSeriesIndexCached",
+          "startLine": 104,
+          "endLine": 115,
+          "params": [
+            "cacheKey",
+            "opts"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "TREND_SPARK_WINDOW",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "TREND_CATALOG_WINDOW",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "TREND_DETAIL_DOWNSAMPLE",
+          "line": 8,
+          "isDefault": false
+        },
+        {
+          "name": "TREND_REFRESH_DEBOUNCE_MS",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "resetLabHistoryCacheForTests",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "invalidateTrendSeriesIndexCache",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "bumpLabHistoryRevision",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "getLabHistoryRevision",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "getTrendRenderWindow",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "trendCatalogSeriesKey",
+          "line": 51,
+          "isDefault": false
+        },
+        {
+          "name": "buildTrendSeriesIndex",
+          "line": 63,
+          "isDefault": false
+        },
+        {
+          "name": "buildTrendSeriesIndexCached",
+          "line": 104,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "resetLabHistoryCacheForTests",
+          "callee": "Object.create",
+          "lineNumber": 15
+        },
+        {
+          "caller": "resetLabHistoryCacheForTests",
+          "callee": "invalidateTrendSeriesIndexCache",
+          "lineNumber": 16
+        },
+        {
+          "caller": "bumpLabHistoryRevision",
+          "callee": "String",
+          "lineNumber": 29
+        },
+        {
+          "caller": "bumpLabHistoryRevision",
+          "callee": "invalidateTrendSeriesIndexCache",
+          "lineNumber": 31
+        },
+        {
+          "caller": "getLabHistoryRevision",
+          "callee": "String",
+          "lineNumber": 36
+        },
+        {
+          "caller": "getTrendRenderWindow",
+          "callee": "hist.slice",
+          "lineNumber": 45
+        },
+        {
+          "caller": "getTrendRenderWindow",
+          "callee": "hist.slice",
+          "lineNumber": 47
+        },
+        {
+          "caller": "getTrendRenderWindow",
+          "callee": "hist.slice",
+          "lineNumber": 48
+        },
+        {
+          "caller": "trendCatalogSeriesKey",
+          "callee": "String",
+          "lineNumber": 52
+        },
+        {
+          "caller": "trendCatalogSeriesKey",
+          "callee": "String",
+          "lineNumber": 52
+        },
+        {
+          "caller": "buildTrendSeriesIndex",
+          "callee": "windowHistoryAsc.slice().reverse",
+          "lineNumber": 68
+        },
+        {
+          "caller": "buildTrendSeriesIndex",
+          "callee": "windowHistoryAsc.slice",
+          "lineNumber": 68
+        },
+        {
+          "caller": "buildTrendSeriesIndex",
+          "callee": "Object.create",
+          "lineNumber": 69
+        },
+        {
+          "caller": "buildTrendSeriesIndex",
+          "callee": "trendCatalogSeriesKey",
+          "lineNumber": 75
+        },
+        {
+          "caller": "buildTrendSeriesIndex",
+          "callee": "historyFullDesc.filter",
+          "lineNumber": 76
+        },
+        {
+          "caller": "buildTrendSeriesIndex",
+          "callee": "getSetTrendValueForSeries",
+          "lineNumber": 77
+        },
+        {
+          "caller": "buildTrendSeriesIndex",
+          "callee": "dedupeTrendSetsForSeries",
+          "lineNumber": 79
+        },
+        {
+          "caller": "buildTrendSeriesIndex",
+          "callee": "windowDesc.filter",
+          "lineNumber": 80
+        },
+        {
+          "caller": "buildTrendSeriesIndex",
+          "callee": "getSetTrendValueForSeries",
+          "lineNumber": 81
+        },
+        {
+          "caller": "buildTrendSeriesIndex",
+          "callee": "dedupeTrendSetsForSeries",
+          "lineNumber": 83
+        },
+        {
+          "caller": "buildTrendSeriesIndex",
+          "callee": "getSetTrendValueForSeries",
+          "lineNumber": 85
+        },
+        {
+          "caller": "buildTrendSeriesIndex",
+          "callee": "tendRefForSeries",
+          "lineNumber": 86
+        },
+        {
+          "caller": "buildTrendSeriesIndexCached",
+          "callee": "String",
+          "lineNumber": 105
+        },
+        {
+          "caller": "buildTrendSeriesIndexCached",
+          "callee": "buildTrendSeriesIndex",
+          "lineNumber": 109
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 12,
+        "functionCount": 8,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/lab-history-cache.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 82,
+      "nonEmptyLines": 74,
+      "functions": [
+        {
+          "name": "mockSet",
+          "startLine": 49,
+          "endLine": 55,
+          "params": [
+            "fecha",
+            "hora",
+            "sectionKey",
+            "fieldKey",
+            "val"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "mockSet",
+          "callee": "String",
+          "lineNumber": 53
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/lab-history-set.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 666,
+      "nonEmptyLines": 636,
+      "functions": [
+        {
+          "name": "registerLabHistoryMaintRuntime",
+          "startLine": 55,
+          "endLine": 57,
+          "params": [
+            "ctx"
+          ]
+        },
+        {
+          "name": "labSetParseFingerprint",
+          "startLine": 61,
+          "endLine": 74,
+          "params": [
+            "set"
+          ]
+        },
+        {
+          "name": "isLikelyLabDataLine",
+          "startLine": 76,
+          "endLine": 84,
+          "params": [
+            "line"
+          ]
+        },
+        {
+          "name": "extractLabDataLines",
+          "startLine": 86,
+          "endLine": 88,
+          "params": [
+            "lines"
+          ]
+        },
+        {
+          "name": "buildLabSetDateLine",
+          "startLine": 90,
+          "endLine": 96,
+          "params": [
+            "set"
+          ]
+        },
+        {
+          "name": "buildLabSetDateLineForNota",
+          "startLine": 98,
+          "endLine": 105,
+          "params": [
+            "set"
+          ]
+        },
+        {
+          "name": "formatLabHistoryListMeta",
+          "startLine": 108,
+          "endLine": 128,
+          "params": [
+            "set",
+            "inferFechaLabSetFromId"
+          ]
+        },
+        {
+          "name": "labHistoryTipoLabel",
+          "startLine": 130,
+          "endLine": 141,
+          "params": [
+            "resLabs",
+            "primaryTipoFn"
+          ]
+        },
+        {
+          "name": "formatLabHistoryDateSelectLabel",
+          "startLine": 144,
+          "endLine": 172,
+          "params": [
+            "set",
+            "inferFechaLabSetFromId",
+            "primaryTipoFn"
+          ]
+        },
+        {
+          "name": "labSetIsFromSome",
+          "startLine": 174,
+          "endLine": 180,
+          "params": [
+            "set"
+          ]
+        },
+        {
+          "name": "dayKeyFromLabSet",
+          "startLine": 182,
+          "endLine": 198,
+          "params": [
+            "set"
+          ]
+        },
+        {
+          "name": "dayKeyToSortMs",
+          "startLine": 200,
+          "endLine": 208,
+          "params": [
+            "dk"
+          ]
+        },
+        {
+          "name": "primaryTipoForLabSet",
+          "startLine": 210,
+          "endLine": 221,
+          "params": [
+            "resLabs"
+          ]
+        },
+        {
+          "name": "sortLabSetsWithinDay",
+          "startLine": 223,
+          "endLine": 230,
+          "params": [
+            "a",
+            "b"
+          ]
+        },
+        {
+          "name": "sortLabHistoryDayKeys",
+          "startLine": 232,
+          "endLine": 236,
+          "params": [
+            "a",
+            "b"
+          ]
+        },
+        {
+          "name": "dayGroupLabel",
+          "startLine": 238,
+          "endLine": 244,
+          "params": [
+            "dayKey",
+            "sets"
+          ]
+        },
+        {
+          "name": "groupLabHistoryByDay",
+          "startLine": 251,
+          "endLine": 265,
+          "params": [
+            "orderedSets"
+          ]
+        },
+        {
+          "name": "buildEstudiosCopyLinesFromLabSets",
+          "startLine": 273,
+          "endLine": 328,
+          "params": [
+            "orderedSets",
+            "options"
+          ]
+        },
+        {
+          "name": "resolveEstudiosCopyOptions",
+          "startLine": 336,
+          "endLine": 341,
+          "params": [
+            "orderedSets",
+            "settings"
+          ]
+        },
+        {
+          "name": "rebuildEstudiosFromLabHistory",
+          "startLine": 343,
+          "endLine": 359,
+          "params": [
+            "patientId"
+          ]
+        },
+        {
+          "name": "ensureParsedLabHistory",
+          "startLine": 361,
+          "endLine": 477,
+          "params": [
+            "patientId",
+            "options"
+          ]
+        },
+        {
+          "name": "ensureParsedLabHistoryCached",
+          "startLine": 479,
+          "endLine": 483,
+          "params": [
+            "patientId",
+            "options"
+          ]
+        },
+        {
+          "name": "runLabHistoryPostSaveMaintenance",
+          "startLine": 489,
+          "endLine": 547,
+          "params": []
+        },
+        {
+          "name": "scheduleLabHistoryPostSaveMaintenance",
+          "startLine": 549,
+          "endLine": 585,
+          "params": []
+        },
+        {
+          "name": "installLabHistoryAuditHook",
+          "startLine": 587,
+          "endLine": 616,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "isLabSectionHeaderLine",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "isCultivoBlockStartLine",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "splitResLabsByTipo",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "registerLabHistoryMaintRuntime",
+          "line": 55,
+          "isDefault": false
+        },
+        {
+          "name": "bumpLabHistoryRevision",
+          "line": 59,
+          "isDefault": false
+        },
+        {
+          "name": "isLikelyLabDataLine",
+          "line": 76,
+          "isDefault": false
+        },
+        {
+          "name": "extractLabDataLines",
+          "line": 86,
+          "isDefault": false
+        },
+        {
+          "name": "buildLabSetDateLine",
+          "line": 90,
+          "isDefault": false
+        },
+        {
+          "name": "buildLabSetDateLineForNota",
+          "line": 98,
+          "isDefault": false
+        },
+        {
+          "name": "formatLabHistoryListMeta",
+          "line": 108,
+          "isDefault": false
+        },
+        {
+          "name": "formatLabHistoryDateSelectLabel",
+          "line": 144,
+          "isDefault": false
+        },
+        {
+          "name": "labSetIsFromSome",
+          "line": 174,
+          "isDefault": false
+        },
+        {
+          "name": "dayKeyFromLabSet",
+          "line": 182,
+          "isDefault": false
+        },
+        {
+          "name": "primaryTipoForLabSet",
+          "line": 210,
+          "isDefault": false
+        },
+        {
+          "name": "groupLabHistoryByDay",
+          "line": 251,
+          "isDefault": false
+        },
+        {
+          "name": "buildEstudiosCopyLinesFromLabSets",
+          "line": 273,
+          "isDefault": false
+        },
+        {
+          "name": "resolveEstudiosCopyOptions",
+          "line": 336,
+          "isDefault": false
+        },
+        {
+          "name": "rebuildEstudiosFromLabHistory",
+          "line": 343,
+          "isDefault": false
+        },
+        {
+          "name": "ensureParsedLabHistory",
+          "line": 361,
+          "isDefault": false
+        },
+        {
+          "name": "ensureParsedLabHistoryCached",
+          "line": 479,
+          "isDefault": false
+        },
+        {
+          "name": "runLabHistoryPostSaveMaintenance",
+          "line": 489,
+          "isDefault": false
+        },
+        {
+          "name": "scheduleLabHistoryPostSaveMaintenance",
+          "line": 549,
+          "isDefault": false
+        },
+        {
+          "name": "installLabHistoryAuditHook",
+          "line": 587,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "registerLabHistoryMaintRuntime",
+          "callee": "Object.assign",
+          "lineNumber": 56
+        },
+        {
+          "caller": "labSetParseFingerprint",
+          "callee": "parts.push",
+          "lineNumber": 65
+        },
+        {
+          "caller": "labSetParseFingerprint",
+          "callee": "set.resLabs.join",
+          "lineNumber": 65
+        },
+        {
+          "caller": "labSetParseFingerprint",
+          "callee": "parts.push",
+          "lineNumber": 67
+        },
+        {
+          "caller": "labSetParseFingerprint",
+          "callee": "String",
+          "lineNumber": 67
+        },
+        {
+          "caller": "labSetParseFingerprint",
+          "callee": "parts.push",
+          "lineNumber": 70
+        },
+        {
+          "caller": "labSetParseFingerprint",
+          "callee": "JSON.stringify",
+          "lineNumber": 70
+        },
+        {
+          "caller": "labSetParseFingerprint",
+          "callee": "parts.join",
+          "lineNumber": 73
+        },
+        {
+          "caller": "isLikelyLabDataLine",
+          "callee": "line.trim",
+          "lineNumber": 78
+        },
+        {
+          "caller": "isLikelyLabDataLine",
+          "callee": "/^\\d{1,2}[\\/\\-]\\d{1,2}(?:[\\/\\-]\\d{2,4})?$/.test",
+          "lineNumber": 80
+        },
+        {
+          "caller": "isLikelyLabDataLine",
+          "callee": "t.indexOf",
+          "lineNumber": 81
+        },
+        {
+          "caller": "isLikelyLabDataLine",
+          "callee": "/^(BH|QS|ESC|PFHs|GASES|PIE|LCR|EGO|CUANTORINA|CULTIVO|SEROL|HECES)\\b/i.test",
+          "lineNumber": 82
+        },
+        {
+          "caller": "isLikelyLabDataLine",
+          "callee": "/\\d/.test",
+          "lineNumber": 83
+        },
+        {
+          "caller": "isLikelyLabDataLine",
+          "callee": "/[A-Za-z]/.test",
+          "lineNumber": 83
+        },
+        {
+          "caller": "extractLabDataLines",
+          "callee": "(lines || []).filter",
+          "lineNumber": 87
+        },
+        {
+          "caller": "buildLabSetDateLine",
+          "callee": "normalizeFechaLabHistory",
+          "lineNumber": 92
+        },
+        {
+          "caller": "buildLabSetDateLine",
+          "callee": "String(set.fecha || '').trim",
+          "lineNumber": 92
+        },
+        {
+          "caller": "buildLabSetDateLine",
+          "callee": "String",
+          "lineNumber": 92
+        },
+        {
+          "caller": "buildLabSetDateLine",
+          "callee": "inferFechaLabSetFromId",
+          "lineNumber": 92
+        },
+        {
+          "caller": "buildLabSetDateLine",
+          "callee": "normalizeHoraLabHistory",
+          "lineNumber": 93
+        },
+        {
+          "caller": "buildLabSetDateLine",
+          "callee": "rawHora.slice",
+          "lineNumber": 95
+        },
+        {
+          "caller": "buildLabSetDateLineForNota",
+          "callee": "normalizeFechaLabHistory",
+          "lineNumber": 101
+        },
+        {
+          "caller": "buildLabSetDateLineForNota",
+          "callee": "String(set.fecha || '').trim",
+          "lineNumber": 101
+        },
+        {
+          "caller": "buildLabSetDateLineForNota",
+          "callee": "String",
+          "lineNumber": 101
+        },
+        {
+          "caller": "buildLabSetDateLineForNota",
+          "callee": "inferFechaLabSetFromId",
+          "lineNumber": 101
+        },
+        {
+          "caller": "buildLabSetDateLineForNota",
+          "callee": "rawDate.indexOf",
+          "lineNumber": 103
+        },
+        {
+          "caller": "buildLabSetDateLineForNota",
+          "callee": "rawDate.slice",
+          "lineNumber": 103
+        },
+        {
+          "caller": "formatLabHistoryListMeta",
+          "callee": "normalizeFechaLabHistory",
+          "lineNumber": 116
+        },
+        {
+          "caller": "formatLabHistoryListMeta",
+          "callee": "String(set.fecha || '').trim",
+          "lineNumber": 117
+        },
+        {
+          "caller": "formatLabHistoryListMeta",
+          "callee": "String",
+          "lineNumber": 117
+        },
+        {
+          "caller": "formatLabHistoryListMeta",
+          "callee": "infer",
+          "lineNumber": 118
+        },
+        {
+          "caller": "labHistoryTipoLabel",
+          "callee": "tipoFn",
+          "lineNumber": 137
+        },
+        {
+          "caller": "formatLabHistoryDateSelectLabel",
+          "callee": "normalizeFechaLabHistory",
+          "lineNumber": 155
+        },
+        {
+          "caller": "formatLabHistoryDateSelectLabel",
+          "callee": "String(set.fecha || '').trim",
+          "lineNumber": 156
+        },
+        {
+          "caller": "formatLabHistoryDateSelectLabel",
+          "callee": "String",
+          "lineNumber": 156
+        },
+        {
+          "caller": "formatLabHistoryDateSelectLabel",
+          "callee": "infer",
+          "lineNumber": 157
+        },
+        {
+          "caller": "formatLabHistoryDateSelectLabel",
+          "callee": "labHistoryTipoLabel",
+          "lineNumber": 165
+        },
+        {
+          "caller": "formatLabHistoryDateSelectLabel",
+          "callee": "normalizeHoraLabHistory",
+          "lineNumber": 166
+        },
+        {
+          "caller": "formatLabHistoryDateSelectLabel",
+          "callee": "String(hora).trim().slice",
+          "lineNumber": 167
+        },
+        {
+          "caller": "formatLabHistoryDateSelectLabel",
+          "callee": "String(hora).trim",
+          "lineNumber": 167
+        },
+        {
+          "caller": "formatLabHistoryDateSelectLabel",
+          "callee": "String",
+          "lineNumber": 167
+        },
+        {
+          "caller": "formatLabHistoryDateSelectLabel",
+          "callee": "fe.indexOf",
+          "lineNumber": 168
+        },
+        {
+          "caller": "labSetIsFromSome",
+          "callee": "String(set.sourceText || '').trim",
+          "lineNumber": 176
+        },
+        {
+          "caller": "labSetIsFromSome",
+          "callee": "String",
+          "lineNumber": 176
+        },
+        {
+          "caller": "labSetIsFromSome",
+          "callee": "/^Expediente\\s*:/im.test",
+          "lineNumber": 178
+        },
+        {
+          "caller": "labSetIsFromSome",
+          "callee": "looksLikeSomeLabReport",
+          "lineNumber": 179
+        },
+        {
+          "caller": "dayKeyFromLabSet",
+          "callee": "parseFechaLabToMs",
+          "lineNumber": 184
+        },
+        {
+          "caller": "dayKeyFromLabSet",
+          "callee": "isFinite",
+          "lineNumber": 185
+        },
+        {
+          "caller": "dayKeyFromLabSet",
+          "callee": "d.getFullYear",
+          "lineNumber": 187
+        },
+        {
+          "caller": "dayKeyFromLabSet",
+          "callee": "d.getMonth",
+          "lineNumber": 187
+        },
+        {
+          "caller": "dayKeyFromLabSet",
+          "callee": "d.getDate",
+          "lineNumber": 187
+        },
+        {
+          "caller": "dayKeyFromLabSet",
+          "callee": "normalizeFechaLabHistory",
+          "lineNumber": 189
+        },
+        {
+          "caller": "dayKeyFromLabSet",
+          "callee": "parseFechaLabToMs",
+          "lineNumber": 191
+        },
+        {
+          "caller": "dayKeyFromLabSet",
+          "callee": "isFinite",
+          "lineNumber": 192
+        },
+        {
+          "caller": "dayKeyFromLabSet",
+          "callee": "d2.getFullYear",
+          "lineNumber": 194
+        },
+        {
+          "caller": "dayKeyFromLabSet",
+          "callee": "d2.getMonth",
+          "lineNumber": 194
+        },
+        {
+          "caller": "dayKeyFromLabSet",
+          "callee": "d2.getDate",
+          "lineNumber": 194
+        },
+        {
+          "caller": "dayKeyToSortMs",
+          "callee": "dk.split('-').map",
+          "lineNumber": 203
+        },
+        {
+          "caller": "dayKeyToSortMs",
+          "callee": "dk.split",
+          "lineNumber": 203
+        },
+        {
+          "caller": "dayKeyToSortMs",
+          "callee": "parseInt",
+          "lineNumber": 204
+        },
+        {
+          "caller": "dayKeyToSortMs",
+          "callee": "isFinite",
+          "lineNumber": 206
+        },
+        {
+          "caller": "dayKeyToSortMs",
+          "callee": "new Date(p[0], p[1] - 1, p[2]).getTime",
+          "lineNumber": 207
+        },
+        {
+          "caller": "primaryTipoForLabSet",
+          "callee": "splitResLabsByTipo",
+          "lineNumber": 211
+        },
+        {
+          "caller": "primaryTipoForLabSet",
+          "callee": "sp.labs.some",
+          "lineNumber": 212
+        },
+        {
+          "caller": "primaryTipoForLabSet",
+          "callee": "String(r || '').trim",
+          "lineNumber": 213
+        },
+        {
+          "caller": "primaryTipoForLabSet",
+          "callee": "String",
+          "lineNumber": 213
+        },
+        {
+          "caller": "primaryTipoForLabSet",
+          "callee": "sp.cultivo.some",
+          "lineNumber": 215
+        },
+        {
+          "caller": "primaryTipoForLabSet",
+          "callee": "String(r || '').trim",
+          "lineNumber": 216
+        },
+        {
+          "caller": "primaryTipoForLabSet",
+          "callee": "String",
+          "lineNumber": 216
+        },
+        {
+          "caller": "sortLabSetsWithinDay",
+          "callee": "parseFechaLabToMs",
+          "lineNumber": 224
+        },
+        {
+          "caller": "sortLabSetsWithinDay",
+          "callee": "parseFechaLabToMs",
+          "lineNumber": 225
+        },
+        {
+          "caller": "sortLabSetsWithinDay",
+          "callee": "isFinite",
+          "lineNumber": 226
+        },
+        {
+          "caller": "sortLabSetsWithinDay",
+          "callee": "isFinite",
+          "lineNumber": 226
+        },
+        {
+          "caller": "sortLabSetsWithinDay",
+          "callee": "compareLabSetIdForDedupe",
+          "lineNumber": 229
+        },
+        {
+          "caller": "sortLabHistoryDayKeys",
+          "callee": "dayKeyToSortMs",
+          "lineNumber": 235
+        },
+        {
+          "caller": "sortLabHistoryDayKeys",
+          "callee": "dayKeyToSortMs",
+          "lineNumber": 235
+        },
+        {
+          "caller": "dayGroupLabel",
+          "callee": "buildLabSetDateLineForNota",
+          "lineNumber": 241
+        },
+        {
+          "caller": "groupLabHistoryByDay",
+          "callee": "Object.create",
+          "lineNumber": 252
+        },
+        {
+          "caller": "groupLabHistoryByDay",
+          "callee": "(orderedSets || []).forEach",
+          "lineNumber": 253
+        },
+        {
+          "caller": "groupLabHistoryByDay",
+          "callee": "dayKeyFromLabSet",
+          "lineNumber": 255
+        },
+        {
+          "caller": "groupLabHistoryByDay",
+          "callee": "byDay[dk].sets.push",
+          "lineNumber": 257
+        },
+        {
+          "caller": "groupLabHistoryByDay",
+          "callee": "Object.keys(byDay)\n    .sort(sortLabHistoryDayKeys)\n    .map",
+          "lineNumber": 259
+        },
+        {
+          "caller": "groupLabHistoryByDay",
+          "callee": "Object.keys(byDay)\n    .sort",
+          "lineNumber": 259
+        },
+        {
+          "caller": "groupLabHistoryByDay",
+          "callee": "Object.keys",
+          "lineNumber": 259
+        },
+        {
+          "caller": "groupLabHistoryByDay",
+          "callee": "byDay[dk].sets.slice().sort",
+          "lineNumber": 262
+        },
+        {
+          "caller": "groupLabHistoryByDay",
+          "callee": "byDay[dk].sets.slice",
+          "lineNumber": 262
+        },
+        {
+          "caller": "groupLabHistoryByDay",
+          "callee": "dayGroupLabel",
+          "lineNumber": 263
+        },
+        {
+          "caller": "buildEstudiosCopyLinesFromLabSets",
+          "callee": "groupLabHistoryByDay",
+          "lineNumber": 279
+        },
+        {
+          "caller": "buildEstudiosCopyLinesFromLabSets",
+          "callee": "groups.forEach",
+          "lineNumber": 281
+        },
+        {
+          "caller": "buildEstudiosCopyLinesFromLabSets",
+          "callee": "allowDay.has",
+          "lineNumber": 282
+        },
+        {
+          "caller": "buildEstudiosCopyLinesFromLabSets",
+          "callee": "Object.create",
+          "lineNumber": 286
+        },
+        {
+          "caller": "buildEstudiosCopyLinesFromLabSets",
+          "callee": "Object.create",
+          "lineNumber": 287
+        },
+        {
+          "caller": "buildEstudiosCopyLinesFromLabSets",
+          "callee": "sets.forEach",
+          "lineNumber": 288
+        },
+        {
+          "caller": "buildEstudiosCopyLinesFromLabSets",
+          "callee": "splitResLabsByTipo",
+          "lineNumber": 289
+        },
+        {
+          "caller": "buildEstudiosCopyLinesFromLabSets",
+          "callee": "sp.labs.forEach",
+          "lineNumber": 290
+        },
+        {
+          "caller": "buildEstudiosCopyLinesFromLabSets",
+          "callee": "String(row == null ? '' : row).trim",
+          "lineNumber": 291
+        },
+        {
+          "caller": "buildEstudiosCopyLinesFromLabSets",
+          "callee": "String",
+          "lineNumber": 291
+        },
+        {
+          "caller": "buildEstudiosCopyLinesFromLabSets",
+          "callee": "isAscitisInterpretacionResLabChunk",
+          "lineNumber": 292
+        },
+        {
+          "caller": "buildEstudiosCopyLinesFromLabSets",
+          "callee": "normalizeLabLine",
+          "lineNumber": 293
+        },
+        {
+          "caller": "buildEstudiosCopyLinesFromLabSets",
+          "callee": "labsAcc.push",
+          "lineNumber": 296
+        },
+        {
+          "caller": "buildEstudiosCopyLinesFromLabSets",
+          "callee": "sp.cultivo.forEach",
+          "lineNumber": 298
+        },
+        {
+          "caller": "buildEstudiosCopyLinesFromLabSets",
+          "callee": "String(row == null ? '' : row).trim",
+          "lineNumber": 299
+        },
+        {
+          "caller": "buildEstudiosCopyLinesFromLabSets",
+          "callee": "String",
+          "lineNumber": 299
+        },
+        {
+          "caller": "buildEstudiosCopyLinesFromLabSets",
+          "callee": "normalizeLabLine",
+          "lineNumber": 301
+        },
+        {
+          "caller": "buildEstudiosCopyLinesFromLabSets",
+          "callee": "cultAcc.push",
+          "lineNumber": 304
+        },
+        {
+          "caller": "buildEstudiosCopyLinesFromLabSets",
+          "callee": "buildLabSetDateLineForNota",
+          "lineNumber": 308
+        },
+        {
+          "caller": "buildEstudiosCopyLinesFromLabSets",
+          "callee": "lines.push",
+          "lineNumber": 309
+        },
+        {
+          "caller": "buildEstudiosCopyLinesFromLabSets",
+          "callee": "labsAcc.forEach",
+          "lineNumber": 311
+        },
+        {
+          "caller": "buildEstudiosCopyLinesFromLabSets",
+          "callee": "String(row == null ? '' : row).trim",
+          "lineNumber": 312
+        },
+        {
+          "caller": "buildEstudiosCopyLinesFromLabSets",
+          "callee": "String",
+          "lineNumber": 312
+        },
+        {
+          "caller": "buildEstudiosCopyLinesFromLabSets",
+          "callee": "lines.push",
+          "lineNumber": 313
+        },
+        {
+          "caller": "buildEstudiosCopyLinesFromLabSets",
+          "callee": "lines.push",
+          "lineNumber": 317
+        },
+        {
+          "caller": "buildEstudiosCopyLinesFromLabSets",
+          "callee": "lines.push",
+          "lineNumber": 318
+        },
+        {
+          "caller": "buildEstudiosCopyLinesFromLabSets",
+          "callee": "cultAcc.forEach",
+          "lineNumber": 319
+        },
+        {
+          "caller": "buildEstudiosCopyLinesFromLabSets",
+          "callee": "String(row == null ? '' : row).trim",
+          "lineNumber": 320
+        },
+        {
+          "caller": "buildEstudiosCopyLinesFromLabSets",
+          "callee": "String",
+          "lineNumber": 320
+        },
+        {
+          "caller": "buildEstudiosCopyLinesFromLabSets",
+          "callee": "lines.push",
+          "lineNumber": 321
+        },
+        {
+          "caller": "buildEstudiosCopyLinesFromLabSets",
+          "callee": "lines.push",
+          "lineNumber": 324
+        },
+        {
+          "caller": "buildEstudiosCopyLinesFromLabSets",
+          "callee": "String(lines[lines.length - 1]).trim",
+          "lineNumber": 326
+        },
+        {
+          "caller": "buildEstudiosCopyLinesFromLabSets",
+          "callee": "String",
+          "lineNumber": 326
+        },
+        {
+          "caller": "buildEstudiosCopyLinesFromLabSets",
+          "callee": "lines.pop",
+          "lineNumber": 326
+        },
+        {
+          "caller": "resolveEstudiosCopyOptions",
+          "callee": "isModeSala",
+          "lineNumber": 337
+        },
+        {
+          "caller": "resolveEstudiosCopyOptions",
+          "callee": "groupLabHistoryByDay",
+          "lineNumber": 338
+        },
+        {
+          "caller": "rebuildEstudiosFromLabHistory",
+          "callee": "sortLabHistoryChronological",
+          "lineNumber": 346
+        },
+        {
+          "caller": "rebuildEstudiosFromLabHistory",
+          "callee": "ensureParsedLabHistory",
+          "lineNumber": 347
+        },
+        {
+          "caller": "rebuildEstudiosFromLabHistory",
+          "callee": "maintRt.getSettings",
+          "lineNumber": 354
+        },
+        {
+          "caller": "rebuildEstudiosFromLabHistory",
+          "callee": "buildEstudiosCopyLinesFromLabSets(\n    ordered,\n    resolveEstudiosCopyOptions(ordered, settings)\n  ).join",
+          "lineNumber": 355
+        },
+        {
+          "caller": "rebuildEstudiosFromLabHistory",
+          "callee": "buildEstudiosCopyLinesFromLabSets",
+          "lineNumber": 355
+        },
+        {
+          "caller": "rebuildEstudiosFromLabHistory",
+          "callee": "resolveEstudiosCopyOptions",
+          "lineNumber": 357
+        },
+        {
+          "caller": "ensureParsedLabHistory",
+          "callee": "normalizeLabHistoryPatientSets",
+          "lineNumber": 365
+        },
+        {
+          "caller": "ensureParsedLabHistory",
+          "callee": "Array.isArray",
+          "lineNumber": 366
+        },
+        {
+          "caller": "ensureParsedLabHistory",
+          "callee": "notes[patientId].estudios.split",
+          "lineNumber": 368
+        },
+        {
+          "caller": "ensureParsedLabHistory",
+          "callee": "history.forEach",
+          "lineNumber": 370
+        },
+        {
+          "caller": "ensureParsedLabHistory",
+          "callee": "extractLabDataLines",
+          "lineNumber": 374
+        },
+        {
+          "caller": "ensureParsedLabHistory",
+          "callee": "noteLines.slice",
+          "lineNumber": 374
+        },
+        {
+          "caller": "ensureParsedLabHistory",
+          "callee": "extractLabDataLines",
+          "lineNumber": 377
+        },
+        {
+          "caller": "ensureParsedLabHistory",
+          "callee": "noteLines.slice",
+          "lineNumber": 377
+        },
+        {
+          "caller": "ensureParsedLabHistory",
+          "callee": "procesarLabs",
+          "lineNumber": 383
+        },
+        {
+          "caller": "ensureParsedLabHistory",
+          "callee": "labSetParseFingerprint",
+          "lineNumber": 390
+        },
+        {
+          "caller": "ensureParsedLabHistory",
+          "callee": "Object.keys",
+          "lineNumber": 394
+        },
+        {
+          "caller": "ensureParsedLabHistory",
+          "callee": "Object.keys",
+          "lineNumber": 398
+        },
+        {
+          "caller": "ensureParsedLabHistory",
+          "callee": "extractParsedValues",
+          "lineNumber": 404
+        },
+        {
+          "caller": "ensureParsedLabHistory",
+          "callee": "buildParsedBySectionFromResLabs",
+          "lineNumber": 409
+        },
+        {
+          "caller": "ensureParsedLabHistory",
+          "callee": "JSON.stringify",
+          "lineNumber": 412
+        },
+        {
+          "caller": "ensureParsedLabHistory",
+          "callee": "JSON.stringify",
+          "lineNumber": 420
+        },
+        {
+          "caller": "ensureParsedLabHistory",
+          "callee": "Object.keys",
+          "lineNumber": 425
+        },
+        {
+          "caller": "ensureParsedLabHistory",
+          "callee": "normalizeFechaLabHistory",
+          "lineNumber": 429
+        },
+        {
+          "caller": "ensureParsedLabHistory",
+          "callee": "normalizeHoraLabHistory",
+          "lineNumber": 434
+        },
+        {
+          "caller": "ensureParsedLabHistory",
+          "callee": "Object.keys",
+          "lineNumber": 440
+        },
+        {
+          "caller": "ensureParsedLabHistory",
+          "callee": "buildRefsBySectionFromReport",
+          "lineNumber": 441
+        },
+        {
+          "caller": "ensureParsedLabHistory",
+          "callee": "Object.keys",
+          "lineNumber": 442
+        },
+        {
+          "caller": "ensureParsedLabHistory",
+          "callee": "normalizeHoraLabHistory",
+          "lineNumber": 447
+        },
+        {
+          "caller": "ensureParsedLabHistory",
+          "callee": "extractLabReportHora",
+          "lineNumber": 447
+        },
+        {
+          "caller": "ensureParsedLabHistory",
+          "callee": "normalizeHoraLabHistory",
+          "lineNumber": 448
+        },
+        {
+          "caller": "ensureParsedLabHistory",
+          "callee": "String(set.fecha).trim",
+          "lineNumber": 455
+        },
+        {
+          "caller": "ensureParsedLabHistory",
+          "callee": "String",
+          "lineNumber": 455
+        },
+        {
+          "caller": "ensureParsedLabHistory",
+          "callee": "inferFechaLabSetFromId",
+          "lineNumber": 456
+        },
+        {
+          "caller": "ensureParsedLabHistory",
+          "callee": "labSetParseFingerprint",
+          "lineNumber": 462
+        },
+        {
+          "caller": "ensureParsedLabHistory",
+          "callee": "rebuildEstudiosFromLabHistory",
+          "lineNumber": 467
+        },
+        {
+          "caller": "ensureParsedLabHistory",
+          "callee": "Array.isArray",
+          "lineNumber": 470
+        },
+        {
+          "caller": "ensureParsedLabHistory",
+          "callee": "saveState",
+          "lineNumber": 475
+        },
+        {
+          "caller": "ensureParsedLabHistoryCached",
+          "callee": "Object.assign",
+          "lineNumber": 480
+        },
+        {
+          "caller": "ensureParsedLabHistoryCached",
+          "callee": "ensureParsedLabHistory",
+          "lineNumber": 482
+        },
+        {
+          "caller": "runLabHistoryPostSaveMaintenance",
+          "callee": "new Date().toISOString",
+          "lineNumber": 491
+        },
+        {
+          "caller": "runLabHistoryPostSaveMaintenance",
+          "callee": "Object.keys(labHistory || {}).forEach",
+          "lineNumber": 499
+        },
+        {
+          "caller": "runLabHistoryPostSaveMaintenance",
+          "callee": "Object.keys",
+          "lineNumber": 499
+        },
+        {
+          "caller": "runLabHistoryPostSaveMaintenance",
+          "callee": "pid.indexOf",
+          "lineNumber": 500
+        },
+        {
+          "caller": "runLabHistoryPostSaveMaintenance",
+          "callee": "Array.isArray",
+          "lineNumber": 502
+        },
+        {
+          "caller": "runLabHistoryPostSaveMaintenance",
+          "callee": "sets.forEach",
+          "lineNumber": 503
+        },
+        {
+          "caller": "runLabHistoryPostSaveMaintenance",
+          "callee": "reprocessLabResultLines_",
+          "lineNumber": 505
+        },
+        {
+          "caller": "runLabHistoryPostSaveMaintenance",
+          "callee": "areLabSetsEquivalent",
+          "lineNumber": 507
+        },
+        {
+          "caller": "runLabHistoryPostSaveMaintenance",
+          "callee": "repro.slice",
+          "lineNumber": 508
+        },
+        {
+          "caller": "runLabHistoryPostSaveMaintenance",
+          "callee": "extractParsedValues",
+          "lineNumber": 509
+        },
+        {
+          "caller": "runLabHistoryPostSaveMaintenance",
+          "callee": "buildParsedBySectionFromResLabs",
+          "lineNumber": 510
+        },
+        {
+          "caller": "runLabHistoryPostSaveMaintenance",
+          "callee": "report.patientsReprocessed.indexOf",
+          "lineNumber": 514
+        },
+        {
+          "caller": "runLabHistoryPostSaveMaintenance",
+          "callee": "report.patientsReprocessed.push",
+          "lineNumber": 514
+        },
+        {
+          "caller": "runLabHistoryPostSaveMaintenance",
+          "callee": "findExactDuplicateLabGroups",
+          "lineNumber": 517
+        },
+        {
+          "caller": "runLabHistoryPostSaveMaintenance",
+          "callee": "report.exactDuplicates.push",
+          "lineNumber": 519
+        },
+        {
+          "caller": "runLabHistoryPostSaveMaintenance",
+          "callee": "findNormalizedSourceDuplicateGroups",
+          "lineNumber": 521
+        },
+        {
+          "caller": "runLabHistoryPostSaveMaintenance",
+          "callee": "report.sourceDuplicates.push",
+          "lineNumber": 523
+        },
+        {
+          "caller": "runLabHistoryPostSaveMaintenance",
+          "callee": "findConflictingSameDateTimeGroups",
+          "lineNumber": 525
+        },
+        {
+          "caller": "runLabHistoryPostSaveMaintenance",
+          "callee": "report.sameDateTimeConflicts.push",
+          "lineNumber": 527
+        },
+        {
+          "caller": "runLabHistoryPostSaveMaintenance",
+          "callee": "console.info",
+          "lineNumber": 539
+        },
+        {
+          "caller": "runLabHistoryPostSaveMaintenance",
+          "callee": "report.patientsReprocessed.forEach",
+          "lineNumber": 542
+        },
+        {
+          "caller": "runLabHistoryPostSaveMaintenance",
+          "callee": "bumpLabHistoryRevision",
+          "lineNumber": 543
+        },
+        {
+          "caller": "scheduleLabHistoryPostSaveMaintenance",
+          "callee": "clearTimeout",
+          "lineNumber": 550
+        },
+        {
+          "caller": "scheduleLabHistoryPostSaveMaintenance",
+          "callee": "setTimeout",
+          "lineNumber": 551
+        },
+        {
+          "caller": "scheduleLabHistoryPostSaveMaintenance",
+          "callee": "runLabHistoryPostSaveMaintenance",
+          "lineNumber": 556
+        },
+        {
+          "caller": "scheduleLabHistoryPostSaveMaintenance",
+          "callee": "storage.saveAll",
+          "lineNumber": 558
+        },
+        {
+          "caller": "scheduleLabHistoryPostSaveMaintenance",
+          "callee": "maintRt.getActiveId",
+          "lineNumber": 569
+        },
+        {
+          "caller": "scheduleLabHistoryPostSaveMaintenance",
+          "callee": "maintRt.renderLabHistoryPanel",
+          "lineNumber": 572
+        },
+        {
+          "caller": "scheduleLabHistoryPostSaveMaintenance",
+          "callee": "maintRt.refreshTendenciasOrCultivosPanel",
+          "lineNumber": 576
+        },
+        {
+          "caller": "scheduleLabHistoryPostSaveMaintenance",
+          "callee": "console.warn",
+          "lineNumber": 580
+        },
+        {
+          "caller": "installLabHistoryAuditHook",
+          "callee": "runLabHistoryPostSaveMaintenance",
+          "lineNumber": 590
+        },
+        {
+          "caller": "installLabHistoryAuditHook",
+          "callee": "storage.saveAll",
+          "lineNumber": 592
+        },
+        {
+          "caller": "installLabHistoryAuditHook",
+          "callee": "maintRt.getActiveId",
+          "lineNumber": 603
+        },
+        {
+          "caller": "installLabHistoryAuditHook",
+          "callee": "maintRt.renderLabHistoryPanel",
+          "lineNumber": 606
+        },
+        {
+          "caller": "installLabHistoryAuditHook",
+          "callee": "maintRt.refreshTendenciasOrCultivosPanel",
+          "lineNumber": 610
+        }
+      ],
+      "metrics": {
+        "importCount": 10,
+        "exportCount": 23,
+        "functionCount": 25,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/labs-bh-extended.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 109,
+      "nonEmptyLines": 101,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/labs-bh-trend-parse.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 41,
+      "nonEmptyLines": 37,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/labs-citoquimico-liquidos.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 455,
+      "nonEmptyLines": 423,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/labs-coag.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 52,
+      "nonEmptyLines": 48,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/labs-cultivo.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 676,
+      "nonEmptyLines": 645,
+      "functions": [
+        {
+          "name": "norm",
+          "startLine": 14,
+          "endLine": 14,
+          "params": [
+            "t"
+          ]
+        },
+        {
+          "name": "countCultivoChunks",
+          "startLine": 414,
+          "endLine": 427,
+          "params": [
+            "resLabs"
+          ]
+        },
+        {
+          "name": "cultivoTextFromResLabs",
+          "startLine": 429,
+          "endLine": 433,
+          "params": [
+            "resLabs"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "norm",
+          "callee": "t.replace",
+          "lineNumber": 14
+        },
+        {
+          "caller": "countCultivoChunks",
+          "callee": "(resLabs || []).join",
+          "lineNumber": 416
+        },
+        {
+          "caller": "countCultivoChunks",
+          "callee": "joined.split(/\\n\\n+/).forEach",
+          "lineNumber": 417
+        },
+        {
+          "caller": "countCultivoChunks",
+          "callee": "joined.split",
+          "lineNumber": 417
+        },
+        {
+          "caller": "countCultivoChunks",
+          "callee": "sec\n      .split(/\\r?\\n/)\n      .map(function (l) {\n        return l.replace(/\\*+$/g, '').trim();\n      })\n      .filter",
+          "lineNumber": 418
+        },
+        {
+          "caller": "countCultivoChunks",
+          "callee": "sec\n      .split(/\\r?\\n/)\n      .map",
+          "lineNumber": 418
+        },
+        {
+          "caller": "countCultivoChunks",
+          "callee": "sec\n      .split",
+          "lineNumber": 418
+        },
+        {
+          "caller": "countCultivoChunks",
+          "callee": "l.replace(/\\*+$/g, '').trim",
+          "lineNumber": 421
+        },
+        {
+          "caller": "countCultivoChunks",
+          "callee": "l.replace",
+          "lineNumber": 421
+        },
+        {
+          "caller": "countCultivoChunks",
+          "callee": "isParsedCultivoHeaderLine",
+          "lineNumber": 424
+        },
+        {
+          "caller": "cultivoTextFromResLabs",
+          "callee": "(resLabs || []).find",
+          "lineNumber": 430
+        },
+        {
+          "caller": "cultivoTextFromResLabs",
+          "callee": "/BACTERIOLOGIA|UROCULTIVO|HEMOCULTIVO|ASPIRADO|LIQUIDO|MICROORGANISMO/i.test",
+          "lineNumber": 431
+        },
+        {
+          "caller": "cultivoTextFromResLabs",
+          "callee": "String",
+          "lineNumber": 431
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/labs-diff-coag.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 77,
+      "nonEmptyLines": 73,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/labs-differential-manual.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 105,
+      "nonEmptyLines": 100,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/labs-display.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 78,
+      "nonEmptyLines": 71,
+      "functions": [
+        {
+          "name": "normalizeGasometryInterpretationLine_",
+          "startLine": 5,
+          "endLine": 8,
+          "params": [
+            "line"
+          ]
+        },
+        {
+          "name": "escTxt",
+          "startLine": 10,
+          "endLine": 15,
+          "params": [
+            "s"
+          ]
+        },
+        {
+          "name": "renderToken",
+          "startLine": 17,
+          "endLine": 28,
+          "params": [
+            "tok"
+          ]
+        },
+        {
+          "name": "formatLabSectionLabel",
+          "startLine": 30,
+          "endLine": 35,
+          "params": [
+            "label",
+            "lineIndex"
+          ]
+        },
+        {
+          "name": "isLabSectionLabel",
+          "startLine": 37,
+          "endLine": 42,
+          "params": [
+            "label",
+            "lineIndex"
+          ]
+        },
+        {
+          "name": "isLabSectionHeaderHtml",
+          "startLine": 44,
+          "endLine": 46,
+          "params": [
+            "html"
+          ]
+        },
+        {
+          "name": "renderEntry",
+          "startLine": 48,
+          "endLine": 78,
+          "params": [
+            "text"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "escTxt",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "renderToken",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "isLabSectionHeaderHtml",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "renderEntry",
+          "line": 48,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "normalizeGasometryInterpretationLine_",
+          "callee": "String",
+          "lineNumber": 6
+        },
+        {
+          "caller": "normalizeGasometryInterpretationLine_",
+          "callee": "/^Interpretación gasometría:/i.test",
+          "lineNumber": 7
+        },
+        {
+          "caller": "normalizeGasometryInterpretationLine_",
+          "callee": "s.trim",
+          "lineNumber": 7
+        },
+        {
+          "caller": "normalizeGasometryInterpretationLine_",
+          "callee": "s.toUpperCase",
+          "lineNumber": 7
+        },
+        {
+          "caller": "escTxt",
+          "callee": "String(s == null ? '' : s)\n    .replace(/&/g, '&amp;')\n    .replace(/</g, '&lt;')\n    .replace",
+          "lineNumber": 11
+        },
+        {
+          "caller": "escTxt",
+          "callee": "String(s == null ? '' : s)\n    .replace(/&/g, '&amp;')\n    .replace",
+          "lineNumber": 11
+        },
+        {
+          "caller": "escTxt",
+          "callee": "String(s == null ? '' : s)\n    .replace",
+          "lineNumber": 11
+        },
+        {
+          "caller": "escTxt",
+          "callee": "String",
+          "lineNumber": 11
+        },
+        {
+          "caller": "renderToken",
+          "callee": "tok.endsWith",
+          "lineNumber": 19
+        },
+        {
+          "caller": "renderToken",
+          "callee": "escTxt",
+          "lineNumber": 20
+        },
+        {
+          "caller": "renderToken",
+          "callee": "tok.slice",
+          "lineNumber": 20
+        },
+        {
+          "caller": "renderToken",
+          "callee": "escTxt",
+          "lineNumber": 27
+        },
+        {
+          "caller": "formatLabSectionLabel",
+          "callee": "String(label || '').trim().replace",
+          "lineNumber": 31
+        },
+        {
+          "caller": "formatLabSectionLabel",
+          "callee": "String(label || '').trim",
+          "lineNumber": 31
+        },
+        {
+          "caller": "formatLabSectionLabel",
+          "callee": "String",
+          "lineNumber": 31
+        },
+        {
+          "caller": "formatLabSectionLabel",
+          "callee": "/^Coag\\.?$/i.test",
+          "lineNumber": 32
+        },
+        {
+          "caller": "isLabSectionLabel",
+          "callee": "String(label || '').trim().replace",
+          "lineNumber": 38
+        },
+        {
+          "caller": "isLabSectionLabel",
+          "callee": "String(label || '').trim",
+          "lineNumber": 38
+        },
+        {
+          "caller": "isLabSectionLabel",
+          "callee": "String",
+          "lineNumber": 38
+        },
+        {
+          "caller": "isLabSectionLabel",
+          "callee": "/^Coag\\.?$/i.test",
+          "lineNumber": 39
+        },
+        {
+          "caller": "isLabSectionLabel",
+          "callee": "/^COAG$/i.test",
+          "lineNumber": 39
+        },
+        {
+          "caller": "isLabSectionLabel",
+          "callee": "/^(BH|QS|ESC|PFHs|GASES|PIE|LCR|EGO|CUANTORINA|PltCit|FROTIS|SEROL|HECES|COAG)$/i.test",
+          "lineNumber": 41
+        },
+        {
+          "caller": "isLabSectionHeaderHtml",
+          "callee": "/<span class=\"section-lbl\">/.test",
+          "lineNumber": 45
+        },
+        {
+          "caller": "isLabSectionHeaderHtml",
+          "callee": "String",
+          "lineNumber": 45
+        },
+        {
+          "caller": "renderEntry",
+          "callee": "normalizeGasometryInterpretationLine_",
+          "lineNumber": 49
+        },
+        {
+          "caller": "renderEntry",
+          "callee": "text.split('\\n').map",
+          "lineNumber": 50
+        },
+        {
+          "caller": "renderEntry",
+          "callee": "text.split",
+          "lineNumber": 50
+        },
+        {
+          "caller": "renderEntry",
+          "callee": "line.indexOf",
+          "lineNumber": 51
+        },
+        {
+          "caller": "renderEntry",
+          "callee": "line.substring",
+          "lineNumber": 53
+        },
+        {
+          "caller": "renderEntry",
+          "callee": "line.substring",
+          "lineNumber": 54
+        },
+        {
+          "caller": "renderEntry",
+          "callee": "isLabSectionLabel",
+          "lineNumber": 55
+        },
+        {
+          "caller": "renderEntry",
+          "callee": "escTxt",
+          "lineNumber": 56
+        },
+        {
+          "caller": "renderEntry",
+          "callee": "formatLabSectionLabel",
+          "lineNumber": 56
+        },
+        {
+          "caller": "renderEntry",
+          "callee": "escTxt",
+          "lineNumber": 57
+        },
+        {
+          "caller": "renderEntry",
+          "callee": "rest\n        .split(' ')\n        .map(function (tok) {\n          if (!tok) return tok;\n          if (tok === '-') return '<span class=\"text-gray-500\">-</span>';\n          return renderToken(tok);\n        })\n        .join",
+          "lineNumber": 58
+        },
+        {
+          "caller": "renderEntry",
+          "callee": "rest\n        .split(' ')\n        .map",
+          "lineNumber": 58
+        },
+        {
+          "caller": "renderEntry",
+          "callee": "rest\n        .split",
+          "lineNumber": 58
+        },
+        {
+          "caller": "renderEntry",
+          "callee": "renderToken",
+          "lineNumber": 63
+        },
+        {
+          "caller": "renderEntry",
+          "callee": "line\n      .split(' ')\n      .map(function (tok, ti) {\n        if (!tok) return tok;\n        if (li === 0 && ti === 0) return '<span class=\"section-lbl\">' + escTxt(tok) + '</span>';\n        if (tok === '-') return '<span class=\"text-gray-500\">-</span>';\n        return renderToken(tok);\n      })\n      .join",
+          "lineNumber": 68
+        },
+        {
+          "caller": "renderEntry",
+          "callee": "line\n      .split(' ')\n      .map",
+          "lineNumber": 68
+        },
+        {
+          "caller": "renderEntry",
+          "callee": "line\n      .split",
+          "lineNumber": 68
+        },
+        {
+          "caller": "renderEntry",
+          "callee": "escTxt",
+          "lineNumber": 72
+        },
+        {
+          "caller": "renderEntry",
+          "callee": "renderToken",
+          "lineNumber": 74
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 7,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/labs-display.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 28,
+      "nonEmptyLines": 24,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/labs-egfr.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 49,
+      "nonEmptyLines": 45,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/labs-ego-plt-cit.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 87,
+      "nonEmptyLines": 79,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/labs-fecha-hora.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 32,
+      "nonEmptyLines": 26,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/labs-frotis.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 50,
+      "nonEmptyLines": 46,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/labs-gases.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 324,
+      "nonEmptyLines": 290,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/labs-heces.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 69,
+      "nonEmptyLines": 65,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/labs-lipasa.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 33,
+      "nonEmptyLines": 27,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/labs-pct.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 72,
+      "nonEmptyLines": 61,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/labs-procesar-characterization.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 30,
+      "nonEmptyLines": 26,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/labs-procesar-fixtures.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 40,
+      "nonEmptyLines": 35,
+      "exports": [
+        {
+          "name": "GASO_VENOSA_SOLO",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "HEADER_VARIANTS",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "PROCESAR_LABS_FIXTURES",
+          "line": 35,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 3,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    }
+  ]
+}

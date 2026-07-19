@@ -1,0 +1,51 @@
+/* Glass treatment for overlay surfaces (design system phase 1).
+ * Content panes stay opaque; only floating chrome gets glass.
+ * html.no-blur is the performance escape hatch (see spec risk #2).
+ * .toast.success and .toast.error intentionally stay opaque — their higher-
+ * specificity semantic color rules (in lab.css) win. Clinical urgency toasts
+ * must remain unambiguous and are excluded from glass by design. */
+
+.settings-dropdown,
+.connection-dropdown,
+.modal,
+.toast,
+.cmdk,
+.learn-hub-sheet,
+.interno-sheet,
+.interno-modal,
+#tour-dock .tour-dock-inner {
+  background: var(--overlay-bg);
+  -webkit-backdrop-filter: blur(var(--overlay-blur));
+  backdrop-filter: blur(var(--overlay-blur));
+  border: var(--overlay-border);
+  box-shadow: var(--elev-overlay);
+}
+
+@supports not (backdrop-filter: blur(1px)) {
+  .settings-dropdown,
+  .connection-dropdown,
+  .modal,
+  .toast,
+  .cmdk,
+  .learn-hub-sheet,
+  .interno-sheet,
+.interno-modal,
+#tour-dock .tour-dock-inner {
+    background: var(--surface);
+  }
+}
+
+html.no-blur .settings-dropdown,
+html.no-blur .connection-dropdown,
+html.no-blur .modal,
+html.no-blur .toast,
+html.no-blur .cmdk,
+html.no-blur .learn-hub-sheet,
+html.no-blur .interno-sheet,
+html.no-blur .interno-modal,
+html.no-blur #tour-dock .tour-dock-inner {
+  background: var(--surface);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  border: none;
+}

@@ -1,0 +1,26 @@
+R+ 6.4.1 (Mantenimiento · publicación y tests)
+==================================================
+
+Fecha: 2026-05-30
+
+## Resumen
+
+Versión de **mantenimiento** sobre **6.4.0**: mismas funciones de producto (VPO, formatos en expediente, censo PDF, etc.). Corrige la ejecución de tests en Node cuando no hay DOM y endurece el flujo `npm run release:publish` para no repetir por error un tag o release de **6.4.0**.
+
+## Mejorado
+
+- **Publicación** — `release:publish` comprueba antes que el tag `v6.4.1` y el release en GitHub no existan; puede commitear cambios pendientes de notas/README antes de los tests; sube assets a un release ya creado con `--allow-existing-gh`.
+- **Tests** — El modal de censo PDF no se registra en entorno Node (`document` ausente), evitando fallos en la batería de tests al publicar.
+
+## Sin cambios respecto a 6.4.0
+
+- **VPO**, formatos en Nota/Indicaciones, censo, sala en vivo y el resto de la **6.4.0** se mantienen.
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v6.4.1
+
+- Mac: `R+-6.4.1-arm64.dmg`, `R+-6.4.1-x64.dmg` (y zip para auto-update).
+- Windows: `R+-6.4.1-x64.exe`.
+
+Antes de publicar localmente: `npm run bundle:renderer` (si cambió el renderer) y luego `npm run release:publish -- --yes`.

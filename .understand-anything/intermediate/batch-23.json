@@ -1,0 +1,3954 @@
+{
+  "nodes": [
+    {
+      "id": "file:public/js/patient-diagnosticos.test.mjs",
+      "type": "file",
+      "name": "patient-diagnosticos.test.mjs",
+      "filePath": "public/js/patient-diagnosticos.test.mjs",
+      "summary": "Tests for patient-diagnosticos.mjs covering unit tests.",
+      "tags": [
+        "test",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/patient-export-format.mjs",
+      "type": "file",
+      "name": "patient-export-format.mjs",
+      "filePath": "public/js/patient-export-format.mjs",
+      "summary": "Validación y normalización de JSON de exportación de paciente (import Ajustes).",
+      "tags": [
+        "exports",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/patient-export-format.mjs:stripJsonBom",
+      "type": "function",
+      "name": "stripJsonBom",
+      "filePath": "public/js/patient-export-format.mjs",
+      "lineRange": [
+        11,
+        15
+      ],
+      "summary": "Exported strip json bom used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/patient-export-format.mjs:entryToPatientExportPayload",
+      "type": "function",
+      "name": "entryToPatientExportPayload",
+      "filePath": "public/js/patient-export-format.mjs",
+      "lineRange": [
+        20,
+        36
+      ],
+      "summary": "Exported entry to patient export payload used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/patient-export-format.mjs:isRPlusPatientExportPayload",
+      "type": "function",
+      "name": "isRPlusPatientExportPayload",
+      "filePath": "public/js/patient-export-format.mjs",
+      "lineRange": [
+        42,
+        49
+      ],
+      "summary": "Exported is rplus patient export payload used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/patient-export-format.mjs:resolvePatientImportPayloads",
+      "type": "function",
+      "name": "resolvePatientImportPayloads",
+      "filePath": "public/js/patient-export-format.mjs",
+      "lineRange": [
+        55,
+        101
+      ],
+      "summary": "Exported resolve patient import payloads used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/patient-export-format.mjs:parsePatientImportJsonText",
+      "type": "function",
+      "name": "parsePatientImportJsonText",
+      "filePath": "public/js/patient-export-format.mjs",
+      "lineRange": [
+        107,
+        111
+      ],
+      "summary": "Exported parse patient import json text used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/patient-export-format.mjs:describePatientImportRejection",
+      "type": "function",
+      "name": "describePatientImportRejection",
+      "filePath": "public/js/patient-export-format.mjs",
+      "lineRange": [
+        117,
+        152
+      ],
+      "summary": "Exported describe patient import rejection used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/patient-export-format.test.mjs",
+      "type": "file",
+      "name": "patient-export-format.test.mjs",
+      "filePath": "public/js/patient-export-format.test.mjs",
+      "summary": "Tests for patient-export-format.mjs covering unit tests.",
+      "tags": [
+        "test",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/patient-sidebar-card.mjs",
+      "type": "file",
+      "name": "patient-sidebar-card.mjs",
+      "filePath": "public/js/patient-sidebar-card.mjs",
+      "summary": "Sidebar patient card body — full name + cuarto/cama meta.",
+      "tags": [
+        "exports",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/patient-sidebar-card.mjs:escSidebarHtml",
+      "type": "function",
+      "name": "escSidebarHtml",
+      "filePath": "public/js/patient-sidebar-card.mjs",
+      "lineRange": [
+        6,
+        12
+      ],
+      "summary": "Sidebar patient card body — full name + cuarto/cama meta.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/patient-sidebar-card.mjs:formatPatientBedParts",
+      "type": "function",
+      "name": "formatPatientBedParts",
+      "filePath": "public/js/patient-sidebar-card.mjs",
+      "lineRange": [
+        15,
+        19
+      ],
+      "summary": "Exported format patient bed parts used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/patient-sidebar-card.mjs:formatPatientBedLabel",
+      "type": "function",
+      "name": "formatPatientBedLabel",
+      "filePath": "public/js/patient-sidebar-card.mjs",
+      "lineRange": [
+        22,
+        27
+      ],
+      "summary": "Exported format patient bed label used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/patient-sidebar-card.mjs:formatPatientBedMetaHtml",
+      "type": "function",
+      "name": "formatPatientBedMetaHtml",
+      "filePath": "public/js/patient-sidebar-card.mjs",
+      "lineRange": [
+        30,
+        36
+      ],
+      "summary": "Exported format patient bed meta html used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/patient-sidebar-card.mjs:renderPatientSidebarBodyHtml",
+      "type": "function",
+      "name": "renderPatientSidebarBodyHtml",
+      "filePath": "public/js/patient-sidebar-card.mjs",
+      "lineRange": [
+        42,
+        72
+      ],
+      "summary": "Exported render patient sidebar body html used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/patient-sidebar-card.test.mjs",
+      "type": "file",
+      "name": "patient-sidebar-card.test.mjs",
+      "filePath": "public/js/patient-sidebar-card.test.mjs",
+      "summary": "Tests for patient-sidebar-card.mjs covering unit tests.",
+      "tags": [
+        "test",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/patient-validation.mjs",
+      "type": "file",
+      "name": "patient-validation.mjs",
+      "filePath": "public/js/patient-validation.mjs",
+      "summary": "Validación de alta de paciente. Pura, sin DOM ni storage.",
+      "tags": [
+        "exports",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/patient-validation.mjs:validatePatientForSave",
+      "type": "function",
+      "name": "validatePatientForSave",
+      "filePath": "public/js/patient-validation.mjs",
+      "lineRange": [
+        4,
+        21
+      ],
+      "summary": "Exported validate patient for save used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/patient-validation.mjs:buildExpedienteAdvice",
+      "type": "function",
+      "name": "buildExpedienteAdvice",
+      "filePath": "public/js/patient-validation.mjs",
+      "lineRange": [
+        25,
+        35
+      ],
+      "summary": "Exported build expediente advice used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/patient-validation.test.mjs",
+      "type": "file",
+      "name": "patient-validation.test.mjs",
+      "filePath": "public/js/patient-validation.test.mjs",
+      "summary": "Tests for patient-validation.mjs covering unit tests.",
+      "tags": [
+        "test",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/procedure-agenda-week.mjs",
+      "type": "file",
+      "name": "procedure-agenda-week.mjs",
+      "filePath": "public/js/procedure-agenda-week.mjs",
+      "summary": "Utilidades vista semanal de agenda de procedimientos (spec 2026-05-14).",
+      "tags": [
+        "exports",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/procedure-agenda-week.mjs:mondayStartLocal",
+      "type": "function",
+      "name": "mondayStartLocal",
+      "filePath": "public/js/procedure-agenda-week.mjs",
+      "lineRange": [
+        8,
+        15
+      ],
+      "summary": "Utilidades vista semanal de agenda de procedimientos (spec 2026-05-14).",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/procedure-agenda-week.mjs:addDaysLocal",
+      "type": "function",
+      "name": "addDaysLocal",
+      "filePath": "public/js/procedure-agenda-week.mjs",
+      "lineRange": [
+        17,
+        21
+      ],
+      "summary": "Exported add days local used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/procedure-agenda-week.mjs:weekBoundsFromMonday",
+      "type": "function",
+      "name": "weekBoundsFromMonday",
+      "filePath": "public/js/procedure-agenda-week.mjs",
+      "lineRange": [
+        23,
+        28
+      ],
+      "summary": "Exported week bounds from monday used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/procedure-agenda-week.mjs:clipEventToDayColumn",
+      "type": "function",
+      "name": "clipEventToDayColumn",
+      "filePath": "public/js/procedure-agenda-week.mjs",
+      "lineRange": [
+        34,
+        63
+      ],
+      "summary": "Intersección del bloque visual 2 h con una columna-día local (00:00–24:00) y la franja visible 6–22 h.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/procedure-agenda-week.mjs:assignLanesByInterval",
+      "type": "function",
+      "name": "assignLanesByInterval",
+      "filePath": "public/js/procedure-agenda-week.mjs",
+      "lineRange": [
+        69,
+        93
+      ],
+      "summary": "Exported assign lanes by interval used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/procedure-agenda-week.mjs:hoursVisibleCount",
+      "type": "function",
+      "name": "hoursVisibleCount",
+      "filePath": "public/js/procedure-agenda-week.mjs",
+      "lineRange": [
+        95,
+        97
+      ],
+      "summary": "Exported hours visible count used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/procedure-agenda-week.test.mjs",
+      "type": "file",
+      "name": "procedure-agenda-week.test.mjs",
+      "filePath": "public/js/procedure-agenda-week.test.mjs",
+      "summary": "Tests for procedure-agenda-week.mjs covering unit tests.",
+      "tags": [
+        "test",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:public/js/profile-formats-editor.mjs",
+      "type": "file",
+      "name": "profile-formats-editor.mjs",
+      "filePath": "public/js/profile-formats-editor.mjs",
+      "summary": "Edición de formatos por defecto dentro de las pestañas Nota / Indicaciones (no en Mi Perfil).",
+      "tags": [
+        "exports",
+        "utility",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/profile-formats-editor.mjs:getFormatsEditMode",
+      "type": "function",
+      "name": "getFormatsEditMode",
+      "filePath": "public/js/profile-formats-editor.mjs",
+      "lineRange": [
+        13,
+        15
+      ],
+      "summary": "Exported get formats edit mode used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/profile-formats-editor.mjs:setFormatsEditMode",
+      "type": "function",
+      "name": "setFormatsEditMode",
+      "filePath": "public/js/profile-formats-editor.mjs",
+      "lineRange": [
+        18,
+        20
+      ],
+      "summary": "Exported set formats edit mode used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/profile-formats-editor.mjs:clearFormatsEditMode",
+      "type": "function",
+      "name": "clearFormatsEditMode",
+      "filePath": "public/js/profile-formats-editor.mjs",
+      "lineRange": [
+        22,
+        24
+      ],
+      "summary": "Exported clear formats edit mode used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/profile-formats-editor.mjs:editorBanner",
+      "type": "function",
+      "name": "editorBanner",
+      "filePath": "public/js/profile-formats-editor.mjs",
+      "lineRange": [
+        34,
+        49
+      ],
+      "summary": "Internal editor banner in profile-formats-editor.mjs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/profile-formats-editor.mjs:buildNoteDefaultsEditorHtml",
+      "type": "function",
+      "name": "buildNoteDefaultsEditorHtml",
+      "filePath": "public/js/profile-formats-editor.mjs",
+      "lineRange": [
+        60,
+        83
+      ],
+      "summary": "Exported build note defaults editor html used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/profile-formats-editor.mjs:buildIndicaDefaultsEditorHtml",
+      "type": "function",
+      "name": "buildIndicaDefaultsEditorHtml",
+      "filePath": "public/js/profile-formats-editor.mjs",
+      "lineRange": [
+        86,
+        135
+      ],
+      "summary": "Exported build indica defaults editor html used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/profile-formats-editor.mjs:loadDraftFromSettings",
+      "type": "function",
+      "name": "loadDraftFromSettings",
+      "filePath": "public/js/profile-formats-editor.mjs",
+      "lineRange": [
+        140,
+        151
+      ],
+      "summary": "Campos en memoria mientras editas (antes de guardar).",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/profile-formats-editor.mjs:applyDraftToSettings",
+      "type": "function",
+      "name": "applyDraftToSettings",
+      "filePath": "public/js/profile-formats-editor.mjs",
+      "lineRange": [
+        153,
+        161
+      ],
+      "summary": "Exported apply draft to settings used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/profile-formats-editor.mjs:updateDefaultFormatField",
+      "type": "function",
+      "name": "updateDefaultFormatField",
+      "filePath": "public/js/profile-formats-editor.mjs",
+      "lineRange": [
+        163,
+        167
+      ],
+      "summary": "Exported update default format field used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/profile-formats-editor.mjs:resetDraftToBlank",
+      "type": "function",
+      "name": "resetDraftToBlank",
+      "filePath": "public/js/profile-formats-editor.mjs",
+      "lineRange": [
+        169,
+        179
+      ],
+      "summary": "Exported reset draft to blank used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/profile-templates.mjs",
+      "type": "file",
+      "name": "profile-templates.mjs",
+      "filePath": "public/js/profile-templates.mjs",
+      "summary": "Plantillas de formato clínico en blanco (sin datos identificables del paciente). Estructura reutilizable, similar al listado de problemas vacío para rellenar.",
+      "tags": [
+        "exports",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/profile-templates.mjs:looksLikeLegacyIdentifiableTemplate",
+      "type": "function",
+      "name": "looksLikeLegacyIdentifiableTemplate",
+      "filePath": "public/js/profile-templates.mjs",
+      "lineRange": [
+        57,
+        64
+      ],
+      "summary": "Exported looks like legacy identifiable template used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/profile-templates.mjs:ensureProfileTemplateDefaults",
+      "type": "function",
+      "name": "ensureProfileTemplateDefaults",
+      "filePath": "public/js/profile-templates.mjs",
+      "lineRange": [
+        70,
+        77
+      ],
+      "summary": "Completa claves de plantilla faltantes (no sobrescribe valores ya guardados).",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/profile-templates.mjs:resetProfileTemplatesToBlank",
+      "type": "function",
+      "name": "resetProfileTemplatesToBlank",
+      "filePath": "public/js/profile-templates.mjs",
+      "lineRange": [
+        83,
+        86
+      ],
+      "summary": "Restablece todas las plantillas de formato al esquema en blanco.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/profile-templates.mjs:applyNotaFormatScaffoldIfEmpty",
+      "type": "function",
+      "name": "applyNotaFormatScaffoldIfEmpty",
+      "filePath": "public/js/profile-templates.mjs",
+      "lineRange": [
+        93,
+        106
+      ],
+      "summary": "Exported apply nota format scaffold if empty used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/profile-templates.mjs:applyIndicacionesFormatScaffoldIfEmpty",
+      "type": "function",
+      "name": "applyIndicacionesFormatScaffoldIfEmpty",
+      "filePath": "public/js/profile-templates.mjs",
+      "lineRange": [
+        113,
+        133
+      ],
+      "summary": "Exported apply indicaciones format scaffold if empty used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/profile-templates.test.mjs",
+      "type": "file",
+      "name": "profile-templates.test.mjs",
+      "filePath": "public/js/profile-templates.test.mjs",
+      "summary": "Tests for profile-templates.mjs covering unit tests.",
+      "tags": [
+        "test",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/quick-output.mjs",
+      "type": "file",
+      "name": "quick-output.mjs",
+      "filePath": "public/js/quick-output.mjs",
+      "summary": "Decide qué documento debe exportar la \"Salida rápida\" según el modo.",
+      "tags": [
+        "exports",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/quick-output.mjs:listadoHasProblems",
+      "type": "function",
+      "name": "listadoHasProblems",
+      "filePath": "public/js/quick-output.mjs",
+      "lineRange": [
+        12,
+        18
+      ],
+      "summary": "Exported listado has problems used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/quick-output.mjs:resolveQuickOutputAction",
+      "type": "function",
+      "name": "resolveQuickOutputAction",
+      "filePath": "public/js/quick-output.mjs",
+      "lineRange": [
+        20,
+        36
+      ],
+      "summary": "Exported resolve quick output action used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/quick-output.test.mjs",
+      "type": "file",
+      "name": "quick-output.test.mjs",
+      "filePath": "public/js/quick-output.test.mjs",
+      "summary": "Tests for quick-output.mjs covering unit tests.",
+      "tags": [
+        "test",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:public/js/rpc-date-picker.mjs",
+      "type": "file",
+      "name": "rpc-date-picker.mjs",
+      "filePath": "public/js/rpc-date-picker.mjs",
+      "summary": "Shared javascript module (21 functions, 8 exports) for the R+ workbench.",
+      "tags": [
+        "exports",
+        "utility",
+        "module"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:public/js/rpc-date-picker.mjs:formatIsoDateDisplay",
+      "type": "function",
+      "name": "formatIsoDateDisplay",
+      "filePath": "public/js/rpc-date-picker.mjs",
+      "lineRange": [
+        35,
+        37
+      ],
+      "summary": "Exported format iso date display used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/rpc-date-picker.mjs:parseIso",
+      "type": "function",
+      "name": "parseIso",
+      "filePath": "public/js/rpc-date-picker.mjs",
+      "lineRange": [
+        39,
+        48
+      ],
+      "summary": "Internal parse iso in rpc-date-picker.mjs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/rpc-date-picker.mjs:ensurePopover",
+      "type": "function",
+      "name": "ensurePopover",
+      "filePath": "public/js/rpc-date-picker.mjs",
+      "lineRange": [
+        64,
+        74
+      ],
+      "summary": "Internal ensure popover in rpc-date-picker.mjs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/rpc-date-picker.mjs:closePopover",
+      "type": "function",
+      "name": "closePopover",
+      "filePath": "public/js/rpc-date-picker.mjs",
+      "lineRange": [
+        76,
+        85
+      ],
+      "summary": "Internal close popover in rpc-date-picker.mjs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/rpc-date-picker.mjs:isRpcDatePopoverOpen",
+      "type": "function",
+      "name": "isRpcDatePopoverOpen",
+      "filePath": "public/js/rpc-date-picker.mjs",
+      "lineRange": [
+        87,
+        89
+      ],
+      "summary": "Exported is rpc date popover open used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/rpc-date-picker.mjs:closeRpcDatePopover",
+      "type": "function",
+      "name": "closeRpcDatePopover",
+      "filePath": "public/js/rpc-date-picker.mjs",
+      "lineRange": [
+        91,
+        93
+      ],
+      "summary": "Exported close rpc date popover used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/rpc-date-picker.mjs:positionPopover",
+      "type": "function",
+      "name": "positionPopover",
+      "filePath": "public/js/rpc-date-picker.mjs",
+      "lineRange": [
+        95,
+        114
+      ],
+      "summary": "Internal position popover in rpc-date-picker.mjs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/rpc-date-picker.mjs:renderCalendarBody",
+      "type": "function",
+      "name": "renderCalendarBody",
+      "filePath": "public/js/rpc-date-picker.mjs",
+      "lineRange": [
+        116,
+        140
+      ],
+      "summary": "Internal render calendar body in rpc-date-picker.mjs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/rpc-date-picker.mjs:openRpcDatePicker",
+      "type": "function",
+      "name": "openRpcDatePicker",
+      "filePath": "public/js/rpc-date-picker.mjs",
+      "lineRange": [
+        146,
+        230
+      ],
+      "summary": "Exported open rpc date picker used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/rpc-date-picker.mjs:fillHourSelect",
+      "type": "function",
+      "name": "fillHourSelect",
+      "filePath": "public/js/rpc-date-picker.mjs",
+      "lineRange": [
+        242,
+        252
+      ],
+      "summary": "Internal fill hour select in rpc-date-picker.mjs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/rpc-date-picker.mjs:fillMinuteSelect",
+      "type": "function",
+      "name": "fillMinuteSelect",
+      "filePath": "public/js/rpc-date-picker.mjs",
+      "lineRange": [
+        254,
+        273
+      ],
+      "summary": "Internal fill minute select in rpc-date-picker.mjs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/rpc-date-picker.mjs:createRpcTimePicker",
+      "type": "function",
+      "name": "createRpcTimePicker",
+      "filePath": "public/js/rpc-date-picker.mjs",
+      "lineRange": [
+        279,
+        318
+      ],
+      "summary": "Internal create rpc time picker in rpc-date-picker.mjs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/rpc-date-picker.mjs:mountRpcDateInput",
+      "type": "function",
+      "name": "mountRpcDateInput",
+      "filePath": "public/js/rpc-date-picker.mjs",
+      "lineRange": [
+        321,
+        368
+      ],
+      "summary": "Exported mount rpc date input used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/rpc-date-picker.mjs:mountRpcDatetimeInput",
+      "type": "function",
+      "name": "mountRpcDatetimeInput",
+      "filePath": "public/js/rpc-date-picker.mjs",
+      "lineRange": [
+        371,
+        428
+      ],
+      "summary": "Exported mount rpc datetime input used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/rpc-date-picker.mjs:refreshRpcDateFields",
+      "type": "function",
+      "name": "refreshRpcDateFields",
+      "filePath": "public/js/rpc-date-picker.mjs",
+      "lineRange": [
+        431,
+        439
+      ],
+      "summary": "Exported refresh rpc date fields used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/rpc-date-picker.mjs:initRpcDatePicker",
+      "type": "function",
+      "name": "initRpcDatePicker",
+      "filePath": "public/js/rpc-date-picker.mjs",
+      "lineRange": [
+        450,
+        472
+      ],
+      "summary": "Exported init rpc date picker used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/session-clinical-wipe.mjs",
+      "type": "file",
+      "name": "session-clinical-wipe.mjs",
+      "filePath": "public/js/session-clinical-wipe.mjs",
+      "summary": "Session-scoped PHI wipe for iPad/web surfaces (audit M2). Desktop Electron persists in SQLCipher; mobile/interno web must not leave clinical blobs at rest.",
+      "tags": [
+        "exports",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/session-clinical-wipe.mjs:wipeSessionClinicalStorage",
+      "type": "function",
+      "name": "wipeSessionClinicalStorage",
+      "filePath": "public/js/session-clinical-wipe.mjs",
+      "lineRange": [
+        21,
+        44
+      ],
+      "summary": "Exported wipe session clinical storage used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/session-clinical-wipe.mjs:shouldInstallSessionClinicalWipe",
+      "type": "function",
+      "name": "shouldInstallSessionClinicalWipe",
+      "filePath": "public/js/session-clinical-wipe.mjs",
+      "lineRange": [
+        46,
+        48
+      ],
+      "summary": "Exported should install session clinical wipe used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/session-clinical-wipe.mjs:hasSessionScopedWebRuntimeFlag",
+      "type": "function",
+      "name": "hasSessionScopedWebRuntimeFlag",
+      "filePath": "public/js/session-clinical-wipe.mjs",
+      "lineRange": [
+        50,
+        62
+      ],
+      "summary": "Internal has session scoped web runtime flag in session-clinical-wipe.mjs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/session-clinical-wipe.mjs:isSessionScopedWebClient",
+      "type": "function",
+      "name": "isSessionScopedWebClient",
+      "filePath": "public/js/session-clinical-wipe.mjs",
+      "lineRange": [
+        65,
+        71
+      ],
+      "summary": "iPad/PWA: clinical PHI stays in memory for the session; no SQLCipher on web.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/session-clinical-wipe.mjs:installSessionClinicalWipeOnExit",
+      "type": "function",
+      "name": "installSessionClinicalWipeOnExit",
+      "filePath": "public/js/session-clinical-wipe.mjs",
+      "lineRange": [
+        74,
+        81
+      ],
+      "summary": "Wipe clinical localStorage when the browser session ends (mobile web / PWA).",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/session-clinical-wipe.test.mjs",
+      "type": "file",
+      "name": "session-clinical-wipe.test.mjs",
+      "filePath": "public/js/session-clinical-wipe.test.mjs",
+      "summary": "Tests for session-clinical-wipe.mjs covering unit tests.",
+      "tags": [
+        "test",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:public/js/ui-motion.mjs",
+      "type": "file",
+      "name": "ui-motion.mjs",
+      "filePath": "public/js/ui-motion.mjs",
+      "summary": "Vanilla helpers for field shake and async button label swaps.",
+      "tags": [
+        "exports",
+        "utility",
+        "module"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:public/js/ui-motion.mjs:prefersReducedMotion",
+      "type": "function",
+      "name": "prefersReducedMotion",
+      "filePath": "public/js/ui-motion.mjs",
+      "lineRange": [
+        3,
+        9
+      ],
+      "summary": "Exported prefers reduced motion used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/ui-motion.mjs:shakeField",
+      "type": "function",
+      "name": "shakeField",
+      "filePath": "public/js/ui-motion.mjs",
+      "lineRange": [
+        11,
+        27
+      ],
+      "summary": "Exported shake field used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/ui-motion.mjs:shakeFields",
+      "type": "function",
+      "name": "shakeFields",
+      "filePath": "public/js/ui-motion.mjs",
+      "lineRange": [
+        29,
+        33
+      ],
+      "summary": "Exported shake fields used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/ui-motion.mjs:resolvePatientFieldIds",
+      "type": "function",
+      "name": "resolvePatientFieldIds",
+      "filePath": "public/js/ui-motion.mjs",
+      "lineRange": [
+        36,
+        60
+      ],
+      "summary": "Maps patient-modal validation messages to input ids.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/ui-motion.mjs:shakePatientFieldsForError",
+      "type": "function",
+      "name": "shakePatientFieldsForError",
+      "filePath": "public/js/ui-motion.mjs",
+      "lineRange": [
+        62,
+        66
+      ],
+      "summary": "Exported shake patient fields for error used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/ui-motion.mjs:collectButtonLabelText",
+      "type": "function",
+      "name": "collectButtonLabelText",
+      "filePath": "public/js/ui-motion.mjs",
+      "lineRange": [
+        68,
+        77
+      ],
+      "summary": "Internal collect button label text in ui-motion.mjs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/ui-motion.mjs:ensureButtonLabel",
+      "type": "function",
+      "name": "ensureButtonLabel",
+      "filePath": "public/js/ui-motion.mjs",
+      "lineRange": [
+        102,
+        120
+      ],
+      "summary": "Internal ensure button label in ui-motion.mjs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/ui-motion.mjs:swapLabelText",
+      "type": "function",
+      "name": "swapLabelText",
+      "filePath": "public/js/ui-motion.mjs",
+      "lineRange": [
+        131,
+        161
+      ],
+      "summary": "Internal swap label text in ui-motion.mjs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/ui-motion.mjs:closeModalAnimated",
+      "type": "function",
+      "name": "closeModalAnimated",
+      "filePath": "public/js/ui-motion.mjs",
+      "lineRange": [
+        168,
+        202
+      ],
+      "summary": "Close a modal: state + callback first, then canvas-style exit motion (non-blocking).",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/ui-motion.mjs:cancelOverlayClose",
+      "type": "function",
+      "name": "cancelOverlayClose",
+      "filePath": "public/js/ui-motion.mjs",
+      "lineRange": [
+        213,
+        220
+      ],
+      "summary": "Cancela un cierre animado pendiente; llamar antes de re-mostrar el overlay.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/ui-motion.mjs:closeOverlayAnimated",
+      "type": "function",
+      "name": "closeOverlayAnimated",
+      "filePath": "public/js/ui-motion.mjs",
+      "lineRange": [
+        231,
+        271
+      ],
+      "summary": "Cierre con motion para overlays de display/hidden directo (Tendencias, ⌘K). aria-hidden inmediato; fade-out + modal-out (CSS .overlay-anim-out); hideFn al terminar — ahí van display:none y la limpieza.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/ui-motion.mjs:setAsyncButtonLoading",
+      "type": "function",
+      "name": "setAsyncButtonLoading",
+      "filePath": "public/js/ui-motion.mjs",
+      "lineRange": [
+        273,
+        299
+      ],
+      "summary": "Exported set async button loading used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/ui-motion.test.mjs",
+      "type": "file",
+      "name": "ui-motion.test.mjs",
+      "filePath": "public/js/ui-motion.test.mjs",
+      "summary": "Tests for ui-motion.mjs covering unit tests.",
+      "tags": [
+        "test",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/ui-tab-motion.mjs",
+      "type": "file",
+      "name": "ui-tab-motion.mjs",
+      "filePath": "public/js/ui-tab-motion.mjs",
+      "summary": "Shared javascript module (21 functions, 15 exports) for the R+ workbench.",
+      "tags": [
+        "exports",
+        "utility",
+        "module"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:public/js/ui-tab-motion.mjs:ensureTabBarIndicator",
+      "type": "function",
+      "name": "ensureTabBarIndicator",
+      "filePath": "public/js/ui-tab-motion.mjs",
+      "lineRange": [
+        14,
+        23
+      ],
+      "summary": "Internal ensure tab bar indicator in ui-tab-motion.mjs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/ui-tab-motion.mjs:tabIndicatorTransform",
+      "type": "function",
+      "name": "tabIndicatorTransform",
+      "filePath": "public/js/ui-tab-motion.mjs",
+      "lineRange": [
+        29,
+        34
+      ],
+      "summary": "Ancho base CSS del indicador; el ancho real se logra con scaleX.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/ui-tab-motion.mjs:syncTabBarIndicator",
+      "type": "function",
+      "name": "syncTabBarIndicator",
+      "filePath": "public/js/ui-tab-motion.mjs",
+      "lineRange": [
+        36,
+        48
+      ],
+      "summary": "Transform compuesto (translateX+scaleX): anima en GPU, sin layout por frame.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/ui-tab-motion.mjs:syncAppTabIndicator",
+      "type": "function",
+      "name": "syncAppTabIndicator",
+      "filePath": "public/js/ui-tab-motion.mjs",
+      "lineRange": [
+        50,
+        55
+      ],
+      "summary": "Exported sync app tab indicator used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/ui-tab-motion.mjs:innerTabButtonId",
+      "type": "function",
+      "name": "innerTabButtonId",
+      "filePath": "public/js/ui-tab-motion.mjs",
+      "lineRange": [
+        57,
+        71
+      ],
+      "summary": "Exported inner tab button id used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/ui-tab-motion.mjs:syncMedSubviewTabIndicator",
+      "type": "function",
+      "name": "syncMedSubviewTabIndicator",
+      "filePath": "public/js/ui-tab-motion.mjs",
+      "lineRange": [
+        77,
+        82
+      ],
+      "summary": "Exported sync med subview tab indicator used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/ui-tab-motion.mjs:syncInnerTabIndicator",
+      "type": "function",
+      "name": "syncInnerTabIndicator",
+      "filePath": "public/js/ui-tab-motion.mjs",
+      "lineRange": [
+        84,
+        93
+      ],
+      "summary": "Exported sync inner tab indicator used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/ui-tab-motion.mjs:animateTabPanelEnter",
+      "type": "function",
+      "name": "animateTabPanelEnter",
+      "filePath": "public/js/ui-tab-motion.mjs",
+      "lineRange": [
+        95,
+        105
+      ],
+      "summary": "Exported animate tab panel enter used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/ui-tab-motion.mjs:showAppTabPanel",
+      "type": "function",
+      "name": "showAppTabPanel",
+      "filePath": "public/js/ui-tab-motion.mjs",
+      "lineRange": [
+        115,
+        132
+      ],
+      "summary": "Hide a main tab panel without display:none (avoids full layout on Expediente ↔ Med).",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/ui-tab-motion.mjs:hideAppTabPanel",
+      "type": "function",
+      "name": "hideAppTabPanel",
+      "filePath": "public/js/ui-tab-motion.mjs",
+      "lineRange": [
+        134,
+        138
+      ],
+      "summary": "Exported hide app tab panel used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/ui-tab-motion.mjs:syncSubTabBarIndicator",
+      "type": "function",
+      "name": "syncSubTabBarIndicator",
+      "filePath": "public/js/ui-tab-motion.mjs",
+      "lineRange": [
+        140,
+        148
+      ],
+      "summary": "Exported sync sub tab bar indicator used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/ui-tab-motion.mjs:syncAllSubTabIndicators",
+      "type": "function",
+      "name": "syncAllSubTabIndicators",
+      "filePath": "public/js/ui-tab-motion.mjs",
+      "lineRange": [
+        150,
+        155
+      ],
+      "summary": "Exported sync all sub tab indicators used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/ui-tab-motion.mjs:syncExpedienteSegmentIndicators",
+      "type": "function",
+      "name": "syncExpedienteSegmentIndicators",
+      "filePath": "public/js/ui-tab-motion.mjs",
+      "lineRange": [
+        158,
+        170
+      ],
+      "summary": "Solo la barra de segmento activa (evita layout de todas las barras en cada clic).",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/ui-tab-motion.mjs:scheduleIndicatorSync",
+      "type": "function",
+      "name": "scheduleIndicatorSync",
+      "filePath": "public/js/ui-tab-motion.mjs",
+      "lineRange": [
+        172,
+        192
+      ],
+      "summary": "Internal schedule indicator sync in ui-tab-motion.mjs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/ui-tab-motion.mjs:getActiveInnerTabFromDom",
+      "type": "function",
+      "name": "getActiveInnerTabFromDom",
+      "filePath": "public/js/ui-tab-motion.mjs",
+      "lineRange": [
+        208,
+        221
+      ],
+      "summary": "Internal get active inner tab from dom in ui-tab-motion.mjs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/ui-tab-motion.mjs:initTabBarMotion",
+      "type": "function",
+      "name": "initTabBarMotion",
+      "filePath": "public/js/ui-tab-motion.mjs",
+      "lineRange": [
+        223,
+        243
+      ],
+      "summary": "Exported init tab bar motion used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/ui-tab-motion.test.mjs",
+      "type": "file",
+      "name": "ui-tab-motion.test.mjs",
+      "filePath": "public/js/ui-tab-motion.test.mjs",
+      "summary": "Tests for ui-tab-motion.mjs covering unit tests.",
+      "tags": [
+        "test",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/ui-toast.mjs",
+      "type": "file",
+      "name": "ui-toast.mjs",
+      "filePath": "public/js/ui-toast.mjs",
+      "summary": "Stacked toast notifications (premium UI phase 0).",
+      "tags": [
+        "exports",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/ui-toast.mjs:ensureToastStack",
+      "type": "function",
+      "name": "ensureToastStack",
+      "filePath": "public/js/ui-toast.mjs",
+      "lineRange": [
+        20,
+        36
+      ],
+      "summary": "Internal ensure toast stack in ui-toast.mjs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/ui-toast.mjs:buildToastEl",
+      "type": "function",
+      "name": "buildToastEl",
+      "filePath": "public/js/ui-toast.mjs",
+      "lineRange": [
+        38,
+        56
+      ],
+      "summary": "Internal build toast el in ui-toast.mjs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/ui-toast.mjs:removeToastEl",
+      "type": "function",
+      "name": "removeToastEl",
+      "filePath": "public/js/ui-toast.mjs",
+      "lineRange": [
+        58,
+        80
+      ],
+      "summary": "Internal remove toast el in ui-toast.mjs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/ui-toast.mjs:showToast",
+      "type": "function",
+      "name": "showToast",
+      "filePath": "public/js/ui-toast.mjs",
+      "lineRange": [
+        92,
+        118
+      ],
+      "summary": "Exported show toast used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/update-helpers.mjs",
+      "type": "file",
+      "name": "update-helpers.mjs",
+      "filePath": "public/js/update-helpers.mjs",
+      "summary": "Shared javascript module (3 functions, 3 exports) for the R+ workbench.",
+      "tags": [
+        "exports",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/update-helpers.mjs:formatBytes",
+      "type": "function",
+      "name": "formatBytes",
+      "filePath": "public/js/update-helpers.mjs",
+      "lineRange": [
+        5,
+        11
+      ],
+      "summary": "Exported format bytes used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/update-helpers.mjs:formatSpeed",
+      "type": "function",
+      "name": "formatSpeed",
+      "filePath": "public/js/update-helpers.mjs",
+      "lineRange": [
+        17,
+        20
+      ],
+      "summary": "Exported format speed used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/update-helpers.mjs:formatProgressLine",
+      "type": "function",
+      "name": "formatProgressLine",
+      "filePath": "public/js/update-helpers.mjs",
+      "lineRange": [
+        26,
+        31
+      ],
+      "summary": "Etiqueta tipo \"Descargando 37.3 MB / 59.2 MB · 1.1 MB/s\".",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/update-helpers.test.mjs",
+      "type": "file",
+      "name": "update-helpers.test.mjs",
+      "filePath": "public/js/update-helpers.test.mjs",
+      "summary": "Tests for update-helpers.mjs covering unit tests.",
+      "tags": [
+        "test",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/vpo-data.mjs",
+      "type": "file",
+      "name": "vpo-data.mjs",
+      "filePath": "public/js/vpo-data.mjs",
+      "summary": "Shared javascript module (20 functions, 23 exports) for the R+ workbench.",
+      "tags": [
+        "exports",
+        "utility",
+        "module"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:public/js/vpo-data.mjs:emptyVpoState",
+      "type": "function",
+      "name": "emptyVpoState",
+      "filePath": "public/js/vpo-data.mjs",
+      "lineRange": [
+        23,
+        54
+      ],
+      "summary": "Exported empty vpo state used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/vpo-data.mjs:ensureScaleResults",
+      "type": "function",
+      "name": "ensureScaleResults",
+      "filePath": "public/js/vpo-data.mjs",
+      "lineRange": [
+        57,
+        67
+      ],
+      "summary": "Exported ensure scale results used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/vpo-data.mjs:ensureVpoState",
+      "type": "function",
+      "name": "ensureVpoState",
+      "filePath": "public/js/vpo-data.mjs",
+      "lineRange": [
+        69,
+        75
+      ],
+      "summary": "Exported ensure vpo state used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/vpo-data.mjs:ensureDiagnosticosList",
+      "type": "function",
+      "name": "ensureDiagnosticosList",
+      "filePath": "public/js/vpo-data.mjs",
+      "lineRange": [
+        78,
+        90
+      ],
+      "summary": "Exported ensure diagnosticos list used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/vpo-data.mjs:setDiagnosticosList",
+      "type": "function",
+      "name": "setDiagnosticosList",
+      "filePath": "public/js/vpo-data.mjs",
+      "lineRange": [
+        93,
+        102
+      ],
+      "summary": "Exported set diagnosticos list used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/vpo-data.mjs:applyProcedureSelection",
+      "type": "function",
+      "name": "applyProcedureSelection",
+      "filePath": "public/js/vpo-data.mjs",
+      "lineRange": [
+        105,
+        110
+      ],
+      "summary": "Exported apply procedure selection used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/vpo-data.mjs:applyAsaSuggestion",
+      "type": "function",
+      "name": "applyAsaSuggestion",
+      "filePath": "public/js/vpo-data.mjs",
+      "lineRange": [
+        113,
+        116
+      ],
+      "summary": "Exported apply asa suggestion used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/vpo-data.mjs:syncAhaFields",
+      "type": "function",
+      "name": "syncAhaFields",
+      "filePath": "public/js/vpo-data.mjs",
+      "lineRange": [
+        119,
+        125
+      ],
+      "summary": "Exported sync aha fields used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/vpo-data.mjs:duracionKeyToHours",
+      "type": "function",
+      "name": "duracionKeyToHours",
+      "filePath": "public/js/vpo-data.mjs",
+      "lineRange": [
+        128,
+        133
+      ],
+      "summary": "Exported duracion key to hours used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/vpo-data.mjs:duracionHoursToKey",
+      "type": "function",
+      "name": "duracionHoursToKey",
+      "filePath": "public/js/vpo-data.mjs",
+      "lineRange": [
+        136,
+        142
+      ],
+      "summary": "Exported duracion hours to key used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/vpo-data.mjs:ensureDuracionKey",
+      "type": "function",
+      "name": "ensureDuracionKey",
+      "filePath": "public/js/vpo-data.mjs",
+      "lineRange": [
+        145,
+        154
+      ],
+      "summary": "Exported ensure duracion key used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/vpo-data.mjs:applyDuracionKey",
+      "type": "function",
+      "name": "applyDuracionKey",
+      "filePath": "public/js/vpo-data.mjs",
+      "lineRange": [
+        157,
+        161
+      ],
+      "summary": "Exported apply duracion key used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/vpo-data.mjs:getVitalsFromMonitoreo",
+      "type": "function",
+      "name": "getVitalsFromMonitoreo",
+      "filePath": "public/js/vpo-data.mjs",
+      "lineRange": [
+        164,
+        189
+      ],
+      "summary": "Exported get vitals from monitoreo used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/vpo-data.mjs:applyVitalsFromMonitoreo",
+      "type": "function",
+      "name": "applyVitalsFromMonitoreo",
+      "filePath": "public/js/vpo-data.mjs",
+      "lineRange": [
+        192,
+        206
+      ],
+      "summary": "Exported apply vitals from monitoreo used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/vpo-data.mjs:mergeFarmacosFromMedReceta",
+      "type": "function",
+      "name": "mergeFarmacosFromMedReceta",
+      "filePath": "public/js/vpo-data.mjs",
+      "lineRange": [
+        212,
+        227
+      ],
+      "summary": "Exported merge farmacos from med receta used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/vpo-data.mjs:importDiagnosticosFromNota",
+      "type": "function",
+      "name": "importDiagnosticosFromNota",
+      "filePath": "public/js/vpo-data.mjs",
+      "lineRange": [
+        230,
+        240
+      ],
+      "summary": "Exported import diagnosticos from nota used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/vpo-data.mjs:importDiagnosticosFromPaste",
+      "type": "function",
+      "name": "importDiagnosticosFromPaste",
+      "filePath": "public/js/vpo-data.mjs",
+      "lineRange": [
+        243,
+        249
+      ],
+      "summary": "Exported import diagnosticos from paste used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/vpo-data.mjs:getLatestLabValues",
+      "type": "function",
+      "name": "getLatestLabValues",
+      "filePath": "public/js/vpo-data.mjs",
+      "lineRange": [
+        252,
+        269
+      ],
+      "summary": "Exported get latest lab values used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/vpo-data.mjs:applyLabValues",
+      "type": "function",
+      "name": "applyLabValues",
+      "filePath": "public/js/vpo-data.mjs",
+      "lineRange": [
+        272,
+        276
+      ],
+      "summary": "Exported apply lab values used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/vpo-data.mjs:autofillVitalsFromMonitoreoIfEmpty",
+      "type": "function",
+      "name": "autofillVitalsFromMonitoreoIfEmpty",
+      "filePath": "public/js/vpo-data.mjs",
+      "lineRange": [
+        279,
+        287
+      ],
+      "summary": "Exported autofill vitals from monitoreo if empty used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/vpo-text.mjs",
+      "type": "file",
+      "name": "vpo-text.mjs",
+      "filePath": "public/js/vpo-text.mjs",
+      "summary": "Bloques de texto copiables para nota externa VPO.",
+      "tags": [
+        "exports",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/vpo-text.mjs:formatVpoScaleResultLines",
+      "type": "function",
+      "name": "formatVpoScaleResultLines",
+      "filePath": "public/js/vpo-text.mjs",
+      "lineRange": [
+        19,
+        26
+      ],
+      "summary": "Exported format vpo scale result lines used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/vpo-text.mjs:formatVpoDocumentationLines",
+      "type": "function",
+      "name": "formatVpoDocumentationLines",
+      "filePath": "public/js/vpo-text.mjs",
+      "lineRange": [
+        32,
+        34
+      ],
+      "summary": "Líneas de valoración sin puntajes calculados en R+.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/vpo-text.mjs:renderEkgWithFc",
+      "type": "function",
+      "name": "renderEkgWithFc",
+      "filePath": "public/js/vpo-text.mjs",
+      "lineRange": [
+        36,
+        41
+      ],
+      "summary": "Líneas de valoración sin puntajes calculados en R+.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/vpo-text.mjs:formatRiskLines",
+      "type": "function",
+      "name": "formatRiskLines",
+      "filePath": "public/js/vpo-text.mjs",
+      "lineRange": [
+        47,
+        49
+      ],
+      "summary": "Líneas de valoración documentada (escalas ingresadas manualmente).",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/vpo-text.mjs:buildVpoFullCopyText",
+      "type": "function",
+      "name": "buildVpoFullCopyText",
+      "filePath": "public/js/vpo-text.mjs",
+      "lineRange": [
+        52,
+        78
+      ],
+      "summary": "Líneas de valoración documentada (escalas ingresadas manualmente).",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/vpo-text.mjs:buildFarmacosCopyText",
+      "type": "function",
+      "name": "buildFarmacosCopyText",
+      "filePath": "public/js/vpo-text.mjs",
+      "lineRange": [
+        81,
+        87
+      ],
+      "summary": "Exported build farmacos copy text used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/vpo-text.test.mjs",
+      "type": "file",
+      "name": "vpo-text.test.mjs",
+      "filePath": "public/js/vpo-text.test.mjs",
+      "summary": "Tests for vpo-text.mjs covering unit tests.",
+      "tags": [
+        "test",
+        "module"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:public/js/patient-diagnosticos.test.mjs",
+      "target": "file:public/js/patient-diagnosticos.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/patient-diagnosticos.mjs",
+      "target": "file:public/js/patient-diagnosticos.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:public/js/patient-export-format.mjs",
+      "target": "function:public/js/patient-export-format.mjs:stripJsonBom",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/patient-export-format.mjs",
+      "target": "function:public/js/patient-export-format.mjs:stripJsonBom",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/patient-export-format.mjs",
+      "target": "function:public/js/patient-export-format.mjs:entryToPatientExportPayload",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/patient-export-format.mjs",
+      "target": "function:public/js/patient-export-format.mjs:entryToPatientExportPayload",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/patient-export-format.mjs",
+      "target": "function:public/js/patient-export-format.mjs:isRPlusPatientExportPayload",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/patient-export-format.mjs",
+      "target": "function:public/js/patient-export-format.mjs:isRPlusPatientExportPayload",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/patient-export-format.mjs",
+      "target": "function:public/js/patient-export-format.mjs:resolvePatientImportPayloads",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/patient-export-format.mjs",
+      "target": "function:public/js/patient-export-format.mjs:resolvePatientImportPayloads",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/patient-export-format.mjs",
+      "target": "function:public/js/patient-export-format.mjs:parsePatientImportJsonText",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/patient-export-format.mjs",
+      "target": "function:public/js/patient-export-format.mjs:parsePatientImportJsonText",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/patient-export-format.mjs",
+      "target": "function:public/js/patient-export-format.mjs:describePatientImportRejection",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/patient-export-format.mjs",
+      "target": "function:public/js/patient-export-format.mjs:describePatientImportRejection",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/patient-export-format.test.mjs",
+      "target": "file:public/js/patient-export-format.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/patient-export-format.mjs",
+      "target": "file:public/js/patient-export-format.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:public/js/patient-sidebar-card.mjs",
+      "target": "function:public/js/patient-sidebar-card.mjs:escSidebarHtml",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/patient-sidebar-card.mjs",
+      "target": "function:public/js/patient-sidebar-card.mjs:escSidebarHtml",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/patient-sidebar-card.mjs",
+      "target": "function:public/js/patient-sidebar-card.mjs:formatPatientBedParts",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/patient-sidebar-card.mjs",
+      "target": "function:public/js/patient-sidebar-card.mjs:formatPatientBedParts",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/patient-sidebar-card.mjs",
+      "target": "function:public/js/patient-sidebar-card.mjs:formatPatientBedLabel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/patient-sidebar-card.mjs",
+      "target": "function:public/js/patient-sidebar-card.mjs:formatPatientBedLabel",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/patient-sidebar-card.mjs",
+      "target": "function:public/js/patient-sidebar-card.mjs:formatPatientBedMetaHtml",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/patient-sidebar-card.mjs",
+      "target": "function:public/js/patient-sidebar-card.mjs:formatPatientBedMetaHtml",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/patient-sidebar-card.mjs",
+      "target": "function:public/js/patient-sidebar-card.mjs:renderPatientSidebarBodyHtml",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/patient-sidebar-card.mjs",
+      "target": "function:public/js/patient-sidebar-card.mjs:renderPatientSidebarBodyHtml",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/patient-sidebar-card.test.mjs",
+      "target": "file:public/js/patient-sidebar-card.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/patient-sidebar-card.mjs",
+      "target": "file:public/js/patient-sidebar-card.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:public/js/patient-validation.mjs",
+      "target": "function:public/js/patient-validation.mjs:validatePatientForSave",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/patient-validation.mjs",
+      "target": "function:public/js/patient-validation.mjs:validatePatientForSave",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/patient-validation.mjs",
+      "target": "function:public/js/patient-validation.mjs:buildExpedienteAdvice",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/patient-validation.mjs",
+      "target": "function:public/js/patient-validation.mjs:buildExpedienteAdvice",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/patient-validation.test.mjs",
+      "target": "file:public/js/patient-validation.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/patient-validation.mjs",
+      "target": "file:public/js/patient-validation.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:public/js/procedure-agenda-week.mjs",
+      "target": "function:public/js/procedure-agenda-week.mjs:mondayStartLocal",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/procedure-agenda-week.mjs",
+      "target": "function:public/js/procedure-agenda-week.mjs:mondayStartLocal",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/procedure-agenda-week.mjs",
+      "target": "function:public/js/procedure-agenda-week.mjs:addDaysLocal",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/procedure-agenda-week.mjs",
+      "target": "function:public/js/procedure-agenda-week.mjs:addDaysLocal",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/procedure-agenda-week.mjs",
+      "target": "function:public/js/procedure-agenda-week.mjs:weekBoundsFromMonday",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/procedure-agenda-week.mjs",
+      "target": "function:public/js/procedure-agenda-week.mjs:weekBoundsFromMonday",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/procedure-agenda-week.mjs",
+      "target": "function:public/js/procedure-agenda-week.mjs:clipEventToDayColumn",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/procedure-agenda-week.mjs",
+      "target": "function:public/js/procedure-agenda-week.mjs:clipEventToDayColumn",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/procedure-agenda-week.mjs",
+      "target": "function:public/js/procedure-agenda-week.mjs:assignLanesByInterval",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/procedure-agenda-week.mjs",
+      "target": "function:public/js/procedure-agenda-week.mjs:assignLanesByInterval",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/procedure-agenda-week.mjs",
+      "target": "function:public/js/procedure-agenda-week.mjs:hoursVisibleCount",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/procedure-agenda-week.mjs",
+      "target": "function:public/js/procedure-agenda-week.mjs:hoursVisibleCount",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/procedure-agenda-week.test.mjs",
+      "target": "file:public/js/procedure-agenda-week.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/procedure-agenda-week.mjs",
+      "target": "file:public/js/procedure-agenda-week.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:public/js/profile-formats-editor.mjs",
+      "target": "file:public/js/profile-templates.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/profile-formats-editor.mjs",
+      "target": "function:public/js/profile-formats-editor.mjs:getFormatsEditMode",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/profile-formats-editor.mjs",
+      "target": "function:public/js/profile-formats-editor.mjs:getFormatsEditMode",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/profile-formats-editor.mjs",
+      "target": "function:public/js/profile-formats-editor.mjs:setFormatsEditMode",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/profile-formats-editor.mjs",
+      "target": "function:public/js/profile-formats-editor.mjs:setFormatsEditMode",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/profile-formats-editor.mjs",
+      "target": "function:public/js/profile-formats-editor.mjs:clearFormatsEditMode",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/profile-formats-editor.mjs",
+      "target": "function:public/js/profile-formats-editor.mjs:clearFormatsEditMode",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/profile-formats-editor.mjs",
+      "target": "function:public/js/profile-formats-editor.mjs:editorBanner",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/profile-formats-editor.mjs",
+      "target": "function:public/js/profile-formats-editor.mjs:buildNoteDefaultsEditorHtml",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/profile-formats-editor.mjs",
+      "target": "function:public/js/profile-formats-editor.mjs:buildNoteDefaultsEditorHtml",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/profile-formats-editor.mjs",
+      "target": "function:public/js/profile-formats-editor.mjs:buildIndicaDefaultsEditorHtml",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/profile-formats-editor.mjs",
+      "target": "function:public/js/profile-formats-editor.mjs:buildIndicaDefaultsEditorHtml",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/profile-formats-editor.mjs",
+      "target": "function:public/js/profile-formats-editor.mjs:loadDraftFromSettings",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/profile-formats-editor.mjs",
+      "target": "function:public/js/profile-formats-editor.mjs:loadDraftFromSettings",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/profile-formats-editor.mjs",
+      "target": "function:public/js/profile-formats-editor.mjs:applyDraftToSettings",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/profile-formats-editor.mjs",
+      "target": "function:public/js/profile-formats-editor.mjs:applyDraftToSettings",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/profile-formats-editor.mjs",
+      "target": "function:public/js/profile-formats-editor.mjs:updateDefaultFormatField",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/profile-formats-editor.mjs",
+      "target": "function:public/js/profile-formats-editor.mjs:updateDefaultFormatField",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/profile-formats-editor.mjs",
+      "target": "function:public/js/profile-formats-editor.mjs:resetDraftToBlank",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/profile-formats-editor.mjs",
+      "target": "function:public/js/profile-formats-editor.mjs:resetDraftToBlank",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/profile-templates.mjs",
+      "target": "function:public/js/profile-templates.mjs:looksLikeLegacyIdentifiableTemplate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/profile-templates.mjs",
+      "target": "function:public/js/profile-templates.mjs:looksLikeLegacyIdentifiableTemplate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/profile-templates.mjs",
+      "target": "function:public/js/profile-templates.mjs:ensureProfileTemplateDefaults",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/profile-templates.mjs",
+      "target": "function:public/js/profile-templates.mjs:ensureProfileTemplateDefaults",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/profile-templates.mjs",
+      "target": "function:public/js/profile-templates.mjs:resetProfileTemplatesToBlank",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/profile-templates.mjs",
+      "target": "function:public/js/profile-templates.mjs:resetProfileTemplatesToBlank",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/profile-templates.mjs",
+      "target": "function:public/js/profile-templates.mjs:applyNotaFormatScaffoldIfEmpty",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/profile-templates.mjs",
+      "target": "function:public/js/profile-templates.mjs:applyNotaFormatScaffoldIfEmpty",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/profile-templates.mjs",
+      "target": "function:public/js/profile-templates.mjs:applyIndicacionesFormatScaffoldIfEmpty",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/profile-templates.mjs",
+      "target": "function:public/js/profile-templates.mjs:applyIndicacionesFormatScaffoldIfEmpty",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/profile-templates.test.mjs",
+      "target": "file:public/js/profile-templates.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/profile-templates.mjs",
+      "target": "file:public/js/profile-templates.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:public/js/quick-output.mjs",
+      "target": "function:public/js/quick-output.mjs:listadoHasProblems",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/quick-output.mjs",
+      "target": "function:public/js/quick-output.mjs:listadoHasProblems",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/quick-output.mjs",
+      "target": "function:public/js/quick-output.mjs:resolveQuickOutputAction",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/quick-output.mjs",
+      "target": "function:public/js/quick-output.mjs:resolveQuickOutputAction",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/quick-output.test.mjs",
+      "target": "file:public/js/quick-output.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/quick-output.mjs",
+      "target": "file:public/js/quick-output.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:public/js/rpc-date-picker.mjs",
+      "target": "file:public/js/patient-date-fields.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/rpc-date-picker.mjs",
+      "target": "function:public/js/rpc-date-picker.mjs:formatIsoDateDisplay",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/rpc-date-picker.mjs",
+      "target": "function:public/js/rpc-date-picker.mjs:formatIsoDateDisplay",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/rpc-date-picker.mjs",
+      "target": "function:public/js/rpc-date-picker.mjs:parseIso",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/rpc-date-picker.mjs",
+      "target": "function:public/js/rpc-date-picker.mjs:ensurePopover",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/rpc-date-picker.mjs",
+      "target": "function:public/js/rpc-date-picker.mjs:closePopover",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/rpc-date-picker.mjs",
+      "target": "function:public/js/rpc-date-picker.mjs:isRpcDatePopoverOpen",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/rpc-date-picker.mjs",
+      "target": "function:public/js/rpc-date-picker.mjs:isRpcDatePopoverOpen",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/rpc-date-picker.mjs",
+      "target": "function:public/js/rpc-date-picker.mjs:closeRpcDatePopover",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/rpc-date-picker.mjs",
+      "target": "function:public/js/rpc-date-picker.mjs:closeRpcDatePopover",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/rpc-date-picker.mjs",
+      "target": "function:public/js/rpc-date-picker.mjs:positionPopover",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/rpc-date-picker.mjs",
+      "target": "function:public/js/rpc-date-picker.mjs:renderCalendarBody",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/rpc-date-picker.mjs",
+      "target": "function:public/js/rpc-date-picker.mjs:openRpcDatePicker",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/rpc-date-picker.mjs",
+      "target": "function:public/js/rpc-date-picker.mjs:openRpcDatePicker",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/rpc-date-picker.mjs",
+      "target": "function:public/js/rpc-date-picker.mjs:fillHourSelect",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/rpc-date-picker.mjs",
+      "target": "function:public/js/rpc-date-picker.mjs:fillMinuteSelect",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/rpc-date-picker.mjs",
+      "target": "function:public/js/rpc-date-picker.mjs:createRpcTimePicker",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/rpc-date-picker.mjs",
+      "target": "function:public/js/rpc-date-picker.mjs:mountRpcDateInput",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/rpc-date-picker.mjs",
+      "target": "function:public/js/rpc-date-picker.mjs:mountRpcDateInput",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/rpc-date-picker.mjs",
+      "target": "function:public/js/rpc-date-picker.mjs:mountRpcDatetimeInput",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/rpc-date-picker.mjs",
+      "target": "function:public/js/rpc-date-picker.mjs:mountRpcDatetimeInput",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/rpc-date-picker.mjs",
+      "target": "function:public/js/rpc-date-picker.mjs:refreshRpcDateFields",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/rpc-date-picker.mjs",
+      "target": "function:public/js/rpc-date-picker.mjs:refreshRpcDateFields",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/rpc-date-picker.mjs",
+      "target": "function:public/js/rpc-date-picker.mjs:initRpcDatePicker",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/rpc-date-picker.mjs",
+      "target": "function:public/js/rpc-date-picker.mjs:initRpcDatePicker",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/session-clinical-wipe.mjs",
+      "target": "file:public/js/db-storage-bridge.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/session-clinical-wipe.mjs",
+      "target": "function:public/js/session-clinical-wipe.mjs:wipeSessionClinicalStorage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/session-clinical-wipe.mjs",
+      "target": "function:public/js/session-clinical-wipe.mjs:wipeSessionClinicalStorage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/session-clinical-wipe.mjs",
+      "target": "function:public/js/session-clinical-wipe.mjs:shouldInstallSessionClinicalWipe",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/session-clinical-wipe.mjs",
+      "target": "function:public/js/session-clinical-wipe.mjs:shouldInstallSessionClinicalWipe",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/session-clinical-wipe.mjs",
+      "target": "function:public/js/session-clinical-wipe.mjs:hasSessionScopedWebRuntimeFlag",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/session-clinical-wipe.mjs",
+      "target": "function:public/js/session-clinical-wipe.mjs:isSessionScopedWebClient",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/session-clinical-wipe.mjs",
+      "target": "function:public/js/session-clinical-wipe.mjs:isSessionScopedWebClient",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/session-clinical-wipe.mjs",
+      "target": "function:public/js/session-clinical-wipe.mjs:installSessionClinicalWipeOnExit",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/session-clinical-wipe.mjs",
+      "target": "function:public/js/session-clinical-wipe.mjs:installSessionClinicalWipeOnExit",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/session-clinical-wipe.test.mjs",
+      "target": "file:public/js/session-clinical-wipe.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/session-clinical-wipe.mjs",
+      "target": "file:public/js/session-clinical-wipe.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:public/js/ui-motion.mjs",
+      "target": "function:public/js/ui-motion.mjs:prefersReducedMotion",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/ui-motion.mjs",
+      "target": "function:public/js/ui-motion.mjs:prefersReducedMotion",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/ui-motion.mjs",
+      "target": "function:public/js/ui-motion.mjs:shakeField",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/ui-motion.mjs",
+      "target": "function:public/js/ui-motion.mjs:shakeField",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/ui-motion.mjs",
+      "target": "function:public/js/ui-motion.mjs:shakeFields",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/ui-motion.mjs",
+      "target": "function:public/js/ui-motion.mjs:shakeFields",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/ui-motion.mjs",
+      "target": "function:public/js/ui-motion.mjs:resolvePatientFieldIds",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/ui-motion.mjs",
+      "target": "function:public/js/ui-motion.mjs:resolvePatientFieldIds",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/ui-motion.mjs",
+      "target": "function:public/js/ui-motion.mjs:shakePatientFieldsForError",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/ui-motion.mjs",
+      "target": "function:public/js/ui-motion.mjs:shakePatientFieldsForError",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/ui-motion.mjs",
+      "target": "function:public/js/ui-motion.mjs:collectButtonLabelText",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/ui-motion.mjs",
+      "target": "function:public/js/ui-motion.mjs:ensureButtonLabel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/ui-motion.mjs",
+      "target": "function:public/js/ui-motion.mjs:swapLabelText",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/ui-motion.mjs",
+      "target": "function:public/js/ui-motion.mjs:closeModalAnimated",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/ui-motion.mjs",
+      "target": "function:public/js/ui-motion.mjs:closeModalAnimated",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/ui-motion.mjs",
+      "target": "function:public/js/ui-motion.mjs:cancelOverlayClose",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/ui-motion.mjs",
+      "target": "function:public/js/ui-motion.mjs:cancelOverlayClose",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/ui-motion.mjs",
+      "target": "function:public/js/ui-motion.mjs:closeOverlayAnimated",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/ui-motion.mjs",
+      "target": "function:public/js/ui-motion.mjs:closeOverlayAnimated",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/ui-motion.mjs",
+      "target": "function:public/js/ui-motion.mjs:setAsyncButtonLoading",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/ui-motion.mjs",
+      "target": "function:public/js/ui-motion.mjs:setAsyncButtonLoading",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/ui-motion.test.mjs",
+      "target": "file:public/js/ui-motion.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/ui-motion.mjs",
+      "target": "file:public/js/ui-motion.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:public/js/ui-tab-motion.mjs",
+      "target": "file:public/js/expediente-tabs.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/ui-tab-motion.mjs",
+      "target": "file:public/js/ui-motion.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/ui-tab-motion.mjs",
+      "target": "function:public/js/ui-tab-motion.mjs:ensureTabBarIndicator",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/ui-tab-motion.mjs",
+      "target": "function:public/js/ui-tab-motion.mjs:tabIndicatorTransform",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/ui-tab-motion.mjs",
+      "target": "function:public/js/ui-tab-motion.mjs:tabIndicatorTransform",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/ui-tab-motion.mjs",
+      "target": "function:public/js/ui-tab-motion.mjs:syncTabBarIndicator",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/ui-tab-motion.mjs",
+      "target": "function:public/js/ui-tab-motion.mjs:syncTabBarIndicator",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/ui-tab-motion.mjs",
+      "target": "function:public/js/ui-tab-motion.mjs:syncAppTabIndicator",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/ui-tab-motion.mjs",
+      "target": "function:public/js/ui-tab-motion.mjs:syncAppTabIndicator",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/ui-tab-motion.mjs",
+      "target": "function:public/js/ui-tab-motion.mjs:innerTabButtonId",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/ui-tab-motion.mjs",
+      "target": "function:public/js/ui-tab-motion.mjs:innerTabButtonId",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/ui-tab-motion.mjs",
+      "target": "function:public/js/ui-tab-motion.mjs:syncMedSubviewTabIndicator",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/ui-tab-motion.mjs",
+      "target": "function:public/js/ui-tab-motion.mjs:syncMedSubviewTabIndicator",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/ui-tab-motion.mjs",
+      "target": "function:public/js/ui-tab-motion.mjs:syncInnerTabIndicator",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/ui-tab-motion.mjs",
+      "target": "function:public/js/ui-tab-motion.mjs:syncInnerTabIndicator",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/ui-tab-motion.mjs",
+      "target": "function:public/js/ui-tab-motion.mjs:animateTabPanelEnter",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/ui-tab-motion.mjs",
+      "target": "function:public/js/ui-tab-motion.mjs:animateTabPanelEnter",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/ui-tab-motion.mjs",
+      "target": "function:public/js/ui-tab-motion.mjs:showAppTabPanel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/ui-tab-motion.mjs",
+      "target": "function:public/js/ui-tab-motion.mjs:showAppTabPanel",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/ui-tab-motion.mjs",
+      "target": "function:public/js/ui-tab-motion.mjs:hideAppTabPanel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/ui-tab-motion.mjs",
+      "target": "function:public/js/ui-tab-motion.mjs:hideAppTabPanel",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/ui-tab-motion.mjs",
+      "target": "function:public/js/ui-tab-motion.mjs:syncSubTabBarIndicator",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/ui-tab-motion.mjs",
+      "target": "function:public/js/ui-tab-motion.mjs:syncSubTabBarIndicator",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/ui-tab-motion.mjs",
+      "target": "function:public/js/ui-tab-motion.mjs:syncAllSubTabIndicators",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/ui-tab-motion.mjs",
+      "target": "function:public/js/ui-tab-motion.mjs:syncAllSubTabIndicators",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/ui-tab-motion.mjs",
+      "target": "function:public/js/ui-tab-motion.mjs:syncExpedienteSegmentIndicators",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/ui-tab-motion.mjs",
+      "target": "function:public/js/ui-tab-motion.mjs:syncExpedienteSegmentIndicators",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/ui-tab-motion.mjs",
+      "target": "function:public/js/ui-tab-motion.mjs:scheduleIndicatorSync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/ui-tab-motion.mjs",
+      "target": "function:public/js/ui-tab-motion.mjs:getActiveInnerTabFromDom",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/ui-tab-motion.mjs",
+      "target": "function:public/js/ui-tab-motion.mjs:initTabBarMotion",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/ui-tab-motion.mjs",
+      "target": "function:public/js/ui-tab-motion.mjs:initTabBarMotion",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/ui-tab-motion.test.mjs",
+      "target": "file:public/js/ui-tab-motion.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/ui-tab-motion.mjs",
+      "target": "file:public/js/ui-tab-motion.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:public/js/ui-toast.mjs",
+      "target": "file:public/js/ui-motion.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/ui-toast.mjs",
+      "target": "function:public/js/ui-toast.mjs:ensureToastStack",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/ui-toast.mjs",
+      "target": "function:public/js/ui-toast.mjs:buildToastEl",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/ui-toast.mjs",
+      "target": "function:public/js/ui-toast.mjs:removeToastEl",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/ui-toast.mjs",
+      "target": "function:public/js/ui-toast.mjs:showToast",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/ui-toast.mjs",
+      "target": "function:public/js/ui-toast.mjs:showToast",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/update-helpers.mjs",
+      "target": "function:public/js/update-helpers.mjs:formatBytes",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/update-helpers.mjs",
+      "target": "function:public/js/update-helpers.mjs:formatBytes",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/update-helpers.mjs",
+      "target": "function:public/js/update-helpers.mjs:formatSpeed",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/update-helpers.mjs",
+      "target": "function:public/js/update-helpers.mjs:formatSpeed",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/update-helpers.mjs",
+      "target": "function:public/js/update-helpers.mjs:formatProgressLine",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/update-helpers.mjs",
+      "target": "function:public/js/update-helpers.mjs:formatProgressLine",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/update-helpers.test.mjs",
+      "target": "file:public/js/update-helpers.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/update-helpers.mjs",
+      "target": "file:public/js/update-helpers.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:public/js/vpo-data.mjs",
+      "target": "file:public/js/patient-diagnosticos.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/vpo-data.mjs",
+      "target": "file:public/js/tend-core.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/vpo-data.mjs",
+      "target": "file:public/js/vpo-lookups.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/vpo-data.mjs",
+      "target": "function:public/js/vpo-data.mjs:emptyVpoState",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/vpo-data.mjs",
+      "target": "function:public/js/vpo-data.mjs:emptyVpoState",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/vpo-data.mjs",
+      "target": "function:public/js/vpo-data.mjs:ensureScaleResults",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/vpo-data.mjs",
+      "target": "function:public/js/vpo-data.mjs:ensureScaleResults",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/vpo-data.mjs",
+      "target": "function:public/js/vpo-data.mjs:ensureVpoState",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/vpo-data.mjs",
+      "target": "function:public/js/vpo-data.mjs:ensureVpoState",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/vpo-data.mjs",
+      "target": "function:public/js/vpo-data.mjs:ensureDiagnosticosList",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/vpo-data.mjs",
+      "target": "function:public/js/vpo-data.mjs:ensureDiagnosticosList",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/vpo-data.mjs",
+      "target": "function:public/js/vpo-data.mjs:setDiagnosticosList",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/vpo-data.mjs",
+      "target": "function:public/js/vpo-data.mjs:setDiagnosticosList",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/vpo-data.mjs",
+      "target": "function:public/js/vpo-data.mjs:applyProcedureSelection",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/vpo-data.mjs",
+      "target": "function:public/js/vpo-data.mjs:applyProcedureSelection",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/vpo-data.mjs",
+      "target": "function:public/js/vpo-data.mjs:applyAsaSuggestion",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/vpo-data.mjs",
+      "target": "function:public/js/vpo-data.mjs:applyAsaSuggestion",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/vpo-data.mjs",
+      "target": "function:public/js/vpo-data.mjs:syncAhaFields",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/vpo-data.mjs",
+      "target": "function:public/js/vpo-data.mjs:syncAhaFields",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/vpo-data.mjs",
+      "target": "function:public/js/vpo-data.mjs:duracionKeyToHours",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/vpo-data.mjs",
+      "target": "function:public/js/vpo-data.mjs:duracionKeyToHours",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/vpo-data.mjs",
+      "target": "function:public/js/vpo-data.mjs:duracionHoursToKey",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/vpo-data.mjs",
+      "target": "function:public/js/vpo-data.mjs:duracionHoursToKey",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/vpo-data.mjs",
+      "target": "function:public/js/vpo-data.mjs:ensureDuracionKey",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/vpo-data.mjs",
+      "target": "function:public/js/vpo-data.mjs:ensureDuracionKey",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/vpo-data.mjs",
+      "target": "function:public/js/vpo-data.mjs:applyDuracionKey",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/vpo-data.mjs",
+      "target": "function:public/js/vpo-data.mjs:applyDuracionKey",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/vpo-data.mjs",
+      "target": "function:public/js/vpo-data.mjs:getVitalsFromMonitoreo",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/vpo-data.mjs",
+      "target": "function:public/js/vpo-data.mjs:getVitalsFromMonitoreo",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/vpo-data.mjs",
+      "target": "function:public/js/vpo-data.mjs:applyVitalsFromMonitoreo",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/vpo-data.mjs",
+      "target": "function:public/js/vpo-data.mjs:applyVitalsFromMonitoreo",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/vpo-data.mjs",
+      "target": "function:public/js/vpo-data.mjs:mergeFarmacosFromMedReceta",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/vpo-data.mjs",
+      "target": "function:public/js/vpo-data.mjs:mergeFarmacosFromMedReceta",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/vpo-data.mjs",
+      "target": "function:public/js/vpo-data.mjs:importDiagnosticosFromNota",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/vpo-data.mjs",
+      "target": "function:public/js/vpo-data.mjs:importDiagnosticosFromNota",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/vpo-data.mjs",
+      "target": "function:public/js/vpo-data.mjs:importDiagnosticosFromPaste",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/vpo-data.mjs",
+      "target": "function:public/js/vpo-data.mjs:importDiagnosticosFromPaste",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/vpo-data.mjs",
+      "target": "function:public/js/vpo-data.mjs:getLatestLabValues",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/vpo-data.mjs",
+      "target": "function:public/js/vpo-data.mjs:getLatestLabValues",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/vpo-data.mjs",
+      "target": "function:public/js/vpo-data.mjs:applyLabValues",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/vpo-data.mjs",
+      "target": "function:public/js/vpo-data.mjs:applyLabValues",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/vpo-data.mjs",
+      "target": "function:public/js/vpo-data.mjs:autofillVitalsFromMonitoreoIfEmpty",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/vpo-data.mjs",
+      "target": "function:public/js/vpo-data.mjs:autofillVitalsFromMonitoreoIfEmpty",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/vpo-text.mjs",
+      "target": "function:public/js/vpo-text.mjs:formatVpoScaleResultLines",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/vpo-text.mjs",
+      "target": "function:public/js/vpo-text.mjs:formatVpoScaleResultLines",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/vpo-text.mjs",
+      "target": "function:public/js/vpo-text.mjs:formatVpoDocumentationLines",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/vpo-text.mjs",
+      "target": "function:public/js/vpo-text.mjs:formatVpoDocumentationLines",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/vpo-text.mjs",
+      "target": "function:public/js/vpo-text.mjs:renderEkgWithFc",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/vpo-text.mjs",
+      "target": "function:public/js/vpo-text.mjs:renderEkgWithFc",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/vpo-text.mjs",
+      "target": "function:public/js/vpo-text.mjs:formatRiskLines",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/vpo-text.mjs",
+      "target": "function:public/js/vpo-text.mjs:formatRiskLines",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/vpo-text.mjs",
+      "target": "function:public/js/vpo-text.mjs:buildVpoFullCopyText",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/vpo-text.mjs",
+      "target": "function:public/js/vpo-text.mjs:buildVpoFullCopyText",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/vpo-text.mjs",
+      "target": "function:public/js/vpo-text.mjs:buildFarmacosCopyText",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/vpo-text.mjs",
+      "target": "function:public/js/vpo-text.mjs:buildFarmacosCopyText",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/vpo-text.test.mjs",
+      "target": "file:public/js/vpo-text.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/vpo-text.mjs",
+      "target": "file:public/js/vpo-text.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

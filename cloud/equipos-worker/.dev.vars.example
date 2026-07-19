@@ -1,0 +1,5 @@
+# Local wrangler dev — copy to .dev.vars (gitignored)
+EQUIPOS_ADMIN_KEY=dev-change-me
+# Web Push (generate: node scripts/generate-equipos-vapid.mjs)
+EQUIPOS_VAPID_PUBLIC_KEY=
+EQUIPOS_VAPID_PRIVATE_JWK=

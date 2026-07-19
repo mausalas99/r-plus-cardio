@@ -1,0 +1,46 @@
+R+ 6.5.8 (interno móvil QR, entrega pendientes v2 y rollback a estable)
+====================================================================
+
+Fecha: 2026-06-03
+
+## Resumen
+
+Añade el **board móvil de internos (MIP)** por QR de sala, **pendientes estructurados en Modo Entrega** (plantillas y estudios/procedimientos), y **restaurar una versión estable anterior** desde Ajustes sin perder datos locales. Incluye mejoras de empaquetado de nativos (Argon2/SQLCipher) para releases.
+
+## Nuevo / mejorado
+
+### Interno móvil (guardia por QR)
+
+- **Micro-app** en `/interno/sala-{slug}` — Censo de pacientes entregados al R1 de guardia; registro de **signos vitales** y **glucometrías** sin cuenta clínica.
+- **QR por sala** — Admin/R4 activan, regeneran e imprimen el código desde el hub de guardia; token secreto por sala.
+- **Descubrimiento LAN** — El móvil localiza el host activo (no IP fija en el QR).
+- **Sync en vivo** — Polling + WebSocket; mediciones en **Estado actual** y alertas en **Modo Guardia** del residente.
+
+### Modo Entrega — pendientes v2
+
+- **Plantillas** de procedimiento/estudio (por usuario y por equipo/sala) en base clínica (schema v8).
+- **Pendientes estructurados** en entrega: hora, requisitos, badges; signos críticos/frecuencia siguen en `active_guardias` (banner en interno).
+- **R1 guardia** — Bloquea borrado del diurno; puede actualizar flags y agregar procedimientos.
+- **Interno** — Lista de estudios con detalle; marcar **realizado**; chips de pendientes en el board.
+
+### Restaurar versión estable
+
+- **Ajustes → Aplicación y actualizaciones** — Selector de versión estable anterior (`stable-versions.json` curado).
+- **In-app** con fallback a GitHub si falla la descarga (arm64/x64/Windows).
+- **`min-version.json`** — Sigue forzando mínimo hacia arriba; el downgrade no borra `userData` ni la base clínica.
+
+### Publicación y nativos
+
+- Scripts **`ensure-argon2-pack-natives`** y **`verify-release-natives`** antes del empaquetado.
+- Catálogo **`stable-versions.json`** actualizado para downgrade y releases.
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v6.5.8
+
+- Mac: `R+-6.5.8-arm64.dmg`, `R+-6.5.8-x64.dmg` (y zip para auto-update).
+- Windows: `R+-6.5.8-x64.exe`.
+
+**Recomendado:** Mac anfitrión de guardia en **6.5.8** con LAN activa; internos escanean el QR de su sala en la misma red Wi‑Fi.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye `build:ui` y bundle de producción).

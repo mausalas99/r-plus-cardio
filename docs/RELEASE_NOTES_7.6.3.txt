@@ -1,0 +1,23 @@
+R+ 7.6.3 (LAN auto-connect sin código)
+==========================================
+
+Fecha: 2026-07-02
+
+## Resumen
+
+Sobre **7.6.2**: R1–R3 vuelven a unirse al turno **sin PIN ni código manual** — la app prueba los endpoints del hospital embarcados (`bundledWardHostUrl`) al arrancar, en el barrido ⇄ y al cambiar de Wi‑Fi.
+
+## Nuevo / mejorado
+
+- **LAN — auto-connect** — Clientes sin bearer guardado reconectan solos vía `auth/exchange` (bypass de PIN); el registro ward siembra la URL/prefijo del turno.
+- **LAN — barrido** — El loop de descubrimiento ya no se detiene cuando falta `teamCode`; sigue probando endpoints conocidos.
+- **LAN — UI** — «Conectar al turno» y ⇄ funcionan sin campo PIN cuando el bypass está activo; mensajes alineados al flujo sin código.
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v7.6.3
+
+- Mac: `R+-7.6.3-arm64.dmg`, `R+-7.6.3-x64.dmg` (y zip para auto-update).
+- Windows: `R+-7.6.3-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye write-release-yml.js).

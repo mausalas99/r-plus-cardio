@@ -1,0 +1,32 @@
+R+ 7.4.1 (dieta EA, LAN ward y CORS Electron)
+=================================================
+
+Fecha: 2026-06-23
+
+## Resumen
+
+Sobre **7.4.0**: corrige propuestas de **dieta SOME** en Estado actual (suplemento, columnas desplazadas y re-aplicar receta); alinea **signos vitales** del SOAP con la tira de monitoreo; mejora **descubrimiento LAN** en la red de guardia; e inyecta **CORS** en Electron para consultar peers en `:3738`.
+
+## Nuevo / mejorado
+
+- **Estado actual — dieta SOME** — Detección de **SUPLEMENTO** más robusta (no confunde con “suplemento proteico”, etc.). Al forzar receta, compara huella SOME vs dieta confirmada antes de omitir. Parser recupera descripción cuando la columna tipo viene vacía o desplazada.
+- **Estado actual — signos y SOAP** — Snapshot y texto usan `vitalSeries` cuando hay lecturas (misma fuente que la tira de signos). Pico de temperatura en SOAP: `TEMPERATURA X °C (PICO Y °C @ …)`.
+- **LAN — descubrimiento** — Escaneo ward con **beacon** antes de ping; menos probes redundantes al rankear hosts en subred.
+- **LAN — CORS en Electron** — El renderer puede hacer `fetch` a APIs LAN de peers en red privada sin depender del CORS de cada Mac anfitriona.
+- **Arranque / SQLCipher** — Si falta `Electron.app`, scripts pueden ejecutar `electron/install.js` antes de probar el binario nativo.
+- **Seguridad LAN** — `frame-ancestors 'none'` y `X-Frame-Options: DENY` vía headers HTTP (la meta CSP no aplica `frame-ancestors`).
+- **Onboarding** — Perfil local aclara modo para médicos **ajenos a medicina interna** (sin ⇄).
+- **Laboratorio** — Log de auditoría post-guardado solo con `localStorage rplus.debug-labs=1`.
+
+## Operación en guardia
+
+Instala **7.4.1** si pegas recetas con dieta/suplemento en SOME o si el panel ⇄ no encuentra peers en la subred. Sin cambio de esquema SQLCipher (sigue **v17**). Recomendable el mismo build en todas las Macs del turno si usáis ⇄ activo.
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v7.4.1
+
+- Mac: `R+-7.4.1-arm64.dmg`, `R+-7.4.1-x64.dmg` (y zip para auto-update).
+- Windows: `R+-7.4.1-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye write-release-yml.js).

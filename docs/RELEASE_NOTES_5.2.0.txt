@@ -1,0 +1,21 @@
+R+ 5.2.0 (integración Neo)
+===================================
+
+Fecha: 2026-05-23
+
+## Resumen
+
+Integración visible con **Neo**: envío de laboratorio y tendencias desde R+ hacia la app externa, con pasos informativos en el tutorial modo Sala.
+
+## Nuevo / mejorado
+
+- Botones y modales: **Enviar a Neo** (laboratorio y tendencias).
+- Tutorial **Sala**: resalta Tablas SOME y el envío de gráficas sin abrir Neo durante el tour.
+- Protocolo técnico sin cambios: `sesion-ingreso://import`.
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/latest
+
+- Mac: `R+-5.2.0-arm64.dmg`, `R+-5.2.0-x64.dmg`
+- Windows: `R+-5.2.0-x64.exe`

@@ -1,0 +1,7041 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 29,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "lib/db/ipc-handlers.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 1232,
+      "nonEmptyLines": 1159,
+      "functions": [
+        {
+          "name": "ipcError",
+          "startLine": 86,
+          "endLine": 94,
+          "params": [
+            "err"
+          ]
+        },
+        {
+          "name": "readSchemaVersion",
+          "startLine": 96,
+          "endLine": 101,
+          "params": [
+            "db"
+          ]
+        },
+        {
+          "name": "parseBlobValue",
+          "startLine": 103,
+          "endLine": 110,
+          "params": [
+            "json",
+            "fallback"
+          ]
+        },
+        {
+          "name": "buildBackupEnvelope",
+          "startLine": 112,
+          "endLine": 143,
+          "params": []
+        },
+        {
+          "name": "fetchAuditRows",
+          "startLine": 145,
+          "endLine": 162,
+          "params": [
+            "db",
+            "mode"
+          ]
+        },
+        {
+          "name": "registerDbIpcHandlers",
+          "startLine": 174,
+          "endLine": 1225,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "registerDbIpcHandlers",
+          "line": 174,
+          "isDefault": false
+        },
+        {
+          "name": "__test",
+          "line": 1228,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "ipcError",
+          "callee": "String",
+          "lineNumber": 91
+        },
+        {
+          "caller": "ipcError",
+          "callee": "String",
+          "lineNumber": 92
+        },
+        {
+          "caller": "readSchemaVersion",
+          "callee": "db.prepare(\"SELECT value FROM app_meta WHERE key = 'schema_version'\").get",
+          "lineNumber": 97
+        },
+        {
+          "caller": "readSchemaVersion",
+          "callee": "db.prepare",
+          "lineNumber": 97
+        },
+        {
+          "caller": "readSchemaVersion",
+          "callee": "Number",
+          "lineNumber": 99
+        },
+        {
+          "caller": "readSchemaVersion",
+          "callee": "Number.isFinite",
+          "lineNumber": 100
+        },
+        {
+          "caller": "parseBlobValue",
+          "callee": "JSON.parse",
+          "lineNumber": 106
+        },
+        {
+          "caller": "buildBackupEnvelope",
+          "callee": "Object.values",
+          "lineNumber": 114
+        },
+        {
+          "caller": "buildBackupEnvelope",
+          "callee": "parseBlobValue",
+          "lineNumber": 123
+        },
+        {
+          "caller": "buildBackupEnvelope",
+          "callee": "new Date().toISOString",
+          "lineNumber": 137
+        },
+        {
+          "caller": "fetchAuditRows",
+          "callee": "db\n      .prepare(\n        `SELECT id, timestamp, client_id, event_type, payload_hash, previous_hash, current_hash\n         FROM forensic_audit_chain ORDER BY id DESC LIMIT 2`\n      )\n      .all()\n      .reverse",
+          "lineNumber": 147
+        },
+        {
+          "caller": "fetchAuditRows",
+          "callee": "db\n      .prepare(\n        `SELECT id, timestamp, client_id, event_type, payload_hash, previous_hash, current_hash\n         FROM forensic_audit_chain ORDER BY id DESC LIMIT 2`\n      )\n      .all",
+          "lineNumber": 147
+        },
+        {
+          "caller": "fetchAuditRows",
+          "callee": "db\n      .prepare",
+          "lineNumber": 147
+        },
+        {
+          "caller": "fetchAuditRows",
+          "callee": "db\n    .prepare(\n      `SELECT id, timestamp, client_id, event_type, payload_hash, previous_hash, current_hash\n       FROM forensic_audit_chain ORDER BY id ASC`\n    )\n    .all",
+          "lineNumber": 156
+        },
+        {
+          "caller": "fetchAuditRows",
+          "callee": "db\n    .prepare",
+          "lineNumber": 156
+        },
+        {
+          "caller": "userDataPath",
+          "callee": "app.getPath",
+          "lineNumber": 182
+        },
+        {
+          "caller": "finishDbUnlockResponse",
+          "callee": "dbManager.getState",
+          "lineNumber": 189
+        },
+        {
+          "caller": "finishDbUnlockResponse",
+          "callee": "runLegacyMigrationIfNeeded",
+          "lineNumber": 194
+        },
+        {
+          "caller": "finishDbUnlockResponse",
+          "callee": "userDataPath",
+          "lineNumber": 196
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcMain.handle",
+          "lineNumber": 210
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "dbManager.getState",
+          "lineNumber": 211
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "dbManager.getDb",
+          "lineNumber": 212
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "userDataPath",
+          "lineNumber": 213
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "clinicalDbPath",
+          "lineNumber": 214
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "readSchemaVersion",
+          "lineNumber": 216
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "clinicalUnlockMetaPath",
+          "lineNumber": 219
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "fs.existsSync",
+          "lineNumber": 220
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "JSON.parse",
+          "lineNumber": 221
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "fs.readFileSync",
+          "lineNumber": 221
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "probeNativeRuntime",
+          "lineNumber": 227
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "probeNativeDatabaseLoad",
+          "lineNumber": 228
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "computeMigrationPending",
+          "lineNumber": 242
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "fs.existsSync",
+          "lineNumber": 243
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "dbManager.isRateLimited",
+          "lineNumber": 245
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcMain.handle",
+          "lineNumber": 254
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "probeMigrationNeeded",
+          "lineNumber": 257
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "userDataPath",
+          "lineNumber": 257
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcMain.handle",
+          "lineNumber": 261
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "dbManager.unlockWithPassphrase",
+          "lineNumber": 266
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 266
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcError",
+          "lineNumber": 271
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "finishDbUnlockResponse",
+          "lineNumber": 274
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcMain.handle",
+          "lineNumber": 277
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "dbManager.ensureUnlocked",
+          "lineNumber": 281
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "finishDbUnlockResponse",
+          "lineNumber": 282
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcError",
+          "lineNumber": 284
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcMain.handle",
+          "lineNumber": 288
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 289
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "dbManager.unlockWithRecoveryCode",
+          "lineNumber": 291
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "dbManager.getState",
+          "lineNumber": 292
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcError",
+          "lineNumber": 298
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcMain.handle",
+          "lineNumber": 302
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "dbManager.lock",
+          "lineNumber": 303
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "dbManager.getState",
+          "lineNumber": 304
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcMain.handle",
+          "lineNumber": 307
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "dbManager.withTransaction",
+          "lineNumber": 309
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "loadAllBlobs",
+          "lineNumber": 310
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "JSON.stringify",
+          "lineNumber": 311
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "exportClinicalOpsSnapshot",
+          "lineNumber": 311
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcError",
+          "lineNumber": 316
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcMain.handle",
+          "lineNumber": 320
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "dbManager.withTransaction",
+          "lineNumber": 324
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "Object.entries",
+          "lineNumber": 325
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "upsertBlob",
+          "lineNumber": 328
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "blobs.clinicalOps.trim",
+          "lineNumber": 330
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "JSON.parse",
+          "lineNumber": 333
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "mergeClinicalOpsSnapshot",
+          "lineNumber": 338
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "audit",
+          "lineNumber": 341
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "getClientId",
+          "lineNumber": 341
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "Object.keys",
+          "lineNumber": 342
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String(payload.userId || '').trim",
+          "lineNumber": 345
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 345
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "touchClinicalUserActivity",
+          "lineNumber": 346
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcError",
+          "lineNumber": 350
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcMain.handle",
+          "lineNumber": 354
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "dbManager.withTransaction",
+          "lineNumber": 356
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "exportClinicalOpsSnapshot",
+          "lineNumber": 356
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcError",
+          "lineNumber": 359
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcMain.handle",
+          "lineNumber": 363
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "dbManager.withTransaction",
+          "lineNumber": 370
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "mergeClinicalOpsSnapshot",
+          "lineNumber": 371
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "audit",
+          "lineNumber": 373
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "getClientId",
+          "lineNumber": 373
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcError",
+          "lineNumber": 379
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcMain.handle",
+          "lineNumber": 383
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "dbManager.withTransaction",
+          "lineNumber": 386
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "fetchAuditRows",
+          "lineNumber": 387
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "verifyChainRows",
+          "lineNumber": 388
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcError",
+          "lineNumber": 397
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcMain.handle",
+          "lineNumber": 401
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "Math.min",
+          "lineNumber": 402
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "Math.max",
+          "lineNumber": 403
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "Number",
+          "lineNumber": 403
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "dbManager.withTransaction",
+          "lineNumber": 407
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "db\n          .prepare(\n            `SELECT id, timestamp, client_id, event_type, payload_hash, previous_hash, current_hash\n             FROM forensic_audit_chain ORDER BY id DESC LIMIT ?`\n          )\n          .all(limit)\n          .reverse",
+          "lineNumber": 408
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "db\n          .prepare(\n            `SELECT id, timestamp, client_id, event_type, payload_hash, previous_hash, current_hash\n             FROM forensic_audit_chain ORDER BY id DESC LIMIT ?`\n          )\n          .all",
+          "lineNumber": 408
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "db\n          .prepare",
+          "lineNumber": 408
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcError",
+          "lineNumber": 418
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcMain.handle",
+          "lineNumber": 422
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "dbManager.withTransaction",
+          "lineNumber": 424
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "loadAllBlobs",
+          "lineNumber": 425
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "readHostState",
+          "lineNumber": 426
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "audit",
+          "lineNumber": 427
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "getClientId",
+          "lineNumber": 427
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "Object.keys",
+          "lineNumber": 429
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "buildBackupEnvelope",
+          "lineNumber": 431
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "app.getVersion",
+          "lineNumber": 434
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcError",
+          "lineNumber": 439
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcMain.handle",
+          "lineNumber": 443
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "clinicalDbPath",
+          "lineNumber": 444
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "userDataPath",
+          "lineNumber": 444
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "fs.existsSync",
+          "lineNumber": 445
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "dialog.showSaveDialog",
+          "lineNumber": 448
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "path.join",
+          "lineNumber": 450
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "app.getPath",
+          "lineNumber": 451
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "new Date().toISOString().slice",
+          "lineNumber": 452
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "new Date().toISOString",
+          "lineNumber": 452
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "dbManager.withTransaction",
+          "lineNumber": 460
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "filePath.replace",
+          "lineNumber": 461
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "db.exec",
+          "lineNumber": 463
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "fs.copyFileSync",
+          "lineNumber": 465
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "audit",
+          "lineNumber": 467
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "getClientId",
+          "lineNumber": 467
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "path.basename",
+          "lineNumber": 467
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcError",
+          "lineNumber": 471
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcMain.handle",
+          "lineNumber": 475
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "dbManager.getState",
+          "lineNumber": 476
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcError",
+          "lineNumber": 477
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "Object.assign",
+          "lineNumber": 477
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "dbManager.changePassphrase",
+          "lineNumber": 480
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 481
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 482
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "dbManager.getState",
+          "lineNumber": 485
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcError",
+          "lineNumber": 487
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcMain.handle",
+          "lineNumber": 491
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "dbManager.withTransaction",
+          "lineNumber": 493
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "resolveBootstrapClinicalUser",
+          "lineNumber": 494
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 495
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "getClientId",
+          "lineNumber": 495
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 496
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 498
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 501
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "fetchActiveGuardias",
+          "lineNumber": 504
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "fetchOrphanActiveGuardias",
+          "lineNumber": 505
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "audit",
+          "lineNumber": 506
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "getClientId",
+          "lineNumber": 506
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcError",
+          "lineNumber": 514
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcMain.handle",
+          "lineNumber": 518
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "dbManager.withTransaction",
+          "lineNumber": 520
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "getClinicalScopeContext",
+          "lineNumber": 521
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 521
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcError",
+          "lineNumber": 525
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcMain.handle",
+          "lineNumber": 529
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "dbManager.withTransaction",
+          "lineNumber": 531
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 532
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "fetchActiveGuardias",
+          "lineNumber": 533
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "fetchOrphanActiveGuardias",
+          "lineNumber": 534
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcError",
+          "lineNumber": 539
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcMain.handle",
+          "lineNumber": 543
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "dbManager.withTransaction",
+          "lineNumber": 545
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "resolveActiveGuardia",
+          "lineNumber": 546
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 547
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 548
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "audit",
+          "lineNumber": 551
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "getClientId",
+          "lineNumber": 551
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcError",
+          "lineNumber": 560
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcMain.handle",
+          "lineNumber": 564
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "dbManager.withTransaction",
+          "lineNumber": 566
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "upsertActiveGuardia",
+          "lineNumber": 567
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 568
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 569
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 570
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 571
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 576
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "audit",
+          "lineNumber": 579
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "getClientId",
+          "lineNumber": 579
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcError",
+          "lineNumber": 588
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcMain.handle",
+          "lineNumber": 592
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "dbManager.withTransaction",
+          "lineNumber": 594
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "getActiveRotationCycle",
+          "lineNumber": 594
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcError",
+          "lineNumber": 597
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcMain.handle",
+          "lineNumber": 601
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "dbManager.withTransaction",
+          "lineNumber": 603
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "upsertRotationCycle",
+          "lineNumber": 604
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 605
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 606
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 608
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcError",
+          "lineNumber": 613
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcMain.handle",
+          "lineNumber": 617
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "dbManager.withTransaction",
+          "lineNumber": 619
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "new Date().toISOString",
+          "lineNumber": 620
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "archiveRotationAndTeams",
+          "lineNumber": 621
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "stampRotationNuevaAt",
+          "lineNumber": 622
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "audit",
+          "lineNumber": 624
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "getClientId",
+          "lineNumber": 624
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 624
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcError",
+          "lineNumber": 629
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcMain.handle",
+          "lineNumber": 633
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "dbManager.withTransaction",
+          "lineNumber": 635
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "fetchIncomingAssignments",
+          "lineNumber": 636
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "new Date().toISOString",
+          "lineNumber": 636
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcError",
+          "lineNumber": 640
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcMain.handle",
+          "lineNumber": 644
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "dbManager.withTransaction",
+          "lineNumber": 646
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "listTeamsBySala",
+          "lineNumber": 647
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 648
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 649
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcError",
+          "lineNumber": 655
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcMain.handle",
+          "lineNumber": 659
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "dbManager.withTransaction",
+          "lineNumber": 661
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 662
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "joinTeam",
+          "lineNumber": 663
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 663
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 665
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "touchClinicalUserActivity",
+          "lineNumber": 668
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcError",
+          "lineNumber": 673
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcMain.handle",
+          "lineNumber": 677
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "dbManager.withTransaction",
+          "lineNumber": 679
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "buildActivePatientCountByTeam",
+          "lineNumber": 680
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "buildLanAssignmentCountByTeam",
+          "lineNumber": 681
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "listActiveTeams(db).map",
+          "lineNumber": 682
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "listActiveTeams",
+          "lineNumber": 682
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "withEffectiveTeamSala",
+          "lineNumber": 684
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "listTeamMembers",
+          "lineNumber": 685
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "getTeamGuardiaToday",
+          "lineNumber": 686
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "patientCounts.get",
+          "lineNumber": 687
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "lanAssignmentCounts.get",
+          "lineNumber": 688
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcError",
+          "lineNumber": 695
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcMain.handle",
+          "lineNumber": 699
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 701
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "dbManager.withTransaction",
+          "lineNumber": 702
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "createTeam",
+          "lineNumber": 703
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 704
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 705
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "Number",
+          "lineNumber": 706
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 708
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 711
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 712
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 713
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "getSalaTeamCountWarning",
+          "lineNumber": 715
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcError",
+          "lineNumber": 720
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcMain.handle",
+          "lineNumber": 724
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "dbManager.withTransaction",
+          "lineNumber": 726
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "updateTeam",
+          "lineNumber": 727
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 727
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 728
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 729
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 730
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcError",
+          "lineNumber": 735
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcMain.handle",
+          "lineNumber": 739
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "dbManager.withTransaction",
+          "lineNumber": 741
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "archiveTeam",
+          "lineNumber": 742
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 742
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 742
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcError",
+          "lineNumber": 746
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcMain.handle",
+          "lineNumber": 750
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "dbManager.withTransaction",
+          "lineNumber": 752
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "resolveTeamByInviteCode",
+          "lineNumber": 753
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 753
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcError",
+          "lineNumber": 757
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcMain.handle",
+          "lineNumber": 761
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "dbManager.withTransaction",
+          "lineNumber": 763
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "resolveClinicalUserByUsername",
+          "lineNumber": 764
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 764
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcError",
+          "lineNumber": 768
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcMain.handle",
+          "lineNumber": 772
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 774
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "dbManager.withTransaction",
+          "lineNumber": 775
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "getClinicalProfile",
+          "lineNumber": 776
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "canViewLanUserDirectory",
+          "lineNumber": 777
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "listLanDirectoryUsers",
+          "lineNumber": 782
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcError",
+          "lineNumber": 786
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcMain.handle",
+          "lineNumber": 790
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "dbManager.withTransaction",
+          "lineNumber": 792
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "deleteLanDirectoryUser",
+          "lineNumber": 793
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 794
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 795
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "audit",
+          "lineNumber": 797
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "getClientId",
+          "lineNumber": 797
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 799
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcError",
+          "lineNumber": 805
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcMain.handle",
+          "lineNumber": 809
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "dbManager.withTransaction",
+          "lineNumber": 811
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 812
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "resolveClinicalUserByUsername",
+          "lineNumber": 814
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 815
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 817
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "addTeamMember",
+          "lineNumber": 824
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 824
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 826
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "touchClinicalUserActivity",
+          "lineNumber": 829
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcError",
+          "lineNumber": 834
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcMain.handle",
+          "lineNumber": 838
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "dbManager.withTransaction",
+          "lineNumber": 840
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "removeTeamMember",
+          "lineNumber": 841
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 841
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 841
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcError",
+          "lineNumber": 845
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcMain.handle",
+          "lineNumber": 849
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "dbManager.withTransaction",
+          "lineNumber": 851
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 852
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "setTeamGuardiaToday",
+          "lineNumber": 853
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 853
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "touchClinicalUserActivity",
+          "lineNumber": 854
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcError",
+          "lineNumber": 858
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcMain.handle",
+          "lineNumber": 862
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "dbManager.withTransaction",
+          "lineNumber": 864
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "clearTeamGuardiaToday",
+          "lineNumber": 865
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 865
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcError",
+          "lineNumber": 869
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcMain.handle",
+          "lineNumber": 873
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "dbManager.withTransaction",
+          "lineNumber": 875
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "getTeamGuardiaToday",
+          "lineNumber": 876
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 876
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcError",
+          "lineNumber": 880
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcMain.handle",
+          "lineNumber": 884
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "dbManager.withTransaction",
+          "lineNumber": 886
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "getClinicalProfile",
+          "lineNumber": 887
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 887
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcError",
+          "lineNumber": 891
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcMain.handle",
+          "lineNumber": 895
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "dbManager.withTransaction",
+          "lineNumber": 897
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "migrateTeamMemberships",
+          "lineNumber": 898
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 899
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 900
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcError",
+          "lineNumber": 905
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcMain.handle",
+          "lineNumber": 909
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "dbManager.withTransaction",
+          "lineNumber": 911
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 912
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "attachClinicalIdentityByUsername",
+          "lineNumber": 913
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 913
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "migrateTeamMemberships",
+          "lineNumber": 916
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "fetchActiveGuardias",
+          "lineNumber": 921
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "audit",
+          "lineNumber": 922
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "getClientId",
+          "lineNumber": 922
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcError",
+          "lineNumber": 931
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcMain.handle",
+          "lineNumber": 935
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "dbManager.withTransaction",
+          "lineNumber": 937
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "claimUsername",
+          "lineNumber": 938
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 939
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 940
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcError",
+          "lineNumber": 945
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcMain.handle",
+          "lineNumber": 949
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "dbManager.withTransaction",
+          "lineNumber": 951
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "upsertClinicalProfile",
+          "lineNumber": 952
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 953
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 954
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 955
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 956
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 957
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcError",
+          "lineNumber": 964
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcMain.handle",
+          "lineNumber": 968
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String(payload.userId || '').trim",
+          "lineNumber": 970
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 970
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "dbManager.withTransaction",
+          "lineNumber": 972
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "touchClinicalUserActivity",
+          "lineNumber": 973
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcError",
+          "lineNumber": 977
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcMain.handle",
+          "lineNumber": 981
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "dbManager.withTransaction",
+          "lineNumber": 983
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "promoteTeamLeader",
+          "lineNumber": 984
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 984
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 984
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcError",
+          "lineNumber": 988
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcMain.handle",
+          "lineNumber": 992
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "dbManager.withTransaction",
+          "lineNumber": 994
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "getTeamById",
+          "lineNumber": 995
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 995
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcError",
+          "lineNumber": 999
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcMain.handle",
+          "lineNumber": 1003
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "dbManager.withTransaction",
+          "lineNumber": 1005
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "findUserTeamForAutoAssign",
+          "lineNumber": 1006
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 1006
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcError",
+          "lineNumber": 1010
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcMain.handle",
+          "lineNumber": 1014
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "dbManager.withTransaction",
+          "lineNumber": 1016
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "assignPatientToTeam",
+          "lineNumber": 1017
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 1018
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 1019
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 1020
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "new Date().toISOString",
+          "lineNumber": 1020
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcError",
+          "lineNumber": 1025
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcMain.handle",
+          "lineNumber": 1029
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "dbManager.withTransaction",
+          "lineNumber": 1031
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "fetchActivePatientTeamId",
+          "lineNumber": 1032
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 1034
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 1035
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcError",
+          "lineNumber": 1040
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcMain.handle",
+          "lineNumber": 1044
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "signClinicalChange",
+          "lineNumber": 1046
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 1047
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 1048
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 1049
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 1050
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 1052
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcError",
+          "lineNumber": 1056
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcMain.handle",
+          "lineNumber": 1060
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "verifyIncomingPeerChange",
+          "lineNumber": 1062
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 1064
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 1065
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcError",
+          "lineNumber": 1069
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcMain.handle",
+          "lineNumber": 1073
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "dbManager.withTransaction",
+          "lineNumber": 1075
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "getClinicalProfile",
+          "lineNumber": 1076
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 1076
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "canManageInternoQr",
+          "lineNumber": 1077
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "listSalaInternoAccess",
+          "lineNumber": 1080
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcError",
+          "lineNumber": 1084
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcMain.handle",
+          "lineNumber": 1088
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "dbManager.withTransaction",
+          "lineNumber": 1090
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 1091
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "getClinicalProfile",
+          "lineNumber": 1092
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "canManageInternoQr",
+          "lineNumber": 1093
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "rotateSalaInternoToken",
+          "lineNumber": 1096
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 1096
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "audit",
+          "lineNumber": 1097
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "getClientId",
+          "lineNumber": 1097
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcError",
+          "lineNumber": 1102
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcMain.handle",
+          "lineNumber": 1106
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "dbManager.withTransaction",
+          "lineNumber": 1108
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 1109
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "getClinicalProfile",
+          "lineNumber": 1110
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "canManageInternoQr",
+          "lineNumber": 1111
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "setSalaInternoActive",
+          "lineNumber": 1114
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 1114
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "audit",
+          "lineNumber": 1115
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "getClientId",
+          "lineNumber": 1115
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcError",
+          "lineNumber": 1124
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcMain.handle",
+          "lineNumber": 1128
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "dbManager.withTransaction",
+          "lineNumber": 1130
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "listEntregaTemplates",
+          "lineNumber": 1131
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 1132
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "Array.isArray",
+          "lineNumber": 1133
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "payload.teamIds.map",
+          "lineNumber": 1133
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcError",
+          "lineNumber": 1138
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcMain.handle",
+          "lineNumber": 1142
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "dbManager.withTransaction",
+          "lineNumber": 1144
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "saveEntregaTemplateUser",
+          "lineNumber": 1145
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 1146
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 1147
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 1148
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcError",
+          "lineNumber": 1154
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcMain.handle",
+          "lineNumber": 1158
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "dbManager.withTransaction",
+          "lineNumber": 1160
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "saveEntregaTemplateTeam",
+          "lineNumber": 1161
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 1162
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 1163
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 1164
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 1165
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcError",
+          "lineNumber": 1171
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcMain.handle",
+          "lineNumber": 1175
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "dbManager.withTransaction",
+          "lineNumber": 1177
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "deleteEntregaTemplate",
+          "lineNumber": 1178
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 1180
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcError",
+          "lineNumber": 1185
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcMain.handle",
+          "lineNumber": 1189
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "dbManager.withTransaction",
+          "lineNumber": 1191
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "enqueueLanSyncOutbox",
+          "lineNumber": 1192
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 1193
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcError",
+          "lineNumber": 1200
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcMain.handle",
+          "lineNumber": 1204
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "dbManager.withTransaction",
+          "lineNumber": 1206
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "drainLanSyncOutbox",
+          "lineNumber": 1207
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 1207
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcError",
+          "lineNumber": 1211
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcMain.handle",
+          "lineNumber": 1215
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "dbManager.withTransaction",
+          "lineNumber": 1217
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "countLanSyncOutbox",
+          "lineNumber": 1218
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "String",
+          "lineNumber": 1218
+        },
+        {
+          "caller": "registerDbIpcHandlers",
+          "callee": "ipcError",
+          "lineNumber": 1222
+        }
+      ],
+      "metrics": {
+        "importCount": 15,
+        "exportCount": 2,
+        "functionCount": 6,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/db/ipc-handlers.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 415,
+      "nonEmptyLines": 388,
+      "functions": [
+        {
+          "name": "createFakeIpcMain",
+          "startLine": 11,
+          "endLine": 24,
+          "params": []
+        },
+        {
+          "name": "createFakeApp",
+          "startLine": 26,
+          "endLine": 36,
+          "params": [
+            "tmpDir"
+          ]
+        },
+        {
+          "name": "createIpcHarness",
+          "startLine": 38,
+          "endLine": 78,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "handle",
+          "callee": "handlers.set",
+          "lineNumber": 15
+        },
+        {
+          "caller": "invoke",
+          "callee": "handlers.get",
+          "lineNumber": 18
+        },
+        {
+          "caller": "invoke",
+          "callee": "fn",
+          "lineNumber": 20
+        },
+        {
+          "caller": "init",
+          "callee": "fs.mkdtempSync",
+          "lineNumber": 48
+        },
+        {
+          "caller": "init",
+          "callee": "path.join",
+          "lineNumber": 48
+        },
+        {
+          "caller": "init",
+          "callee": "os.tmpdir",
+          "lineNumber": 48
+        },
+        {
+          "caller": "init",
+          "callee": "createUnlockedDbManager",
+          "lineNumber": 49
+        },
+        {
+          "caller": "init",
+          "callee": "createFakeIpcMain",
+          "lineNumber": 50
+        },
+        {
+          "caller": "init",
+          "callee": "registerDbIpcHandlers",
+          "lineNumber": 51
+        },
+        {
+          "caller": "init",
+          "callee": "createFakeApp",
+          "lineNumber": 54
+        },
+        {
+          "caller": "teardown",
+          "callee": "mgr?.lock",
+          "lineNumber": 62
+        },
+        {
+          "caller": "teardown",
+          "callee": "fs.rmSync",
+          "lineNumber": 64
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 0,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/db/lan-host-persistence.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 31,
+      "nonEmptyLines": 30,
+      "functions": [
+        {
+          "name": "readHostState",
+          "startLine": 2,
+          "endLine": 12,
+          "params": [
+            "db"
+          ]
+        },
+        {
+          "name": "writeHostState",
+          "startLine": 16,
+          "endLine": 31,
+          "params": [
+            "db",
+            "state"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "readHostState",
+          "line": 2,
+          "isDefault": false
+        },
+        {
+          "name": "writeHostState",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "readHostState",
+          "callee": "db\n    .prepare('SELECT version, team_code_hash, json FROM lan_host_state WHERE id = 1')\n    .get",
+          "lineNumber": 3
+        },
+        {
+          "caller": "readHostState",
+          "callee": "db\n    .prepare",
+          "lineNumber": 3
+        },
+        {
+          "caller": "readHostState",
+          "callee": "JSON.parse",
+          "lineNumber": 8
+        },
+        {
+          "caller": "writeHostState",
+          "callee": "JSON.stringify",
+          "lineNumber": 17
+        },
+        {
+          "caller": "writeHostState",
+          "callee": "db.prepare(\n    `INSERT INTO lan_host_state (id, version, team_code_hash, json, updated_at)\n     VALUES (1, ?, ?, ?, ?)\n     ON CONFLICT(id) DO UPDATE SET\n       version = excluded.version,\n       team_code_hash = excluded.team_code_hash,\n       json = excluded.json,\n       updated_at = excluded.updated_at`\n  ).run",
+          "lineNumber": 22
+        },
+        {
+          "caller": "writeHostState",
+          "callee": "db.prepare",
+          "lineNumber": 22
+        },
+        {
+          "caller": "writeHostState",
+          "callee": "new Date().toISOString",
+          "lineNumber": 30
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/db/lan-sync-outbox.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 102,
+      "nonEmptyLines": 93,
+      "functions": [
+        {
+          "name": "trimRoomId",
+          "startLine": 10,
+          "endLine": 12,
+          "params": [
+            "roomId"
+          ]
+        },
+        {
+          "name": "normalizeKind",
+          "startLine": 14,
+          "endLine": 17,
+          "params": [
+            "kind"
+          ]
+        },
+        {
+          "name": "parsePayloadJson",
+          "startLine": 19,
+          "endLine": 26,
+          "params": [
+            "json"
+          ]
+        },
+        {
+          "name": "enqueueLanSyncOutbox",
+          "startLine": 32,
+          "endLine": 59,
+          "params": [
+            "db"
+          ]
+        },
+        {
+          "name": "drainLanSyncOutbox",
+          "startLine": 66,
+          "endLine": 90,
+          "params": [
+            "db"
+          ]
+        },
+        {
+          "name": "countLanSyncOutbox",
+          "startLine": 96,
+          "endLine": 102,
+          "params": [
+            "db"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "LAN_OUTBOX_MAX_PER_ROOM",
+          "line": 3,
+          "isDefault": false
+        },
+        {
+          "name": "enqueueLanSyncOutbox",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "drainLanSyncOutbox",
+          "line": 66,
+          "isDefault": false
+        },
+        {
+          "name": "countLanSyncOutbox",
+          "line": 96,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "trimRoomId",
+          "callee": "String(roomId || '').trim",
+          "lineNumber": 11
+        },
+        {
+          "caller": "trimRoomId",
+          "callee": "String",
+          "lineNumber": 11
+        },
+        {
+          "caller": "normalizeKind",
+          "callee": "String",
+          "lineNumber": 15
+        },
+        {
+          "caller": "normalizeKind",
+          "callee": "VALID_KINDS.has",
+          "lineNumber": 16
+        },
+        {
+          "caller": "parsePayloadJson",
+          "callee": "JSON.parse",
+          "lineNumber": 22
+        },
+        {
+          "caller": "enqueueLanSyncOutbox",
+          "callee": "trimRoomId",
+          "lineNumber": 33
+        },
+        {
+          "caller": "enqueueLanSyncOutbox",
+          "callee": "new Date().toISOString",
+          "lineNumber": 35
+        },
+        {
+          "caller": "enqueueLanSyncOutbox",
+          "callee": "db\n    .prepare(\n      `INSERT INTO lan_sync_outbox (room_id, kind, payload_json, enqueued_at)\n       VALUES (?, ?, ?, ?)`\n    )\n    .run",
+          "lineNumber": 36
+        },
+        {
+          "caller": "enqueueLanSyncOutbox",
+          "callee": "db\n    .prepare",
+          "lineNumber": 36
+        },
+        {
+          "caller": "enqueueLanSyncOutbox",
+          "callee": "normalizeKind",
+          "lineNumber": 41
+        },
+        {
+          "caller": "enqueueLanSyncOutbox",
+          "callee": "JSON.stringify",
+          "lineNumber": 41
+        },
+        {
+          "caller": "enqueueLanSyncOutbox",
+          "callee": "db\n    .prepare('SELECT COUNT(*) AS c FROM lan_sync_outbox WHERE room_id = ?')\n    .get",
+          "lineNumber": 43
+        },
+        {
+          "caller": "enqueueLanSyncOutbox",
+          "callee": "db\n    .prepare",
+          "lineNumber": 43
+        },
+        {
+          "caller": "enqueueLanSyncOutbox",
+          "callee": "db.prepare(\n      `DELETE FROM lan_sync_outbox\n       WHERE id IN (\n         SELECT id FROM lan_sync_outbox\n         WHERE room_id = ?\n         ORDER BY enqueued_at ASC, id ASC\n         LIMIT ?\n       )`\n    ).run",
+          "lineNumber": 48
+        },
+        {
+          "caller": "enqueueLanSyncOutbox",
+          "callee": "db.prepare",
+          "lineNumber": 48
+        },
+        {
+          "caller": "enqueueLanSyncOutbox",
+          "callee": "Number",
+          "lineNumber": 58
+        },
+        {
+          "caller": "drainLanSyncOutbox",
+          "callee": "trimRoomId",
+          "lineNumber": 67
+        },
+        {
+          "caller": "drainLanSyncOutbox",
+          "callee": "db\n    .prepare(\n      `SELECT id, kind, payload_json, enqueued_at, attempts, last_error\n       FROM lan_sync_outbox\n       WHERE room_id = ?\n       ORDER BY enqueued_at ASC, id ASC`\n    )\n    .all",
+          "lineNumber": 69
+        },
+        {
+          "caller": "drainLanSyncOutbox",
+          "callee": "db\n    .prepare",
+          "lineNumber": 69
+        },
+        {
+          "caller": "drainLanSyncOutbox",
+          "callee": "rows.map",
+          "lineNumber": 78
+        },
+        {
+          "caller": "drainLanSyncOutbox",
+          "callee": "db.prepare(\n    `DELETE FROM lan_sync_outbox WHERE id IN (${ids.map(() => '?').join(',')})`\n  ).run",
+          "lineNumber": 79
+        },
+        {
+          "caller": "drainLanSyncOutbox",
+          "callee": "db.prepare",
+          "lineNumber": 79
+        },
+        {
+          "caller": "drainLanSyncOutbox",
+          "callee": "ids.map(() => '?').join",
+          "lineNumber": 80
+        },
+        {
+          "caller": "drainLanSyncOutbox",
+          "callee": "ids.map",
+          "lineNumber": 80
+        },
+        {
+          "caller": "drainLanSyncOutbox",
+          "callee": "rows.map",
+          "lineNumber": 82
+        },
+        {
+          "caller": "drainLanSyncOutbox",
+          "callee": "parsePayloadJson",
+          "lineNumber": 85
+        },
+        {
+          "caller": "countLanSyncOutbox",
+          "callee": "trimRoomId",
+          "lineNumber": 97
+        },
+        {
+          "caller": "countLanSyncOutbox",
+          "callee": "db\n    .prepare('SELECT COUNT(*) AS c FROM lan_sync_outbox WHERE room_id = ?')\n    .get",
+          "lineNumber": 99
+        },
+        {
+          "caller": "countLanSyncOutbox",
+          "callee": "db\n    .prepare",
+          "lineNumber": 99
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 6,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/db/lan-sync-outbox.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 82,
+      "nonEmptyLines": 78,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/db/migrate-from-legacy.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 55,
+      "nonEmptyLines": 50,
+      "functions": [
+        {
+          "name": "jsonForBlob",
+          "startLine": 5,
+          "endLine": 9,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "migrateFromLegacy",
+          "startLine": 19,
+          "endLine": 55,
+          "params": [
+            "db",
+            "auditFn"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "migrateFromLegacy",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "jsonForBlob",
+          "callee": "JSON.stringify",
+          "lineNumber": 8
+        },
+        {
+          "caller": "migrateFromLegacy",
+          "callee": "new Date().toISOString",
+          "lineNumber": 24
+        },
+        {
+          "caller": "migrateFromLegacy",
+          "callee": "Object.entries",
+          "lineNumber": 27
+        },
+        {
+          "caller": "migrateFromLegacy",
+          "callee": "Object.prototype.hasOwnProperty.call",
+          "lineNumber": 28
+        },
+        {
+          "caller": "migrateFromLegacy",
+          "callee": "jsonForBlob",
+          "lineNumber": 29
+        },
+        {
+          "caller": "migrateFromLegacy",
+          "callee": "upsertBlob",
+          "lineNumber": 31
+        },
+        {
+          "caller": "migrateFromLegacy",
+          "callee": "importedBlobKeys.push",
+          "lineNumber": 32
+        },
+        {
+          "caller": "migrateFromLegacy",
+          "callee": "writeHostState",
+          "lineNumber": 35
+        },
+        {
+          "caller": "migrateFromLegacy",
+          "callee": "Array.isArray",
+          "lineNumber": 38
+        },
+        {
+          "caller": "migrateFromLegacy",
+          "callee": "Array.isArray",
+          "lineNumber": 39
+        },
+        {
+          "caller": "migrateFromLegacy",
+          "callee": "auditFn",
+          "lineNumber": 47
+        },
+        {
+          "caller": "migrateFromLegacy",
+          "callee": "Array.isArray",
+          "lineNumber": 50
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/db/migrate-from-legacy.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 106,
+      "nonEmptyLines": 98,
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/db/migration-probe.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 173,
+      "nonEmptyLines": 154,
+      "functions": [
+        {
+          "name": "hostJsonPath",
+          "startLine": 14,
+          "endLine": 16,
+          "params": [
+            "userDataPath"
+          ]
+        },
+        {
+          "name": "hostMigratedPath",
+          "startLine": 18,
+          "endLine": 20,
+          "params": [
+            "userDataPath"
+          ]
+        },
+        {
+          "name": "lsMigratedExportPath",
+          "startLine": 22,
+          "endLine": 24,
+          "params": [
+            "userDataPath"
+          ]
+        },
+        {
+          "name": "legacyMigrationMarkersPending",
+          "startLine": 27,
+          "endLine": 35,
+          "params": [
+            "userDataPath"
+          ]
+        },
+        {
+          "name": "migrationAlreadyFinalized",
+          "startLine": 37,
+          "endLine": 39,
+          "params": [
+            "userDataPath"
+          ]
+        },
+        {
+          "name": "snapshotHasClinicalKeys",
+          "startLine": 44,
+          "endLine": 53,
+          "params": [
+            "lsSnapshot"
+          ]
+        },
+        {
+          "name": "probeMigrationNeeded",
+          "startLine": 58,
+          "endLine": 66,
+          "params": []
+        },
+        {
+          "name": "migrationPending",
+          "startLine": 72,
+          "endLine": 83,
+          "params": [
+            "userDataPath",
+            "db"
+          ]
+        },
+        {
+          "name": "readTeamCodeHash",
+          "startLine": 85,
+          "endLine": 91,
+          "params": [
+            "userDataPath",
+            "hostStateObject"
+          ]
+        },
+        {
+          "name": "finalizeLegacyMigrationArtifacts",
+          "startLine": 97,
+          "endLine": 119,
+          "params": [
+            "userDataPath",
+            "lsSnapshot"
+          ]
+        },
+        {
+          "name": "runLegacyMigrationIfNeeded",
+          "startLine": 128,
+          "endLine": 173,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "hostJsonPath",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "hostMigratedPath",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "lsMigratedExportPath",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "legacyMigrationMarkersPending",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "migrationAlreadyFinalized",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "snapshotHasClinicalKeys",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "probeMigrationNeeded",
+          "line": 58,
+          "isDefault": false
+        },
+        {
+          "name": "migrationPending",
+          "line": 72,
+          "isDefault": false
+        },
+        {
+          "name": "readTeamCodeHash",
+          "line": 85,
+          "isDefault": false
+        },
+        {
+          "name": "finalizeLegacyMigrationArtifacts",
+          "line": 97,
+          "isDefault": false
+        },
+        {
+          "name": "runLegacyMigrationIfNeeded",
+          "line": 128,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "hostJsonPath",
+          "callee": "path.join",
+          "lineNumber": 15
+        },
+        {
+          "caller": "hostMigratedPath",
+          "callee": "path.join",
+          "lineNumber": 19
+        },
+        {
+          "caller": "lsMigratedExportPath",
+          "callee": "path.join",
+          "lineNumber": 23
+        },
+        {
+          "caller": "legacyMigrationMarkersPending",
+          "callee": "hostJsonPath",
+          "lineNumber": 28
+        },
+        {
+          "caller": "legacyMigrationMarkersPending",
+          "callee": "hostMigratedPath",
+          "lineNumber": 29
+        },
+        {
+          "caller": "legacyMigrationMarkersPending",
+          "callee": "fs.existsSync",
+          "lineNumber": 30
+        },
+        {
+          "caller": "legacyMigrationMarkersPending",
+          "callee": "fs.existsSync",
+          "lineNumber": 30
+        },
+        {
+          "caller": "legacyMigrationMarkersPending",
+          "callee": "path.join",
+          "lineNumber": 31
+        },
+        {
+          "caller": "legacyMigrationMarkersPending",
+          "callee": "lsMigratedExportPath",
+          "lineNumber": 32
+        },
+        {
+          "caller": "legacyMigrationMarkersPending",
+          "callee": "fs.existsSync",
+          "lineNumber": 33
+        },
+        {
+          "caller": "legacyMigrationMarkersPending",
+          "callee": "fs.existsSync",
+          "lineNumber": 33
+        },
+        {
+          "caller": "migrationAlreadyFinalized",
+          "callee": "fs.existsSync",
+          "lineNumber": 38
+        },
+        {
+          "caller": "migrationAlreadyFinalized",
+          "callee": "hostMigratedPath",
+          "lineNumber": 38
+        },
+        {
+          "caller": "migrationAlreadyFinalized",
+          "callee": "fs.existsSync",
+          "lineNumber": 38
+        },
+        {
+          "caller": "migrationAlreadyFinalized",
+          "callee": "lsMigratedExportPath",
+          "lineNumber": 38
+        },
+        {
+          "caller": "snapshotHasClinicalKeys",
+          "callee": "Object.keys",
+          "lineNumber": 46
+        },
+        {
+          "caller": "snapshotHasClinicalKeys",
+          "callee": "Object.prototype.hasOwnProperty.call",
+          "lineNumber": 47
+        },
+        {
+          "caller": "probeMigrationNeeded",
+          "callee": "fs.existsSync",
+          "lineNumber": 59
+        },
+        {
+          "caller": "probeMigrationNeeded",
+          "callee": "hostJsonPath",
+          "lineNumber": 59
+        },
+        {
+          "caller": "probeMigrationNeeded",
+          "callee": "migrationAlreadyFinalized",
+          "lineNumber": 60
+        },
+        {
+          "caller": "probeMigrationNeeded",
+          "callee": "snapshotHasClinicalKeys",
+          "lineNumber": 63
+        },
+        {
+          "caller": "migrationPending",
+          "callee": "legacyMigrationMarkersPending",
+          "lineNumber": 73
+        },
+        {
+          "caller": "migrationPending",
+          "callee": "db.prepare('SELECT COUNT(*) AS c FROM clinical_blob').get",
+          "lineNumber": 76
+        },
+        {
+          "caller": "migrationPending",
+          "callee": "db.prepare",
+          "lineNumber": 76
+        },
+        {
+          "caller": "readTeamCodeHash",
+          "callee": "String",
+          "lineNumber": 86
+        },
+        {
+          "caller": "readTeamCodeHash",
+          "callee": "path.join",
+          "lineNumber": 87
+        },
+        {
+          "caller": "readTeamCodeHash",
+          "callee": "fs.existsSync",
+          "lineNumber": 88
+        },
+        {
+          "caller": "readTeamCodeHash",
+          "callee": "hashTeamCode",
+          "lineNumber": 88
+        },
+        {
+          "caller": "readTeamCodeHash",
+          "callee": "fs.readFileSync(teamPath, 'utf8').trim",
+          "lineNumber": 89
+        },
+        {
+          "caller": "readTeamCodeHash",
+          "callee": "fs.readFileSync",
+          "lineNumber": 89
+        },
+        {
+          "caller": "readTeamCodeHash",
+          "callee": "hashTeamCode",
+          "lineNumber": 90
+        },
+        {
+          "caller": "finalizeLegacyMigrationArtifacts",
+          "callee": "hostJsonPath",
+          "lineNumber": 98
+        },
+        {
+          "caller": "finalizeLegacyMigrationArtifacts",
+          "callee": "hostMigratedPath",
+          "lineNumber": 99
+        },
+        {
+          "caller": "finalizeLegacyMigrationArtifacts",
+          "callee": "fs.existsSync",
+          "lineNumber": 100
+        },
+        {
+          "caller": "finalizeLegacyMigrationArtifacts",
+          "callee": "fs.existsSync",
+          "lineNumber": 100
+        },
+        {
+          "caller": "finalizeLegacyMigrationArtifacts",
+          "callee": "fs.renameSync",
+          "lineNumber": 101
+        },
+        {
+          "caller": "finalizeLegacyMigrationArtifacts",
+          "callee": "lsMigratedExportPath",
+          "lineNumber": 103
+        },
+        {
+          "caller": "finalizeLegacyMigrationArtifacts",
+          "callee": "fs.existsSync",
+          "lineNumber": 104
+        },
+        {
+          "caller": "finalizeLegacyMigrationArtifacts",
+          "callee": "fs.writeFileSync",
+          "lineNumber": 105
+        },
+        {
+          "caller": "finalizeLegacyMigrationArtifacts",
+          "callee": "JSON.stringify",
+          "lineNumber": 107
+        },
+        {
+          "caller": "finalizeLegacyMigrationArtifacts",
+          "callee": "new Date().toISOString",
+          "lineNumber": 109
+        },
+        {
+          "caller": "finalizeLegacyMigrationArtifacts",
+          "callee": "Object.keys",
+          "lineNumber": 118
+        },
+        {
+          "caller": "runLegacyMigrationIfNeeded",
+          "callee": "probeMigrationNeeded",
+          "lineNumber": 129
+        },
+        {
+          "caller": "runLegacyMigrationIfNeeded",
+          "callee": "dbManager.getDb",
+          "lineNumber": 134
+        },
+        {
+          "caller": "runLegacyMigrationIfNeeded",
+          "callee": "db.prepare('SELECT COUNT(*) AS c FROM clinical_blob').get",
+          "lineNumber": 141
+        },
+        {
+          "caller": "runLegacyMigrationIfNeeded",
+          "callee": "db.prepare",
+          "lineNumber": 141
+        },
+        {
+          "caller": "runLegacyMigrationIfNeeded",
+          "callee": "hostJsonPath",
+          "lineNumber": 152
+        },
+        {
+          "caller": "runLegacyMigrationIfNeeded",
+          "callee": "fs.existsSync",
+          "lineNumber": 153
+        },
+        {
+          "caller": "runLegacyMigrationIfNeeded",
+          "callee": "JSON.parse",
+          "lineNumber": 155
+        },
+        {
+          "caller": "runLegacyMigrationIfNeeded",
+          "callee": "fs.readFileSync",
+          "lineNumber": 155
+        },
+        {
+          "caller": "runLegacyMigrationIfNeeded",
+          "callee": "readTeamCodeHash",
+          "lineNumber": 161
+        },
+        {
+          "caller": "runLegacyMigrationIfNeeded",
+          "callee": "dbManager.withTransaction",
+          "lineNumber": 163
+        },
+        {
+          "caller": "runLegacyMigrationIfNeeded",
+          "callee": "migrateFromLegacy",
+          "lineNumber": 164
+        },
+        {
+          "caller": "runLegacyMigrationIfNeeded",
+          "callee": "finalizeLegacyMigrationArtifacts",
+          "lineNumber": 171
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 11,
+        "functionCount": 11,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/db/migration-probe.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 137,
+      "nonEmptyLines": 125,
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/db/native-load.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 38,
+      "nonEmptyLines": 34,
+      "functions": [
+        {
+          "name": "loadNativeDatabase",
+          "startLine": 5,
+          "endLine": 11,
+          "params": []
+        },
+        {
+          "name": "probeNativeDatabaseLoad",
+          "startLine": 14,
+          "endLine": 25,
+          "params": []
+        },
+        {
+          "name": "toNativeLoadError",
+          "startLine": 28,
+          "endLine": 38,
+          "params": [
+            "e"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "loadNativeDatabase",
+          "line": 5,
+          "isDefault": false
+        },
+        {
+          "name": "probeNativeDatabaseLoad",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "loadNativeDatabase",
+          "callee": "require",
+          "lineNumber": 7
+        },
+        {
+          "caller": "loadNativeDatabase",
+          "callee": "toNativeLoadError",
+          "lineNumber": 9
+        },
+        {
+          "caller": "probeNativeDatabaseLoad",
+          "callee": "loadNativeDatabase",
+          "lineNumber": 16
+        },
+        {
+          "caller": "toNativeLoadError",
+          "callee": "String",
+          "lineNumber": 29
+        },
+        {
+          "caller": "toNativeLoadError",
+          "callee": "/NODE_MODULE_VERSION|was compiled against a different/i.test",
+          "lineNumber": 31
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/db/schema.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 727,
+      "nonEmptyLines": 676,
+      "functions": [
+        {
+          "name": "tableExists",
+          "startLine": 35,
+          "endLine": 39,
+          "params": [
+            "db",
+            "name"
+          ]
+        },
+        {
+          "name": "ensureClinicalAccessTables",
+          "startLine": 42,
+          "endLine": 110,
+          "params": [
+            "db"
+          ]
+        },
+        {
+          "name": "migrateToV1",
+          "startLine": 113,
+          "endLine": 126,
+          "params": [
+            "db"
+          ]
+        },
+        {
+          "name": "migrateToV2",
+          "startLine": 129,
+          "endLine": 175,
+          "params": [
+            "db"
+          ]
+        },
+        {
+          "name": "migrateToV3",
+          "startLine": 178,
+          "endLine": 200,
+          "params": [
+            "db"
+          ]
+        },
+        {
+          "name": "migrateToV4",
+          "startLine": 203,
+          "endLine": 216,
+          "params": [
+            "db"
+          ]
+        },
+        {
+          "name": "migrateToV5",
+          "startLine": 219,
+          "endLine": 228,
+          "params": [
+            "db"
+          ]
+        },
+        {
+          "name": "migrateToV6",
+          "startLine": 231,
+          "endLine": 251,
+          "params": [
+            "db"
+          ]
+        },
+        {
+          "name": "migrateToV7",
+          "startLine": 254,
+          "endLine": 278,
+          "params": [
+            "db"
+          ]
+        },
+        {
+          "name": "migrateToV8",
+          "startLine": 281,
+          "endLine": 305,
+          "params": [
+            "db"
+          ]
+        },
+        {
+          "name": "migrateToV9",
+          "startLine": 308,
+          "endLine": 324,
+          "params": [
+            "db"
+          ]
+        },
+        {
+          "name": "migrateToV11",
+          "startLine": 327,
+          "endLine": 427,
+          "params": [
+            "db"
+          ]
+        },
+        {
+          "name": "migrateToV12",
+          "startLine": 430,
+          "endLine": 458,
+          "params": [
+            "db"
+          ]
+        },
+        {
+          "name": "migrateToV10",
+          "startLine": 461,
+          "endLine": 483,
+          "params": [
+            "db"
+          ]
+        },
+        {
+          "name": "applyMigrations",
+          "startLine": 486,
+          "endLine": 575,
+          "params": [
+            "db"
+          ]
+        },
+        {
+          "name": "migrateToV16UserLastActivity",
+          "startLine": 578,
+          "endLine": 588,
+          "params": [
+            "db"
+          ]
+        },
+        {
+          "name": "migrateToV17UserActivityBackfill",
+          "startLine": 591,
+          "endLine": 605,
+          "params": [
+            "db"
+          ]
+        },
+        {
+          "name": "migrateToV15LanHostTables",
+          "startLine": 608,
+          "endLine": 667,
+          "params": [
+            "db"
+          ]
+        },
+        {
+          "name": "migrateToV13",
+          "startLine": 670,
+          "endLine": 683,
+          "params": [
+            "db"
+          ]
+        },
+        {
+          "name": "migrateToV14",
+          "startLine": 686,
+          "endLine": 717,
+          "params": [
+            "db"
+          ]
+        },
+        {
+          "name": "readSchemaVersion",
+          "startLine": 719,
+          "endLine": 727,
+          "params": [
+            "db"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "SCHEMA_VERSION",
+          "line": 4,
+          "isDefault": false
+        },
+        {
+          "name": "applyMigrations",
+          "line": 486,
+          "isDefault": false
+        },
+        {
+          "name": "migrateToV16UserLastActivity",
+          "line": 578,
+          "isDefault": false
+        },
+        {
+          "name": "migrateToV17UserActivityBackfill",
+          "line": 591,
+          "isDefault": false
+        },
+        {
+          "name": "migrateToV15LanHostTables",
+          "line": 608,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "tableExists",
+          "callee": "db\n    .prepare(\"SELECT 1 FROM sqlite_master WHERE type = 'table' AND name = ?\")\n    .get",
+          "lineNumber": 36
+        },
+        {
+          "caller": "tableExists",
+          "callee": "db\n    .prepare",
+          "lineNumber": 36
+        },
+        {
+          "caller": "ensureClinicalAccessTables",
+          "callee": "db.exec",
+          "lineNumber": 43
+        },
+        {
+          "caller": "ensureClinicalAccessTables",
+          "callee": "tableExists",
+          "lineNumber": 87
+        },
+        {
+          "caller": "ensureClinicalAccessTables",
+          "callee": "db.exec",
+          "lineNumber": 88
+        },
+        {
+          "caller": "ensureClinicalAccessTables",
+          "callee": "db.prepare('PRAGMA table_info(patients)').all().map",
+          "lineNumber": 91
+        },
+        {
+          "caller": "ensureClinicalAccessTables",
+          "callee": "db.prepare('PRAGMA table_info(patients)').all",
+          "lineNumber": 91
+        },
+        {
+          "caller": "ensureClinicalAccessTables",
+          "callee": "db.prepare",
+          "lineNumber": 91
+        },
+        {
+          "caller": "ensureClinicalAccessTables",
+          "callee": "patientCols.includes",
+          "lineNumber": 92
+        },
+        {
+          "caller": "ensureClinicalAccessTables",
+          "callee": "db.exec",
+          "lineNumber": 93
+        },
+        {
+          "caller": "ensureClinicalAccessTables",
+          "callee": "patientCols.includes",
+          "lineNumber": 97
+        },
+        {
+          "caller": "ensureClinicalAccessTables",
+          "callee": "db.exec",
+          "lineNumber": 98
+        },
+        {
+          "caller": "ensureClinicalAccessTables",
+          "callee": "patientCols.includes",
+          "lineNumber": 102
+        },
+        {
+          "caller": "ensureClinicalAccessTables",
+          "callee": "db.exec",
+          "lineNumber": 103
+        },
+        {
+          "caller": "ensureClinicalAccessTables",
+          "callee": "patientCols.includes",
+          "lineNumber": 105
+        },
+        {
+          "caller": "ensureClinicalAccessTables",
+          "callee": "db.exec",
+          "lineNumber": 106
+        },
+        {
+          "caller": "migrateToV1",
+          "callee": "new Date().toISOString",
+          "lineNumber": 114
+        },
+        {
+          "caller": "migrateToV1",
+          "callee": "db.exec",
+          "lineNumber": 116
+        },
+        {
+          "caller": "migrateToV1",
+          "callee": "ensureClinicalAccessTables",
+          "lineNumber": 119
+        },
+        {
+          "caller": "migrateToV1",
+          "callee": "db.prepare",
+          "lineNumber": 121
+        },
+        {
+          "caller": "migrateToV1",
+          "callee": "upsert.run",
+          "lineNumber": 124
+        },
+        {
+          "caller": "migrateToV1",
+          "callee": "upsert.run",
+          "lineNumber": 125
+        },
+        {
+          "caller": "migrateToV2",
+          "callee": "ensureClinicalAccessTables",
+          "lineNumber": 131
+        },
+        {
+          "caller": "migrateToV2",
+          "callee": "db.exec",
+          "lineNumber": 133
+        },
+        {
+          "caller": "migrateToV2",
+          "callee": "tableExists",
+          "lineNumber": 165
+        },
+        {
+          "caller": "migrateToV2",
+          "callee": "db.prepare('PRAGMA table_info(teams)').all().map",
+          "lineNumber": 166
+        },
+        {
+          "caller": "migrateToV2",
+          "callee": "db.prepare('PRAGMA table_info(teams)').all",
+          "lineNumber": 166
+        },
+        {
+          "caller": "migrateToV2",
+          "callee": "db.prepare",
+          "lineNumber": 166
+        },
+        {
+          "caller": "migrateToV2",
+          "callee": "teamCols.includes",
+          "lineNumber": 167
+        },
+        {
+          "caller": "migrateToV2",
+          "callee": "db.exec",
+          "lineNumber": 168
+        },
+        {
+          "caller": "migrateToV2",
+          "callee": "db.prepare(\n    'INSERT INTO app_meta (key, value) VALUES (?, ?) ON CONFLICT(key) DO UPDATE SET value = excluded.value'\n  ).run",
+          "lineNumber": 172
+        },
+        {
+          "caller": "migrateToV2",
+          "callee": "db.prepare",
+          "lineNumber": 172
+        },
+        {
+          "caller": "migrateToV2",
+          "callee": "String",
+          "lineNumber": 174
+        },
+        {
+          "caller": "migrateToV3",
+          "callee": "db.prepare('PRAGMA table_info(users)').all().map",
+          "lineNumber": 180
+        },
+        {
+          "caller": "migrateToV3",
+          "callee": "db.prepare('PRAGMA table_info(users)').all",
+          "lineNumber": 180
+        },
+        {
+          "caller": "migrateToV3",
+          "callee": "db.prepare",
+          "lineNumber": 180
+        },
+        {
+          "caller": "migrateToV3",
+          "callee": "userCols.includes",
+          "lineNumber": 181
+        },
+        {
+          "caller": "migrateToV3",
+          "callee": "db.exec",
+          "lineNumber": 182
+        },
+        {
+          "caller": "migrateToV3",
+          "callee": "userCols.includes",
+          "lineNumber": 184
+        },
+        {
+          "caller": "migrateToV3",
+          "callee": "db.exec",
+          "lineNumber": 185
+        },
+        {
+          "caller": "migrateToV3",
+          "callee": "db.prepare('PRAGMA table_info(teams)').all().map",
+          "lineNumber": 189
+        },
+        {
+          "caller": "migrateToV3",
+          "callee": "db.prepare('PRAGMA table_info(teams)').all",
+          "lineNumber": 189
+        },
+        {
+          "caller": "migrateToV3",
+          "callee": "db.prepare",
+          "lineNumber": 189
+        },
+        {
+          "caller": "migrateToV3",
+          "callee": "teamCols.includes",
+          "lineNumber": 190
+        },
+        {
+          "caller": "migrateToV3",
+          "callee": "db.exec",
+          "lineNumber": 191
+        },
+        {
+          "caller": "migrateToV3",
+          "callee": "teamCols.includes",
+          "lineNumber": 193
+        },
+        {
+          "caller": "migrateToV3",
+          "callee": "db.exec",
+          "lineNumber": 194
+        },
+        {
+          "caller": "migrateToV3",
+          "callee": "db.prepare(\n    'INSERT INTO app_meta (key, value) VALUES (?, ?) ON CONFLICT(key) DO UPDATE SET value = excluded.value'\n  ).run",
+          "lineNumber": 197
+        },
+        {
+          "caller": "migrateToV3",
+          "callee": "db.prepare",
+          "lineNumber": 197
+        },
+        {
+          "caller": "migrateToV4",
+          "callee": "db.prepare('PRAGMA table_info(teams)').all().map",
+          "lineNumber": 205
+        },
+        {
+          "caller": "migrateToV4",
+          "callee": "db.prepare('PRAGMA table_info(teams)').all",
+          "lineNumber": 205
+        },
+        {
+          "caller": "migrateToV4",
+          "callee": "db.prepare",
+          "lineNumber": 205
+        },
+        {
+          "caller": "migrateToV4",
+          "callee": "teamCols.includes",
+          "lineNumber": 206
+        },
+        {
+          "caller": "migrateToV4",
+          "callee": "db.exec",
+          "lineNumber": 207
+        },
+        {
+          "caller": "migrateToV4",
+          "callee": "teamCols.includes",
+          "lineNumber": 209
+        },
+        {
+          "caller": "migrateToV4",
+          "callee": "db.exec",
+          "lineNumber": 210
+        },
+        {
+          "caller": "migrateToV4",
+          "callee": "db.prepare(\n    'INSERT INTO app_meta (key, value) VALUES (?, ?) ON CONFLICT(key) DO UPDATE SET value = excluded.value'\n  ).run",
+          "lineNumber": 213
+        },
+        {
+          "caller": "migrateToV4",
+          "callee": "db.prepare",
+          "lineNumber": 213
+        },
+        {
+          "caller": "migrateToV5",
+          "callee": "db.prepare('PRAGMA table_info(users)').all().map",
+          "lineNumber": 220
+        },
+        {
+          "caller": "migrateToV5",
+          "callee": "db.prepare('PRAGMA table_info(users)').all",
+          "lineNumber": 220
+        },
+        {
+          "caller": "migrateToV5",
+          "callee": "db.prepare",
+          "lineNumber": 220
+        },
+        {
+          "caller": "migrateToV5",
+          "callee": "userCols.includes",
+          "lineNumber": 221
+        },
+        {
+          "caller": "migrateToV5",
+          "callee": "db.exec",
+          "lineNumber": 222
+        },
+        {
+          "caller": "migrateToV5",
+          "callee": "db.prepare(`UPDATE users SET is_program_admin = 1 WHERE rank = 'Admin'`).run",
+          "lineNumber": 224
+        },
+        {
+          "caller": "migrateToV5",
+          "callee": "db.prepare",
+          "lineNumber": 224
+        },
+        {
+          "caller": "migrateToV5",
+          "callee": "db.prepare(\n    'INSERT INTO app_meta (key, value) VALUES (?, ?) ON CONFLICT(key) DO UPDATE SET value = excluded.value'\n  ).run",
+          "lineNumber": 225
+        },
+        {
+          "caller": "migrateToV5",
+          "callee": "db.prepare",
+          "lineNumber": 225
+        },
+        {
+          "caller": "migrateToV6",
+          "callee": "db.prepare('PRAGMA table_info(team_membership)').all().map",
+          "lineNumber": 232
+        },
+        {
+          "caller": "migrateToV6",
+          "callee": "db.prepare('PRAGMA table_info(team_membership)').all",
+          "lineNumber": 232
+        },
+        {
+          "caller": "migrateToV6",
+          "callee": "db.prepare",
+          "lineNumber": 232
+        },
+        {
+          "caller": "migrateToV6",
+          "callee": "membershipCols.includes",
+          "lineNumber": 233
+        },
+        {
+          "caller": "migrateToV6",
+          "callee": "db.exec",
+          "lineNumber": 234
+        },
+        {
+          "caller": "migrateToV6",
+          "callee": "db.exec",
+          "lineNumber": 236
+        },
+        {
+          "caller": "migrateToV6",
+          "callee": "db.prepare(\n    'INSERT INTO app_meta (key, value) VALUES (?, ?) ON CONFLICT(key) DO UPDATE SET value = excluded.value'\n  ).run",
+          "lineNumber": 248
+        },
+        {
+          "caller": "migrateToV6",
+          "callee": "db.prepare",
+          "lineNumber": 248
+        },
+        {
+          "caller": "migrateToV7",
+          "callee": "db.exec",
+          "lineNumber": 255
+        },
+        {
+          "caller": "migrateToV7",
+          "callee": "db.prepare",
+          "lineNumber": 267
+        },
+        {
+          "caller": "migrateToV7",
+          "callee": "insert.run",
+          "lineNumber": 272
+        },
+        {
+          "caller": "migrateToV7",
+          "callee": "crypto.randomBytes(32).toString",
+          "lineNumber": 272
+        },
+        {
+          "caller": "migrateToV7",
+          "callee": "crypto.randomBytes",
+          "lineNumber": 272
+        },
+        {
+          "caller": "migrateToV7",
+          "callee": "db.prepare(\n    'INSERT INTO app_meta (key, value) VALUES (?, ?) ON CONFLICT(key) DO UPDATE SET value = excluded.value'\n  ).run",
+          "lineNumber": 275
+        },
+        {
+          "caller": "migrateToV7",
+          "callee": "db.prepare",
+          "lineNumber": 275
+        },
+        {
+          "caller": "migrateToV8",
+          "callee": "db.exec",
+          "lineNumber": 282
+        },
+        {
+          "caller": "migrateToV8",
+          "callee": "db.prepare(\n    'INSERT INTO app_meta (key, value) VALUES (?, ?) ON CONFLICT(key) DO UPDATE SET value = excluded.value'\n  ).run",
+          "lineNumber": 302
+        },
+        {
+          "caller": "migrateToV8",
+          "callee": "db.prepare",
+          "lineNumber": 302
+        },
+        {
+          "caller": "migrateToV9",
+          "callee": "db.exec",
+          "lineNumber": 309
+        },
+        {
+          "caller": "migrateToV9",
+          "callee": "db.prepare(\n    'INSERT INTO app_meta (key, value) VALUES (?, ?) ON CONFLICT(key) DO UPDATE SET value = excluded.value'\n  ).run",
+          "lineNumber": 321
+        },
+        {
+          "caller": "migrateToV9",
+          "callee": "db.prepare",
+          "lineNumber": 321
+        },
+        {
+          "caller": "migrateToV11",
+          "callee": "clinicalSalaSqlCheck",
+          "lineNumber": 328
+        },
+        {
+          "caller": "migrateToV11",
+          "callee": "clinicalSalaSqlCheck",
+          "lineNumber": 329
+        },
+        {
+          "caller": "migrateToV11",
+          "callee": "tableExists",
+          "lineNumber": 331
+        },
+        {
+          "caller": "migrateToV11",
+          "callee": "db.exec",
+          "lineNumber": 332
+        },
+        {
+          "caller": "migrateToV11",
+          "callee": "tableExists",
+          "lineNumber": 358
+        },
+        {
+          "caller": "migrateToV11",
+          "callee": "db.exec",
+          "lineNumber": 359
+        },
+        {
+          "caller": "migrateToV11",
+          "callee": "tableExists",
+          "lineNumber": 387
+        },
+        {
+          "caller": "migrateToV11",
+          "callee": "db.exec",
+          "lineNumber": 388
+        },
+        {
+          "caller": "migrateToV11",
+          "callee": "db.exec",
+          "lineNumber": 404
+        },
+        {
+          "caller": "migrateToV11",
+          "callee": "db.prepare",
+          "lineNumber": 416
+        },
+        {
+          "caller": "migrateToV11",
+          "callee": "insertInterno.run",
+          "lineNumber": 421
+        },
+        {
+          "caller": "migrateToV11",
+          "callee": "crypto.randomBytes(32).toString",
+          "lineNumber": 421
+        },
+        {
+          "caller": "migrateToV11",
+          "callee": "crypto.randomBytes",
+          "lineNumber": 421
+        },
+        {
+          "caller": "migrateToV11",
+          "callee": "db.prepare(\n    'INSERT INTO app_meta (key, value) VALUES (?, ?) ON CONFLICT(key) DO UPDATE SET value = excluded.value'\n  ).run",
+          "lineNumber": 424
+        },
+        {
+          "caller": "migrateToV11",
+          "callee": "db.prepare",
+          "lineNumber": 424
+        },
+        {
+          "caller": "migrateToV12",
+          "callee": "tableExists",
+          "lineNumber": 431
+        },
+        {
+          "caller": "migrateToV12",
+          "callee": "db.prepare(\n      'INSERT INTO app_meta (key, value) VALUES (?, ?) ON CONFLICT(key) DO UPDATE SET value = excluded.value'\n    ).run",
+          "lineNumber": 432
+        },
+        {
+          "caller": "migrateToV12",
+          "callee": "db.prepare",
+          "lineNumber": 432
+        },
+        {
+          "caller": "migrateToV12",
+          "callee": "db.exec",
+          "lineNumber": 437
+        },
+        {
+          "caller": "migrateToV12",
+          "callee": "db.prepare(\n    'INSERT INTO app_meta (key, value) VALUES (?, ?) ON CONFLICT(key) DO UPDATE SET value = excluded.value'\n  ).run",
+          "lineNumber": 455
+        },
+        {
+          "caller": "migrateToV12",
+          "callee": "db.prepare",
+          "lineNumber": 455
+        },
+        {
+          "caller": "migrateToV10",
+          "callee": "db.exec",
+          "lineNumber": 462
+        },
+        {
+          "caller": "migrateToV10",
+          "callee": "db.prepare(\n    'INSERT INTO app_meta (key, value) VALUES (?, ?) ON CONFLICT(key) DO UPDATE SET value = excluded.value'\n  ).run",
+          "lineNumber": 480
+        },
+        {
+          "caller": "migrateToV10",
+          "callee": "db.prepare",
+          "lineNumber": 480
+        },
+        {
+          "caller": "applyMigrations",
+          "callee": "readSchemaVersion",
+          "lineNumber": 487
+        },
+        {
+          "caller": "applyMigrations",
+          "callee": "db.transaction",
+          "lineNumber": 490
+        },
+        {
+          "caller": "applyMigrations",
+          "callee": "migrateToV1",
+          "lineNumber": 493
+        },
+        {
+          "caller": "applyMigrations",
+          "callee": "migrateToV2",
+          "lineNumber": 497
+        },
+        {
+          "caller": "applyMigrations",
+          "callee": "migrateToV3",
+          "lineNumber": 500
+        },
+        {
+          "caller": "applyMigrations",
+          "callee": "migrateToV4",
+          "lineNumber": 503
+        },
+        {
+          "caller": "applyMigrations",
+          "callee": "migrateToV5",
+          "lineNumber": 506
+        },
+        {
+          "caller": "applyMigrations",
+          "callee": "migrateToV6",
+          "lineNumber": 509
+        },
+        {
+          "caller": "applyMigrations",
+          "callee": "migrateToV7",
+          "lineNumber": 512
+        },
+        {
+          "caller": "applyMigrations",
+          "callee": "migrateToV8",
+          "lineNumber": 515
+        },
+        {
+          "caller": "applyMigrations",
+          "callee": "migrateToV9",
+          "lineNumber": 518
+        },
+        {
+          "caller": "applyMigrations",
+          "callee": "migrateToV10",
+          "lineNumber": 521
+        },
+        {
+          "caller": "applyMigrations",
+          "callee": "run",
+          "lineNumber": 524
+        },
+        {
+          "caller": "applyMigrations",
+          "callee": "readSchemaVersion",
+          "lineNumber": 528
+        },
+        {
+          "caller": "applyMigrations",
+          "callee": "db.pragma",
+          "lineNumber": 529
+        },
+        {
+          "caller": "applyMigrations",
+          "callee": "db.transaction",
+          "lineNumber": 531
+        },
+        {
+          "caller": "applyMigrations",
+          "callee": "migrateToV11",
+          "lineNumber": 532
+        },
+        {
+          "caller": "applyMigrations",
+          "callee": "runV11",
+          "lineNumber": 534
+        },
+        {
+          "caller": "applyMigrations",
+          "callee": "db.pragma",
+          "lineNumber": 536
+        },
+        {
+          "caller": "applyMigrations",
+          "callee": "readSchemaVersion",
+          "lineNumber": 539
+        },
+        {
+          "caller": "applyMigrations",
+          "callee": "db.transaction",
+          "lineNumber": 540
+        },
+        {
+          "caller": "applyMigrations",
+          "callee": "migrateToV12",
+          "lineNumber": 541
+        },
+        {
+          "caller": "applyMigrations",
+          "callee": "runV12",
+          "lineNumber": 543
+        },
+        {
+          "caller": "applyMigrations",
+          "callee": "readSchemaVersion",
+          "lineNumber": 545
+        },
+        {
+          "caller": "applyMigrations",
+          "callee": "db.transaction",
+          "lineNumber": 546
+        },
+        {
+          "caller": "applyMigrations",
+          "callee": "migrateToV13",
+          "lineNumber": 547
+        },
+        {
+          "caller": "applyMigrations",
+          "callee": "runV13",
+          "lineNumber": 549
+        },
+        {
+          "caller": "applyMigrations",
+          "callee": "readSchemaVersion",
+          "lineNumber": 551
+        },
+        {
+          "caller": "applyMigrations",
+          "callee": "db.transaction",
+          "lineNumber": 552
+        },
+        {
+          "caller": "applyMigrations",
+          "callee": "migrateToV14",
+          "lineNumber": 553
+        },
+        {
+          "caller": "applyMigrations",
+          "callee": "runV14",
+          "lineNumber": 555
+        },
+        {
+          "caller": "applyMigrations",
+          "callee": "readSchemaVersion",
+          "lineNumber": 557
+        },
+        {
+          "caller": "applyMigrations",
+          "callee": "db.transaction",
+          "lineNumber": 558
+        },
+        {
+          "caller": "applyMigrations",
+          "callee": "migrateToV15LanHostTables",
+          "lineNumber": 559
+        },
+        {
+          "caller": "applyMigrations",
+          "callee": "runV15",
+          "lineNumber": 561
+        },
+        {
+          "caller": "applyMigrations",
+          "callee": "readSchemaVersion",
+          "lineNumber": 563
+        },
+        {
+          "caller": "applyMigrations",
+          "callee": "db.transaction",
+          "lineNumber": 564
+        },
+        {
+          "caller": "applyMigrations",
+          "callee": "migrateToV16UserLastActivity",
+          "lineNumber": 565
+        },
+        {
+          "caller": "applyMigrations",
+          "callee": "runV16",
+          "lineNumber": 567
+        },
+        {
+          "caller": "applyMigrations",
+          "callee": "readSchemaVersion",
+          "lineNumber": 569
+        },
+        {
+          "caller": "applyMigrations",
+          "callee": "db.transaction",
+          "lineNumber": 570
+        },
+        {
+          "caller": "applyMigrations",
+          "callee": "migrateToV17UserActivityBackfill",
+          "lineNumber": 571
+        },
+        {
+          "caller": "applyMigrations",
+          "callee": "runV17",
+          "lineNumber": 573
+        },
+        {
+          "caller": "migrateToV16UserLastActivity",
+          "callee": "tableExists",
+          "lineNumber": 579
+        },
+        {
+          "caller": "migrateToV16UserLastActivity",
+          "callee": "db.prepare('PRAGMA table_info(users)').all().map",
+          "lineNumber": 580
+        },
+        {
+          "caller": "migrateToV16UserLastActivity",
+          "callee": "db.prepare('PRAGMA table_info(users)').all",
+          "lineNumber": 580
+        },
+        {
+          "caller": "migrateToV16UserLastActivity",
+          "callee": "db.prepare",
+          "lineNumber": 580
+        },
+        {
+          "caller": "migrateToV16UserLastActivity",
+          "callee": "userCols.includes",
+          "lineNumber": 581
+        },
+        {
+          "caller": "migrateToV16UserLastActivity",
+          "callee": "db.exec",
+          "lineNumber": 582
+        },
+        {
+          "caller": "migrateToV16UserLastActivity",
+          "callee": "db.prepare(\n    'INSERT INTO app_meta (key, value) VALUES (?, ?) ON CONFLICT(key) DO UPDATE SET value = excluded.value'\n  ).run",
+          "lineNumber": 585
+        },
+        {
+          "caller": "migrateToV16UserLastActivity",
+          "callee": "db.prepare",
+          "lineNumber": 585
+        },
+        {
+          "caller": "migrateToV17UserActivityBackfill",
+          "callee": "tableExists",
+          "lineNumber": 592
+        },
+        {
+          "caller": "migrateToV17UserActivityBackfill",
+          "callee": "db.prepare('PRAGMA table_info(users)').all().map",
+          "lineNumber": 593
+        },
+        {
+          "caller": "migrateToV17UserActivityBackfill",
+          "callee": "db.prepare('PRAGMA table_info(users)').all",
+          "lineNumber": 593
+        },
+        {
+          "caller": "migrateToV17UserActivityBackfill",
+          "callee": "db.prepare",
+          "lineNumber": 593
+        },
+        {
+          "caller": "migrateToV17UserActivityBackfill",
+          "callee": "userCols.includes",
+          "lineNumber": 594
+        },
+        {
+          "caller": "migrateToV17UserActivityBackfill",
+          "callee": "userCols.includes",
+          "lineNumber": 594
+        },
+        {
+          "caller": "migrateToV17UserActivityBackfill",
+          "callee": "db.exec",
+          "lineNumber": 595
+        },
+        {
+          "caller": "migrateToV17UserActivityBackfill",
+          "callee": "db.prepare(\n    'INSERT INTO app_meta (key, value) VALUES (?, ?) ON CONFLICT(key) DO UPDATE SET value = excluded.value'\n  ).run",
+          "lineNumber": 602
+        },
+        {
+          "caller": "migrateToV17UserActivityBackfill",
+          "callee": "db.prepare",
+          "lineNumber": 602
+        },
+        {
+          "caller": "migrateToV15LanHostTables",
+          "callee": "db.exec",
+          "lineNumber": 609
+        },
+        {
+          "caller": "migrateToV15LanHostTables",
+          "callee": "db.prepare(\n    'INSERT INTO app_meta (key, value) VALUES (?, ?) ON CONFLICT(key) DO UPDATE SET value = excluded.value'\n  ).run",
+          "lineNumber": 664
+        },
+        {
+          "caller": "migrateToV15LanHostTables",
+          "callee": "db.prepare",
+          "lineNumber": 664
+        },
+        {
+          "caller": "migrateToV13",
+          "callee": "tableExists",
+          "lineNumber": 671
+        },
+        {
+          "caller": "migrateToV13",
+          "callee": "db.prepare('PRAGMA table_info(teams)').all().map",
+          "lineNumber": 672
+        },
+        {
+          "caller": "migrateToV13",
+          "callee": "db.prepare('PRAGMA table_info(teams)').all",
+          "lineNumber": 672
+        },
+        {
+          "caller": "migrateToV13",
+          "callee": "db.prepare",
+          "lineNumber": 672
+        },
+        {
+          "caller": "migrateToV13",
+          "callee": "teamCols.includes",
+          "lineNumber": 673
+        },
+        {
+          "caller": "migrateToV13",
+          "callee": "db.exec",
+          "lineNumber": 674
+        },
+        {
+          "caller": "migrateToV13",
+          "callee": "db.exec",
+          "lineNumber": 675
+        },
+        {
+          "caller": "migrateToV13",
+          "callee": "db.prepare(\n    'INSERT INTO app_meta (key, value) VALUES (?, ?) ON CONFLICT(key) DO UPDATE SET value = excluded.value'\n  ).run",
+          "lineNumber": 680
+        },
+        {
+          "caller": "migrateToV13",
+          "callee": "db.prepare",
+          "lineNumber": 680
+        },
+        {
+          "caller": "migrateToV14",
+          "callee": "tableExists",
+          "lineNumber": 687
+        },
+        {
+          "caller": "migrateToV14",
+          "callee": "db.prepare(\n      'INSERT INTO app_meta (key, value) VALUES (?, ?) ON CONFLICT(key) DO UPDATE SET value = excluded.value'\n    ).run",
+          "lineNumber": 688
+        },
+        {
+          "caller": "migrateToV14",
+          "callee": "db.prepare",
+          "lineNumber": 688
+        },
+        {
+          "caller": "migrateToV14",
+          "callee": "db.exec",
+          "lineNumber": 693
+        },
+        {
+          "caller": "migrateToV14",
+          "callee": "db.prepare(\n    'INSERT INTO app_meta (key, value) VALUES (?, ?) ON CONFLICT(key) DO UPDATE SET value = excluded.value'\n  ).run",
+          "lineNumber": 714
+        },
+        {
+          "caller": "migrateToV14",
+          "callee": "db.prepare",
+          "lineNumber": 714
+        },
+        {
+          "caller": "readSchemaVersion",
+          "callee": "db\n    .prepare(\"SELECT 1 FROM sqlite_master WHERE type = 'table' AND name = 'app_meta'\")\n    .get",
+          "lineNumber": 720
+        },
+        {
+          "caller": "readSchemaVersion",
+          "callee": "db\n    .prepare",
+          "lineNumber": 720
+        },
+        {
+          "caller": "readSchemaVersion",
+          "callee": "db.prepare(\"SELECT value FROM app_meta WHERE key = 'schema_version'\").get",
+          "lineNumber": 724
+        },
+        {
+          "caller": "readSchemaVersion",
+          "callee": "db.prepare",
+          "lineNumber": 724
+        },
+        {
+          "caller": "readSchemaVersion",
+          "callee": "Number",
+          "lineNumber": 726
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 5,
+        "functionCount": 21,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/db/schema.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 342,
+      "nonEmptyLines": 322,
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/db/test-open-db.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 71,
+      "nonEmptyLines": 64,
+      "functions": [
+        {
+          "name": "createUnlockedDbManager",
+          "startLine": 22,
+          "endLine": 30,
+          "params": [
+            "userDataPath"
+          ]
+        },
+        {
+          "name": "openTestDb",
+          "startLine": 37,
+          "endLine": 71,
+          "params": [
+            "keyHex"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "TEST_KEY_HEX",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "createUnlockedDbManager",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "openTestDb",
+          "line": 37,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createUnlockedDbManager",
+          "callee": "createDbManager",
+          "lineNumber": 23
+        },
+        {
+          "caller": "createUnlockedDbManager",
+          "callee": "mgr.unlockWithKeyHex",
+          "lineNumber": 28
+        },
+        {
+          "caller": "openTestDb",
+          "callee": "fs.mkdtempSync",
+          "lineNumber": 38
+        },
+        {
+          "caller": "openTestDb",
+          "callee": "path.join",
+          "lineNumber": 38
+        },
+        {
+          "caller": "openTestDb",
+          "callee": "os.tmpdir",
+          "lineNumber": 38
+        },
+        {
+          "caller": "openTestDb",
+          "callee": "path.join",
+          "lineNumber": 39
+        },
+        {
+          "caller": "openTestDb",
+          "callee": "loadNativeDatabase",
+          "lineNumber": 40
+        },
+        {
+          "caller": "openTestDb",
+          "callee": "db.pragma",
+          "lineNumber": 42
+        },
+        {
+          "caller": "openTestDb",
+          "callee": "db.pragma",
+          "lineNumber": 43
+        },
+        {
+          "caller": "openTestDb",
+          "callee": "db.pragma",
+          "lineNumber": 44
+        },
+        {
+          "caller": "openTestDb",
+          "callee": "applyMigrations",
+          "lineNumber": 45
+        },
+        {
+          "caller": "registerCleanup",
+          "callee": "cleanups.push",
+          "lineNumber": 49
+        },
+        {
+          "caller": "openTestDb",
+          "callee": "opts.after",
+          "lineNumber": 51
+        },
+        {
+          "caller": "close",
+          "callee": "cleanups[i]",
+          "lineNumber": 55
+        },
+        {
+          "caller": "close",
+          "callee": "db.close",
+          "lineNumber": 57
+        },
+        {
+          "caller": "close",
+          "callee": "fs.unlinkSync",
+          "lineNumber": 59
+        },
+        {
+          "caller": "close",
+          "callee": "fs.rmdirSync",
+          "lineNumber": 64
+        },
+        {
+          "caller": "close",
+          "callee": "fs.rmSync",
+          "lineNumber": 66
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/interno/interno-pendientes.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 33,
+      "nonEmptyLines": 29,
+      "functions": [
+        {
+          "name": "patchGuardiaPendienteComplete",
+          "startLine": 12,
+          "endLine": 33,
+          "params": [
+            "db",
+            "patientId",
+            "itemId",
+            "completedBy"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "patchGuardiaPendienteComplete",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "patchGuardiaPendienteComplete",
+          "callee": "String(patientId || '').trim",
+          "lineNumber": 13
+        },
+        {
+          "caller": "patchGuardiaPendienteComplete",
+          "callee": "String",
+          "lineNumber": 13
+        },
+        {
+          "caller": "patchGuardiaPendienteComplete",
+          "callee": "String(itemId || '').trim",
+          "lineNumber": 14
+        },
+        {
+          "caller": "patchGuardiaPendienteComplete",
+          "callee": "String",
+          "lineNumber": 14
+        },
+        {
+          "caller": "patchGuardiaPendienteComplete",
+          "callee": "db\n    .prepare(\n      `SELECT guardia_id FROM active_guardias\n       WHERE patient_id = ? AND status = 'Active' LIMIT 1`\n    )\n    .get",
+          "lineNumber": 17
+        },
+        {
+          "caller": "patchGuardiaPendienteComplete",
+          "callee": "db\n    .prepare",
+          "lineNumber": 17
+        },
+        {
+          "caller": "patchGuardiaPendienteComplete",
+          "callee": "completeActiveGuardiaPendiente",
+          "lineNumber": 25
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/interno/sala-interno-access.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 43,
+      "nonEmptyLines": 38,
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/interno/sala-slug.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 20,
+      "nonEmptyLines": 17,
+      "functions": [
+        {
+          "name": "salaFromSlug",
+          "startLine": 4,
+          "endLine": 12,
+          "params": [
+            "slug"
+          ]
+        },
+        {
+          "name": "slugFromSala",
+          "startLine": 15,
+          "endLine": 17,
+          "params": [
+            "sala"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "salaFromSlug",
+          "line": 4,
+          "isDefault": false
+        },
+        {
+          "name": "slugFromSala",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "INTERNOS_SALA_VALUES",
+          "line": 20,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "salaFromSlug",
+          "callee": "String(slug || '').trim().toLowerCase",
+          "lineNumber": 5
+        },
+        {
+          "caller": "salaFromSlug",
+          "callee": "String(slug || '').trim",
+          "lineNumber": 5
+        },
+        {
+          "caller": "salaFromSlug",
+          "callee": "String",
+          "lineNumber": 5
+        },
+        {
+          "caller": "slugFromSala",
+          "callee": "clinicalSalaRoomSlug",
+          "lineNumber": 16
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/native-runtime-probe.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 67,
+      "nonEmptyLines": 63,
+      "functions": [
+        {
+          "name": "probeArgon2Load",
+          "startLine": 6,
+          "endLine": 25,
+          "params": []
+        },
+        {
+          "name": "probeSqlcipherLoad",
+          "startLine": 27,
+          "endLine": 42,
+          "params": []
+        },
+        {
+          "name": "probeNativeRuntime",
+          "startLine": 44,
+          "endLine": 61,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "probeArgon2Load",
+          "callee": "require",
+          "lineNumber": 8
+        },
+        {
+          "caller": "probeArgon2Load",
+          "callee": "String",
+          "lineNumber": 14
+        },
+        {
+          "caller": "probeArgon2Load",
+          "callee": "String",
+          "lineNumber": 14
+        },
+        {
+          "caller": "probeArgon2Load",
+          "callee": "/failed to load native binding|Cannot find module.*\\.node/i.test",
+          "lineNumber": 20
+        },
+        {
+          "caller": "probeSqlcipherLoad",
+          "callee": "require",
+          "lineNumber": 29
+        },
+        {
+          "caller": "probeSqlcipherLoad",
+          "callee": "db.close",
+          "lineNumber": 31
+        },
+        {
+          "caller": "probeSqlcipherLoad",
+          "callee": "String",
+          "lineNumber": 34
+        },
+        {
+          "caller": "probeSqlcipherLoad",
+          "callee": "String",
+          "lineNumber": 34
+        },
+        {
+          "caller": "probeSqlcipherLoad",
+          "callee": "/NODE_MODULE_VERSION|different Node/i.test",
+          "lineNumber": 39
+        },
+        {
+          "caller": "probeNativeRuntime",
+          "callee": "probeSqlcipherLoad",
+          "lineNumber": 45
+        },
+        {
+          "caller": "probeNativeRuntime",
+          "callee": "probeArgon2Load",
+          "lineNumber": 46
+        },
+        {
+          "caller": "probeNativeRuntime",
+          "callee": "failures.push",
+          "lineNumber": 49
+        },
+        {
+          "caller": "probeNativeRuntime",
+          "callee": "failures.push",
+          "lineNumber": 50
+        },
+        {
+          "caller": "probeNativeRuntime",
+          "callee": "failures.some",
+          "lineNumber": 53
+        },
+        {
+          "caller": "probeNativeRuntime",
+          "callee": "failures.some",
+          "lineNumber": 56
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/native-runtime-probe.test.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 23,
+      "nonEmptyLines": 21,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/features/crypto-signer.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 49,
+      "nonEmptyLines": 44,
+      "functions": [
+        {
+          "name": "generateKeyPair",
+          "startLine": 6,
+          "endLine": 12,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "generateKeyPair",
+          "callee": "crypto.generateKeyPairSync",
+          "lineNumber": 7
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/features/interno-qr-panel.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 240,
+      "nonEmptyLines": 210,
+      "functions": [
+        {
+          "name": "dbApi",
+          "startLine": 12,
+          "endLine": 15,
+          "params": []
+        },
+        {
+          "name": "normalizeHostBase",
+          "startLine": 18,
+          "endLine": 24,
+          "params": [
+            "hostBase"
+          ]
+        },
+        {
+          "name": "internoUrl",
+          "startLine": 27,
+          "endLine": 30,
+          "params": [
+            "sala",
+            "slug",
+            "token",
+            "hostBase"
+          ]
+        },
+        {
+          "name": "isLocalOnlyHost",
+          "startLine": 32,
+          "endLine": 34,
+          "params": [
+            "base"
+          ]
+        },
+        {
+          "name": "resolveHostBase",
+          "startLine": 36,
+          "endLine": 50,
+          "params": [
+            "fallback"
+          ]
+        },
+        {
+          "name": "appendInternoQrPanel",
+          "startLine": 56,
+          "endLine": 240,
+          "params": [
+            "root"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "appendInternoQrPanel",
+          "line": 56,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "normalizeHostBase",
+          "callee": "String(hostBase || '')\n    .trim()\n    .replace",
+          "lineNumber": 19
+        },
+        {
+          "caller": "normalizeHostBase",
+          "callee": "String(hostBase || '')\n    .trim",
+          "lineNumber": 19
+        },
+        {
+          "caller": "normalizeHostBase",
+          "callee": "String",
+          "lineNumber": 19
+        },
+        {
+          "caller": "internoUrl",
+          "callee": "normalizeHostBase",
+          "lineNumber": 28
+        },
+        {
+          "caller": "internoUrl",
+          "callee": "encodeURIComponent",
+          "lineNumber": 29
+        },
+        {
+          "caller": "internoUrl",
+          "callee": "encodeURIComponent",
+          "lineNumber": 29
+        },
+        {
+          "caller": "isLocalOnlyHost",
+          "callee": "/^https?:\\/\\/(127\\.0\\.0\\.1|localhost)(:\\d+)?\\/?$/i.test",
+          "lineNumber": 33
+        },
+        {
+          "caller": "isLocalOnlyHost",
+          "callee": "String(base || '').trim",
+          "lineNumber": 33
+        },
+        {
+          "caller": "isLocalOnlyHost",
+          "callee": "String",
+          "lineNumber": 33
+        },
+        {
+          "caller": "resolveHostBase",
+          "callee": "String((await window.electronAPI.getLanCandidateBaseUrl()) || '')\n        .trim()\n        .replace",
+          "lineNumber": 39
+        },
+        {
+          "caller": "resolveHostBase",
+          "callee": "String((await window.electronAPI.getLanCandidateBaseUrl()) || '')\n        .trim",
+          "lineNumber": 39
+        },
+        {
+          "caller": "resolveHostBase",
+          "callee": "String",
+          "lineNumber": 39
+        },
+        {
+          "caller": "resolveHostBase",
+          "callee": "window.electronAPI.getLanCandidateBaseUrl",
+          "lineNumber": 39
+        },
+        {
+          "caller": "resolveHostBase",
+          "callee": "isLocalOnlyHost",
+          "lineNumber": 42
+        },
+        {
+          "caller": "resolveHostBase",
+          "callee": "normalizeHostBase",
+          "lineNumber": 47
+        },
+        {
+          "caller": "resolveHostBase",
+          "callee": "isLocalOnlyHost",
+          "lineNumber": 48
+        },
+        {
+          "caller": "appendInternoQrPanel",
+          "callee": "dbApi",
+          "lineNumber": 57
+        },
+        {
+          "caller": "appendInternoQrPanel",
+          "callee": "String",
+          "lineNumber": 58
+        },
+        {
+          "caller": "appendInternoQrPanel",
+          "callee": "document.createElement",
+          "lineNumber": 61
+        },
+        {
+          "caller": "appendInternoQrPanel",
+          "callee": "document.createElement",
+          "lineNumber": 65
+        },
+        {
+          "caller": "appendInternoQrPanel",
+          "callee": "details.appendChild",
+          "lineNumber": 71
+        },
+        {
+          "caller": "appendInternoQrPanel",
+          "callee": "document.createElement",
+          "lineNumber": 73
+        },
+        {
+          "caller": "appendInternoQrPanel",
+          "callee": "details.appendChild",
+          "lineNumber": 76
+        },
+        {
+          "caller": "appendInternoQrPanel",
+          "callee": "root.appendChild",
+          "lineNumber": 78
+        },
+        {
+          "caller": "appendInternoQrPanel",
+          "callee": "normalizeHostBase",
+          "lineNumber": 81
+        },
+        {
+          "caller": "ensureLoaded",
+          "callee": "renderPanel",
+          "lineNumber": 88
+        },
+        {
+          "caller": "appendInternoQrPanel",
+          "callee": "details.addEventListener",
+          "lineNumber": 91
+        },
+        {
+          "caller": "appendInternoQrPanel",
+          "callee": "ensureLoaded",
+          "lineNumber": 92
+        },
+        {
+          "caller": "loadRows",
+          "callee": "api.dbInternoAccessList",
+          "lineNumber": 96
+        },
+        {
+          "caller": "loadRows",
+          "callee": "Array.isArray",
+          "lineNumber": 98
+        },
+        {
+          "caller": "renderPanel",
+          "callee": "resolveHostBase",
+          "lineNumber": 102
+        },
+        {
+          "caller": "renderPanel",
+          "callee": "card.querySelectorAll('.interno-sala-block, .lan-connect-card-hint, .interno-qr-lan-warn').forEach",
+          "lineNumber": 103
+        },
+        {
+          "caller": "renderPanel",
+          "callee": "card.querySelectorAll",
+          "lineNumber": 103
+        },
+        {
+          "caller": "renderPanel",
+          "callee": "el.remove",
+          "lineNumber": 103
+        },
+        {
+          "caller": "renderPanel",
+          "callee": "isLocalOnlyHost",
+          "lineNumber": 105
+        },
+        {
+          "caller": "renderPanel",
+          "callee": "document.createElement",
+          "lineNumber": 106
+        },
+        {
+          "caller": "renderPanel",
+          "callee": "card.appendChild",
+          "lineNumber": 112
+        },
+        {
+          "caller": "renderPanel",
+          "callee": "document.createElement",
+          "lineNumber": 114
+        },
+        {
+          "caller": "renderPanel",
+          "callee": "renderPanel",
+          "lineNumber": 121
+        },
+        {
+          "caller": "renderPanel",
+          "callee": "card.appendChild",
+          "lineNumber": 123
+        },
+        {
+          "caller": "renderPanel",
+          "callee": "document.createElement",
+          "lineNumber": 125
+        },
+        {
+          "caller": "renderPanel",
+          "callee": "card.appendChild",
+          "lineNumber": 128
+        },
+        {
+          "caller": "renderPanel",
+          "callee": "loadRows",
+          "lineNumber": 131
+        },
+        {
+          "caller": "renderPanel",
+          "callee": "rows.map",
+          "lineNumber": 136
+        },
+        {
+          "caller": "renderPanel",
+          "callee": "String",
+          "lineNumber": 136
+        },
+        {
+          "caller": "renderPanel",
+          "callee": "bySala.get",
+          "lineNumber": 139
+        },
+        {
+          "caller": "renderPanel",
+          "callee": "String",
+          "lineNumber": 141
+        },
+        {
+          "caller": "renderPanel",
+          "callee": "internoUrl",
+          "lineNumber": 142
+        },
+        {
+          "caller": "renderPanel",
+          "callee": "document.createElement",
+          "lineNumber": 144
+        },
+        {
+          "caller": "renderPanel",
+          "callee": "document.createElement",
+          "lineNumber": 156
+        },
+        {
+          "caller": "renderPanel",
+          "callee": "block.appendChild",
+          "lineNumber": 161
+        },
+        {
+          "caller": "renderPanel",
+          "callee": "document.createElement",
+          "lineNumber": 164
+        },
+        {
+          "caller": "mkBtn",
+          "callee": "document.createElement",
+          "lineNumber": 171
+        },
+        {
+          "caller": "mkBtn",
+          "callee": "fn",
+          "lineNumber": 176
+        },
+        {
+          "caller": "renderPanel",
+          "callee": "btnRow.appendChild",
+          "lineNumber": 180
+        },
+        {
+          "caller": "renderPanel",
+          "callee": "mkBtn",
+          "lineNumber": 181
+        },
+        {
+          "caller": "renderPanel",
+          "callee": "api.dbInternoAccessSetActive",
+          "lineNumber": 182
+        },
+        {
+          "caller": "renderPanel",
+          "callee": "showToast",
+          "lineNumber": 188
+        },
+        {
+          "caller": "renderPanel",
+          "callee": "renderPanel",
+          "lineNumber": 189
+        },
+        {
+          "caller": "renderPanel",
+          "callee": "showToast",
+          "lineNumber": 191
+        },
+        {
+          "caller": "renderPanel",
+          "callee": "btnRow.appendChild",
+          "lineNumber": 196
+        },
+        {
+          "caller": "renderPanel",
+          "callee": "mkBtn",
+          "lineNumber": 197
+        },
+        {
+          "caller": "renderPanel",
+          "callee": "confirm",
+          "lineNumber": 198
+        },
+        {
+          "caller": "renderPanel",
+          "callee": "api.dbInternoAccessRotate",
+          "lineNumber": 199
+        },
+        {
+          "caller": "renderPanel",
+          "callee": "showToast",
+          "lineNumber": 201
+        },
+        {
+          "caller": "renderPanel",
+          "callee": "renderPanel",
+          "lineNumber": 202
+        },
+        {
+          "caller": "renderPanel",
+          "callee": "showToast",
+          "lineNumber": 204
+        },
+        {
+          "caller": "renderPanel",
+          "callee": "btnRow.appendChild",
+          "lineNumber": 210
+        },
+        {
+          "caller": "renderPanel",
+          "callee": "mkBtn",
+          "lineNumber": 211
+        },
+        {
+          "caller": "renderPanel",
+          "callee": "isLocalOnlyHost",
+          "lineNumber": 212
+        },
+        {
+          "caller": "renderPanel",
+          "callee": "showToast",
+          "lineNumber": 213
+        },
+        {
+          "caller": "renderPanel",
+          "callee": "navigator.clipboard.writeText",
+          "lineNumber": 217
+        },
+        {
+          "caller": "renderPanel",
+          "callee": "showToast",
+          "lineNumber": 218
+        },
+        {
+          "caller": "renderPanel",
+          "callee": "showToast",
+          "lineNumber": 220
+        },
+        {
+          "caller": "renderPanel",
+          "callee": "btnRow.appendChild",
+          "lineNumber": 225
+        },
+        {
+          "caller": "renderPanel",
+          "callee": "mkBtn",
+          "lineNumber": 226
+        },
+        {
+          "caller": "renderPanel",
+          "callee": "isLocalOnlyHost",
+          "lineNumber": 227
+        },
+        {
+          "caller": "renderPanel",
+          "callee": "showToast",
+          "lineNumber": 228
+        },
+        {
+          "caller": "renderPanel",
+          "callee": "copyInternoQrImage",
+          "lineNumber": 231
+        },
+        {
+          "caller": "renderPanel",
+          "callee": "block.appendChild",
+          "lineNumber": 236
+        },
+        {
+          "caller": "renderPanel",
+          "callee": "card.appendChild",
+          "lineNumber": 237
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 6,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/interno-qr-render.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 87,
+      "nonEmptyLines": 79,
+      "functions": [
+        {
+          "name": "drawInternoQrCanvas",
+          "startLine": 11,
+          "endLine": 35,
+          "params": [
+            "canvas",
+            "text"
+          ]
+        },
+        {
+          "name": "renderInternoQrSvg",
+          "startLine": 38,
+          "endLine": 54,
+          "params": [
+            "text"
+          ]
+        },
+        {
+          "name": "copyInternoQrImage",
+          "startLine": 60,
+          "endLine": 87,
+          "params": [
+            "url",
+            "showToast"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "drawInternoQrCanvas",
+          "line": 11,
+          "isDefault": false
+        },
+        {
+          "name": "renderInternoQrSvg",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "copyInternoQrImage",
+          "line": 60,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "drawInternoQrCanvas",
+          "callee": "qrcode",
+          "lineNumber": 14
+        },
+        {
+          "caller": "drawInternoQrCanvas",
+          "callee": "qr.addData",
+          "lineNumber": 15
+        },
+        {
+          "caller": "drawInternoQrCanvas",
+          "callee": "String",
+          "lineNumber": 15
+        },
+        {
+          "caller": "drawInternoQrCanvas",
+          "callee": "qr.make",
+          "lineNumber": 16
+        },
+        {
+          "caller": "drawInternoQrCanvas",
+          "callee": "qr.getModuleCount",
+          "lineNumber": 18
+        },
+        {
+          "caller": "drawInternoQrCanvas",
+          "callee": "canvas.getContext",
+          "lineNumber": 22
+        },
+        {
+          "caller": "drawInternoQrCanvas",
+          "callee": "ctx.fillRect",
+          "lineNumber": 26
+        },
+        {
+          "caller": "drawInternoQrCanvas",
+          "callee": "qr.isDark",
+          "lineNumber": 30
+        },
+        {
+          "caller": "drawInternoQrCanvas",
+          "callee": "ctx.fillRect",
+          "lineNumber": 31
+        },
+        {
+          "caller": "renderInternoQrSvg",
+          "callee": "qrcode",
+          "lineNumber": 39
+        },
+        {
+          "caller": "renderInternoQrSvg",
+          "callee": "qr.addData",
+          "lineNumber": 40
+        },
+        {
+          "caller": "renderInternoQrSvg",
+          "callee": "String",
+          "lineNumber": 40
+        },
+        {
+          "caller": "renderInternoQrSvg",
+          "callee": "qr.make",
+          "lineNumber": 41
+        },
+        {
+          "caller": "renderInternoQrSvg",
+          "callee": "qr.getModuleCount",
+          "lineNumber": 42
+        },
+        {
+          "caller": "renderInternoQrSvg",
+          "callee": "qr.isDark",
+          "lineNumber": 48
+        },
+        {
+          "caller": "copyInternoQrImage",
+          "callee": "window.showToast",
+          "lineNumber": 65
+        },
+        {
+          "caller": "copyInternoQrImage",
+          "callee": "document.createElement",
+          "lineNumber": 69
+        },
+        {
+          "caller": "copyInternoQrImage",
+          "callee": "drawInternoQrCanvas",
+          "lineNumber": 70
+        },
+        {
+          "caller": "copyInternoQrImage",
+          "callee": "canvas.toBlob",
+          "lineNumber": 72
+        },
+        {
+          "caller": "copyInternoQrImage",
+          "callee": "resolve",
+          "lineNumber": 72
+        },
+        {
+          "caller": "copyInternoQrImage",
+          "callee": "reject",
+          "lineNumber": 72
+        },
+        {
+          "caller": "copyInternoQrImage",
+          "callee": "navigator.clipboard.write",
+          "lineNumber": 76
+        },
+        {
+          "caller": "copyInternoQrImage",
+          "callee": "toast",
+          "lineNumber": 77
+        },
+        {
+          "caller": "copyInternoQrImage",
+          "callee": "canvas.toDataURL",
+          "lineNumber": 81
+        },
+        {
+          "caller": "copyInternoQrImage",
+          "callee": "navigator.clipboard.writeText",
+          "lineNumber": 82
+        },
+        {
+          "caller": "copyInternoQrImage",
+          "callee": "toast",
+          "lineNumber": 83
+        },
+        {
+          "caller": "copyInternoQrImage",
+          "callee": "toast",
+          "lineNumber": 85
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "scripts/electron-sqlcipher-probe.cjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 14,
+      "nonEmptyLines": 12,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "scripts/ensure-native-db-for-node.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 143,
+      "nonEmptyLines": 125,
+      "functions": [
+        {
+          "name": "nativeLoadError",
+          "startLine": 21,
+          "endLine": 38,
+          "params": []
+        },
+        {
+          "name": "needsDarwinArm64Wrap",
+          "startLine": 52,
+          "endLine": 54,
+          "params": []
+        },
+        {
+          "name": "wrapDarwinArm64",
+          "startLine": 56,
+          "endLine": 61,
+          "params": [
+            "cmd"
+          ]
+        },
+        {
+          "name": "runShell",
+          "startLine": 63,
+          "endLine": 70,
+          "params": [
+            "cmd"
+          ]
+        },
+        {
+          "name": "tryFetchNodePrebuild",
+          "startLine": 72,
+          "endLine": 75,
+          "params": []
+        },
+        {
+          "name": "tryNpmRebuild",
+          "startLine": 77,
+          "endLine": 83,
+          "params": []
+        },
+        {
+          "name": "restoreElectronSqlcipherForApp",
+          "startLine": 86,
+          "endLine": 96,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "nativeLoadError",
+          "callee": "execSync",
+          "lineNumber": 23
+        },
+        {
+          "caller": "nativeLoadError",
+          "callee": "JSON.stringify",
+          "lineNumber": 23
+        },
+        {
+          "caller": "nativeLoadError",
+          "callee": "String(e.stderr).trim",
+          "lineNumber": 35
+        },
+        {
+          "caller": "nativeLoadError",
+          "callee": "String",
+          "lineNumber": 35
+        },
+        {
+          "caller": "nativeLoadError",
+          "callee": "String",
+          "lineNumber": 36
+        },
+        {
+          "caller": "nativeLoadError",
+          "callee": "String",
+          "lineNumber": 36
+        },
+        {
+          "caller": "wrapDarwinArm64",
+          "callee": "needsDarwinArm64Wrap",
+          "lineNumber": 57
+        },
+        {
+          "caller": "runShell",
+          "callee": "execSync",
+          "lineNumber": 64
+        },
+        {
+          "caller": "runShell",
+          "callee": "wrapDarwinArm64",
+          "lineNumber": 64
+        },
+        {
+          "caller": "tryFetchNodePrebuild",
+          "callee": "console.log",
+          "lineNumber": 73
+        },
+        {
+          "caller": "tryFetchNodePrebuild",
+          "callee": "runShell",
+          "lineNumber": 74
+        },
+        {
+          "caller": "tryNpmRebuild",
+          "callee": "console.log",
+          "lineNumber": 78
+        },
+        {
+          "caller": "tryNpmRebuild",
+          "callee": "needsDarwinArm64Wrap",
+          "lineNumber": 79
+        },
+        {
+          "caller": "tryNpmRebuild",
+          "callee": "runShell",
+          "lineNumber": 82
+        },
+        {
+          "caller": "restoreElectronSqlcipherForApp",
+          "callee": "console.warn",
+          "lineNumber": 87
+        },
+        {
+          "caller": "restoreElectronSqlcipherForApp",
+          "callee": "runShell",
+          "lineNumber": 91
+        },
+        {
+          "caller": "restoreElectronSqlcipherForApp",
+          "callee": "String",
+          "lineNumber": 93
+        },
+        {
+          "caller": "restoreElectronSqlcipherForApp",
+          "callee": "String",
+          "lineNumber": 93
+        },
+        {
+          "caller": "restoreElectronSqlcipherForApp",
+          "callee": "console.warn",
+          "lineNumber": 94
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 7,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "scripts/fetch-sqlite-electron.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 133,
+      "nonEmptyLines": 117,
+      "functions": [
+        {
+          "name": "resolveElectronAbi",
+          "startLine": 30,
+          "endLine": 34,
+          "params": []
+        },
+        {
+          "name": "resolveTarget",
+          "startLine": 36,
+          "endLine": 40,
+          "params": []
+        },
+        {
+          "name": "prebuildAssetName",
+          "startLine": 42,
+          "endLine": 44,
+          "params": [
+            "version",
+            "abiVersion",
+            "platform",
+            "arch"
+          ]
+        },
+        {
+          "name": "prebuildUrl",
+          "startLine": 46,
+          "endLine": 49,
+          "params": [
+            "version",
+            "abiVersion",
+            "platform",
+            "arch"
+          ]
+        },
+        {
+          "name": "assertFormat",
+          "startLine": 52,
+          "endLine": 60,
+          "params": [
+            "abs",
+            "platform"
+          ]
+        },
+        {
+          "name": "installFromUrl",
+          "startLine": 62,
+          "endLine": 83,
+          "params": [
+            "url",
+            "platform",
+            "label"
+          ]
+        },
+        {
+          "name": "main",
+          "startLine": 85,
+          "endLine": 131,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "resolveElectronAbi",
+          "callee": "require",
+          "lineNumber": 31
+        },
+        {
+          "caller": "resolveElectronAbi",
+          "callee": "require",
+          "lineNumber": 32
+        },
+        {
+          "caller": "resolveElectronAbi",
+          "callee": "abi.getAbi",
+          "lineNumber": 33
+        },
+        {
+          "caller": "prebuildUrl",
+          "callee": "prebuildAssetName",
+          "lineNumber": 47
+        },
+        {
+          "caller": "assertFormat",
+          "callee": "readBinaryHeader",
+          "lineNumber": 53
+        },
+        {
+          "caller": "assertFormat",
+          "callee": "isWindowsPe",
+          "lineNumber": 54
+        },
+        {
+          "caller": "assertFormat",
+          "callee": "path.basename",
+          "lineNumber": 55
+        },
+        {
+          "caller": "assertFormat",
+          "callee": "isMachO",
+          "lineNumber": 57
+        },
+        {
+          "caller": "assertFormat",
+          "callee": "path.basename",
+          "lineNumber": 58
+        },
+        {
+          "caller": "installFromUrl",
+          "callee": "path.join",
+          "lineNumber": 63
+        },
+        {
+          "caller": "installFromUrl",
+          "callee": "path.join",
+          "lineNumber": 64
+        },
+        {
+          "caller": "installFromUrl",
+          "callee": "fetch",
+          "lineNumber": 67
+        },
+        {
+          "caller": "installFromUrl",
+          "callee": "fs.writeFile",
+          "lineNumber": 71
+        },
+        {
+          "caller": "installFromUrl",
+          "callee": "Buffer.from",
+          "lineNumber": 71
+        },
+        {
+          "caller": "installFromUrl",
+          "callee": "resp.arrayBuffer",
+          "lineNumber": 71
+        },
+        {
+          "caller": "installFromUrl",
+          "callee": "fs.mkdir",
+          "lineNumber": 72
+        },
+        {
+          "caller": "installFromUrl",
+          "callee": "execSync",
+          "lineNumber": 73
+        },
+        {
+          "caller": "installFromUrl",
+          "callee": "path.join",
+          "lineNumber": 74
+        },
+        {
+          "caller": "installFromUrl",
+          "callee": "assertFormat",
+          "lineNumber": 75
+        },
+        {
+          "caller": "installFromUrl",
+          "callee": "fs.mkdir",
+          "lineNumber": 76
+        },
+        {
+          "caller": "installFromUrl",
+          "callee": "path.dirname",
+          "lineNumber": 76
+        },
+        {
+          "caller": "installFromUrl",
+          "callee": "fs.copyFile",
+          "lineNumber": 77
+        },
+        {
+          "caller": "installFromUrl",
+          "callee": "console.log",
+          "lineNumber": 78
+        },
+        {
+          "caller": "installFromUrl",
+          "callee": "fs.rm",
+          "lineNumber": 80
+        },
+        {
+          "caller": "installFromUrl",
+          "callee": "fs.unlink(tmpTgz).catch",
+          "lineNumber": 81
+        },
+        {
+          "caller": "installFromUrl",
+          "callee": "fs.unlink",
+          "lineNumber": 81
+        },
+        {
+          "caller": "main",
+          "callee": "resolveTarget",
+          "lineNumber": 87
+        },
+        {
+          "caller": "main",
+          "callee": "console.log",
+          "lineNumber": 89
+        },
+        {
+          "caller": "main",
+          "callee": "process.exit",
+          "lineNumber": 90
+        },
+        {
+          "caller": "main",
+          "callee": "describeNativeBinary",
+          "lineNumber": 95
+        },
+        {
+          "caller": "main",
+          "callee": "canProbeSqlcipherUnderElectron",
+          "lineNumber": 96
+        },
+        {
+          "caller": "main",
+          "callee": "electronSqlcipherLoads",
+          "lineNumber": 96
+        },
+        {
+          "caller": "main",
+          "callee": "console.log",
+          "lineNumber": 98
+        },
+        {
+          "caller": "main",
+          "callee": "rememberElectronBinary",
+          "lineNumber": 99
+        },
+        {
+          "caller": "main",
+          "callee": "process.exit",
+          "lineNumber": 100
+        },
+        {
+          "caller": "main",
+          "callee": "require",
+          "lineNumber": 103
+        },
+        {
+          "caller": "main",
+          "callee": "resolveElectronAbi",
+          "lineNumber": 104
+        },
+        {
+          "caller": "main",
+          "callee": "prebuildUrl",
+          "lineNumber": 105
+        },
+        {
+          "caller": "main",
+          "callee": "console.log",
+          "lineNumber": 106
+        },
+        {
+          "caller": "main",
+          "callee": "installFromUrl",
+          "lineNumber": 111
+        },
+        {
+          "caller": "main",
+          "callee": "console.error",
+          "lineNumber": 113
+        },
+        {
+          "caller": "main",
+          "callee": "process.exit",
+          "lineNumber": 114
+        },
+        {
+          "caller": "main",
+          "callee": "canProbeSqlcipherUnderElectron",
+          "lineNumber": 117
+        },
+        {
+          "caller": "main",
+          "callee": "electronSqlcipherLoads",
+          "lineNumber": 118
+        },
+        {
+          "caller": "main",
+          "callee": "console.error",
+          "lineNumber": 119
+        },
+        {
+          "caller": "main",
+          "callee": "process.exit",
+          "lineNumber": 120
+        },
+        {
+          "caller": "main",
+          "callee": "rememberElectronBinary",
+          "lineNumber": 122
+        },
+        {
+          "caller": "main",
+          "callee": "console.log",
+          "lineNumber": 123
+        },
+        {
+          "caller": "main",
+          "callee": "assertFormat",
+          "lineNumber": 125
+        },
+        {
+          "caller": "main",
+          "callee": "stashSqlcipherBinaryForArch",
+          "lineNumber": 126
+        },
+        {
+          "caller": "main",
+          "callee": "console.log",
+          "lineNumber": 127
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 7,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "scripts/lib/native-binary-format.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 62,
+      "nonEmptyLines": 58,
+      "functions": [
+        {
+          "name": "readBinaryHeader",
+          "startLine": 7,
+          "endLine": 16,
+          "params": [
+            "abs"
+          ]
+        },
+        {
+          "name": "isWindowsPe",
+          "startLine": 19,
+          "endLine": 21,
+          "params": [
+            "buf"
+          ]
+        },
+        {
+          "name": "isMachO",
+          "startLine": 24,
+          "endLine": 36,
+          "params": [
+            "buf"
+          ]
+        },
+        {
+          "name": "describeNativeBinary",
+          "startLine": 42,
+          "endLine": 62,
+          "params": [
+            "abs",
+            "expectedPlatform"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "readBinaryHeader",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "isWindowsPe",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "isMachO",
+          "line": 24,
+          "isDefault": false
+        },
+        {
+          "name": "describeNativeBinary",
+          "line": 42,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "readBinaryHeader",
+          "callee": "Buffer.alloc",
+          "lineNumber": 8
+        },
+        {
+          "caller": "readBinaryHeader",
+          "callee": "fs.openSync",
+          "lineNumber": 9
+        },
+        {
+          "caller": "readBinaryHeader",
+          "callee": "fs.readSync",
+          "lineNumber": 11
+        },
+        {
+          "caller": "readBinaryHeader",
+          "callee": "fs.closeSync",
+          "lineNumber": 13
+        },
+        {
+          "caller": "isMachO",
+          "callee": "buf.readUInt32LE",
+          "lineNumber": 26
+        },
+        {
+          "caller": "isMachO",
+          "callee": "buf.readUInt32BE",
+          "lineNumber": 27
+        },
+        {
+          "caller": "describeNativeBinary",
+          "callee": "fs.existsSync",
+          "lineNumber": 43
+        },
+        {
+          "caller": "describeNativeBinary",
+          "callee": "readBinaryHeader",
+          "lineNumber": 46
+        },
+        {
+          "caller": "describeNativeBinary",
+          "callee": "isWindowsPe",
+          "lineNumber": 47
+        },
+        {
+          "caller": "describeNativeBinary",
+          "callee": "isMachO",
+          "lineNumber": 54
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "scripts/lib/sqlcipher-native.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 121,
+      "nonEmptyLines": 108,
+      "functions": [
+        {
+          "name": "sqlcipherDestAbs",
+          "startLine": 16,
+          "endLine": 18,
+          "params": []
+        },
+        {
+          "name": "electronCacheAbs",
+          "startLine": 20,
+          "endLine": 22,
+          "params": []
+        },
+        {
+          "name": "legacyElectronCacheAbs",
+          "startLine": 24,
+          "endLine": 26,
+          "params": []
+        },
+        {
+          "name": "stashSqlcipherBinaryForArch",
+          "startLine": 29,
+          "endLine": 36,
+          "params": [
+            "root",
+            "platform",
+            "arch"
+          ]
+        },
+        {
+          "name": "electronBinAbs",
+          "startLine": 39,
+          "endLine": 43,
+          "params": []
+        },
+        {
+          "name": "electronSqlcipherProbeScript",
+          "startLine": 46,
+          "endLine": 48,
+          "params": []
+        },
+        {
+          "name": "canProbeSqlcipherUnderElectron",
+          "startLine": 56,
+          "endLine": 58,
+          "params": [
+            "platform",
+            "arch"
+          ]
+        },
+        {
+          "name": "electronSqlcipherLoads",
+          "startLine": 63,
+          "endLine": 75,
+          "params": []
+        },
+        {
+          "name": "cacheElectronBinaryIfValid",
+          "startLine": 81,
+          "endLine": 93,
+          "params": []
+        },
+        {
+          "name": "restoreElectronBinaryFromCache",
+          "startLine": 99,
+          "endLine": 116,
+          "params": []
+        },
+        {
+          "name": "rememberElectronBinary",
+          "startLine": 119,
+          "endLine": 121,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "SQLCIPHER_NODE_REL",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "repoRoot",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "sqlcipherDestAbs",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "electronCacheAbs",
+          "line": 20,
+          "isDefault": false
+        },
+        {
+          "name": "stashSqlcipherBinaryForArch",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "electronBinAbs",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "electronSqlcipherProbeScript",
+          "line": 46,
+          "isDefault": false
+        },
+        {
+          "name": "canProbeSqlcipherUnderElectron",
+          "line": 56,
+          "isDefault": false
+        },
+        {
+          "name": "electronSqlcipherLoads",
+          "line": 63,
+          "isDefault": false
+        },
+        {
+          "name": "cacheElectronBinaryIfValid",
+          "line": 81,
+          "isDefault": false
+        },
+        {
+          "name": "restoreElectronBinaryFromCache",
+          "line": 99,
+          "isDefault": false
+        },
+        {
+          "name": "rememberElectronBinary",
+          "line": 119,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "sqlcipherDestAbs",
+          "callee": "path.join",
+          "lineNumber": 17
+        },
+        {
+          "caller": "electronCacheAbs",
+          "callee": "path.join",
+          "lineNumber": 21
+        },
+        {
+          "caller": "legacyElectronCacheAbs",
+          "callee": "path.join",
+          "lineNumber": 25
+        },
+        {
+          "caller": "stashSqlcipherBinaryForArch",
+          "callee": "sqlcipherDestAbs",
+          "lineNumber": 30
+        },
+        {
+          "caller": "stashSqlcipherBinaryForArch",
+          "callee": "fs.existsSync",
+          "lineNumber": 31
+        },
+        {
+          "caller": "stashSqlcipherBinaryForArch",
+          "callee": "electronCacheAbs",
+          "lineNumber": 32
+        },
+        {
+          "caller": "stashSqlcipherBinaryForArch",
+          "callee": "fs.mkdirSync",
+          "lineNumber": 33
+        },
+        {
+          "caller": "stashSqlcipherBinaryForArch",
+          "callee": "path.dirname",
+          "lineNumber": 33
+        },
+        {
+          "caller": "stashSqlcipherBinaryForArch",
+          "callee": "fs.copyFileSync",
+          "lineNumber": 34
+        },
+        {
+          "caller": "electronBinAbs",
+          "callee": "path.join",
+          "lineNumber": 41
+        },
+        {
+          "caller": "electronBinAbs",
+          "callee": "path.join",
+          "lineNumber": 42
+        },
+        {
+          "caller": "electronSqlcipherProbeScript",
+          "callee": "path.join",
+          "lineNumber": 47
+        },
+        {
+          "caller": "electronSqlcipherLoads",
+          "callee": "electronBinAbs",
+          "lineNumber": 64
+        },
+        {
+          "caller": "electronSqlcipherLoads",
+          "callee": "fs.existsSync",
+          "lineNumber": 65
+        },
+        {
+          "caller": "electronSqlcipherLoads",
+          "callee": "electronSqlcipherProbeScript",
+          "lineNumber": 66
+        },
+        {
+          "caller": "electronSqlcipherLoads",
+          "callee": "spawnSync",
+          "lineNumber": 67
+        },
+        {
+          "caller": "cacheElectronBinaryIfValid",
+          "callee": "sqlcipherDestAbs",
+          "lineNumber": 86
+        },
+        {
+          "caller": "cacheElectronBinaryIfValid",
+          "callee": "canProbeSqlcipherUnderElectron",
+          "lineNumber": 87
+        },
+        {
+          "caller": "cacheElectronBinaryIfValid",
+          "callee": "fs.existsSync",
+          "lineNumber": 88
+        },
+        {
+          "caller": "cacheElectronBinaryIfValid",
+          "callee": "electronSqlcipherLoads",
+          "lineNumber": 88
+        },
+        {
+          "caller": "cacheElectronBinaryIfValid",
+          "callee": "electronCacheAbs",
+          "lineNumber": 89
+        },
+        {
+          "caller": "cacheElectronBinaryIfValid",
+          "callee": "fs.mkdirSync",
+          "lineNumber": 90
+        },
+        {
+          "caller": "cacheElectronBinaryIfValid",
+          "callee": "path.dirname",
+          "lineNumber": 90
+        },
+        {
+          "caller": "cacheElectronBinaryIfValid",
+          "callee": "fs.copyFileSync",
+          "lineNumber": 91
+        },
+        {
+          "caller": "restoreElectronBinaryFromCache",
+          "callee": "sqlcipherDestAbs",
+          "lineNumber": 104
+        },
+        {
+          "caller": "restoreElectronBinaryFromCache",
+          "callee": "electronCacheAbs",
+          "lineNumber": 105
+        },
+        {
+          "caller": "restoreElectronBinaryFromCache",
+          "callee": "candidates.push",
+          "lineNumber": 107
+        },
+        {
+          "caller": "restoreElectronBinaryFromCache",
+          "callee": "legacyElectronCacheAbs",
+          "lineNumber": 107
+        },
+        {
+          "caller": "restoreElectronBinaryFromCache",
+          "callee": "fs.existsSync",
+          "lineNumber": 110
+        },
+        {
+          "caller": "restoreElectronBinaryFromCache",
+          "callee": "fs.mkdirSync",
+          "lineNumber": 111
+        },
+        {
+          "caller": "restoreElectronBinaryFromCache",
+          "callee": "path.dirname",
+          "lineNumber": 111
+        },
+        {
+          "caller": "restoreElectronBinaryFromCache",
+          "callee": "fs.copyFileSync",
+          "lineNumber": 112
+        },
+        {
+          "caller": "rememberElectronBinary",
+          "callee": "cacheElectronBinaryIfValid",
+          "lineNumber": 120
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 12,
+        "functionCount": 11,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "scripts/lib/sqlcipher-native.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 31,
+      "nonEmptyLines": 28,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "scripts/rebuild-native-db.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 86,
+      "nonEmptyLines": 74,
+      "functions": [
+        {
+          "name": "runElectronRebuild",
+          "startLine": 20,
+          "endLine": 28,
+          "params": [
+            "force"
+          ]
+        },
+        {
+          "name": "tryFetchElectronPrebuild",
+          "startLine": 30,
+          "endLine": 38,
+          "params": []
+        },
+        {
+          "name": "failOrWarn",
+          "startLine": 40,
+          "endLine": 47,
+          "params": [
+            "msg"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "runElectronRebuild",
+          "callee": "execSync",
+          "lineNumber": 22
+        },
+        {
+          "caller": "tryFetchElectronPrebuild",
+          "callee": "execSync",
+          "lineNumber": 32
+        },
+        {
+          "caller": "failOrWarn",
+          "callee": "console.error",
+          "lineNumber": 42
+        },
+        {
+          "caller": "failOrWarn",
+          "callee": "process.exit",
+          "lineNumber": 43
+        },
+        {
+          "caller": "failOrWarn",
+          "callee": "console.warn",
+          "lineNumber": 45
+        },
+        {
+          "caller": "failOrWarn",
+          "callee": "process.exit",
+          "lineNumber": 46
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "scripts/verify-release-natives.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 121,
+      "nonEmptyLines": 107,
+      "functions": [
+        {
+          "name": "checkFile",
+          "startLine": 25,
+          "endLine": 35,
+          "params": [
+            "rel"
+          ]
+        },
+        {
+          "name": "ensurePackNatives",
+          "startLine": 37,
+          "endLine": 44,
+          "params": []
+        },
+        {
+          "name": "probeSqlcipherElectron",
+          "startLine": 46,
+          "endLine": 58,
+          "params": []
+        },
+        {
+          "name": "main",
+          "startLine": 60,
+          "endLine": 119,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "checkFile",
+          "callee": "path.join",
+          "lineNumber": 26
+        },
+        {
+          "caller": "checkFile",
+          "callee": "fs.existsSync",
+          "lineNumber": 27
+        },
+        {
+          "caller": "checkFile",
+          "callee": "fs.statSync",
+          "lineNumber": 30
+        },
+        {
+          "caller": "ensurePackNatives",
+          "callee": "path.join",
+          "lineNumber": 38
+        },
+        {
+          "caller": "ensurePackNatives",
+          "callee": "console.log",
+          "lineNumber": 39
+        },
+        {
+          "caller": "ensurePackNatives",
+          "callee": "spawnSync",
+          "lineNumber": 40
+        },
+        {
+          "caller": "ensurePackNatives",
+          "callee": "process.exit",
+          "lineNumber": 42
+        },
+        {
+          "caller": "probeSqlcipherElectron",
+          "callee": "path.join",
+          "lineNumber": 47
+        },
+        {
+          "caller": "probeSqlcipherElectron",
+          "callee": "spawnSync",
+          "lineNumber": 48
+        },
+        {
+          "caller": "probeSqlcipherElectron",
+          "callee": "(r.stderr || r.stdout || '').trim",
+          "lineNumber": 56
+        },
+        {
+          "caller": "main",
+          "callee": "ensurePackNatives",
+          "lineNumber": 61
+        },
+        {
+          "caller": "main",
+          "callee": "checkFile",
+          "lineNumber": 64
+        },
+        {
+          "caller": "main",
+          "callee": "missing.push",
+          "lineNumber": 65
+        },
+        {
+          "caller": "main",
+          "callee": "checkFile",
+          "lineNumber": 67
+        },
+        {
+          "caller": "main",
+          "callee": "missing.push",
+          "lineNumber": 68
+        },
+        {
+          "caller": "main",
+          "callee": "path.join",
+          "lineNumber": 70
+        },
+        {
+          "caller": "main",
+          "callee": "describeNativeBinary",
+          "lineNumber": 72
+        },
+        {
+          "caller": "main",
+          "callee": "console.error",
+          "lineNumber": 74
+        },
+        {
+          "caller": "main",
+          "callee": "process.exit",
+          "lineNumber": 78
+        },
+        {
+          "caller": "main",
+          "callee": "probeSqlcipherElectron",
+          "lineNumber": 82
+        },
+        {
+          "caller": "main",
+          "callee": "console.error",
+          "lineNumber": 84
+        },
+        {
+          "caller": "main",
+          "callee": "console.error",
+          "lineNumber": 85
+        },
+        {
+          "caller": "main",
+          "callee": "process.exit",
+          "lineNumber": 86
+        },
+        {
+          "caller": "main",
+          "callee": "require",
+          "lineNumber": 91
+        },
+        {
+          "caller": "main",
+          "callee": "probeNativeRuntime",
+          "lineNumber": 92
+        },
+        {
+          "caller": "main",
+          "callee": "console.error",
+          "lineNumber": 95
+        },
+        {
+          "caller": "main",
+          "callee": "JSON.stringify",
+          "lineNumber": 95
+        },
+        {
+          "caller": "main",
+          "callee": "console.error",
+          "lineNumber": 99
+        },
+        {
+          "caller": "main",
+          "callee": "console.error",
+          "lineNumber": 103
+        },
+        {
+          "caller": "main",
+          "callee": "console.error",
+          "lineNumber": 105
+        },
+        {
+          "caller": "main",
+          "callee": "console.error",
+          "lineNumber": 107
+        },
+        {
+          "caller": "main",
+          "callee": "console.error",
+          "lineNumber": 108
+        },
+        {
+          "caller": "main",
+          "callee": "process.exit",
+          "lineNumber": 109
+        },
+        {
+          "caller": "main",
+          "callee": "process.exit",
+          "lineNumber": 113
+        },
+        {
+          "caller": "main",
+          "callee": "console.log",
+          "lineNumber": 116
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+R+ 7.6.7 (equipos push + troponina hs)
+==========================================
+
+Fecha: 2026-07-07
+
+## Resumen
+
+Sobre **7.6.6**: la PWA de **equipos** avisa por push cuando te llaman de la cola (LAN y cloud), **troponina I hs** entra al flujo SOME/tendencias, y la consolidación de labs respeta mejor gasometrías vs química.
+
+## Nuevo / mejorado
+
+- **Equipos — push PWA** — Service worker + Web Push en `/equipos`: activar avisos desde la cola; sync de contexto en IndexedDB; ayuda e instalación en iOS (Añadir a pantalla de inicio).
+- **Equipos — cloud** — Worker envía push al llamar paciente; custodia de cola y wipe admin en panel.
+- **Labs — troponina hs** — `parseTroponina_` y sección QUÍMICA reconocen reportes solo troponina; tarjeta **Troponina I (hs)** en tendencias.
+- **Labs — consolidación** — Familia labwork: une bloques >2 h si aplica; nunca fusiona gasometría con gasometría; cultivos y mixtos aparte.
+- **Parche sobre 7.6.6** — QR imprimible, host LAN estable y token `lan-team-code.txt`.
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v7.6.7
+
+- Mac: `R+-7.6.7-arm64.dmg`, `R+-7.6.7-x64.dmg` (y zip para auto-update).
+- Windows: `R+-7.6.7-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye write-release-yml.js).

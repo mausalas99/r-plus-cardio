@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 1024 1024" fill="none">
+  <title>R+ icon single glass cross 32px</title>
+  <defs>
+    <linearGradient id="field-gradient" x1="512" y1="0" x2="512" y2="1024" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#4a52e8"/>
+      <stop offset="100%" stop-color="#3b42c9"/>
+    </linearGradient>
+    <clipPath id="squircle">
+      <rect width="1024" height="1024" rx="226" ry="226"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#squircle)">
+    <rect width="1024" height="1024" fill="url(#field-gradient)"/>
+    <g fill="#ffffff" opacity="0.85">
+      <rect x="448" y="256" width="128" height="296"/>
+      <rect x="344" y="448" width="336" height="128"/>
+      <rect x="400" y="592" width="224" height="14" rx="7"/>
+      <rect x="448" y="624" width="128" height="14" rx="7"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,35 @@
+R+ 7.1.2 (Aprender R+ + guardia v7)
+=======================================
+
+Fecha: 2026-06-06
+
+## Resumen
+
+Parche sobre 7.1.1: educación post-registro para quienes actualizan a Guardia 7.x (Learn Hub + track guardia-v7) y retiro del módulo Manejo con sugerencias automáticas — VPO queda documentación manual.
+
+## Nuevo / mejorado
+
+- **Aprender R+** — Botón en el header (libro) y entrada en Ajustes → Ayuda. Abre el **Learn Hub**: módulos con progreso, artículos y tutoriales guiados.
+- **Track guardia-v7** — Cinco capítulos (modo guardia, censo, entrega, LAN, móvil) con 19 pasos anclados al tablero real. Se ofrece tras el registro a quienes vienen de versiones anteriores a 7.0 o no completaron Fundamentos.
+- **Tarjeta de actualización** — Aviso no bloqueante en el área principal para usuarios 7.x que aún no vieron la guía; se puede descartar.
+- **Curriculum v9** — Nuevos capítulos guardia-v7 y quick-route; progreso por track en localStorage.
+- **Centro de ayuda** — Tres artículos nuevos: Modo Guardia (7.x), Modo Entrega y pendientes, LAN/PIN del turno y móvil.
+
+## Cambio de alcance clínico
+
+- **Sin Manejo automático** — Se elimina el módulo Manejo (electrolitos, ATB, infusiones, protocolos, calculadoras) y su sync LAN.
+- **Sin sugerencias inferidas** — Fuera reglas de seguridad HC/labs, sugerencias de laboratorio, inferencia de diagnósticos VPO y calculadoras peroperatorias.
+- **VPO** — Sigue como documentación manual: escalas, EKG, recetas y texto libre; sin autocompletar clínico.
+
+## Operación en guardia
+
+Parche sobre **7.1.1**: instala en todas las estaciones del turno el mismo día. PIN, sala, command sync y barra de fases no cambian.
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v7.1.2
+
+- Mac: `R+-7.1.2-arm64.dmg`, `R+-7.1.2-x64.dmg` (y zip para auto-update).
+- Windows: `R+-7.1.2-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye write-release-yml.js).

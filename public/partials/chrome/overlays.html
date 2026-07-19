@@ -1,0 +1,361 @@
+<a class="skip-to-main" href="#main-area">Saltar al contenido principal</a>
+
+<div id="rpc-mobile-boot-banner" aria-live="polite" aria-hidden="true"></div>
+
+<div id="update-banner">
+  <span id="update-banner-text">Descargando actualización…</span>
+  <div id="update-progress-track">
+    <div id="update-progress-fill"></div>
+  </div>
+  <div id="update-actions">
+    <button type="button" class="update-banner-btn-primary" onclick="installUpdate()">Instalar y reiniciar</button>
+    <button type="button" class="update-banner-btn-secondary" onclick="document.getElementById('update-banner').classList.remove('is-active')">Más tarde</button>
+  </div>
+</div>
+
+<div id="update-modal-backdrop" aria-hidden="true">
+  <div id="update-modal" role="dialog" aria-modal="true" aria-labelledby="update-modal-title" tabindex="-1">
+    <h2 id="update-modal-title">Nueva versión<span class="version-pill" id="update-modal-version-pill" style="display:none;"></span><span class="channel-pill" id="update-modal-channel-pill" style="display:none;">Pre-release</span></h2>
+    <div class="release-notes" id="update-modal-notes"></div>
+    <div class="update-state-msg" id="update-modal-state"></div>
+    <div class="error-box" id="update-modal-error" style="display:none;"></div>
+    <div class="progress-wrap" id="update-modal-progress-wrap">
+      <div class="progress-fill" id="update-modal-progress-fill"></div>
+    </div>
+    <div class="progress-label" id="update-modal-progress-label"></div>
+    <div class="modal-actions" id="update-modal-actions-primary"></div>
+    <div class="modal-actions" id="update-modal-actions-secondary" style="margin-top:8px;justify-content:flex-start;"></div>
+  </div>
+</div>
+
+<div id="min-version-backdrop" aria-hidden="true">
+  <div id="min-version-modal" role="alertdialog" aria-modal="true" aria-labelledby="min-version-title" aria-describedby="min-version-message">
+    <h2 id="min-version-title">Actualización requerida</h2>
+    <p id="min-version-message">Esta versión de R+ ya no es compatible. Instala la versión mínima soportada para continuar usando la aplicación.</p>
+    <div class="min-version-meta" id="min-version-meta"></div>
+    <div class="min-version-actions">
+      <button type="button" class="btn-secondary" id="min-version-releases-btn">Descargar desde GitHub</button>
+      <button type="button" class="btn-primary" id="min-version-check-btn">Buscar actualización</button>
+    </div>
+  </div>
+</div>
+
+<div id="tend-hidden-modal-backdrop" class="modal-backdrop" aria-hidden="true">
+  <div class="modal tend-hidden-modal" role="dialog" aria-modal="true" aria-labelledby="tend-hidden-modal-title">
+    <h3 id="tend-hidden-modal-title">Analitos ocultos</h3>
+    <p class="tend-hidden-modal-hint">Pulsa un analito o el ícono del ojo para volver a mostrarlo en la cuadrícula de tendencias.</p>
+    <div id="tend-hidden-modal-chips" class="tend-hidden-modal-chips"></div>
+    <div class="modal-actions">
+      <button type="button" class="btn-save" data-tend-action="reset-hidden">Mostrar todos</button>
+    </div>
+  </div>
+</div>
+
+<div id="lab-display-prefs-backdrop" class="modal-backdrop" aria-hidden="true">
+  <div class="modal lab-display-prefs-modal" role="dialog" aria-modal="true" aria-labelledby="lab-display-prefs-title" onclick="event.stopPropagation()">
+    <h3 id="lab-display-prefs-title">Vista de laboratorio</h3>
+    <p class="lab-display-prefs-hint">Solo en este equipo · vista de resultados y copiar al portapapeles.</p>
+    <div class="lab-display-prefs-fields">
+      <div class="lab-pref-row">
+        <span class="lab-pref-row-label" id="lab-pref-bh-extended-lbl">BH extendida</span>
+        <label class="rpc-switch">
+          <input type="checkbox" id="lab-pref-bh-extended" class="rpc-switch-input" role="switch" aria-labelledby="lab-pref-bh-extended-lbl" onchange="onLabDisplayPrefsChanged()" />
+          <span class="rpc-switch-track" aria-hidden="true"><span class="rpc-switch-thumb"></span></span>
+        </label>
+      </div>
+      <div class="lab-pref-row">
+        <span class="lab-pref-row-label" id="lab-pref-gaso-extended-lbl">Gasometría extendida</span>
+        <label class="rpc-switch">
+          <input type="checkbox" id="lab-pref-gaso-extended" class="rpc-switch-input" role="switch" aria-labelledby="lab-pref-gaso-extended-lbl" onchange="onLabDisplayPrefsChanged()" />
+          <span class="rpc-switch-track" aria-hidden="true"><span class="rpc-switch-thumb"></span></span>
+        </label>
+      </div>
+      <div class="lab-pref-row lab-pref-row--stack">
+        <div class="lab-pref-row-copy">
+          <span class="lab-pref-row-label" id="lab-pref-quick-output-lbl">Salida rápida</span>
+          <span class="lab-pref-row-hint">Formatea aunque el expediente no esté en tu lista. No guarda historial.</span>
+        </div>
+        <label class="rpc-switch">
+          <input type="checkbox" id="lab-pref-quick-output" class="rpc-switch-input" role="switch" aria-labelledby="lab-pref-quick-output-lbl" onchange="onLabDisplayPrefsChanged()" />
+          <span class="rpc-switch-track" aria-hidden="true"><span class="rpc-switch-thumb"></span></span>
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="lab-some-tables-backdrop" class="modal-backdrop" aria-hidden="true">
+  <div class="modal lab-some-tables-modal" role="dialog" aria-modal="true" aria-labelledby="lab-some-tables-modal-title" onclick="event.stopPropagation()">
+    <header class="lab-some-tables-modal-head">
+      <h3 id="lab-some-tables-modal-title">Tablas del reporte</h3>
+    </header>
+    <div id="lab-some-tables-modal-body" class="lab-some-tables-modal-body"></div>
+  </div>
+</div>
+
+<div id="ea-charts-backdrop" class="ea-charts-backdrop" aria-hidden="true">
+  <div class="ea-charts-modal" role="dialog" aria-modal="true" aria-labelledby="ea-charts-title" onclick="event.stopPropagation()">
+    <header class="ea-charts-modal-head">
+      <h3 id="ea-charts-title">Gráficas de monitoreo</h3>
+      <button type="button" class="ea-charts-modal-close" onclick="closeEstadoActualChartsModal()" aria-label="Cerrar gráficas">×</button>
+    </header>
+    <div id="ea-charts-modal-mount" class="ea-charts-modal-body">
+      <nav id="ea-charts-tab-nav" class="ea-charts-tabs" role="tablist" aria-label="Gráficas de monitoreo"></nav>
+      <nav id="ea-charts-vitals-nav" class="ea-vitals-family-nav" role="tablist" aria-label="Familia de signos vitales" hidden></nav>
+      <h4 id="ea-charts-chart-title" class="ea-chart-subtitle"></h4>
+      <div class="ea-charts-canvas-cell">
+        <canvas id="ea-charts-canvas"></canvas>
+      </div>
+      <div id="ea-charts-empty" class="ea-charts-empty empty-state empty-state--compact" role="status" hidden>
+        <span class="empty-state-title">Sin datos para graficar</span>
+        <span class="empty-state-lead">Registra al menos 2 mediciones para ver gráficas.</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="ea-vital-history-backdrop" class="ea-vital-history-backdrop" aria-hidden="true">
+  <div class="ea-vital-history-modal" role="dialog" aria-modal="true" aria-labelledby="ea-vital-history-title" onclick="event.stopPropagation()">
+    <header class="ea-vital-history-modal-head">
+      <h3 id="ea-vital-history-title">Historial</h3>
+      <button type="button" class="ea-vital-history-modal-close" onclick="closeEaVitalHistoryModal()" aria-label="Cerrar historial">×</button>
+    </header>
+    <div id="ea-vital-history-body" class="ea-vital-history-modal-body"></div>
+  </div>
+</div>
+
+<div id="ea-registro-backdrop" class="modal-backdrop" aria-hidden="true">
+  <div class="modal ea-registro-modal" role="dialog" aria-modal="true" aria-labelledby="ea-registro-title" onclick="event.stopPropagation()">
+    <header class="ea-registro-modal-head">
+      <h3 id="ea-registro-title">Registrar medición</h3>
+    </header>
+    <div id="ea-registro-modal-body" class="ea-registro-modal-body"></div>
+    <div id="ea-paste-backdrop" class="ea-paste-nested-backdrop" aria-hidden="true">
+      <div class="modal ea-paste-modal" role="dialog" aria-modal="true" aria-labelledby="ea-paste-title" onclick="event.stopPropagation()">
+        <h3 id="ea-paste-title">Pegar monitoreo</h3>
+        <p class="ea-paste-hint">Pega T°, FC, FR, TA, DXT, <strong>SAT/SATURACION</strong>, I, E, EVAC y opcional B (se ignora). Balance = ingresos − salidas en cc. DXT: <code>198@08:30</code>.</p>
+        <textarea id="ea-paste-input" class="ea-paste-input" rows="9" spellcheck="false" aria-label="Texto de monitoreo"></textarea>
+        <p id="ea-paste-preview" class="ea-paste-preview" aria-live="polite"></p>
+        <div class="modal-actions ea-paste-actions">
+          <button type="button" class="btn-med-secondary btn-med-secondary--muted" onclick="closeEstadoActualPasteModal()">Cancelar</button>
+          <button type="button" class="btn-generate" onclick="confirmEstadoActualPaste()">Aplicar al formulario</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="drive-import-backdrop" class="modal-backdrop" aria-hidden="true">
+  <div class="modal drive-import-modal" data-drive-step="paste" role="dialog" aria-modal="true" aria-labelledby="drive-import-title" onclick="event.stopPropagation()">
+    <header class="drive-import-head">
+      <h3 id="drive-import-title">Importar desde Drive</h3>
+      <p id="drive-import-hint" class="drive-import-hint">Pega el documento copiado desde Google Docs. Revisarás cada sección antes de importar.</p>
+    </header>
+
+    <div id="drive-import-step-paste" class="drive-import-pane drive-import-pane--paste">
+      <fieldset id="drive-import-mode-fieldset" class="drive-import-modes">
+        <legend class="visually-hidden">Modo de aplicación</legend>
+        <label class="drive-import-radio"><input type="radio" name="drive-import-mode" value="fill" checked /> Completar vacíos</label>
+        <label class="drive-import-radio"><input type="radio" name="drive-import-mode" value="replace" /> Reemplazar HC</label>
+        <label class="drive-import-radio"><input type="radio" name="drive-import-mode" value="eventos" /> Solo eventualidades</label>
+      </fieldset>
+      <p id="drive-import-warning" class="drive-import-warning" hidden></p>
+      <label for="drive-import-input" class="drive-import-dropzone">
+        <span class="drive-import-dropzone-label">Documento de Drive</span>
+        <textarea
+          id="drive-import-input"
+          class="drive-import-input"
+          rows="3"
+          spellcheck="false"
+          placeholder="Ctrl+V o ⌘V para pegar aquí…"
+        ></textarea>
+        <span class="drive-import-dropzone-meta">Análisis local · no se envía a ningún servidor</span>
+      </label>
+      <p id="drive-import-parse-hint" class="drive-import-parse-hint" hidden aria-live="polite"></p>
+    </div>
+
+    <div id="drive-import-step-review" class="drive-import-pane drive-import-pane--review" hidden>
+      <div class="drive-import-doc-bar">
+        <span id="drive-import-doc-summary" class="drive-import-doc-summary"></span>
+        <button type="button" class="drive-import-doc-edit" id="drive-import-back-paste">Cambiar texto</button>
+      </div>
+      <div class="drive-import-review-top">
+        <p id="drive-import-review-progress" class="drive-import-review-progress" aria-live="polite"></p>
+        <div class="drive-import-review-dots" id="drive-import-review-dots" role="tablist" aria-label="Secciones a revisar"></div>
+      </div>
+      <article class="drive-import-review-card">
+        <h4 id="drive-import-review-title" class="drive-import-review-title"></h4>
+        <p id="drive-import-review-hint" class="drive-import-review-hint"></p>
+        <label id="drive-import-review-include-wrap" class="drive-import-review-include">
+          <input type="checkbox" id="drive-import-review-include" checked />
+          <span>Incluir al importar</span>
+        </label>
+        <div id="drive-import-review-structured" class="drive-import-review-structured" hidden></div>
+        <textarea
+          id="drive-import-review-editor"
+          class="drive-import-review-editor"
+          rows="10"
+          spellcheck="true"
+          aria-labelledby="drive-import-review-title"
+        ></textarea>
+        <div id="drive-import-review-list" class="drive-import-review-list" hidden></div>
+      </article>
+    </div>
+
+    <div class="modal-actions drive-import-actions">
+      <div id="drive-import-actions-paste" class="drive-import-actions-group">
+        <button type="button" class="btn-med-secondary btn-med-secondary--muted" id="drive-import-cancel" onclick="closeDriveImportModal()">Cancelar</button>
+        <button type="button" class="btn-med-secondary" id="drive-import-apply-fast">Importar sin revisar</button>
+        <button type="button" class="btn-generate" id="drive-import-confirm" disabled>Revisar secciones…</button>
+      </div>
+      <div id="drive-import-actions-review" class="drive-import-actions-group" hidden>
+        <button type="button" class="btn-med-secondary btn-med-secondary--muted" id="drive-import-cancel-review" onclick="closeDriveImportModal()">Cancelar</button>
+        <button type="button" class="btn-med-secondary btn-med-secondary--muted" id="drive-import-review-prev">Anterior</button>
+        <button type="button" class="btn-generate" id="drive-import-review-next">Importar lo aprobado</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="lab-repo-import-modal" class="modal-backdrop" aria-hidden="true" hidden>
+  <div class="modal lab-repo-import-modal" role="dialog" aria-modal="true" aria-labelledby="lab-repo-import-title" onclick="event.stopPropagation()">
+    <h3 id="lab-repo-import-title">Importar del repositorio</h3>
+    <p class="lab-repo-import-hint">Consulta estudios del portal intrahospitalario por registro y rango de fechas.</p>
+    <div class="lab-repo-import-fields">
+      <div class="field-group">
+        <label for="lab-repo-registro">Registro</label>
+        <input id="lab-repo-registro" type="text" autocomplete="off" spellcheck="false" />
+      </div>
+      <div class="field-group">
+        <label for="lab-repo-desde">Desde</label>
+        <input id="lab-repo-desde" type="date" class="rpc-date-input" />
+      </div>
+      <div class="field-group">
+        <label for="lab-repo-hasta">Hasta</label>
+        <input id="lab-repo-hasta" type="date" class="rpc-date-input" />
+      </div>
+    </div>
+    <div class="modal-actions lab-repo-import-actions">
+      <button type="button" class="btn-med-secondary btn-med-secondary--muted" onclick="closeLabRepoImportModal()">Cancelar</button>
+      <button type="button" class="btn-generate" id="lab-repo-import-confirm" onclick="confirmLabRepoImport()">Importar</button>
+    </div>
+  </div>
+</div>
+
+<div id="lab-bulk-preview-backdrop" class="modal-backdrop" aria-hidden="true">
+  <div class="modal lab-bulk-preview-modal" role="dialog" aria-modal="true" aria-labelledby="lab-bulk-preview-title" onclick="event.stopPropagation()">
+    <h3 id="lab-bulk-preview-title">Vista previa — laboratorios</h3>
+    <p class="lab-bulk-preview-hint">Revisa pacientes, días detectados y errores antes de guardar en historial.</p>
+    <p id="lab-bulk-preview-summary" class="lab-bulk-preview-summary"></p>
+    <div id="lab-bulk-preview-body" class="lab-bulk-preview-scroll"></div>
+    <div class="modal-actions lab-bulk-preview-actions">
+      <button type="button" class="btn-med-secondary btn-med-secondary--muted" onclick="closeLabBulkPreviewModal()">Cancelar</button>
+      <button type="button" class="btn-generate" id="lab-bulk-preview-confirm" onclick="confirmLabBulkPreview()">Procesar todo</button>
+    </div>
+  </div>
+</div>
+
+<div id="lab-bulk-tour-hint-backdrop" class="modal-backdrop" aria-hidden="true">
+  <div class="modal lab-bulk-tour-hint-modal" role="dialog" aria-modal="true" aria-labelledby="lab-bulk-tour-hint-title" onclick="event.stopPropagation()">
+    <h3 id="lab-bulk-tour-hint-title">Varios días y varios pacientes</h3>
+    <p class="lab-bulk-tour-hint-lead">En el cuadro ya están cargados <strong>DEMO PÉREZ</strong> (dos días) y <strong>DEMO GARCÍA</strong> tras el separador. R+ los distingue por paciente y por fecha al procesar.</p>
+    <p class="lab-bulk-tour-hint-lead">Referencia del separador y del segundo paciente (ya insertado en el cuadro):</p>
+    <pre id="lab-bulk-tour-hint-sample" class="lab-bulk-tour-hint-sample" aria-label="Ejemplo de segundo paciente"></pre>
+    <div class="modal-actions lab-bulk-tour-hint-actions">
+      <button type="button" class="btn-med-secondary btn-med-secondary--dia" onclick="insertLabTourSecondPatientExample()">Insertar ejemplo en el cuadro</button>
+      <button type="button" class="btn-generate" onclick="closeLabBulkTourHintModal()">Entendido</button>
+    </div>
+  </div>
+</div>
+
+<div id="med-receta-paste-modal" class="modal-backdrop med-pharm-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="med-receta-paste-title" hidden>
+  <div class="med-pharm-modal med-pharm-paste-dialog" role="document" onclick="event.stopPropagation()">
+    <div class="card-header card-header-row">
+      <h2 id="med-receta-paste-title" style="margin:0;font-size:14px;font-weight:700;flex:1;">Importar desde SOME</h2>
+      <button type="button" class="btn-med-secondary" onclick="closeMedRecetaPasteModal()" aria-label="Cerrar">×</button>
+    </div>
+    <div class="med-pharm-paste-body">
+      <p class="med-pharm-paste-hint">Pega el bloque de <strong>medicamentos</strong> y <strong>dietas</strong> copiado del hospital (columnas con <strong>tabulador</strong>). Cuidados y estudios se omiten.</p>
+      <label class="med-pharm-paste-field" for="med-input">
+        <span class="med-pharm-paste-field-label">Texto del hospital</span>
+        <textarea id="med-input" class="med-pharm-paste-input" rows="12" spellcheck="false" autocomplete="off" autocorrect="off" placeholder="MEDICAMENTOS, MEDICAMENTOS P2, DIETAS…" aria-label="Listado SOME del hospital"></textarea>
+      </label>
+    </div>
+    <div class="med-pharm-paste-actions">
+      <button type="button" class="btn-med-secondary btn-med-secondary--muted" onclick="limpiarRecetaInput()">Limpiar</button>
+      <button type="button" class="btn-med-secondary" onclick="closeMedRecetaPasteModal()">Cancelar</button>
+      <button type="button" class="btn-generate" onclick="procesarRecetaMed()">Procesar receta</button>
+    </div>
+  </div>
+</div>
+
+<div id="med-pharm-paste-modal" class="modal-backdrop med-pharm-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="med-pharm-paste-title" hidden>
+  <div class="med-pharm-modal med-pharm-paste-dialog" role="document" onclick="event.stopPropagation()">
+    <div class="card-header card-header-row">
+      <h2 id="med-pharm-paste-title" style="margin:0;font-size:14px;font-weight:700;flex:1;">Pegar mes SOME</h2>
+      <button type="button" class="btn-med-secondary" onclick="closeMedPharmModals()" aria-label="Cerrar">×</button>
+    </div>
+    <div class="med-pharm-paste-body">
+      <p class="med-pharm-paste-hint">Pega la matriz mensual del hospital: columnas separadas por <strong>tabulador</strong>, cabecera con días <code>01</code>–<code>31</code>.</p>
+      <label class="med-pharm-paste-field" for="med-pharm-paste">
+        <span class="med-pharm-paste-field-label">Matriz SOME</span>
+        <textarea id="med-pharm-paste" class="med-pharm-paste-input" rows="12" spellcheck="false" placeholder="Pega aquí el bloque copiado del sistema SOME…" aria-label="Matriz mensual SOME"></textarea>
+      </label>
+    </div>
+    <div class="med-pharm-paste-actions">
+      <button type="button" class="btn-med-secondary btn-med-secondary--muted" onclick="closeMedPharmModals()">Cancelar</button>
+      <button type="button" class="btn-generate" id="med-pharm-import-btn">Importar mes</button>
+    </div>
+  </div>
+</div>
+
+<div id="med-pharm-modal-one" class="modal-backdrop med-pharm-modal-backdrop med-pharm-modal--one" role="dialog" aria-modal="true" aria-labelledby="med-pharm-modal-one-title" hidden>
+  <div class="med-pharm-modal med-pharm-dialog-one" onclick="event.stopPropagation()">
+    <div class="card-header card-header-row med-pharm-full-header">
+      <div class="med-pharm-full-header-text">
+        <h2 id="med-pharm-modal-one-title"></h2>
+        <p id="med-pharm-modal-one-sub" class="med-pharm-full-header-sub"></p>
+      </div>
+      <button type="button" class="btn-med-secondary" onclick="closeMedPharmModals()">Cerrar</button>
+    </div>
+    <div class="modal-body-scroll" id="med-pharm-modal-one-body"></div>
+    <div class="med-pharm-modal-legend med-pharm-legend">
+      <span><i class="med-pharm-swatch med-pharm-swatch-ind"></i> Indicado (administrado por defecto)</span>
+      <span><i class="med-pharm-swatch med-pharm-swatch-na"></i> No administrado (clic en celda)</span>
+      <span><i class="med-pharm-swatch med-pharm-swatch-today"></i> Hoy</span>
+    </div>
+  </div>
+</div>
+
+<div id="med-pharm-modal-full" class="modal-backdrop med-pharm-modal-backdrop full" role="dialog" aria-modal="true" aria-labelledby="med-pharm-modal-full-title" hidden>
+  <div class="med-pharm-modal full" onclick="event.stopPropagation()">
+    <div class="card-header card-header-row med-pharm-full-header">
+      <div class="med-pharm-full-header-text">
+        <h2 id="med-pharm-modal-full-title"></h2>
+        <p id="med-pharm-modal-full-sub" class="med-pharm-full-header-sub" hidden></p>
+      </div>
+      <button type="button" class="btn-med-secondary" onclick="closeMedPharmModals()">Cerrar</button>
+    </div>
+    <div class="modal-body-scroll" id="med-pharm-modal-full-body"></div>
+    <div class="med-pharm-modal-legend med-pharm-legend">
+      <span><i class="med-pharm-swatch med-pharm-swatch-ind"></i> Indicado (administrado por defecto)</span>
+      <span><i class="med-pharm-swatch med-pharm-swatch-na"></i> No administrado (clic en celda)</span>
+      <span><i class="med-pharm-swatch med-pharm-swatch-today"></i> Hoy</span>
+    </div>
+  </div>
+</div>
+
+<div id="clinico-unlock-backdrop" class="modal-backdrop" aria-hidden="true">
+  <div class="modal clinico-unlock-modal" role="dialog" aria-modal="true" aria-labelledby="clinico-unlock-title" onclick="event.stopPropagation()">
+    <h3 id="clinico-unlock-title">Guía clínica de orientación</h3>
+    <p class="clinico-unlock-lead">Las sugerencias de Manejo y Guía clínica en R+ son material de <strong>orientación</strong> y apoyo a la decisión. No sustituyen el juicio clínico: el <strong>criterio clínico del médico tratante siempre va primero</strong>, conforme al contexto del paciente, comorbilidades y protocolos institucionales vigentes.</p>
+    <label for="clinico-unlock-input" class="clinico-unlock-label">Para activar la pestaña Clínico, escribe la frase siguiente:</label>
+    <input type="text" id="clinico-unlock-input" class="clinico-unlock-input" autocomplete="off" spellcheck="false" aria-describedby="clinico-unlock-phrase-hint clinico-unlock-error" onkeydown="if(event.key==='Enter')confirmClinicoUnlock()">
+    <p id="clinico-unlock-phrase-hint" class="clinico-unlock-phrase-hint">entiendo, usare mi criterio clincio</p>
+    <p id="clinico-unlock-error" class="clinico-unlock-error" hidden aria-live="polite"></p>
+    <div class="modal-actions clinico-unlock-actions">
+      <button type="button" class="btn-med-secondary btn-med-secondary--muted" onclick="closeClinicoUnlockModal()">Cancelar</button>
+      <button type="button" class="btn-generate" onclick="confirmClinicoUnlock()">Activar guía clínica</button>
+    </div>
+  </div>
+</div>

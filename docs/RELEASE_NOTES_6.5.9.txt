@@ -1,0 +1,43 @@
+R+ 6.5.9 (LAN, entrega y directorio — paridad Mac/Windows)
+============================================================
+
+Fecha: 2026-06-03
+
+## Resumen
+
+Correcciones de **sala en vivo (⇄)**, **directorio LAN**, **Modo Entrega (pendientes/plantillas)** y **gestión de equipos**, con la misma lógica en **Mac y Windows**. La fusión de perfiles `@usuario` ya no pierde usuarios al sincronizar con otra versión o tras «rotación nueva» en un peer.
+
+## Nuevo / mejorado
+
+### Sync LAN y directorio (Mac + Windows)
+
+- **Directorio LAN** — Lista usuarios de **todas las salas** (no solo la sala activa); deja de quedarse en «Cargando directorio…» si el sync-bundle tarda o falla (timeout 5 s, carga desde base local primero).
+- **Permiso de directorio** — Corregido error `canViewLanUserDirectory is not defined` al abrir el directorio.
+- **Fusión de usuarios** — Al mezclar snapshots LAN, se **unen** `clinical_users` local + remoto; una Mac/Windows en 6.5.6–6.5.8 ya no borra handles al recibir rotación nueva sin lista de usuarios.
+- **@usuario obliga sync** — Si ya tienes LAN configurada, no puedes registrar @usuario sin sala ⇄ activa o membresía por invitación; al guardar, R+ **publica de inmediato** tu perfil al host (no solo en esta Mac). Enlaces `?host=&code=&room=` se aplican antes del registro.
+
+### Modo Entrega
+
+- **Plantillas** — IPC `db:entrega-template-list` devuelve el formato que espera la UI; se pueden **añadir procedimientos** y refrescar catálogo.
+- **Modal** — Delegación de clics en el panel de pendientes (botones + / Añadir).
+
+### Mi rotación
+
+- **Eliminar / editar equipo** — Los botones del modal vuelven a responder (delegación en el cuerpo del modal, no bloqueada por `stopPropagation` del backdrop).
+
+### Windows (instalador y sala)
+
+- Misma build de renderer y merge LAN que en Mac; **recomendado** que todas las estaciones de guardia (Mac anfitrión y PCs Windows unidas por invitación) estén en **6.5.9**.
+- Primera vez en sala: permitir R+ en el **firewall** (puerto **3738**) si Windows pregunta.
+- Empaquetado: `prebuild:win` incluye Argon2 win32; `verify-release-natives` en el pipeline de publish.
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v6.5.9
+
+- Mac: `R+-6.5.9-arm64.dmg`, `R+-6.5.9-x64.dmg` (y zip para auto-update).
+- Windows: `R+-6.5.9-x64.exe`.
+
+**Recomendado:** Actualizar **todas** las Macs y PCs Windows del turno a **6.5.9**, activar sala ⇄ **antes** de registrar @usuario, y confirmar el mensaje «publicado en la sala ⇄» al guardar perfil.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye `build:ui` y bundle de producción).

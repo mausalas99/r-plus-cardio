@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#4a52e8" />
+  <title>Cómo usar la cola — R+ Lista de espera</title>
+  <link rel="icon" type="image/png" sizes="192x192" href="/equipos/icons/icon-192.png?v=12" />
+  <link rel="stylesheet" href="/tokens.css" />
+  <link rel="stylesheet" href="/equipos/equipos.css?v=13" />
+  <link rel="stylesheet" href="/equipos/equipos-ayuda.css?v=2" />
+</head>
+<body class="equipos-body">
+  <header class="equipos-topbar">
+    <div class="equipos-topbar-inner">
+      <div class="equipos-brand" aria-label="R+ Lista de espera">
+        <img
+          class="equipos-brand-mark"
+          src="/equipos/icons/icon-192.png?v=12"
+          width="32"
+          height="32"
+          alt=""
+          decoding="async"
+        />
+        <div class="equipos-brand-text">
+          <p class="equipos-brand-title">Cómo usar la cola</p>
+          <p class="equipos-brand-sub">Lumify · EKG · Ultrasonido</p>
+        </div>
+      </div>
+      <div class="equipos-topbar-actions">
+        <a href="/equipos/" class="equipos-inicio-btn" id="equipos-ayuda-back">Volver a la cola</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="equipos-ayuda-page">
+    <p class="equipos-ayuda-lead">
+      Guía rápida para reservar Lumify, EKG o ultrasonido en guardia. Abre el enlace o QR del turno,
+      agrégalo a la pantalla de inicio para recibir avisos, identifícate una vez y usa la cola desde el teléfono.
+    </p>
+
+    <ol class="equipos-ayuda-steps">
+      <li class="equipos-ayuda-step">
+        <div class="equipos-ayuda-step-head">
+          <span class="equipos-ayuda-step-num" aria-hidden="true">1</span>
+          <h2 class="equipos-ayuda-step-title">Identifícate</h2>
+        </div>
+        <p class="equipos-ayuda-step-text">
+          Escribe tu nombre y elige tu rotación. R+ recuerda estos datos en este dispositivo.
+        </p>
+        <div class="equipos-ayuda-mock" aria-hidden="true">
+          <div class="equipos-identity">
+            <p class="equipos-identity-title">Identificación</p>
+            <div><label>Tu nombre</label>
+            <input type="text" value="Ana R2" readonly tabindex="-1" /></div>
+            <div><label>Rotación</label>
+            <select disabled tabindex="-1"><option selected>Sala 1</option></select></div>
+          </div>
+        </div>
+        <span class="equipos-ayuda-callout">Completa esto antes de cualquier acción en la cola.</span>
+      </li>
+
+      <li class="equipos-ayuda-step">
+        <div class="equipos-ayuda-step-head">
+          <span class="equipos-ayuda-step-num" aria-hidden="true">2</span>
+          <h2 class="equipos-ayuda-step-title">Agrega R+ Cola a Inicio</h2>
+        </div>
+        <p class="equipos-ayuda-step-text">
+          Para recibir avisos cuando te toque, instala la cola en la pantalla de inicio.
+          Abre primero el enlace del turno y espera a que cargue la cola antes de agregarla.
+        </p>
+        <div class="equipos-ayuda-install-guides">
+          <article class="equipos-ayuda-install-guide">
+            <h3 class="equipos-ayuda-install-title">
+              <span class="equipos-ayuda-install-badge" aria-hidden="true">🍎</span>
+              iPhone (Safari)
+            </h3>
+            <ol class="equipos-ayuda-install-steps">
+              <li>Abre el enlace del turno en <strong>Safari</strong> (no en Chrome).</li>
+              <li>Espera a que cargue la cola.</li>
+              <li>Pulsa <strong>Compartir</strong> (cuadrado con flecha hacia arriba).</li>
+              <li>Elige <strong>Agregar a pantalla de inicio</strong>.</li>
+              <li>Confirma con <strong>Agregar</strong>.</li>
+              <li>Abre la cola desde el icono en Inicio, no desde una pestaña de Safari.</li>
+            </ol>
+          </article>
+          <article class="equipos-ayuda-install-guide">
+            <h3 class="equipos-ayuda-install-title">
+              <span class="equipos-ayuda-install-badge" aria-hidden="true">🤖</span>
+              Android (Chrome)
+            </h3>
+            <ol class="equipos-ayuda-install-steps">
+              <li>Abre el enlace del turno en <strong>Chrome</strong>.</li>
+              <li>Espera a que cargue la cola.</li>
+              <li>Pulsa el menú <strong>⋮</strong> (tres puntos, arriba a la derecha).</li>
+              <li>Elige <strong>Instalar aplicación</strong> o <strong>Agregar a pantalla de inicio</strong>.</li>
+              <li>Confirma la instalación.</li>
+              <li>Abre la cola desde el icono en Inicio.</li>
+              <li>Cuando Chrome pida permiso, pulsa <strong>Permitir</strong> notificaciones.</li>
+            </ol>
+          </article>
+        </div>
+        <span class="equipos-ayuda-callout">
+          En iPhone las notificaciones solo llegan si abres la app desde Inicio. En Android, si las bloqueaste,
+          ve a Ajustes → Apps → Chrome → Notificaciones.
+        </span>
+      </li>
+
+      <li class="equipos-ayuda-step">
+        <div class="equipos-ayuda-step-head">
+          <span class="equipos-ayuda-step-num" aria-hidden="true">3</span>
+          <h2 class="equipos-ayuda-step-title">Entra en cola</h2>
+        </div>
+        <p class="equipos-ayuda-step-text">
+          Si el equipo está disponible y no lo tienes, pulsa <strong>Entrar en cola</strong> en Lumify, EKG o US.
+          Puedes estar en varias colas a la vez.
+        </p>
+        <div class="equipos-ayuda-mock" aria-hidden="true">
+          <article class="equipos-card">
+            <div class="equipos-card-head">
+              <h2>Lumify</h2>
+              <span><span class="equipos-chip available">Disponible</span></span>
+            </div>
+            <div class="equipos-meta">Nadie lo tiene</div>
+            <div class="equipos-actions">
+              <button type="button" class="equipos-btn">Entrar en cola</button>
+              <button type="button" class="equipos-btn secondary">Tomar</button>
+            </div>
+          </article>
+        </div>
+        <span class="equipos-ayuda-callout">El botón azul te agrega al final de la fila.</span>
+      </li>
+
+      <li class="equipos-ayuda-step">
+        <div class="equipos-ayuda-step-head">
+          <span class="equipos-ayuda-step-num" aria-hidden="true">4</span>
+          <h2 class="equipos-ayuda-step-title">Revisa tu posición y avisos</h2>
+        </div>
+        <p class="equipos-ayuda-step-text">
+          Abre el panel <strong>Cola</strong> para ver quién sigue. Pulsa <strong>Activar avisos</strong>
+          para que te notifique cuando seas el siguiente. Si no ves el botón o no llegan avisos, revisa el
+          paso 2 (agregar a Inicio). Los avisos llegan aunque cierres la app.
+        </p>
+        <div class="equipos-ayuda-mock" aria-hidden="true">
+          <article class="equipos-card">
+            <div class="equipos-card-head">
+              <h2>EKG</h2>
+              <span><span class="equipos-chip in_use">En uso</span></span>
+            </div>
+            <div class="equipos-meta">En uso: <strong>Carlos R1</strong> (Sala 1)</div>
+            <details class="equipos-queue" open>
+              <summary>Cola · 2 personas</summary>
+              <ol class="equipos-queue-list">
+                <li class="equipos-queue-item is-next is-you">
+                  <span class="equipos-queue-pos">1</span>
+                  <span class="equipos-queue-name">Ana R2</span>
+                  <span class="equipos-queue-rot">Sala 1</span>
+                </li>
+                <li class="equipos-queue-item">
+                  <span class="equipos-queue-pos">2</span>
+                  <span class="equipos-queue-name">Luis R3</span>
+                  <span class="equipos-queue-rot">Sala 2</span>
+                </li>
+              </ol>
+              <div class="equipos-queue-actions">
+                <p class="equipos-queue-you">Tu posición: 1</p>
+                <div class="equipos-queue-btn-row">
+                  <button type="button" class="equipos-btn secondary">Ceder turno</button>
+                  <button type="button" class="equipos-btn secondary">Salir de cola</button>
+                </div>
+              </div>
+            </details>
+            <div class="equipos-actions">
+              <span class="equipos-queue-badge">En cola · #1</span>
+              <button type="button" class="equipos-btn push-activate">Activar avisos</button>
+            </div>
+          </article>
+        </div>
+        <span class="equipos-ayuda-callout">Tu fila resaltada = tú. #1 = te toca cuando quede libre.</span>
+      </li>
+
+      <li class="equipos-ayuda-step">
+        <div class="equipos-ayuda-step-head">
+          <span class="equipos-ayuda-step-num" aria-hidden="true">5</span>
+          <h2 class="equipos-ayuda-step-title">Toma el equipo</h2>
+        </div>
+        <p class="equipos-ayuda-step-text">
+          Cuando el equipo quede disponible y seas el siguiente, pulsa <strong>Tomar</strong>.
+          En Lumify puedes registrar la carga de batería al recogerlo.
+        </p>
+        <div class="equipos-ayuda-mock" aria-hidden="true">
+          <article class="equipos-card">
+            <div class="equipos-card-head">
+              <h2>Lumify</h2>
+              <span><span class="equipos-chip available">Disponible</span></span>
+            </div>
+            <div class="equipos-meta">Nadie lo tiene</div>
+            <div class="equipos-actions">
+              <span class="equipos-queue-badge">En cola · #1</span>
+              <button type="button" class="equipos-btn">Tomar</button>
+            </div>
+          </article>
+        </div>
+        <span class="equipos-ayuda-callout">Si no eres #1, R+ te avisará antes de tomarlo fuera de turno.</span>
+      </li>
+
+      <li class="equipos-ayuda-step">
+        <div class="equipos-ayuda-step-head">
+          <span class="equipos-ayuda-step-num" aria-hidden="true">6</span>
+          <h2 class="equipos-ayuda-step-title">Entrega al terminar</h2>
+        </div>
+        <p class="equipos-ayuda-step-text">
+          Cuando acabes, pulsa <strong>Entregar</strong>. El siguiente en cola pasa a ser #1 y recibe aviso.
+          En Lumify registra la batería al devolverlo.
+        </p>
+        <div class="equipos-ayuda-mock" aria-hidden="true">
+          <article class="equipos-card">
+            <div class="equipos-card-head">
+              <h2>Ultrasonido</h2>
+              <span><span class="equipos-chip in_use">En uso</span></span>
+            </div>
+            <div class="equipos-meta">En uso: <strong>Ana R2</strong> (Sala 1)</div>
+            <div class="equipos-actions">
+              <button type="button" class="equipos-btn">Entregar</button>
+            </div>
+          </article>
+        </div>
+      </li>
+
+      <li class="equipos-ayuda-step">
+        <div class="equipos-ayuda-step-head">
+          <span class="equipos-ayuda-step-num" aria-hidden="true">7</span>
+          <h2 class="equipos-ayuda-step-title">Reporta un problema</h2>
+        </div>
+        <p class="equipos-ayuda-step-text">
+          ¿Falla o falta material? Usa <strong>Reportar problema</strong> en cualquier tarjeta.
+          El turno verá un aviso en pantalla hasta que alguien lo marque como atendido.
+        </p>
+        <div class="equipos-ayuda-mock" aria-hidden="true">
+          <article class="equipos-card">
+            <div class="equipos-card-head">
+              <h2>EKG</h2>
+              <span><span class="equipos-chip available">Disponible</span></span>
+            </div>
+            <div class="equipos-meta">Nadie lo tiene</div>
+            <div class="equipos-actions">
+              <button type="button" class="equipos-btn warn secondary">Reportar problema</button>
+            </div>
+          </article>
+        </div>
+      </li>
+    </ol>
+
+    <p class="equipos-ayuda-tip">
+      <strong>Consejo:</strong> agrega R+ Cola a Inicio antes de unirte a la fila para no perder avisos.
+      Usa <strong>Volver a la cola</strong> arriba para regresar. Si cambias de nombre o rotación,
+      actualiza la identificación antes de entrar de nuevo.
+    </p>
+  </main>
+
+  <script>
+    (function () {
+      try {
+        var back = document.getElementById('equipos-ayuda-back');
+        if (!back) return;
+        var ret =
+          sessionStorage.getItem('equipos-ayuda-return') ||
+          sessionStorage.getItem('equipos-home-url');
+        if (ret) back.href = ret;
+      } catch (_e) {}
+    })();
+  </script>
+</body>
+</html>

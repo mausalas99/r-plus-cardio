@@ -1,0 +1,1354 @@
+/* Hallmark · utilitarian clinical · theme: Quiet workbench · design.md */
+.main-work-scroll {
+  flex: 1;
+  overflow-y: auto;
+  padding: calc(24px * var(--density-space));
+  display: flex;
+  flex-direction: column;
+  gap: calc(20px * var(--density-space));
+  min-height: 0;
+}
+.rpc-form-stack {
+  display: flex;
+  flex-direction: column;
+  gap: calc(20px * var(--density-space));
+}
+.rpc-form-stack-tight {
+  display: flex;
+  flex-direction: column;
+  gap: calc(16px * var(--density-space));
+}
+header {
+  --header-bar-height: calc(54px + 12px * (var(--density-space) - 1));
+  position: relative;
+  background: var(--surface);
+  color: var(--text);
+  padding: 0 calc(24px * var(--density-space));
+  min-height: calc(54px + 12px * (var(--density-space) - 1));
+  height: calc(54px + 12px * (var(--density-space) - 1));
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) minmax(0, max-content);
+  align-items: center;
+  gap: 8px 12px;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-sm);
+  border-bottom: 1px solid var(--divider);
+  z-index: var(--z-sticky);
+  margin-left: var(--shell-inset);
+  margin-right: var(--shell-inset);
+  border-bottom-left-radius: var(--radius-lg);
+  border-bottom-right-radius: var(--radius-lg);
+  /* Menús ⇄ / ⚙ cuelgan bajo .header-right; overflow:hidden los recortaba por completo */
+  overflow: visible;
+}
+/* Solo la barra superior de la app — no otros <header> del contenido (p. ej. receta-hu-head) */
+html.electron-macos-inset-bar body > header {
+  margin-left: 0;
+  padding-left: var(--titlebar-traffic-gap);
+  -webkit-app-region: drag;
+}
+html.electron-macos-inset-bar body > header #app-brand,
+html.electron-macos-inset-bar body > header .header-right {
+  -webkit-app-region: no-drag;
+}
+html.electron-macos-inset-bar #app-brand {
+  margin-left: 0;
+}
+/* Con modales abiertos, el header no debe capturar arrastre ni clics bajo el overlay */
+html.electron-macos-inset-bar:has(.modal-backdrop.open) body > header {
+  -webkit-app-region: no-drag;
+}
+/* Toda capa modal es interactiva (no arrastrar ventana) */
+html.electron-macos-inset-bar .modal-backdrop.open,
+html.electron-macos-inset-bar .modal-backdrop.open *,
+html.electron-macos-inset-bar .tend-group-backdrop:not([style*="display: none"]),
+html.electron-macos-inset-bar .tend-group-backdrop:not([style*="display: none"]) * {
+  -webkit-app-region: no-drag;
+}
+/* Modales grandes: quedar bajo la franja de semáforos / drag nativo */
+html.electron-macos-inset-bar #lab-some-tables-backdrop.modal-backdrop.open,
+html.electron-macos-inset-bar #med-pharm-modal-full.med-pharm-modal-backdrop.open,
+html.electron-macos-inset-bar #censo-preview-backdrop.censo-preview-backdrop.open,
+html.electron-macos-inset-bar #entrega-modal-backdrop.entrega-modal-backdrop.open {
+  padding-top: max(
+    var(--electron-macos-chrome-top),
+    calc(12px * var(--density-space))
+  );
+  box-sizing: border-box;
+}
+
+html.electron-macos-inset-bar .med-pharm-modal.full .med-pharm-full-header {
+  padding-left: var(--titlebar-traffic-gap);
+}
+header h1 { font-size: 16px; font-weight: 700; letter-spacing: -0.02em; }
+/* Fecha centrada + meta Estado Actual apilados (evita solaparse con botones derecha). */
+.header-center {
+  position: static;
+  left: auto;
+  transform: none;
+  justify-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  pointer-events: none;
+  text-align: center;
+}
+#today-date {
+  position: static;
+  transform: none;
+  max-width: 100%;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  color: var(--text-muted);
+  opacity: 0.88;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-variant-numeric: tabular-nums;
+}
+.header-center .estado-actual-meta {
+  max-width: 100%;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+.header-center .estado-actual-meta:empty {
+  display: none;
+}
+#app-brand {
+  cursor: pointer;
+  border-radius: var(--radius-md);
+  padding: 2px 6px;
+  margin-left: -6px;
+  flex-shrink: 0;
+  grid-column: 1;
+  justify-self: start;
+}
+.header-right {
+  grid-column: 3;
+  justify-self: end;
+  max-width: 100%;
+}
+#app-brand:hover { background: rgba(15, 23, 42, 0.05); }
+#app-brand:focus-visible { outline: 2px solid var(--action); outline-offset: 1px; }
+header span { font-size: 12px; color: var(--text-muted); }
+html.dark #app-brand:hover { background: rgba(255, 255, 255, 0.06); }
+html.dark header {
+  box-shadow: var(--shadow-sm);
+  border-bottom: 1px solid var(--border);
+}
+html.dark aside.patient-sidebar {
+  border: none;
+  box-shadow: none;
+}
+html:not(.ui-density-normal) #main-area {
+  background: var(--bg);
+}
+.main-col {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: hidden;
+  min-width: 0;
+  border-radius: 0;
+  background: var(--shell-gap);
+  border: none;
+  box-shadow: none;
+  padding: 0 var(--shell-frame-inset) 0;
+  gap: 0;
+  isolation: isolate;
+}
+#main-area {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+}
+/* Main tabs: stack panels — avoid display:none reflow on Expediente ↔ Med */
+#main-area > [id^="appcontent-"] {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: hidden;
+  min-height: 0;
+}
+/* Instant tab switch — interactivity never waits on motion (see .app-tab-panel-enter). */
+#main-area > [id^="appcontent-"].app-tab-panel-hidden {
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0;
+}
+#main-area > [id^="appcontent-"]:not(.app-tab-panel-hidden) {
+  visibility: visible;
+  pointer-events: auto;
+  z-index: 1;
+  opacity: 1;
+}
+/* Panel flotante solo para el contenido (debajo de tabs / sub-tabs) */
+.shell-content-frame {
+  border-radius: var(--radius-lg);
+  background: var(--bg);
+  border: var(--shell-frame-border);
+  box-shadow: var(--shadow-sm);
+  min-height: 0;
+}
+#appcontent-lab > .main-work-scroll,
+#appcontent-med > .med-active-shell,
+#patient-view > .patient-expediente-classic {
+  flex: 1;
+  margin-top: var(--shell-frame-inset);
+  min-height: 0;
+}
+html.ui-density-normal #appcontent-lab > .main-work-scroll,
+html.ui-density-normal #appcontent-med > .med-active-shell,
+html.ui-density-normal #patient-view > .patient-expediente-classic,
+html.ui-density-normal #appcontent-agenda > .rpc-proc-agenda-root {
+  margin-top: 0;
+}
+html.ui-density-normal #main-area {
+  flex: 1;
+  min-height: 0;
+}
+#appcontent-med > .med-active-shell {
+  border-radius: var(--radius-lg);
+  border: var(--shell-frame-border);
+  box-shadow: var(--shadow-sm);
+  background: var(--surface);
+  overflow: hidden;
+}
+#appcontent-med > .med-active-shell > #med-work-area.main-work-scroll {
+  overflow-y: auto;
+  margin-top: 0;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+  background: var(--bg);
+}
+#appcontent-med > .med-active-shell > #med-subview-tabs-bar {
+  border-radius: 0;
+  border: none;
+  border-bottom: 1px solid color-mix(in oklab, var(--border) 55%, transparent);
+  box-shadow: none;
+}
+#appcontent-lab > .main-work-scroll,
+#appcontent-agenda > .rpc-proc-agenda-root {
+  border-radius: var(--radius-lg);
+  background: var(--bg);
+  border: var(--shell-frame-border);
+  box-shadow: var(--shadow-sm);
+  min-height: 0;
+}
+#appcontent-agenda > .rpc-proc-agenda-root {
+  flex: 1;
+  margin-top: var(--shell-frame-inset);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+/* Expediente: un marco único (chrome blanco + cuerpo gris), sin cajas anidadas */
+.patient-expediente-classic {
+  border-radius: var(--radius-lg);
+  border: var(--shell-frame-border);
+  box-shadow: var(--shadow-sm);
+  background: var(--surface);
+  overflow: hidden;
+}
+.patient-expediente-classic > .exp-expediente-nav > .inner-tab-bar {
+  margin-bottom: 0;
+  background: transparent;
+}
+.patient-expediente-classic > .expediente-panes-host {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  overflow: hidden;
+}
+.patient-expediente-classic .tab-content {
+  flex: 1;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent;
+}
+.patient-expediente-classic .tab-content:not(.exp-composite-pane) {
+  padding: calc(18px * var(--density-space)) calc(20px * var(--density-space)) calc(24px * var(--density-space));
+}
+.header-work-cluster {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px 6px;
+  flex: 0 1 auto;
+  min-width: 0;
+  max-width: min(100%, 52vw);
+  justify-content: flex-end;
+}
+
+/* Cluster hierarchy: one accent CTA max; censo PDF = secondary surface pill */
+.header-work-cluster .header-pase-breadcrumb {
+  font-weight: 500;
+}
+.header-work-cluster .header-pase-breadcrumb-link {
+  font-weight: 600;
+}
+.header-work-cluster .header-pase-breadcrumb-section {
+  font-weight: 500;
+}
+.header-work-cluster .header-return-pase-btn {
+  font-weight: 600;
+}
+.header-work-cluster .header-cmdk-hint {
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  color: var(--text-muted);
+  opacity: 1;
+}
+.header-work-cluster .header-cmdk-hint:hover {
+  background: var(--state-hover-bg);
+  color: var(--text);
+}
+.header-work-cluster .header-mode-seg-btn:not(.is-active) {
+  font-weight: 500;
+}
+
+/* Píldoras del cluster: censo PDF — btn-med-secondary weight, subtle accent rim */
+.header-work-cluster .btn-export-censo-header {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.25;
+  min-height: 0;
+  background: var(--surface);
+  border: 1px solid color-mix(in oklab, var(--color-accent) 32%, var(--border));
+  color: var(--text-muted);
+  box-shadow: none;
+}
+.header-work-cluster .btn-export-censo-header:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  background: var(--lab-chip-bg);
+}
+
+@media (max-width: 920px) {
+  .header-work-cluster .btn-export-censo-header {
+    padding: 6px 10px;
+  }
+}
+.header-pase-breadcrumb {
+  display: none;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+  min-height: 36px;
+  padding: 0 4px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+.header-pase-breadcrumb-link {
+  border: none;
+  background: transparent;
+  padding: 6px 8px;
+  margin: 0;
+  border-radius: var(--radius-sm);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--action);
+  cursor: pointer;
+}
+.header-pase-breadcrumb-link:hover {
+  background: color-mix(in oklab, var(--action) 10%, var(--surface));
+}
+.header-pase-breadcrumb-sep {
+  opacity: 0.5;
+  user-select: none;
+}
+.header-pase-breadcrumb-section {
+  color: var(--text);
+  font-weight: 650;
+  max-width: min(160px, 22vw);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.header-return-pase-btn {
+  flex-shrink: 0;
+  border: 1px solid color-mix(in oklab, var(--action) 35%, var(--border));
+  background: color-mix(in oklab, var(--action) 10%, var(--surface));
+  color: var(--action);
+  font-size: 12px;
+  font-weight: 700;
+  font-family: inherit;
+  padding: 7px 12px;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  min-height: 36px;
+  transition: background var(--dur-fast) ease, border-color var(--dur-fast) ease;
+}
+.header-return-pase-btn:hover {
+  background: color-mix(in oklab, var(--action) 16%, var(--surface));
+  border-color: color-mix(in oklab, var(--action) 50%, var(--border));
+}
+.estado-actual-meta {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  max-width: min(260px, 32vw);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+.btn-export-censo-header {
+  display: none;
+  flex-shrink: 0;
+  background: transparent;
+  color: var(--text-muted);
+  border: var(--border-hairline);
+  border-radius: var(--radius-md);
+  font-family: inherit;
+  cursor: pointer;
+  transition: background var(--dur-fast) ease, color var(--dur-fast) ease;
+  box-shadow: none;
+}
+.btn-export-censo-header:hover {
+  background: var(--state-hover-bg);
+  color: var(--text);
+}
+.btn-export-censo-header svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  opacity: 0.75;
+}
+html.dark .btn-export-censo-header {
+  background: transparent;
+  color: var(--text-muted);
+}
+html.dark .header-work-cluster .btn-export-censo-header {
+  background: var(--surface);
+  border: 1px solid color-mix(in oklab, var(--color-accent) 32%, var(--border));
+  color: var(--text-muted);
+}
+html.dark .header-work-cluster .btn-export-censo-header:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  background: var(--lab-chip-bg);
+}
+.sidebar-censo-export-wrap {
+  display: none;
+  padding: 0 10px 8px;
+}
+.btn-export-censo-sidebar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 9px 12px;
+  border-radius: var(--radius-md);
+  border: 1px solid color-mix(in oklab, var(--color-accent) 35%, var(--border));
+  background: color-mix(in oklab, var(--color-accent) 10%, var(--surface));
+  color: color-mix(in oklab, var(--color-accent) 85%, var(--text));
+  font-size: 12px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background var(--dur-fast) ease, border-color var(--dur-fast) ease;
+}
+.btn-export-censo-sidebar:hover {
+  background: color-mix(in oklab, var(--color-accent) 16%, var(--surface));
+  border-color: color-mix(in oklab, var(--color-accent) 50%, var(--border));
+}
+.btn-export-censo-sidebar svg {
+  flex-shrink: 0;
+}
+
+html.censo-preview-open {
+  overflow: hidden;
+}
+
+.censo-preview-backdrop {
+  z-index: 120;
+}
+.censo-preview-backdrop.open {
+  align-items: stretch;
+  justify-content: stretch;
+  padding: max(8px, env(safe-area-inset-top, 0px)) max(10px, env(safe-area-inset-right, 0px))
+    max(8px, env(safe-area-inset-bottom, 0px)) max(10px, env(safe-area-inset-left, 0px));
+  box-sizing: border-box;
+}
+.censo-preview-backdrop .censo-preview-modal {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  max-height: 100%;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 12px 14px 10px;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 24px 64px rgba(15, 23, 42, 0.28);
+}
+.censo-preview-modal-head {
+  flex-shrink: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 14px;
+}
+.censo-preview-modal .modal-title {
+  margin: 0;
+  font-size: 15px;
+}
+.censo-preview-hint {
+  margin: 0;
+  flex: 1 1 200px;
+  font-size: 11px;
+}
+.censo-preview-frame {
+  flex: 1 1 auto;
+  min-height: 0;
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+}
+.censo-preview-modal .modal-actions {
+  flex-shrink: 0;
+  margin-top: 10px;
+  gap: 10px;
+}
+
+html.ui-density-normal .main-col {
+  border-radius: var(--radius-frame-outer);
+  overflow: hidden;
+  gap: var(--shell-frame-inset);
+  background: var(--shell-gap);
+}
+html.ui-density-normal .workbench-chrome {
+  flex-shrink: 0;
+  margin-left: calc(-1 * var(--shell-frame-inset));
+  margin-right: calc(-1 * var(--shell-frame-inset));
+  background: var(--surface);
+  border-radius: var(--radius-frame-outer);
+  overflow: hidden;
+}
+html.ui-density-normal .workbench-chrome .clinical-context-bar,
+html.ui-density-normal .workbench-chrome .app-tabs-row {
+  margin-left: 0;
+  margin-right: 0;
+  border-radius: 0;
+}
+html.ui-density-normal .workbench-chrome .clinical-context-bar {
+  border-bottom: 1px solid color-mix(in oklab, var(--border) 55%, transparent);
+}
+html.ui-density-normal .workbench-chrome .app-tabs-row {
+  border-bottom: none;
+}
+html:not(.ui-density-normal) .workbench-chrome {
+  display: contents;
+}
+.app-tabs-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: calc(12px * var(--density-space));
+  flex-shrink: 0;
+  padding: calc(10px * var(--density-space)) calc(20px * var(--density-space)) calc(12px * var(--density-space));
+  background: var(--surface);
+  box-shadow: none;
+  border-bottom: none;
+  margin-left: calc(-1 * var(--shell-frame-inset));
+  margin-right: calc(-1 * var(--shell-frame-inset));
+}
+/* Sidebar auto-oculto: sin gap entre rail y workbench */
+html.sidebar-auto-hide:not(.sidebar-reveal) .app {
+  gap: 0;
+}
+.app-tabs-row .app-tabs { flex: 1; padding: 0; box-shadow: none; background: transparent; min-width: 0; }
+/* Guardia + Pase: hide main tabs, full-height board */
+html:not(.ui-density-normal) .app-tabs-row {
+  display: none;
+}
+
+html:not(.ui-density-normal) .clinical-context-bar {
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: calc(18px * var(--density-space));
+  padding-right: calc(18px * var(--density-space));
+}
+html:not(.ui-density-normal) .main-col {
+  padding: 0 var(--shell-frame-inset) 0;
+}
+html:not(.ui-density-normal) #main-area {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  border-radius: var(--radius-lg);
+  background: var(--bg);
+  border: 1px solid color-mix(in oklab, var(--border) 42%, transparent);
+  box-shadow: var(--shadow-sm);
+  transition: border-top-left-radius var(--dur-normal) cubic-bezier(0.25, 1, 0.5, 1);
+}
+html.sidebar-auto-hide:not(.sidebar-reveal):not(.ui-density-normal) #main-area {
+  border-top-left-radius: var(--radius-shell);
+}
+html.sidebar-auto-hide.sidebar-reveal:not(.ui-density-normal) #main-area {
+  border-top-left-radius: var(--radius-lg);
+}
+html:not(.ui-density-normal) .appcontent-pase {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+html:not(.ui-density-normal) .pase-board-scroll {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: clip;
+  padding: calc(16px * var(--density-space)) calc(18px * var(--density-space)) calc(24px * var(--density-space));
+  display: flex;
+  flex-direction: column;
+  gap: calc(18px * var(--density-space));
+  scroll-behavior: smooth;
+  margin-top: 0;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  background: transparent;
+}
+html:not(.ui-density-normal) .pase-patient-banner {
+  padding: calc(14px * var(--density-space)) calc(16px * var(--density-space));
+  border-color: var(--border);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+html:not(.ui-density-normal) .pase-patient-banner-body {
+  display: flex;
+  flex-direction: column;
+  gap: calc(10px * var(--density-space));
+  min-width: 0;
+}
+html:not(.ui-density-normal) .pase-patient-name {
+  margin: 0;
+  font-size: calc(15px * var(--density-font));
+  font-weight: 650;
+  line-height: 1.32;
+  letter-spacing: 0.01em;
+  color: var(--text);
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+html:not(.ui-density-normal) .pase-patient-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(6px * var(--density-space));
+  align-items: center;
+}
+html:not(.ui-density-normal) .pase-patient-chip {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 4px;
+  font-size: calc(11px * var(--density-font));
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--text-muted);
+  background: color-mix(in oklab, var(--bg) 55%, var(--surface));
+  border: 1px solid color-mix(in oklab, var(--border) 90%, transparent);
+  border-radius: var(--radius-pill);
+  padding: 4px 10px;
+  max-width: 100%;
+}
+html:not(.ui-density-normal) .pase-patient-chip-label {
+  font-weight: 650;
+  color: color-mix(in oklab, var(--text-muted) 88%, var(--action));
+  font-size: calc(10px * var(--density-font));
+  letter-spacing: 0.02em;
+}
+html:not(.ui-density-normal) .pase-patient-chip--mono {
+  font-family: var(--font-mono);
+  letter-spacing: 0.02em;
+}
+html:not(.ui-density-normal) .pase-section {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  border: 1px solid color-mix(in oklab, var(--border) 88%, transparent);
+  padding: calc(12px * var(--density-space)) calc(14px * var(--density-space)) calc(14px * var(--density-space));
+}
+html:not(.ui-density-normal) .pase-section-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 14px;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--divider);
+}
+html:not(.ui-density-normal) .pase-section-title {
+  border: none;
+  background: transparent;
+  font: inherit;
+  font-size: calc(15px * var(--density-font));
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  text-transform: none;
+  color: var(--action);
+  cursor: pointer;
+  padding: 4px 2px;
+  text-align: left;
+  line-height: 1.3;
+}
+html:not(.ui-density-normal) .pase-section-title:hover {
+  text-decoration: underline;
+}
+html:not(.ui-density-normal) .pase-section-title:focus-visible {
+  outline: 2px solid var(--action);
+  outline-offset: 1px;
+  border-radius: 4px;
+}
+html:not(.ui-density-normal) .pase-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+}
+html:not(.ui-density-normal) .pase-dual-cols {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 12px;
+}
+html:not(.ui-density-normal) .pase-dual-col {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+html:not(.ui-density-normal) .pase-dual-col-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+@media (max-width: 520px) {
+  html:not(.ui-density-normal) .pase-dual-cols {
+    flex-direction: column;
+  }
+}
+/** Agenda + Pendientes en una fila (dos tarjetas); en pantallas estrechas se apilan. */
+html:not(.ui-density-normal) .pase-section-row--split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: calc(12px * var(--density-space));
+  align-items: stretch;
+  min-width: 0;
+}
+@media (max-width: 640px) {
+  html:not(.ui-density-normal) .pase-section-row--split {
+    grid-template-columns: 1fr;
+  }
+}
+html:not(.ui-density-normal) .pase-mini-card {
+  background: color-mix(in oklab, var(--bg) 50%, var(--surface));
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 10px 12px;
+  font-size: calc(12px * var(--density-font));
+  line-height: 1.35;
+  min-height: 48px;
+}
+html:not(.ui-density-normal) .pase-mini-card--dim {
+  opacity: 0.82;
+  color: var(--text-muted);
+}
+html:not(.ui-density-normal) .pase-mini-card--wide {
+  grid-column: 1 / -1;
+}
+html:not(.ui-density-normal) .pase-mini-card--todo-done {
+  text-decoration: line-through;
+  color: var(--text-muted);
+}
+html:not(.ui-density-normal) .pase-todo-card {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+html:not(.ui-density-normal) .pase-todo-hit {
+  flex-shrink: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 15px;
+  line-height: 1.2;
+  padding: 0 2px 0 0;
+  color: var(--action);
+  font-family: inherit;
+}
+html:not(.ui-density-normal) .pase-todo-hit:focus-visible {
+  outline: 2px solid var(--action);
+  outline-offset: 1px;
+  border-radius: 4px;
+}
+html:not(.ui-density-normal) .pase-todo-card.todo-prio-alta {
+  border-left: 3px solid var(--todo-prio-alta);
+  background: color-mix(in oklab, var(--todo-prio-alta) 14%, var(--surface));
+  padding-left: 12px;
+}
+html:not(.ui-density-normal) .pase-todo-card.todo-prio-media {
+  border-left: 3px solid var(--todo-prio-media);
+  background: color-mix(in oklab, var(--todo-prio-media) 12%, var(--surface));
+  padding-left: 12px;
+}
+html:not(.ui-density-normal) .pase-todo-card.todo-prio-baja {
+  border-left: 3px solid var(--todo-prio-baja);
+  background: color-mix(in oklab, var(--todo-prio-baja) 11%, var(--surface));
+  padding-left: 12px;
+}
+html:not(.ui-density-normal) .pase-cultivo-card .pase-cult-org {
+  font-weight: 650;
+  font-size: calc(13px * var(--density-font));
+  letter-spacing: 0.01em;
+  text-transform: none;
+  line-height: 1.35;
+  margin-bottom: 6px;
+  color: var(--text);
+}
+html:not(.ui-density-normal) .pase-cult-atb {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+html:not(.ui-density-normal) .pase-cult-atb-chips {
+  margin-bottom: 4px;
+}
+html:not(.ui-density-normal) .pase-cult-atb-chips .cult-atb-ris-chip-wrap {
+  position: relative;
+  z-index: 0;
+}
+html:not(.ui-density-normal) .pase-cult-atb-chips .cult-atb-ris-chip-wrap:hover {
+  z-index: 5;
+}
+html:not(.ui-density-normal) .pase-atb-tag { font-weight: 700; }
+html:not(.ui-density-normal) .pase-atb-tag--r { color: var(--error); }
+html:not(.ui-density-normal) .pase-atb-tag--i { color: var(--todo-prio-media); }
+html:not(.ui-density-normal) .pase-atb-tag--s { color: var(--success); }
+html:not(.ui-density-normal) .pase-med-card {
+  padding: 12px 14px 11px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-self: stretch;
+}
+html:not(.ui-density-normal) .pase-med-card-head {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: calc(6px * var(--density-space));
+}
+html:not(.ui-density-normal) .pase-med-name {
+  font-family: var(--font-ui);
+  font-size: calc(13px * var(--density-font));
+  font-weight: 600;
+  line-height: 1.32;
+  color: var(--text);
+  min-width: 0;
+  width: 100%;
+  overflow-wrap: break-word;
+  word-break: normal;
+  hyphens: manual;
+}
+html:not(.ui-density-normal) .pase-med-dia-badge {
+  flex-shrink: 0;
+  align-self: flex-end;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-transform: none;
+  color: var(--text-muted);
+  line-height: 1.25;
+  text-align: right;
+  margin-top: 0;
+  white-space: nowrap;
+  max-width: 100%;
+  padding-left: calc(14px * var(--density-space));
+  box-sizing: border-box;
+}
+html:not(.ui-density-normal) .pase-med-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-top: 2px;
+}
+html:not(.ui-density-normal) .pase-med-chip {
+  font-weight: 650;
+  font-size: 11px;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  color: var(--action);
+  background: color-mix(in oklab, var(--action) 14%, transparent);
+  padding: 2px 7px;
+  border-radius: 5px;
+  line-height: 1.25;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+html:not(.ui-density-normal) .pase-med-chip--dosis {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 6px;
+  width: auto;
+  max-width: 100%;
+  flex: 0 1 auto;
+  box-sizing: border-box;
+  vertical-align: middle;
+}
+html:not(.ui-density-normal) .pase-med-dosis-core {
+  white-space: nowrap;
+  flex: 0 0 auto;
+  max-width: 100%;
+}
+html:not(.ui-density-normal) .pase-med-dosis-rest {
+  flex: 1 1 100%;
+  min-width: 0;
+  line-height: 1.38;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+html:not(.ui-density-normal) .pase-sub {
+  font-size: calc(11px * var(--density-font));
+  color: var(--text-muted);
+  display: block;
+  margin-top: 4px;
+}
+html:not(.ui-density-normal) .pase-lab-meta {
+  font-family: var(--font-ui);
+  font-size: calc(14px * var(--density-font));
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--action);
+  margin-bottom: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid color-mix(in oklab, var(--border) 75%, transparent);
+  line-height: 1.45;
+}
+html.dark:not(.ui-density-normal) .pase-lab-meta {
+  color: var(--color-accent-soft-text);
+  border-bottom-color: color-mix(in oklab, var(--text-muted) 35%, transparent);
+}
+html:not(.ui-density-normal) .pase-lab-block {
+  font-family: var(--font-mono);
+  font-size: calc(13px * var(--density-font));
+  line-height: 1.65;
+  white-space: pre-wrap;
+  word-break: break-word;
+  max-height: min(52vh, 520px);
+  overflow: auto;
+  padding: 6px 4px 2px 0;
+  color: var(--text);
+}
+html:not(.ui-density-normal) .pase-lab-line {
+  white-space: pre-wrap;
+  line-height: 1.7;
+}
+html:not(.ui-density-normal) .pase-lab-line--sechead {
+  margin-top: 6px;
+}
+html:not(.ui-density-normal) .pase-lab-line--sechead:first-child {
+  margin-top: 0;
+}
+html.dark:not(.ui-density-normal) .pase-lab-block .section-lbl {
+  color: var(--color-accent-soft-text);
+}
+html:not(.ui-density-normal) .pase-lab-snippet {
+  font-family: var(--font-mono);
+  font-size: calc(11px * var(--density-font));
+  white-space: pre-wrap;
+  word-break: break-word;
+  max-height: 220px;
+  overflow: hidden;
+  line-height: 1.45;
+}
+html:not(.ui-density-normal) .pase-empty-screen {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 24px;
+  color: var(--text-muted);
+  font-size: calc(14px * var(--density-font));
+  line-height: 1.5;
+}
+.app-tabs-keys-btn {
+  flex-shrink: 0;
+  min-width: 44px;
+  min-height: 44px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 15px;
+  font-weight: 600;
+  font-family: inherit;
+  line-height: 1;
+  cursor: pointer;
+  transition: color var(--dur-fast) ease, background var(--dur-fast) ease, border-color var(--dur-fast) ease;
+}
+.app-tabs-keys-btn .btn-header-icon-svg { display: block; flex-shrink: 0; pointer-events: none; }
+.app-tabs-keys-btn:hover {
+  color: var(--action);
+  border-color: color-mix(in oklab, var(--action) 35%, var(--border));
+  background: color-mix(in oklab, var(--surface) 60%, var(--bg));
+}
+.app-tab-attention {
+  position: relative;
+}
+.app-tab-attention::after {
+  content: '';
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--action);
+  box-shadow: 0 0 0 2px var(--surface);
+}
+.settings-data-sync-compare {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+  margin-bottom: 12px;
+}
+.settings-sync-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  background: color-mix(in oklab, var(--surface) 96%, var(--bg));
+}
+.settings-sync-card h4 {
+  margin: 0 0 6px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text);
+}
+.settings-sync-card p {
+  margin: 0;
+  font-size: 11px;
+  color: var(--text-muted);
+  line-height: 1.45;
+}
+.settings-sync-help-link {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin: 0 0 10px;
+  line-height: 1.45;
+}
+.guided-empty-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 8px;
+}
+.guided-empty-actions button {
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 9px 16px;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+}
+.guided-empty-actions button.primary {
+  background: var(--action);
+  color: var(--color-on-accent);
+  border: none;
+  box-shadow: 0 2px 10px rgba(79, 86, 255, 0.2);
+}
+.empty-state .empty-state-title {
+  margin: 0;
+  font-size: calc(17px * var(--density-font));
+  font-weight: 700;
+  color: var(--text);
+  text-align: center;
+}
+.empty-state .empty-state-lead {
+  margin: 0;
+  font-size: calc(14px * var(--density-font));
+  text-align: center;
+  max-width: 420px;
+  line-height: 1.5;
+}
+.empty-state--compact {
+  padding: calc(24px * var(--density-space));
+  align-items: flex-start;
+  text-align: left;
+}
+.empty-state--compact .empty-state-title,
+.empty-state--compact .empty-state-lead {
+  text-align: left;
+  max-width: 36ch;
+}
+.unified-search-empty.empty-state--compact {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: none;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 14px 12px;
+  color: var(--text-muted);
+}
+.unified-search-empty.empty-state--compact .empty-state-title {
+  font-size: calc(14px * var(--density-font));
+  font-weight: 600;
+  color: var(--text);
+}
+.unified-search-empty.empty-state--compact .empty-state-lead {
+  font-size: calc(13px * var(--density-font));
+  line-height: 1.45;
+  color: var(--text-muted);
+}
+.empty-state-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+}
+.app-tabs {
+  background: transparent;
+  border-bottom: 1px solid var(--divider);
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 0;
+  box-shadow: none;
+  padding: 0 calc(8px * var(--density-space));
+  position: relative;
+}
+.app-tab {
+  padding: calc(10px * var(--density-space)) calc(14px * var(--density-space)) calc(9px * var(--density-space));
+  font-size: calc(14px * var(--density-font));
+  font-weight: 600;
+  color: var(--text-muted);
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  border-radius: 0;
+  margin-bottom: 0;
+  cursor: pointer;
+  transition: color var(--dur-fast) var(--ease-out), background var(--dur-fast) var(--ease-out);
+  display: flex;
+  align-items: center;
+  gap: calc(7px * var(--density-space));
+  font-family: inherit;
+  box-shadow: none;
+  position: relative;
+  z-index: 1;
+}
+.app-tab:hover {
+  color: var(--text);
+  background: transparent;
+  box-shadow: none;
+}
+.app-tab.active {
+  color: var(--action);
+  background: transparent;
+  border-bottom-color: transparent;
+  box-shadow: none;
+}
+html.tab-bar-indicators-ready .app-tab.active {
+  background: transparent;
+  border-bottom-color: transparent;
+}
+html.dark .app-tab:hover {
+  background: transparent;
+  color: var(--text);
+  box-shadow: none;
+}
+html.dark .app-tab.active {
+  background: transparent;
+  border-bottom-color: transparent;
+  box-shadow: none;
+}
+html.tab-bar-indicators-ready html.dark .app-tab.active {
+  background: transparent;
+  border-bottom-color: transparent;
+}
+.app {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  min-height: 0;
+  margin: var(--shell-frame-inset) var(--shell-inset) var(--shell-inset);
+  gap: var(--shell-inset);
+  border-radius: var(--radius-shell);
+  border: 1px solid color-mix(in oklab, var(--border) 50%, transparent);
+  box-shadow: var(--shadow);
+  background: var(--shell-gap);
+  transition: gap var(--dur-normal) cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Contexto clínico en header (premium UI phase 2) */
+.header-context {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.header-context-patient {
+  font-weight: 600;
+  color: var(--text-muted);
+  font-size: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 28vw;
+}
+
+.header-context-path {
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+  opacity: 0.88;
+}
+
+.header-context-patient:not(:empty) + .header-context-path:not(:empty)::before {
+  content: '·';
+  margin: 0 6px;
+  opacity: 0.45;
+}
+
+@media (max-width: 980px) {
+  .header-context-path {
+    display: none;
+  }
+}
+
+/* Selector de modo segmentado (premium UI phase 2) — colapsa al activo */
+.header-mode-seg {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 2px;
+  border: var(--border-hairline);
+  border-radius: var(--radius-md);
+  background: transparent;
+  flex-shrink: 0;
+}
+
+.header-mode-seg-btn {
+  display: inline-flex;
+  align-items: center;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--text-muted);
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+  max-width: 9rem;
+  overflow: hidden;
+  opacity: 1;
+  transition:
+    max-width var(--dur-slow) var(--ease-out),
+    opacity var(--dur-normal) var(--ease-out),
+    padding var(--dur-slow) var(--ease-out),
+    color var(--dur-fast) var(--ease-out),
+    background var(--dur-fast) var(--ease-out);
+}
+
+.header-mode-seg-btn:hover {
+  background: var(--state-hover-bg);
+  color: var(--text);
+}
+
+.header-mode-seg-btn.is-active {
+  background: transparent;
+  color: var(--text);
+}
+
+.header-mode-seg-btn:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+/* Colapsado: solo el modo activo; expande al hover o al pulsar el activo */
+.header-mode-seg-btn:not(.is-active) {
+  max-width: 0;
+  padding-left: 0;
+  padding-right: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.header-mode-seg:hover .header-mode-seg-btn:not([hidden]),
+.header-mode-seg.is-expanded .header-mode-seg-btn:not([hidden]) {
+  max-width: 9rem;
+  padding-left: 8px;
+  padding-right: 8px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.header-mode-seg:hover .header-mode-seg-btn:not(.is-active):not([hidden]),
+.header-mode-seg.is-expanded .header-mode-seg-btn:not(.is-active):not([hidden]) {
+  transition-delay: 35ms;
+}
+
+.header-mode-seg-btn[hidden] {
+  display: none !important;
+}

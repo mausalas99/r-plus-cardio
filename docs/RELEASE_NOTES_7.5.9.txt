@@ -1,0 +1,26 @@
+R+ 7.5.9 (recuperación censo + tombstones LAN)
+==================================================
+
+Fecha: 2026-06-30
+
+## Resumen
+
+Parche sobre **7.5.8**: recupera pacientes cuando el sidebar está vacío, exporta varios del censo a JSON, y limpia fantasmas/tombstones del anfitrión LAN con respaldo automático.
+
+## Nuevo / mejorado
+
+- **Exportar censo recuperable** — En Ajustes → **Exportar censo recuperable…** lee pacientes desde SQLCipher (incluye caché LAN) aunque el sidebar esté vacío; importa con **Importar rango…**. Atajo CLI: `npm run recover:census`.
+- **Exportar pacientes…** — Selector multi-paciente del censo para un solo JSON (Ajustes → Respaldo).
+- **Censo anfitrión** — **Limpiar tombstones** restaura visibilidad local; **Restaurar** por fila fantasma; **Eliminar fantasmas** descarga respaldo antes de purgar solo el host.
+- **Directorio LAN** — Asignaciones de equipo remapean `user_id` al @usuario canónico de esta Mac (menos membresías huérfanas tras sync).
+- **Import respaldo fantasmas** — JSON `r-plus-purge-ghosts-backup` se fusiona al importar (incluye entradas del bundle del host).
+- **Parche sobre 7.5.8** — Catálogo downgrade 7.5.7 y confirmación SUPLEMENTO en EA. Sin migración (SQLCipher v20).
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v7.5.9
+
+- Mac: `R+-7.5.9-arm64.dmg`, `R+-7.5.9-x64.dmg` (y zip para auto-update).
+- Windows: `R+-7.5.9-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye write-release-yml.js).

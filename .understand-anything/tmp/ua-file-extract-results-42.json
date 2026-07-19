@@ -1,0 +1,696 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 19,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "docs/core/00-system-index.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 74,
+      "nonEmptyLines": 59,
+      "sections": [
+        {
+          "heading": "R+ Documentation Hub",
+          "level": 1,
+          "line": 8
+        },
+        {
+          "heading": "Product principles (summary)",
+          "level": 2,
+          "line": 12
+        },
+        {
+          "heading": "Architecture (data flow)",
+          "level": 2,
+          "line": 21
+        },
+        {
+          "heading": "Core documents (`docs/core/`)",
+          "level": 2,
+          "line": 33
+        },
+        {
+          "heading": "Category indices (spokes)",
+          "level": 2,
+          "line": 51
+        },
+        {
+          "heading": "Read order for new agents",
+          "level": 2,
+          "line": 62
+        },
+        {
+          "heading": "User-facing docs",
+          "level": 2,
+          "line": 69
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 7
+      }
+    },
+    {
+      "path": "docs/core/01-vision-north-star.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 91,
+      "nonEmptyLines": 65,
+      "sections": [
+        {
+          "heading": "🌟 Vision & North Star: R+",
+          "level": 1,
+          "line": 9
+        },
+        {
+          "heading": "🔭 The Vision",
+          "level": 2,
+          "line": 11
+        },
+        {
+          "heading": "🚩 The North Star Goal",
+          "level": 2,
+          "line": 14
+        },
+        {
+          "heading": "⚠️ The Problem & The Alternative",
+          "level": 2,
+          "line": 21
+        },
+        {
+          "heading": "🛡️ The Solution & Magic Moment",
+          "level": 2,
+          "line": 27
+        },
+        {
+          "heading": "⚖️ Core Product Principles (Decision Framework)",
+          "level": 2,
+          "line": 38
+        },
+        {
+          "heading": "🚫 Out of Bounds (Anti-Goals)",
+          "level": 2,
+          "line": 47
+        },
+        {
+          "heading": "🛠️ The Toolkit (Tech Stack)",
+          "level": 2,
+          "line": 58
+        },
+        {
+          "heading": "🗺️ Development Horizons",
+          "level": 2,
+          "line": 65
+        },
+        {
+          "heading": "📈 Success Metrics",
+          "level": 2,
+          "line": 74
+        },
+        {
+          "heading": "Relationships",
+          "level": 2,
+          "line": 83
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 11
+      }
+    },
+    {
+      "path": "docs/core/02-product-context.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 60,
+      "nonEmptyLines": 44,
+      "sections": [
+        {
+          "heading": "Product Context: R+",
+          "level": 1,
+          "line": 9
+        },
+        {
+          "heading": "Primary persona",
+          "level": 2,
+          "line": 13
+        },
+        {
+          "heading": "Secondary personas",
+          "level": 2,
+          "line": 22
+        },
+        {
+          "heading": "Clinical modes",
+          "level": 2,
+          "line": 31
+        },
+        {
+          "heading": "Domain glossary (short)",
+          "level": 2,
+          "line": 39
+        },
+        {
+          "heading": "Roadmap horizons",
+          "level": 2,
+          "line": 49
+        },
+        {
+          "heading": "Related",
+          "level": 2,
+          "line": 57
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 7
+      }
+    },
+    {
+      "path": "docs/core/03-user-journey.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 47,
+      "nonEmptyLines": 35,
+      "sections": [
+        {
+          "heading": "User Journey: R+",
+          "level": 1,
+          "line": 9
+        },
+        {
+          "heading": "Onboarding (first shift)",
+          "level": 2,
+          "line": 11
+        },
+        {
+          "heading": "Happy path — Magic moment (documentation)",
+          "level": 2,
+          "line": 19
+        },
+        {
+          "heading": "Happy path — Turn sync (team)",
+          "level": 2,
+          "line": 29
+        },
+        {
+          "heading": "Error recovery",
+          "level": 2,
+          "line": 36
+        },
+        {
+          "heading": "Related",
+          "level": 2,
+          "line": 44
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 6
+      }
+    },
+    {
+      "path": "docs/core/04-directory-structure.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 56,
+      "nonEmptyLines": 45,
+      "sections": [
+        {
+          "heading": "Directory Structure",
+          "level": 1,
+          "line": 8
+        },
+        {
+          "heading": "Root layout",
+          "level": 2,
+          "line": 12
+        },
+        {
+          "heading": "Where to add new work",
+          "level": 2,
+          "line": 33
+        },
+        {
+          "heading": "Generated — do not hand-edit",
+          "level": 2,
+          "line": 46
+        },
+        {
+          "heading": "Related",
+          "level": 2,
+          "line": 53
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 5
+      }
+    },
+    {
+      "path": "docs/core/05-architecture-decisions.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 17,
+      "nonEmptyLines": 12,
+      "sections": [
+        {
+          "heading": "Slot reservado: Architecture Decision Records",
+          "level": 1,
+          "line": 8
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": "docs/core/06-design-system.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 38,
+      "nonEmptyLines": 28,
+      "sections": [
+        {
+          "heading": "Design System",
+          "level": 1,
+          "line": 8
+        },
+        {
+          "heading": "Principles (summary)",
+          "level": 2,
+          "line": 12
+        },
+        {
+          "heading": "Key tokens",
+          "level": 2,
+          "line": 19
+        },
+        {
+          "heading": "Layout modes",
+          "level": 2,
+          "line": 29
+        },
+        {
+          "heading": "Related",
+          "level": 2,
+          "line": 35
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 5
+      }
+    },
+    {
+      "path": "docs/core/07-testing-strategy.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 58,
+      "nonEmptyLines": 39,
+      "sections": [
+        {
+          "heading": "Estrategia de testing",
+          "level": 1,
+          "line": 8
+        },
+        {
+          "heading": "Ubicación",
+          "level": 2,
+          "line": 10
+        },
+        {
+          "heading": "Desarrollo y agentes",
+          "level": 2,
+          "line": 14
+        },
+        {
+          "heading": "CI y release",
+          "level": 2,
+          "line": 36
+        },
+        {
+          "heading": "Nativos SQLCipher",
+          "level": 2,
+          "line": 42
+        },
+        {
+          "heading": "Referencias",
+          "level": 2,
+          "line": 54
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 6
+      }
+    },
+    {
+      "path": "docs/core/08-core-architecture.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 64,
+      "nonEmptyLines": 53,
+      "sections": [
+        {
+          "heading": "Core Architecture",
+          "level": 1,
+          "line": 9
+        },
+        {
+          "heading": "Process model",
+          "level": 2,
+          "line": 11
+        },
+        {
+          "heading": "Layers",
+          "level": 2,
+          "line": 37
+        },
+        {
+          "heading": "LiveSync sync strategy (7.x)",
+          "level": 2,
+          "line": 48
+        },
+        {
+          "heading": "Document pipeline",
+          "level": 2,
+          "line": 56
+        },
+        {
+          "heading": "Related",
+          "level": 2,
+          "line": 60
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 6
+      }
+    },
+    {
+      "path": "docs/core/09-cicd-release.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 19,
+      "nonEmptyLines": 15,
+      "sections": [
+        {
+          "heading": "Slot reservado: CI/CD & Release",
+          "level": 1,
+          "line": 8
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": "docs/core/10-i18n.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 12,
+      "nonEmptyLines": 9,
+      "sections": [
+        {
+          "heading": "Slot reservado: Localization & i18n",
+          "level": 1,
+          "line": 8
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": "docs/core/11-performance-monitoring.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 15,
+      "nonEmptyLines": 11,
+      "sections": [
+        {
+          "heading": "Slot reservado: Performance & Monitoring",
+          "level": 1,
+          "line": 8
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": "docs/core/12-accessibility.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 17,
+      "nonEmptyLines": 12,
+      "sections": [
+        {
+          "heading": "Slot reservado: Accessibility (a11y)",
+          "level": 1,
+          "line": 8
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": "docs/core/13-error-handling.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 16,
+      "nonEmptyLines": 12,
+      "sections": [
+        {
+          "heading": "Slot reservado: Error Handling & Recovery",
+          "level": 1,
+          "line": 8
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": "docs/core/14-compliance.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 18,
+      "nonEmptyLines": 13,
+      "sections": [
+        {
+          "heading": "Slot reservado: Compliance & Regulatory",
+          "level": 1,
+          "line": 8
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": "docs/core/15-security.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 57,
+      "nonEmptyLines": 39,
+      "sections": [
+        {
+          "heading": "Security",
+          "level": 1,
+          "line": 8
+        },
+        {
+          "heading": "Implemented (LAN)",
+          "level": 2,
+          "line": 12
+        },
+        {
+          "heading": "Implemented (clinical)",
+          "level": 2,
+          "line": 20
+        },
+        {
+          "heading": "LAN plaintext (formal risk acceptance)",
+          "level": 2,
+          "line": 26
+        },
+        {
+          "heading": "Legacy recovery passphrase",
+          "level": 2,
+          "line": 39
+        },
+        {
+          "heading": "Known boundaries (honest)",
+          "level": 2,
+          "line": 43
+        },
+        {
+          "heading": "Anti-goals (security-related)",
+          "level": 2,
+          "line": 51
+        },
+        {
+          "heading": "Related",
+          "level": 2,
+          "line": 55
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 8
+      }
+    },
+    {
+      "path": "docs/core/16-glossary-of-terms.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 24,
+      "nonEmptyLines": 21,
+      "sections": [
+        {
+          "heading": "Glossary of Terms",
+          "level": 1,
+          "line": 9
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": "docs/core/17-docs-blueprint.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 58,
+      "nonEmptyLines": 44,
+      "sections": [
+        {
+          "heading": "Documentation Blueprint",
+          "level": 1,
+          "line": 8
+        },
+        {
+          "heading": "Folder taxonomy",
+          "level": 2,
+          "line": 12
+        },
+        {
+          "heading": "Root-level docs",
+          "level": 2,
+          "line": 24
+        },
+        {
+          "heading": "Naming",
+          "level": 2,
+          "line": 32
+        },
+        {
+          "heading": "Agent config directories",
+          "level": 2,
+          "line": 38
+        },
+        {
+          "heading": "Agent maintenance rules",
+          "level": 2,
+          "line": 50
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 6
+      }
+    },
+    {
+      "path": "docs/core/18-knowledge-capture.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 21,
+      "nonEmptyLines": 17,
+      "sections": [
+        {
+          "heading": "Knowledge Capture & Decision Log",
+          "level": 1,
+          "line": 8
+        },
+        {
+          "heading": "Decision Log",
+          "level": 2,
+          "line": 12
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 2
+      }
+    }
+  ]
+}

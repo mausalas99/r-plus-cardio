@@ -1,0 +1,28 @@
+R+ 7.5.3 (Repositorio intrahospitalario de laboratorio)
+===========================================================
+
+Fecha: 2026-06-27
+
+## Resumen
+
+Sobre **7.5.2**: importación directa desde el **repositorio web de laboratorio** del hospital (registro + rango de fechas) al historial del paciente, reutilizando pegado masivo, deduplicación y tendencias existentes.
+
+## Nuevo / mejorado
+
+- **Importar desde repositorio** — Botón en el panel de laboratorio: indica **registro** y rango **Desde/Hasta** (días calendario); R+ consulta la tabla del portal, descarga PDFs, extrae texto SOME y procesa con `procesarLabs`.
+- **Flujo híbrido** — Si el paciente activo coincide y los estudios son nuevos, importación **silenciosa**; si hay ambigüedad, registro distinto o duplicados, abre el modal de **revisión masiva** (Agregar paciente / confirmar).
+- **Mensajes claros** — Toasts específicos: sin estudios para ese registro, estudios fuera del rango (con conteo), error de conexión al portal.
+- **Seguridad local** — Descarga y extracción en proceso principal; PDFs temporales se **borran** tras extraer texto. Requiere red hospitalaria (LAN); sin almacenamiento en la nube.
+
+## Operación en guardia
+
+Instala **7.5.3** si quieres traer labs del portal intrahospitalario sin pegar SOME. **Sin migración de base** (sigue SQLCipher v20). El portal debe ser accesible desde la red del hospital.
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v7.5.3
+
+- Mac: `R+-7.5.3-arm64.dmg`, `R+-7.5.3-x64.dmg` (y zip para auto-update).
+- Windows: `R+-7.5.3-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye write-release-yml.js).

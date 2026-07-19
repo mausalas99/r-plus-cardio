@@ -1,0 +1,28 @@
+R+ 7.1.7 (LAN roam entre redes)
+===========================================
+
+Fecha: 2026-06-07
+
+## Resumen
+
+Mejora la conexión ⇄ al cambiar de red Wi‑Fi o VLAN en el hospital: detecta el cambio de subred, limpia anfitriones obsoletos y vuelve a buscar el turno en todas las /24 locales sin esperar al siguiente escaneo lento.
+
+## Nuevo / mejorado
+
+- **Detección de cambio de red** — Electron vigila subredes IPv4 y URL LAN candidata cada ~3 s; al cambiar Wi‑Fi o VLAN avisa al renderer de inmediato.
+- **Limpieza al roam** — Si el anfitrión fijado o guardado quedó en otra subred, se descarta; si esta Mac es anfitrión, actualiza su IP anunciada.
+- **Reconexión inmediata** — Tras el cambio: reanuda escaneo (sin pausa por 5 fallos), reinicia discovery, intenta PIN del turno (cliente) o auto-unión (anfitrión).
+- **Escaneo multi-subred** — El descubrimiento automático ⇄ ahora recorre **todas** las /24 locales del Mac (antes solo una), alineado con la ruta del PIN del turno.
+
+## Operación en guardia
+
+Parche sobre **7.1.6**: instala en **todas** las estaciones del turno. Sin cambio de esquema SQLCipher (sigue v14). Si el hospital bloquea tráfico entre dispositivos en la misma Wi‑Fi (aislamiento de cliente), ninguna versión puede descubrir pares — en ese caso usa PIN + anfitrión manual.
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v7.1.7
+
+- Mac: `R+-7.1.7-arm64.dmg`, `R+-7.1.7-x64.dmg` (y zip para auto-update).
+- Windows: `R+-7.1.7-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye write-release-yml.js).

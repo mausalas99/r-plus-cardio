@@ -1,0 +1,29 @@
+R+ 7.2.8 (interno, glu rescate y LAN iPad)
+=============================================
+
+Fecha: 2026-06-10
+
+## Resumen
+
+Parche sobre 7.2.7: el **interno móvil** ordena por **frecuencia de signos** y mejora la captura de **glucometrías**; **Estado actual** registra **rescates de insulina** por glucometría; las **Mac cliente** del turno pueden **copiar el enlace iPad** sin ser anfitrión.
+
+## Nuevo / mejorado
+
+- **Interno — orden por frecuencia** — La lista MIP prioriza pacientes con SV programados: q1h → q2h → q4h → por turno; dentro de la misma frecuencia, vencidos antes que al día; empate por cama. Pacientes solo con estudios al final.
+- **Interno — glucometrías** — Los campos mg/dL y HH:MM en el modal de signos usan el mismo fondo oscuro que TAS, FC, etc. (ya no aparecen en blanco en iPad).
+- **Estado actual — rescate de insulina** — Cada glucometría puede marcarse **Alterada** y capturar **unidades de rescate** + **DXT post-rescate**; la nota SOME refleja rescates aplicados o disponibles.
+- **Estado actual — gráfica de glu** — Puntos fuera de rango o marcados alterados se resaltan en la serie temporal.
+- **LAN — enlace iPad en cliente** — Una Mac unida al turno (no solo el anfitrión) puede copiar el enlace permanente para iPad; usa la URL del host remoto del ⇄.
+
+## Operación en guardia
+
+Parche sobre **7.2.7**: instala en **todas** las estaciones del turno el mismo día. Sin cambio de esquema SQLCipher (sigue **v15**). El iPad solo necesita recargar la página de internos (CSS `?v=4`).
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v7.2.8
+
+- Mac: `R+-7.2.8-arm64.dmg`, `R+-7.2.8-x64.dmg` (y zip para auto-update).
+- Windows: `R+-7.2.8-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye write-release-yml.js).

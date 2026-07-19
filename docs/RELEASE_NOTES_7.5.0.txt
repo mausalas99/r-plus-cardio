@@ -1,0 +1,31 @@
+R+ 7.5.0 (equipos Lumify/EKG/US, panel ⇄ y cola cloud)
+==========================================================
+
+Fecha: 2026-06-24
+
+## Resumen
+
+Sobre **7.4.1**: cola de custodia **Lumify / EKG / Ultrasonido** con tablero en escritorio, micro-app móvil en `/equipos` y opción **cloud** en Cloudflare (sin Mac anfitrión); panel **⇄** rediseñado con héroe de estado/PIN y filas unificadas; Ajustes alinea botones fantasma en paneles internos.
+
+## Nuevo / mejorado
+
+- **Equipos — cola del programa** — Un Lumify, un EKG y un ultrasonido compartidos a nivel de internado. Lista de espera, checkout/devolución con fotos comprimidas (Lumify y EKG), reportes de material/falla; fotos visibles en admin **14 días** (purga diaria 06:00 UTC solo de expiradas).
+- **Equipos — móvil** — QR + token en `/equipos` para MIP/residentes: retiro, devolución, alertas y cola en tiempo real (WebSocket).
+- **Equipos — escritorio** — Tablero en **Modo Guardia**, panel QR para R4/Admin, historial de sesiones y failover temporal si el anfitrión de equipos cae.
+- **Equipos — cloud (opcional)** — Cola en **Cloudflare Worker + D1 + R2** cuando no hay Mac anfitrión en la red; configuración en escritorio y badge de estado del enlace público.
+- **Panel ⇄** — Zona héroe con estado en una línea y PIN en monoespaciado; filas `settings-card-stack` unificadas (iPad, salas, diagnóstico, toggles); alertas de conflicto/offline como franja, no tarjeta competidora.
+- **Ajustes** — Misma gramática de filas en paneles internos; acciones secundarias en botón fantasma en lugar de paredes de botones morados.
+- **Base clínica** — Esquema SQLCipher **v17 → v19** (tablas `equipos_*`, fotos con `photo_kind=alert` en reportes).
+
+## Operación en guardia
+
+Instala **7.5.0** si usas equipos portátiles del programa o quieres el panel ⇄ más legible en turno. La cola LAN requiere Mac anfitrión con R+ abierto; la cola **cloud** es independiente del ⇄ clínico. Migra la base al desbloquear (automático). Recomendable el mismo build en estaciones que comparten censo ⇄; equipos cloud solo afecta la cola de dispositivos.
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v7.5.0
+
+- Mac: `R+-7.5.0-arm64.dmg`, `R+-7.5.0-x64.dmg` (y zip para auto-update).
+- Windows: `R+-7.5.0-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye write-release-yml.js).

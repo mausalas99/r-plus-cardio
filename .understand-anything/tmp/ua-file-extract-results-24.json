@@ -1,0 +1,4540 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 24,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "lib/drive-import/drive-hc-sections.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 33,
+      "nonEmptyLines": 31,
+      "functions": [
+        {
+          "name": "listDriveHcReviewSections",
+          "startLine": 23,
+          "endLine": 33,
+          "params": [
+            "sections"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DRIVE_HC_REVIEW_ORDER",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "listDriveHcReviewSections",
+          "line": 23,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "listDriveHcReviewSections",
+          "callee": "String(src[spec.sectionKey] || '').trim",
+          "lineNumber": 28
+        },
+        {
+          "caller": "listDriveHcReviewSections",
+          "callee": "String",
+          "lineNumber": 28
+        },
+        {
+          "caller": "listDriveHcReviewSections",
+          "callee": "out.push",
+          "lineNumber": 30
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/drive-import/drive-import-hc-edit.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 159,
+      "nonEmptyLines": 152,
+      "functions": [
+        {
+          "name": "hcPatchValueToEditText",
+          "startLine": 46,
+          "endLine": 84,
+          "params": [
+            "key",
+            "value"
+          ]
+        },
+        {
+          "name": "parseLabeledLines",
+          "startLine": 90,
+          "endLine": 108,
+          "params": [
+            "block",
+            "labelToField"
+          ]
+        },
+        {
+          "name": "editTextToHcPatchValue",
+          "startLine": 116,
+          "endLine": 159,
+          "params": [
+            "key",
+            "text",
+            "original"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "HC_SECTION_LABELS",
+          "line": 8,
+          "isDefault": false
+        },
+        {
+          "name": "hcPatchValueToEditText",
+          "line": 46,
+          "isDefault": false
+        },
+        {
+          "name": "editTextToHcPatchValue",
+          "line": 116,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "hcPatchValueToEditText",
+          "callee": "String(value).trim",
+          "lineNumber": 49
+        },
+        {
+          "caller": "hcPatchValueToEditText",
+          "callee": "String",
+          "lineNumber": 49
+        },
+        {
+          "caller": "hcPatchValueToEditText",
+          "callee": "Array.isArray",
+          "lineNumber": 51
+        },
+        {
+          "caller": "hcPatchValueToEditText",
+          "callee": "Object.entries(filterIdentificacionForHcImport(/** @type {Record<string, string>} */ (value)))\n      .filter(function (entry) {\n        return entry[1] != null && String(entry[1]).trim();\n      })\n      .map(function (entry) {\n        const label = IDENT_LABELS[entry[0]] || entry[0].toUpperCase();\n        return label + ': ' + String(entry[1]).trim();\n      })\n      .join",
+          "lineNumber": 52
+        },
+        {
+          "caller": "hcPatchValueToEditText",
+          "callee": "Object.entries(filterIdentificacionForHcImport(/** @type {Record<string, string>} */ (value)))\n      .filter(function (entry) {\n        return entry[1] != null && String(entry[1]).trim();\n      })\n      .map",
+          "lineNumber": 52
+        },
+        {
+          "caller": "hcPatchValueToEditText",
+          "callee": "Object.entries(filterIdentificacionForHcImport(/** @type {Record<string, string>} */ (value)))\n      .filter",
+          "lineNumber": 52
+        },
+        {
+          "caller": "hcPatchValueToEditText",
+          "callee": "Object.entries",
+          "lineNumber": 52
+        },
+        {
+          "caller": "hcPatchValueToEditText",
+          "callee": "filterIdentificacionForHcImport",
+          "lineNumber": 52
+        },
+        {
+          "caller": "hcPatchValueToEditText",
+          "callee": "String(entry[1]).trim",
+          "lineNumber": 54
+        },
+        {
+          "caller": "hcPatchValueToEditText",
+          "callee": "String",
+          "lineNumber": 54
+        },
+        {
+          "caller": "hcPatchValueToEditText",
+          "callee": "entry[0].toUpperCase",
+          "lineNumber": 57
+        },
+        {
+          "caller": "hcPatchValueToEditText",
+          "callee": "String(entry[1]).trim",
+          "lineNumber": 58
+        },
+        {
+          "caller": "hcPatchValueToEditText",
+          "callee": "String",
+          "lineNumber": 58
+        },
+        {
+          "caller": "hcPatchValueToEditText",
+          "callee": "String(/** @type {{ descripcionDetallada?: string }} */ (value).descripcionDetallada || '').trim",
+          "lineNumber": 63
+        },
+        {
+          "caller": "hcPatchValueToEditText",
+          "callee": "String",
+          "lineNumber": 63
+        },
+        {
+          "caller": "hcPatchValueToEditText",
+          "callee": "String(/** @type {{ descripcionDetallada?: string }} */ (value).descripcionDetallada || '').trim",
+          "lineNumber": 66
+        },
+        {
+          "caller": "hcPatchValueToEditText",
+          "callee": "String",
+          "lineNumber": 66
+        },
+        {
+          "caller": "hcPatchValueToEditText",
+          "callee": "Object.entries(/** @type {Record<string, string>} */ (value))\n      .filter(function (entry) {\n        return entry[1] != null && String(entry[1]).trim();\n      })\n      .map(function (entry) {\n        const label = APNP_LABELS[entry[0]] || entry[0].toUpperCase();\n        return label + ': ' + String(entry[1]).trim();\n      })\n      .join",
+          "lineNumber": 69
+        },
+        {
+          "caller": "hcPatchValueToEditText",
+          "callee": "Object.entries(/** @type {Record<string, string>} */ (value))\n      .filter(function (entry) {\n        return entry[1] != null && String(entry[1]).trim();\n      })\n      .map",
+          "lineNumber": 69
+        },
+        {
+          "caller": "hcPatchValueToEditText",
+          "callee": "Object.entries(/** @type {Record<string, string>} */ (value))\n      .filter",
+          "lineNumber": 69
+        },
+        {
+          "caller": "hcPatchValueToEditText",
+          "callee": "Object.entries",
+          "lineNumber": 69
+        },
+        {
+          "caller": "hcPatchValueToEditText",
+          "callee": "String(entry[1]).trim",
+          "lineNumber": 71
+        },
+        {
+          "caller": "hcPatchValueToEditText",
+          "callee": "String",
+          "lineNumber": 71
+        },
+        {
+          "caller": "hcPatchValueToEditText",
+          "callee": "entry[0].toUpperCase",
+          "lineNumber": 74
+        },
+        {
+          "caller": "hcPatchValueToEditText",
+          "callee": "String(entry[1]).trim",
+          "lineNumber": 75
+        },
+        {
+          "caller": "hcPatchValueToEditText",
+          "callee": "String",
+          "lineNumber": 75
+        },
+        {
+          "caller": "hcPatchValueToEditText",
+          "callee": "JSON.stringify",
+          "lineNumber": 80
+        },
+        {
+          "caller": "hcPatchValueToEditText",
+          "callee": "String",
+          "lineNumber": 82
+        },
+        {
+          "caller": "parseLabeledLines",
+          "callee": "Object.keys(labelToField).forEach",
+          "lineNumber": 94
+        },
+        {
+          "caller": "parseLabeledLines",
+          "callee": "Object.keys",
+          "lineNumber": 94
+        },
+        {
+          "caller": "parseLabeledLines",
+          "callee": "String(labelToField[field]).toUpperCase",
+          "lineNumber": 95
+        },
+        {
+          "caller": "parseLabeledLines",
+          "callee": "String",
+          "lineNumber": 95
+        },
+        {
+          "caller": "parseLabeledLines",
+          "callee": "String(block || '').split",
+          "lineNumber": 97
+        },
+        {
+          "caller": "parseLabeledLines",
+          "callee": "String",
+          "lineNumber": 97
+        },
+        {
+          "caller": "parseLabeledLines",
+          "callee": "raw.trim",
+          "lineNumber": 98
+        },
+        {
+          "caller": "parseLabeledLines",
+          "callee": "line.indexOf",
+          "lineNumber": 100
+        },
+        {
+          "caller": "parseLabeledLines",
+          "callee": "line.slice(0, idx).trim().toUpperCase",
+          "lineNumber": 102
+        },
+        {
+          "caller": "parseLabeledLines",
+          "callee": "line.slice(0, idx).trim",
+          "lineNumber": 102
+        },
+        {
+          "caller": "parseLabeledLines",
+          "callee": "line.slice",
+          "lineNumber": 102
+        },
+        {
+          "caller": "parseLabeledLines",
+          "callee": "line.slice(idx + 1).trim",
+          "lineNumber": 103
+        },
+        {
+          "caller": "parseLabeledLines",
+          "callee": "line.slice",
+          "lineNumber": 103
+        },
+        {
+          "caller": "parseLabeledLines",
+          "callee": "label.toLowerCase().replace",
+          "lineNumber": 104
+        },
+        {
+          "caller": "parseLabeledLines",
+          "callee": "label.toLowerCase",
+          "lineNumber": 104
+        },
+        {
+          "caller": "editTextToHcPatchValue",
+          "callee": "String(text || '').trim",
+          "lineNumber": 117
+        },
+        {
+          "caller": "editTextToHcPatchValue",
+          "callee": "String",
+          "lineNumber": 117
+        },
+        {
+          "caller": "editTextToHcPatchValue",
+          "callee": "Array.isArray",
+          "lineNumber": 123
+        },
+        {
+          "caller": "editTextToHcPatchValue",
+          "callee": "Object.assign",
+          "lineNumber": 124
+        },
+        {
+          "caller": "editTextToHcPatchValue",
+          "callee": "filterIdentificacionForHcImport",
+          "lineNumber": 126
+        },
+        {
+          "caller": "editTextToHcPatchValue",
+          "callee": "Object.assign",
+          "lineNumber": 127
+        },
+        {
+          "caller": "editTextToHcPatchValue",
+          "callee": "parseLabeledLines",
+          "lineNumber": 127
+        },
+        {
+          "caller": "editTextToHcPatchValue",
+          "callee": "Array.isArray",
+          "lineNumber": 132
+        },
+        {
+          "caller": "editTextToHcPatchValue",
+          "callee": "Object.assign",
+          "lineNumber": 133
+        },
+        {
+          "caller": "editTextToHcPatchValue",
+          "callee": "Array.isArray",
+          "lineNumber": 140
+        },
+        {
+          "caller": "editTextToHcPatchValue",
+          "callee": "Object.assign",
+          "lineNumber": 141
+        },
+        {
+          "caller": "editTextToHcPatchValue",
+          "callee": "Array.isArray",
+          "lineNumber": 148
+        },
+        {
+          "caller": "editTextToHcPatchValue",
+          "callee": "Object.assign",
+          "lineNumber": 149
+        },
+        {
+          "caller": "editTextToHcPatchValue",
+          "callee": "Object.assign",
+          "lineNumber": 151
+        },
+        {
+          "caller": "editTextToHcPatchValue",
+          "callee": "parseLabeledLines",
+          "lineNumber": 151
+        },
+        {
+          "caller": "editTextToHcPatchValue",
+          "callee": "JSON.parse",
+          "lineNumber": 155
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/drive-import/drive-import-review.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 354,
+      "nonEmptyLines": 333,
+      "functions": [
+        {
+          "name": "summarizeLabPanels",
+          "startLine": 62,
+          "endLine": 70,
+          "params": [
+            "resLabs"
+          ]
+        },
+        {
+          "name": "suggestionsForSection",
+          "startLine": 77,
+          "endLine": 79,
+          "params": [
+            "sectionKey",
+            "text"
+          ]
+        },
+        {
+          "name": "buildDriveImportReviewSteps",
+          "startLine": 91,
+          "endLine": 194,
+          "params": [
+            "parsed",
+            "opts"
+          ]
+        },
+        {
+          "name": "patchReviewStep",
+          "startLine": 200,
+          "endLine": 230,
+          "params": [
+            "step",
+            "patch"
+          ]
+        },
+        {
+          "name": "applyReviewStepsToParsed",
+          "startLine": 238,
+          "endLine": 328,
+          "params": [
+            "parsed",
+            "steps",
+            "opts"
+          ]
+        },
+        {
+          "name": "reviewStepHint",
+          "startLine": 334,
+          "endLine": 354,
+          "params": [
+            "step"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "buildDriveImportReviewSteps",
+          "line": 91,
+          "isDefault": false
+        },
+        {
+          "name": "patchReviewStep",
+          "line": 200,
+          "isDefault": false
+        },
+        {
+          "name": "applyReviewStepsToParsed",
+          "line": 238,
+          "isDefault": false
+        },
+        {
+          "name": "reviewStepHint",
+          "line": 334,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "summarizeLabPanels",
+          "callee": "(resLabs || []).forEach",
+          "lineNumber": 64
+        },
+        {
+          "caller": "summarizeLabPanels",
+          "callee": "String(chunk || '').split('\\n')[0].trim",
+          "lineNumber": 65
+        },
+        {
+          "caller": "summarizeLabPanels",
+          "callee": "String(chunk || '').split",
+          "lineNumber": 65
+        },
+        {
+          "caller": "summarizeLabPanels",
+          "callee": "String",
+          "lineNumber": 65
+        },
+        {
+          "caller": "summarizeLabPanels",
+          "callee": "first.split(/\\s+/)[0].replace",
+          "lineNumber": 66
+        },
+        {
+          "caller": "summarizeLabPanels",
+          "callee": "first.split",
+          "lineNumber": 66
+        },
+        {
+          "caller": "summarizeLabPanels",
+          "callee": "panels.indexOf",
+          "lineNumber": 67
+        },
+        {
+          "caller": "summarizeLabPanels",
+          "callee": "panels.push",
+          "lineNumber": 67
+        },
+        {
+          "caller": "summarizeLabPanels",
+          "callee": "panels.join",
+          "lineNumber": 69
+        },
+        {
+          "caller": "suggestionsForSection",
+          "callee": "buildHcStructuredSuggestions",
+          "lineNumber": 78
+        },
+        {
+          "caller": "suggestionsForSection",
+          "callee": "String(text || '').trim",
+          "lineNumber": 78
+        },
+        {
+          "caller": "suggestionsForSection",
+          "callee": "String",
+          "lineNumber": 78
+        },
+        {
+          "caller": "buildDriveImportReviewSteps",
+          "callee": "steps.push",
+          "lineNumber": 98
+        },
+        {
+          "caller": "buildDriveImportReviewSteps",
+          "callee": "Object.assign",
+          "lineNumber": 102
+        },
+        {
+          "caller": "buildDriveImportReviewSteps",
+          "callee": "listDriveHcReviewSections",
+          "lineNumber": 107
+        },
+        {
+          "caller": "buildDriveImportReviewSteps",
+          "callee": "driveRows.forEach",
+          "lineNumber": 109
+        },
+        {
+          "caller": "buildDriveImportReviewSteps",
+          "callee": "filterFichaDriveText",
+          "lineNumber": 111
+        },
+        {
+          "caller": "buildDriveImportReviewSteps",
+          "callee": "steps.push",
+          "lineNumber": 112
+        },
+        {
+          "caller": "buildDriveImportReviewSteps",
+          "callee": "suggestionsForSection",
+          "lineNumber": 118
+        },
+        {
+          "caller": "buildDriveImportReviewSteps",
+          "callee": "Object.keys(parsed.hcPatch || {})\n        .filter(function (key) {\n          return !String(key).startsWith('_');\n        })\n        .forEach",
+          "lineNumber": 122
+        },
+        {
+          "caller": "buildDriveImportReviewSteps",
+          "callee": "Object.keys(parsed.hcPatch || {})\n        .filter",
+          "lineNumber": 122
+        },
+        {
+          "caller": "buildDriveImportReviewSteps",
+          "callee": "Object.keys",
+          "lineNumber": 122
+        },
+        {
+          "caller": "buildDriveImportReviewSteps",
+          "callee": "String(key).startsWith",
+          "lineNumber": 124
+        },
+        {
+          "caller": "buildDriveImportReviewSteps",
+          "callee": "String",
+          "lineNumber": 124
+        },
+        {
+          "caller": "buildDriveImportReviewSteps",
+          "callee": "steps.push",
+          "lineNumber": 129
+        },
+        {
+          "caller": "buildDriveImportReviewSteps",
+          "callee": "hcPatchValueToEditText",
+          "lineNumber": 134
+        },
+        {
+          "caller": "buildDriveImportReviewSteps",
+          "callee": "suggestionsForSection",
+          "lineNumber": 136
+        },
+        {
+          "caller": "buildDriveImportReviewSteps",
+          "callee": "hcPatchValueToEditText",
+          "lineNumber": 136
+        },
+        {
+          "caller": "buildDriveImportReviewSteps",
+          "callee": "filterNewEventualidades",
+          "lineNumber": 143
+        },
+        {
+          "caller": "buildDriveImportReviewSteps",
+          "callee": "steps.push",
+          "lineNumber": 146
+        },
+        {
+          "caller": "buildDriveImportReviewSteps",
+          "callee": "evNew.map",
+          "lineNumber": 149
+        },
+        {
+          "caller": "buildDriveImportReviewSteps",
+          "callee": "allLabSets.map",
+          "lineNumber": 162
+        },
+        {
+          "caller": "buildDriveImportReviewSteps",
+          "callee": "existingLabs.some",
+          "lineNumber": 163
+        },
+        {
+          "caller": "buildDriveImportReviewSteps",
+          "callee": "isDuplicateDriveLabSet",
+          "lineNumber": 164
+        },
+        {
+          "caller": "buildDriveImportReviewSteps",
+          "callee": "summarizeLabPanels",
+          "lineNumber": 167
+        },
+        {
+          "caller": "buildDriveImportReviewSteps",
+          "callee": "steps.push",
+          "lineNumber": 186
+        },
+        {
+          "caller": "patchReviewStep",
+          "callee": "patch.structuredSuggestions.forEach",
+          "lineNumber": 205
+        },
+        {
+          "caller": "patchReviewStep",
+          "callee": "patch.entries.forEach",
+          "lineNumber": 217
+        },
+        {
+          "caller": "patchReviewStep",
+          "callee": "patch.sets.forEach",
+          "lineNumber": 225
+        },
+        {
+          "caller": "applyReviewStepsToParsed",
+          "callee": "Object.assign",
+          "lineNumber": 240
+        },
+        {
+          "caller": "applyReviewStepsToParsed",
+          "callee": "Object.assign",
+          "lineNumber": 241
+        },
+        {
+          "caller": "applyReviewStepsToParsed",
+          "callee": "Object.assign",
+          "lineNumber": 242
+        },
+        {
+          "caller": "applyReviewStepsToParsed",
+          "callee": "(parsed.eventualidades.entries || []).slice",
+          "lineNumber": 244
+        },
+        {
+          "caller": "applyReviewStepsToParsed",
+          "callee": "Object.assign",
+          "lineNumber": 247
+        },
+        {
+          "caller": "applyReviewStepsToParsed",
+          "callee": "(parsed.laboratorios.sets || []).slice",
+          "lineNumber": 248
+        },
+        {
+          "caller": "applyReviewStepsToParsed",
+          "callee": "Object.assign",
+          "lineNumber": 250
+        },
+        {
+          "caller": "applyReviewStepsToParsed",
+          "callee": "steps.forEach",
+          "lineNumber": 253
+        },
+        {
+          "caller": "applyReviewStepsToParsed",
+          "callee": "Object.assign",
+          "lineNumber": 255
+        },
+        {
+          "caller": "applyReviewStepsToParsed",
+          "callee": "String(step.editText || '').trim",
+          "lineNumber": 261
+        },
+        {
+          "caller": "applyReviewStepsToParsed",
+          "callee": "String",
+          "lineNumber": 261
+        },
+        {
+          "caller": "applyReviewStepsToParsed",
+          "callee": "filterFichaDriveText",
+          "lineNumber": 263
+        },
+        {
+          "caller": "applyReviewStepsToParsed",
+          "callee": "editTextToHcPatchValue",
+          "lineNumber": 274
+        },
+        {
+          "caller": "applyReviewStepsToParsed",
+          "callee": "step.entries\n        .filter(function (e) {\n          return e.include && String(e.text || '').trim();\n        })\n        .map",
+          "lineNumber": 279
+        },
+        {
+          "caller": "applyReviewStepsToParsed",
+          "callee": "step.entries\n        .filter",
+          "lineNumber": 279
+        },
+        {
+          "caller": "applyReviewStepsToParsed",
+          "callee": "String(e.text || '').trim",
+          "lineNumber": 281
+        },
+        {
+          "caller": "applyReviewStepsToParsed",
+          "callee": "String",
+          "lineNumber": 281
+        },
+        {
+          "caller": "applyReviewStepsToParsed",
+          "callee": "String(e.text).trim",
+          "lineNumber": 284
+        },
+        {
+          "caller": "applyReviewStepsToParsed",
+          "callee": "String",
+          "lineNumber": 284
+        },
+        {
+          "caller": "applyReviewStepsToParsed",
+          "callee": "step.sets\n        .filter(function (s) {\n          return s.include && s.resLabs && s.resLabs.length;\n        })\n        .map",
+          "lineNumber": 289
+        },
+        {
+          "caller": "applyReviewStepsToParsed",
+          "callee": "step.sets\n        .filter",
+          "lineNumber": 289
+        },
+        {
+          "caller": "applyReviewStepsToParsed",
+          "callee": "steps.some",
+          "lineNumber": 305
+        },
+        {
+          "caller": "applyReviewStepsToParsed",
+          "callee": "mapUniversalHc",
+          "lineNumber": 309
+        },
+        {
+          "caller": "applyReviewStepsToParsed",
+          "callee": "steps.forEach",
+          "lineNumber": 317
+        },
+        {
+          "caller": "applyReviewStepsToParsed",
+          "callee": "step.structuredSuggestions.forEach",
+          "lineNumber": 319
+        },
+        {
+          "caller": "applyReviewStepsToParsed",
+          "callee": "acceptedSuggestions.push",
+          "lineNumber": 320
+        },
+        {
+          "caller": "applyReviewStepsToParsed",
+          "callee": "applyStructuredSuggestionsToHcPatch",
+          "lineNumber": 324
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 4,
+        "functionCount": 6,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/drive-import/drive-import-review.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 184,
+      "nonEmptyLines": 176,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/drive-import/eventualidad-dates.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 55,
+      "nonEmptyLines": 52,
+      "functions": [
+        {
+          "name": "parseDateLine",
+          "startLine": 5,
+          "endLine": 16,
+          "params": [
+            "line"
+          ]
+        },
+        {
+          "name": "resolveYear",
+          "startLine": 23,
+          "endLine": 30,
+          "params": [
+            "partial",
+            "hints"
+          ]
+        },
+        {
+          "name": "toNoonIso",
+          "startLine": 36,
+          "endLine": 39,
+          "params": [
+            "parts"
+          ]
+        },
+        {
+          "name": "inferDocumentYearFromText",
+          "startLine": 45,
+          "endLine": 55,
+          "params": [
+            "text"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "parseDateLine",
+          "line": 5,
+          "isDefault": false
+        },
+        {
+          "name": "resolveYear",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "toNoonIso",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "inferDocumentYearFromText",
+          "line": 45,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "parseDateLine",
+          "callee": "String(line || '').trim",
+          "lineNumber": 6
+        },
+        {
+          "caller": "parseDateLine",
+          "callee": "String",
+          "lineNumber": 6
+        },
+        {
+          "caller": "parseDateLine",
+          "callee": "/^(\\d{1,2})[\\/.\\-](\\d{1,2})[\\/.\\-](\\d{2,4})$/.exec",
+          "lineNumber": 7
+        },
+        {
+          "caller": "parseDateLine",
+          "callee": "Number",
+          "lineNumber": 9
+        },
+        {
+          "caller": "parseDateLine",
+          "callee": "Number",
+          "lineNumber": 11
+        },
+        {
+          "caller": "parseDateLine",
+          "callee": "Number",
+          "lineNumber": 11
+        },
+        {
+          "caller": "parseDateLine",
+          "callee": "/^(\\d{1,2})[\\/.\\-](\\d{1,2})$/.exec",
+          "lineNumber": 13
+        },
+        {
+          "caller": "parseDateLine",
+          "callee": "Number",
+          "lineNumber": 14
+        },
+        {
+          "caller": "parseDateLine",
+          "callee": "Number",
+          "lineNumber": 14
+        },
+        {
+          "caller": "resolveYear",
+          "callee": "Number.isFinite",
+          "lineNumber": 24
+        },
+        {
+          "caller": "resolveYear",
+          "callee": "now.getFullYear",
+          "lineNumber": 27
+        },
+        {
+          "caller": "resolveYear",
+          "callee": "now.getMonth",
+          "lineNumber": 28
+        },
+        {
+          "caller": "toNoonIso",
+          "callee": "Number.isFinite",
+          "lineNumber": 38
+        },
+        {
+          "caller": "toNoonIso",
+          "callee": "dt.getTime",
+          "lineNumber": 38
+        },
+        {
+          "caller": "toNoonIso",
+          "callee": "dt.toISOString",
+          "lineNumber": 38
+        },
+        {
+          "caller": "toNoonIso",
+          "callee": "new Date().toISOString",
+          "lineNumber": 38
+        },
+        {
+          "caller": "inferDocumentYearFromText",
+          "callee": "/(?:FIUX|FECHA\\s+DE\\s+INGRESO)[^\\d]*(\\d{1,2})[\\/.\\-](\\d{1,2})[\\/.\\-](\\d{4})/i.exec",
+          "lineNumber": 46
+        },
+        {
+          "caller": "inferDocumentYearFromText",
+          "callee": "Number",
+          "lineNumber": 47
+        },
+        {
+          "caller": "inferDocumentYearFromText",
+          "callee": "re.exec",
+          "lineNumber": 51
+        },
+        {
+          "caller": "inferDocumentYearFromText",
+          "callee": "years.push",
+          "lineNumber": 52
+        },
+        {
+          "caller": "inferDocumentYearFromText",
+          "callee": "Number",
+          "lineNumber": 52
+        },
+        {
+          "caller": "inferDocumentYearFromText",
+          "callee": "Math.max",
+          "lineNumber": 54
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/drive-import/filter-ficha-patient-fields.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 55,
+      "nonEmptyLines": 52,
+      "functions": [
+        {
+          "name": "filterFichaDriveText",
+          "startLine": 26,
+          "endLine": 39,
+          "params": [
+            "text"
+          ]
+        },
+        {
+          "name": "filterIdentificacionForHcImport",
+          "startLine": 45,
+          "endLine": 55,
+          "params": [
+            "identificacion"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "IDENTIFICACION_PATIENT_TAB_FIELDS",
+          "line": 2,
+          "isDefault": false
+        },
+        {
+          "name": "filterFichaDriveText",
+          "line": 26,
+          "isDefault": false
+        },
+        {
+          "name": "filterIdentificacionForHcImport",
+          "line": 45,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "filterFichaDriveText",
+          "callee": "String(text || '')\n    .split('\\n')\n    .filter(function (line) {\n      const t = line.trim();\n      if (!t) return true;\n      return !FICHA_PATIENT_LINE_RES.some(function (re) {\n        return re.test(t);\n      });\n    })\n    .join('\\n')\n    .replace(/\\n{3,}/g, '\\n\\n')\n    .trim",
+          "lineNumber": 27
+        },
+        {
+          "caller": "filterFichaDriveText",
+          "callee": "String(text || '')\n    .split('\\n')\n    .filter(function (line) {\n      const t = line.trim();\n      if (!t) return true;\n      return !FICHA_PATIENT_LINE_RES.some(function (re) {\n        return re.test(t);\n      });\n    })\n    .join('\\n')\n    .replace",
+          "lineNumber": 27
+        },
+        {
+          "caller": "filterFichaDriveText",
+          "callee": "String(text || '')\n    .split('\\n')\n    .filter(function (line) {\n      const t = line.trim();\n      if (!t) return true;\n      return !FICHA_PATIENT_LINE_RES.some(function (re) {\n        return re.test(t);\n      });\n    })\n    .join",
+          "lineNumber": 27
+        },
+        {
+          "caller": "filterFichaDriveText",
+          "callee": "String(text || '')\n    .split('\\n')\n    .filter",
+          "lineNumber": 27
+        },
+        {
+          "caller": "filterFichaDriveText",
+          "callee": "String(text || '')\n    .split",
+          "lineNumber": 27
+        },
+        {
+          "caller": "filterFichaDriveText",
+          "callee": "String",
+          "lineNumber": 27
+        },
+        {
+          "caller": "filterFichaDriveText",
+          "callee": "line.trim",
+          "lineNumber": 30
+        },
+        {
+          "caller": "filterFichaDriveText",
+          "callee": "FICHA_PATIENT_LINE_RES.some",
+          "lineNumber": 32
+        },
+        {
+          "caller": "filterFichaDriveText",
+          "callee": "re.test",
+          "lineNumber": 33
+        },
+        {
+          "caller": "filterIdentificacionForHcImport",
+          "callee": "Object.entries(identificacion || {}).forEach",
+          "lineNumber": 48
+        },
+        {
+          "caller": "filterIdentificacionForHcImport",
+          "callee": "Object.entries",
+          "lineNumber": 48
+        },
+        {
+          "caller": "filterIdentificacionForHcImport",
+          "callee": "IDENTIFICACION_PATIENT_TAB_FIELDS.has",
+          "lineNumber": 51
+        },
+        {
+          "caller": "filterIdentificacionForHcImport",
+          "callee": "String(value).trim",
+          "lineNumber": 52
+        },
+        {
+          "caller": "filterIdentificacionForHcImport",
+          "callee": "String",
+          "lineNumber": 52
+        },
+        {
+          "caller": "filterIdentificacionForHcImport",
+          "callee": "String(value).trim",
+          "lineNumber": 52
+        },
+        {
+          "caller": "filterIdentificacionForHcImport",
+          "callee": "String",
+          "lineNumber": 52
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/drive-import/filter-ficha-patient-fields.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 39,
+      "nonEmptyLines": 37,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/drive-import/format-drive-import-preview.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 201,
+      "nonEmptyLines": 187,
+      "functions": [
+        {
+          "name": "summarizeHcValue",
+          "startLine": 9,
+          "endLine": 39,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "formatEvDate",
+          "startLine": 45,
+          "endLine": 53,
+          "params": [
+            "iso"
+          ]
+        },
+        {
+          "name": "clipLine",
+          "startLine": 60,
+          "endLine": 67,
+          "params": [
+            "text",
+            "max"
+          ]
+        },
+        {
+          "name": "summarizeLabPanels",
+          "startLine": 73,
+          "endLine": 81,
+          "params": [
+            "resLabs"
+          ]
+        },
+        {
+          "name": "formatDriveImportPreview",
+          "startLine": 91,
+          "endLine": 201,
+          "params": [
+            "parsed",
+            "opts"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "formatDriveImportPreview",
+          "line": 91,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "summarizeHcValue",
+          "callee": "value.trim",
+          "lineNumber": 12
+        },
+        {
+          "caller": "summarizeHcValue",
+          "callee": "t.replace",
+          "lineNumber": 14
+        },
+        {
+          "caller": "summarizeHcValue",
+          "callee": "t.slice(0, 70).replace",
+          "lineNumber": 15
+        },
+        {
+          "caller": "summarizeHcValue",
+          "callee": "t.slice",
+          "lineNumber": 15
+        },
+        {
+          "caller": "summarizeHcValue",
+          "callee": "Array.isArray",
+          "lineNumber": 17
+        },
+        {
+          "caller": "summarizeHcValue",
+          "callee": "String(desc).trim",
+          "lineNumber": 23
+        },
+        {
+          "caller": "summarizeHcValue",
+          "callee": "String",
+          "lineNumber": 23
+        },
+        {
+          "caller": "summarizeHcValue",
+          "callee": "String(desc).trim",
+          "lineNumber": 24
+        },
+        {
+          "caller": "summarizeHcValue",
+          "callee": "String",
+          "lineNumber": 24
+        },
+        {
+          "caller": "summarizeHcValue",
+          "callee": "parts.push",
+          "lineNumber": 25
+        },
+        {
+          "caller": "summarizeHcValue",
+          "callee": "d.slice(0, 58).replace",
+          "lineNumber": 26
+        },
+        {
+          "caller": "summarizeHcValue",
+          "callee": "d.slice",
+          "lineNumber": 26
+        },
+        {
+          "caller": "summarizeHcValue",
+          "callee": "Array.isArray",
+          "lineNumber": 30
+        },
+        {
+          "caller": "summarizeHcValue",
+          "callee": "parts.push",
+          "lineNumber": 31
+        },
+        {
+          "caller": "summarizeHcValue",
+          "callee": "parts.push",
+          "lineNumber": 34
+        },
+        {
+          "caller": "summarizeHcValue",
+          "callee": "parts.join",
+          "lineNumber": 36
+        },
+        {
+          "caller": "formatEvDate",
+          "callee": "Number.isFinite",
+          "lineNumber": 48
+        },
+        {
+          "caller": "formatEvDate",
+          "callee": "d.getTime",
+          "lineNumber": 48
+        },
+        {
+          "caller": "formatEvDate",
+          "callee": "String(d.getDate()).padStart",
+          "lineNumber": 49
+        },
+        {
+          "caller": "formatEvDate",
+          "callee": "String",
+          "lineNumber": 49
+        },
+        {
+          "caller": "formatEvDate",
+          "callee": "d.getDate",
+          "lineNumber": 49
+        },
+        {
+          "caller": "formatEvDate",
+          "callee": "String(d.getMonth() + 1).padStart",
+          "lineNumber": 50
+        },
+        {
+          "caller": "formatEvDate",
+          "callee": "String",
+          "lineNumber": 50
+        },
+        {
+          "caller": "formatEvDate",
+          "callee": "d.getMonth",
+          "lineNumber": 50
+        },
+        {
+          "caller": "formatEvDate",
+          "callee": "d.getFullYear",
+          "lineNumber": 51
+        },
+        {
+          "caller": "clipLine",
+          "callee": "String(text || '')\n    .trim()\n    .replace",
+          "lineNumber": 61
+        },
+        {
+          "caller": "clipLine",
+          "callee": "String(text || '')\n    .trim",
+          "lineNumber": 61
+        },
+        {
+          "caller": "clipLine",
+          "callee": "String",
+          "lineNumber": 61
+        },
+        {
+          "caller": "clipLine",
+          "callee": "t.slice",
+          "lineNumber": 66
+        },
+        {
+          "caller": "summarizeLabPanels",
+          "callee": "(resLabs || []).forEach",
+          "lineNumber": 75
+        },
+        {
+          "caller": "summarizeLabPanels",
+          "callee": "String(chunk || '').split('\\n')[0].trim",
+          "lineNumber": 76
+        },
+        {
+          "caller": "summarizeLabPanels",
+          "callee": "String(chunk || '').split",
+          "lineNumber": 76
+        },
+        {
+          "caller": "summarizeLabPanels",
+          "callee": "String",
+          "lineNumber": 76
+        },
+        {
+          "caller": "summarizeLabPanels",
+          "callee": "first.split(/\\s+/)[0].replace",
+          "lineNumber": 77
+        },
+        {
+          "caller": "summarizeLabPanels",
+          "callee": "first.split",
+          "lineNumber": 77
+        },
+        {
+          "caller": "summarizeLabPanels",
+          "callee": "panels.indexOf",
+          "lineNumber": 78
+        },
+        {
+          "caller": "summarizeLabPanels",
+          "callee": "panels.push",
+          "lineNumber": 78
+        },
+        {
+          "caller": "summarizeLabPanels",
+          "callee": "panels.join",
+          "lineNumber": 80
+        },
+        {
+          "caller": "formatDriveImportPreview",
+          "callee": "lines.push",
+          "lineNumber": 96
+        },
+        {
+          "caller": "formatDriveImportPreview",
+          "callee": "lines.push",
+          "lineNumber": 97
+        },
+        {
+          "caller": "formatDriveImportPreview",
+          "callee": "lines.push",
+          "lineNumber": 100
+        },
+        {
+          "caller": "formatDriveImportPreview",
+          "callee": "bits.push",
+          "lineNumber": 102
+        },
+        {
+          "caller": "formatDriveImportPreview",
+          "callee": "bits.push",
+          "lineNumber": 103
+        },
+        {
+          "caller": "formatDriveImportPreview",
+          "callee": "bits.push",
+          "lineNumber": 104
+        },
+        {
+          "caller": "formatDriveImportPreview",
+          "callee": "bits.push",
+          "lineNumber": 105
+        },
+        {
+          "caller": "formatDriveImportPreview",
+          "callee": "bits.push",
+          "lineNumber": 106
+        },
+        {
+          "caller": "formatDriveImportPreview",
+          "callee": "lines.push",
+          "lineNumber": 107
+        },
+        {
+          "caller": "formatDriveImportPreview",
+          "callee": "bits.join",
+          "lineNumber": 107
+        },
+        {
+          "caller": "formatDriveImportPreview",
+          "callee": "lines.push",
+          "lineNumber": 108
+        },
+        {
+          "caller": "formatDriveImportPreview",
+          "callee": "listHcPatchSectionKeys",
+          "lineNumber": 111
+        },
+        {
+          "caller": "formatDriveImportPreview",
+          "callee": "lines.push",
+          "lineNumber": 112
+        },
+        {
+          "caller": "formatDriveImportPreview",
+          "callee": "lines.push",
+          "lineNumber": 114
+        },
+        {
+          "caller": "formatDriveImportPreview",
+          "callee": "lines.push",
+          "lineNumber": 116
+        },
+        {
+          "caller": "formatDriveImportPreview",
+          "callee": "lines.push",
+          "lineNumber": 122
+        },
+        {
+          "caller": "formatDriveImportPreview",
+          "callee": "hcKeys.forEach",
+          "lineNumber": 123
+        },
+        {
+          "caller": "formatDriveImportPreview",
+          "callee": "lines.push",
+          "lineNumber": 125
+        },
+        {
+          "caller": "formatDriveImportPreview",
+          "callee": "summarizeHcValue",
+          "lineNumber": 125
+        },
+        {
+          "caller": "formatDriveImportPreview",
+          "callee": "lines.push",
+          "lineNumber": 128
+        },
+        {
+          "caller": "formatDriveImportPreview",
+          "callee": "filterNewEventualidades",
+          "lineNumber": 131
+        },
+        {
+          "caller": "formatDriveImportPreview",
+          "callee": "lines.push",
+          "lineNumber": 135
+        },
+        {
+          "caller": "formatDriveImportPreview",
+          "callee": "lines.push",
+          "lineNumber": 137
+        },
+        {
+          "caller": "formatDriveImportPreview",
+          "callee": "lines.push",
+          "lineNumber": 139
+        },
+        {
+          "caller": "formatDriveImportPreview",
+          "callee": "evNew.slice",
+          "lineNumber": 146
+        },
+        {
+          "caller": "formatDriveImportPreview",
+          "callee": "show.forEach",
+          "lineNumber": 147
+        },
+        {
+          "caller": "formatDriveImportPreview",
+          "callee": "formatEvDate",
+          "lineNumber": 148
+        },
+        {
+          "caller": "formatDriveImportPreview",
+          "callee": "clipLine",
+          "lineNumber": 149
+        },
+        {
+          "caller": "formatDriveImportPreview",
+          "callee": "String(entry.text || '').split",
+          "lineNumber": 149
+        },
+        {
+          "caller": "formatDriveImportPreview",
+          "callee": "String",
+          "lineNumber": 149
+        },
+        {
+          "caller": "formatDriveImportPreview",
+          "callee": "lines.push",
+          "lineNumber": 150
+        },
+        {
+          "caller": "formatDriveImportPreview",
+          "callee": "lines.push",
+          "lineNumber": 153
+        },
+        {
+          "caller": "formatDriveImportPreview",
+          "callee": "lines.push",
+          "lineNumber": 156
+        },
+        {
+          "caller": "formatDriveImportPreview",
+          "callee": "lines.push",
+          "lineNumber": 159
+        },
+        {
+          "caller": "formatDriveImportPreview",
+          "callee": "lines.push",
+          "lineNumber": 165
+        },
+        {
+          "caller": "formatDriveImportPreview",
+          "callee": "lines.push",
+          "lineNumber": 167
+        },
+        {
+          "caller": "formatDriveImportPreview",
+          "callee": "lines.push",
+          "lineNumber": 169
+        },
+        {
+          "caller": "formatDriveImportPreview",
+          "callee": "labNew.slice(0, 10).forEach",
+          "lineNumber": 177
+        },
+        {
+          "caller": "formatDriveImportPreview",
+          "callee": "labNew.slice",
+          "lineNumber": 177
+        },
+        {
+          "caller": "formatDriveImportPreview",
+          "callee": "lines.push",
+          "lineNumber": 178
+        },
+        {
+          "caller": "formatDriveImportPreview",
+          "callee": "summarizeLabPanels",
+          "lineNumber": 184
+        },
+        {
+          "caller": "formatDriveImportPreview",
+          "callee": "lines.push",
+          "lineNumber": 188
+        },
+        {
+          "caller": "formatDriveImportPreview",
+          "callee": "lines.push",
+          "lineNumber": 191
+        },
+        {
+          "caller": "formatDriveImportPreview",
+          "callee": "lines.push",
+          "lineNumber": 194
+        },
+        {
+          "caller": "formatDriveImportPreview",
+          "callee": "parsed.warnings.forEach",
+          "lineNumber": 195
+        },
+        {
+          "caller": "formatDriveImportPreview",
+          "callee": "lines.push",
+          "lineNumber": 196
+        },
+        {
+          "caller": "formatDriveImportPreview",
+          "callee": "lines.join",
+          "lineNumber": 200
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 5,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/drive-import/hc-field-parsers.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 103,
+      "nonEmptyLines": 98,
+      "functions": [
+        {
+          "name": "parseKeyValueBlock",
+          "startLine": 14,
+          "endLine": 38,
+          "params": [
+            "block"
+          ]
+        },
+        {
+          "name": "parseApnpLines",
+          "startLine": 44,
+          "endLine": 70,
+          "params": [
+            "block"
+          ]
+        },
+        {
+          "name": "buildAppFromSections",
+          "startLine": 76,
+          "endLine": 103,
+          "params": [
+            "sections"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "parseKeyValueBlock",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "parseApnpLines",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "buildAppFromSections",
+          "line": 76,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "parseKeyValueBlock",
+          "callee": "String(block || '').split",
+          "lineNumber": 27
+        },
+        {
+          "caller": "parseKeyValueBlock",
+          "callee": "String",
+          "lineNumber": 27
+        },
+        {
+          "caller": "parseKeyValueBlock",
+          "callee": "raw.trim",
+          "lineNumber": 28
+        },
+        {
+          "caller": "parseKeyValueBlock",
+          "callee": "KV_RE.exec",
+          "lineNumber": 30
+        },
+        {
+          "caller": "parseKeyValueBlock",
+          "callee": "m[1].trim().toUpperCase",
+          "lineNumber": 32
+        },
+        {
+          "caller": "parseKeyValueBlock",
+          "callee": "m[1].trim",
+          "lineNumber": 32
+        },
+        {
+          "caller": "parseKeyValueBlock",
+          "callee": "m[2].trim",
+          "lineNumber": 33
+        },
+        {
+          "caller": "parseKeyValueBlock",
+          "callee": "label.toLowerCase().replace",
+          "lineNumber": 34
+        },
+        {
+          "caller": "parseKeyValueBlock",
+          "callee": "label.toLowerCase",
+          "lineNumber": 34
+        },
+        {
+          "caller": "parseApnpLines",
+          "callee": "String(block || '').split",
+          "lineNumber": 60
+        },
+        {
+          "caller": "parseApnpLines",
+          "callee": "String",
+          "lineNumber": 60
+        },
+        {
+          "caller": "parseApnpLines",
+          "callee": "raw.trim",
+          "lineNumber": 61
+        },
+        {
+          "caller": "parseApnpLines",
+          "callee": "KV_RE.exec",
+          "lineNumber": 63
+        },
+        {
+          "caller": "parseApnpLines",
+          "callee": "m[1].trim().toUpperCase",
+          "lineNumber": 65
+        },
+        {
+          "caller": "parseApnpLines",
+          "callee": "m[1].trim",
+          "lineNumber": 65
+        },
+        {
+          "caller": "parseApnpLines",
+          "callee": "m[2].trim",
+          "lineNumber": 67
+        },
+        {
+          "caller": "buildAppFromSections",
+          "callee": "[\n    sections.ecd,\n    sections.medicamentos,\n    sections.quirurgicos,\n    sections.internamientos,\n    sections.app,\n  ].filter",
+          "lineNumber": 77
+        },
+        {
+          "caller": "buildAppFromSections",
+          "callee": "parts.join('\\n\\n').trim",
+          "lineNumber": 84
+        },
+        {
+          "caller": "buildAppFromSections",
+          "callee": "parts.join",
+          "lineNumber": 84
+        },
+        {
+          "caller": "buildAppFromSections",
+          "callee": "parseAppSubsections",
+          "lineNumber": 85
+        },
+        {
+          "caller": "buildAppFromSections",
+          "callee": "isNegatedDriveText",
+          "lineNumber": 95
+        },
+        {
+          "caller": "buildAppFromSections",
+          "callee": "isNegatedDriveText",
+          "lineNumber": 101
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/drive-import/hc-structured-extract.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 813,
+      "nonEmptyLines": 766,
+      "functions": [
+        {
+          "name": "isNegatedDriveText",
+          "startLine": 57,
+          "endLine": 61,
+          "params": [
+            "text"
+          ]
+        },
+        {
+          "name": "parseAppSubsections",
+          "startLine": 67,
+          "endLine": 98,
+          "params": [
+            "text"
+          ]
+        },
+        {
+          "name": "matchCatalogConditions",
+          "startLine": 105,
+          "endLine": 128,
+          "params": [
+            "text",
+            "catalog"
+          ]
+        },
+        {
+          "name": "parseMedicamentosList",
+          "startLine": 134,
+          "endLine": 152,
+          "params": [
+            "text"
+          ]
+        },
+        {
+          "name": "matchToxicomaniasSubstances",
+          "startLine": 158,
+          "endLine": 179,
+          "params": [
+            "text"
+          ]
+        },
+        {
+          "name": "parseAhfRelativeLines",
+          "startLine": 195,
+          "endLine": 240,
+          "params": [
+            "text"
+          ]
+        },
+        {
+          "name": "isNegatedSubsectionBody",
+          "startLine": 242,
+          "endLine": 249,
+          "params": [
+            "body"
+          ]
+        },
+        {
+          "name": "appSubsectionShouldStrip",
+          "startLine": 257,
+          "endLine": 306,
+          "params": [
+            "key",
+            "body",
+            "suggestions"
+          ]
+        },
+        {
+          "name": "stripIntegratedAppDescription",
+          "startLine": 313,
+          "endLine": 381,
+          "params": [
+            "text",
+            "suggestions"
+          ]
+        },
+        {
+          "name": "stripIntegratedAhfDescription",
+          "startLine": 388,
+          "endLine": 415,
+          "params": [
+            "text",
+            "suggestions"
+          ]
+        },
+        {
+          "name": "buildHcStructuredSuggestions",
+          "startLine": 433,
+          "endLine": 640,
+          "params": [
+            "sectionKey",
+            "text",
+            "sections"
+          ]
+        },
+        {
+          "name": "applyStructuredSuggestionsToHcPatch",
+          "startLine": 647,
+          "endLine": 783,
+          "params": [
+            "hcPatch",
+            "suggestions"
+          ]
+        },
+        {
+          "name": "collectStructuredSuggestionsFromDriveSections",
+          "startLine": 791,
+          "endLine": 802,
+          "params": [
+            "sections"
+          ]
+        },
+        {
+          "name": "enrichHcPatchWithStructuredSuggestions",
+          "startLine": 809,
+          "endLine": 813,
+          "params": [
+            "hcPatch",
+            "sections"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "isNegatedDriveText",
+          "line": 57,
+          "isDefault": false
+        },
+        {
+          "name": "parseAppSubsections",
+          "line": 67,
+          "isDefault": false
+        },
+        {
+          "name": "matchCatalogConditions",
+          "line": 105,
+          "isDefault": false
+        },
+        {
+          "name": "parseMedicamentosList",
+          "line": 134,
+          "isDefault": false
+        },
+        {
+          "name": "parseAhfRelativeLines",
+          "line": 195,
+          "isDefault": false
+        },
+        {
+          "name": "stripIntegratedAppDescription",
+          "line": 313,
+          "isDefault": false
+        },
+        {
+          "name": "stripIntegratedAhfDescription",
+          "line": 388,
+          "isDefault": false
+        },
+        {
+          "name": "buildHcStructuredSuggestions",
+          "line": 433,
+          "isDefault": false
+        },
+        {
+          "name": "applyStructuredSuggestionsToHcPatch",
+          "line": 647,
+          "isDefault": false
+        },
+        {
+          "name": "collectStructuredSuggestionsFromDriveSections",
+          "line": 791,
+          "isDefault": false
+        },
+        {
+          "name": "enrichHcPatchWithStructuredSuggestions",
+          "line": 809,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "isNegatedDriveText",
+          "callee": "String(text || '').trim",
+          "lineNumber": 58
+        },
+        {
+          "caller": "isNegatedDriveText",
+          "callee": "String",
+          "lineNumber": 58
+        },
+        {
+          "caller": "isNegatedDriveText",
+          "callee": "NEGADO_RE.test",
+          "lineNumber": 60
+        },
+        {
+          "caller": "parseAppSubsections",
+          "callee": "String(text || '').split",
+          "lineNumber": 70
+        },
+        {
+          "caller": "parseAppSubsections",
+          "callee": "String",
+          "lineNumber": 70
+        },
+        {
+          "caller": "flush",
+          "callee": "currentLines.join('\\n').trim",
+          "lineNumber": 76
+        },
+        {
+          "caller": "flush",
+          "callee": "currentLines.join",
+          "lineNumber": 76
+        },
+        {
+          "caller": "parseAppSubsections",
+          "callee": "raw.trim",
+          "lineNumber": 82
+        },
+        {
+          "caller": "parseAppSubsections",
+          "callee": "header.re.exec",
+          "lineNumber": 85
+        },
+        {
+          "caller": "parseAppSubsections",
+          "callee": "flush",
+          "lineNumber": 87
+        },
+        {
+          "caller": "parseAppSubsections",
+          "callee": "hit[1].trim",
+          "lineNumber": 90
+        },
+        {
+          "caller": "parseAppSubsections",
+          "callee": "currentLines.push",
+          "lineNumber": 90
+        },
+        {
+          "caller": "parseAppSubsections",
+          "callee": "hit[1].trim",
+          "lineNumber": 90
+        },
+        {
+          "caller": "parseAppSubsections",
+          "callee": "currentLines.push",
+          "lineNumber": 94
+        },
+        {
+          "caller": "parseAppSubsections",
+          "callee": "flush",
+          "lineNumber": 96
+        },
+        {
+          "caller": "matchCatalogConditions",
+          "callee": "String",
+          "lineNumber": 106
+        },
+        {
+          "caller": "matchCatalogConditions",
+          "callee": "hay.trim",
+          "lineNumber": 107
+        },
+        {
+          "caller": "matchCatalogConditions",
+          "callee": "isNegatedDriveText",
+          "lineNumber": 107
+        },
+        {
+          "caller": "matchCatalogConditions",
+          "callee": "Object.keys(catalog || {}).forEach",
+          "lineNumber": 112
+        },
+        {
+          "caller": "matchCatalogConditions",
+          "callee": "Object.keys",
+          "lineNumber": 112
+        },
+        {
+          "caller": "matchCatalogConditions",
+          "callee": "APP_DEDICATED_IDS.has",
+          "lineNumber": 113
+        },
+        {
+          "caller": "matchCatalogConditions",
+          "callee": "String(label).replace",
+          "lineNumber": 117
+        },
+        {
+          "caller": "matchCatalogConditions",
+          "callee": "String",
+          "lineNumber": 117
+        },
+        {
+          "caller": "matchCatalogConditions",
+          "callee": "patterns.some",
+          "lineNumber": 119
+        },
+        {
+          "caller": "matchCatalogConditions",
+          "callee": "re.test",
+          "lineNumber": 120
+        },
+        {
+          "caller": "matchCatalogConditions",
+          "callee": "labelRe.test",
+          "lineNumber": 121
+        },
+        {
+          "caller": "matchCatalogConditions",
+          "callee": "seen.has",
+          "lineNumber": 122
+        },
+        {
+          "caller": "matchCatalogConditions",
+          "callee": "seen.add",
+          "lineNumber": 123
+        },
+        {
+          "caller": "matchCatalogConditions",
+          "callee": "hits.push",
+          "lineNumber": 124
+        },
+        {
+          "caller": "parseMedicamentosList",
+          "callee": "String(text || '').trim",
+          "lineNumber": 135
+        },
+        {
+          "caller": "parseMedicamentosList",
+          "callee": "String",
+          "lineNumber": 135
+        },
+        {
+          "caller": "parseMedicamentosList",
+          "callee": "isNegatedDriveText",
+          "lineNumber": 136
+        },
+        {
+          "caller": "parseMedicamentosList",
+          "callee": "t\n    .split(/\\s*,\\s*(?=[A-ZÁÉÍÓÚÑ0-9])/)\n    .map(function (chunk) {\n      return chunk.trim();\n    })\n    .filter(Boolean)\n    .map",
+          "lineNumber": 137
+        },
+        {
+          "caller": "parseMedicamentosList",
+          "callee": "t\n    .split(/\\s*,\\s*(?=[A-ZÁÉÍÓÚÑ0-9])/)\n    .map(function (chunk) {\n      return chunk.trim();\n    })\n    .filter",
+          "lineNumber": 137
+        },
+        {
+          "caller": "parseMedicamentosList",
+          "callee": "t\n    .split(/\\s*,\\s*(?=[A-ZÁÉÍÓÚÑ0-9])/)\n    .map",
+          "lineNumber": 137
+        },
+        {
+          "caller": "parseMedicamentosList",
+          "callee": "t\n    .split",
+          "lineNumber": 137
+        },
+        {
+          "caller": "parseMedicamentosList",
+          "callee": "chunk.trim",
+          "lineNumber": 140
+        },
+        {
+          "caller": "matchToxicomaniasSubstances",
+          "callee": "String",
+          "lineNumber": 159
+        },
+        {
+          "caller": "matchToxicomaniasSubstances",
+          "callee": "hay.trim",
+          "lineNumber": 160
+        },
+        {
+          "caller": "matchToxicomaniasSubstances",
+          "callee": "isNegatedDriveText",
+          "lineNumber": 160
+        },
+        {
+          "caller": "matchToxicomaniasSubstances",
+          "callee": "Object.keys(toxicomaniasSubstances).forEach",
+          "lineNumber": 163
+        },
+        {
+          "caller": "matchToxicomaniasSubstances",
+          "callee": "Object.keys",
+          "lineNumber": 163
+        },
+        {
+          "caller": "matchToxicomaniasSubstances",
+          "callee": "String(label)\n      .split(/\\s*[\\/(]/)\n      .map(function (part) {\n        return part.trim();\n      })\n      .filter",
+          "lineNumber": 165
+        },
+        {
+          "caller": "matchToxicomaniasSubstances",
+          "callee": "String(label)\n      .split(/\\s*[\\/(]/)\n      .map",
+          "lineNumber": 165
+        },
+        {
+          "caller": "matchToxicomaniasSubstances",
+          "callee": "String(label)\n      .split",
+          "lineNumber": 165
+        },
+        {
+          "caller": "matchToxicomaniasSubstances",
+          "callee": "String",
+          "lineNumber": 165
+        },
+        {
+          "caller": "matchToxicomaniasSubstances",
+          "callee": "part.trim",
+          "lineNumber": 168
+        },
+        {
+          "caller": "matchToxicomaniasSubstances",
+          "callee": "tokens.some",
+          "lineNumber": 173
+        },
+        {
+          "caller": "matchToxicomaniasSubstances",
+          "callee": "new RegExp('\\\\b' + token.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\\\$&') + '\\\\b', 'i').test",
+          "lineNumber": 174
+        },
+        {
+          "caller": "matchToxicomaniasSubstances",
+          "callee": "token.replace",
+          "lineNumber": 174
+        },
+        {
+          "caller": "matchToxicomaniasSubstances",
+          "callee": "hits.push",
+          "lineNumber": 176
+        },
+        {
+          "caller": "parseAhfRelativeLines",
+          "callee": "String(text || '')\n    .split('\\n')\n    .forEach",
+          "lineNumber": 198
+        },
+        {
+          "caller": "parseAhfRelativeLines",
+          "callee": "String(text || '')\n    .split",
+          "lineNumber": 198
+        },
+        {
+          "caller": "parseAhfRelativeLines",
+          "callee": "String",
+          "lineNumber": 198
+        },
+        {
+          "caller": "parseAhfRelativeLines",
+          "callee": "raw.trim",
+          "lineNumber": 201
+        },
+        {
+          "caller": "parseAhfRelativeLines",
+          "callee": "/^([A-ZÁÉÍÓÚÑ\\s]+)\\s*[:;]\\s*(.+)$/i.exec",
+          "lineNumber": 202
+        },
+        {
+          "caller": "parseAhfRelativeLines",
+          "callee": "m[1].trim().toUpperCase",
+          "lineNumber": 204
+        },
+        {
+          "caller": "parseAhfRelativeLines",
+          "callee": "m[1].trim",
+          "lineNumber": 204
+        },
+        {
+          "caller": "parseAhfRelativeLines",
+          "callee": "m[2].trim",
+          "lineNumber": 205
+        },
+        {
+          "caller": "parseAhfRelativeLines",
+          "callee": "isNegatedDriveText",
+          "lineNumber": 207
+        },
+        {
+          "caller": "parseAhfRelativeLines",
+          "callee": "/FINAD|FALLECID|FALLEC/i.test",
+          "lineNumber": 209
+        },
+        {
+          "caller": "parseAhfRelativeLines",
+          "callee": "/\\bVIV[OA]\\b|\\bSANO\\b/i.test",
+          "lineNumber": 211
+        },
+        {
+          "caller": "parseAhfRelativeLines",
+          "callee": "matchCatalogConditions",
+          "lineNumber": 215
+        },
+        {
+          "caller": "parseAhfRelativeLines",
+          "callee": "conditions.forEach",
+          "lineNumber": 217
+        },
+        {
+          "caller": "parseAhfRelativeLines",
+          "callee": "entries.push",
+          "lineNumber": 218
+        },
+        {
+          "caller": "parseAhfRelativeLines",
+          "callee": "entries.push",
+          "lineNumber": 230
+        },
+        {
+          "caller": "isNegatedSubsectionBody",
+          "callee": "String(body || '').trim",
+          "lineNumber": 243
+        },
+        {
+          "caller": "isNegatedSubsectionBody",
+          "callee": "String",
+          "lineNumber": 243
+        },
+        {
+          "caller": "isNegatedSubsectionBody",
+          "callee": "isNegatedDriveText",
+          "lineNumber": 245
+        },
+        {
+          "caller": "isNegatedSubsectionBody",
+          "callee": "/^[^:]+:\\s*(.+)$/i.exec",
+          "lineNumber": 246
+        },
+        {
+          "caller": "isNegatedSubsectionBody",
+          "callee": "isNegatedDriveText",
+          "lineNumber": 247
+        },
+        {
+          "caller": "isNegatedSubsectionBody",
+          "callee": "inline[1].trim",
+          "lineNumber": 247
+        },
+        {
+          "caller": "appSubsectionShouldStrip",
+          "callee": "String(body).trim",
+          "lineNumber": 258
+        },
+        {
+          "caller": "appSubsectionShouldStrip",
+          "callee": "String",
+          "lineNumber": 258
+        },
+        {
+          "caller": "appSubsectionShouldStrip",
+          "callee": "isNegatedSubsectionBody",
+          "lineNumber": 259
+        },
+        {
+          "caller": "appSubsectionShouldStrip",
+          "callee": "(suggestions || []).filter",
+          "lineNumber": 261
+        },
+        {
+          "caller": "appSubsectionShouldStrip",
+          "callee": "accepted.some",
+          "lineNumber": 266
+        },
+        {
+          "caller": "appSubsectionShouldStrip",
+          "callee": "accepted.some",
+          "lineNumber": 271
+        },
+        {
+          "caller": "appSubsectionShouldStrip",
+          "callee": "accepted.some",
+          "lineNumber": 276
+        },
+        {
+          "caller": "appSubsectionShouldStrip",
+          "callee": "accepted.some",
+          "lineNumber": 281
+        },
+        {
+          "caller": "appSubsectionShouldStrip",
+          "callee": "accepted.some",
+          "lineNumber": 286
+        },
+        {
+          "caller": "appSubsectionShouldStrip",
+          "callee": "accepted.some",
+          "lineNumber": 291
+        },
+        {
+          "caller": "appSubsectionShouldStrip",
+          "callee": "accepted.some",
+          "lineNumber": 296
+        },
+        {
+          "caller": "appSubsectionShouldStrip",
+          "callee": "accepted.some",
+          "lineNumber": 301
+        },
+        {
+          "caller": "stripIntegratedAppDescription",
+          "callee": "String(text || '').split",
+          "lineNumber": 314
+        },
+        {
+          "caller": "stripIntegratedAppDescription",
+          "callee": "String",
+          "lineNumber": 314
+        },
+        {
+          "caller": "flush",
+          "callee": "buffer.join('\\n').trim",
+          "lineNumber": 322
+        },
+        {
+          "caller": "flush",
+          "callee": "buffer.join",
+          "lineNumber": 322
+        },
+        {
+          "caller": "flush",
+          "callee": "(suggestions || []).some",
+          "lineNumber": 330
+        },
+        {
+          "caller": "flush",
+          "callee": "matchCatalogConditions",
+          "lineNumber": 334
+        },
+        {
+          "caller": "flush",
+          "callee": "condHits.every",
+          "lineNumber": 337
+        },
+        {
+          "caller": "flush",
+          "callee": "(suggestions || []).some",
+          "lineNumber": 338
+        },
+        {
+          "caller": "flush",
+          "callee": "appSubsectionShouldStrip",
+          "lineNumber": 346
+        },
+        {
+          "caller": "flush",
+          "callee": "kept.push",
+          "lineNumber": 347
+        },
+        {
+          "caller": "flush",
+          "callee": "appSubsectionShouldStrip",
+          "lineNumber": 349
+        },
+        {
+          "caller": "flush",
+          "callee": "kept.push",
+          "lineNumber": 350
+        },
+        {
+          "caller": "stripIntegratedAppDescription",
+          "callee": "raw.trim",
+          "lineNumber": 356
+        },
+        {
+          "caller": "stripIntegratedAppDescription",
+          "callee": "header.re.exec",
+          "lineNumber": 359
+        },
+        {
+          "caller": "stripIntegratedAppDescription",
+          "callee": "flush",
+          "lineNumber": 361
+        },
+        {
+          "caller": "stripIntegratedAppDescription",
+          "callee": "hit[1].trim",
+          "lineNumber": 364
+        },
+        {
+          "caller": "stripIntegratedAppDescription",
+          "callee": "buffer.push",
+          "lineNumber": 364
+        },
+        {
+          "caller": "stripIntegratedAppDescription",
+          "callee": "buffer.push",
+          "lineNumber": 370
+        },
+        {
+          "caller": "stripIntegratedAppDescription",
+          "callee": "flush",
+          "lineNumber": 372
+        },
+        {
+          "caller": "stripIntegratedAppDescription",
+          "callee": "buffer.push",
+          "lineNumber": 374
+        },
+        {
+          "caller": "stripIntegratedAppDescription",
+          "callee": "flush",
+          "lineNumber": 378
+        },
+        {
+          "caller": "stripIntegratedAppDescription",
+          "callee": "kept.join('\\n').replace(/\\n{3,}/g, '\\n\\n').trim",
+          "lineNumber": 380
+        },
+        {
+          "caller": "stripIntegratedAppDescription",
+          "callee": "kept.join('\\n').replace",
+          "lineNumber": 380
+        },
+        {
+          "caller": "stripIntegratedAppDescription",
+          "callee": "kept.join",
+          "lineNumber": 380
+        },
+        {
+          "caller": "stripIntegratedAhfDescription",
+          "callee": "(suggestions || []).filter",
+          "lineNumber": 389
+        },
+        {
+          "caller": "stripIntegratedAhfDescription",
+          "callee": "String(text || '')\n    .split('\\n')\n    .filter(function (raw) {\n      const line = raw.trim();\n      if (!line) return true;\n      const m = /^([A-ZÁÉÍÓÚÑ\\s]+)\\s*[:;]\\s*(.+)$/i.exec(line);\n      if (!m) return true;\n      const label = m[1].trim().toUpperCase();\n      const value = m[2].trim();\n      if (!AHF_RELATIVE_LABEL_MAP[label]) return true;\n      if (isNegatedDriveText(value)) return false;\n      if (!acceptedEntries.length) return true;\n      const relativeId = AHF_RELATIVE_LABEL_MAP[label];\n      return !acceptedEntries.some(function (s) {\n        const row = /** @type {{ relativeId?: string, diagnosis?: string }} */ (s.value || {});\n        return row.relativeId === relativeId &&\n          String(row.diagnosis || '').toUpperCase() === value.toUpperCase();\n      });\n    })\n    .join('\\n')\n    .replace(/\\n{3,}/g, '\\n\\n')\n    .trim",
+          "lineNumber": 393
+        },
+        {
+          "caller": "stripIntegratedAhfDescription",
+          "callee": "String(text || '')\n    .split('\\n')\n    .filter(function (raw) {\n      const line = raw.trim();\n      if (!line) return true;\n      const m = /^([A-ZÁÉÍÓÚÑ\\s]+)\\s*[:;]\\s*(.+)$/i.exec(line);\n      if (!m) return true;\n      const label = m[1].trim().toUpperCase();\n      const value = m[2].trim();\n      if (!AHF_RELATIVE_LABEL_MAP[label]) return true;\n      if (isNegatedDriveText(value)) return false;\n      if (!acceptedEntries.length) return true;\n      const relativeId = AHF_RELATIVE_LABEL_MAP[label];\n      return !acceptedEntries.some(function (s) {\n        const row = /** @type {{ relativeId?: string, diagnosis?: string }} */ (s.value || {});\n        return row.relativeId === relativeId &&\n          String(row.diagnosis || '').toUpperCase() === value.toUpperCase();\n      });\n    })\n    .join('\\n')\n    .replace",
+          "lineNumber": 393
+        },
+        {
+          "caller": "stripIntegratedAhfDescription",
+          "callee": "String(text || '')\n    .split('\\n')\n    .filter(function (raw) {\n      const line = raw.trim();\n      if (!line) return true;\n      const m = /^([A-ZÁÉÍÓÚÑ\\s]+)\\s*[:;]\\s*(.+)$/i.exec(line);\n      if (!m) return true;\n      const label = m[1].trim().toUpperCase();\n      const value = m[2].trim();\n      if (!AHF_RELATIVE_LABEL_MAP[label]) return true;\n      if (isNegatedDriveText(value)) return false;\n      if (!acceptedEntries.length) return true;\n      const relativeId = AHF_RELATIVE_LABEL_MAP[label];\n      return !acceptedEntries.some(function (s) {\n        const row = /** @type {{ relativeId?: string, diagnosis?: string }} */ (s.value || {});\n        return row.relativeId === relativeId &&\n          String(row.diagnosis || '').toUpperCase() === value.toUpperCase();\n      });\n    })\n    .join",
+          "lineNumber": 393
+        },
+        {
+          "caller": "stripIntegratedAhfDescription",
+          "callee": "String(text || '')\n    .split('\\n')\n    .filter",
+          "lineNumber": 393
+        },
+        {
+          "caller": "stripIntegratedAhfDescription",
+          "callee": "String(text || '')\n    .split",
+          "lineNumber": 393
+        },
+        {
+          "caller": "stripIntegratedAhfDescription",
+          "callee": "String",
+          "lineNumber": 393
+        },
+        {
+          "caller": "stripIntegratedAhfDescription",
+          "callee": "raw.trim",
+          "lineNumber": 396
+        },
+        {
+          "caller": "stripIntegratedAhfDescription",
+          "callee": "/^([A-ZÁÉÍÓÚÑ\\s]+)\\s*[:;]\\s*(.+)$/i.exec",
+          "lineNumber": 398
+        },
+        {
+          "caller": "stripIntegratedAhfDescription",
+          "callee": "m[1].trim().toUpperCase",
+          "lineNumber": 400
+        },
+        {
+          "caller": "stripIntegratedAhfDescription",
+          "callee": "m[1].trim",
+          "lineNumber": 400
+        },
+        {
+          "caller": "stripIntegratedAhfDescription",
+          "callee": "m[2].trim",
+          "lineNumber": 401
+        },
+        {
+          "caller": "stripIntegratedAhfDescription",
+          "callee": "isNegatedDriveText",
+          "lineNumber": 403
+        },
+        {
+          "caller": "stripIntegratedAhfDescription",
+          "callee": "acceptedEntries.some",
+          "lineNumber": 406
+        },
+        {
+          "caller": "stripIntegratedAhfDescription",
+          "callee": "String(row.diagnosis || '').toUpperCase",
+          "lineNumber": 409
+        },
+        {
+          "caller": "stripIntegratedAhfDescription",
+          "callee": "String",
+          "lineNumber": 409
+        },
+        {
+          "caller": "stripIntegratedAhfDescription",
+          "callee": "value.toUpperCase",
+          "lineNumber": 409
+        },
+        {
+          "caller": "buildHcStructuredSuggestions",
+          "callee": "String",
+          "lineNumber": 437
+        },
+        {
+          "caller": "buildHcStructuredSuggestions",
+          "callee": "parseAppSubsections",
+          "lineNumber": 440
+        },
+        {
+          "caller": "buildHcStructuredSuggestions",
+          "callee": "[subs.ecd, subs.enfermedades, subs._body, text].filter(Boolean).join",
+          "lineNumber": 441
+        },
+        {
+          "caller": "buildHcStructuredSuggestions",
+          "callee": "[subs.ecd, subs.enfermedades, subs._body, text].filter",
+          "lineNumber": 441
+        },
+        {
+          "caller": "buildHcStructuredSuggestions",
+          "callee": "matchCatalogConditions(diseaseText, appConditions).forEach",
+          "lineNumber": 442
+        },
+        {
+          "caller": "buildHcStructuredSuggestions",
+          "callee": "matchCatalogConditions",
+          "lineNumber": 442
+        },
+        {
+          "caller": "buildHcStructuredSuggestions",
+          "callee": "suggestions.push",
+          "lineNumber": 443
+        },
+        {
+          "caller": "buildHcStructuredSuggestions",
+          "callee": "parseMedicamentosList(medText).forEach",
+          "lineNumber": 454
+        },
+        {
+          "caller": "buildHcStructuredSuggestions",
+          "callee": "parseMedicamentosList",
+          "lineNumber": 454
+        },
+        {
+          "caller": "buildHcStructuredSuggestions",
+          "callee": "suggestions.push",
+          "lineNumber": 455
+        },
+        {
+          "caller": "buildHcStructuredSuggestions",
+          "callee": "isNegatedDriveText",
+          "lineNumber": 467
+        },
+        {
+          "caller": "buildHcStructuredSuggestions",
+          "callee": "suggestions.push",
+          "lineNumber": 468
+        },
+        {
+          "caller": "buildHcStructuredSuggestions",
+          "callee": "alergiasText\n          .split(/\\s*,\\s*/)\n          .map(function (part) {\n            return part.trim();\n          })\n          .filter(Boolean)\n          .forEach",
+          "lineNumber": 477
+        },
+        {
+          "caller": "buildHcStructuredSuggestions",
+          "callee": "alergiasText\n          .split(/\\s*,\\s*/)\n          .map(function (part) {\n            return part.trim();\n          })\n          .filter",
+          "lineNumber": 477
+        },
+        {
+          "caller": "buildHcStructuredSuggestions",
+          "callee": "alergiasText\n          .split(/\\s*,\\s*/)\n          .map",
+          "lineNumber": 477
+        },
+        {
+          "caller": "buildHcStructuredSuggestions",
+          "callee": "alergiasText\n          .split",
+          "lineNumber": 477
+        },
+        {
+          "caller": "buildHcStructuredSuggestions",
+          "callee": "part.trim",
+          "lineNumber": 480
+        },
+        {
+          "caller": "buildHcStructuredSuggestions",
+          "callee": "suggestions.push",
+          "lineNumber": 484
+        },
+        {
+          "caller": "buildHcStructuredSuggestions",
+          "callee": "isNegatedDriveText",
+          "lineNumber": 497
+        },
+        {
+          "caller": "buildHcStructuredSuggestions",
+          "callee": "suggestions.push",
+          "lineNumber": 498
+        },
+        {
+          "caller": "buildHcStructuredSuggestions",
+          "callee": "inmunText.slice",
+          "lineNumber": 500
+        },
+        {
+          "caller": "buildHcStructuredSuggestions",
+          "callee": "[\n      { subKey: 'transfusiones', target: 'app.transfusionesEntries', prefix: 'Transfusión' },\n      { subKey: 'hospitalizaciones', target: 'app.hospitalizaciones', prefix: 'Hospitalización' },\n      { subKey: 'cirugias', target: 'app.cirugias', prefix: 'Cirugía' },\n      { subKey: 'traumaticos', target: 'app.traumaticosEntries', prefix: 'Traumatismo' },\n    ].forEach",
+          "lineNumber": 508
+        },
+        {
+          "caller": "buildHcStructuredSuggestions",
+          "callee": "isNegatedDriveText",
+          "lineNumber": 515
+        },
+        {
+          "caller": "buildHcStructuredSuggestions",
+          "callee": "suggestions.push",
+          "lineNumber": 516
+        },
+        {
+          "caller": "buildHcStructuredSuggestions",
+          "callee": "body.slice",
+          "lineNumber": 518
+        },
+        {
+          "caller": "buildHcStructuredSuggestions",
+          "callee": "String(text || '').split",
+          "lineNumber": 528
+        },
+        {
+          "caller": "buildHcStructuredSuggestions",
+          "callee": "String",
+          "lineNumber": 528
+        },
+        {
+          "caller": "buildHcStructuredSuggestions",
+          "callee": "lines.forEach",
+          "lineNumber": 529
+        },
+        {
+          "caller": "buildHcStructuredSuggestions",
+          "callee": "raw.trim",
+          "lineNumber": 530
+        },
+        {
+          "caller": "buildHcStructuredSuggestions",
+          "callee": "/^([A-ZÁÉÍÓÚÑ0-9\\s]+)\\s*[:;]\\s*(.+)$/i.exec",
+          "lineNumber": 531
+        },
+        {
+          "caller": "buildHcStructuredSuggestions",
+          "callee": "m[1].trim().toUpperCase",
+          "lineNumber": 533
+        },
+        {
+          "caller": "buildHcStructuredSuggestions",
+          "callee": "m[1].trim",
+          "lineNumber": 533
+        },
+        {
+          "caller": "buildHcStructuredSuggestions",
+          "callee": "m[2].trim",
+          "lineNumber": 534
+        },
+        {
+          "caller": "buildHcStructuredSuggestions",
+          "callee": "isNegatedDriveText",
+          "lineNumber": 535
+        },
+        {
+          "caller": "buildHcStructuredSuggestions",
+          "callee": "suggestions.push",
+          "lineNumber": 536
+        },
+        {
+          "caller": "buildHcStructuredSuggestions",
+          "callee": "isNegatedDriveText",
+          "lineNumber": 545
+        },
+        {
+          "caller": "buildHcStructuredSuggestions",
+          "callee": "suggestions.push",
+          "lineNumber": 546
+        },
+        {
+          "caller": "buildHcStructuredSuggestions",
+          "callee": "isNegatedDriveText",
+          "lineNumber": 556
+        },
+        {
+          "caller": "buildHcStructuredSuggestions",
+          "callee": "matchToxicomaniasSubstances(value).forEach",
+          "lineNumber": 557
+        },
+        {
+          "caller": "buildHcStructuredSuggestions",
+          "callee": "matchToxicomaniasSubstances",
+          "lineNumber": 557
+        },
+        {
+          "caller": "buildHcStructuredSuggestions",
+          "callee": "suggestions.push",
+          "lineNumber": 558
+        },
+        {
+          "caller": "buildHcStructuredSuggestions",
+          "callee": "parseAhfRelativeLines(text).forEach",
+          "lineNumber": 578
+        },
+        {
+          "caller": "buildHcStructuredSuggestions",
+          "callee": "parseAhfRelativeLines",
+          "lineNumber": 578
+        },
+        {
+          "caller": "buildHcStructuredSuggestions",
+          "callee": "AHF_RELATIVES.find",
+          "lineNumber": 580
+        },
+        {
+          "caller": "buildHcStructuredSuggestions",
+          "callee": "suggestions.push",
+          "lineNumber": 583
+        },
+        {
+          "caller": "buildHcStructuredSuggestions",
+          "callee": "String(entry.diagnosis || '').slice",
+          "lineNumber": 585
+        },
+        {
+          "caller": "buildHcStructuredSuggestions",
+          "callee": "String",
+          "lineNumber": 585
+        },
+        {
+          "caller": "buildHcStructuredSuggestions",
+          "callee": "matchCatalogConditions(text, ahfConditions).forEach",
+          "lineNumber": 592
+        },
+        {
+          "caller": "buildHcStructuredSuggestions",
+          "callee": "matchCatalogConditions",
+          "lineNumber": 592
+        },
+        {
+          "caller": "buildHcStructuredSuggestions",
+          "callee": "suggestions.some",
+          "lineNumber": 594
+        },
+        {
+          "caller": "buildHcStructuredSuggestions",
+          "callee": "suggestions.push",
+          "lineNumber": 600
+        },
+        {
+          "caller": "buildHcStructuredSuggestions",
+          "callee": "matchCatalogConditions(text, appConditions).forEach",
+          "lineNumber": 612
+        },
+        {
+          "caller": "buildHcStructuredSuggestions",
+          "callee": "matchCatalogConditions",
+          "lineNumber": 612
+        },
+        {
+          "caller": "buildHcStructuredSuggestions",
+          "callee": "suggestions.push",
+          "lineNumber": 613
+        },
+        {
+          "caller": "buildHcStructuredSuggestions",
+          "callee": "suggestions.some",
+          "lineNumber": 624
+        },
+        {
+          "caller": "buildHcStructuredSuggestions",
+          "callee": "parseMedicamentosList(text).forEach",
+          "lineNumber": 627
+        },
+        {
+          "caller": "buildHcStructuredSuggestions",
+          "callee": "parseMedicamentosList",
+          "lineNumber": 627
+        },
+        {
+          "caller": "buildHcStructuredSuggestions",
+          "callee": "suggestions.push",
+          "lineNumber": 628
+        },
+        {
+          "caller": "applyStructuredSuggestionsToHcPatch",
+          "callee": "(suggestions || []).filter",
+          "lineNumber": 648
+        },
+        {
+          "caller": "applyStructuredSuggestionsToHcPatch",
+          "callee": "Object.assign",
+          "lineNumber": 651
+        },
+        {
+          "caller": "applyStructuredSuggestionsToHcPatch",
+          "callee": "accepted.forEach",
+          "lineNumber": 652
+        },
+        {
+          "caller": "applyStructuredSuggestionsToHcPatch",
+          "callee": "String(s.target || '').split",
+          "lineNumber": 653
+        },
+        {
+          "caller": "applyStructuredSuggestionsToHcPatch",
+          "callee": "String",
+          "lineNumber": 653
+        },
+        {
+          "caller": "applyStructuredSuggestionsToHcPatch",
+          "callee": "Object.assign",
+          "lineNumber": 660
+        },
+        {
+          "caller": "applyStructuredSuggestionsToHcPatch",
+          "callee": "Array.isArray",
+          "lineNumber": 663
+        },
+        {
+          "caller": "applyStructuredSuggestionsToHcPatch",
+          "callee": "block.conditions.slice",
+          "lineNumber": 663
+        },
+        {
+          "caller": "applyStructuredSuggestionsToHcPatch",
+          "callee": "String",
+          "lineNumber": 664
+        },
+        {
+          "caller": "applyStructuredSuggestionsToHcPatch",
+          "callee": "list.indexOf",
+          "lineNumber": 665
+        },
+        {
+          "caller": "applyStructuredSuggestionsToHcPatch",
+          "callee": "list.push",
+          "lineNumber": 665
+        },
+        {
+          "caller": "applyStructuredSuggestionsToHcPatch",
+          "callee": "Array.isArray",
+          "lineNumber": 668
+        },
+        {
+          "caller": "applyStructuredSuggestionsToHcPatch",
+          "callee": "block.medicamentosActuales.slice",
+          "lineNumber": 668
+        },
+        {
+          "caller": "applyStructuredSuggestionsToHcPatch",
+          "callee": "list.some",
+          "lineNumber": 670
+        },
+        {
+          "caller": "applyStructuredSuggestionsToHcPatch",
+          "callee": "String(row.medication || '').toUpperCase",
+          "lineNumber": 671
+        },
+        {
+          "caller": "applyStructuredSuggestionsToHcPatch",
+          "callee": "String",
+          "lineNumber": 671
+        },
+        {
+          "caller": "applyStructuredSuggestionsToHcPatch",
+          "callee": "String(med.medication).toUpperCase",
+          "lineNumber": 671
+        },
+        {
+          "caller": "applyStructuredSuggestionsToHcPatch",
+          "callee": "String",
+          "lineNumber": 671
+        },
+        {
+          "caller": "applyStructuredSuggestionsToHcPatch",
+          "callee": "list.push",
+          "lineNumber": 673
+        },
+        {
+          "caller": "applyStructuredSuggestionsToHcPatch",
+          "callee": "Array.isArray",
+          "lineNumber": 681
+        },
+        {
+          "caller": "applyStructuredSuggestionsToHcPatch",
+          "callee": "block.alergiaMedicamentos.slice",
+          "lineNumber": 681
+        },
+        {
+          "caller": "applyStructuredSuggestionsToHcPatch",
+          "callee": "list.push",
+          "lineNumber": 683
+        },
+        {
+          "caller": "applyStructuredSuggestionsToHcPatch",
+          "callee": "String(block.inmunizaciones || '').trim",
+          "lineNumber": 686
+        },
+        {
+          "caller": "applyStructuredSuggestionsToHcPatch",
+          "callee": "String",
+          "lineNumber": 686
+        },
+        {
+          "caller": "applyStructuredSuggestionsToHcPatch",
+          "callee": "String(s.value || '').trim",
+          "lineNumber": 686
+        },
+        {
+          "caller": "applyStructuredSuggestionsToHcPatch",
+          "callee": "String",
+          "lineNumber": 686
+        },
+        {
+          "caller": "applyStructuredSuggestionsToHcPatch",
+          "callee": "Array.isArray",
+          "lineNumber": 688
+        },
+        {
+          "caller": "applyStructuredSuggestionsToHcPatch",
+          "callee": "block.transfusionesEntries.slice",
+          "lineNumber": 688
+        },
+        {
+          "caller": "applyStructuredSuggestionsToHcPatch",
+          "callee": "list.push",
+          "lineNumber": 689
+        },
+        {
+          "caller": "applyStructuredSuggestionsToHcPatch",
+          "callee": "String(s.value || '').trim",
+          "lineNumber": 692
+        },
+        {
+          "caller": "applyStructuredSuggestionsToHcPatch",
+          "callee": "String",
+          "lineNumber": 692
+        },
+        {
+          "caller": "applyStructuredSuggestionsToHcPatch",
+          "callee": "Array.isArray",
+          "lineNumber": 697
+        },
+        {
+          "caller": "applyStructuredSuggestionsToHcPatch",
+          "callee": "block.hospitalizaciones.slice",
+          "lineNumber": 697
+        },
+        {
+          "caller": "applyStructuredSuggestionsToHcPatch",
+          "callee": "list.push",
+          "lineNumber": 698
+        },
+        {
+          "caller": "applyStructuredSuggestionsToHcPatch",
+          "callee": "String(s.value || '').trim",
+          "lineNumber": 699
+        },
+        {
+          "caller": "applyStructuredSuggestionsToHcPatch",
+          "callee": "String",
+          "lineNumber": 699
+        },
+        {
+          "caller": "applyStructuredSuggestionsToHcPatch",
+          "callee": "Array.isArray",
+          "lineNumber": 706
+        },
+        {
+          "caller": "applyStructuredSuggestionsToHcPatch",
+          "callee": "block.cirugias.slice",
+          "lineNumber": 706
+        },
+        {
+          "caller": "applyStructuredSuggestionsToHcPatch",
+          "callee": "list.push",
+          "lineNumber": 707
+        },
+        {
+          "caller": "applyStructuredSuggestionsToHcPatch",
+          "callee": "String(s.value || '').trim",
+          "lineNumber": 708
+        },
+        {
+          "caller": "applyStructuredSuggestionsToHcPatch",
+          "callee": "String",
+          "lineNumber": 708
+        },
+        {
+          "caller": "applyStructuredSuggestionsToHcPatch",
+          "callee": "Array.isArray",
+          "lineNumber": 714
+        },
+        {
+          "caller": "applyStructuredSuggestionsToHcPatch",
+          "callee": "block.traumaticosEntries.slice",
+          "lineNumber": 714
+        },
+        {
+          "caller": "applyStructuredSuggestionsToHcPatch",
+          "callee": "list.push",
+          "lineNumber": 715
+        },
+        {
+          "caller": "applyStructuredSuggestionsToHcPatch",
+          "callee": "String(s.value || '').trim",
+          "lineNumber": 717
+        },
+        {
+          "caller": "applyStructuredSuggestionsToHcPatch",
+          "callee": "String",
+          "lineNumber": 717
+        },
+        {
+          "caller": "applyStructuredSuggestionsToHcPatch",
+          "callee": "Object.assign",
+          "lineNumber": 722
+        },
+        {
+          "caller": "applyStructuredSuggestionsToHcPatch",
+          "callee": "Object.assign",
+          "lineNumber": 725
+        },
+        {
+          "caller": "applyStructuredSuggestionsToHcPatch",
+          "callee": "Array.isArray",
+          "lineNumber": 728
+        },
+        {
+          "caller": "applyStructuredSuggestionsToHcPatch",
+          "callee": "block.toxicomaniasEntries.slice",
+          "lineNumber": 728
+        },
+        {
+          "caller": "applyStructuredSuggestionsToHcPatch",
+          "callee": "list.some",
+          "lineNumber": 733
+        },
+        {
+          "caller": "applyStructuredSuggestionsToHcPatch",
+          "callee": "list.push",
+          "lineNumber": 737
+        },
+        {
+          "caller": "applyStructuredSuggestionsToHcPatch",
+          "callee": "Array.isArray",
+          "lineNumber": 741
+        },
+        {
+          "caller": "applyStructuredSuggestionsToHcPatch",
+          "callee": "block.entries.slice",
+          "lineNumber": 741
+        },
+        {
+          "caller": "applyStructuredSuggestionsToHcPatch",
+          "callee": "list.some",
+          "lineNumber": 747
+        },
+        {
+          "caller": "applyStructuredSuggestionsToHcPatch",
+          "callee": "String(entry.diagnosis || '').toUpperCase",
+          "lineNumber": 752
+        },
+        {
+          "caller": "applyStructuredSuggestionsToHcPatch",
+          "callee": "String",
+          "lineNumber": 752
+        },
+        {
+          "caller": "applyStructuredSuggestionsToHcPatch",
+          "callee": "String(row.diagnosis || '').toUpperCase",
+          "lineNumber": 752
+        },
+        {
+          "caller": "applyStructuredSuggestionsToHcPatch",
+          "callee": "String",
+          "lineNumber": 752
+        },
+        {
+          "caller": "applyStructuredSuggestionsToHcPatch",
+          "callee": "list.push",
+          "lineNumber": 756
+        },
+        {
+          "caller": "applyStructuredSuggestionsToHcPatch",
+          "callee": "Object.assign",
+          "lineNumber": 765
+        },
+        {
+          "caller": "applyStructuredSuggestionsToHcPatch",
+          "callee": "stripIntegratedAppDescription",
+          "lineNumber": 767
+        },
+        {
+          "caller": "applyStructuredSuggestionsToHcPatch",
+          "callee": "syncAhfConditionsFromEntries",
+          "lineNumber": 774
+        },
+        {
+          "caller": "applyStructuredSuggestionsToHcPatch",
+          "callee": "Object.assign",
+          "lineNumber": 774
+        },
+        {
+          "caller": "applyStructuredSuggestionsToHcPatch",
+          "callee": "stripIntegratedAhfDescription",
+          "lineNumber": 777
+        },
+        {
+          "caller": "collectStructuredSuggestionsFromDriveSections",
+          "callee": "STRUCTURED_SECTION_KEYS.forEach",
+          "lineNumber": 794
+        },
+        {
+          "caller": "collectStructuredSuggestionsFromDriveSections",
+          "callee": "String((sections || {})[key] || '').trim",
+          "lineNumber": 795
+        },
+        {
+          "caller": "collectStructuredSuggestionsFromDriveSections",
+          "callee": "String",
+          "lineNumber": 795
+        },
+        {
+          "caller": "collectStructuredSuggestionsFromDriveSections",
+          "callee": "buildHcStructuredSuggestions(key, text, sections).forEach",
+          "lineNumber": 797
+        },
+        {
+          "caller": "collectStructuredSuggestionsFromDriveSections",
+          "callee": "buildHcStructuredSuggestions",
+          "lineNumber": 797
+        },
+        {
+          "caller": "collectStructuredSuggestionsFromDriveSections",
+          "callee": "all.push",
+          "lineNumber": 798
+        },
+        {
+          "caller": "enrichHcPatchWithStructuredSuggestions",
+          "callee": "collectStructuredSuggestionsFromDriveSections",
+          "lineNumber": 810
+        },
+        {
+          "caller": "enrichHcPatchWithStructuredSuggestions",
+          "callee": "applyStructuredSuggestionsToHcPatch",
+          "lineNumber": 812
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 11,
+        "functionCount": 14,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/drive-import/hc-structured-extract.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 159,
+      "nonEmptyLines": 149,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/drive-import/map-to-eventualidades.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 61,
+      "nonEmptyLines": 55,
+      "functions": [
+        {
+          "name": "mapSectionsToEventualidades",
+          "startLine": 14,
+          "endLine": 61,
+          "params": [
+            "input"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "mapSectionsToEventualidades",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "mapSectionsToEventualidades",
+          "callee": "String(block || '').split",
+          "lineNumber": 26
+        },
+        {
+          "caller": "mapSectionsToEventualidades",
+          "callee": "String",
+          "lineNumber": 26
+        },
+        {
+          "caller": "flush",
+          "callee": "buf\n        .map((l) => l.trim())\n        .filter(Boolean)\n        .join('\\n')\n        .trim",
+          "lineNumber": 33
+        },
+        {
+          "caller": "flush",
+          "callee": "buf\n        .map((l) => l.trim())\n        .filter(Boolean)\n        .join",
+          "lineNumber": 33
+        },
+        {
+          "caller": "flush",
+          "callee": "buf\n        .map((l) => l.trim())\n        .filter",
+          "lineNumber": 33
+        },
+        {
+          "caller": "flush",
+          "callee": "buf\n        .map",
+          "lineNumber": 33
+        },
+        {
+          "caller": "flush",
+          "callee": "l.trim",
+          "lineNumber": 34
+        },
+        {
+          "caller": "flush",
+          "callee": "entries.push",
+          "lineNumber": 38
+        },
+        {
+          "caller": "mapSectionsToEventualidades",
+          "callee": "raw.trim",
+          "lineNumber": 43
+        },
+        {
+          "caller": "mapSectionsToEventualidades",
+          "callee": "MONITOREO_RE.test",
+          "lineNumber": 45
+        },
+        {
+          "caller": "mapSectionsToEventualidades",
+          "callee": "DATE_ONLY_RE.test",
+          "lineNumber": 46
+        },
+        {
+          "caller": "mapSectionsToEventualidades",
+          "callee": "parseDateLine",
+          "lineNumber": 47
+        },
+        {
+          "caller": "mapSectionsToEventualidades",
+          "callee": "flush",
+          "lineNumber": 49
+        },
+        {
+          "caller": "mapSectionsToEventualidades",
+          "callee": "resolveYear",
+          "lineNumber": 50
+        },
+        {
+          "caller": "mapSectionsToEventualidades",
+          "callee": "toNoonIso",
+          "lineNumber": 51
+        },
+        {
+          "caller": "mapSectionsToEventualidades",
+          "callee": "buf.push",
+          "lineNumber": 55
+        },
+        {
+          "caller": "mapSectionsToEventualidades",
+          "callee": "flush",
+          "lineNumber": 57
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/drive-import/map-to-eventualidades.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 28,
+      "nonEmptyLines": 25,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/drive-import/map-universal-hc.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 107,
+      "nonEmptyLines": 96,
+      "functions": [
+        {
+          "name": "hasDriveHcSections",
+          "startLine": 26,
+          "endLine": 30,
+          "params": [
+            "sections"
+          ]
+        },
+        {
+          "name": "textLength",
+          "startLine": 36,
+          "endLine": 50,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "listHcPatchSectionKeys",
+          "startLine": 56,
+          "endLine": 61,
+          "params": [
+            "patch"
+          ]
+        },
+        {
+          "name": "mapUniversalHc",
+          "startLine": 68,
+          "endLine": 107,
+          "params": [
+            "doc"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "hasDriveHcSections",
+          "line": 26,
+          "isDefault": false
+        },
+        {
+          "name": "listHcPatchSectionKeys",
+          "line": 56,
+          "isDefault": false
+        },
+        {
+          "name": "mapUniversalHc",
+          "line": 68,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "hasDriveHcSections",
+          "callee": "HC_SECTION_KEYS.some",
+          "lineNumber": 27
+        },
+        {
+          "caller": "hasDriveHcSections",
+          "callee": "String(sections[k]).trim",
+          "lineNumber": 28
+        },
+        {
+          "caller": "hasDriveHcSections",
+          "callee": "String",
+          "lineNumber": 28
+        },
+        {
+          "caller": "textLength",
+          "callee": "String(value).trim",
+          "lineNumber": 38
+        },
+        {
+          "caller": "textLength",
+          "callee": "String",
+          "lineNumber": 38
+        },
+        {
+          "caller": "textLength",
+          "callee": "Array.isArray",
+          "lineNumber": 39
+        },
+        {
+          "caller": "textLength",
+          "callee": "Object.values(value).reduce",
+          "lineNumber": 40
+        },
+        {
+          "caller": "textLength",
+          "callee": "Object.values",
+          "lineNumber": 40
+        },
+        {
+          "caller": "textLength",
+          "callee": "textLength",
+          "lineNumber": 41
+        },
+        {
+          "caller": "textLength",
+          "callee": "Array.isArray",
+          "lineNumber": 44
+        },
+        {
+          "caller": "textLength",
+          "callee": "value.reduce",
+          "lineNumber": 45
+        },
+        {
+          "caller": "textLength",
+          "callee": "textLength",
+          "lineNumber": 46
+        },
+        {
+          "caller": "listHcPatchSectionKeys",
+          "callee": "Object.keys(patch || {}).filter",
+          "lineNumber": 57
+        },
+        {
+          "caller": "listHcPatchSectionKeys",
+          "callee": "Object.keys",
+          "lineNumber": 57
+        },
+        {
+          "caller": "listHcPatchSectionKeys",
+          "callee": "String(k).startsWith",
+          "lineNumber": 58
+        },
+        {
+          "caller": "listHcPatchSectionKeys",
+          "callee": "String",
+          "lineNumber": 58
+        },
+        {
+          "caller": "listHcPatchSectionKeys",
+          "callee": "textLength",
+          "lineNumber": 59
+        },
+        {
+          "caller": "mapUniversalHc",
+          "callee": "hasDriveHcSections",
+          "lineNumber": 70
+        },
+        {
+          "caller": "mapUniversalHc",
+          "callee": "mergeHcPatch",
+          "lineNumber": 90
+        },
+        {
+          "caller": "mapUniversalHc",
+          "callee": "ficha.mapHc",
+          "lineNumber": 90
+        },
+        {
+          "caller": "mapUniversalHc",
+          "callee": "mergeHcPatch",
+          "lineNumber": 93
+        },
+        {
+          "caller": "mapUniversalHc",
+          "callee": "pipe.mapHc",
+          "lineNumber": 93
+        },
+        {
+          "caller": "mapUniversalHc",
+          "callee": "listHcPatchSectionKeys",
+          "lineNumber": 96
+        },
+        {
+          "caller": "mapUniversalHc",
+          "callee": "mergeHcPatch",
+          "lineNumber": 97
+        },
+        {
+          "caller": "mapUniversalHc",
+          "callee": "ficha.mapHc",
+          "lineNumber": 97
+        },
+        {
+          "caller": "mapUniversalHc",
+          "callee": "pipe.mapHc",
+          "lineNumber": 97
+        },
+        {
+          "caller": "mapUniversalHc",
+          "callee": "filterIdentificacionForHcImport",
+          "lineNumber": 101
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 3,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/drive-import/map-universal-hc.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 23,
+      "nonEmptyLines": 21,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/drive-import/merge-drive-labs.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 123,
+      "nonEmptyLines": 111,
+      "functions": [
+        {
+          "name": "normalizeFecha",
+          "startLine": 5,
+          "endLine": 7,
+          "params": [
+            "fecha"
+          ]
+        },
+        {
+          "name": "calendarDayKeyFromLabSet",
+          "startLine": 14,
+          "endLine": 32,
+          "params": []
+        },
+        {
+          "name": "normalizeLabLines",
+          "startLine": 38,
+          "endLine": 46,
+          "params": [
+            "lines"
+          ]
+        },
+        {
+          "name": "isSubsetLabLines",
+          "startLine": 53,
+          "endLine": 61,
+          "params": [
+            "subset",
+            "superset"
+          ]
+        },
+        {
+          "name": "areDriveLabSetsEquivalent",
+          "startLine": 68,
+          "endLine": 76,
+          "params": [
+            "a",
+            "b"
+          ]
+        },
+        {
+          "name": "isDuplicateDriveLabSet",
+          "startLine": 83,
+          "endLine": 104,
+          "params": [
+            "existing",
+            "incoming"
+          ]
+        },
+        {
+          "name": "filterNewDriveLabSets",
+          "startLine": 111,
+          "endLine": 123,
+          "params": [
+            "existingHistory",
+            "incomingSets"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "calendarDayKeyFromLabSet",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "areDriveLabSetsEquivalent",
+          "line": 68,
+          "isDefault": false
+        },
+        {
+          "name": "isDuplicateDriveLabSet",
+          "line": 83,
+          "isDefault": false
+        },
+        {
+          "name": "filterNewDriveLabSets",
+          "line": 111,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "normalizeFecha",
+          "callee": "String(fecha || '').trim",
+          "lineNumber": 6
+        },
+        {
+          "caller": "normalizeFecha",
+          "callee": "String",
+          "lineNumber": 6
+        },
+        {
+          "caller": "calendarDayKeyFromLabSet",
+          "callee": "normalizeFecha",
+          "lineNumber": 15
+        },
+        {
+          "caller": "calendarDayKeyFromLabSet",
+          "callee": "t.match",
+          "lineNumber": 17
+        },
+        {
+          "caller": "calendarDayKeyFromLabSet",
+          "callee": "parseInt",
+          "lineNumber": 19
+        },
+        {
+          "caller": "calendarDayKeyFromLabSet",
+          "callee": "new Date().getFullYear",
+          "lineNumber": 19
+        },
+        {
+          "caller": "calendarDayKeyFromLabSet",
+          "callee": "String(hora || '').trim",
+          "lineNumber": 21
+        },
+        {
+          "caller": "calendarDayKeyFromLabSet",
+          "callee": "String",
+          "lineNumber": 21
+        },
+        {
+          "caller": "calendarDayKeyFromLabSet",
+          "callee": "h.match",
+          "lineNumber": 22
+        },
+        {
+          "caller": "calendarDayKeyFromLabSet",
+          "callee": "new Date(y, parseInt(m[2], 10) - 1, parseInt(m[1], 10)).getTime",
+          "lineNumber": 24
+        },
+        {
+          "caller": "calendarDayKeyFromLabSet",
+          "callee": "parseInt",
+          "lineNumber": 24
+        },
+        {
+          "caller": "calendarDayKeyFromLabSet",
+          "callee": "parseInt",
+          "lineNumber": 24
+        },
+        {
+          "caller": "calendarDayKeyFromLabSet",
+          "callee": "parseInt",
+          "lineNumber": 27
+        },
+        {
+          "caller": "calendarDayKeyFromLabSet",
+          "callee": "parseInt",
+          "lineNumber": 27
+        },
+        {
+          "caller": "calendarDayKeyFromLabSet",
+          "callee": "d.getFullYear",
+          "lineNumber": 29
+        },
+        {
+          "caller": "calendarDayKeyFromLabSet",
+          "callee": "d.getMonth",
+          "lineNumber": 29
+        },
+        {
+          "caller": "calendarDayKeyFromLabSet",
+          "callee": "d.getDate",
+          "lineNumber": 29
+        },
+        {
+          "caller": "calendarDayKeyFromLabSet",
+          "callee": "parseInt",
+          "lineNumber": 31
+        },
+        {
+          "caller": "calendarDayKeyFromLabSet",
+          "callee": "parseInt",
+          "lineNumber": 31
+        },
+        {
+          "caller": "normalizeLabLines",
+          "callee": "(Array.isArray(lines) ? lines : [])\n    .map(function (line) {\n      return String(line || '')\n        .trim()\n        .replace(/\\s+/g, ' ');\n    })\n    .filter",
+          "lineNumber": 39
+        },
+        {
+          "caller": "normalizeLabLines",
+          "callee": "(Array.isArray(lines) ? lines : [])\n    .map",
+          "lineNumber": 39
+        },
+        {
+          "caller": "normalizeLabLines",
+          "callee": "Array.isArray",
+          "lineNumber": 39
+        },
+        {
+          "caller": "normalizeLabLines",
+          "callee": "String(line || '')\n        .trim()\n        .replace",
+          "lineNumber": 41
+        },
+        {
+          "caller": "normalizeLabLines",
+          "callee": "String(line || '')\n        .trim",
+          "lineNumber": 41
+        },
+        {
+          "caller": "normalizeLabLines",
+          "callee": "String",
+          "lineNumber": 41
+        },
+        {
+          "caller": "isSubsetLabLines",
+          "callee": "normalizeLabLines",
+          "lineNumber": 54
+        },
+        {
+          "caller": "isSubsetLabLines",
+          "callee": "normalizeLabLines",
+          "lineNumber": 55
+        },
+        {
+          "caller": "isSubsetLabLines",
+          "callee": "sub.every",
+          "lineNumber": 58
+        },
+        {
+          "caller": "isSubsetLabLines",
+          "callee": "supSet.has",
+          "lineNumber": 59
+        },
+        {
+          "caller": "areDriveLabSetsEquivalent",
+          "callee": "normalizeLabLines",
+          "lineNumber": 69
+        },
+        {
+          "caller": "areDriveLabSetsEquivalent",
+          "callee": "normalizeLabLines",
+          "lineNumber": 70
+        },
+        {
+          "caller": "isDuplicateDriveLabSet",
+          "callee": "normalizeFecha",
+          "lineNumber": 89
+        },
+        {
+          "caller": "isDuplicateDriveLabSet",
+          "callee": "normalizeFecha",
+          "lineNumber": 89
+        },
+        {
+          "caller": "isDuplicateDriveLabSet",
+          "callee": "String(existing.hora || '').trim",
+          "lineNumber": 90
+        },
+        {
+          "caller": "isDuplicateDriveLabSet",
+          "callee": "String",
+          "lineNumber": 90
+        },
+        {
+          "caller": "isDuplicateDriveLabSet",
+          "callee": "String(incoming.hora || '').trim",
+          "lineNumber": 91
+        },
+        {
+          "caller": "isDuplicateDriveLabSet",
+          "callee": "String",
+          "lineNumber": 91
+        },
+        {
+          "caller": "isDuplicateDriveLabSet",
+          "callee": "areDriveLabSetsEquivalent",
+          "lineNumber": 94
+        },
+        {
+          "caller": "isDuplicateDriveLabSet",
+          "callee": "calendarDayKeyFromLabSet",
+          "lineNumber": 96
+        },
+        {
+          "caller": "isDuplicateDriveLabSet",
+          "callee": "calendarDayKeyFromLabSet",
+          "lineNumber": 97
+        },
+        {
+          "caller": "isDuplicateDriveLabSet",
+          "callee": "areDriveLabSetsEquivalent",
+          "lineNumber": 100
+        },
+        {
+          "caller": "isDuplicateDriveLabSet",
+          "callee": "isSubsetLabLines",
+          "lineNumber": 101
+        },
+        {
+          "caller": "filterNewDriveLabSets",
+          "callee": "(incomingSets || []).forEach",
+          "lineNumber": 115
+        },
+        {
+          "caller": "filterNewDriveLabSets",
+          "callee": "(existingHistory || []).some",
+          "lineNumber": 116
+        },
+        {
+          "caller": "filterNewDriveLabSets",
+          "callee": "isDuplicateDriveLabSet",
+          "lineNumber": 117
+        },
+        {
+          "caller": "filterNewDriveLabSets",
+          "callee": "fresh.push",
+          "lineNumber": 120
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 7,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/drive-import/merge-drive-labs.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 77,
+      "nonEmptyLines": 71,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/drive-import/merge-eventualidades.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 36,
+      "nonEmptyLines": 34,
+      "functions": [
+        {
+          "name": "dedupeEventualidadKey",
+          "startLine": 7,
+          "endLine": 11,
+          "params": [
+            "entry"
+          ]
+        },
+        {
+          "name": "filterNewEventualidades",
+          "startLine": 18,
+          "endLine": 36,
+          "params": [
+            "existing",
+            "incoming"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "dedupeEventualidadKey",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "filterNewEventualidades",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "dedupeEventualidadKey",
+          "callee": "String(entry.at || '').slice",
+          "lineNumber": 8
+        },
+        {
+          "caller": "dedupeEventualidadKey",
+          "callee": "String",
+          "lineNumber": 8
+        },
+        {
+          "caller": "dedupeEventualidadKey",
+          "callee": "toClinicalHistoryText(entry.text).trim().slice",
+          "lineNumber": 9
+        },
+        {
+          "caller": "dedupeEventualidadKey",
+          "callee": "toClinicalHistoryText(entry.text).trim",
+          "lineNumber": 9
+        },
+        {
+          "caller": "dedupeEventualidadKey",
+          "callee": "toClinicalHistoryText",
+          "lineNumber": 9
+        },
+        {
+          "caller": "filterNewEventualidades",
+          "callee": "keys.add",
+          "lineNumber": 21
+        },
+        {
+          "caller": "filterNewEventualidades",
+          "callee": "dedupeEventualidadKey",
+          "lineNumber": 21
+        },
+        {
+          "caller": "filterNewEventualidades",
+          "callee": "dedupeEventualidadKey",
+          "lineNumber": 27
+        },
+        {
+          "caller": "filterNewEventualidades",
+          "callee": "keys.has",
+          "lineNumber": 28
+        },
+        {
+          "caller": "filterNewEventualidades",
+          "callee": "keys.add",
+          "lineNumber": 32
+        },
+        {
+          "caller": "filterNewEventualidades",
+          "callee": "toAdd.push",
+          "lineNumber": 33
+        },
+        {
+          "caller": "filterNewEventualidades",
+          "callee": "String",
+          "lineNumber": 33
+        },
+        {
+          "caller": "filterNewEventualidades",
+          "callee": "String",
+          "lineNumber": 33
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/drive-import/merge-eventualidades.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 14,
+      "nonEmptyLines": 13,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/drive-import/merge-hc-patch.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 62,
+      "nonEmptyLines": 58,
+      "functions": [
+        {
+          "name": "isEmptyString",
+          "startLine": 1,
+          "endLine": 3,
+          "params": [
+            "v"
+          ]
+        },
+        {
+          "name": "isPlainObject",
+          "startLine": 5,
+          "endLine": 7,
+          "params": [
+            "v"
+          ]
+        },
+        {
+          "name": "mergeObjectFill",
+          "startLine": 14,
+          "endLine": 28,
+          "params": [
+            "tgt",
+            "src"
+          ]
+        },
+        {
+          "name": "mergeObjectReplace",
+          "startLine": 35,
+          "endLine": 49,
+          "params": [
+            "tgt",
+            "src"
+          ]
+        },
+        {
+          "name": "mergeHcPatch",
+          "startLine": 57,
+          "endLine": 62,
+          "params": [
+            "existing",
+            "patch",
+            "mode"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "mergeHcPatch",
+          "line": 57,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "isEmptyString",
+          "callee": "String(v).trim",
+          "lineNumber": 2
+        },
+        {
+          "caller": "isEmptyString",
+          "callee": "String",
+          "lineNumber": 2
+        },
+        {
+          "caller": "isPlainObject",
+          "callee": "Array.isArray",
+          "lineNumber": 6
+        },
+        {
+          "caller": "mergeObjectFill",
+          "callee": "Object.assign",
+          "lineNumber": 15
+        },
+        {
+          "caller": "mergeObjectFill",
+          "callee": "Object.entries",
+          "lineNumber": 16
+        },
+        {
+          "caller": "mergeObjectFill",
+          "callee": "isPlainObject",
+          "lineNumber": 18
+        },
+        {
+          "caller": "mergeObjectFill",
+          "callee": "isPlainObject",
+          "lineNumber": 19
+        },
+        {
+          "caller": "mergeObjectFill",
+          "callee": "mergeObjectFill",
+          "lineNumber": 20
+        },
+        {
+          "caller": "mergeObjectFill",
+          "callee": "Array.isArray",
+          "lineNumber": 21
+        },
+        {
+          "caller": "mergeObjectFill",
+          "callee": "Array.isArray",
+          "lineNumber": 22
+        },
+        {
+          "caller": "mergeObjectFill",
+          "callee": "v.slice",
+          "lineNumber": 22
+        },
+        {
+          "caller": "mergeObjectFill",
+          "callee": "isEmptyString",
+          "lineNumber": 23
+        },
+        {
+          "caller": "mergeObjectReplace",
+          "callee": "Object.assign",
+          "lineNumber": 36
+        },
+        {
+          "caller": "mergeObjectReplace",
+          "callee": "Object.entries",
+          "lineNumber": 37
+        },
+        {
+          "caller": "mergeObjectReplace",
+          "callee": "isPlainObject",
+          "lineNumber": 39
+        },
+        {
+          "caller": "mergeObjectReplace",
+          "callee": "isPlainObject",
+          "lineNumber": 39
+        },
+        {
+          "caller": "mergeObjectReplace",
+          "callee": "mergeObjectReplace",
+          "lineNumber": 40
+        },
+        {
+          "caller": "mergeHcPatch",
+          "callee": "Object.assign",
+          "lineNumber": 58
+        },
+        {
+          "caller": "mergeHcPatch",
+          "callee": "mergeObjectReplace",
+          "lineNumber": 60
+        },
+        {
+          "caller": "mergeHcPatch",
+          "callee": "mergeObjectFill",
+          "lineNumber": 61
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 5,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/drive-import/merge-hc-patch.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 18,
+      "nonEmptyLines": 16,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/drive-import/normalize.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 12,
+      "nonEmptyLines": 12,
+      "functions": [
+        {
+          "name": "normalizeDrivePaste",
+          "startLine": 5,
+          "endLine": 12,
+          "params": [
+            "text"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "normalizeDrivePaste",
+          "line": 5,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "normalizeDrivePaste",
+          "callee": "String(text == null ? '' : text)\n    .replace(/\\uFEFF/g, '')\n    .replace(/\\r\\n/g, '\\n')\n    .replace(/\\r/g, '\\n')\n    .replace(/\\n{3,}/g, '\\n\\n')\n    .trim",
+          "lineNumber": 6
+        },
+        {
+          "caller": "normalizeDrivePaste",
+          "callee": "String(text == null ? '' : text)\n    .replace(/\\uFEFF/g, '')\n    .replace(/\\r\\n/g, '\\n')\n    .replace(/\\r/g, '\\n')\n    .replace",
+          "lineNumber": 6
+        },
+        {
+          "caller": "normalizeDrivePaste",
+          "callee": "String(text == null ? '' : text)\n    .replace(/\\uFEFF/g, '')\n    .replace(/\\r\\n/g, '\\n')\n    .replace",
+          "lineNumber": 6
+        },
+        {
+          "caller": "normalizeDrivePaste",
+          "callee": "String(text == null ? '' : text)\n    .replace(/\\uFEFF/g, '')\n    .replace",
+          "lineNumber": 6
+        },
+        {
+          "caller": "normalizeDrivePaste",
+          "callee": "String(text == null ? '' : text)\n    .replace",
+          "lineNumber": 6
+        },
+        {
+          "caller": "normalizeDrivePaste",
+          "callee": "String",
+          "lineNumber": 6
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/drive-import/parse-drive-document.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 90,
+      "nonEmptyLines": 81,
+      "functions": [
+        {
+          "name": "parseDriveDocument",
+          "startLine": 22,
+          "endLine": 90,
+          "params": [
+            "rawText",
+            "opts"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "parseDriveDocument",
+          "line": 22,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "parseDriveDocument",
+          "callee": "splitDocumentSections",
+          "lineNumber": 24
+        },
+        {
+          "caller": "parseDriveDocument",
+          "callee": "parsePipeHeader",
+          "lineNumber": 25
+        },
+        {
+          "caller": "parseDriveDocument",
+          "callee": "parseFichaIdentificacion",
+          "lineNumber": 26
+        },
+        {
+          "caller": "parseDriveDocument",
+          "callee": "mergeHeader",
+          "lineNumber": 27
+        },
+        {
+          "caller": "parseDriveDocument",
+          "callee": "mapUniversalHc",
+          "lineNumber": 30
+        },
+        {
+          "caller": "parseDriveDocument",
+          "callee": "inferDocumentYearFromText",
+          "lineNumber": 35
+        },
+        {
+          "caller": "parseDriveDocument",
+          "callee": "hasDriveHcSections",
+          "lineNumber": 37
+        },
+        {
+          "caller": "parseDriveDocument",
+          "callee": "String(rawText || '').trim",
+          "lineNumber": 39
+        },
+        {
+          "caller": "parseDriveDocument",
+          "callee": "String",
+          "lineNumber": 39
+        },
+        {
+          "caller": "parseDriveDocument",
+          "callee": "mapSectionsToEventualidades",
+          "lineNumber": 43
+        },
+        {
+          "caller": "parseDriveDocument",
+          "callee": "filterNewEventualidades",
+          "lineNumber": 49
+        },
+        {
+          "caller": "parseDriveDocument",
+          "callee": "extractLaboratoriosBody",
+          "lineNumber": 51
+        },
+        {
+          "caller": "parseDriveDocument",
+          "callee": "parseDriveLaboratorios",
+          "lineNumber": 52
+        },
+        {
+          "caller": "parseDriveDocument",
+          "callee": "filterNewDriveLabSets",
+          "lineNumber": 53
+        },
+        {
+          "caller": "parseDriveDocument",
+          "callee": "split.warnings.slice",
+          "lineNumber": 56
+        },
+        {
+          "caller": "parseDriveDocument",
+          "callee": "String(rawText || '').trim",
+          "lineNumber": 57
+        },
+        {
+          "caller": "parseDriveDocument",
+          "callee": "String",
+          "lineNumber": 57
+        },
+        {
+          "caller": "parseDriveDocument",
+          "callee": "warnings.push",
+          "lineNumber": 58
+        },
+        {
+          "caller": "parseDriveDocument",
+          "callee": "warnings.push",
+          "lineNumber": 61
+        },
+        {
+          "caller": "parseDriveDocument",
+          "callee": "warnings.push",
+          "lineNumber": 63
+        },
+        {
+          "caller": "parseDriveDocument",
+          "callee": "warnings.push",
+          "lineNumber": 64
+        },
+        {
+          "caller": "parseDriveDocument",
+          "callee": "warnings.push",
+          "lineNumber": 66
+        },
+        {
+          "caller": "parseDriveDocument",
+          "callee": "Object.assign",
+          "lineNumber": 71
+        },
+        {
+          "caller": "parseDriveDocument",
+          "callee": "formatDriveImportPreview",
+          "lineNumber": 85
+        }
+      ],
+      "metrics": {
+        "importCount": 9,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/drive-import/parse-drive-document.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 76,
+      "nonEmptyLines": 71,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    }
+  ]
+}

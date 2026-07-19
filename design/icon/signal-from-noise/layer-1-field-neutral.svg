@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024" fill="none">
+  <title>R+ icon layer 1 neutral field</title>
+  <defs>
+    <linearGradient id="field-neutral" x1="512" y1="0" x2="512" y2="1024" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#f4f5f7"/>
+      <stop offset="100%" stop-color="#e8eaef"/>
+    </linearGradient>
+    <clipPath id="squircle">
+      <rect x="0" y="0" width="1024" height="1024" rx="226" ry="226"/>
+    </clipPath>
+  </defs>
+  <rect width="1024" height="1024" fill="url(#field-neutral)" clip-path="url(#squircle)"/>
+</svg>

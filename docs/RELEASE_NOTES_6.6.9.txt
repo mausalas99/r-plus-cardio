@@ -1,0 +1,28 @@
+R+ 6.6.9 (Windows — arranque SQLCipher)
+===========================================================
+
+Fecha: 2026-06-05
+
+## Resumen
+
+Corrige el error **«R+ no pudo iniciar»** / *not a valid Win32 application* en **better_sqlite3.node** en instaladores Windows **6.6.7** y **6.6.8** empaquetados desde macOS. Incluye la línea **6.6.8** (LiveSync Wi‑Fi, directorio LAN).
+
+## Nuevo / mejorado
+
+- **Windows SQLCipher** — `prebuild:win` descarga el prebuild **win32-x64** de SQLCipher para la ABI de Electron actual (`scripts/fetch-sqlite-win.mjs`). El `.exe` ya no incluye el binario Mach-O de macOS.
+- **Verificación** — Test de empaquetado confirma cabecera PE (`MZ`) antes de publicar el instalador Windows.
+
+## Operación en guardia
+
+1. **PC Windows con error al abrir:** desinstala R+ 6.6.7/6.6.8 e instala **6.6.9** desde Releases.
+2. Mac e iPad pueden seguir en **6.6.8** o actualizar a **6.6.9** (misma guardia LAN).
+3. No mezclar **6.6.6** o anterior en la misma guardia con sala en vivo activa.
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v6.6.9
+
+- Mac: `R+-6.6.9-arm64.dmg`, `R+-6.6.9-x64.dmg` (y zip para auto-update).
+- Windows: `R+-6.6.9-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye write-release-yml.js).

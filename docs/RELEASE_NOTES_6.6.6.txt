@@ -1,0 +1,34 @@
+R+ 6.6.6 (LAN — perfil @usuario y escalada de anfitrión)
+============================================================
+
+Fecha: 2026-06-04
+
+## Resumen
+
+Tras actualizar, **cada Mac/PC debe volver a registrar el perfil** distinguiendo **@usuario LAN** y **nombre en guardia**. En ⇄, solo **R4/admin** (o rangos menores tras escalada) pueden ser anfitrión; sin R4 en la red, R3 → R2 → R1 pueden asumir el servidor en ventanas de **10 minutos** cada una. Incluye la línea **6.6.5** (un anfitrión por turno, consolidación y plug and play).
+
+## Nuevo / mejorado
+
+- **Puerta de perfil 6.6.6** — Al abrir R+, si no completaste la puerta, se limpian prefills viejos y debes confirmar **@usuario** (identificador único, p. ej. `drmendoza`) y **nombre en guardia** (p. ej. `Dr. Mendoza` o `R1 García`) por separado.
+- **Rango antes de ⇄** — Sin rango clínico configurado (y puerta cumplida), esta Mac **no** entra en elección ni descubrimiento de anfitrión; evita servidores «fantasma» con perfil incompleto.
+- **Solo R4/admin de inicio** — Con rango configurado, **R1–R3 no abren servidor** mientras haya R4 o admin de programa en la red; se unen como clientes (hereda y endurece **6.6.5**).
+- **Escalada sin R4** — Si nadie R4/admin responde en la LAN: tras **10 min** puede anfitrionar **R3**, otros **10 min** → **R2**, otros **10 min** → **R1**; al detectar R4/admin el temporizador **se reinicia**.
+- **Panel ⇄** — Cuenta regresiva de escalada; diagnóstico ⇄ se actualiza sin cerrar `<details>`; «Fijar anfitrión» solo si esta Mac puede ser servidor.
+
+## Operación en guardia
+
+1. Instala **6.6.6 en todas** las Macs y PCs del turno el **mismo día**.
+2. En cada equipo: completa **Configura tu rotación** / registro con **@usuario** y **nombre en guardia** (no intercambiar campos).
+3. **R4/admin**: ⇄ → unirse a la sala; el resto suele conectarse solo. Si no hay R4 en la red, revisa el mensaje de escalada en ⇄ antes de que un R3/R2/R1 asuma anfitrión.
+4. Windows: firewall puerto **3738** la primera vez en sala ⇄.
+
+No mezclar **6.6.5** o anterior en la misma guardia con sala en vivo activa.
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v6.6.6
+
+- Mac: `R+-6.6.6-arm64.dmg`, `R+-6.6.6-x64.dmg` (y zip para auto-update).
+- Windows: `R+-6.6.6-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye write-release-yml.js).

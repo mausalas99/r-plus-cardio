@@ -1,0 +1,33 @@
+R+ 7.3.5 (LAN hardening, host durability y pulido UI)
+====================================================
+
+Fecha: 2026-06-12
+
+## Resumen
+
+Sobre **7.3.4**: endurecimiento LAN (purga con guard de propiedad en servidor, bloqueo tras PIN fallidos), persistencia del anfitrión más fiable al cerrar, caché de blobs parseados, parser unificado de cultivos y pulido clínico/UI (modal Datos del paciente, ATB por día de manejo, presets de vencimiento editables).
+
+## Nuevo / mejorado
+
+- **LAN — purga segura** — `DELETE /api/lan/v1/patients/:id` valida propiedad en servidor; solo admin o pacientes huérfanos; el cliente envía identidad y mapea 403.
+- **LAN — bloqueo PIN** — Tras 8 intentos fallidos en `POST /auth/exchange`, bloqueo global en memoria 5 min (HTTP 429).
+- **Anfitrión — durabilidad** — Fallos de persistencia registrados y consultables; barrera de commit con `onError`; `flushHostStoreNow` al salir (tope 3 s); `putRoomClinicalOps` DB-first.
+- **Rendimiento — caché parseada** — Blobs parseados en caché con invalidación al escribir; menos re-parse en labs y flujos repetidos.
+- **Laboratorio — cultivos** — Parser único `cultivo-block-core` para censo, pegado masivo e historial (flags por contexto).
+- **Expediente — Datos del paciente** — Pestaña **Paciente** abre en modal dedicado con la misma tarjeta demográfica.
+- **Estado actual — ATB por día** — Texto de antibióticos avanza según **fecha de actualización** del bloque Manejo (panel y copia).
+- **Pendientes — presets de vencimiento** — Atajos Hoy 18:00, Mañana 8:00, En 3 h / 24 h; horas editables y persistidas en el dispositivo.
+- **UI** — Laboratorio y superficies Workbench refinadas; motion y modales alineados al sistema premium.
+
+## Operación en guardia
+
+Instala **7.3.5 en todas** las estaciones del turno el mismo día. Sin cambio de esquema SQLCipher (sigue **v17**). El bloqueo PIN y la purga server-side requieren que anfitrión y clientes estén en la misma versión.
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v7.3.5
+
+- Mac: `R+-7.3.5-arm64.dmg`, `R+-7.3.5-x64.dmg` (y zip para auto-update).
+- Windows: `R+-7.3.5-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye write-release-yml.js).

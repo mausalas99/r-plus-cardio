@@ -1,0 +1,23 @@
+# VibeDrift scan exclusions (gitignore syntax).
+# Paths here are skipped by `vibedrift scan` and the MCP server, so they
+# don't count toward your Vibe Drift Score. Created/edited by
+# `vibedrift init` and `vibedrift ignore`. Docs: https://vibedrift.ai/guide
+public/js/app.bundle.mjs
+public/js/app.bundle.meta.json
+public/js/chunks/**
+**/*.map
+.understand-anything/**
+garden-skills/**
+scripts/tmp/**
+.agents/**
+# Deploy mirror of canonical public/equipos (sync via npm run build:equipos-pages)
+cloud/equipos-pages/public/equipos/**
+cloud/equipos-pages/public/lib/**
+cloud/equipos-pages/public/js/**
+# Build/release tooling (not shipped product)
+scripts/**
+# Test harnesses mirror production shapes — drift tracked on product modules only
+**/*.test.mjs
+tests/**
+# Worker deploy is separate bundle; shared logic lives in lib/equipos/
+cloud/equipos-worker/**

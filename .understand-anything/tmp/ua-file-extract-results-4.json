@@ -1,0 +1,7509 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 32,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "public/js/lan-host-escalation.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 149,
+      "nonEmptyLines": 131,
+      "functions": [
+        {
+          "name": "readTs",
+          "startLine": 14,
+          "endLine": 21,
+          "params": [
+            "key"
+          ]
+        },
+        {
+          "name": "writeTs",
+          "startLine": 23,
+          "endLine": 27,
+          "params": [
+            "key",
+            "ms"
+          ]
+        },
+        {
+          "name": "clearKey",
+          "startLine": 29,
+          "endLine": 33,
+          "params": [
+            "key"
+          ]
+        },
+        {
+          "name": "isWardTierHostMeta",
+          "startLine": 36,
+          "endLine": 41,
+          "params": [
+            "meta"
+          ]
+        },
+        {
+          "name": "rankPriority",
+          "startLine": 44,
+          "endLine": 48,
+          "params": [
+            "meta"
+          ]
+        },
+        {
+          "name": "markWardTierHostSeen",
+          "startLine": 51,
+          "endLine": 54,
+          "params": []
+        },
+        {
+          "name": "markR2PlusHostSeen",
+          "startLine": 57,
+          "endLine": 59,
+          "params": []
+        },
+        {
+          "name": "ensureEscalationAnchor",
+          "startLine": 62,
+          "endLine": 65,
+          "params": []
+        },
+        {
+          "name": "clearHostEscalation",
+          "startLine": 67,
+          "endLine": 71,
+          "params": []
+        },
+        {
+          "name": "getHostEscalationTier",
+          "startLine": 77,
+          "endLine": 85,
+          "params": []
+        },
+        {
+          "name": "minHostRankPriorityForTier",
+          "startLine": 88,
+          "endLine": 91,
+          "params": [
+            "tier"
+          ]
+        },
+        {
+          "name": "canRankHostAtEscalationTier",
+          "startLine": 97,
+          "endLine": 101,
+          "params": [
+            "meta"
+          ]
+        },
+        {
+          "name": "getHostEscalationStatus",
+          "startLine": 107,
+          "endLine": 123,
+          "params": []
+        },
+        {
+          "name": "formatEscalationCountdown",
+          "startLine": 126,
+          "endLine": 132,
+          "params": [
+            "ms"
+          ]
+        },
+        {
+          "name": "updateLanHostEscalationFromPeerMetas",
+          "startLine": 138,
+          "endLine": 149,
+          "params": [
+            "peerMetas"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "LAN_HOST_ESCALATION_STEP_MS",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "isWardTierHostMeta",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "rankPriority",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "markWardTierHostSeen",
+          "line": 51,
+          "isDefault": false
+        },
+        {
+          "name": "markR2PlusHostSeen",
+          "line": 57,
+          "isDefault": false
+        },
+        {
+          "name": "ensureEscalationAnchor",
+          "line": 62,
+          "isDefault": false
+        },
+        {
+          "name": "clearHostEscalation",
+          "line": 67,
+          "isDefault": false
+        },
+        {
+          "name": "getHostEscalationTier",
+          "line": 77,
+          "isDefault": false
+        },
+        {
+          "name": "minHostRankPriorityForTier",
+          "line": 88,
+          "isDefault": false
+        },
+        {
+          "name": "canRankHostAtEscalationTier",
+          "line": 97,
+          "isDefault": false
+        },
+        {
+          "name": "getHostEscalationStatus",
+          "line": 107,
+          "isDefault": false
+        },
+        {
+          "name": "formatEscalationCountdown",
+          "line": 126,
+          "isDefault": false
+        },
+        {
+          "name": "updateLanHostEscalationFromPeerMetas",
+          "line": 138,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "readTs",
+          "callee": "Number",
+          "lineNumber": 16
+        },
+        {
+          "caller": "readTs",
+          "callee": "localStorage.getItem",
+          "lineNumber": 16
+        },
+        {
+          "caller": "readTs",
+          "callee": "Number.isFinite",
+          "lineNumber": 17
+        },
+        {
+          "caller": "writeTs",
+          "callee": "localStorage.setItem",
+          "lineNumber": 25
+        },
+        {
+          "caller": "writeTs",
+          "callee": "String",
+          "lineNumber": 25
+        },
+        {
+          "caller": "clearKey",
+          "callee": "localStorage.removeItem",
+          "lineNumber": 31
+        },
+        {
+          "caller": "isWardTierHostMeta",
+          "callee": "String(meta.rank || '').trim",
+          "lineNumber": 39
+        },
+        {
+          "caller": "isWardTierHostMeta",
+          "callee": "String",
+          "lineNumber": 39
+        },
+        {
+          "caller": "rankPriority",
+          "callee": "String(meta.rank || '').trim",
+          "lineNumber": 47
+        },
+        {
+          "caller": "rankPriority",
+          "callee": "String",
+          "lineNumber": 47
+        },
+        {
+          "caller": "markWardTierHostSeen",
+          "callee": "Date.now",
+          "lineNumber": 51
+        },
+        {
+          "caller": "markWardTierHostSeen",
+          "callee": "writeTs",
+          "lineNumber": 52
+        },
+        {
+          "caller": "markWardTierHostSeen",
+          "callee": "clearKey",
+          "lineNumber": 53
+        },
+        {
+          "caller": "markR2PlusHostSeen",
+          "callee": "Date.now",
+          "lineNumber": 57
+        },
+        {
+          "caller": "markR2PlusHostSeen",
+          "callee": "writeTs",
+          "lineNumber": 58
+        },
+        {
+          "caller": "ensureEscalationAnchor",
+          "callee": "Date.now",
+          "lineNumber": 62
+        },
+        {
+          "caller": "ensureEscalationAnchor",
+          "callee": "readTs",
+          "lineNumber": 63
+        },
+        {
+          "caller": "ensureEscalationAnchor",
+          "callee": "writeTs",
+          "lineNumber": 64
+        },
+        {
+          "caller": "clearHostEscalation",
+          "callee": "clearKey",
+          "lineNumber": 68
+        },
+        {
+          "caller": "clearHostEscalation",
+          "callee": "clearKey",
+          "lineNumber": 69
+        },
+        {
+          "caller": "clearHostEscalation",
+          "callee": "clearKey",
+          "lineNumber": 70
+        },
+        {
+          "caller": "getHostEscalationTier",
+          "callee": "Date.now",
+          "lineNumber": 77
+        },
+        {
+          "caller": "getHostEscalationTier",
+          "callee": "readTs",
+          "lineNumber": 78
+        },
+        {
+          "caller": "getHostEscalationTier",
+          "callee": "Math.max",
+          "lineNumber": 80
+        },
+        {
+          "caller": "minHostRankPriorityForTier",
+          "callee": "Math.max",
+          "lineNumber": 89
+        },
+        {
+          "caller": "minHostRankPriorityForTier",
+          "callee": "Math.min",
+          "lineNumber": 89
+        },
+        {
+          "caller": "minHostRankPriorityForTier",
+          "callee": "Number",
+          "lineNumber": 89
+        },
+        {
+          "caller": "canRankHostAtEscalationTier",
+          "callee": "getHostEscalationTier",
+          "lineNumber": 97
+        },
+        {
+          "caller": "canRankHostAtEscalationTier",
+          "callee": "isWardTierHostMeta",
+          "lineNumber": 99
+        },
+        {
+          "caller": "canRankHostAtEscalationTier",
+          "callee": "rankPriority",
+          "lineNumber": 100
+        },
+        {
+          "caller": "canRankHostAtEscalationTier",
+          "callee": "minHostRankPriorityForTier",
+          "lineNumber": 100
+        },
+        {
+          "caller": "getHostEscalationStatus",
+          "callee": "Date.now",
+          "lineNumber": 107
+        },
+        {
+          "caller": "getHostEscalationStatus",
+          "callee": "getHostEscalationTier",
+          "lineNumber": 108
+        },
+        {
+          "caller": "getHostEscalationStatus",
+          "callee": "readTs",
+          "lineNumber": 109
+        },
+        {
+          "caller": "getHostEscalationStatus",
+          "callee": "readTs",
+          "lineNumber": 121
+        },
+        {
+          "caller": "formatEscalationCountdown",
+          "callee": "Math.ceil",
+          "lineNumber": 127
+        },
+        {
+          "caller": "formatEscalationCountdown",
+          "callee": "Math.max",
+          "lineNumber": 127
+        },
+        {
+          "caller": "formatEscalationCountdown",
+          "callee": "Math.floor",
+          "lineNumber": 128
+        },
+        {
+          "caller": "updateLanHostEscalationFromPeerMetas",
+          "callee": "Date.now",
+          "lineNumber": 138
+        },
+        {
+          "caller": "updateLanHostEscalationFromPeerMetas",
+          "callee": "isWardTierHostMeta",
+          "lineNumber": 144
+        },
+        {
+          "caller": "updateLanHostEscalationFromPeerMetas",
+          "callee": "rankPriority",
+          "lineNumber": 145
+        },
+        {
+          "caller": "updateLanHostEscalationFromPeerMetas",
+          "callee": "markR2PlusHostSeen",
+          "lineNumber": 145
+        },
+        {
+          "caller": "updateLanHostEscalationFromPeerMetas",
+          "callee": "markWardTierHostSeen",
+          "lineNumber": 147
+        },
+        {
+          "caller": "updateLanHostEscalationFromPeerMetas",
+          "callee": "ensureEscalationAnchor",
+          "lineNumber": 148
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 13,
+        "functionCount": 15,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/lan-host-escalation.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 97,
+      "nonEmptyLines": 93,
+      "callGraph": [
+        {
+          "caller": "getItem",
+          "callee": "memory.has",
+          "lineNumber": 18
+        },
+        {
+          "caller": "getItem",
+          "callee": "memory.get",
+          "lineNumber": 18
+        },
+        {
+          "caller": "setItem",
+          "callee": "memory.set",
+          "lineNumber": 21
+        },
+        {
+          "caller": "setItem",
+          "callee": "String",
+          "lineNumber": 21
+        },
+        {
+          "caller": "removeItem",
+          "callee": "memory.delete",
+          "lineNumber": 24
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/lan-host-pin.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 55,
+      "nonEmptyLines": 47,
+      "functions": [
+        {
+          "name": "getPinnedHostUrl",
+          "startLine": 7,
+          "endLine": 15,
+          "params": []
+        },
+        {
+          "name": "setPinnedHostUrl",
+          "startLine": 17,
+          "endLine": 28,
+          "params": [
+            "hostUrl"
+          ]
+        },
+        {
+          "name": "clearPinnedHostUrl",
+          "startLine": 30,
+          "endLine": 34,
+          "params": []
+        },
+        {
+          "name": "isPinnedHostLocal",
+          "startLine": 37,
+          "endLine": 43,
+          "params": [
+            "ownBaseUrl"
+          ]
+        },
+        {
+          "name": "isPinnedHostRemote",
+          "startLine": 46,
+          "endLine": 50,
+          "params": [
+            "ownBaseUrl"
+          ]
+        },
+        {
+          "name": "hasPinnedHostOverride",
+          "startLine": 53,
+          "endLine": 55,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "getPinnedHostUrl",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "setPinnedHostUrl",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "clearPinnedHostUrl",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "isPinnedHostLocal",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "isPinnedHostRemote",
+          "line": 46,
+          "isDefault": false
+        },
+        {
+          "name": "hasPinnedHostOverride",
+          "line": 53,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getPinnedHostUrl",
+          "callee": "String(localStorage.getItem(PINNED_HOST_KEY) || '')\n      .trim()\n      .replace",
+          "lineNumber": 9
+        },
+        {
+          "caller": "getPinnedHostUrl",
+          "callee": "String(localStorage.getItem(PINNED_HOST_KEY) || '')\n      .trim",
+          "lineNumber": 9
+        },
+        {
+          "caller": "getPinnedHostUrl",
+          "callee": "String",
+          "lineNumber": 9
+        },
+        {
+          "caller": "getPinnedHostUrl",
+          "callee": "localStorage.getItem",
+          "lineNumber": 9
+        },
+        {
+          "caller": "setPinnedHostUrl",
+          "callee": "String(hostUrl || '')\n    .trim()\n    .replace",
+          "lineNumber": 18
+        },
+        {
+          "caller": "setPinnedHostUrl",
+          "callee": "String(hostUrl || '')\n    .trim",
+          "lineNumber": 18
+        },
+        {
+          "caller": "setPinnedHostUrl",
+          "callee": "String",
+          "lineNumber": 18
+        },
+        {
+          "caller": "setPinnedHostUrl",
+          "callee": "clearPinnedHostUrl",
+          "lineNumber": 22
+        },
+        {
+          "caller": "setPinnedHostUrl",
+          "callee": "localStorage.setItem",
+          "lineNumber": 26
+        },
+        {
+          "caller": "clearPinnedHostUrl",
+          "callee": "localStorage.removeItem",
+          "lineNumber": 32
+        },
+        {
+          "caller": "isPinnedHostLocal",
+          "callee": "getPinnedHostUrl",
+          "lineNumber": 38
+        },
+        {
+          "caller": "isPinnedHostLocal",
+          "callee": "normalizeLanHostBase",
+          "lineNumber": 40
+        },
+        {
+          "caller": "isPinnedHostLocal",
+          "callee": "lanHostBasesSameMachine",
+          "lineNumber": 42
+        },
+        {
+          "caller": "isPinnedHostLocal",
+          "callee": "normalizeLanHostBase",
+          "lineNumber": 42
+        },
+        {
+          "caller": "isPinnedHostRemote",
+          "callee": "getPinnedHostUrl",
+          "lineNumber": 47
+        },
+        {
+          "caller": "isPinnedHostRemote",
+          "callee": "isPinnedHostLocal",
+          "lineNumber": 49
+        },
+        {
+          "caller": "hasPinnedHostOverride",
+          "callee": "getPinnedHostUrl",
+          "lineNumber": 54
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 6,
+        "functionCount": 6,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/lan-host-pin.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 54,
+      "nonEmptyLines": 52,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/lan-host-rank-policy.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 111,
+      "nonEmptyLines": 105,
+      "functions": [
+        {
+          "name": "resolveLocalOnCallGuardia",
+          "startLine": 30,
+          "endLine": 45,
+          "params": []
+        },
+        {
+          "name": "getLocalLanHostMeta",
+          "startLine": 48,
+          "endLine": 80,
+          "params": []
+        },
+        {
+          "name": "syncLanHostClinicalMetaToDisk",
+          "startLine": 82,
+          "endLine": 102,
+          "params": []
+        },
+        {
+          "name": "pickPreferredLanPeerHost",
+          "startLine": 108,
+          "endLine": 111,
+          "params": [
+            "peerUrls",
+            "teamCode"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "prefersLanHosting",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "fetchLanHostRank",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "shouldAutoJoinPeerAsClient",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "evaluatePeerHostAction",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "resolveHostElection",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "isClinicalRankConfiguredForLan",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "canLocalMacBeLanHost",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "resolveLocalOnCallGuardia",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "getLocalLanHostMeta",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "syncLanHostClinicalMetaToDisk",
+          "line": 82,
+          "isDefault": false
+        },
+        {
+          "name": "pickPreferredLanPeerHost",
+          "line": 108,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "resolveLocalOnCallGuardia",
+          "callee": "String(user?.user_id || '').trim",
+          "lineNumber": 33
+        },
+        {
+          "caller": "resolveLocalOnCallGuardia",
+          "callee": "String",
+          "lineNumber": 33
+        },
+        {
+          "caller": "resolveLocalOnCallGuardia",
+          "callee": "mergeSalaGuardiaTodayRows",
+          "lineNumber": 36
+        },
+        {
+          "caller": "resolveLocalOnCallGuardia",
+          "callee": "String(user?.rank || readRpcSettings()?.clinicalRank || '').trim",
+          "lineNumber": 40
+        },
+        {
+          "caller": "resolveLocalOnCallGuardia",
+          "callee": "String",
+          "lineNumber": 40
+        },
+        {
+          "caller": "resolveLocalOnCallGuardia",
+          "callee": "readRpcSettings",
+          "lineNumber": 40
+        },
+        {
+          "caller": "resolveLocalOnCallGuardia",
+          "callee": "userIsOnCallForLanHost",
+          "lineNumber": 41
+        },
+        {
+          "caller": "getLocalLanHostMeta",
+          "callee": "readRpcSettings",
+          "lineNumber": 50
+        },
+        {
+          "caller": "getLocalLanHostMeta",
+          "callee": "isClinicalRankConfiguredForLan",
+          "lineNumber": 51
+        },
+        {
+          "caller": "getLocalLanHostMeta",
+          "callee": "Number",
+          "lineNumber": 52
+        },
+        {
+          "caller": "getLocalLanHostMeta",
+          "callee": "buildLocalLanHostMeta",
+          "lineNumber": 62
+        },
+        {
+          "caller": "getLocalLanHostMeta",
+          "callee": "resolveLocalOnCallGuardia",
+          "lineNumber": 63
+        },
+        {
+          "caller": "syncLanHostClinicalMetaToDisk",
+          "callee": "isClinicalRankConfiguredForLan",
+          "lineNumber": 83
+        },
+        {
+          "caller": "syncLanHostClinicalMetaToDisk",
+          "callee": "getLocalLanHostMeta",
+          "lineNumber": 91
+        },
+        {
+          "caller": "syncLanHostClinicalMetaToDisk",
+          "callee": "window.electronAPI.syncLanHostClinicalMeta",
+          "lineNumber": 94
+        },
+        {
+          "caller": "pickPreferredLanPeerHost",
+          "callee": "isClinicalRankConfiguredForLan",
+          "lineNumber": 109
+        },
+        {
+          "caller": "pickPreferredLanPeerHost",
+          "callee": "pickPeer",
+          "lineNumber": 110
+        },
+        {
+          "caller": "pickPreferredLanPeerHost",
+          "callee": "getLocalLanHostMeta",
+          "lineNumber": 110
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 11,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/lan-host-rank.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 233,
+      "nonEmptyLines": 212,
+      "functions": [
+        {
+          "name": "resolveLocalProgramAdmin",
+          "startLine": 22,
+          "endLine": 27,
+          "params": []
+        },
+        {
+          "name": "buildLocalLanHostMeta",
+          "startLine": 30,
+          "endLine": 36,
+          "params": []
+        },
+        {
+          "name": "isClinicalRankConfiguredForLan",
+          "startLine": 39,
+          "endLine": 44,
+          "params": []
+        },
+        {
+          "name": "canLocalMacBeLanHost",
+          "startLine": 47,
+          "endLine": 53,
+          "params": [
+            "meta"
+          ]
+        },
+        {
+          "name": "lanHostRankPriority",
+          "startLine": 56,
+          "endLine": 61,
+          "params": [
+            "meta"
+          ]
+        },
+        {
+          "name": "lanHostPriority",
+          "startLine": 64,
+          "endLine": 68,
+          "params": [
+            "meta"
+          ]
+        },
+        {
+          "name": "prefersLanHosting",
+          "startLine": 71,
+          "endLine": 78,
+          "params": [
+            "meta"
+          ]
+        },
+        {
+          "name": "prefersLanClientDiscoveryFirst",
+          "startLine": 84,
+          "endLine": 87,
+          "params": [
+            "meta"
+          ]
+        },
+        {
+          "name": "shouldDeferToPeerHost",
+          "startLine": 91,
+          "endLine": 93,
+          "params": [
+            "peer",
+            "self"
+          ]
+        },
+        {
+          "name": "shouldAutoJoinPeerAsClient",
+          "startLine": 100,
+          "endLine": 112,
+          "params": [
+            "peer",
+            "self"
+          ]
+        },
+        {
+          "name": "resolveHostElection",
+          "startLine": 120,
+          "endLine": 140,
+          "params": [
+            "selfMeta",
+            "peerMeta"
+          ]
+        },
+        {
+          "name": "shouldSupersedeRank",
+          "startLine": 143,
+          "endLine": 146,
+          "params": [
+            "peerRank",
+            "myRank"
+          ]
+        },
+        {
+          "name": "fetchLanHostRank",
+          "startLine": 153,
+          "endLine": 175,
+          "params": [
+            "hostUrl",
+            "teamCode"
+          ]
+        },
+        {
+          "name": "peerBeatsSelfElection",
+          "startLine": 182,
+          "endLine": 184,
+          "params": [
+            "election"
+          ]
+        },
+        {
+          "name": "evaluatePeerHostAction",
+          "startLine": 187,
+          "endLine": 200,
+          "params": [
+            "selfMeta",
+            "peerMeta",
+            "election"
+          ]
+        },
+        {
+          "name": "comparePeerCandidates",
+          "startLine": 202,
+          "endLine": 213,
+          "params": [
+            "a",
+            "b"
+          ]
+        },
+        {
+          "name": "pickPreferredLanPeerHost",
+          "startLine": 221,
+          "endLine": 233,
+          "params": [
+            "peerUrls",
+            "teamCode",
+            "selfMeta"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "LAN_ON_CALL_HOST_TIER",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "resolveLocalProgramAdmin",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "buildLocalLanHostMeta",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "isClinicalRankConfiguredForLan",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "canLocalMacBeLanHost",
+          "line": 47,
+          "isDefault": false
+        },
+        {
+          "name": "lanHostRankPriority",
+          "line": 56,
+          "isDefault": false
+        },
+        {
+          "name": "lanHostPriority",
+          "line": 64,
+          "isDefault": false
+        },
+        {
+          "name": "prefersLanHosting",
+          "line": 71,
+          "isDefault": false
+        },
+        {
+          "name": "prefersLanClientDiscoveryFirst",
+          "line": 84,
+          "isDefault": false
+        },
+        {
+          "name": "shouldDeferToPeerHost",
+          "line": 91,
+          "isDefault": false
+        },
+        {
+          "name": "shouldAutoJoinPeerAsClient",
+          "line": 100,
+          "isDefault": false
+        },
+        {
+          "name": "resolveHostElection",
+          "line": 120,
+          "isDefault": false
+        },
+        {
+          "name": "shouldSupersedeRank",
+          "line": 143,
+          "isDefault": false
+        },
+        {
+          "name": "fetchLanHostRank",
+          "line": 153,
+          "isDefault": false
+        },
+        {
+          "name": "evaluatePeerHostAction",
+          "line": 187,
+          "isDefault": false
+        },
+        {
+          "name": "pickPreferredLanPeerHost",
+          "line": 221,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "resolveLocalProgramAdmin",
+          "callee": "readRpcSettings",
+          "lineNumber": 22
+        },
+        {
+          "caller": "resolveLocalProgramAdmin",
+          "callee": "hasProgramAdminPrivileges",
+          "lineNumber": 26
+        },
+        {
+          "caller": "buildLocalLanHostMeta",
+          "callee": "readRpcSettings",
+          "lineNumber": 30
+        },
+        {
+          "caller": "buildLocalLanHostMeta",
+          "callee": "String(settings?.clinicalRank || '').trim",
+          "lineNumber": 31
+        },
+        {
+          "caller": "buildLocalLanHostMeta",
+          "callee": "String",
+          "lineNumber": 31
+        },
+        {
+          "caller": "buildLocalLanHostMeta",
+          "callee": "resolveLocalProgramAdmin",
+          "lineNumber": 34
+        },
+        {
+          "caller": "isClinicalRankConfiguredForLan",
+          "callee": "readRpcSettings",
+          "lineNumber": 39
+        },
+        {
+          "caller": "isClinicalRankConfiguredForLan",
+          "callee": "String(settings?.clinicalRank || '').trim",
+          "lineNumber": 40
+        },
+        {
+          "caller": "isClinicalRankConfiguredForLan",
+          "callee": "String",
+          "lineNumber": 40
+        },
+        {
+          "caller": "isClinicalRankConfiguredForLan",
+          "callee": "needsClinicalLanProfileGate",
+          "lineNumber": 42
+        },
+        {
+          "caller": "canLocalMacBeLanHost",
+          "callee": "isClinicalRankConfiguredForLan",
+          "lineNumber": 48
+        },
+        {
+          "caller": "canLocalMacBeLanHost",
+          "callee": "buildLocalLanHostMeta",
+          "lineNumber": 49
+        },
+        {
+          "caller": "canLocalMacBeLanHost",
+          "callee": "isWardTierHostMeta",
+          "lineNumber": 51
+        },
+        {
+          "caller": "canLocalMacBeLanHost",
+          "callee": "canRankHostAtEscalationTier",
+          "lineNumber": 52
+        },
+        {
+          "caller": "canLocalMacBeLanHost",
+          "callee": "getHostEscalationTier",
+          "lineNumber": 52
+        },
+        {
+          "caller": "lanHostRankPriority",
+          "callee": "String(meta.rank || 'R1').trim",
+          "lineNumber": 59
+        },
+        {
+          "caller": "lanHostRankPriority",
+          "callee": "String",
+          "lineNumber": 59
+        },
+        {
+          "caller": "lanHostPriority",
+          "callee": "lanHostRankPriority",
+          "lineNumber": 67
+        },
+        {
+          "caller": "prefersLanHosting",
+          "callee": "String(meta.rank || '').trim",
+          "lineNumber": 75
+        },
+        {
+          "caller": "prefersLanHosting",
+          "callee": "String",
+          "lineNumber": 75
+        },
+        {
+          "caller": "prefersLanClientDiscoveryFirst",
+          "callee": "buildLocalLanHostMeta",
+          "lineNumber": 85
+        },
+        {
+          "caller": "prefersLanClientDiscoveryFirst",
+          "callee": "isWardTierHostMeta",
+          "lineNumber": 86
+        },
+        {
+          "caller": "shouldDeferToPeerHost",
+          "callee": "lanHostPriority",
+          "lineNumber": 92
+        },
+        {
+          "caller": "shouldDeferToPeerHost",
+          "callee": "lanHostPriority",
+          "lineNumber": 92
+        },
+        {
+          "caller": "shouldAutoJoinPeerAsClient",
+          "callee": "shouldDeferToPeerHost",
+          "lineNumber": 102
+        },
+        {
+          "caller": "shouldAutoJoinPeerAsClient",
+          "callee": "prefersLanHosting",
+          "lineNumber": 107
+        },
+        {
+          "caller": "shouldAutoJoinPeerAsClient",
+          "callee": "prefersLanHosting",
+          "lineNumber": 107
+        },
+        {
+          "caller": "shouldAutoJoinPeerAsClient",
+          "callee": "getHostEscalationTier",
+          "lineNumber": 108
+        },
+        {
+          "caller": "shouldAutoJoinPeerAsClient",
+          "callee": "canRankHostAtEscalationTier",
+          "lineNumber": 109
+        },
+        {
+          "caller": "shouldAutoJoinPeerAsClient",
+          "callee": "canRankHostAtEscalationTier",
+          "lineNumber": 110
+        },
+        {
+          "caller": "shouldAutoJoinPeerAsClient",
+          "callee": "lanHostPriority",
+          "lineNumber": 111
+        },
+        {
+          "caller": "shouldAutoJoinPeerAsClient",
+          "callee": "lanHostPriority",
+          "lineNumber": 111
+        },
+        {
+          "caller": "resolveHostElection",
+          "callee": "lanHostPriority",
+          "lineNumber": 121
+        },
+        {
+          "caller": "resolveHostElection",
+          "callee": "lanHostPriority",
+          "lineNumber": 122
+        },
+        {
+          "caller": "resolveHostElection",
+          "callee": "Number",
+          "lineNumber": 126
+        },
+        {
+          "caller": "resolveHostElection",
+          "callee": "Number",
+          "lineNumber": 127
+        },
+        {
+          "caller": "resolveHostElection",
+          "callee": "String(urls.selfUrl || '').trim",
+          "lineNumber": 135
+        },
+        {
+          "caller": "resolveHostElection",
+          "callee": "String",
+          "lineNumber": 135
+        },
+        {
+          "caller": "resolveHostElection",
+          "callee": "String(urls.peerUrl || '').trim",
+          "lineNumber": 136
+        },
+        {
+          "caller": "resolveHostElection",
+          "callee": "String",
+          "lineNumber": 136
+        },
+        {
+          "caller": "shouldSupersedeRank",
+          "callee": "String(peerRank || '').trim",
+          "lineNumber": 144
+        },
+        {
+          "caller": "shouldSupersedeRank",
+          "callee": "String",
+          "lineNumber": 144
+        },
+        {
+          "caller": "shouldSupersedeRank",
+          "callee": "String(myRank || '').trim",
+          "lineNumber": 145
+        },
+        {
+          "caller": "shouldSupersedeRank",
+          "callee": "String",
+          "lineNumber": 145
+        },
+        {
+          "caller": "fetchLanHostRank",
+          "callee": "String(hostUrl || '')\n    .trim()\n    .replace",
+          "lineNumber": 154
+        },
+        {
+          "caller": "fetchLanHostRank",
+          "callee": "String(hostUrl || '')\n    .trim",
+          "lineNumber": 154
+        },
+        {
+          "caller": "fetchLanHostRank",
+          "callee": "String",
+          "lineNumber": 154
+        },
+        {
+          "caller": "fetchLanHostRank",
+          "callee": "String(teamCode || '').trim",
+          "lineNumber": 157
+        },
+        {
+          "caller": "fetchLanHostRank",
+          "callee": "String",
+          "lineNumber": 157
+        },
+        {
+          "caller": "fetchLanHostRank",
+          "callee": "fetch",
+          "lineNumber": 160
+        },
+        {
+          "caller": "fetchLanHostRank",
+          "callee": "AbortSignal.timeout",
+          "lineNumber": 162
+        },
+        {
+          "caller": "fetchLanHostRank",
+          "callee": "resp.json",
+          "lineNumber": 165
+        },
+        {
+          "caller": "fetchLanHostRank",
+          "callee": "String(data?.rank || 'R1').trim",
+          "lineNumber": 167
+        },
+        {
+          "caller": "fetchLanHostRank",
+          "callee": "String",
+          "lineNumber": 167
+        },
+        {
+          "caller": "fetchLanHostRank",
+          "callee": "Number",
+          "lineNumber": 170
+        },
+        {
+          "caller": "evaluatePeerHostAction",
+          "callee": "prefersLanHosting",
+          "lineNumber": 189
+        },
+        {
+          "caller": "evaluatePeerHostAction",
+          "callee": "prefersLanHosting",
+          "lineNumber": 189
+        },
+        {
+          "caller": "evaluatePeerHostAction",
+          "callee": "shouldAutoJoinPeerAsClient",
+          "lineNumber": 192
+        },
+        {
+          "caller": "evaluatePeerHostAction",
+          "callee": "prefersLanHosting",
+          "lineNumber": 194
+        },
+        {
+          "caller": "comparePeerCandidates",
+          "callee": "lanHostPriority",
+          "lineNumber": 203
+        },
+        {
+          "caller": "comparePeerCandidates",
+          "callee": "lanHostPriority",
+          "lineNumber": 203
+        },
+        {
+          "caller": "comparePeerCandidates",
+          "callee": "Number",
+          "lineNumber": 205
+        },
+        {
+          "caller": "comparePeerCandidates",
+          "callee": "Number",
+          "lineNumber": 206
+        },
+        {
+          "caller": "comparePeerCandidates",
+          "callee": "String(a.url).localeCompare",
+          "lineNumber": 212
+        },
+        {
+          "caller": "comparePeerCandidates",
+          "callee": "String",
+          "lineNumber": 212
+        },
+        {
+          "caller": "comparePeerCandidates",
+          "callee": "String",
+          "lineNumber": 212
+        },
+        {
+          "caller": "pickPreferredLanPeerHost",
+          "callee": "fetchLanHostRank",
+          "lineNumber": 224
+        },
+        {
+          "caller": "pickPreferredLanPeerHost",
+          "callee": "shouldAutoJoinPeerAsClient",
+          "lineNumber": 225
+        },
+        {
+          "caller": "pickPreferredLanPeerHost",
+          "callee": "resolveHostElection",
+          "lineNumber": 226
+        },
+        {
+          "caller": "pickPreferredLanPeerHost",
+          "callee": "peerBeatsSelfElection",
+          "lineNumber": 227
+        },
+        {
+          "caller": "pickPreferredLanPeerHost",
+          "callee": "comparePeerCandidates",
+          "lineNumber": 228
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 16,
+        "functionCount": 17,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/lan-host-rank.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 229,
+      "nonEmptyLines": 213,
+      "callGraph": [
+        {
+          "caller": "getItem",
+          "callee": "memory.has",
+          "lineNumber": 26
+        },
+        {
+          "caller": "getItem",
+          "callee": "memory.get",
+          "lineNumber": 26
+        },
+        {
+          "caller": "setItem",
+          "callee": "memory.set",
+          "lineNumber": 29
+        },
+        {
+          "caller": "setItem",
+          "callee": "String",
+          "lineNumber": 29
+        },
+        {
+          "caller": "getItem",
+          "callee": "memory.has",
+          "lineNumber": 193
+        },
+        {
+          "caller": "getItem",
+          "callee": "memory.get",
+          "lineNumber": 193
+        },
+        {
+          "caller": "setItem",
+          "callee": "memory.set",
+          "lineNumber": 196
+        },
+        {
+          "caller": "setItem",
+          "callee": "String",
+          "lineNumber": 196
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/lan-host-registry.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 165,
+      "nonEmptyLines": 147,
+      "functions": [
+        {
+          "name": "_resetRegistryForTest",
+          "startLine": 20,
+          "endLine": 22,
+          "params": []
+        },
+        {
+          "name": "upsertHost",
+          "startLine": 37,
+          "endLine": 62,
+          "params": [
+            "record"
+          ]
+        },
+        {
+          "name": "findByFingerprint",
+          "startLine": 65,
+          "endLine": 67,
+          "params": [
+            "fingerprint"
+          ]
+        },
+        {
+          "name": "findByUrl",
+          "startLine": 70,
+          "endLine": 76,
+          "params": [
+            "url"
+          ]
+        },
+        {
+          "name": "listHosts",
+          "startLine": 79,
+          "endLine": 81,
+          "params": []
+        },
+        {
+          "name": "listRegistryDiscoveryUrls",
+          "startLine": 90,
+          "endLine": 101,
+          "params": []
+        },
+        {
+          "name": "evictStale",
+          "startLine": 107,
+          "endLine": 112,
+          "params": []
+        },
+        {
+          "name": "getPinnedFingerprint",
+          "startLine": 115,
+          "endLine": 121,
+          "params": []
+        },
+        {
+          "name": "setPinnedFingerprint",
+          "startLine": 124,
+          "endLine": 132,
+          "params": [
+            "fp"
+          ]
+        },
+        {
+          "name": "clearPinnedFingerprint",
+          "startLine": 134,
+          "endLine": 138,
+          "params": []
+        },
+        {
+          "name": "_migrateFromLegacyPinnedUrl",
+          "startLine": 141,
+          "endLine": 163,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "_resetRegistryForTest",
+          "line": 20,
+          "isDefault": false
+        },
+        {
+          "name": "upsertHost",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "findByFingerprint",
+          "line": 65,
+          "isDefault": false
+        },
+        {
+          "name": "findByUrl",
+          "line": 70,
+          "isDefault": false
+        },
+        {
+          "name": "listHosts",
+          "line": 79,
+          "isDefault": false
+        },
+        {
+          "name": "listRegistryDiscoveryUrls",
+          "line": 90,
+          "isDefault": false
+        },
+        {
+          "name": "evictStale",
+          "line": 107,
+          "isDefault": false
+        },
+        {
+          "name": "getPinnedFingerprint",
+          "line": 115,
+          "isDefault": false
+        },
+        {
+          "name": "setPinnedFingerprint",
+          "line": 124,
+          "isDefault": false
+        },
+        {
+          "name": "clearPinnedFingerprint",
+          "line": 134,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "_resetRegistryForTest",
+          "callee": "_registry.clear",
+          "lineNumber": 21
+        },
+        {
+          "caller": "upsertHost",
+          "callee": "String",
+          "lineNumber": 39
+        },
+        {
+          "caller": "upsertHost",
+          "callee": "_registry.get",
+          "lineNumber": 40
+        },
+        {
+          "caller": "upsertHost",
+          "callee": "_registry.set",
+          "lineNumber": 48
+        },
+        {
+          "caller": "upsertHost",
+          "callee": "String",
+          "lineNumber": 50
+        },
+        {
+          "caller": "upsertHost",
+          "callee": "Number",
+          "lineNumber": 51
+        },
+        {
+          "caller": "upsertHost",
+          "callee": "String",
+          "lineNumber": 52
+        },
+        {
+          "caller": "upsertHost",
+          "callee": "String",
+          "lineNumber": 53
+        },
+        {
+          "caller": "upsertHost",
+          "callee": "Number",
+          "lineNumber": 58
+        },
+        {
+          "caller": "upsertHost",
+          "callee": "Number",
+          "lineNumber": 59
+        },
+        {
+          "caller": "upsertHost",
+          "callee": "Date.now",
+          "lineNumber": 59
+        },
+        {
+          "caller": "findByFingerprint",
+          "callee": "_registry.get",
+          "lineNumber": 66
+        },
+        {
+          "caller": "findByFingerprint",
+          "callee": "String",
+          "lineNumber": 66
+        },
+        {
+          "caller": "findByUrl",
+          "callee": "String(url || '').replace",
+          "lineNumber": 71
+        },
+        {
+          "caller": "findByUrl",
+          "callee": "String",
+          "lineNumber": 71
+        },
+        {
+          "caller": "findByUrl",
+          "callee": "_registry.values",
+          "lineNumber": 72
+        },
+        {
+          "caller": "findByUrl",
+          "callee": "r.currentUrl.replace",
+          "lineNumber": 73
+        },
+        {
+          "caller": "listHosts",
+          "callee": "_registry.values",
+          "lineNumber": 80
+        },
+        {
+          "caller": "listRegistryDiscoveryUrls",
+          "callee": "Date.now",
+          "lineNumber": 91
+        },
+        {
+          "caller": "listRegistryDiscoveryUrls",
+          "callee": "listHosts()\n    .filter(\n      (r) =>\n        r.currentUrl &&\n        FAST_DISCOVERY_SOURCES.has(r.source) &&\n        Number(r.lastSeenAt) >= cutoff\n    )\n    .sort((a, b) => (SOURCE_WEIGHT[b.source] || 0) - (SOURCE_WEIGHT[a.source] || 0))\n    .map",
+          "lineNumber": 92
+        },
+        {
+          "caller": "listRegistryDiscoveryUrls",
+          "callee": "listHosts()\n    .filter(\n      (r) =>\n        r.currentUrl &&\n        FAST_DISCOVERY_SOURCES.has(r.source) &&\n        Number(r.lastSeenAt) >= cutoff\n    )\n    .sort",
+          "lineNumber": 92
+        },
+        {
+          "caller": "listRegistryDiscoveryUrls",
+          "callee": "listHosts()\n    .filter",
+          "lineNumber": 92
+        },
+        {
+          "caller": "listRegistryDiscoveryUrls",
+          "callee": "listHosts",
+          "lineNumber": 92
+        },
+        {
+          "caller": "listRegistryDiscoveryUrls",
+          "callee": "FAST_DISCOVERY_SOURCES.has",
+          "lineNumber": 96
+        },
+        {
+          "caller": "listRegistryDiscoveryUrls",
+          "callee": "Number",
+          "lineNumber": 97
+        },
+        {
+          "caller": "listRegistryDiscoveryUrls",
+          "callee": "String(r.currentUrl).replace",
+          "lineNumber": 100
+        },
+        {
+          "caller": "listRegistryDiscoveryUrls",
+          "callee": "String",
+          "lineNumber": 100
+        },
+        {
+          "caller": "evictStale",
+          "callee": "Date.now",
+          "lineNumber": 108
+        },
+        {
+          "caller": "evictStale",
+          "callee": "_registry.delete",
+          "lineNumber": 110
+        },
+        {
+          "caller": "getPinnedFingerprint",
+          "callee": "String(localStorage.getItem(PINNED_FP_KEY) || '').trim",
+          "lineNumber": 117
+        },
+        {
+          "caller": "getPinnedFingerprint",
+          "callee": "String",
+          "lineNumber": 117
+        },
+        {
+          "caller": "getPinnedFingerprint",
+          "callee": "localStorage.getItem",
+          "lineNumber": 117
+        },
+        {
+          "caller": "setPinnedFingerprint",
+          "callee": "localStorage.removeItem",
+          "lineNumber": 127
+        },
+        {
+          "caller": "setPinnedFingerprint",
+          "callee": "localStorage.setItem",
+          "lineNumber": 130
+        },
+        {
+          "caller": "setPinnedFingerprint",
+          "callee": "String",
+          "lineNumber": 130
+        },
+        {
+          "caller": "clearPinnedFingerprint",
+          "callee": "localStorage.removeItem",
+          "lineNumber": 136
+        },
+        {
+          "caller": "_migrateFromLegacyPinnedUrl",
+          "callee": "getPinnedFingerprint",
+          "lineNumber": 143
+        },
+        {
+          "caller": "_migrateFromLegacyPinnedUrl",
+          "callee": "String(localStorage.getItem('rpc-lan-pinned-host-url') || '')\n      .trim()\n      .replace",
+          "lineNumber": 144
+        },
+        {
+          "caller": "_migrateFromLegacyPinnedUrl",
+          "callee": "String(localStorage.getItem('rpc-lan-pinned-host-url') || '')\n      .trim",
+          "lineNumber": 144
+        },
+        {
+          "caller": "_migrateFromLegacyPinnedUrl",
+          "callee": "String",
+          "lineNumber": 144
+        },
+        {
+          "caller": "_migrateFromLegacyPinnedUrl",
+          "callee": "localStorage.getItem",
+          "lineNumber": 144
+        },
+        {
+          "caller": "_migrateFromLegacyPinnedUrl",
+          "callee": "upsertHost",
+          "lineNumber": 149
+        },
+        {
+          "caller": "_migrateFromLegacyPinnedUrl",
+          "callee": "Date.now",
+          "lineNumber": 158
+        },
+        {
+          "caller": "_migrateFromLegacyPinnedUrl",
+          "callee": "setPinnedFingerprint",
+          "lineNumber": 161
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 10,
+        "functionCount": 11,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/lan-host-registry.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 218,
+      "nonEmptyLines": 208,
+      "functions": [
+        {
+          "name": "mockLocalStorage",
+          "startLine": 17,
+          "endLine": 32,
+          "params": []
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/lan-host-subnet-discovery.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 276,
+      "nonEmptyLines": 256,
+      "functions": [
+        {
+          "name": "normalizeLanHostBase",
+          "startLine": 21,
+          "endLine": 26,
+          "params": [
+            "raw"
+          ]
+        },
+        {
+          "name": "isHostOnCurrentSubnets",
+          "startLine": 29,
+          "endLine": 34,
+          "params": [
+            "hostUrl",
+            "prefixes"
+          ]
+        },
+        {
+          "name": "hostIpv4FromBase",
+          "startLine": 37,
+          "endLine": 43,
+          "params": [
+            "base"
+          ]
+        },
+        {
+          "name": "lanHostBasesSameMachine",
+          "startLine": 46,
+          "endLine": 53,
+          "params": [
+            "a",
+            "b"
+          ]
+        },
+        {
+          "name": "probeLanHostBase",
+          "startLine": 60,
+          "endLine": 93,
+          "params": [
+            "base",
+            "teamCode",
+            "signal"
+          ]
+        },
+        {
+          "name": "probeLanHostBeacon",
+          "startLine": 99,
+          "endLine": 128,
+          "params": [
+            "base",
+            "signal"
+          ]
+        },
+        {
+          "name": "resolveLocalLanSubnetPrefixes",
+          "startLine": 133,
+          "endLine": 159,
+          "params": [
+            "ownBaseUrl"
+          ]
+        },
+        {
+          "name": "discoverLanHostsOnSubnetViaBeacon",
+          "startLine": 167,
+          "endLine": 205,
+          "params": [
+            "ownBaseUrl"
+          ]
+        },
+        {
+          "name": "discoverLanHostsOnAllLocalSubnetsViaBeacon",
+          "startLine": 212,
+          "endLine": 215,
+          "params": [
+            "ownBaseUrl"
+          ]
+        },
+        {
+          "name": "discoverLanHostsOnSubnet",
+          "startLine": 224,
+          "endLine": 267,
+          "params": [
+            "teamCode",
+            "ownBaseUrl"
+          ]
+        },
+        {
+          "name": "discoverLanHostsOnAllLocalSubnets",
+          "startLine": 274,
+          "endLine": 276,
+          "params": [
+            "teamCode",
+            "ownBaseUrl"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "normalizeLanHostBase",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "isHostOnCurrentSubnets",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "hostIpv4FromBase",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "lanHostBasesSameMachine",
+          "line": 46,
+          "isDefault": false
+        },
+        {
+          "name": "probeLanHostBase",
+          "line": 60,
+          "isDefault": false
+        },
+        {
+          "name": "probeLanHostBeacon",
+          "line": 99,
+          "isDefault": false
+        },
+        {
+          "name": "resolveLocalLanSubnetPrefixes",
+          "line": 133,
+          "isDefault": false
+        },
+        {
+          "name": "discoverLanHostsOnSubnetViaBeacon",
+          "line": 167,
+          "isDefault": false
+        },
+        {
+          "name": "discoverLanHostsOnAllLocalSubnetsViaBeacon",
+          "line": 212,
+          "isDefault": false
+        },
+        {
+          "name": "discoverLanHostsOnSubnet",
+          "line": 224,
+          "isDefault": false
+        },
+        {
+          "name": "discoverLanHostsOnAllLocalSubnets",
+          "line": 274,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "normalizeLanHostBase",
+          "callee": "String(raw || '').trim().replace",
+          "lineNumber": 22
+        },
+        {
+          "caller": "normalizeLanHostBase",
+          "callee": "String(raw || '').trim",
+          "lineNumber": 22
+        },
+        {
+          "caller": "normalizeLanHostBase",
+          "callee": "String",
+          "lineNumber": 22
+        },
+        {
+          "caller": "normalizeLanHostBase",
+          "callee": "/^https?:\\/\\//i.test",
+          "lineNumber": 24
+        },
+        {
+          "caller": "isHostOnCurrentSubnets",
+          "callee": "hostIpv4FromBase",
+          "lineNumber": 30
+        },
+        {
+          "caller": "isHostOnCurrentSubnets",
+          "callee": "Array.isArray",
+          "lineNumber": 31
+        },
+        {
+          "caller": "isHostOnCurrentSubnets",
+          "callee": "subnetPrefixFromIpv4",
+          "lineNumber": 32
+        },
+        {
+          "caller": "isHostOnCurrentSubnets",
+          "callee": "prefixes.includes",
+          "lineNumber": 33
+        },
+        {
+          "caller": "hostIpv4FromBase",
+          "callee": "normalizeLanHostBase",
+          "lineNumber": 39
+        },
+        {
+          "caller": "lanHostBasesSameMachine",
+          "callee": "hostIpv4FromBase",
+          "lineNumber": 47
+        },
+        {
+          "caller": "lanHostBasesSameMachine",
+          "callee": "hostIpv4FromBase",
+          "lineNumber": 48
+        },
+        {
+          "caller": "loop",
+          "callee": "isLoopbackHostname",
+          "lineNumber": 51
+        },
+        {
+          "caller": "lanHostBasesSameMachine",
+          "callee": "loop",
+          "lineNumber": 52
+        },
+        {
+          "caller": "lanHostBasesSameMachine",
+          "callee": "loop",
+          "lineNumber": 52
+        },
+        {
+          "caller": "probeLanHostBase",
+          "callee": "normalizeLanHostBase",
+          "lineNumber": 61
+        },
+        {
+          "caller": "probeLanHostBase",
+          "callee": "setTimeout",
+          "lineNumber": 63
+        },
+        {
+          "caller": "probeLanHostBase",
+          "callee": "ctrl.abort",
+          "lineNumber": 63
+        },
+        {
+          "caller": "onAbort",
+          "callee": "ctrl.abort",
+          "lineNumber": 64
+        },
+        {
+          "caller": "probeLanHostBase",
+          "callee": "clearTimeout",
+          "lineNumber": 67
+        },
+        {
+          "caller": "probeLanHostBase",
+          "callee": "signal.addEventListener",
+          "lineNumber": 70
+        },
+        {
+          "caller": "probeLanHostBase",
+          "callee": "String(teamCode || '').trim",
+          "lineNumber": 73
+        },
+        {
+          "caller": "probeLanHostBase",
+          "callee": "String",
+          "lineNumber": 73
+        },
+        {
+          "caller": "probeLanHostBase",
+          "callee": "pingLanHostUrl",
+          "lineNumber": 75
+        },
+        {
+          "caller": "probeLanHostBase",
+          "callee": "fetch",
+          "lineNumber": 77
+        },
+        {
+          "caller": "probeLanHostBase",
+          "callee": "res.json",
+          "lineNumber": 84
+        },
+        {
+          "caller": "probeLanHostBase",
+          "callee": "clearTimeout",
+          "lineNumber": 90
+        },
+        {
+          "caller": "probeLanHostBase",
+          "callee": "signal.removeEventListener",
+          "lineNumber": 91
+        },
+        {
+          "caller": "probeLanHostBeacon",
+          "callee": "normalizeLanHostBase",
+          "lineNumber": 100
+        },
+        {
+          "caller": "probeLanHostBeacon",
+          "callee": "setTimeout",
+          "lineNumber": 102
+        },
+        {
+          "caller": "probeLanHostBeacon",
+          "callee": "ctrl.abort",
+          "lineNumber": 102
+        },
+        {
+          "caller": "onAbort",
+          "callee": "ctrl.abort",
+          "lineNumber": 103
+        },
+        {
+          "caller": "probeLanHostBeacon",
+          "callee": "clearTimeout",
+          "lineNumber": 106
+        },
+        {
+          "caller": "probeLanHostBeacon",
+          "callee": "signal.addEventListener",
+          "lineNumber": 109
+        },
+        {
+          "caller": "probeLanHostBeacon",
+          "callee": "fetch",
+          "lineNumber": 113
+        },
+        {
+          "caller": "probeLanHostBeacon",
+          "callee": "res.json",
+          "lineNumber": 119
+        },
+        {
+          "caller": "probeLanHostBeacon",
+          "callee": "clearTimeout",
+          "lineNumber": 125
+        },
+        {
+          "caller": "probeLanHostBeacon",
+          "callee": "signal.removeEventListener",
+          "lineNumber": 126
+        },
+        {
+          "caller": "resolveLocalLanSubnetPrefixes",
+          "callee": "window.electronAPI.getLanSubnetPrefixes",
+          "lineNumber": 136
+        },
+        {
+          "caller": "resolveLocalLanSubnetPrefixes",
+          "callee": "Array.isArray",
+          "lineNumber": 137
+        },
+        {
+          "caller": "resolveLocalLanSubnetPrefixes",
+          "callee": "fromIpc\n          .map((p) => String(p || '').trim())\n          .filter",
+          "lineNumber": 138
+        },
+        {
+          "caller": "resolveLocalLanSubnetPrefixes",
+          "callee": "fromIpc\n          .map",
+          "lineNumber": 138
+        },
+        {
+          "caller": "resolveLocalLanSubnetPrefixes",
+          "callee": "String(p || '').trim",
+          "lineNumber": 139
+        },
+        {
+          "caller": "resolveLocalLanSubnetPrefixes",
+          "callee": "String",
+          "lineNumber": 139
+        },
+        {
+          "caller": "resolveLocalLanSubnetPrefixes",
+          "callee": "/^\\d+\\.\\d+\\.\\d+$/.test",
+          "lineNumber": 140
+        },
+        {
+          "caller": "resolveLocalLanSubnetPrefixes",
+          "callee": "normalizeLanHostBase",
+          "lineNumber": 144
+        },
+        {
+          "caller": "resolveLocalLanSubnetPrefixes",
+          "callee": "hostIpv4FromBase",
+          "lineNumber": 145
+        },
+        {
+          "caller": "resolveLocalLanSubnetPrefixes",
+          "callee": "isLoopbackHostname",
+          "lineNumber": 146
+        },
+        {
+          "caller": "resolveLocalLanSubnetPrefixes",
+          "callee": "normalizeLanHostBase",
+          "lineNumber": 149
+        },
+        {
+          "caller": "resolveLocalLanSubnetPrefixes",
+          "callee": "window.electronAPI.getLanCandidateBaseUrl",
+          "lineNumber": 149
+        },
+        {
+          "caller": "resolveLocalLanSubnetPrefixes",
+          "callee": "hostIpv4FromBase",
+          "lineNumber": 150
+        },
+        {
+          "caller": "resolveLocalLanSubnetPrefixes",
+          "callee": "isLoopbackHostname",
+          "lineNumber": 151
+        },
+        {
+          "caller": "resolveLocalLanSubnetPrefixes",
+          "callee": "hostIpv4FromBase",
+          "lineNumber": 155
+        },
+        {
+          "caller": "resolveLocalLanSubnetPrefixes",
+          "callee": "subnetPrefixFromIpv4",
+          "lineNumber": 156
+        },
+        {
+          "caller": "resolveLocalLanSubnetPrefixes",
+          "callee": "isPrivateIpv4",
+          "lineNumber": 157
+        },
+        {
+          "caller": "discoverLanHostsOnSubnetViaBeacon",
+          "callee": "normalizeLanHostBase",
+          "lineNumber": 168
+        },
+        {
+          "caller": "discoverLanHostsOnSubnetViaBeacon",
+          "callee": "Array.isArray",
+          "lineNumber": 170
+        },
+        {
+          "caller": "discoverLanHostsOnSubnetViaBeacon",
+          "callee": "resolveLocalLanSubnetPrefixes",
+          "lineNumber": 172
+        },
+        {
+          "caller": "discoverLanHostsOnSubnetViaBeacon",
+          "callee": "hostIpv4FromBase",
+          "lineNumber": 175
+        },
+        {
+          "caller": "discoverLanHostsOnSubnetViaBeacon",
+          "callee": "isLoopbackHostname",
+          "lineNumber": 176
+        },
+        {
+          "caller": "discoverLanHostsOnSubnetViaBeacon",
+          "callee": "isPrivateIpv4",
+          "lineNumber": 179
+        },
+        {
+          "caller": "discoverLanHostsOnSubnetViaBeacon",
+          "callee": "isLoopbackHostname",
+          "lineNumber": 185
+        },
+        {
+          "caller": "discoverLanHostsOnSubnetViaBeacon",
+          "callee": "orderedSubnetHosts",
+          "lineNumber": 191
+        },
+        {
+          "caller": "discoverLanHostsOnSubnetViaBeacon",
+          "callee": "hosts.slice",
+          "lineNumber": 193
+        },
+        {
+          "caller": "discoverLanHostsOnSubnetViaBeacon",
+          "callee": "batch.map",
+          "lineNumber": 194
+        },
+        {
+          "caller": "discoverLanHostsOnSubnetViaBeacon",
+          "callee": "Promise.all",
+          "lineNumber": 195
+        },
+        {
+          "caller": "discoverLanHostsOnSubnetViaBeacon",
+          "callee": "bases.map",
+          "lineNumber": 195
+        },
+        {
+          "caller": "discoverLanHostsOnSubnetViaBeacon",
+          "callee": "probeLanHostBeacon",
+          "lineNumber": 195
+        },
+        {
+          "caller": "discoverLanHostsOnSubnetViaBeacon",
+          "callee": "lanHostBasesSameMachine",
+          "lineNumber": 197
+        },
+        {
+          "caller": "discoverLanHostsOnSubnetViaBeacon",
+          "callee": "found.add",
+          "lineNumber": 198
+        },
+        {
+          "caller": "discoverLanHostsOnSubnetViaBeacon",
+          "callee": "[...found].sort",
+          "lineNumber": 204
+        },
+        {
+          "caller": "discoverLanHostsOnAllLocalSubnetsViaBeacon",
+          "callee": "resolveLocalLanSubnetPrefixes",
+          "lineNumber": 213
+        },
+        {
+          "caller": "discoverLanHostsOnAllLocalSubnetsViaBeacon",
+          "callee": "discoverLanHostsOnSubnetViaBeacon",
+          "lineNumber": 214
+        },
+        {
+          "caller": "discoverLanHostsOnSubnet",
+          "callee": "normalizeLanHostBase",
+          "lineNumber": 225
+        },
+        {
+          "caller": "discoverLanHostsOnSubnet",
+          "callee": "String(teamCode || '').trim",
+          "lineNumber": 226
+        },
+        {
+          "caller": "discoverLanHostsOnSubnet",
+          "callee": "String",
+          "lineNumber": 226
+        },
+        {
+          "caller": "discoverLanHostsOnSubnet",
+          "callee": "Array.isArray",
+          "lineNumber": 230
+        },
+        {
+          "caller": "discoverLanHostsOnSubnet",
+          "callee": "resolveLocalLanSubnetPrefixes",
+          "lineNumber": 232
+        },
+        {
+          "caller": "discoverLanHostsOnSubnet",
+          "callee": "hostIpv4FromBase",
+          "lineNumber": 235
+        },
+        {
+          "caller": "discoverLanHostsOnSubnet",
+          "callee": "isLoopbackHostname",
+          "lineNumber": 236
+        },
+        {
+          "caller": "discoverLanHostsOnSubnet",
+          "callee": "normalizeLanHostBase",
+          "lineNumber": 239
+        },
+        {
+          "caller": "discoverLanHostsOnSubnet",
+          "callee": "window.electronAPI.getLanCandidateBaseUrl",
+          "lineNumber": 239
+        },
+        {
+          "caller": "discoverLanHostsOnSubnet",
+          "callee": "hostIpv4FromBase",
+          "lineNumber": 240
+        },
+        {
+          "caller": "discoverLanHostsOnSubnet",
+          "callee": "isLoopbackHostname",
+          "lineNumber": 241
+        },
+        {
+          "caller": "discoverLanHostsOnSubnet",
+          "callee": "hostIpv4FromBase",
+          "lineNumber": 245
+        },
+        {
+          "caller": "discoverLanHostsOnSubnet",
+          "callee": "isLoopbackHostname",
+          "lineNumber": 247
+        },
+        {
+          "caller": "discoverLanHostsOnSubnet",
+          "callee": "orderedSubnetHosts",
+          "lineNumber": 253
+        },
+        {
+          "caller": "discoverLanHostsOnSubnet",
+          "callee": "hosts.slice",
+          "lineNumber": 255
+        },
+        {
+          "caller": "discoverLanHostsOnSubnet",
+          "callee": "batch.map",
+          "lineNumber": 256
+        },
+        {
+          "caller": "discoverLanHostsOnSubnet",
+          "callee": "Promise.all",
+          "lineNumber": 257
+        },
+        {
+          "caller": "discoverLanHostsOnSubnet",
+          "callee": "bases.map",
+          "lineNumber": 257
+        },
+        {
+          "caller": "discoverLanHostsOnSubnet",
+          "callee": "probeLanHostBase",
+          "lineNumber": 257
+        },
+        {
+          "caller": "discoverLanHostsOnSubnet",
+          "callee": "lanHostBasesSameMachine",
+          "lineNumber": 259
+        },
+        {
+          "caller": "discoverLanHostsOnSubnet",
+          "callee": "found.add",
+          "lineNumber": 260
+        },
+        {
+          "caller": "discoverLanHostsOnSubnet",
+          "callee": "[...found].sort",
+          "lineNumber": 266
+        },
+        {
+          "caller": "discoverLanHostsOnAllLocalSubnets",
+          "callee": "discoverLanHostsOnSubnet",
+          "lineNumber": 275
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 11,
+        "functionCount": 11,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/lan-host-subnet-discovery.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 50,
+      "nonEmptyLines": 44,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/lan-join-boot.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 70,
+      "nonEmptyLines": 63,
+      "functions": [
+        {
+          "name": "ticketIdFromPath",
+          "startLine": 9,
+          "endLine": 12,
+          "params": []
+        },
+        {
+          "name": "persistLanJoinCredentials",
+          "startLine": 14,
+          "endLine": 34,
+          "params": [
+            "hostUrl",
+            "token"
+          ]
+        },
+        {
+          "name": "runJoinTicketExchange",
+          "startLine": 38,
+          "endLine": 62,
+          "params": [
+            "ticketId"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "persistLanJoinCredentials",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "runJoinTicketExchange",
+          "line": 38,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "ticketIdFromPath",
+          "callee": "String(location.pathname || '').match",
+          "lineNumber": 10
+        },
+        {
+          "caller": "ticketIdFromPath",
+          "callee": "String",
+          "lineNumber": 10
+        },
+        {
+          "caller": "persistLanJoinCredentials",
+          "callee": "String(hostUrl || '')\n    .trim()\n    .replace",
+          "lineNumber": 15
+        },
+        {
+          "caller": "persistLanJoinCredentials",
+          "callee": "String(hostUrl || '')\n    .trim",
+          "lineNumber": 15
+        },
+        {
+          "caller": "persistLanJoinCredentials",
+          "callee": "String",
+          "lineNumber": 15
+        },
+        {
+          "caller": "persistLanJoinCredentials",
+          "callee": "String(token || '').trim",
+          "lineNumber": 18
+        },
+        {
+          "caller": "persistLanJoinCredentials",
+          "callee": "String",
+          "lineNumber": 18
+        },
+        {
+          "caller": "persistLanJoinCredentials",
+          "callee": "localStorage.setItem",
+          "lineNumber": 21
+        },
+        {
+          "caller": "persistLanJoinCredentials",
+          "callee": "localStorage.setItem",
+          "lineNumber": 26
+        },
+        {
+          "caller": "persistLanJoinCredentials",
+          "callee": "localStorage.setItem",
+          "lineNumber": 31
+        },
+        {
+          "caller": "persistLanJoinCredentials",
+          "callee": "JSON.stringify",
+          "lineNumber": 31
+        },
+        {
+          "caller": "runJoinTicketExchange",
+          "callee": "setTimeout",
+          "lineNumber": 40
+        },
+        {
+          "caller": "runJoinTicketExchange",
+          "callee": "ctrl.abort",
+          "lineNumber": 40
+        },
+        {
+          "caller": "runJoinTicketExchange",
+          "callee": "fetch",
+          "lineNumber": 43
+        },
+        {
+          "caller": "runJoinTicketExchange",
+          "callee": "JSON.stringify",
+          "lineNumber": 46
+        },
+        {
+          "caller": "runJoinTicketExchange",
+          "callee": "clearTimeout",
+          "lineNumber": 50
+        },
+        {
+          "caller": "runJoinTicketExchange",
+          "callee": "res.json",
+          "lineNumber": 53
+        },
+        {
+          "caller": "runJoinTicketExchange",
+          "callee": "resolveLanJoinHostUrl",
+          "lineNumber": 55
+        },
+        {
+          "caller": "runJoinTicketExchange",
+          "callee": "persistLanJoinCredentials",
+          "lineNumber": 57
+        },
+        {
+          "caller": "runJoinTicketExchange",
+          "callee": "params.set",
+          "lineNumber": 59
+        },
+        {
+          "caller": "runJoinTicketExchange",
+          "callee": "history.replaceState",
+          "lineNumber": 60
+        },
+        {
+          "caller": "runJoinTicketExchange",
+          "callee": "location.replace",
+          "lineNumber": 61
+        },
+        {
+          "caller": "runJoinTicketExchange",
+          "callee": "params.toString",
+          "lineNumber": 61
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 2,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/lan-join-link.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 346,
+      "nonEmptyLines": 321,
+      "functions": [
+        {
+          "name": "resolveLiveSyncRoomIdFromSala",
+          "startLine": 18,
+          "endLine": 26,
+          "params": [
+            "salaOrRoom"
+          ]
+        },
+        {
+          "name": "liveSyncRoomLabel",
+          "startLine": 29,
+          "endLine": 33,
+          "params": [
+            "roomId"
+          ]
+        },
+        {
+          "name": "lanClinicalDirectoryPullRoomIds",
+          "startLine": 40,
+          "endLine": 49,
+          "params": []
+        },
+        {
+          "name": "resolveLanJoinHostUrl",
+          "startLine": 52,
+          "endLine": 73,
+          "params": [
+            "fromServer",
+            "pageOrigin"
+          ]
+        },
+        {
+          "name": "buildTeamHash",
+          "startLine": 80,
+          "endLine": 93,
+          "params": [
+            "teamCode"
+          ]
+        },
+        {
+          "name": "appendTeamHashToUrl",
+          "startLine": 96,
+          "endLine": 100,
+          "params": [
+            "url",
+            "th"
+          ]
+        },
+        {
+          "name": "buildLanJoinUrls",
+          "startLine": 107,
+          "endLine": 119,
+          "params": [
+            "hostUrl",
+            "ticketId",
+            "teamCode"
+          ]
+        },
+        {
+          "name": "buildPermanentMobileJoinUrl",
+          "startLine": 126,
+          "endLine": 137,
+          "params": [
+            "hostUrl",
+            "teamCode"
+          ]
+        },
+        {
+          "name": "parseLanJoinQuery",
+          "startLine": 143,
+          "endLine": 156,
+          "params": [
+            "search",
+            "origin"
+          ]
+        },
+        {
+          "name": "hostFromUrl",
+          "startLine": 158,
+          "endLine": 160,
+          "params": [
+            "u"
+          ]
+        },
+        {
+          "name": "emptyInviteParse",
+          "startLine": 162,
+          "endLine": 172,
+          "params": []
+        },
+        {
+          "name": "isBareLanHostBaseUrl",
+          "startLine": 175,
+          "endLine": 185,
+          "params": [
+            "url"
+          ]
+        },
+        {
+          "name": "extractShiftPinFromPaste",
+          "startLine": 188,
+          "endLine": 193,
+          "params": [
+            "raw"
+          ]
+        },
+        {
+          "name": "parseBareHostFromText",
+          "startLine": 195,
+          "endLine": 215,
+          "params": [
+            "text"
+          ]
+        },
+        {
+          "name": "parseLanInviteInput",
+          "startLine": 223,
+          "endLine": 336,
+          "params": [
+            "raw"
+          ]
+        },
+        {
+          "name": "isLanSalaInvitePaste",
+          "startLine": 339,
+          "endLine": 346,
+          "params": [
+            "raw"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "LIVE_SYNC_SALA_DEFS",
+          "line": 8,
+          "isDefault": false
+        },
+        {
+          "name": "resolveLiveSyncRoomIdFromSala",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "liveSyncRoomLabel",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "lanClinicalDirectoryPullRoomIds",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "resolveLanJoinHostUrl",
+          "line": 52,
+          "isDefault": false
+        },
+        {
+          "name": "buildTeamHash",
+          "line": 80,
+          "isDefault": false
+        },
+        {
+          "name": "buildLanJoinUrls",
+          "line": 107,
+          "isDefault": false
+        },
+        {
+          "name": "buildPermanentMobileJoinUrl",
+          "line": 126,
+          "isDefault": false
+        },
+        {
+          "name": "parseLanJoinQuery",
+          "line": 143,
+          "isDefault": false
+        },
+        {
+          "name": "isBareLanHostBaseUrl",
+          "line": 175,
+          "isDefault": false
+        },
+        {
+          "name": "extractShiftPinFromPaste",
+          "line": 188,
+          "isDefault": false
+        },
+        {
+          "name": "parseLanInviteInput",
+          "line": 223,
+          "isDefault": false
+        },
+        {
+          "name": "isLanSalaInvitePaste",
+          "line": 339,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "resolveLiveSyncRoomIdFromSala",
+          "callee": "String(salaOrRoom || '').trim",
+          "lineNumber": 19
+        },
+        {
+          "caller": "resolveLiveSyncRoomIdFromSala",
+          "callee": "String",
+          "lineNumber": 19
+        },
+        {
+          "caller": "resolveLiveSyncRoomIdFromSala",
+          "callee": "raw.toLowerCase",
+          "lineNumber": 21
+        },
+        {
+          "caller": "resolveLiveSyncRoomIdFromSala",
+          "callee": "LIVE_SYNC_SALA_DEFS.find",
+          "lineNumber": 22
+        },
+        {
+          "caller": "liveSyncRoomLabel",
+          "callee": "String(roomId || '').trim",
+          "lineNumber": 30
+        },
+        {
+          "caller": "liveSyncRoomLabel",
+          "callee": "String",
+          "lineNumber": 30
+        },
+        {
+          "caller": "liveSyncRoomLabel",
+          "callee": "LIVE_SYNC_SALA_DEFS.find",
+          "lineNumber": 31
+        },
+        {
+          "caller": "lanClinicalDirectoryPullRoomIds",
+          "callee": "String(opts.activeRoomId || '').trim",
+          "lineNumber": 42
+        },
+        {
+          "caller": "lanClinicalDirectoryPullRoomIds",
+          "callee": "String",
+          "lineNumber": 42
+        },
+        {
+          "caller": "lanClinicalDirectoryPullRoomIds",
+          "callee": "LIVE_SYNC_SALA_DEFS.map((d) => String(d.id || '').trim()).filter",
+          "lineNumber": 45
+        },
+        {
+          "caller": "lanClinicalDirectoryPullRoomIds",
+          "callee": "LIVE_SYNC_SALA_DEFS.map",
+          "lineNumber": 45
+        },
+        {
+          "caller": "lanClinicalDirectoryPullRoomIds",
+          "callee": "String(d.id || '').trim",
+          "lineNumber": 45
+        },
+        {
+          "caller": "lanClinicalDirectoryPullRoomIds",
+          "callee": "String",
+          "lineNumber": 45
+        },
+        {
+          "caller": "lanClinicalDirectoryPullRoomIds",
+          "callee": "String(opts.activeRoomId || '').trim",
+          "lineNumber": 46
+        },
+        {
+          "caller": "lanClinicalDirectoryPullRoomIds",
+          "callee": "String",
+          "lineNumber": 46
+        },
+        {
+          "caller": "lanClinicalDirectoryPullRoomIds",
+          "callee": "ids.includes",
+          "lineNumber": 47
+        },
+        {
+          "caller": "resolveLanJoinHostUrl",
+          "callee": "String(fromServer || '').trim",
+          "lineNumber": 54
+        },
+        {
+          "caller": "resolveLanJoinHostUrl",
+          "callee": "String",
+          "lineNumber": 54
+        },
+        {
+          "caller": "resolveLanJoinHostUrl",
+          "callee": "/^(localhost|127\\.0\\.0\\.1)$/i.test",
+          "lineNumber": 55
+        },
+        {
+          "caller": "resolveLanJoinHostUrl",
+          "callee": "String(pageOrigin || '').trim",
+          "lineNumber": 61
+        },
+        {
+          "caller": "resolveLanJoinHostUrl",
+          "callee": "String",
+          "lineNumber": 61
+        },
+        {
+          "caller": "resolveLanJoinHostUrl",
+          "callee": "/^(localhost|127\\.0\\.0\\.1)$/i.test",
+          "lineNumber": 65
+        },
+        {
+          "caller": "buildTeamHash",
+          "callee": "String",
+          "lineNumber": 81
+        },
+        {
+          "caller": "buildTeamHash",
+          "callee": "new TextEncoder().encode",
+          "lineNumber": 84
+        },
+        {
+          "caller": "buildTeamHash",
+          "callee": "crypto.subtle.digest",
+          "lineNumber": 85
+        },
+        {
+          "caller": "buildTeamHash",
+          "callee": "Array.from(new Uint8Array(hash))\n      .map((b) => b.toString(16).padStart(2, '0'))\n      .join",
+          "lineNumber": 86
+        },
+        {
+          "caller": "buildTeamHash",
+          "callee": "Array.from(new Uint8Array(hash))\n      .map",
+          "lineNumber": 86
+        },
+        {
+          "caller": "buildTeamHash",
+          "callee": "Array.from",
+          "lineNumber": 86
+        },
+        {
+          "caller": "buildTeamHash",
+          "callee": "b.toString(16).padStart",
+          "lineNumber": 87
+        },
+        {
+          "caller": "buildTeamHash",
+          "callee": "b.toString",
+          "lineNumber": 87
+        },
+        {
+          "caller": "buildTeamHash",
+          "callee": "hex.slice",
+          "lineNumber": 89
+        },
+        {
+          "caller": "appendTeamHashToUrl",
+          "callee": "url.includes",
+          "lineNumber": 98
+        },
+        {
+          "caller": "appendTeamHashToUrl",
+          "callee": "encodeURIComponent",
+          "lineNumber": 99
+        },
+        {
+          "caller": "buildLanJoinUrls",
+          "callee": "String(hostUrl || '')\n    .trim()\n    .replace",
+          "lineNumber": 108
+        },
+        {
+          "caller": "buildLanJoinUrls",
+          "callee": "String(hostUrl || '')\n    .trim",
+          "lineNumber": 108
+        },
+        {
+          "caller": "buildLanJoinUrls",
+          "callee": "String",
+          "lineNumber": 108
+        },
+        {
+          "caller": "buildLanJoinUrls",
+          "callee": "encodeURIComponent",
+          "lineNumber": 111
+        },
+        {
+          "caller": "buildLanJoinUrls",
+          "callee": "String(ticketId || '').trim",
+          "lineNumber": 111
+        },
+        {
+          "caller": "buildLanJoinUrls",
+          "callee": "String",
+          "lineNumber": 111
+        },
+        {
+          "caller": "buildLanJoinUrls",
+          "callee": "buildTeamHash",
+          "lineNumber": 112
+        },
+        {
+          "caller": "buildLanJoinUrls",
+          "callee": "String(teamCode).trim",
+          "lineNumber": 112
+        },
+        {
+          "caller": "buildLanJoinUrls",
+          "callee": "String",
+          "lineNumber": 112
+        },
+        {
+          "caller": "buildLanJoinUrls",
+          "callee": "appendTeamHashToUrl",
+          "lineNumber": 114
+        },
+        {
+          "caller": "buildPermanentMobileJoinUrl",
+          "callee": "String(hostUrl || '')\n    .trim()\n    .replace",
+          "lineNumber": 127
+        },
+        {
+          "caller": "buildPermanentMobileJoinUrl",
+          "callee": "String(hostUrl || '')\n    .trim",
+          "lineNumber": 127
+        },
+        {
+          "caller": "buildPermanentMobileJoinUrl",
+          "callee": "String",
+          "lineNumber": 127
+        },
+        {
+          "caller": "buildPermanentMobileJoinUrl",
+          "callee": "String(teamCode || '').trim",
+          "lineNumber": 130
+        },
+        {
+          "caller": "buildPermanentMobileJoinUrl",
+          "callee": "String",
+          "lineNumber": 130
+        },
+        {
+          "caller": "buildPermanentMobileJoinUrl",
+          "callee": "u.searchParams.set",
+          "lineNumber": 133
+        },
+        {
+          "caller": "buildPermanentMobileJoinUrl",
+          "callee": "buildTeamHash",
+          "lineNumber": 134
+        },
+        {
+          "caller": "buildPermanentMobileJoinUrl",
+          "callee": "u.searchParams.set",
+          "lineNumber": 135
+        },
+        {
+          "caller": "buildPermanentMobileJoinUrl",
+          "callee": "u.toString",
+          "lineNumber": 136
+        },
+        {
+          "caller": "parseLanJoinQuery",
+          "callee": "String(search || '').replace",
+          "lineNumber": 144
+        },
+        {
+          "caller": "parseLanJoinQuery",
+          "callee": "String",
+          "lineNumber": 144
+        },
+        {
+          "caller": "parseLanJoinQuery",
+          "callee": "String(params.get('code') || params.get('token') || '').trim",
+          "lineNumber": 145
+        },
+        {
+          "caller": "parseLanJoinQuery",
+          "callee": "String",
+          "lineNumber": 145
+        },
+        {
+          "caller": "parseLanJoinQuery",
+          "callee": "params.get",
+          "lineNumber": 145
+        },
+        {
+          "caller": "parseLanJoinQuery",
+          "callee": "params.get",
+          "lineNumber": 145
+        },
+        {
+          "caller": "parseLanJoinQuery",
+          "callee": "String(params.get('room') || '').trim",
+          "lineNumber": 146
+        },
+        {
+          "caller": "parseLanJoinQuery",
+          "callee": "String",
+          "lineNumber": 146
+        },
+        {
+          "caller": "parseLanJoinQuery",
+          "callee": "params.get",
+          "lineNumber": 146
+        },
+        {
+          "caller": "parseLanJoinQuery",
+          "callee": "String(params.get('sala') || '').trim",
+          "lineNumber": 147
+        },
+        {
+          "caller": "parseLanJoinQuery",
+          "callee": "String",
+          "lineNumber": 147
+        },
+        {
+          "caller": "parseLanJoinQuery",
+          "callee": "params.get",
+          "lineNumber": 147
+        },
+        {
+          "caller": "parseLanJoinQuery",
+          "callee": "resolveLiveSyncRoomIdFromSala",
+          "lineNumber": 149
+        },
+        {
+          "caller": "parseLanJoinQuery",
+          "callee": "resolveLiveSyncRoomIdFromSala",
+          "lineNumber": 150
+        },
+        {
+          "caller": "parseLanJoinQuery",
+          "callee": "String(params.get('host') || '').trim().replace",
+          "lineNumber": 152
+        },
+        {
+          "caller": "parseLanJoinQuery",
+          "callee": "String(params.get('host') || '').trim",
+          "lineNumber": 152
+        },
+        {
+          "caller": "parseLanJoinQuery",
+          "callee": "String",
+          "lineNumber": 152
+        },
+        {
+          "caller": "parseLanJoinQuery",
+          "callee": "params.get",
+          "lineNumber": 152
+        },
+        {
+          "caller": "parseLanJoinQuery",
+          "callee": "resolveLanJoinHostUrl",
+          "lineNumber": 153
+        },
+        {
+          "caller": "isBareLanHostBaseUrl",
+          "callee": "u.pathname.replace",
+          "lineNumber": 178
+        },
+        {
+          "caller": "isBareLanHostBaseUrl",
+          "callee": "/^\\/api\\/lan\\/v1\\/?$/i.test",
+          "lineNumber": 179
+        },
+        {
+          "caller": "extractShiftPinFromPaste",
+          "callee": "String",
+          "lineNumber": 189
+        },
+        {
+          "caller": "extractShiftPinFromPaste",
+          "callee": "text.replace",
+          "lineNumber": 190
+        },
+        {
+          "caller": "extractShiftPinFromPaste",
+          "callee": "withoutUrls.match",
+          "lineNumber": 191
+        },
+        {
+          "caller": "parseBareHostFromText",
+          "callee": "text.match",
+          "lineNumber": 196
+        },
+        {
+          "caller": "parseBareHostFromText",
+          "callee": "isBareLanHostBaseUrl",
+          "lineNumber": 200
+        },
+        {
+          "caller": "parseBareHostFromText",
+          "callee": "hostFromUrl",
+          "lineNumber": 201
+        },
+        {
+          "caller": "parseBareHostFromText",
+          "callee": "extractShiftPinFromPaste",
+          "lineNumber": 201
+        },
+        {
+          "caller": "parseBareHostFromText",
+          "callee": "text.match",
+          "lineNumber": 205
+        },
+        {
+          "caller": "parseBareHostFromText",
+          "callee": "extractShiftPinFromPaste",
+          "lineNumber": 211
+        },
+        {
+          "caller": "parseLanInviteInput",
+          "callee": "String(raw || '').trim",
+          "lineNumber": 224
+        },
+        {
+          "caller": "parseLanInviteInput",
+          "callee": "String",
+          "lineNumber": 224
+        },
+        {
+          "caller": "parseLanInviteInput",
+          "callee": "emptyInviteParse",
+          "lineNumber": 226
+        },
+        {
+          "caller": "parseLanInviteInput",
+          "callee": "/^\\d{6}$/.test",
+          "lineNumber": 229
+        },
+        {
+          "caller": "parseLanInviteInput",
+          "callee": "emptyInviteParse",
+          "lineNumber": 230
+        },
+        {
+          "caller": "parseLanInviteInput",
+          "callee": "text.match",
+          "lineNumber": 233
+        },
+        {
+          "caller": "parseLanInviteInput",
+          "callee": "hostFromUrl",
+          "lineNumber": 237
+        },
+        {
+          "caller": "parseLanInviteInput",
+          "callee": "u.pathname.match",
+          "lineNumber": 238
+        },
+        {
+          "caller": "parseLanInviteInput",
+          "callee": "extractShiftPinFromPaste",
+          "lineNumber": 246
+        },
+        {
+          "caller": "parseLanInviteInput",
+          "callee": "/\\/mobile\\/?$/i.test",
+          "lineNumber": 251
+        },
+        {
+          "caller": "parseLanInviteInput",
+          "callee": "parseLanJoinQuery",
+          "lineNumber": 252
+        },
+        {
+          "caller": "parseLanInviteInput",
+          "callee": "search.includes",
+          "lineNumber": 265
+        },
+        {
+          "caller": "parseLanInviteInput",
+          "callee": "search.includes",
+          "lineNumber": 265
+        },
+        {
+          "caller": "parseLanInviteInput",
+          "callee": "String(new URLSearchParams(search).get('room') || '').trim",
+          "lineNumber": 266
+        },
+        {
+          "caller": "parseLanInviteInput",
+          "callee": "String",
+          "lineNumber": 266
+        },
+        {
+          "caller": "parseLanInviteInput",
+          "callee": "new URLSearchParams(search).get",
+          "lineNumber": 266
+        },
+        {
+          "caller": "parseLanInviteInput",
+          "callee": "isBareLanHostBaseUrl",
+          "lineNumber": 277
+        },
+        {
+          "caller": "parseLanInviteInput",
+          "callee": "extractShiftPinFromPaste",
+          "lineNumber": 284
+        },
+        {
+          "caller": "parseLanInviteInput",
+          "callee": "parseBareHostFromText",
+          "lineNumber": 293
+        },
+        {
+          "caller": "parseLanInviteInput",
+          "callee": "text.match",
+          "lineNumber": 306
+        },
+        {
+          "caller": "parseLanInviteInput",
+          "callee": "extractShiftPinFromPaste",
+          "lineNumber": 314
+        },
+        {
+          "caller": "parseLanInviteInput",
+          "callee": "text.includes",
+          "lineNumber": 319
+        },
+        {
+          "caller": "parseLanInviteInput",
+          "callee": "text.includes",
+          "lineNumber": 319
+        },
+        {
+          "caller": "parseLanInviteInput",
+          "callee": "text.includes",
+          "lineNumber": 319
+        },
+        {
+          "caller": "parseLanInviteInput",
+          "callee": "text.includes",
+          "lineNumber": 320
+        },
+        {
+          "caller": "parseLanInviteInput",
+          "callee": "text.slice",
+          "lineNumber": 320
+        },
+        {
+          "caller": "parseLanInviteInput",
+          "callee": "text.indexOf",
+          "lineNumber": 320
+        },
+        {
+          "caller": "parseLanInviteInput",
+          "callee": "text.startsWith",
+          "lineNumber": 320
+        },
+        {
+          "caller": "parseLanInviteInput",
+          "callee": "parseLanJoinQuery",
+          "lineNumber": 321
+        },
+        {
+          "caller": "parseLanInviteInput",
+          "callee": "emptyInviteParse",
+          "lineNumber": 335
+        },
+        {
+          "caller": "isLanSalaInvitePaste",
+          "callee": "String(raw || '').trim",
+          "lineNumber": 340
+        },
+        {
+          "caller": "isLanSalaInvitePaste",
+          "callee": "String",
+          "lineNumber": 340
+        },
+        {
+          "caller": "isLanSalaInvitePaste",
+          "callee": "/https?:\\/\\//i.test",
+          "lineNumber": 342
+        },
+        {
+          "caller": "isLanSalaInvitePaste",
+          "callee": "/\\/join\\//i.test",
+          "lineNumber": 342
+        },
+        {
+          "caller": "isLanSalaInvitePaste",
+          "callee": "JOIN_TICKET_PATH_RE.test",
+          "lineNumber": 343
+        },
+        {
+          "caller": "isLanSalaInvitePaste",
+          "callee": "parseLanInviteInput",
+          "lineNumber": 344
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 13,
+        "functionCount": 16,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/lan-join-link.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 192,
+      "nonEmptyLines": 169,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/lan-lww-toast.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 54,
+      "nonEmptyLines": 48,
+      "functions": [
+        {
+          "name": "toastKey",
+          "startLine": 7,
+          "endLine": 9,
+          "params": [
+            "entityType",
+            "entityId"
+          ]
+        },
+        {
+          "name": "resetLwwToastDebounceForTests",
+          "startLine": 11,
+          "endLine": 13,
+          "params": []
+        },
+        {
+          "name": "shouldShowLwwToast",
+          "startLine": 16,
+          "endLine": 25,
+          "params": [
+            "entityType",
+            "entityId"
+          ]
+        },
+        {
+          "name": "lwwToastMessage",
+          "startLine": 27,
+          "endLine": 39,
+          "params": [
+            "entityType"
+          ]
+        },
+        {
+          "name": "notifyLwwOverwrite",
+          "startLine": 45,
+          "endLine": 54,
+          "params": [
+            "runtime"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "resetLwwToastDebounceForTests",
+          "line": 11,
+          "isDefault": false
+        },
+        {
+          "name": "shouldShowLwwToast",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "notifyLwwOverwrite",
+          "line": 45,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "resetLwwToastDebounceForTests",
+          "callee": "recentToasts.clear",
+          "lineNumber": 12
+        },
+        {
+          "caller": "shouldShowLwwToast",
+          "callee": "toastKey",
+          "lineNumber": 17
+        },
+        {
+          "caller": "shouldShowLwwToast",
+          "callee": "Date.now",
+          "lineNumber": 18
+        },
+        {
+          "caller": "shouldShowLwwToast",
+          "callee": "recentToasts.get",
+          "lineNumber": 19
+        },
+        {
+          "caller": "shouldShowLwwToast",
+          "callee": "recentToasts.set",
+          "lineNumber": 23
+        },
+        {
+          "caller": "lwwToastMessage",
+          "callee": "String(entityType || '').toLowerCase",
+          "lineNumber": 28
+        },
+        {
+          "caller": "lwwToastMessage",
+          "callee": "String",
+          "lineNumber": 28
+        },
+        {
+          "caller": "notifyLwwOverwrite",
+          "callee": "storage.getLanLwwOverwriteToast",
+          "lineNumber": 47
+        },
+        {
+          "caller": "notifyLwwOverwrite",
+          "callee": "String(entityType || '').toLowerCase",
+          "lineNumber": 48
+        },
+        {
+          "caller": "notifyLwwOverwrite",
+          "callee": "String",
+          "lineNumber": 48
+        },
+        {
+          "caller": "notifyLwwOverwrite",
+          "callee": "Array.isArray",
+          "lineNumber": 49
+        },
+        {
+          "caller": "notifyLwwOverwrite",
+          "callee": "shouldShowLwwToast",
+          "lineNumber": 52
+        },
+        {
+          "caller": "notifyLwwOverwrite",
+          "callee": "runtime.showToast",
+          "lineNumber": 53
+        },
+        {
+          "caller": "notifyLwwOverwrite",
+          "callee": "lwwToastMessage",
+          "lineNumber": 53
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 3,
+        "functionCount": 5,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/lan-lww-toast.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 9,
+      "nonEmptyLines": 8,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/lan-merge-registry.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 40,
+      "nonEmptyLines": 36,
+      "functions": [
+        {
+          "name": "mergeLiveSyncFullBundles",
+          "startLine": 30,
+          "endLine": 38,
+          "params": [
+            "sources"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "mergeLiveSyncFullBundles",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "domainMergers",
+          "line": 40,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "agendaTodosPatients",
+          "callee": "mergeLiveSyncBundles",
+          "lineNumber": 16
+        },
+        {
+          "caller": "patientEntries",
+          "callee": "mergeLanPatientEntrySources",
+          "lineNumber": 19
+        },
+        {
+          "caller": "clinicalOps",
+          "callee": "mergeClinicalOpsFromSources",
+          "lineNumber": 22
+        },
+        {
+          "caller": "mergeLiveSyncFullBundles",
+          "callee": "Array.isArray",
+          "lineNumber": 31
+        },
+        {
+          "caller": "mergeLiveSyncFullBundles",
+          "callee": "domainMergers.agendaTodosPatients",
+          "lineNumber": 32
+        },
+        {
+          "caller": "mergeLiveSyncFullBundles",
+          "callee": "domainMergers.patientEntries",
+          "lineNumber": 33
+        },
+        {
+          "caller": "mergeLiveSyncFullBundles",
+          "callee": "filterEntriesByPatientDeletes",
+          "lineNumber": 34
+        },
+        {
+          "caller": "mergeLiveSyncFullBundles",
+          "callee": "attachTodosMapToPatientEntries",
+          "lineNumber": 35
+        },
+        {
+          "caller": "mergeLiveSyncFullBundles",
+          "callee": "domainMergers.clinicalOps",
+          "lineNumber": 36
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/lan-merge-registry.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 153,
+      "nonEmptyLines": 143,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/lan-mutation-registry.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 74,
+      "nonEmptyLines": 65,
+      "functions": [
+        {
+          "name": "createMutationRegistry",
+          "startLine": 13,
+          "endLine": 71,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "createMutationRegistry",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "lanMutationRegistry",
+          "line": 74,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "registerMutationHandler",
+          "callee": "handlers.set",
+          "lineNumber": 34
+        },
+        {
+          "caller": "registerMutationHandler",
+          "callee": "String",
+          "lineNumber": 34
+        },
+        {
+          "caller": "setDomainOutboxKind",
+          "callee": "domainKinds.set",
+          "lineNumber": 38
+        },
+        {
+          "caller": "setDomainOutboxKind",
+          "callee": "String",
+          "lineNumber": 38
+        },
+        {
+          "caller": "isTypedDomain",
+          "callee": "handlers.has",
+          "lineNumber": 42
+        },
+        {
+          "caller": "isTypedDomain",
+          "callee": "String",
+          "lineNumber": 42
+        },
+        {
+          "caller": "dispatchLanMutation",
+          "callee": "isActiveRef",
+          "lineNumber": 46
+        },
+        {
+          "caller": "dispatchLanMutation",
+          "callee": "handlers.get",
+          "lineNumber": 47
+        },
+        {
+          "caller": "dispatchLanMutation",
+          "callee": "String",
+          "lineNumber": 47
+        },
+        {
+          "caller": "dispatchLanMutation",
+          "callee": "handler",
+          "lineNumber": 50
+        },
+        {
+          "caller": "dispatchLanMutation",
+          "callee": "domainKinds.get",
+          "lineNumber": 52
+        },
+        {
+          "caller": "dispatchLanMutation",
+          "callee": "String",
+          "lineNumber": 52
+        },
+        {
+          "caller": "dispatchLanMutation",
+          "callee": "getActiveRoomIdRef",
+          "lineNumber": 54
+        },
+        {
+          "caller": "dispatchLanMutation",
+          "callee": "enqueueOutboxRef",
+          "lineNumber": 55
+        },
+        {
+          "caller": "dispatchLanMutation",
+          "callee": "markUntypedDirtyRef",
+          "lineNumber": 59
+        },
+        {
+          "caller": "dispatchLanMutation",
+          "callee": "scheduleUntypedSafety",
+          "lineNumber": 60
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/lan-network-change.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 93,
+      "nonEmptyLines": 83,
+      "functions": [
+        {
+          "name": "restartLanDiscoveryAfterNetworkChange",
+          "startLine": 18,
+          "endLine": 48,
+          "params": []
+        },
+        {
+          "name": "handleLanNetworkChangedNow",
+          "startLine": 51,
+          "endLine": 79,
+          "params": [
+            "payload"
+          ]
+        },
+        {
+          "name": "handleLanNetworkChanged",
+          "startLine": 82,
+          "endLine": 93,
+          "params": [
+            "payload"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "handleLanNetworkChanged",
+          "line": 82,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "restartLanDiscoveryAfterNetworkChange",
+          "callee": "resumeAutoHostDetect",
+          "lineNumber": 19
+        },
+        {
+          "caller": "restartLanDiscoveryAfterNetworkChange",
+          "callee": "lanNetworkProfile.resetProfile",
+          "lineNumber": 20
+        },
+        {
+          "caller": "restartLanDiscoveryAfterNetworkChange",
+          "callee": "import",
+          "lineNumber": 22
+        },
+        {
+          "caller": "restartLanDiscoveryAfterNetworkChange",
+          "callee": "room.resumeAutoHostDetectAndReconnect",
+          "lineNumber": 24
+        },
+        {
+          "caller": "restartLanDiscoveryAfterNetworkChange",
+          "callee": "import",
+          "lineNumber": 27
+        },
+        {
+          "caller": "restartLanDiscoveryAfterNetworkChange",
+          "callee": "panel.stopLanAutoDiscovery",
+          "lineNumber": 28
+        },
+        {
+          "caller": "restartLanDiscoveryAfterNetworkChange",
+          "callee": "panel.startLanAutoDiscovery",
+          "lineNumber": 29
+        },
+        {
+          "caller": "restartLanDiscoveryAfterNetworkChange",
+          "callee": "import",
+          "lineNumber": 31
+        },
+        {
+          "caller": "restartLanDiscoveryAfterNetworkChange",
+          "callee": "transport.initLanHostPlugAndPlay",
+          "lineNumber": 33
+        },
+        {
+          "caller": "restartLanDiscoveryAfterNetworkChange",
+          "callee": "isLanRemoteJoinMode",
+          "lineNumber": 35
+        },
+        {
+          "caller": "restartLanDiscoveryAfterNetworkChange",
+          "callee": "import",
+          "lineNumber": 36
+        },
+        {
+          "caller": "restartLanDiscoveryAfterNetworkChange",
+          "callee": "pin.tryEasyLanShiftPinConnect",
+          "lineNumber": 38
+        },
+        {
+          "caller": "restartLanDiscoveryAfterNetworkChange",
+          "callee": "transport.tryAutoJoinPreferredLanHost",
+          "lineNumber": 42
+        },
+        {
+          "caller": "restartLanDiscoveryAfterNetworkChange",
+          "callee": "transport.ensureLanElectronHostReady",
+          "lineNumber": 45
+        },
+        {
+          "caller": "handleLanNetworkChangedNow",
+          "callee": "isLanElectronDesktop",
+          "lineNumber": 52
+        },
+        {
+          "caller": "handleLanNetworkChangedNow",
+          "callee": "isClinicalLocalOnlyMode",
+          "lineNumber": 53
+        },
+        {
+          "caller": "handleLanNetworkChangedNow",
+          "callee": "readRpcSettings",
+          "lineNumber": 53
+        },
+        {
+          "caller": "handleLanNetworkChangedNow",
+          "callee": "resetShiftPinBackoff",
+          "lineNumber": 54
+        },
+        {
+          "caller": "handleLanNetworkChangedNow",
+          "callee": "storage.getLanConfig",
+          "lineNumber": 56
+        },
+        {
+          "caller": "handleLanNetworkChangedNow",
+          "callee": "applyLanNetworkRoamingWithFingerprint",
+          "lineNumber": 57
+        },
+        {
+          "caller": "handleLanNetworkChangedNow",
+          "callee": "import",
+          "lineNumber": 63
+        },
+        {
+          "caller": "handleLanNetworkChangedNow",
+          "callee": "transport.persistLanClientConfig",
+          "lineNumber": 65
+        },
+        {
+          "caller": "handleLanNetworkChangedNow",
+          "callee": "applyLanNetworkRoaming",
+          "lineNumber": 70
+        },
+        {
+          "caller": "handleLanNetworkChangedNow",
+          "callee": "isLanRemoteJoinMode",
+          "lineNumber": 71
+        },
+        {
+          "caller": "handleLanNetworkChangedNow",
+          "callee": "String(payload?.candidateBaseUrl || '').trim",
+          "lineNumber": 72
+        },
+        {
+          "caller": "handleLanNetworkChangedNow",
+          "callee": "String",
+          "lineNumber": 72
+        },
+        {
+          "caller": "handleLanNetworkChangedNow",
+          "callee": "recordWardHostUrl",
+          "lineNumber": 74
+        },
+        {
+          "caller": "handleLanNetworkChangedNow",
+          "callee": "syncWardHostUrlToMainFile",
+          "lineNumber": 75
+        },
+        {
+          "caller": "handleLanNetworkChangedNow",
+          "callee": "restartLanDiscoveryAfterNetworkChange",
+          "lineNumber": 78
+        },
+        {
+          "caller": "handleLanNetworkChanged",
+          "callee": "isLanElectronDesktop",
+          "lineNumber": 83
+        },
+        {
+          "caller": "handleLanNetworkChanged",
+          "callee": "isClinicalLocalOnlyMode",
+          "lineNumber": 84
+        },
+        {
+          "caller": "handleLanNetworkChanged",
+          "callee": "readRpcSettings",
+          "lineNumber": 84
+        },
+        {
+          "caller": "handleLanNetworkChanged",
+          "callee": "setTimeout",
+          "lineNumber": 87
+        },
+        {
+          "caller": "handleLanNetworkChanged",
+          "callee": "handleLanNetworkChangedNow",
+          "lineNumber": 91
+        }
+      ],
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 1,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/lan-network-profile.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 167,
+      "nonEmptyLines": 151,
+      "functions": [
+        {
+          "name": "createNetworkProfile",
+          "startLine": 19,
+          "endLine": 164,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "createNetworkProfile",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "lanNetworkProfile",
+          "line": 167,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "notify",
+          "callee": "cb",
+          "lineNumber": 30
+        },
+        {
+          "caller": "transition",
+          "callee": "notify",
+          "lineNumber": 40
+        },
+        {
+          "caller": "recordPingSuccess",
+          "callee": "Number",
+          "lineNumber": 45
+        },
+        {
+          "caller": "recordPingSuccess",
+          "callee": "transition",
+          "lineNumber": 52
+        },
+        {
+          "caller": "recordPingSuccess",
+          "callee": "transition",
+          "lineNumber": 58
+        },
+        {
+          "caller": "recordPingFailure",
+          "callee": "transition",
+          "lineNumber": 74
+        },
+        {
+          "caller": "recordRttSample",
+          "callee": "recordPingSuccess",
+          "lineNumber": 80
+        },
+        {
+          "caller": "subscribeNetworkProfile",
+          "callee": "subscribers.add",
+          "lineNumber": 92
+        },
+        {
+          "caller": "subscribeNetworkProfile",
+          "callee": "subscribers.delete",
+          "lineNumber": 93
+        },
+        {
+          "caller": "resetProfile",
+          "callee": "reconnectResolve",
+          "lineNumber": 103
+        },
+        {
+          "caller": "userInitiatedReconnect",
+          "callee": "resolve",
+          "lineNumber": 119
+        },
+        {
+          "caller": "_simulatePingResult",
+          "callee": "Number",
+          "lineNumber": 137
+        },
+        {
+          "caller": "_simulatePingResult",
+          "callee": "notify",
+          "lineNumber": 140
+        },
+        {
+          "caller": "_simulatePingResult",
+          "callee": "reconnectResolve",
+          "lineNumber": 142
+        },
+        {
+          "caller": "_simulatePingResult",
+          "callee": "reconnectResolve",
+          "lineNumber": 147
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/lan-network-roam.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 79,
+      "nonEmptyLines": 67,
+      "functions": [
+        {
+          "name": "applyLanNetworkRoaming",
+          "startLine": 19,
+          "endLine": 54,
+          "params": []
+        },
+        {
+          "name": "applyLanNetworkRoamingWithFingerprint",
+          "startLine": 60,
+          "endLine": 79,
+          "params": [
+            "payload"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "isHostOnCurrentSubnets",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "applyLanNetworkRoaming",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "applyLanNetworkRoamingWithFingerprint",
+          "line": 60,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "applyLanNetworkRoaming",
+          "callee": "Array.isArray",
+          "lineNumber": 20
+        },
+        {
+          "caller": "applyLanNetworkRoaming",
+          "callee": "normalizeLanHostBase",
+          "lineNumber": 21
+        },
+        {
+          "caller": "applyLanNetworkRoaming",
+          "callee": "storage.getLanConfig",
+          "lineNumber": 22
+        },
+        {
+          "caller": "applyLanNetworkRoaming",
+          "callee": "String(cfg.teamCode || '').trim",
+          "lineNumber": 23
+        },
+        {
+          "caller": "applyLanNetworkRoaming",
+          "callee": "String",
+          "lineNumber": 23
+        },
+        {
+          "caller": "applyLanNetworkRoaming",
+          "callee": "storage.getLanUiRole",
+          "lineNumber": 24
+        },
+        {
+          "caller": "applyLanNetworkRoaming",
+          "callee": "getPinnedHostUrl",
+          "lineNumber": 25
+        },
+        {
+          "caller": "applyLanNetworkRoaming",
+          "callee": "isHostOnCurrentSubnets",
+          "lineNumber": 27
+        },
+        {
+          "caller": "applyLanNetworkRoaming",
+          "callee": "isPinnedHostLocal",
+          "lineNumber": 27
+        },
+        {
+          "caller": "applyLanNetworkRoaming",
+          "callee": "clearPinnedHostUrl",
+          "lineNumber": 28
+        },
+        {
+          "caller": "applyLanNetworkRoaming",
+          "callee": "normalizeLanHostBase",
+          "lineNumber": 32
+        },
+        {
+          "caller": "applyLanNetworkRoaming",
+          "callee": "storage.saveLanConfig",
+          "lineNumber": 34
+        },
+        {
+          "caller": "applyLanNetworkRoaming",
+          "callee": "lanClient.configure",
+          "lineNumber": 35
+        },
+        {
+          "caller": "applyLanNetworkRoaming",
+          "callee": "lanClient.disconnect",
+          "lineNumber": 37
+        },
+        {
+          "caller": "applyLanNetworkRoaming",
+          "callee": "lanClient.connectSyncChannel",
+          "lineNumber": 38
+        },
+        {
+          "caller": "applyLanNetworkRoaming",
+          "callee": "normalizeLanHostBase",
+          "lineNumber": 44
+        },
+        {
+          "caller": "applyLanNetworkRoaming",
+          "callee": "isHostOnCurrentSubnets",
+          "lineNumber": 45
+        },
+        {
+          "caller": "applyLanNetworkRoaming",
+          "callee": "storage.saveLanConfig",
+          "lineNumber": 46
+        },
+        {
+          "caller": "applyLanNetworkRoaming",
+          "callee": "lanClient.disconnect",
+          "lineNumber": 48
+        },
+        {
+          "caller": "applyLanNetworkRoamingWithFingerprint",
+          "callee": "getPinnedFingerprint",
+          "lineNumber": 61
+        },
+        {
+          "caller": "applyLanNetworkRoamingWithFingerprint",
+          "callee": "findByFingerprint",
+          "lineNumber": 64
+        },
+        {
+          "caller": "applyLanNetworkRoamingWithFingerprint",
+          "callee": "normalizeLanHostBase",
+          "lineNumber": 67
+        },
+        {
+          "caller": "applyLanNetworkRoamingWithFingerprint",
+          "callee": "String",
+          "lineNumber": 67
+        },
+        {
+          "caller": "applyLanNetworkRoamingWithFingerprint",
+          "callee": "normalizeLanHostBase",
+          "lineNumber": 68
+        },
+        {
+          "caller": "applyLanNetworkRoamingWithFingerprint",
+          "callee": "pingLanHostUrl",
+          "lineNumber": 73
+        },
+        {
+          "caller": "applyLanNetworkRoamingWithFingerprint",
+          "callee": "String",
+          "lineNumber": 73
+        },
+        {
+          "caller": "applyLanNetworkRoamingWithFingerprint",
+          "callee": "pingFn",
+          "lineNumber": 75
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/lan-network-roam.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 116,
+      "nonEmptyLines": 105,
+      "functions": [
+        {
+          "name": "mockLocalStorage",
+          "startLine": 14,
+          "endLine": 29,
+          "params": []
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/lan-patient-merge.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 475,
+      "nonEmptyLines": 443,
+      "functions": [
+        {
+          "name": "isDemoPatientId",
+          "startLine": 12,
+          "endLine": 14,
+          "params": [
+            "patientId"
+          ]
+        },
+        {
+          "name": "entryMatchKey",
+          "startLine": 17,
+          "endLine": 21,
+          "params": [
+            "entry"
+          ]
+        },
+        {
+          "name": "parseDateDMY",
+          "startLine": 23,
+          "endLine": 31,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "docTimestamp",
+          "startLine": 33,
+          "endLine": 39,
+          "params": [
+            "fecha",
+            "hora"
+          ]
+        },
+        {
+          "name": "labSetTimestamp",
+          "startLine": 42,
+          "endLine": 48,
+          "params": [
+            "set"
+          ]
+        },
+        {
+          "name": "noteTimestamp",
+          "startLine": 50,
+          "endLine": 54,
+          "params": [
+            "note"
+          ]
+        },
+        {
+          "name": "listadoTimestamp",
+          "startLine": 56,
+          "endLine": 60,
+          "params": [
+            "lst"
+          ]
+        },
+        {
+          "name": "eventualidadesUpdatedAt",
+          "startLine": 63,
+          "endLine": 76,
+          "params": [
+            "store"
+          ]
+        },
+        {
+          "name": "mergeEventualidades",
+          "startLine": 79,
+          "endLine": 113,
+          "params": [
+            "a",
+            "b"
+          ]
+        },
+        {
+          "name": "historiaClinicaUpdatedAt",
+          "startLine": 116,
+          "endLine": 121,
+          "params": [
+            "hc"
+          ]
+        },
+        {
+          "name": "mergeHistoriaClinica",
+          "startLine": 124,
+          "endLine": 142,
+          "params": [
+            "a",
+            "b"
+          ]
+        },
+        {
+          "name": "medRecetaTimestamp",
+          "startLine": 144,
+          "endLine": 148,
+          "params": [
+            "med"
+          ]
+        },
+        {
+          "name": "medPharmTimestamp",
+          "startLine": 150,
+          "endLine": 152,
+          "params": [
+            "profile"
+          ]
+        },
+        {
+          "name": "monitoreoUpdatedAt",
+          "startLine": 158,
+          "endLine": 177,
+          "params": [
+            "monitoreo"
+          ]
+        },
+        {
+          "name": "monitoreoHasLanPayload",
+          "startLine": 180,
+          "endLine": 204,
+          "params": [
+            "monitoreo"
+          ]
+        },
+        {
+          "name": "entryUpdatedAt",
+          "startLine": 207,
+          "endLine": 230,
+          "params": [
+            "entry"
+          ]
+        },
+        {
+          "name": "mergeLabHistorySets",
+          "startLine": 233,
+          "endLine": 248,
+          "params": [
+            "a",
+            "b"
+          ]
+        },
+        {
+          "name": "mergeProblemaLists",
+          "startLine": 250,
+          "endLine": 263,
+          "params": [
+            "aList",
+            "bList"
+          ]
+        },
+        {
+          "name": "mergeListadoProblemas",
+          "startLine": 266,
+          "endLine": 279,
+          "params": [
+            "a",
+            "b"
+          ]
+        },
+        {
+          "name": "pickPatientFields",
+          "startLine": 281,
+          "endLine": 314,
+          "params": [
+            "older",
+            "newer"
+          ]
+        },
+        {
+          "name": "mergePatientEntry",
+          "startLine": 317,
+          "endLine": 388,
+          "params": [
+            "a",
+            "b"
+          ]
+        },
+        {
+          "name": "mergeVpoPayload",
+          "startLine": 391,
+          "endLine": 400,
+          "params": [
+            "a",
+            "b"
+          ]
+        },
+        {
+          "name": "cloneEntry",
+          "startLine": 403,
+          "endLine": 425,
+          "params": [
+            "entry"
+          ]
+        },
+        {
+          "name": "mergeLanPatientEntrySources",
+          "startLine": 431,
+          "endLine": 444,
+          "params": [
+            "sources"
+          ]
+        },
+        {
+          "name": "filterEntriesByPatientDeletes",
+          "startLine": 451,
+          "endLine": 475,
+          "params": [
+            "entries",
+            "patientDeletes"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "isDemoPatientId",
+          "line": 12,
+          "isDefault": false
+        },
+        {
+          "name": "entryMatchKey",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "labSetTimestamp",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "eventualidadesUpdatedAt",
+          "line": 63,
+          "isDefault": false
+        },
+        {
+          "name": "mergeEventualidades",
+          "line": 79,
+          "isDefault": false
+        },
+        {
+          "name": "historiaClinicaUpdatedAt",
+          "line": 116,
+          "isDefault": false
+        },
+        {
+          "name": "mergeHistoriaClinica",
+          "line": 124,
+          "isDefault": false
+        },
+        {
+          "name": "monitoreoUpdatedAt",
+          "line": 158,
+          "isDefault": false
+        },
+        {
+          "name": "entryUpdatedAt",
+          "line": 207,
+          "isDefault": false
+        },
+        {
+          "name": "mergeLabHistorySets",
+          "line": 233,
+          "isDefault": false
+        },
+        {
+          "name": "mergeListadoProblemas",
+          "line": 266,
+          "isDefault": false
+        },
+        {
+          "name": "mergePatientEntry",
+          "line": 317,
+          "isDefault": false
+        },
+        {
+          "name": "cloneEntry",
+          "line": 403,
+          "isDefault": false
+        },
+        {
+          "name": "mergeLanPatientEntrySources",
+          "line": 431,
+          "isDefault": false
+        },
+        {
+          "name": "filterEntriesByPatientDeletes",
+          "line": 451,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "isDemoPatientId",
+          "callee": "String(patientId || '').indexOf",
+          "lineNumber": 13
+        },
+        {
+          "caller": "isDemoPatientId",
+          "callee": "String",
+          "lineNumber": 13
+        },
+        {
+          "caller": "entryMatchKey",
+          "callee": "String(entry?.patient?.registro || '').trim",
+          "lineNumber": 18
+        },
+        {
+          "caller": "entryMatchKey",
+          "callee": "String",
+          "lineNumber": 18
+        },
+        {
+          "caller": "entryMatchKey",
+          "callee": "String",
+          "lineNumber": 20
+        },
+        {
+          "caller": "parseDateDMY",
+          "callee": "String(value || '').trim",
+          "lineNumber": 24
+        },
+        {
+          "caller": "parseDateDMY",
+          "callee": "String",
+          "lineNumber": 24
+        },
+        {
+          "caller": "parseDateDMY",
+          "callee": "t.match",
+          "lineNumber": 25
+        },
+        {
+          "caller": "parseDateDMY",
+          "callee": "parseInt",
+          "lineNumber": 27
+        },
+        {
+          "caller": "parseDateDMY",
+          "callee": "parseInt",
+          "lineNumber": 29
+        },
+        {
+          "caller": "parseDateDMY",
+          "callee": "parseInt",
+          "lineNumber": 29
+        },
+        {
+          "caller": "parseDateDMY",
+          "callee": "isNaN",
+          "lineNumber": 30
+        },
+        {
+          "caller": "parseDateDMY",
+          "callee": "d.getTime",
+          "lineNumber": 30
+        },
+        {
+          "caller": "docTimestamp",
+          "callee": "parseDateDMY",
+          "lineNumber": 34
+        },
+        {
+          "caller": "docTimestamp",
+          "callee": "String(hora || '').trim().match",
+          "lineNumber": 36
+        },
+        {
+          "caller": "docTimestamp",
+          "callee": "String(hora || '').trim",
+          "lineNumber": 36
+        },
+        {
+          "caller": "docTimestamp",
+          "callee": "String",
+          "lineNumber": 36
+        },
+        {
+          "caller": "docTimestamp",
+          "callee": "d.setHours",
+          "lineNumber": 37
+        },
+        {
+          "caller": "docTimestamp",
+          "callee": "parseInt",
+          "lineNumber": 37
+        },
+        {
+          "caller": "docTimestamp",
+          "callee": "parseInt",
+          "lineNumber": 37
+        },
+        {
+          "caller": "docTimestamp",
+          "callee": "d.toISOString",
+          "lineNumber": 38
+        },
+        {
+          "caller": "labSetTimestamp",
+          "callee": "String",
+          "lineNumber": 44
+        },
+        {
+          "caller": "labSetTimestamp",
+          "callee": "Number",
+          "lineNumber": 45
+        },
+        {
+          "caller": "labSetTimestamp",
+          "callee": "isNaN",
+          "lineNumber": 46
+        },
+        {
+          "caller": "labSetTimestamp",
+          "callee": "new Date(n).toISOString",
+          "lineNumber": 46
+        },
+        {
+          "caller": "labSetTimestamp",
+          "callee": "docTimestamp",
+          "lineNumber": 47
+        },
+        {
+          "caller": "noteTimestamp",
+          "callee": "String",
+          "lineNumber": 52
+        },
+        {
+          "caller": "noteTimestamp",
+          "callee": "docTimestamp",
+          "lineNumber": 53
+        },
+        {
+          "caller": "listadoTimestamp",
+          "callee": "String",
+          "lineNumber": 58
+        },
+        {
+          "caller": "listadoTimestamp",
+          "callee": "docTimestamp",
+          "lineNumber": 59
+        },
+        {
+          "caller": "eventualidadesUpdatedAt",
+          "callee": "String",
+          "lineNumber": 67
+        },
+        {
+          "caller": "eventualidadesUpdatedAt",
+          "callee": "Array.isArray",
+          "lineNumber": 68
+        },
+        {
+          "caller": "eventualidadesUpdatedAt",
+          "callee": "String",
+          "lineNumber": 72
+        },
+        {
+          "caller": "eventualidadesUpdatedAt",
+          "callee": "compareIso",
+          "lineNumber": 73
+        },
+        {
+          "caller": "mergeEventualidades",
+          "callee": "Array.isArray",
+          "lineNumber": 83
+        },
+        {
+          "caller": "mergeEventualidades",
+          "callee": "Array.isArray",
+          "lineNumber": 84
+        },
+        {
+          "caller": "mergeEventualidades",
+          "callee": "String(/** @type {{ id?: string }} */ (row).id || '').trim",
+          "lineNumber": 88
+        },
+        {
+          "caller": "mergeEventualidades",
+          "callee": "String",
+          "lineNumber": 88
+        },
+        {
+          "caller": "mergeEventualidades",
+          "callee": "byId.set",
+          "lineNumber": 89
+        },
+        {
+          "caller": "mergeEventualidades",
+          "callee": "String(/** @type {{ id?: string }} */ (row).id || '').trim",
+          "lineNumber": 93
+        },
+        {
+          "caller": "mergeEventualidades",
+          "callee": "String",
+          "lineNumber": 93
+        },
+        {
+          "caller": "mergeEventualidades",
+          "callee": "byId.get",
+          "lineNumber": 95
+        },
+        {
+          "caller": "mergeEventualidades",
+          "callee": "String",
+          "lineNumber": 96
+        },
+        {
+          "caller": "mergeEventualidades",
+          "callee": "String",
+          "lineNumber": 97
+        },
+        {
+          "caller": "mergeEventualidades",
+          "callee": "compareIso",
+          "lineNumber": 98
+        },
+        {
+          "caller": "mergeEventualidades",
+          "callee": "byId.set",
+          "lineNumber": 98
+        },
+        {
+          "caller": "mergeEventualidades",
+          "callee": "filterNewEventualidades",
+          "lineNumber": 102
+        },
+        {
+          "caller": "mergeEventualidades",
+          "callee": "Array.from",
+          "lineNumber": 103
+        },
+        {
+          "caller": "mergeEventualidades",
+          "callee": "byId.values",
+          "lineNumber": 103
+        },
+        {
+          "caller": "mergeEventualidades",
+          "callee": "rightEntries.filter",
+          "lineNumber": 104
+        },
+        {
+          "caller": "mergeEventualidades",
+          "callee": "String(/** @type {{ id?: string }} */ (row).id || '').trim",
+          "lineNumber": 104
+        },
+        {
+          "caller": "mergeEventualidades",
+          "callee": "String",
+          "lineNumber": 104
+        },
+        {
+          "caller": "mergeEventualidades",
+          "callee": "byId.set",
+          "lineNumber": 107
+        },
+        {
+          "caller": "mergeEventualidades",
+          "callee": "dedupeEventualidadKey",
+          "lineNumber": 107
+        },
+        {
+          "caller": "mergeEventualidades",
+          "callee": "Array.from(byId.values()).sort",
+          "lineNumber": 109
+        },
+        {
+          "caller": "mergeEventualidades",
+          "callee": "Array.from",
+          "lineNumber": 109
+        },
+        {
+          "caller": "mergeEventualidades",
+          "callee": "byId.values",
+          "lineNumber": 109
+        },
+        {
+          "caller": "mergeEventualidades",
+          "callee": "compareIso",
+          "lineNumber": 110
+        },
+        {
+          "caller": "mergeEventualidades",
+          "callee": "String",
+          "lineNumber": 110
+        },
+        {
+          "caller": "mergeEventualidades",
+          "callee": "String",
+          "lineNumber": 110
+        },
+        {
+          "caller": "historiaClinicaUpdatedAt",
+          "callee": "String",
+          "lineNumber": 120
+        },
+        {
+          "caller": "mergeHistoriaClinica",
+          "callee": "structuredClone",
+          "lineNumber": 126
+        },
+        {
+          "caller": "mergeHistoriaClinica",
+          "callee": "structuredClone",
+          "lineNumber": 127
+        },
+        {
+          "caller": "mergeHistoriaClinica",
+          "callee": "Number",
+          "lineNumber": 128
+        },
+        {
+          "caller": "mergeHistoriaClinica",
+          "callee": "Number",
+          "lineNumber": 129
+        },
+        {
+          "caller": "mergeHistoriaClinica",
+          "callee": "historiaClinicaUpdatedAt",
+          "lineNumber": 132
+        },
+        {
+          "caller": "mergeHistoriaClinica",
+          "callee": "historiaClinicaUpdatedAt",
+          "lineNumber": 133
+        },
+        {
+          "caller": "mergeHistoriaClinica",
+          "callee": "compareIso",
+          "lineNumber": 134
+        },
+        {
+          "caller": "mergeHistoriaClinica",
+          "callee": "compareIso",
+          "lineNumber": 135
+        },
+        {
+          "caller": "mergeHistoriaClinica",
+          "callee": "Number",
+          "lineNumber": 138
+        },
+        {
+          "caller": "mergeHistoriaClinica",
+          "callee": "structuredClone",
+          "lineNumber": 139
+        },
+        {
+          "caller": "medRecetaTimestamp",
+          "callee": "String",
+          "lineNumber": 146
+        },
+        {
+          "caller": "medRecetaTimestamp",
+          "callee": "docTimestamp",
+          "lineNumber": 147
+        },
+        {
+          "caller": "medPharmTimestamp",
+          "callee": "medPharmProfileUpdatedAt",
+          "lineNumber": 151
+        },
+        {
+          "caller": "monitoreoUpdatedAt",
+          "callee": "String(tg.savedAt).trim",
+          "lineNumber": 164
+        },
+        {
+          "caller": "monitoreoUpdatedAt",
+          "callee": "String",
+          "lineNumber": 164
+        },
+        {
+          "caller": "monitoreoUpdatedAt",
+          "callee": "String",
+          "lineNumber": 165
+        },
+        {
+          "caller": "monitoreoUpdatedAt",
+          "callee": "compareIso",
+          "lineNumber": 166
+        },
+        {
+          "caller": "monitoreoUpdatedAt",
+          "callee": "Array.isArray",
+          "lineNumber": 168
+        },
+        {
+          "caller": "monitoreoUpdatedAt",
+          "callee": "String",
+          "lineNumber": 173
+        },
+        {
+          "caller": "monitoreoUpdatedAt",
+          "callee": "compareIso",
+          "lineNumber": 174
+        },
+        {
+          "caller": "monitoreoHasLanPayload",
+          "callee": "Array.isArray",
+          "lineNumber": 184
+        },
+        {
+          "caller": "monitoreoHasLanPayload",
+          "callee": "String(tg.savedAt).trim",
+          "lineNumber": 187
+        },
+        {
+          "caller": "monitoreoHasLanPayload",
+          "callee": "String",
+          "lineNumber": 187
+        },
+        {
+          "caller": "monitoreoHasLanPayload",
+          "callee": "String(tg?.text || '').trim",
+          "lineNumber": 188
+        },
+        {
+          "caller": "monitoreoHasLanPayload",
+          "callee": "String",
+          "lineNumber": 188
+        },
+        {
+          "caller": "monitoreoHasLanPayload",
+          "callee": "emptyEstadoClinico",
+          "lineNumber": 191
+        },
+        {
+          "caller": "monitoreoHasLanPayload",
+          "callee": "Object.keys",
+          "lineNumber": 192
+        },
+        {
+          "caller": "monitoreoHasLanPayload",
+          "callee": "String(ec[key] || '').trim",
+          "lineNumber": 193
+        },
+        {
+          "caller": "monitoreoHasLanPayload",
+          "callee": "String",
+          "lineNumber": 193
+        },
+        {
+          "caller": "monitoreoHasLanPayload",
+          "callee": "hasPendingEaProposals",
+          "lineNumber": 196
+        },
+        {
+          "caller": "monitoreoHasLanPayload",
+          "callee": "Object.keys",
+          "lineNumber": 199
+        },
+        {
+          "caller": "entryUpdatedAt",
+          "callee": "String",
+          "lineNumber": 210
+        },
+        {
+          "caller": "entryUpdatedAt",
+          "callee": "noteTimestamp",
+          "lineNumber": 212
+        },
+        {
+          "caller": "entryUpdatedAt",
+          "callee": "noteTimestamp",
+          "lineNumber": 213
+        },
+        {
+          "caller": "entryUpdatedAt",
+          "callee": "medRecetaTimestamp",
+          "lineNumber": 214
+        },
+        {
+          "caller": "entryUpdatedAt",
+          "callee": "medPharmTimestamp",
+          "lineNumber": 215
+        },
+        {
+          "caller": "entryUpdatedAt",
+          "callee": "listadoTimestamp",
+          "lineNumber": 216
+        },
+        {
+          "caller": "entryUpdatedAt",
+          "callee": "monitoreoUpdatedAt",
+          "lineNumber": 217
+        },
+        {
+          "caller": "entryUpdatedAt",
+          "callee": "eventualidadesUpdatedAt",
+          "lineNumber": 218
+        },
+        {
+          "caller": "entryUpdatedAt",
+          "callee": "historiaClinicaUpdatedAt",
+          "lineNumber": 219
+        },
+        {
+          "caller": "entryUpdatedAt",
+          "callee": "Array.isArray",
+          "lineNumber": 221
+        },
+        {
+          "caller": "entryUpdatedAt",
+          "callee": "parts.push",
+          "lineNumber": 223
+        },
+        {
+          "caller": "entryUpdatedAt",
+          "callee": "labSetTimestamp",
+          "lineNumber": 223
+        },
+        {
+          "caller": "entryUpdatedAt",
+          "callee": "compareIso",
+          "lineNumber": 227
+        },
+        {
+          "caller": "mergeLabHistorySets",
+          "callee": "map.set",
+          "lineNumber": 237
+        },
+        {
+          "caller": "mergeLabHistorySets",
+          "callee": "String",
+          "lineNumber": 237
+        },
+        {
+          "caller": "mergeLabHistorySets",
+          "callee": "String",
+          "lineNumber": 241
+        },
+        {
+          "caller": "mergeLabHistorySets",
+          "callee": "map.get",
+          "lineNumber": 242
+        },
+        {
+          "caller": "mergeLabHistorySets",
+          "callee": "compareIso",
+          "lineNumber": 243
+        },
+        {
+          "caller": "mergeLabHistorySets",
+          "callee": "labSetTimestamp",
+          "lineNumber": 243
+        },
+        {
+          "caller": "mergeLabHistorySets",
+          "callee": "labSetTimestamp",
+          "lineNumber": 243
+        },
+        {
+          "caller": "mergeLabHistorySets",
+          "callee": "map.set",
+          "lineNumber": 244
+        },
+        {
+          "caller": "mergeLabHistorySets",
+          "callee": "Array.from",
+          "lineNumber": 247
+        },
+        {
+          "caller": "mergeLabHistorySets",
+          "callee": "map.values",
+          "lineNumber": 247
+        },
+        {
+          "caller": "mergeProblemaLists",
+          "callee": "String",
+          "lineNumber": 255
+        },
+        {
+          "caller": "mergeProblemaLists",
+          "callee": "map.get",
+          "lineNumber": 256
+        },
+        {
+          "caller": "mergeProblemaLists",
+          "callee": "String",
+          "lineNumber": 257
+        },
+        {
+          "caller": "mergeProblemaLists",
+          "callee": "String",
+          "lineNumber": 258
+        },
+        {
+          "caller": "mergeProblemaLists",
+          "callee": "compareIso",
+          "lineNumber": 259
+        },
+        {
+          "caller": "mergeProblemaLists",
+          "callee": "map.set",
+          "lineNumber": 259
+        },
+        {
+          "caller": "mergeProblemaLists",
+          "callee": "Array.from",
+          "lineNumber": 262
+        },
+        {
+          "caller": "mergeProblemaLists",
+          "callee": "map.values",
+          "lineNumber": 262
+        },
+        {
+          "caller": "mergeListadoProblemas",
+          "callee": "listadoTimestamp",
+          "lineNumber": 270
+        },
+        {
+          "caller": "mergeListadoProblemas",
+          "callee": "listadoTimestamp",
+          "lineNumber": 271
+        },
+        {
+          "caller": "mergeListadoProblemas",
+          "callee": "compareIso",
+          "lineNumber": 272
+        },
+        {
+          "caller": "mergeListadoProblemas",
+          "callee": "mergeProblemaLists",
+          "lineNumber": 276
+        },
+        {
+          "caller": "mergeListadoProblemas",
+          "callee": "mergeProblemaLists",
+          "lineNumber": 277
+        },
+        {
+          "caller": "pickPatientFields",
+          "callee": "String(nv).trim",
+          "lineNumber": 303
+        },
+        {
+          "caller": "pickPatientFields",
+          "callee": "String",
+          "lineNumber": 303
+        },
+        {
+          "caller": "pickPatientFields",
+          "callee": "String",
+          "lineNumber": 306
+        },
+        {
+          "caller": "pickPatientFields",
+          "callee": "String",
+          "lineNumber": 307
+        },
+        {
+          "caller": "pickPatientFields",
+          "callee": "compareIso",
+          "lineNumber": 308
+        },
+        {
+          "caller": "pickPatientFields",
+          "callee": "mergePatientRegistrationMeta",
+          "lineNumber": 311
+        },
+        {
+          "caller": "pickPatientFields",
+          "callee": "mergePatientRegistrationMeta",
+          "lineNumber": 312
+        },
+        {
+          "caller": "mergePatientEntry",
+          "callee": "cloneEntry",
+          "lineNumber": 318
+        },
+        {
+          "caller": "mergePatientEntry",
+          "callee": "cloneEntry",
+          "lineNumber": 319
+        },
+        {
+          "caller": "mergePatientEntry",
+          "callee": "entryUpdatedAt",
+          "lineNumber": 320
+        },
+        {
+          "caller": "mergePatientEntry",
+          "callee": "entryUpdatedAt",
+          "lineNumber": 321
+        },
+        {
+          "caller": "mergePatientEntry",
+          "callee": "compareIso",
+          "lineNumber": 322
+        },
+        {
+          "caller": "mergePatientEntry",
+          "callee": "pickPatientFields",
+          "lineNumber": 324
+        },
+        {
+          "caller": "mergePatientEntry",
+          "callee": "compareIso",
+          "lineNumber": 325
+        },
+        {
+          "caller": "mergePatientEntry",
+          "callee": "entryUpdatedAt",
+          "lineNumber": 325
+        },
+        {
+          "caller": "mergePatientEntry",
+          "callee": "entryUpdatedAt",
+          "lineNumber": 325
+        },
+        {
+          "caller": "mergePatientEntry",
+          "callee": "compareIso",
+          "lineNumber": 326
+        },
+        {
+          "caller": "mergePatientEntry",
+          "callee": "entryUpdatedAt",
+          "lineNumber": 326
+        },
+        {
+          "caller": "mergePatientEntry",
+          "callee": "entryUpdatedAt",
+          "lineNumber": 326
+        },
+        {
+          "caller": "mergePatientEntry",
+          "callee": "compareIso",
+          "lineNumber": 331
+        },
+        {
+          "caller": "mergePatientEntry",
+          "callee": "noteTimestamp",
+          "lineNumber": 331
+        },
+        {
+          "caller": "mergePatientEntry",
+          "callee": "noteTimestamp",
+          "lineNumber": 331
+        },
+        {
+          "caller": "mergePatientEntry",
+          "callee": "compareIso",
+          "lineNumber": 335
+        },
+        {
+          "caller": "mergePatientEntry",
+          "callee": "noteTimestamp",
+          "lineNumber": 335
+        },
+        {
+          "caller": "mergePatientEntry",
+          "callee": "noteTimestamp",
+          "lineNumber": 335
+        },
+        {
+          "caller": "mergePatientEntry",
+          "callee": "compareIso",
+          "lineNumber": 339
+        },
+        {
+          "caller": "mergePatientEntry",
+          "callee": "medRecetaTimestamp",
+          "lineNumber": 339
+        },
+        {
+          "caller": "mergePatientEntry",
+          "callee": "medRecetaTimestamp",
+          "lineNumber": 339
+        },
+        {
+          "caller": "mergePatientEntry",
+          "callee": "compareIso",
+          "lineNumber": 347
+        },
+        {
+          "caller": "mergePatientEntry",
+          "callee": "medPharmTimestamp",
+          "lineNumber": 347
+        },
+        {
+          "caller": "mergePatientEntry",
+          "callee": "medPharmTimestamp",
+          "lineNumber": 347
+        },
+        {
+          "caller": "mergePatientEntry",
+          "callee": "structuredClone",
+          "lineNumber": 349
+        },
+        {
+          "caller": "mergePatientEntry",
+          "callee": "structuredClone",
+          "lineNumber": 352
+        },
+        {
+          "caller": "mergePatientEntry",
+          "callee": "monitoreoHasLanPayload",
+          "lineNumber": 357
+        },
+        {
+          "caller": "mergePatientEntry",
+          "callee": "monitoreoHasLanPayload",
+          "lineNumber": 358
+        },
+        {
+          "caller": "mergePatientEntry",
+          "callee": "mergeMonitoreo",
+          "lineNumber": 360
+        },
+        {
+          "caller": "mergePatientEntry",
+          "callee": "structuredClone",
+          "lineNumber": 362
+        },
+        {
+          "caller": "mergePatientEntry",
+          "callee": "structuredClone",
+          "lineNumber": 364
+        },
+        {
+          "caller": "mergePatientEntry",
+          "callee": "mergeEventualidades",
+          "lineNumber": 369
+        },
+        {
+          "caller": "mergePatientEntry",
+          "callee": "mergeHistoriaClinica",
+          "lineNumber": 372
+        },
+        {
+          "caller": "mergePatientEntry",
+          "callee": "bumpLabHistoryRevision",
+          "lineNumber": 375
+        },
+        {
+          "caller": "mergePatientEntry",
+          "callee": "mergeLabHistorySets",
+          "lineNumber": 381
+        },
+        {
+          "caller": "mergePatientEntry",
+          "callee": "mergeVpoPayload",
+          "lineNumber": 384
+        },
+        {
+          "caller": "mergePatientEntry",
+          "callee": "mergeListadoProblemas",
+          "lineNumber": 385
+        },
+        {
+          "caller": "mergePatientEntry",
+          "callee": "mergeTodoListsById",
+          "lineNumber": 386
+        },
+        {
+          "caller": "mergeVpoPayload",
+          "callee": "structuredClone",
+          "lineNumber": 393
+        },
+        {
+          "caller": "mergeVpoPayload",
+          "callee": "structuredClone",
+          "lineNumber": 394
+        },
+        {
+          "caller": "mergeVpoPayload",
+          "callee": "JSON.parse",
+          "lineNumber": 396
+        },
+        {
+          "caller": "mergeVpoPayload",
+          "callee": "JSON.stringify",
+          "lineNumber": 396
+        },
+        {
+          "caller": "mergeVpoPayload",
+          "callee": "structuredClone",
+          "lineNumber": 398
+        },
+        {
+          "caller": "cloneEntry",
+          "callee": "structuredClone",
+          "lineNumber": 409
+        },
+        {
+          "caller": "cloneEntry",
+          "callee": "structuredClone",
+          "lineNumber": 412
+        },
+        {
+          "caller": "cloneEntry",
+          "callee": "Array.isArray",
+          "lineNumber": 418
+        },
+        {
+          "caller": "cloneEntry",
+          "callee": "entry.labHistory.map",
+          "lineNumber": 418
+        },
+        {
+          "caller": "cloneEntry",
+          "callee": "structuredClone",
+          "lineNumber": 420
+        },
+        {
+          "caller": "cloneEntry",
+          "callee": "structuredClone",
+          "lineNumber": 421
+        },
+        {
+          "caller": "cloneEntry",
+          "callee": "Array.isArray",
+          "lineNumber": 423
+        },
+        {
+          "caller": "cloneEntry",
+          "callee": "entry.todos.map",
+          "lineNumber": 423
+        },
+        {
+          "caller": "mergeLanPatientEntrySources",
+          "callee": "Array.isArray",
+          "lineNumber": 434
+        },
+        {
+          "caller": "mergeLanPatientEntrySources",
+          "callee": "isDemoPatientId",
+          "lineNumber": 437
+        },
+        {
+          "caller": "mergeLanPatientEntrySources",
+          "callee": "entryMatchKey",
+          "lineNumber": 438
+        },
+        {
+          "caller": "mergeLanPatientEntrySources",
+          "callee": "byKey.get",
+          "lineNumber": 439
+        },
+        {
+          "caller": "mergeLanPatientEntrySources",
+          "callee": "byKey.set",
+          "lineNumber": 440
+        },
+        {
+          "caller": "mergeLanPatientEntrySources",
+          "callee": "mergePatientEntry",
+          "lineNumber": 440
+        },
+        {
+          "caller": "mergeLanPatientEntrySources",
+          "callee": "cloneEntry",
+          "lineNumber": 440
+        },
+        {
+          "caller": "mergeLanPatientEntrySources",
+          "callee": "Array.from",
+          "lineNumber": 443
+        },
+        {
+          "caller": "mergeLanPatientEntrySources",
+          "callee": "byKey.values",
+          "lineNumber": 443
+        },
+        {
+          "caller": "filterEntriesByPatientDeletes",
+          "callee": "String(d.registro || '').trim",
+          "lineNumber": 457
+        },
+        {
+          "caller": "filterEntriesByPatientDeletes",
+          "callee": "String",
+          "lineNumber": 457
+        },
+        {
+          "caller": "filterEntriesByPatientDeletes",
+          "callee": "String",
+          "lineNumber": 458
+        },
+        {
+          "caller": "filterEntriesByPatientDeletes",
+          "callee": "delMap.set",
+          "lineNumber": 459
+        },
+        {
+          "caller": "filterEntriesByPatientDeletes",
+          "callee": "(entries || []).filter",
+          "lineNumber": 462
+        },
+        {
+          "caller": "filterEntriesByPatientDeletes",
+          "callee": "delMap.get",
+          "lineNumber": 464
+        },
+        {
+          "caller": "filterEntriesByPatientDeletes",
+          "callee": "entryMatchKey",
+          "lineNumber": 464
+        },
+        {
+          "caller": "filterEntriesByPatientDeletes",
+          "callee": "String(entry.patient.id || '').trim",
+          "lineNumber": 467
+        },
+        {
+          "caller": "filterEntriesByPatientDeletes",
+          "callee": "String",
+          "lineNumber": 467
+        },
+        {
+          "caller": "filterEntriesByPatientDeletes",
+          "callee": "String(del.id || '').trim",
+          "lineNumber": 468
+        },
+        {
+          "caller": "filterEntriesByPatientDeletes",
+          "callee": "String",
+          "lineNumber": 468
+        },
+        {
+          "caller": "filterEntriesByPatientDeletes",
+          "callee": "compareIso",
+          "lineNumber": 473
+        },
+        {
+          "caller": "filterEntriesByPatientDeletes",
+          "callee": "entryUpdatedAt",
+          "lineNumber": 473
+        }
+      ],
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 15,
+        "functionCount": 25,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/lan-patient-merge.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 366,
+      "nonEmptyLines": 345,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/lan-safety-bundle-builder.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 43,
+      "nonEmptyLines": 41,
+      "functions": [
+        {
+          "name": "buildSafetyBundleEntries",
+          "startLine": 26,
+          "endLine": 43,
+          "params": [
+            "allEntries",
+            "dirtyPatientIds"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "TYPED_ENTRY_FIELDS",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "buildSafetyBundleEntries",
+          "line": 26,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "buildSafetyBundleEntries",
+          "callee": "Array.isArray",
+          "lineNumber": 27
+        },
+        {
+          "caller": "buildSafetyBundleEntries",
+          "callee": "allEntries\n    .filter((e) => {\n      if (!e || !e.id) return false;\n      if (dirtyPatientIds && !dirtyPatientIds.has(e.id)) return false;\n      return true;\n    })\n    .map",
+          "lineNumber": 28
+        },
+        {
+          "caller": "buildSafetyBundleEntries",
+          "callee": "allEntries\n    .filter",
+          "lineNumber": 28
+        },
+        {
+          "caller": "buildSafetyBundleEntries",
+          "callee": "dirtyPatientIds.has",
+          "lineNumber": 31
+        },
+        {
+          "caller": "buildSafetyBundleEntries",
+          "callee": "Object.entries",
+          "lineNumber": 36
+        },
+        {
+          "caller": "buildSafetyBundleEntries",
+          "callee": "TYPED_ENTRY_FIELDS.has",
+          "lineNumber": 37
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/lan-safety-bundle-builder.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 57,
+      "nonEmptyLines": 51,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/lan-shift-pin-connect.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 428,
+      "nonEmptyLines": 392,
+      "functions": [
+        {
+          "name": "readShiftPinClientId",
+          "startLine": 37,
+          "endLine": 43,
+          "params": []
+        },
+        {
+          "name": "getShiftPinCooldownMs",
+          "startLine": 45,
+          "endLine": 47,
+          "params": []
+        },
+        {
+          "name": "recordShiftPinFailure",
+          "startLine": 48,
+          "endLine": 50,
+          "params": []
+        },
+        {
+          "name": "resetShiftPinBackoff",
+          "startLine": 51,
+          "endLine": 54,
+          "params": []
+        },
+        {
+          "name": "loadLanTransport",
+          "startLine": 56,
+          "endLine": 58,
+          "params": []
+        },
+        {
+          "name": "showEasyToast",
+          "startLine": 60,
+          "endLine": 64,
+          "params": [
+            "message",
+            "kind"
+          ]
+        },
+        {
+          "name": "verifyTeamHashFromUrl",
+          "startLine": 66,
+          "endLine": 75,
+          "params": [
+            "joinUrl",
+            "ownTeamCode"
+          ]
+        },
+        {
+          "name": "getOwnTeamCode",
+          "startLine": 77,
+          "endLine": 80,
+          "params": []
+        },
+        {
+          "name": "exchangeShiftPinOnHost",
+          "startLine": 83,
+          "endLine": 106,
+          "params": [
+            "hostUrl",
+            "shiftPin"
+          ]
+        },
+        {
+          "name": "persistShiftPinBearer",
+          "startLine": 108,
+          "endLine": 120,
+          "params": [
+            "data"
+          ]
+        },
+        {
+          "name": "resolveOwnLanBaseUrl",
+          "startLine": 122,
+          "endLine": 134,
+          "params": []
+        },
+        {
+          "name": "isCurrentLanHostReachable",
+          "startLine": 137,
+          "endLine": 143,
+          "params": []
+        },
+        {
+          "name": "joinHostAfterShiftPinExchange",
+          "startLine": 151,
+          "endLine": 188,
+          "params": [
+            "hostUrl",
+            "shiftPin",
+            "opts"
+          ]
+        },
+        {
+          "name": "collectShiftPinProbeUrls",
+          "startLine": 196,
+          "endLine": 214,
+          "params": []
+        },
+        {
+          "name": "collectShiftPinFastDiscoveryUrls",
+          "startLine": 221,
+          "endLine": 269,
+          "params": [
+            "ownBaseUrl"
+          ]
+        },
+        {
+          "name": "shouldTryLoopbackShiftPin",
+          "startLine": 271,
+          "endLine": 280,
+          "params": [
+            "transport"
+          ]
+        },
+        {
+          "name": "connectLanWithShiftPin",
+          "startLine": 288,
+          "endLine": 363,
+          "params": [
+            "shiftPin"
+          ]
+        },
+        {
+          "name": "tryEasyLanShiftPinConnect",
+          "startLine": 370,
+          "endLine": 418,
+          "params": []
+        },
+        {
+          "name": "rediscoverLanHostWithShiftPin",
+          "startLine": 425,
+          "endLine": 428,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "getShiftPinCooldownMs",
+          "line": 45,
+          "isDefault": false
+        },
+        {
+          "name": "recordShiftPinFailure",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "resetShiftPinBackoff",
+          "line": 51,
+          "isDefault": false
+        },
+        {
+          "name": "collectShiftPinProbeUrls",
+          "line": 196,
+          "isDefault": false
+        },
+        {
+          "name": "collectShiftPinFastDiscoveryUrls",
+          "line": 221,
+          "isDefault": false
+        },
+        {
+          "name": "connectLanWithShiftPin",
+          "line": 288,
+          "isDefault": false
+        },
+        {
+          "name": "tryEasyLanShiftPinConnect",
+          "line": 370,
+          "isDefault": false
+        },
+        {
+          "name": "rediscoverLanHostWithShiftPin",
+          "line": 425,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "readShiftPinClientId",
+          "callee": "localStorage.getItem",
+          "lineNumber": 39
+        },
+        {
+          "caller": "readShiftPinClientId",
+          "callee": "String(id).trim",
+          "lineNumber": 40
+        },
+        {
+          "caller": "readShiftPinClientId",
+          "callee": "String",
+          "lineNumber": 40
+        },
+        {
+          "caller": "readShiftPinClientId",
+          "callee": "String(id).trim",
+          "lineNumber": 40
+        },
+        {
+          "caller": "readShiftPinClientId",
+          "callee": "String",
+          "lineNumber": 40
+        },
+        {
+          "caller": "getShiftPinCooldownMs",
+          "callee": "Math.min",
+          "lineNumber": 46
+        },
+        {
+          "caller": "recordShiftPinFailure",
+          "callee": "Math.min",
+          "lineNumber": 49
+        },
+        {
+          "caller": "loadLanTransport",
+          "callee": "import",
+          "lineNumber": 57
+        },
+        {
+          "caller": "showEasyToast",
+          "callee": "window.showToast",
+          "lineNumber": 62
+        },
+        {
+          "caller": "verifyTeamHashFromUrl",
+          "callee": "new URL(joinUrl).searchParams.get",
+          "lineNumber": 68
+        },
+        {
+          "caller": "verifyTeamHashFromUrl",
+          "callee": "buildTeamHash",
+          "lineNumber": 70
+        },
+        {
+          "caller": "getOwnTeamCode",
+          "callee": "storage.getLanConfig",
+          "lineNumber": 78
+        },
+        {
+          "caller": "getOwnTeamCode",
+          "callee": "String(cfg.teamCode || '').trim",
+          "lineNumber": 79
+        },
+        {
+          "caller": "getOwnTeamCode",
+          "callee": "String",
+          "lineNumber": 79
+        },
+        {
+          "caller": "exchangeShiftPinOnHost",
+          "callee": "normalizeLanHostBase",
+          "lineNumber": 84
+        },
+        {
+          "caller": "exchangeShiftPinOnHost",
+          "callee": "String(shiftPin || '').trim",
+          "lineNumber": 85
+        },
+        {
+          "caller": "exchangeShiftPinOnHost",
+          "callee": "String",
+          "lineNumber": 85
+        },
+        {
+          "caller": "exchangeShiftPinOnHost",
+          "callee": "/^\\d{6}$/.test",
+          "lineNumber": 86
+        },
+        {
+          "caller": "exchangeShiftPinOnHost",
+          "callee": "setTimeout",
+          "lineNumber": 89
+        },
+        {
+          "caller": "exchangeShiftPinOnHost",
+          "callee": "ctrl.abort",
+          "lineNumber": 89
+        },
+        {
+          "caller": "exchangeShiftPinOnHost",
+          "callee": "fetch",
+          "lineNumber": 91
+        },
+        {
+          "caller": "exchangeShiftPinOnHost",
+          "callee": "JSON.stringify",
+          "lineNumber": 94
+        },
+        {
+          "caller": "exchangeShiftPinOnHost",
+          "callee": "readShiftPinClientId",
+          "lineNumber": 94
+        },
+        {
+          "caller": "exchangeShiftPinOnHost",
+          "callee": "res.json",
+          "lineNumber": 99
+        },
+        {
+          "caller": "exchangeShiftPinOnHost",
+          "callee": "clearTimeout",
+          "lineNumber": 104
+        },
+        {
+          "caller": "persistShiftPinBearer",
+          "callee": "window.electronAPI.lanGuestWriteBearer",
+          "lineNumber": 112
+        },
+        {
+          "caller": "persistShiftPinBearer",
+          "callee": "String(data.token).trim",
+          "lineNumber": 112
+        },
+        {
+          "caller": "persistShiftPinBearer",
+          "callee": "String",
+          "lineNumber": 112
+        },
+        {
+          "caller": "persistShiftPinBearer",
+          "callee": "localStorage.setItem",
+          "lineNumber": 117
+        },
+        {
+          "caller": "persistShiftPinBearer",
+          "callee": "String",
+          "lineNumber": 117
+        },
+        {
+          "caller": "resolveOwnLanBaseUrl",
+          "callee": "normalizeLanHostBase",
+          "lineNumber": 126
+        },
+        {
+          "caller": "resolveOwnLanBaseUrl",
+          "callee": "window.electronAPI.getLanCandidateBaseUrl",
+          "lineNumber": 126
+        },
+        {
+          "caller": "resolveOwnLanBaseUrl",
+          "callee": "loadLanTransport",
+          "lineNumber": 130
+        },
+        {
+          "caller": "resolveOwnLanBaseUrl",
+          "callee": "normalizeLanHostBase",
+          "lineNumber": 131
+        },
+        {
+          "caller": "resolveOwnLanBaseUrl",
+          "callee": "transport.resolveLanShareBaseUrl",
+          "lineNumber": 131
+        },
+        {
+          "caller": "isCurrentLanHostReachable",
+          "callee": "storage.getLanConfig",
+          "lineNumber": 138
+        },
+        {
+          "caller": "isCurrentLanHostReachable",
+          "callee": "normalizeLanHostBase",
+          "lineNumber": 139
+        },
+        {
+          "caller": "isCurrentLanHostReachable",
+          "callee": "String(cfg.teamCode || '').trim",
+          "lineNumber": 140
+        },
+        {
+          "caller": "isCurrentLanHostReachable",
+          "callee": "String",
+          "lineNumber": 140
+        },
+        {
+          "caller": "isCurrentLanHostReachable",
+          "callee": "pingLanHostUrl",
+          "lineNumber": 142
+        },
+        {
+          "caller": "joinHostAfterShiftPinExchange",
+          "callee": "exchangeShiftPinOnHost",
+          "lineNumber": 152
+        },
+        {
+          "caller": "joinHostAfterShiftPinExchange",
+          "callee": "persistShiftPinBearer",
+          "lineNumber": 159
+        },
+        {
+          "caller": "joinHostAfterShiftPinExchange",
+          "callee": "loadLanTransport",
+          "lineNumber": 160
+        },
+        {
+          "caller": "joinHostAfterShiftPinExchange",
+          "callee": "transport.joinRemoteLanHostAsClient",
+          "lineNumber": 161
+        },
+        {
+          "caller": "joinHostAfterShiftPinExchange",
+          "callee": "String",
+          "lineNumber": 162
+        },
+        {
+          "caller": "joinHostAfterShiftPinExchange",
+          "callee": "normalizeLanHostBase",
+          "lineNumber": 168
+        },
+        {
+          "caller": "joinHostAfterShiftPinExchange",
+          "callee": "String",
+          "lineNumber": 168
+        },
+        {
+          "caller": "joinHostAfterShiftPinExchange",
+          "callee": "recordWardHostUrl",
+          "lineNumber": 170
+        },
+        {
+          "caller": "joinHostAfterShiftPinExchange",
+          "callee": "mergeWardHostRegistry",
+          "lineNumber": 173
+        },
+        {
+          "caller": "joinHostAfterShiftPinExchange",
+          "callee": "String(opts.roomId || '').trim",
+          "lineNumber": 177
+        },
+        {
+          "caller": "joinHostAfterShiftPinExchange",
+          "callee": "String",
+          "lineNumber": 177
+        },
+        {
+          "caller": "joinHostAfterShiftPinExchange",
+          "callee": "resolveLiveSyncRoomIdFromSala",
+          "lineNumber": 177
+        },
+        {
+          "caller": "joinHostAfterShiftPinExchange",
+          "callee": "import",
+          "lineNumber": 180
+        },
+        {
+          "caller": "joinHostAfterShiftPinExchange",
+          "callee": "room.joinLanRoom",
+          "lineNumber": 182
+        },
+        {
+          "caller": "joinHostAfterShiftPinExchange",
+          "callee": "liveSyncRoomLabel",
+          "lineNumber": 182
+        },
+        {
+          "caller": "add",
+          "callee": "normalizeLanHostBase",
+          "lineNumber": 200
+        },
+        {
+          "caller": "add",
+          "callee": "seen.has",
+          "lineNumber": 201
+        },
+        {
+          "caller": "add",
+          "callee": "seen.add",
+          "lineNumber": 202
+        },
+        {
+          "caller": "add",
+          "callee": "out.push",
+          "lineNumber": 203
+        },
+        {
+          "caller": "collectShiftPinProbeUrls",
+          "callee": "add",
+          "lineNumber": 205
+        },
+        {
+          "caller": "collectShiftPinProbeUrls",
+          "callee": "add",
+          "lineNumber": 206
+        },
+        {
+          "caller": "collectShiftPinProbeUrls",
+          "callee": "Array.isArray",
+          "lineNumber": 207
+        },
+        {
+          "caller": "collectShiftPinProbeUrls",
+          "callee": "listWardHostUrlsForProbe",
+          "lineNumber": 210
+        },
+        {
+          "caller": "collectShiftPinProbeUrls",
+          "callee": "add",
+          "lineNumber": 211
+        },
+        {
+          "caller": "collectShiftPinFastDiscoveryUrls",
+          "callee": "normalizeLanHostBase",
+          "lineNumber": 222
+        },
+        {
+          "caller": "add",
+          "callee": "normalizeLanHostBase",
+          "lineNumber": 226
+        },
+        {
+          "caller": "add",
+          "callee": "seen.has",
+          "lineNumber": 227
+        },
+        {
+          "caller": "add",
+          "callee": "lanHostBasesSameMachine",
+          "lineNumber": 228
+        },
+        {
+          "caller": "add",
+          "callee": "seen.add",
+          "lineNumber": 229
+        },
+        {
+          "caller": "add",
+          "callee": "out.push",
+          "lineNumber": 230
+        },
+        {
+          "caller": "collectShiftPinFastDiscoveryUrls",
+          "callee": "listRegistryDiscoveryUrls",
+          "lineNumber": 233
+        },
+        {
+          "caller": "collectShiftPinFastDiscoveryUrls",
+          "callee": "add",
+          "lineNumber": 233
+        },
+        {
+          "caller": "collectShiftPinFastDiscoveryUrls",
+          "callee": "window.electronAPI.lanUdpDiscover",
+          "lineNumber": 241
+        },
+        {
+          "caller": "collectShiftPinFastDiscoveryUrls",
+          "callee": "Array.isArray",
+          "lineNumber": 242
+        },
+        {
+          "caller": "collectShiftPinFastDiscoveryUrls",
+          "callee": "upsertHost",
+          "lineNumber": 245
+        },
+        {
+          "caller": "collectShiftPinFastDiscoveryUrls",
+          "callee": "Date.now",
+          "lineNumber": 254
+        },
+        {
+          "caller": "collectShiftPinFastDiscoveryUrls",
+          "callee": "add",
+          "lineNumber": 257
+        },
+        {
+          "caller": "collectShiftPinFastDiscoveryUrls",
+          "callee": "probeLanHostBeacon",
+          "lineNumber": 265
+        },
+        {
+          "caller": "collectShiftPinFastDiscoveryUrls",
+          "callee": "verified.push",
+          "lineNumber": 266
+        },
+        {
+          "caller": "shouldTryLoopbackShiftPin",
+          "callee": "window.electronAPI?.isLanDevPeer",
+          "lineNumber": 274
+        },
+        {
+          "caller": "shouldTryLoopbackShiftPin",
+          "callee": "transport?.isLanRemoteJoinMode",
+          "lineNumber": 278
+        },
+        {
+          "caller": "connectLanWithShiftPin",
+          "callee": "loadLanTransport",
+          "lineNumber": 289
+        },
+        {
+          "caller": "connectLanWithShiftPin",
+          "callee": "transport.isLanElectronDesktop",
+          "lineNumber": 290
+        },
+        {
+          "caller": "connectLanWithShiftPin",
+          "callee": "String(shiftPin || '').trim",
+          "lineNumber": 291
+        },
+        {
+          "caller": "connectLanWithShiftPin",
+          "callee": "String",
+          "lineNumber": 291
+        },
+        {
+          "caller": "connectLanWithShiftPin",
+          "callee": "/^\\d{6}$/.test",
+          "lineNumber": 292
+        },
+        {
+          "caller": "connectLanWithShiftPin",
+          "callee": "String(opts.joinUrl || '').trim",
+          "lineNumber": 294
+        },
+        {
+          "caller": "connectLanWithShiftPin",
+          "callee": "String",
+          "lineNumber": 294
+        },
+        {
+          "caller": "connectLanWithShiftPin",
+          "callee": "verifyTeamHashFromUrl",
+          "lineNumber": 296
+        },
+        {
+          "caller": "connectLanWithShiftPin",
+          "callee": "getOwnTeamCode",
+          "lineNumber": 296
+        },
+        {
+          "caller": "connectLanWithShiftPin",
+          "callee": "showEasyToast",
+          "lineNumber": 298
+        },
+        {
+          "caller": "connectLanWithShiftPin",
+          "callee": "storage.saveLanShiftPin",
+          "lineNumber": 303
+        },
+        {
+          "caller": "connectLanWithShiftPin",
+          "callee": "isCurrentLanHostReachable",
+          "lineNumber": 305
+        },
+        {
+          "caller": "connectLanWithShiftPin",
+          "callee": "storage.getLanConfig",
+          "lineNumber": 309
+        },
+        {
+          "caller": "connectLanWithShiftPin",
+          "callee": "resolveOwnLanBaseUrl",
+          "lineNumber": 310
+        },
+        {
+          "caller": "connectLanWithShiftPin",
+          "callee": "resolveLocalLanSubnetPrefixes",
+          "lineNumber": 311
+        },
+        {
+          "caller": "connectLanWithShiftPin",
+          "callee": "collectShiftPinProbeUrls",
+          "lineNumber": 314
+        },
+        {
+          "caller": "connectLanWithShiftPin",
+          "callee": "tried.add",
+          "lineNumber": 318
+        },
+        {
+          "caller": "connectLanWithShiftPin",
+          "callee": "joinHostAfterShiftPinExchange",
+          "lineNumber": 319
+        },
+        {
+          "caller": "connectLanWithShiftPin",
+          "callee": "collectShiftPinFastDiscoveryUrls",
+          "lineNumber": 323
+        },
+        {
+          "caller": "connectLanWithShiftPin",
+          "callee": "tried.has",
+          "lineNumber": 324
+        },
+        {
+          "caller": "connectLanWithShiftPin",
+          "callee": "tried.add",
+          "lineNumber": 325
+        },
+        {
+          "caller": "connectLanWithShiftPin",
+          "callee": "joinHostAfterShiftPinExchange",
+          "lineNumber": 326
+        },
+        {
+          "caller": "connectLanWithShiftPin",
+          "callee": "shouldTryLoopbackShiftPin",
+          "lineNumber": 331
+        },
+        {
+          "caller": "connectLanWithShiftPin",
+          "callee": "normalizeLanHostBase",
+          "lineNumber": 332
+        },
+        {
+          "caller": "connectLanWithShiftPin",
+          "callee": "tried.has",
+          "lineNumber": 333
+        },
+        {
+          "caller": "connectLanWithShiftPin",
+          "callee": "tried.add",
+          "lineNumber": 334
+        },
+        {
+          "caller": "connectLanWithShiftPin",
+          "callee": "joinHostAfterShiftPinExchange",
+          "lineNumber": 335
+        },
+        {
+          "caller": "connectLanWithShiftPin",
+          "callee": "discoverLanHostsOnAllLocalSubnetsViaBeacon",
+          "lineNumber": 339
+        },
+        {
+          "caller": "connectLanWithShiftPin",
+          "callee": "tried.has",
+          "lineNumber": 341
+        },
+        {
+          "caller": "connectLanWithShiftPin",
+          "callee": "tried.add",
+          "lineNumber": 342
+        },
+        {
+          "caller": "connectLanWithShiftPin",
+          "callee": "joinHostAfterShiftPinExchange",
+          "lineNumber": 343
+        },
+        {
+          "caller": "connectLanWithShiftPin",
+          "callee": "listWardSubnetPrefixesForProbe",
+          "lineNumber": 347
+        },
+        {
+          "caller": "connectLanWithShiftPin",
+          "callee": "allPrefixes\n    .filter((p) => !localPrefixes.includes(p))\n    .slice",
+          "lineNumber": 348
+        },
+        {
+          "caller": "connectLanWithShiftPin",
+          "callee": "allPrefixes\n    .filter",
+          "lineNumber": 348
+        },
+        {
+          "caller": "connectLanWithShiftPin",
+          "callee": "localPrefixes.includes",
+          "lineNumber": 349
+        },
+        {
+          "caller": "connectLanWithShiftPin",
+          "callee": "discoverLanHostsOnSubnetViaBeacon",
+          "lineNumber": 352
+        },
+        {
+          "caller": "connectLanWithShiftPin",
+          "callee": "tried.has",
+          "lineNumber": 356
+        },
+        {
+          "caller": "connectLanWithShiftPin",
+          "callee": "tried.add",
+          "lineNumber": 357
+        },
+        {
+          "caller": "connectLanWithShiftPin",
+          "callee": "joinHostAfterShiftPinExchange",
+          "lineNumber": 358
+        },
+        {
+          "caller": "tryEasyLanShiftPinConnect",
+          "callee": "resumeAutoHostDetect",
+          "lineNumber": 372
+        },
+        {
+          "caller": "tryEasyLanShiftPinConnect",
+          "callee": "canAttemptAutoHostDetect",
+          "lineNumber": 374
+        },
+        {
+          "caller": "tryEasyLanShiftPinConnect",
+          "callee": "lanNetworkProfile.getNetworkProfile",
+          "lineNumber": 377
+        },
+        {
+          "caller": "tryEasyLanShiftPinConnect",
+          "callee": "Date.now",
+          "lineNumber": 380
+        },
+        {
+          "caller": "tryEasyLanShiftPinConnect",
+          "callee": "getShiftPinCooldownMs",
+          "lineNumber": 381
+        },
+        {
+          "caller": "tryEasyLanShiftPinConnect",
+          "callee": "String(opts.shiftPin || '').trim",
+          "lineNumber": 387
+        },
+        {
+          "caller": "tryEasyLanShiftPinConnect",
+          "callee": "String",
+          "lineNumber": 387
+        },
+        {
+          "caller": "tryEasyLanShiftPinConnect",
+          "callee": "storage.getLanShiftPin",
+          "lineNumber": 388
+        },
+        {
+          "caller": "tryEasyLanShiftPinConnect",
+          "callee": "/^\\d{6}$/.test",
+          "lineNumber": 389
+        },
+        {
+          "caller": "tryEasyLanShiftPinConnect",
+          "callee": "isCurrentLanHostReachable",
+          "lineNumber": 393
+        },
+        {
+          "caller": "tryEasyLanShiftPinConnect",
+          "callee": "resetShiftPinBackoff",
+          "lineNumber": 394
+        },
+        {
+          "caller": "tryEasyLanShiftPinConnect",
+          "callee": "showEasyToast",
+          "lineNumber": 399
+        },
+        {
+          "caller": "tryEasyLanShiftPinConnect",
+          "callee": "connectLanWithShiftPin",
+          "lineNumber": 402
+        },
+        {
+          "caller": "tryEasyLanShiftPinConnect",
+          "callee": "resetShiftPinBackoff",
+          "lineNumber": 404
+        },
+        {
+          "caller": "tryEasyLanShiftPinConnect",
+          "callee": "recordAutoHostDetectSuccess",
+          "lineNumber": 405
+        },
+        {
+          "caller": "tryEasyLanShiftPinConnect",
+          "callee": "showEasyToast",
+          "lineNumber": 407
+        },
+        {
+          "caller": "tryEasyLanShiftPinConnect",
+          "callee": "recordShiftPinFailure",
+          "lineNumber": 411
+        },
+        {
+          "caller": "tryEasyLanShiftPinConnect",
+          "callee": "recordAutoHostDetectMiss",
+          "lineNumber": 413
+        },
+        {
+          "caller": "rediscoverLanHostWithShiftPin",
+          "callee": "tryEasyLanShiftPinConnect",
+          "lineNumber": 426
+        }
+      ],
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 8,
+        "functionCount": 19,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/lan-shift-pin-connect.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 98,
+      "nonEmptyLines": 88,
+      "functions": [
+        {
+          "name": "mockLocalStorage",
+          "startLine": 19,
+          "endLine": 32,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "setItem",
+          "callee": "String",
+          "lineNumber": 26
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/lan-sse-client.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 90,
+      "nonEmptyLines": 84,
+      "functions": [
+        {
+          "name": "parseSseLine",
+          "startLine": 12,
+          "endLine": 20,
+          "params": [
+            "line"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "LanSseClient",
+          "startLine": 46,
+          "endLine": 90,
+          "methods": [
+            "constructor",
+            "connect",
+            "disconnect"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "parseSseLine",
+          "line": 12,
+          "isDefault": false
+        },
+        {
+          "name": "LanSseClient",
+          "line": 46,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "parseSseLine",
+          "callee": "String(line || '').trim",
+          "lineNumber": 13
+        },
+        {
+          "caller": "parseSseLine",
+          "callee": "String",
+          "lineNumber": 13
+        },
+        {
+          "caller": "parseSseLine",
+          "callee": "s.startsWith",
+          "lineNumber": 14
+        },
+        {
+          "caller": "parseSseLine",
+          "callee": "s.startsWith",
+          "lineNumber": 15
+        },
+        {
+          "caller": "parseSseLine",
+          "callee": "s.slice(5).trim",
+          "lineNumber": 16
+        },
+        {
+          "caller": "parseSseLine",
+          "callee": "s.slice",
+          "lineNumber": 16
+        },
+        {
+          "caller": "parseSseLine",
+          "callee": "JSON.parse",
+          "lineNumber": 17
+        },
+        {
+          "caller": "connect",
+          "callee": "signals.push",
+          "lineNumber": 61
+        },
+        {
+          "caller": "connect",
+          "callee": "(() => {\n          const ctrl = new AbortController();\n          signals.forEach((s) => s.addEventListener('abort', () => ctrl.abort(), { once: true }));\n          return ctrl.signal;\n        })",
+          "lineNumber": 64
+        },
+        {
+          "caller": "connect",
+          "callee": "signals.forEach",
+          "lineNumber": 66
+        },
+        {
+          "caller": "connect",
+          "callee": "s.addEventListener",
+          "lineNumber": 66
+        },
+        {
+          "caller": "connect",
+          "callee": "ctrl.abort",
+          "lineNumber": 66
+        },
+        {
+          "caller": "connect",
+          "callee": "String(baseUrl).replace",
+          "lineNumber": 70
+        },
+        {
+          "caller": "connect",
+          "callee": "String",
+          "lineNumber": 70
+        },
+        {
+          "caller": "connect",
+          "callee": "encodeURIComponent",
+          "lineNumber": 70
+        },
+        {
+          "caller": "connect",
+          "callee": "fetch",
+          "lineNumber": 71
+        },
+        {
+          "caller": "connect",
+          "callee": "readEventStreamLines",
+          "lineNumber": 78
+        },
+        {
+          "caller": "connect",
+          "callee": "parseSseLine",
+          "lineNumber": 79
+        },
+        {
+          "caller": "connect",
+          "callee": "onEvent",
+          "lineNumber": 80
+        },
+        {
+          "caller": "disconnect",
+          "callee": "this._ctrl.abort",
+          "lineNumber": 86
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "public/js/lan-sse-client.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 20,
+      "nonEmptyLines": 17,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/lan-surrogate-host.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 188,
+      "nonEmptyLines": 172,
+      "functions": [
+        {
+          "name": "rememberPrimaryHostUrl",
+          "startLine": 10,
+          "endLine": 18,
+          "params": [
+            "hostUrl"
+          ]
+        },
+        {
+          "name": "getPrimaryHostUrl",
+          "startLine": 20,
+          "endLine": 28,
+          "params": []
+        },
+        {
+          "name": "readPeersRaw",
+          "startLine": 30,
+          "endLine": 39,
+          "params": []
+        },
+        {
+          "name": "writePeersRaw",
+          "startLine": 41,
+          "endLine": 45,
+          "params": [
+            "map"
+          ]
+        },
+        {
+          "name": "pruneLivePeers",
+          "startLine": 47,
+          "endLine": 60,
+          "params": [
+            "nowMs"
+          ]
+        },
+        {
+          "name": "recordLivePeer",
+          "startLine": 63,
+          "endLine": 91,
+          "params": [
+            "clientId",
+            "meta"
+          ]
+        },
+        {
+          "name": "listLivePeerHostUrls",
+          "startLine": 93,
+          "endLine": 108,
+          "params": [
+            "excludeClientId"
+          ]
+        },
+        {
+          "name": "surrogateElectionDelayMs",
+          "startLine": 111,
+          "endLine": 116,
+          "params": [
+            "clientId"
+          ]
+        },
+        {
+          "name": "pingLanHostUrl",
+          "startLine": 120,
+          "endLine": 141,
+          "params": [
+            "hostUrl",
+            "teamCode"
+          ]
+        },
+        {
+          "name": "getSurrogateHostState",
+          "startLine": 143,
+          "endLine": 159,
+          "params": []
+        },
+        {
+          "name": "setSurrogateHostState",
+          "startLine": 161,
+          "endLine": 178,
+          "params": [
+            "state"
+          ]
+        },
+        {
+          "name": "clearSurrogateHostState",
+          "startLine": 180,
+          "endLine": 184,
+          "params": []
+        },
+        {
+          "name": "isSurrogateHostActive",
+          "startLine": 186,
+          "endLine": 188,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "rememberPrimaryHostUrl",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "getPrimaryHostUrl",
+          "line": 20,
+          "isDefault": false
+        },
+        {
+          "name": "pruneLivePeers",
+          "line": 47,
+          "isDefault": false
+        },
+        {
+          "name": "recordLivePeer",
+          "line": 63,
+          "isDefault": false
+        },
+        {
+          "name": "listLivePeerHostUrls",
+          "line": 93,
+          "isDefault": false
+        },
+        {
+          "name": "surrogateElectionDelayMs",
+          "line": 111,
+          "isDefault": false
+        },
+        {
+          "name": "pingLanHostUrl",
+          "line": 120,
+          "isDefault": false
+        },
+        {
+          "name": "getSurrogateHostState",
+          "line": 143,
+          "isDefault": false
+        },
+        {
+          "name": "setSurrogateHostState",
+          "line": 161,
+          "isDefault": false
+        },
+        {
+          "name": "clearSurrogateHostState",
+          "line": 180,
+          "isDefault": false
+        },
+        {
+          "name": "isSurrogateHostActive",
+          "line": 186,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "rememberPrimaryHostUrl",
+          "callee": "String(hostUrl || '')\n    .trim()\n    .replace",
+          "lineNumber": 11
+        },
+        {
+          "caller": "rememberPrimaryHostUrl",
+          "callee": "String(hostUrl || '')\n    .trim",
+          "lineNumber": 11
+        },
+        {
+          "caller": "rememberPrimaryHostUrl",
+          "callee": "String",
+          "lineNumber": 11
+        },
+        {
+          "caller": "rememberPrimaryHostUrl",
+          "callee": "localStorage.setItem",
+          "lineNumber": 16
+        },
+        {
+          "caller": "getPrimaryHostUrl",
+          "callee": "String(localStorage.getItem(PRIMARY_HOST_KEY) || '')\n      .trim()\n      .replace",
+          "lineNumber": 22
+        },
+        {
+          "caller": "getPrimaryHostUrl",
+          "callee": "String(localStorage.getItem(PRIMARY_HOST_KEY) || '')\n      .trim",
+          "lineNumber": 22
+        },
+        {
+          "caller": "getPrimaryHostUrl",
+          "callee": "String",
+          "lineNumber": 22
+        },
+        {
+          "caller": "getPrimaryHostUrl",
+          "callee": "localStorage.getItem",
+          "lineNumber": 22
+        },
+        {
+          "caller": "readPeersRaw",
+          "callee": "localStorage.getItem",
+          "lineNumber": 32
+        },
+        {
+          "caller": "readPeersRaw",
+          "callee": "JSON.parse",
+          "lineNumber": 34
+        },
+        {
+          "caller": "writePeersRaw",
+          "callee": "localStorage.setItem",
+          "lineNumber": 43
+        },
+        {
+          "caller": "writePeersRaw",
+          "callee": "JSON.stringify",
+          "lineNumber": 43
+        },
+        {
+          "caller": "pruneLivePeers",
+          "callee": "Date.now",
+          "lineNumber": 48
+        },
+        {
+          "caller": "pruneLivePeers",
+          "callee": "readPeersRaw",
+          "lineNumber": 49
+        },
+        {
+          "caller": "pruneLivePeers",
+          "callee": "Object.keys(map).forEach",
+          "lineNumber": 51
+        },
+        {
+          "caller": "pruneLivePeers",
+          "callee": "Object.keys",
+          "lineNumber": 51
+        },
+        {
+          "caller": "pruneLivePeers",
+          "callee": "Number",
+          "lineNumber": 53
+        },
+        {
+          "caller": "pruneLivePeers",
+          "callee": "writePeersRaw",
+          "lineNumber": 58
+        },
+        {
+          "caller": "recordLivePeer",
+          "callee": "String(clientId || '').trim",
+          "lineNumber": 64
+        },
+        {
+          "caller": "recordLivePeer",
+          "callee": "String",
+          "lineNumber": 64
+        },
+        {
+          "caller": "recordLivePeer",
+          "callee": "String(meta && meta.hostUrl ? meta.hostUrl : '')\n    .trim()\n    .replace",
+          "lineNumber": 65
+        },
+        {
+          "caller": "recordLivePeer",
+          "callee": "String(meta && meta.hostUrl ? meta.hostUrl : '')\n    .trim",
+          "lineNumber": 65
+        },
+        {
+          "caller": "recordLivePeer",
+          "callee": "String",
+          "lineNumber": 65
+        },
+        {
+          "caller": "recordLivePeer",
+          "callee": "pruneLivePeers",
+          "lineNumber": 69
+        },
+        {
+          "caller": "recordLivePeer",
+          "callee": "Date.now",
+          "lineNumber": 73
+        },
+        {
+          "caller": "recordLivePeer",
+          "callee": "writePeersRaw",
+          "lineNumber": 76
+        },
+        {
+          "caller": "recordLivePeer",
+          "callee": "Number",
+          "lineNumber": 77
+        },
+        {
+          "caller": "recordLivePeer",
+          "callee": "upsertHost",
+          "lineNumber": 78
+        },
+        {
+          "caller": "recordLivePeer",
+          "callee": "Number",
+          "lineNumber": 81
+        },
+        {
+          "caller": "recordLivePeer",
+          "callee": "String",
+          "lineNumber": 83
+        },
+        {
+          "caller": "recordLivePeer",
+          "callee": "Date.now",
+          "lineNumber": 87
+        },
+        {
+          "caller": "listLivePeerHostUrls",
+          "callee": "String(excludeClientId || '').trim",
+          "lineNumber": 94
+        },
+        {
+          "caller": "listLivePeerHostUrls",
+          "callee": "String",
+          "lineNumber": 94
+        },
+        {
+          "caller": "listLivePeerHostUrls",
+          "callee": "pruneLivePeers",
+          "lineNumber": 95
+        },
+        {
+          "caller": "listLivePeerHostUrls",
+          "callee": "Object.keys(map).forEach",
+          "lineNumber": 98
+        },
+        {
+          "caller": "listLivePeerHostUrls",
+          "callee": "Object.keys",
+          "lineNumber": 98
+        },
+        {
+          "caller": "listLivePeerHostUrls",
+          "callee": "seen.has",
+          "lineNumber": 102
+        },
+        {
+          "caller": "listLivePeerHostUrls",
+          "callee": "seen.add",
+          "lineNumber": 103
+        },
+        {
+          "caller": "listLivePeerHostUrls",
+          "callee": "urls.push",
+          "lineNumber": 104
+        },
+        {
+          "caller": "listLivePeerHostUrls",
+          "callee": "urls.sort",
+          "lineNumber": 106
+        },
+        {
+          "caller": "surrogateElectionDelayMs",
+          "callee": "String",
+          "lineNumber": 112
+        },
+        {
+          "caller": "surrogateElectionDelayMs",
+          "callee": "s.charCodeAt",
+          "lineNumber": 114
+        },
+        {
+          "caller": "pingLanHostUrl",
+          "callee": "String(hostUrl || '')\n    .trim()\n    .replace",
+          "lineNumber": 121
+        },
+        {
+          "caller": "pingLanHostUrl",
+          "callee": "String(hostUrl || '')\n    .trim",
+          "lineNumber": 121
+        },
+        {
+          "caller": "pingLanHostUrl",
+          "callee": "String",
+          "lineNumber": 121
+        },
+        {
+          "caller": "pingLanHostUrl",
+          "callee": "String(teamCode || '').trim",
+          "lineNumber": 125
+        },
+        {
+          "caller": "pingLanHostUrl",
+          "callee": "String",
+          "lineNumber": 125
+        },
+        {
+          "caller": "pingLanHostUrl",
+          "callee": "setTimeout",
+          "lineNumber": 127
+        },
+        {
+          "caller": "pingLanHostUrl",
+          "callee": "ctrl.abort",
+          "lineNumber": 127
+        },
+        {
+          "caller": "pingLanHostUrl",
+          "callee": "fetch",
+          "lineNumber": 129
+        },
+        {
+          "caller": "pingLanHostUrl",
+          "callee": "clearTimeout",
+          "lineNumber": 139
+        },
+        {
+          "caller": "getSurrogateHostState",
+          "callee": "localStorage.getItem",
+          "lineNumber": 145
+        },
+        {
+          "caller": "getSurrogateHostState",
+          "callee": "JSON.parse",
+          "lineNumber": 147
+        },
+        {
+          "caller": "getSurrogateHostState",
+          "callee": "String(o.formerHostUrl || '').trim",
+          "lineNumber": 148
+        },
+        {
+          "caller": "getSurrogateHostState",
+          "callee": "String",
+          "lineNumber": 148
+        },
+        {
+          "caller": "getSurrogateHostState",
+          "callee": "String(o.formerHostUrl).trim().replace",
+          "lineNumber": 150
+        },
+        {
+          "caller": "getSurrogateHostState",
+          "callee": "String(o.formerHostUrl).trim",
+          "lineNumber": 150
+        },
+        {
+          "caller": "getSurrogateHostState",
+          "callee": "String",
+          "lineNumber": 150
+        },
+        {
+          "caller": "getSurrogateHostState",
+          "callee": "String(o.formerTeamCode || '').trim",
+          "lineNumber": 151
+        },
+        {
+          "caller": "getSurrogateHostState",
+          "callee": "String",
+          "lineNumber": 151
+        },
+        {
+          "caller": "getSurrogateHostState",
+          "callee": "String(o.localHostUrl || '').trim().replace",
+          "lineNumber": 152
+        },
+        {
+          "caller": "getSurrogateHostState",
+          "callee": "String(o.localHostUrl || '').trim",
+          "lineNumber": 152
+        },
+        {
+          "caller": "getSurrogateHostState",
+          "callee": "String",
+          "lineNumber": 152
+        },
+        {
+          "caller": "getSurrogateHostState",
+          "callee": "String",
+          "lineNumber": 153
+        },
+        {
+          "caller": "getSurrogateHostState",
+          "callee": "String(o.roomId || '').trim",
+          "lineNumber": 154
+        },
+        {
+          "caller": "getSurrogateHostState",
+          "callee": "String",
+          "lineNumber": 154
+        },
+        {
+          "caller": "setSurrogateHostState",
+          "callee": "clearSurrogateHostState",
+          "lineNumber": 163
+        },
+        {
+          "caller": "setSurrogateHostState",
+          "callee": "localStorage.setItem",
+          "lineNumber": 167
+        },
+        {
+          "caller": "setSurrogateHostState",
+          "callee": "JSON.stringify",
+          "lineNumber": 169
+        },
+        {
+          "caller": "setSurrogateHostState",
+          "callee": "String(state.formerHostUrl).trim().replace",
+          "lineNumber": 170
+        },
+        {
+          "caller": "setSurrogateHostState",
+          "callee": "String(state.formerHostUrl).trim",
+          "lineNumber": 170
+        },
+        {
+          "caller": "setSurrogateHostState",
+          "callee": "String",
+          "lineNumber": 170
+        },
+        {
+          "caller": "setSurrogateHostState",
+          "callee": "String(state.formerTeamCode || '').trim",
+          "lineNumber": 171
+        },
+        {
+          "caller": "setSurrogateHostState",
+          "callee": "String",
+          "lineNumber": 171
+        },
+        {
+          "caller": "setSurrogateHostState",
+          "callee": "String(state.localHostUrl || '').trim().replace",
+          "lineNumber": 172
+        },
+        {
+          "caller": "setSurrogateHostState",
+          "callee": "String(state.localHostUrl || '').trim",
+          "lineNumber": 172
+        },
+        {
+          "caller": "setSurrogateHostState",
+          "callee": "String",
+          "lineNumber": 172
+        },
+        {
+          "caller": "setSurrogateHostState",
+          "callee": "new Date().toISOString",
+          "lineNumber": 173
+        },
+        {
+          "caller": "setSurrogateHostState",
+          "callee": "String(state.roomId || '').trim",
+          "lineNumber": 174
+        },
+        {
+          "caller": "setSurrogateHostState",
+          "callee": "String",
+          "lineNumber": 174
+        },
+        {
+          "caller": "clearSurrogateHostState",
+          "callee": "localStorage.removeItem",
+          "lineNumber": 182
+        },
+        {
+          "caller": "isSurrogateHostActive",
+          "callee": "getSurrogateHostState",
+          "lineNumber": 187
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 11,
+        "functionCount": 13,
+        "classCount": 0
+      }
+    }
+  ]
+}

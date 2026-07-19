@@ -1,0 +1,670 @@
+{
+  "version": 1,
+  "updatedAt": "2026-06-21T14:33:24.565Z",
+  "totalScore": 50,
+  "bootGraphHash": "89cec49ea6ea9607",
+  "bootGraph": {
+    "hash": "89cec49ea6ea9607",
+    "imports": [
+      {
+        "hub": "public/js/app-runtimes.mjs",
+        "from": "./app-shell.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app-runtimes.mjs",
+        "from": "./app-state.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app-runtimes.mjs",
+        "from": "./censo-export.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app-runtimes.mjs",
+        "from": "./features/agenda.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app-runtimes.mjs",
+        "from": "./features/agenda.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app-runtimes.mjs",
+        "from": "./features/chrome.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app-runtimes.mjs",
+        "from": "./features/chrome.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app-runtimes.mjs",
+        "from": "./features/diagrams.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app-runtimes.mjs",
+        "from": "./features/drive-import-modal.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app-runtimes.mjs",
+        "from": "./features/estado-actual-panel.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app-runtimes.mjs",
+        "from": "./features/estado-actual-paste-modal.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app-runtimes.mjs",
+        "from": "./features/estado-actual-registro-defaults.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app-runtimes.mjs",
+        "from": "./features/estado-actual-registro-modal.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app-runtimes.mjs",
+        "from": "./features/eventualidades-panel.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app-runtimes.mjs",
+        "from": "./features/expediente.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app-runtimes.mjs",
+        "from": "./features/expediente.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app-runtimes.mjs",
+        "from": "./features/expediente.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app-runtimes.mjs",
+        "from": "./features/guardia-board.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app-runtimes.mjs",
+        "from": "./features/historia-clinica-panel.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app-runtimes.mjs",
+        "from": "./features/lab-bulk-preview-modal.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app-runtimes.mjs",
+        "from": "./features/lab-history-batch-copy-modal.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app-runtimes.mjs",
+        "from": "./features/lan-sync.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app-runtimes.mjs",
+        "from": "./features/lan-sync.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app-runtimes.mjs",
+        "from": "./features/medications.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app-runtimes.mjs",
+        "from": "./features/medications.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app-runtimes.mjs",
+        "from": "./features/notes-indicaciones.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app-runtimes.mjs",
+        "from": "./features/pase-board.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app-runtimes.mjs",
+        "from": "./features/pase-board.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app-runtimes.mjs",
+        "from": "./features/patients.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app-runtimes.mjs",
+        "from": "./features/patients.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app-runtimes.mjs",
+        "from": "./features/patients.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app-runtimes.mjs",
+        "from": "./features/productivity.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app-runtimes.mjs",
+        "from": "./features/profile.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app-runtimes.mjs",
+        "from": "./features/receta-hu.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app-runtimes.mjs",
+        "from": "./features/soap-estado.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app-runtimes.mjs",
+        "from": "./features/soap-estado.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app-runtimes.mjs",
+        "from": "./features/todos.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app-runtimes.mjs",
+        "from": "./features/todos.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app-runtimes.mjs",
+        "from": "./features/vpo.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app-runtimes.mjs",
+        "from": "./lab-bulk-paste.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app-runtimes.mjs",
+        "from": "./lab-history-set.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app-runtimes.mjs",
+        "from": "./lab-history-set.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app-runtimes.mjs",
+        "from": "./lazy-feature-routes.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app-runtimes.mjs",
+        "from": "./mobile-web.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app-runtimes.mjs",
+        "from": "./mode-features.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app-runtimes.mjs",
+        "from": "./storage.js",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app-runtimes.mjs",
+        "from": "./tend-core.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app-runtimes.mjs",
+        "from": "./todos-reminder-scheduler.mjs",
+        "isDynamic": true
+      },
+      {
+        "hub": "public/js/app-shell.mjs",
+        "from": "./app-shell-modals.mjs",
+        "isDynamic": true
+      },
+      {
+        "hub": "public/js/app-shell.mjs",
+        "from": "./app-state.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app-shell.mjs",
+        "from": "./app-state.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app-shell.mjs",
+        "from": "./clinical-access-runtime.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app-shell.mjs",
+        "from": "./clinical-access-runtime.mjs",
+        "isDynamic": true
+      },
+      {
+        "hub": "public/js/app-shell.mjs",
+        "from": "./clinical-quick-export.mjs",
+        "isDynamic": true
+      },
+      {
+        "hub": "public/js/app-shell.mjs",
+        "from": "./clinical-quick-export.mjs",
+        "isDynamic": true
+      },
+      {
+        "hub": "public/js/app-shell.mjs",
+        "from": "./clinical-team-invite.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app-shell.mjs",
+        "from": "./document-export-client.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app-shell.mjs",
+        "from": "./document-export-client.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app-shell.mjs",
+        "from": "./features/agenda.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app-shell.mjs",
+        "from": "./features/chrome.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app-shell.mjs",
+        "from": "./features/chrome.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app-shell.mjs",
+        "from": "./features/clinical-registration.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app-shell.mjs",
+        "from": "./features/command-palette.mjs",
+        "isDynamic": true
+      },
+      {
+        "hub": "public/js/app-shell.mjs",
+        "from": "./features/command-palette.mjs",
+        "isDynamic": true
+      },
+      {
+        "hub": "public/js/app-shell.mjs",
+        "from": "./features/guardia-board.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app-shell.mjs",
+        "from": "./features/header-context.mjs",
+        "isDynamic": true
+      },
+      {
+        "hub": "public/js/app-shell.mjs",
+        "from": "./features/lan-sync.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app-shell.mjs",
+        "from": "./features/pase-board.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app-shell.mjs",
+        "from": "./features/patients.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app-shell.mjs",
+        "from": "./features/patients.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app-shell.mjs",
+        "from": "./features/productivity.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app-shell.mjs",
+        "from": "./features/profile.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app-shell.mjs",
+        "from": "./lan-join-link.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app-shell.mjs",
+        "from": "./lazy-feature-routes.mjs",
+        "isDynamic": true
+      },
+      {
+        "hub": "public/js/app-shell.mjs",
+        "from": "./mobile-lan-boot.mjs",
+        "isDynamic": true
+      },
+      {
+        "hub": "public/js/app-shell.mjs",
+        "from": "./mobile-lan-query-persist.mjs",
+        "isDynamic": true
+      },
+      {
+        "hub": "public/js/app-shell.mjs",
+        "from": "./mobile-sharer-sync.mjs",
+        "isDynamic": true
+      },
+      {
+        "hub": "public/js/app-shell.mjs",
+        "from": "./mobile-web.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app-shell.mjs",
+        "from": "./patient-accesos.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app-shell.mjs",
+        "from": "./patient-date-fields.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app-shell.mjs",
+        "from": "./session-clinical-wipe.mjs",
+        "isDynamic": true
+      },
+      {
+        "hub": "public/js/app-shell.mjs",
+        "from": "./storage.js",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app-shell.mjs",
+        "from": "./ui-toast.mjs",
+        "isDynamic": true
+      },
+      {
+        "hub": "public/js/app-shell.mjs",
+        "from": "./ui-toast.mjs",
+        "isDynamic": true
+      },
+      {
+        "hub": "public/js/app.js",
+        "from": "./app-runtimes.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app.js",
+        "from": "./app-shell.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app.js",
+        "from": "./app-state.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app.js",
+        "from": "./boot/boot-steps.mjs",
+        "isDynamic": true
+      },
+      {
+        "hub": "public/js/app.js",
+        "from": "./clinical-access-runtime.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app.js",
+        "from": "./clinical-access-runtime.mjs",
+        "isDynamic": true
+      },
+      {
+        "hub": "public/js/app.js",
+        "from": "./clinical-ops-lan.mjs",
+        "isDynamic": true
+      },
+      {
+        "hub": "public/js/app.js",
+        "from": "./clinical-settings.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app.js",
+        "from": "./clinical-team-invite.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app.js",
+        "from": "./db-storage-bridge.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app.js",
+        "from": "./features/agenda.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app.js",
+        "from": "./features/chrome.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app.js",
+        "from": "./features/clinical-onboarding-main.mjs",
+        "isDynamic": true
+      },
+      {
+        "hub": "public/js/app.js",
+        "from": "./features/clinical-registration.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app.js",
+        "from": "./features/clinical-rotation-entry.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app.js",
+        "from": "./features/clinical-teams.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app.js",
+        "from": "./features/clinical-teams.mjs",
+        "isDynamic": true
+      },
+      {
+        "hub": "public/js/app.js",
+        "from": "./features/db-unlock.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app.js",
+        "from": "./features/drive-import-modal.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app.js",
+        "from": "./features/estado-actual-panel.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app.js",
+        "from": "./features/estado-actual-paste-modal.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app.js",
+        "from": "./features/estado-actual-registro-modal.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app.js",
+        "from": "./features/expediente.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app.js",
+        "from": "./features/guardia-board.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app.js",
+        "from": "./features/lab-bulk-preview-modal.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app.js",
+        "from": "./features/lab-history-batch-copy-modal.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app.js",
+        "from": "./features/lan-sync.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app.js",
+        "from": "./features/medications.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app.js",
+        "from": "./features/notes-indicaciones.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app.js",
+        "from": "./features/pase-board.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app.js",
+        "from": "./features/patients.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app.js",
+        "from": "./features/productivity.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app.js",
+        "from": "./features/profile.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app.js",
+        "from": "./features/profile.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app.js",
+        "from": "./features/receta-hu.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app.js",
+        "from": "./features/soap-estado.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app.js",
+        "from": "./features/todos.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app.js",
+        "from": "./lazy-feature-routes.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app.js",
+        "from": "./perf-markers.mjs",
+        "isDynamic": true
+      },
+      {
+        "hub": "public/js/app.js",
+        "from": "./presentation-mode.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app.js",
+        "from": "./rpc-date-picker.mjs",
+        "isDynamic": false
+      },
+      {
+        "hub": "public/js/app.js",
+        "from": "./session-clinical-wipe.mjs",
+        "isDynamic": true
+      },
+      {
+        "hub": "public/js/app.js",
+        "from": "./session-clinical-wipe.mjs",
+        "isDynamic": true
+      },
+      {
+        "hub": "public/js/app.js",
+        "from": "./storage.js",
+        "isDynamic": false
+      }
+    ]
+  },
+  "byFile": {},
+  "changelog": [
+    {
+      "date": "2026-06-02",
+      "note": "Initial debt contract; run npm run metrics:baseline to populate scores."
+    },
+    {
+      "date": "2026-06-03",
+      "note": "Baseline refresh totalScore=0"
+    },
+    {
+      "date": "2026-06-03",
+      "note": "Baseline refresh totalScore=31408"
+    },
+    {
+      "date": "2026-06-21",
+      "note": "Baseline refresh totalScore=50"
+    }
+  ]
+}

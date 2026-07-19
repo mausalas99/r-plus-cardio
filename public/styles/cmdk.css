@@ -1,0 +1,140 @@
+/* ⌘K command palette (premium UI phase 2). Glass comes from overlays.css. */
+
+.cmdk-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-cmdk);
+  background: var(--scrim-bg);
+}
+
+.cmdk {
+  position: fixed;
+  z-index: var(--z-cmdk);
+  top: 14vh;
+  left: 0;
+  right: 0;
+  width: min(560px, calc(100vw - 32px));
+  margin-inline: auto;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  animation: modal-in var(--dur-normal) var(--ease-out);
+}
+
+.cmdk[hidden],
+.cmdk-backdrop[hidden] {
+  display: none;
+}
+
+.cmdk-input {
+  border: none;
+  border-bottom: 1px solid var(--divider);
+  background: transparent;
+  font: inherit;
+  font-size: 15px;
+  color: var(--text);
+  padding: 14px 16px;
+  outline: none;
+}
+
+.cmdk-input::placeholder {
+  color: var(--text-muted);
+}
+
+.cmdk-list {
+  list-style: none;
+  margin: 0;
+  padding: 6px;
+  max-height: 46vh;
+  overflow-y: auto;
+}
+
+.cmdk-item {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 12px;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  color: var(--text);
+}
+
+.cmdk-item:hover,
+.cmdk-item.is-selected {
+  background: var(--state-hover-bg);
+}
+
+.cmdk-item.is-selected {
+  box-shadow: inset 2px 0 0 var(--action);
+}
+
+.cmdk-item-label {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cmdk-item-hint {
+  color: var(--text-muted);
+  font-size: 12px;
+  flex-shrink: 0;
+}
+
+.cmdk-empty {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 14px 12px;
+  color: var(--text-muted);
+  list-style: none;
+}
+
+.cmdk-empty .empty-state-title {
+  font-size: calc(14px * var(--density-font));
+  font-weight: 600;
+  color: var(--text);
+}
+
+.cmdk-empty .empty-state-lead {
+  font-size: calc(13px * var(--density-font));
+  line-height: 1.45;
+  max-width: 36ch;
+}
+
+.header-cmdk-hint {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: var(--border-hairline);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+.header-cmdk-hint-icon {
+  flex-shrink: 0;
+  opacity: 0.8;
+}
+
+.header-cmdk-hint:hover .header-cmdk-hint-icon {
+  opacity: 1;
+}
+
+.header-cmdk-hint:hover {
+  background: var(--state-hover-bg);
+  color: var(--text);
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  .cmdk {
+    animation: none !important;
+  }
+}

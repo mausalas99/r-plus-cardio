@@ -1,0 +1,29 @@
+R+ 7.5.2 (Estado Actual signos, SOME ayuno y traqueostomía)
+============================================================
+
+Fecha: 2026-06-26
+
+## Resumen
+
+Sobre **7.5.1**: franja de **signos vitales** más legible (filas compactas + historial al tocar), SOAP/copiar alineados a la lectura más reciente, reglas de **PICO** febril, **AYUNO** en SOME y soporte **Traqueostomía** en Estado Actual.
+
+## Nuevo / mejorado
+
+- **Estado Actual — signos vitales** — Resumen en **filas** (T/A, FC, FR, Temp, SatO₂) dentro de una columna estrecha; al tocar una fila con historial se abre un modal con lecturas del turno (más reciente arriba).
+- **Estado Actual — SOAP y copiar** — Signos y texto guardado usan la **última** lectura del turno (antes podían quedar valores viejos). **PICO** solo si temperatura ≥ **38 °C** y dentro de **5 días**; fecha corta (`dd/mm` o `dd/mm HH:mm`) sin ruido de `@ 00:00` en cierre de turno.
+- **SOME — ayuno** — `DIETAS AYUNO` se reconoce en pegado SOME (filas cortas, con o sin tabs); propuesta y SOAP muestran **DIETA AYUNO** sin placeholder calórico.
+- **Soporte respiratorio — traqueostomía** — Nueva opción en Estado Actual, modal SOAP y export; SatO₂ puede inferirse al pegar monitoreo (`TQT`, `TRAQUEOSTOMÍA`).
+- **T/A unificada** — TAS/TAD en una sola fila en signos y en el modal de historial.
+
+## Operación en guardia
+
+Instala **7.5.2** si usas **Estado Actual** para monitoreo o pegas **indicaciones SOME** con ayuno. **Sin migración de base** (sigue SQLCipher v20). Recomendable el mismo build en estaciones con ⇄ activo.
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v7.5.2
+
+- Mac: `R+-7.5.2-arm64.dmg`, `R+-7.5.2-x64.dmg` (y zip para auto-update).
+- Windows: `R+-7.5.2-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye write-release-yml.js).

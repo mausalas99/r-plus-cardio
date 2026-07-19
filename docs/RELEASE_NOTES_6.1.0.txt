@@ -1,0 +1,59 @@
+R+ 6.1.0 (Manejo clínico completo — Infusiones, ATB y CAD/EHH)
+================================================================
+
+Fecha: 2026-05-25
+
+## Resumen
+
+R+ 6.1.0 completa **Expediente → Clínico → Manejo** con cuatro sub-pestañas: **Electrolitos** (ya existente), **Infusiones**, **ATB** y **CAD/EHH**. Cada módulo lee laboratorio y datos del paciente activo, genera texto SOME copiable campo por campo y unifica la navegación del expediente clínico con el mismo lenguaje visual de pestañas subrayadas.
+
+## Nuevo / mejorado
+
+### Manejo — sub-pestañas
+
+- **Electrolitos** — alteraciones de electrolitos y gasometría con dosis adultas, dilución, vía y bloque SOME (sin cambio de ruta).
+- **Infusiones** — catálogo hospitalario de vasopresores, sedación y otras infusiones con panel dividido lista + detalle.
+- **ATB** — catálogo curado (~30 fármacos, 12 familias) con sugerencias según cultivos positivos.
+- **CAD/EHH** — checklist ADA con lectura automática de BH, QS y gasometría.
+
+### Infusiones
+
+- **32 entradas** en 10 categorías (vasopresores, sedación, anticonvulsivantes, fluidos, analgesia, respiratorio, etc.).
+- **Lista + panel de detalle** — busca, filtra por categoría, favoritos y recientes; selecciona una infusión para ver indicación, notas y SOME.
+- **Calculadoras integradas** — sedación mg/kg/h, carga de levetiracetam, bicarbonato balanceado HU y otras según la entrada.
+- **Infusiones personalizadas** — crea y guarda entradas propias con plantilla SOME editable.
+- **Copia SOME** — texto listo para pegar en el hospital, campo por campo (sin marcas +Pendiente).
+
+### ATB (antibióticos)
+
+- **Catálogo local** — dosis adultas, vía, indicaciones, notas renales y abreviaturas SOME por fármaco.
+- **Sugerencias por cultivo** — si hay cultivos positivos en Resultados, resalta organismos y antibióticos relacionados (puente RIS → Manejo).
+- **Ajuste renal automático** — eTFG estimada desde laboratorios recientes; notas de dosis en SOME cuando aplica.
+- **Filtros** — chips por familia (carbapenémicos, cefalosporinas, glicopéptidos, etc.) e indicación clínica.
+- **Panel SOME** — copia la indicación sugerida sin +Pendiente.
+
+### CAD/EHH
+
+- **Clasificación sugerida** — lee glucosa, gasometría, anión gap, osmolalidad y datos del paciente para orientar CAD vs EHH.
+- **Checklist ADA** — pasos de manejo con casillas; modo manual si prefieres forzar CAD o EHH.
+- **Bloque SOME** — resumen copiable alineado al protocolo activo.
+
+### Expediente — navegación clínica
+
+- **Pestañas unificadas** — segmentos de Clínico (Nota de evolución, Indicaciones, Manejo) y sub-pestañas de Manejo comparten barra subrayada e indicador deslizante.
+- **Accesibilidad** — roles ARIA y foco visible en barras de segmento.
+- **Etiquetas alineadas** — «Nota de evolución» y nombres consistentes en Sala e Interconsulta.
+
+## Correcciones
+
+- Mejoras visuales en tarjetas ATB (bordes redondeados, acento único del sistema de diseño).
+- Indicador de pestaña sincronizado al cambiar sub-módulos sin perder la sub-pestaña activa en sesión.
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v6.1.0
+
+- Mac: `R+-6.1.0-arm64.dmg`, `R+-6.1.0-x64.dmg` (y zip para auto-update).
+- Windows: `R+-6.1.0-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye write-release-yml.js).

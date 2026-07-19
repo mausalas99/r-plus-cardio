@@ -1,0 +1,671 @@
+{
+  "nodes": [
+    {
+      "id": "file:public/js/patient-list-incremental.mjs",
+      "type": "file",
+      "name": "patient-list-incremental.mjs",
+      "filePath": "public/js/patient-list-incremental.mjs",
+      "summary": "Incremental DOM updates for patient sidebar list on LAN sync deltas.",
+      "tags": [
+        "exports",
+        "module"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:public/js/patient-list-incremental.mjs:patientCardDisplayKey",
+      "type": "function",
+      "name": "patientCardDisplayKey",
+      "filePath": "public/js/patient-list-incremental.mjs",
+      "lineRange": [
+        6,
+        24
+      ],
+      "summary": "patientCardDisplayKey — implementation in patient-list-incremental.mjs.",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/patient-list-incremental.mjs:buildPatientListZones",
+      "type": "function",
+      "name": "buildPatientListZones",
+      "filePath": "public/js/patient-list-incremental.mjs",
+      "lineRange": [
+        27,
+        33
+      ],
+      "summary": "Builds PatientListZones structure for downstream use.",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/patient-list-incremental.mjs:buildRondaNavIds",
+      "type": "function",
+      "name": "buildRondaNavIds",
+      "filePath": "public/js/patient-list-incremental.mjs",
+      "lineRange": [
+        36,
+        42
+      ],
+      "summary": "Builds RondaNavIds structure for downstream use.",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/patient-list-incremental.mjs:readVirtualPatientListStructure",
+      "type": "function",
+      "name": "readVirtualPatientListStructure",
+      "filePath": "public/js/patient-list-incremental.mjs",
+      "lineRange": [
+        64,
+        77
+      ],
+      "summary": "readVirtualPatientListStructure — implementation in patient-list-incremental.mjs.",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/patient-list-incremental.mjs:readStructureSignature",
+      "type": "function",
+      "name": "readStructureSignature",
+      "filePath": "public/js/patient-list-incremental.mjs",
+      "lineRange": [
+        80,
+        93
+      ],
+      "summary": "readStructureSignature — implementation in patient-list-incremental.mjs.",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/patient-list-incremental.mjs:virtualPatientListStructureSignature",
+      "type": "function",
+      "name": "virtualPatientListStructureSignature",
+      "filePath": "public/js/patient-list-incremental.mjs",
+      "lineRange": [
+        102,
+        104
+      ],
+      "summary": "virtualPatientListStructureSignature — implementation in patient-list-incremental.mjs.",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/patient-list-incremental.mjs:syncZoneCards",
+      "type": "function",
+      "name": "syncZoneCards",
+      "filePath": "public/js/patient-list-incremental.mjs",
+      "lineRange": [
+        107,
+        129
+      ],
+      "summary": "syncZoneCards — implementation in patient-list-incremental.mjs.",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/patient-list-incremental.mjs:syncSectionCounts",
+      "type": "function",
+      "name": "syncSectionCounts",
+      "filePath": "public/js/patient-list-incremental.mjs",
+      "lineRange": [
+        132,
+        145
+      ],
+      "summary": "syncSectionCounts — implementation in patient-list-incremental.mjs.",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/patient-list-incremental.mjs:trySilentPatientListPatch",
+      "type": "function",
+      "name": "trySilentPatientListPatch",
+      "filePath": "public/js/patient-list-incremental.mjs",
+      "lineRange": [
+        153,
+        171
+      ],
+      "summary": "trySilentPatientListPatch — implementation in patient-list-incremental.mjs.",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/patient-list-incremental.mjs:updatePatientListDomIncremental",
+      "type": "function",
+      "name": "updatePatientListDomIncremental",
+      "filePath": "public/js/patient-list-incremental.mjs",
+      "lineRange": [
+        179,
+        246
+      ],
+      "summary": "updatePatientListDomIncremental — implementation in patient-list-incremental.mjs.",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:public/js/patient-list-incremental.test.mjs",
+      "type": "file",
+      "name": "patient-list-incremental.test.mjs",
+      "filePath": "public/js/patient-list-incremental.test.mjs",
+      "summary": "Tests incremental list patch application and ordering preservation.",
+      "tags": [
+        "test",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:public/js/patient-list-virtual.mjs",
+      "type": "file",
+      "name": "patient-list-virtual.mjs",
+      "filePath": "public/js/patient-list-virtual.mjs",
+      "summary": "Virtual scrolling for large censuses (>30 patients) in sidebar and board views.",
+      "tags": [
+        "exports",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/patient-list-virtual.mjs:shouldVirtualizeActiveZone",
+      "type": "function",
+      "name": "shouldVirtualizeActiveZone",
+      "filePath": "public/js/patient-list-virtual.mjs",
+      "lineRange": [
+        18,
+        20
+      ],
+      "summary": "shouldVirtualizeActiveZone — implementation in patient-list-virtual.mjs.",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/patient-list-virtual.mjs:renderPatientCardElement",
+      "type": "function",
+      "name": "renderPatientCardElement",
+      "filePath": "public/js/patient-list-virtual.mjs",
+      "lineRange": [
+        30,
+        40
+      ],
+      "summary": "Formats or renders PatientCardElement for display or export.",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/patient-list-virtual.mjs:destroyPatientActiveZoneVirtual",
+      "type": "function",
+      "name": "destroyPatientActiveZoneVirtual",
+      "filePath": "public/js/patient-list-virtual.mjs",
+      "lineRange": [
+        67,
+        82
+      ],
+      "summary": "destroyPatientActiveZoneVirtual — implementation in patient-list-virtual.mjs.",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/patient-list-virtual.mjs:mountPatientActiveZoneVirtual",
+      "type": "function",
+      "name": "mountPatientActiveZoneVirtual",
+      "filePath": "public/js/patient-list-virtual.mjs",
+      "lineRange": [
+        87,
+        128
+      ],
+      "summary": "mountPatientActiveZoneVirtual — implementation in patient-list-virtual.mjs.",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/patient-list-virtual.mjs:updatePatientActiveZoneVirtual",
+      "type": "function",
+      "name": "updatePatientActiveZoneVirtual",
+      "filePath": "public/js/patient-list-virtual.mjs",
+      "lineRange": [
+        134,
+        151
+      ],
+      "summary": "updatePatientActiveZoneVirtual — implementation in patient-list-virtual.mjs.",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/patient-list-virtual.mjs:trySilentVirtualPatientListPatch",
+      "type": "function",
+      "name": "trySilentVirtualPatientListPatch",
+      "filePath": "public/js/patient-list-virtual.mjs",
+      "lineRange": [
+        158,
+        185
+      ],
+      "summary": "trySilentVirtualPatientListPatch — implementation in patient-list-virtual.mjs.",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/patient-list-virtual.mjs:stampVirtualPatientListStructure",
+      "type": "function",
+      "name": "stampVirtualPatientListStructure",
+      "filePath": "public/js/patient-list-virtual.mjs",
+      "lineRange": [
+        188,
+        194
+      ],
+      "summary": "stampVirtualPatientListStructure — implementation in patient-list-virtual.mjs.",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/patient-list-virtual.test.mjs",
+      "type": "file",
+      "name": "patient-list-virtual.test.mjs",
+      "filePath": "public/js/patient-list-virtual.test.mjs",
+      "summary": "Tests virtual list window calculation and scroll restoration.",
+      "tags": [
+        "test",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:public/js/virtual-scroll.mjs",
+      "type": "file",
+      "name": "virtual-scroll.mjs",
+      "filePath": "public/js/virtual-scroll.mjs",
+      "summary": "Generic virtual scroll engine: viewport window, item height, and scroll event binding.",
+      "tags": [
+        "exports",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/virtual-scroll.mjs:computeVisibleRange",
+      "type": "function",
+      "name": "computeVisibleRange",
+      "filePath": "public/js/virtual-scroll.mjs",
+      "lineRange": [
+        6,
+        31
+      ],
+      "summary": "Computes VisibleRange from input values.",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/virtual-scroll.mjs:createVirtualScroll",
+      "type": "function",
+      "name": "createVirtualScroll",
+      "filePath": "public/js/virtual-scroll.mjs",
+      "lineRange": [
+        33,
+        164
+      ],
+      "summary": "createVirtualScroll — implementation in virtual-scroll.mjs.",
+      "tags": [
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:public/js/virtual-scroll.test.mjs",
+      "type": "file",
+      "name": "virtual-scroll.test.mjs",
+      "filePath": "public/js/virtual-scroll.test.mjs",
+      "summary": "Tests virtual scroll math for variable and fixed item heights.",
+      "tags": [
+        "test",
+        "module"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:public/js/patient-list-incremental.mjs",
+      "target": "function:public/js/patient-list-incremental.mjs:patientCardDisplayKey",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/patient-list-incremental.mjs",
+      "target": "function:public/js/patient-list-incremental.mjs:patientCardDisplayKey",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/patient-list-incremental.mjs",
+      "target": "function:public/js/patient-list-incremental.mjs:buildPatientListZones",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/patient-list-incremental.mjs",
+      "target": "function:public/js/patient-list-incremental.mjs:buildPatientListZones",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/patient-list-incremental.mjs",
+      "target": "function:public/js/patient-list-incremental.mjs:buildRondaNavIds",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/patient-list-incremental.mjs",
+      "target": "function:public/js/patient-list-incremental.mjs:buildRondaNavIds",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/patient-list-incremental.mjs",
+      "target": "function:public/js/patient-list-incremental.mjs:readVirtualPatientListStructure",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/patient-list-incremental.mjs",
+      "target": "function:public/js/patient-list-incremental.mjs:readVirtualPatientListStructure",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/patient-list-incremental.mjs",
+      "target": "function:public/js/patient-list-incremental.mjs:readStructureSignature",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/patient-list-incremental.mjs",
+      "target": "function:public/js/patient-list-incremental.mjs:virtualPatientListStructureSignature",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/patient-list-incremental.mjs",
+      "target": "function:public/js/patient-list-incremental.mjs:virtualPatientListStructureSignature",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/patient-list-incremental.mjs",
+      "target": "function:public/js/patient-list-incremental.mjs:syncZoneCards",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/patient-list-incremental.mjs",
+      "target": "function:public/js/patient-list-incremental.mjs:syncZoneCards",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/patient-list-incremental.mjs",
+      "target": "function:public/js/patient-list-incremental.mjs:syncSectionCounts",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/patient-list-incremental.mjs",
+      "target": "function:public/js/patient-list-incremental.mjs:syncSectionCounts",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/patient-list-incremental.mjs",
+      "target": "function:public/js/patient-list-incremental.mjs:trySilentPatientListPatch",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/patient-list-incremental.mjs",
+      "target": "function:public/js/patient-list-incremental.mjs:trySilentPatientListPatch",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/patient-list-incremental.mjs",
+      "target": "function:public/js/patient-list-incremental.mjs:updatePatientListDomIncremental",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/patient-list-incremental.mjs",
+      "target": "function:public/js/patient-list-incremental.mjs:updatePatientListDomIncremental",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/patient-list-incremental.test.mjs",
+      "target": "file:public/js/patient-list-incremental.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/patient-list-incremental.mjs",
+      "target": "file:public/js/patient-list-incremental.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:public/js/patient-list-virtual.mjs",
+      "target": "file:public/js/patient-list-incremental.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/patient-list-virtual.mjs",
+      "target": "file:public/js/virtual-scroll.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/patient-list-virtual.mjs",
+      "target": "function:public/js/patient-list-virtual.mjs:shouldVirtualizeActiveZone",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/patient-list-virtual.mjs",
+      "target": "function:public/js/patient-list-virtual.mjs:shouldVirtualizeActiveZone",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/patient-list-virtual.mjs",
+      "target": "function:public/js/patient-list-virtual.mjs:renderPatientCardElement",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/patient-list-virtual.mjs",
+      "target": "function:public/js/patient-list-virtual.mjs:destroyPatientActiveZoneVirtual",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/patient-list-virtual.mjs",
+      "target": "function:public/js/patient-list-virtual.mjs:destroyPatientActiveZoneVirtual",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/patient-list-virtual.mjs",
+      "target": "function:public/js/patient-list-virtual.mjs:mountPatientActiveZoneVirtual",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/patient-list-virtual.mjs",
+      "target": "function:public/js/patient-list-virtual.mjs:mountPatientActiveZoneVirtual",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/patient-list-virtual.mjs",
+      "target": "function:public/js/patient-list-virtual.mjs:updatePatientActiveZoneVirtual",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/patient-list-virtual.mjs",
+      "target": "function:public/js/patient-list-virtual.mjs:updatePatientActiveZoneVirtual",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/patient-list-virtual.mjs",
+      "target": "function:public/js/patient-list-virtual.mjs:trySilentVirtualPatientListPatch",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/patient-list-virtual.mjs",
+      "target": "function:public/js/patient-list-virtual.mjs:trySilentVirtualPatientListPatch",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/patient-list-virtual.mjs",
+      "target": "function:public/js/patient-list-virtual.mjs:stampVirtualPatientListStructure",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/patient-list-virtual.mjs",
+      "target": "function:public/js/patient-list-virtual.mjs:stampVirtualPatientListStructure",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/patient-list-virtual.test.mjs",
+      "target": "file:public/js/patient-list-virtual.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/patient-list-virtual.mjs",
+      "target": "file:public/js/patient-list-virtual.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:public/js/virtual-scroll.mjs",
+      "target": "function:public/js/virtual-scroll.mjs:computeVisibleRange",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/virtual-scroll.mjs",
+      "target": "function:public/js/virtual-scroll.mjs:computeVisibleRange",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/virtual-scroll.mjs",
+      "target": "function:public/js/virtual-scroll.mjs:createVirtualScroll",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/virtual-scroll.mjs",
+      "target": "function:public/js/virtual-scroll.mjs:createVirtualScroll",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/virtual-scroll.test.mjs",
+      "target": "file:public/js/virtual-scroll.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/virtual-scroll.mjs",
+      "target": "file:public/js/virtual-scroll.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

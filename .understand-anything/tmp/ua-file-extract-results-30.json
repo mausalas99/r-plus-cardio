@@ -1,0 +1,973 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 7,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "public/js/app-boot-imports.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 136,
+      "nonEmptyLines": 123,
+      "functions": [
+        {
+          "name": "parseNamedImports",
+          "startLine": 14,
+          "endLine": 28,
+          "params": [
+            "filePath"
+          ]
+        },
+        {
+          "name": "collectExportedNames",
+          "startLine": 30,
+          "endLine": 54,
+          "params": [
+            "filePath"
+          ]
+        },
+        {
+          "name": "resolveImport",
+          "startLine": 56,
+          "endLine": 60,
+          "params": [
+            "baseDir",
+            "from"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "parseNamedImports",
+          "callee": "fs.readFileSync",
+          "lineNumber": 15
+        },
+        {
+          "caller": "parseNamedImports",
+          "callee": "re.exec",
+          "lineNumber": 19
+        },
+        {
+          "caller": "parseNamedImports",
+          "callee": "m[1]\n      .split(',')\n      .map((s) => s.trim().split(/\\s+as\\s+/)[0].trim())\n      .filter",
+          "lineNumber": 21
+        },
+        {
+          "caller": "parseNamedImports",
+          "callee": "m[1]\n      .split(',')\n      .map",
+          "lineNumber": 21
+        },
+        {
+          "caller": "parseNamedImports",
+          "callee": "m[1]\n      .split",
+          "lineNumber": 21
+        },
+        {
+          "caller": "parseNamedImports",
+          "callee": "s.trim().split(/\\s+as\\s+/)[0].trim",
+          "lineNumber": 23
+        },
+        {
+          "caller": "parseNamedImports",
+          "callee": "s.trim().split",
+          "lineNumber": 23
+        },
+        {
+          "caller": "parseNamedImports",
+          "callee": "s.trim",
+          "lineNumber": 23
+        },
+        {
+          "caller": "parseNamedImports",
+          "callee": "out.push",
+          "lineNumber": 25
+        },
+        {
+          "caller": "collectExportedNames",
+          "callee": "path.resolve",
+          "lineNumber": 31
+        },
+        {
+          "caller": "collectExportedNames",
+          "callee": "visited.has",
+          "lineNumber": 32
+        },
+        {
+          "caller": "collectExportedNames",
+          "callee": "visited.add",
+          "lineNumber": 33
+        },
+        {
+          "caller": "collectExportedNames",
+          "callee": "fs.readFileSync",
+          "lineNumber": 35
+        },
+        {
+          "caller": "collectExportedNames",
+          "callee": "src.matchAll",
+          "lineNumber": 37
+        },
+        {
+          "caller": "collectExportedNames",
+          "callee": "names.add",
+          "lineNumber": 37
+        },
+        {
+          "caller": "collectExportedNames",
+          "callee": "src.matchAll",
+          "lineNumber": 38
+        },
+        {
+          "caller": "collectExportedNames",
+          "callee": "names.add",
+          "lineNumber": 38
+        },
+        {
+          "caller": "collectExportedNames",
+          "callee": "src.matchAll",
+          "lineNumber": 39
+        },
+        {
+          "caller": "collectExportedNames",
+          "callee": "m[1].split(',').forEach",
+          "lineNumber": 40
+        },
+        {
+          "caller": "collectExportedNames",
+          "callee": "m[1].split",
+          "lineNumber": 40
+        },
+        {
+          "caller": "collectExportedNames",
+          "callee": "part.trim",
+          "lineNumber": 41
+        },
+        {
+          "caller": "collectExportedNames",
+          "callee": "chunk.split",
+          "lineNumber": 43
+        },
+        {
+          "caller": "collectExportedNames",
+          "callee": "names.add",
+          "lineNumber": 44
+        },
+        {
+          "caller": "collectExportedNames",
+          "callee": "alias[alias.length - 1].trim",
+          "lineNumber": 44
+        },
+        {
+          "caller": "collectExportedNames",
+          "callee": "src.matchAll",
+          "lineNumber": 47
+        },
+        {
+          "caller": "collectExportedNames",
+          "callee": "resolveImport",
+          "lineNumber": 48
+        },
+        {
+          "caller": "collectExportedNames",
+          "callee": "path.dirname",
+          "lineNumber": 48
+        },
+        {
+          "caller": "collectExportedNames",
+          "callee": "fs.existsSync",
+          "lineNumber": 49
+        },
+        {
+          "caller": "collectExportedNames",
+          "callee": "collectExportedNames",
+          "lineNumber": 50
+        },
+        {
+          "caller": "collectExportedNames",
+          "callee": "names.add",
+          "lineNumber": 50
+        },
+        {
+          "caller": "resolveImport",
+          "callee": "from.startsWith",
+          "lineNumber": 57
+        },
+        {
+          "caller": "resolveImport",
+          "callee": "from.endsWith",
+          "lineNumber": 58
+        },
+        {
+          "caller": "resolveImport",
+          "callee": "from.endsWith",
+          "lineNumber": 58
+        },
+        {
+          "caller": "resolveImport",
+          "callee": "path.resolve",
+          "lineNumber": 59
+        },
+        {
+          "caller": "walk",
+          "callee": "fs.readdirSync",
+          "lineNumber": 97
+        },
+        {
+          "caller": "walk",
+          "callee": "path.join",
+          "lineNumber": 98
+        },
+        {
+          "caller": "walk",
+          "callee": "ent.isDirectory",
+          "lineNumber": 99
+        },
+        {
+          "caller": "walk",
+          "callee": "walk",
+          "lineNumber": 101
+        },
+        {
+          "caller": "walk",
+          "callee": "ent.name.endsWith",
+          "lineNumber": 104
+        },
+        {
+          "caller": "walk",
+          "callee": "fs.readFileSync",
+          "lineNumber": 105
+        },
+        {
+          "caller": "walk",
+          "callee": "re.exec",
+          "lineNumber": 108
+        },
+        {
+          "caller": "walk",
+          "callee": "/\\bctx\\b/.test",
+          "lineNumber": 112
+        },
+        {
+          "caller": "walk",
+          "callee": "/\\bpartial\\b/.test",
+          "lineNumber": 112
+        },
+        {
+          "caller": "walk",
+          "callee": "mismatches.push",
+          "lineNumber": 113
+        },
+        {
+          "caller": "walk",
+          "callee": "path.relative",
+          "lineNumber": 113
+        },
+        {
+          "caller": "walk",
+          "callee": "/\\bpartial\\b/.test",
+          "lineNumber": 115
+        },
+        {
+          "caller": "walk",
+          "callee": "/\\bctx\\b/.test",
+          "lineNumber": 115
+        },
+        {
+          "caller": "walk",
+          "callee": "mismatches.push",
+          "lineNumber": 116
+        },
+        {
+          "caller": "walk",
+          "callee": "path.relative",
+          "lineNumber": 116
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "scripts/metrics/boot-graph.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 78,
+      "nonEmptyLines": 71,
+      "functions": [
+        {
+          "name": "normalizeBootImportPath",
+          "startLine": 17,
+          "endLine": 23,
+          "params": [
+            "from"
+          ]
+        },
+        {
+          "name": "findBootLazyOnlyViolations",
+          "startLine": 29,
+          "endLine": 41,
+          "params": [
+            "imports"
+          ]
+        },
+        {
+          "name": "collectBootStaticImports",
+          "startLine": 46,
+          "endLine": 62,
+          "params": [
+            "root"
+          ]
+        },
+        {
+          "name": "hashBootGraph",
+          "startLine": 64,
+          "endLine": 67,
+          "params": [
+            "imports"
+          ]
+        },
+        {
+          "name": "bootGraphDebtDelta",
+          "startLine": 69,
+          "endLine": 78,
+          "params": [
+            "currentImports",
+            "baselineImports"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "BOOT_LAZY_ONLY_SUFFIXES",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "findBootLazyOnlyViolations",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "collectBootStaticImports",
+          "line": 46,
+          "isDefault": false
+        },
+        {
+          "name": "hashBootGraph",
+          "line": 64,
+          "isDefault": false
+        },
+        {
+          "name": "bootGraphDebtDelta",
+          "line": 69,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "normalizeBootImportPath",
+          "callee": "String(from || '').replace",
+          "lineNumber": 18
+        },
+        {
+          "caller": "normalizeBootImportPath",
+          "callee": "String",
+          "lineNumber": 18
+        },
+        {
+          "caller": "normalizeBootImportPath",
+          "callee": "p.startsWith",
+          "lineNumber": 19
+        },
+        {
+          "caller": "normalizeBootImportPath",
+          "callee": "p.slice",
+          "lineNumber": 19
+        },
+        {
+          "caller": "normalizeBootImportPath",
+          "callee": "p.startsWith",
+          "lineNumber": 20
+        },
+        {
+          "caller": "normalizeBootImportPath",
+          "callee": "p.slice",
+          "lineNumber": 20
+        },
+        {
+          "caller": "normalizeBootImportPath",
+          "callee": "p.endsWith",
+          "lineNumber": 21
+        },
+        {
+          "caller": "normalizeBootImportPath",
+          "callee": "p.endsWith",
+          "lineNumber": 21
+        },
+        {
+          "caller": "findBootLazyOnlyViolations",
+          "callee": "normalizeBootImportPath",
+          "lineNumber": 33
+        },
+        {
+          "caller": "findBootLazyOnlyViolations",
+          "callee": "norm.endsWith",
+          "lineNumber": 35
+        },
+        {
+          "caller": "findBootLazyOnlyViolations",
+          "callee": "violations.push",
+          "lineNumber": 36
+        },
+        {
+          "caller": "collectBootStaticImports",
+          "callee": "path.join",
+          "lineNumber": 49
+        },
+        {
+          "caller": "collectBootStaticImports",
+          "callee": "fs.readFileSync",
+          "lineNumber": 50
+        },
+        {
+          "caller": "collectBootStaticImports",
+          "callee": "STATIC_RE.exec",
+          "lineNumber": 53
+        },
+        {
+          "caller": "collectBootStaticImports",
+          "callee": "out.push",
+          "lineNumber": 54
+        },
+        {
+          "caller": "collectBootStaticImports",
+          "callee": "DYNAMIC_RE.exec",
+          "lineNumber": 57
+        },
+        {
+          "caller": "collectBootStaticImports",
+          "callee": "out.push",
+          "lineNumber": 58
+        },
+        {
+          "caller": "collectBootStaticImports",
+          "callee": "out.sort",
+          "lineNumber": 61
+        },
+        {
+          "caller": "collectBootStaticImports",
+          "callee": "a.hub.localeCompare",
+          "lineNumber": 61
+        },
+        {
+          "caller": "collectBootStaticImports",
+          "callee": "a.from.localeCompare",
+          "lineNumber": 61
+        },
+        {
+          "caller": "hashBootGraph",
+          "callee": "imports.filter((i) => !i.isDynamic).map",
+          "lineNumber": 65
+        },
+        {
+          "caller": "hashBootGraph",
+          "callee": "imports.filter",
+          "lineNumber": 65
+        },
+        {
+          "caller": "hashBootGraph",
+          "callee": "crypto.createHash('sha256').update(staticOnly.join('\\n')).digest('hex').slice",
+          "lineNumber": 66
+        },
+        {
+          "caller": "hashBootGraph",
+          "callee": "crypto.createHash('sha256').update(staticOnly.join('\\n')).digest",
+          "lineNumber": 66
+        },
+        {
+          "caller": "hashBootGraph",
+          "callee": "crypto.createHash('sha256').update",
+          "lineNumber": 66
+        },
+        {
+          "caller": "hashBootGraph",
+          "callee": "crypto.createHash",
+          "lineNumber": 66
+        },
+        {
+          "caller": "hashBootGraph",
+          "callee": "staticOnly.join",
+          "lineNumber": 66
+        },
+        {
+          "caller": "bootGraphDebtDelta",
+          "callee": "(baselineImports || []).filter((i) => !i.isDynamic).map",
+          "lineNumber": 71
+        },
+        {
+          "caller": "bootGraphDebtDelta",
+          "callee": "(baselineImports || []).filter",
+          "lineNumber": 71
+        },
+        {
+          "caller": "bootGraphDebtDelta",
+          "callee": "currentImports.filter",
+          "lineNumber": 72
+        },
+        {
+          "caller": "bootGraphDebtDelta",
+          "callee": "base.has",
+          "lineNumber": 75
+        },
+        {
+          "caller": "bootGraphDebtDelta",
+          "callee": "key",
+          "lineNumber": 75
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 5,
+        "functionCount": 5,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "scripts/metrics/boot-graph.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 30,
+      "nonEmptyLines": 26,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "scripts/metrics/constants.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 8,
+      "nonEmptyLines": 7,
+      "exports": [
+        {
+          "name": "BOOT_HUBS",
+          "line": 1,
+          "isDefault": false
+        },
+        {
+          "name": "BOOT_GRAPH_DEBT_PER_IMPORT",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "MAX_FILE_LINES",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "scripts/metrics/run.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 138,
+      "nonEmptyLines": 127,
+      "functions": [
+        {
+          "name": "runEslintJson",
+          "startLine": 18,
+          "endLine": 36,
+          "params": []
+        },
+        {
+          "name": "runJscpdJson",
+          "startLine": 38,
+          "endLine": 62,
+          "params": []
+        },
+        {
+          "name": "runDependencyCruiser",
+          "startLine": 64,
+          "endLine": 79,
+          "params": []
+        },
+        {
+          "name": "loadBaseline",
+          "startLine": 81,
+          "endLine": 84,
+          "params": []
+        },
+        {
+          "name": "main",
+          "startLine": 86,
+          "endLine": 136,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "runEslintJson",
+          "callee": "execSync",
+          "lineNumber": 20
+        },
+        {
+          "caller": "runEslintJson",
+          "callee": "JSON.parse",
+          "lineNumber": 24
+        },
+        {
+          "caller": "runEslintJson",
+          "callee": "err.stdout?.toString",
+          "lineNumber": 26
+        },
+        {
+          "caller": "runEslintJson",
+          "callee": "stdout.trim().startsWith",
+          "lineNumber": 27
+        },
+        {
+          "caller": "runEslintJson",
+          "callee": "stdout.trim",
+          "lineNumber": 27
+        },
+        {
+          "caller": "runEslintJson",
+          "callee": "JSON.parse",
+          "lineNumber": 29
+        },
+        {
+          "caller": "runJscpdJson",
+          "callee": "path.join",
+          "lineNumber": 39
+        },
+        {
+          "caller": "runJscpdJson",
+          "callee": "fs.mkdirSync",
+          "lineNumber": 40
+        },
+        {
+          "caller": "runJscpdJson",
+          "callee": "execSync",
+          "lineNumber": 42
+        },
+        {
+          "caller": "runJscpdJson",
+          "callee": "[\n        'npx jscpd public/js lib',\n        '--min-lines 8',\n        '--min-tokens 60',\n        '--reporters json',\n        `--output ${outDir}`,\n        '--ignore',\n        '**/public/js/chunks/**,**/public/js/app.bundle.*',\n      ].join",
+          "lineNumber": 43
+        },
+        {
+          "caller": "runJscpdJson",
+          "callee": "path.join",
+          "lineNumber": 57
+        },
+        {
+          "caller": "runJscpdJson",
+          "callee": "fs.existsSync",
+          "lineNumber": 58
+        },
+        {
+          "caller": "runJscpdJson",
+          "callee": "JSON.parse",
+          "lineNumber": 61
+        },
+        {
+          "caller": "runJscpdJson",
+          "callee": "fs.readFileSync",
+          "lineNumber": 61
+        },
+        {
+          "caller": "runDependencyCruiser",
+          "callee": "path.join",
+          "lineNumber": 65
+        },
+        {
+          "caller": "runDependencyCruiser",
+          "callee": "fs.existsSync",
+          "lineNumber": 66
+        },
+        {
+          "caller": "runDependencyCruiser",
+          "callee": "path.join",
+          "lineNumber": 67
+        },
+        {
+          "caller": "runDependencyCruiser",
+          "callee": "execSync",
+          "lineNumber": 69
+        },
+        {
+          "caller": "runDependencyCruiser",
+          "callee": "JSON.parse",
+          "lineNumber": 73
+        },
+        {
+          "caller": "runDependencyCruiser",
+          "callee": "fs.readFileSync",
+          "lineNumber": 73
+        },
+        {
+          "caller": "loadBaseline",
+          "callee": "fs.existsSync",
+          "lineNumber": 82
+        },
+        {
+          "caller": "loadBaseline",
+          "callee": "JSON.parse",
+          "lineNumber": 83
+        },
+        {
+          "caller": "loadBaseline",
+          "callee": "fs.readFileSync",
+          "lineNumber": 83
+        },
+        {
+          "caller": "main",
+          "callee": "runEslintJson",
+          "lineNumber": 87
+        },
+        {
+          "caller": "main",
+          "callee": "eslintDebtFromResults",
+          "lineNumber": 88
+        },
+        {
+          "caller": "main",
+          "callee": "runJscpdJson",
+          "lineNumber": 89
+        },
+        {
+          "caller": "main",
+          "callee": "duplicationDebtFromJscpd",
+          "lineNumber": 90
+        },
+        {
+          "caller": "main",
+          "callee": "runDependencyCruiser",
+          "lineNumber": 91
+        },
+        {
+          "caller": "main",
+          "callee": "collectBootStaticImports",
+          "lineNumber": 92
+        },
+        {
+          "caller": "main",
+          "callee": "hashBootGraph",
+          "lineNumber": 93
+        },
+        {
+          "caller": "main",
+          "callee": "loadBaseline",
+          "lineNumber": 94
+        },
+        {
+          "caller": "main",
+          "callee": "bootGraphDebtDelta",
+          "lineNumber": 96
+        },
+        {
+          "caller": "main",
+          "callee": "computeTotalScore",
+          "lineNumber": 105
+        },
+        {
+          "caller": "main",
+          "callee": "new Date().toISOString",
+          "lineNumber": 109
+        },
+        {
+          "caller": "main",
+          "callee": "eslintResults.reduce",
+          "lineNumber": 113
+        },
+        {
+          "caller": "main",
+          "callee": "fs.writeFileSync",
+          "lineNumber": 117
+        },
+        {
+          "caller": "main",
+          "callee": "JSON.stringify",
+          "lineNumber": 117
+        },
+        {
+          "caller": "main",
+          "callee": "console.log",
+          "lineNumber": 118
+        },
+        {
+          "caller": "main",
+          "callee": "(baseline?.changelog || []).slice",
+          "lineNumber": 129
+        },
+        {
+          "caller": "main",
+          "callee": "report.generatedAt.slice",
+          "lineNumber": 130
+        },
+        {
+          "caller": "main",
+          "callee": "fs.writeFileSync",
+          "lineNumber": 133
+        },
+        {
+          "caller": "main",
+          "callee": "JSON.stringify",
+          "lineNumber": 133
+        },
+        {
+          "caller": "main",
+          "callee": "console.log",
+          "lineNumber": 134
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 5,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "scripts/metrics/score.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 42,
+      "nonEmptyLines": 38,
+      "functions": [
+        {
+          "name": "fileLineOverageDebt",
+          "startLine": 4,
+          "endLine": 7,
+          "params": [
+            "lineCount"
+          ]
+        },
+        {
+          "name": "duplicationDebtFromJscpd",
+          "startLine": 9,
+          "endLine": 12,
+          "params": [
+            "statistics"
+          ]
+        },
+        {
+          "name": "computeTotalScore",
+          "startLine": 14,
+          "endLine": 22,
+          "params": [
+            "parts"
+          ]
+        },
+        {
+          "name": "eslintDebtFromResults",
+          "startLine": 25,
+          "endLine": 42,
+          "params": [
+            "results"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "fileLineOverageDebt",
+          "line": 4,
+          "isDefault": false
+        },
+        {
+          "name": "duplicationDebtFromJscpd",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "computeTotalScore",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "eslintDebtFromResults",
+          "line": 25,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "fileLineOverageDebt",
+          "callee": "Math.ceil",
+          "lineNumber": 6
+        },
+        {
+          "caller": "duplicationDebtFromJscpd",
+          "callee": "Math.ceil",
+          "lineNumber": 11
+        },
+        {
+          "caller": "eslintDebtFromResults",
+          "callee": "fs.existsSync",
+          "lineNumber": 29
+        },
+        {
+          "caller": "eslintDebtFromResults",
+          "callee": "fs.readFileSync(file.filePath, 'utf8').split",
+          "lineNumber": 30
+        },
+        {
+          "caller": "eslintDebtFromResults",
+          "callee": "fs.readFileSync",
+          "lineNumber": 30
+        },
+        {
+          "caller": "eslintDebtFromResults",
+          "callee": "fileLineOverageDebt",
+          "lineNumber": 32
+        },
+        {
+          "caller": "eslintDebtFromResults",
+          "callee": "Number",
+          "lineNumber": 36
+        },
+        {
+          "caller": "eslintDebtFromResults",
+          "callee": "msg.message.match",
+          "lineNumber": 36
+        },
+        {
+          "caller": "eslintDebtFromResults",
+          "callee": "Math.ceil",
+          "lineNumber": 37
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 4,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "scripts/metrics/score.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 18,
+      "nonEmptyLines": 16,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    }
+  ]
+}

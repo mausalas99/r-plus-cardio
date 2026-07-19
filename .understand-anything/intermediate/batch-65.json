@@ -1,0 +1,33 @@
+{
+  "nodes": [
+    {
+      "id": "file:template_listado.docx",
+      "type": "file",
+      "name": "template_listado.docx",
+      "filePath": "template_listado.docx",
+      "summary": "Word template for patient listado (.docx) exports used by doc-generators.",
+      "tags": [
+        "document-generation",
+        "template",
+        "export",
+        "clinical"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:template.docx",
+      "type": "file",
+      "name": "template.docx",
+      "filePath": "template.docx",
+      "summary": "Primary clinical note (.docx) export template with SOME-structured sections.",
+      "tags": [
+        "document-generation",
+        "template",
+        "export",
+        "clinical"
+      ],
+      "complexity": "complex"
+    }
+  ],
+  "edges": []
+}

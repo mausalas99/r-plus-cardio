@@ -1,0 +1,157 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 3,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "scripts/metrics/changed-files.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 25,
+      "nonEmptyLines": 21,
+      "functions": [
+        {
+          "name": "filterTier1Paths",
+          "startLine": 5,
+          "endLine": 7,
+          "params": [
+            "paths"
+          ]
+        },
+        {
+          "name": "gitChangedFiles",
+          "startLine": 9,
+          "endLine": 16,
+          "params": []
+        },
+        {
+          "name": "gitChangedFilesAgainst",
+          "startLine": 18,
+          "endLine": 25,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "filterTier1Paths",
+          "line": 5,
+          "isDefault": false
+        },
+        {
+          "name": "gitChangedFiles",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "gitChangedFilesAgainst",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "filterTier1Paths",
+          "callee": "paths.filter",
+          "lineNumber": 6
+        },
+        {
+          "caller": "filterTier1Paths",
+          "callee": "TIER1_RE.test",
+          "lineNumber": 6
+        },
+        {
+          "caller": "filterTier1Paths",
+          "callee": "p.replace",
+          "lineNumber": 6
+        },
+        {
+          "caller": "gitChangedFiles",
+          "callee": "execSync",
+          "lineNumber": 11
+        },
+        {
+          "caller": "gitChangedFiles",
+          "callee": "out.split('\\n').map((s) => s.trim()).filter",
+          "lineNumber": 12
+        },
+        {
+          "caller": "gitChangedFiles",
+          "callee": "out.split('\\n').map",
+          "lineNumber": 12
+        },
+        {
+          "caller": "gitChangedFiles",
+          "callee": "out.split",
+          "lineNumber": 12
+        },
+        {
+          "caller": "gitChangedFiles",
+          "callee": "s.trim",
+          "lineNumber": 12
+        },
+        {
+          "caller": "gitChangedFilesAgainst",
+          "callee": "execSync",
+          "lineNumber": 20
+        },
+        {
+          "caller": "gitChangedFilesAgainst",
+          "callee": "out.split('\\n').map((s) => s.trim()).filter",
+          "lineNumber": 21
+        },
+        {
+          "caller": "gitChangedFilesAgainst",
+          "callee": "out.split('\\n').map",
+          "lineNumber": 21
+        },
+        {
+          "caller": "gitChangedFilesAgainst",
+          "callee": "out.split",
+          "lineNumber": 21
+        },
+        {
+          "caller": "gitChangedFilesAgainst",
+          "callee": "s.trim",
+          "lineNumber": 21
+        },
+        {
+          "caller": "gitChangedFilesAgainst",
+          "callee": "gitChangedFiles",
+          "lineNumber": 23
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "scripts/metrics/changed-files.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 9,
+      "nonEmptyLines": 8,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "scripts/metrics/check.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 45,
+      "nonEmptyLines": 38,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    }
+  ]
+}

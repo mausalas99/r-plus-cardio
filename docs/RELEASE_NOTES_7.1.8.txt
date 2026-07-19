@@ -1,0 +1,26 @@
+R+ 7.1.8 (LAN conectar anfitrión)
+=====================================
+
+Fecha: 2026-06-07
+
+## Resumen
+
+Corrige el fallo en que «Conectar al anfitrión» / «Combinar servidores» no hacía nada tras confirmar: el módulo LAN transport quedaba sin cablear cuando esbuild duplicaba el chunk.
+
+## Nuevo / mejorado
+
+- **Cableado LAN transport** — `registerLanSyncTransportDeps` comparte estado vía `globalThis` (mismo patrón que push/room); `initLanClientFromStorage` espera el cableado antes de auto-unirse.
+- **Combinar sin sala** — Si confirmas unirte al anfitrión de mayor rango sin estar en una sala ⇄, R+ avisa en lugar de fallar en silencio.
+
+## Operación en guardia
+
+Parche sobre **7.1.7**: instala en **todas** las estaciones del turno. Sin cambio de esquema SQLCipher (sigue v14).
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v7.1.8
+
+- Mac: `R+-7.1.8-arm64.dmg`, `R+-7.1.8-x64.dmg` (y zip para auto-update).
+- Windows: `R+-7.1.8-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye write-release-yml.js).

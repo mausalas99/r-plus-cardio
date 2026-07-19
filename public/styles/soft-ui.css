@@ -1,0 +1,83 @@
+/* Hallmark · utilitarian clinical · theme: Quiet workbench · design.md */
+/* Arc-soft — radius hierarchy (track 4): containers lg, fields 12px, controls pill */
+
+/* Tier A — containers */
+.listado-section,
+.lab-history-row,
+.med-receta-wrap,
+.med-soap-preview,
+.indica-section,
+.otros-item,
+.tend-card,
+.pase-section,
+.pase-mini-card,
+.exp-datos-tab-action,
+.card,
+.rpc-disclosure {
+  border-radius: var(--radius-container);
+}
+
+/* Tier B — rows / nested panels */
+.listado-row,
+.todo-row,
+.listado-drag-hovercard.listado-row {
+  border-radius: var(--radius-inner) !important;
+}
+
+/* Tier D — fields (rounded rect, not pill) */
+.listado-row input[type="date"],
+.listado-row textarea,
+.todo-add-row input[type="text"],
+.indica-section-body textarea,
+.otros-item input,
+.otros-item textarea,
+.clinical-census-filter .profile-input,
+.cultivos-table input[type="date"],
+.ea-card input,
+.ea-card textarea,
+.ea-card select,
+.rpc-proc-agenda-block input,
+.rpc-proc-agenda-block textarea,
+.med-receta-wrap input:not([type="checkbox"]):not([type="radio"]),
+.med-receta-wrap textarea,
+.med-receta-wrap select,
+#procedure-agenda-modal .profile-input,
+.exp-pendientes-mount .todo-composer input[type="text"] {
+  border-radius: var(--radius-field) !important;
+}
+
+/* Tier C — controls (pill) */
+.listado-add-row,
+.listado-row .btn-remove-listado,
+.btn-lab-history,
+.btn-med-secondary,
+.lab-history-more-btn,
+.lab-history-more-menu,
+.med-soap-preview-chip,
+.med-output-tabs,
+.todo-add-row button,
+.btn-remove,
+.btn-remove-otro,
+.btn-remove-listado,
+.dcard-copy,
+.settings-theme-btn,
+.btn-edit-templates,
+.btn-lab-history-del,
+.lab-history-toggle,
+.rpc-proc-agenda-block,
+.rpc-proc-agenda-actions button,
+#update-modal button,
+#min-version-modal button,
+.clinical-census-filters--toolbar .clinical-census-filters-toggle,
+.app-bar-mi-rotacion {
+  border-radius: var(--radius-control) !important;
+}
+
+/* Dense data — never rounded */
+table,
+.cultivos-table,
+.cultivos-table input:not([type="date"]),
+.ea-card table,
+.lab-output-box pre {
+  border-radius: 0 !important;
+}

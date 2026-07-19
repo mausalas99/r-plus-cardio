@@ -1,0 +1,42 @@
+R+ 6.6.0 (LAN sin bloqueo @usuario, iPad y labs)
+====================================================
+
+Fecha: 2026-06-03
+
+## Resumen
+
+Consolida **6.5.9** y correcciones LAN/cloud: **@usuario se registra sin sala ⇄** (útil sin internet); directorio y sync de perfiles mejorados; enlace iPad con ticket nuevo; copiar varios días en historial de labs; admin puede eliminar usuarios del directorio LAN.
+
+## Nuevo / mejorado
+
+### @usuario y sala ⇄
+
+- **Registro sin ⇄ obligatorio** — Puedes guardar @usuario y perfil aunque no haya red o sala en vivo; R+ intenta publicar al turno cuando ⇄ esté disponible (sin error bloqueante por `NO_ROOM`).
+- **Panel ⇄ antes del registro** — Durante «Configura tu rotación» puedes unirte a la sala opcionalmente; la sala del formulario se mapea a `sala-1` / `sala-2` / `sala-e` cuando hay LAN.
+- **Activar red / crear sala** — Tras activar anfitrión o crear sala, conexión automática cuando hay sala en perfil; al crear sala queda **conectada**.
+
+### Sync LAN y directorio (heredado y reforzado de 6.5.9 + cloud)
+
+- **Directorio LAN** — Todas las salas; carga local; push de perfiles con snapshot clínico fresco; refresco al abrir directorio.
+- **Fusión `clinical_users`** — Unión local + remoto; no se pierden handles con rotación nueva ni peers viejos.
+- **Eliminar usuario (admin)** — Tombstones ⇄ para que el merge LAN no reviva usuarios borrados del directorio.
+
+### iPad y labs
+
+- **Enlace iPad** — Ticket nuevo al copiar invitación (`forceNew`); menos enlaces de un solo uso agotados.
+- **Historial de labs** — Copiar varios días desde el menú del historial (selección explícita de fechas).
+
+### Modo Entrega y equipos (6.5.9)
+
+- Plantillas entrega, modal pendientes, eliminar/editar equipo en Mi rotación.
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v6.6.0
+
+- Mac: `R+-6.6.0-arm64.dmg`, `R+-6.6.0-x64.dmg` (y zip para auto-update).
+- Windows: `R+-6.6.0-x64.exe`.
+
+**Recomendado:** Actualizar **todas** las estaciones del turno a **6.6.0**. Con red, abre ⇄ y únete a tu sala para que el directorio LAN muestre a todos; sin red puedes registrar @usuario y sincronizar después.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye `build:ui` y bundle de producción).

@@ -1,0 +1,21 @@
+{
+  "parotiditis": "Parotiditis",
+  "paperas": "Paperas",
+  "sarampion": "Sarampión",
+  "varicela": "Varicela",
+  "rubeola": "Rubéola",
+  "tuberculosis": "Tuberculosis",
+  "hepatitis": "Hepatitis",
+  "vih": "VIH/SIDA",
+  "hipertension": "Hipertensión arterial",
+  "diabetes": "Diabetes mellitus",
+  "cardiopatia": "Cardiopatía",
+  "enfermedadRenal": "Enfermedad renal crónica",
+  "enfermedadPulmonar": "Enfermedad pulmonar crónica",
+  "cancer": "Neoplasia",
+  "transfusiones": "Transfusiones previas",
+  "cirugias": "Cirugías previas",
+  "traumaticos": "Antecedentes traumáticos",
+  "alergias": "Alergias medicamentosas",
+  "otro": "Otro"
+}

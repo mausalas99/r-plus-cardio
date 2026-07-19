@@ -1,0 +1,302 @@
+/* Hallmark · utilitarian clinical · theme: Quiet workbench · design.md */
+/* Calendario R+ (reemplaza popover nativo de Chromium en tema oscuro) */
+
+.rpc-date-field {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+}
+
+.rpc-date-field__trigger {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin: 0;
+  cursor: pointer;
+  text-align: left;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+button.rpc-date-field__trigger.profile-input {
+  min-height: 40px;
+  height: 40px;
+  padding: 0 12px;
+  font-size: 13px;
+  background: var(--input-fill);
+  box-shadow: inset 0 1px 2px rgba(15, 23, 42, 0.04);
+}
+
+.rpc-date-field__trigger.profile-input:hover {
+  border-color: color-mix(in oklab, var(--action) 35%, var(--border));
+  background: var(--surface);
+}
+
+.rpc-date-field__trigger.profile-input:focus-visible {
+  outline: none;
+  border-color: color-mix(in oklab, var(--action) 45%, var(--border));
+  background: var(--surface);
+  box-shadow: 0 0 0 3px rgba(79, 86, 255, 0.14), inset 0 1px 2px rgba(15, 23, 42, 0.03);
+}
+
+.rpc-date-field__trigger.is-placeholder .rpc-date-field__label {
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.rpc-date-field__label {
+  flex: 1;
+  min-width: 0;
+  text-align: left;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.rpc-date-field__icon {
+  flex-shrink: 0;
+  display: flex;
+  color: var(--action);
+  opacity: 0.92;
+}
+
+.rpc-datetime-field {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(10.5rem, 12rem);
+  gap: calc(10px * var(--density-space, 1));
+  align-items: center;
+  width: 100%;
+  min-width: 0;
+}
+
+.rpc-datetime-field__date {
+  min-width: 0;
+}
+
+.rpc-time-picker {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  min-width: 0;
+}
+
+.rpc-time-picker__select {
+  flex: 1 1 0;
+  min-width: 3.25rem;
+  box-sizing: border-box;
+  margin: 0;
+  min-height: 40px;
+  height: 40px;
+  padding: 0 1.35rem 0 0.5rem;
+  border: 1px solid color-mix(in oklab, var(--border) 90%, transparent);
+  border-radius: var(--radius-control);
+  background-color: var(--input-fill);
+  box-shadow: inset 0 1px 2px rgba(15, 23, 42, 0.04);
+  color: var(--text);
+  font-size: 13px;
+  line-height: 1.2;
+  font-weight: 600;
+  font-family: inherit;
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+  text-align-last: center;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.45rem center;
+  background-size: 0.7rem;
+  transition:
+    border-color var(--dur-fast, 0.15s),
+    background var(--dur-fast, 0.15s),
+    box-shadow var(--dur-fast, 0.15s);
+}
+
+.rpc-time-picker__select:hover {
+  border-color: color-mix(in oklab, var(--action) 35%, var(--border));
+  background-color: var(--surface);
+}
+
+.rpc-time-picker__select:focus {
+  outline: none;
+  border-color: color-mix(in oklab, var(--action) 45%, var(--border));
+  background-color: var(--surface);
+  box-shadow:
+    0 0 0 3px rgba(79, 86, 255, 0.14),
+    inset 0 1px 2px rgba(15, 23, 42, 0.03);
+}
+
+.rpc-time-picker__sep {
+  flex: 0 0 auto;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  line-height: 1;
+  user-select: none;
+}
+
+/* Beat .ea-input / .profile-input width & chrome on the hidden native control */
+input.rpc-datetime-field__native,
+input.rpc-datetime-input.rpc-datetime-field__native {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  clip-path: inset(50%) !important;
+  white-space: nowrap !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  box-shadow: none !important;
+}
+
+.rpc-date-popover {
+  position: fixed;
+  z-index: var(--z-popover);
+  width: min(292px, calc(100vw - 16px));
+  padding: 12px;
+  border-radius: var(--radius-lg);
+  border: 1px solid color-mix(in oklab, var(--border) 55%, transparent);
+  background: var(--surface);
+  box-shadow: var(--shadow-md);
+  color: var(--text);
+  font-family: inherit;
+}
+
+.rpc-date-popover__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.rpc-date-popover__title {
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--primary);
+  text-transform: capitalize;
+}
+
+.rpc-date-popover__nav {
+  width: 32px;
+  height: 32px;
+  border: 1px solid color-mix(in oklab, var(--border) 70%, transparent);
+  border-radius: var(--radius-sm);
+  background: color-mix(in oklab, var(--surface) 92%, var(--bg));
+  color: var(--text-muted);
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+}
+
+.rpc-date-popover__nav:hover {
+  border-color: color-mix(in oklab, var(--action) 40%, var(--border));
+  color: var(--action);
+  background: var(--surface);
+}
+
+.rpc-date-popover__weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+  margin-bottom: 6px;
+}
+
+.rpc-date-popover__weekdays span {
+  text-align: center;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+}
+
+.rpc-date-popover__grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.rpc-date-popover__day {
+  aspect-ratio: 1;
+  min-height: 34px;
+  border: none;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.12s, color 0.12s, box-shadow 0.12s;
+}
+
+.rpc-date-popover__day:hover:not(.rpc-date-popover__day--pad) {
+  background: color-mix(in oklab, var(--action) 12%, var(--surface));
+  color: var(--action);
+}
+
+.rpc-date-popover__day.is-today:not(.is-selected) {
+  box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--action) 45%, transparent);
+}
+
+.rpc-date-popover__day.is-selected {
+  background: var(--action);
+  color: var(--color-on-accent);
+  box-shadow: 0 2px 8px color-mix(in oklab, var(--action) 35%, transparent);
+}
+
+.rpc-date-popover__day--pad {
+  pointer-events: none;
+}
+
+.rpc-date-popover__foot {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid color-mix(in oklab, var(--border) 50%, transparent);
+}
+
+.rpc-date-popover__foot-btn {
+  flex: 1;
+  border: 1px solid color-mix(in oklab, var(--border) 70%, transparent);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 700;
+  font-family: inherit;
+  padding: 8px 10px;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+}
+
+.rpc-date-popover__foot-btn:hover {
+  border-color: color-mix(in oklab, var(--action) 35%, var(--border));
+  color: var(--text);
+  background: color-mix(in oklab, var(--action) 6%, var(--surface));
+}
+
+.rpc-date-popover__foot-btn--primary {
+  color: var(--action);
+  border-color: color-mix(in oklab, var(--action) 35%, var(--border));
+  background: color-mix(in oklab, var(--action) 8%, var(--surface));
+}
+
+html.dark .rpc-date-popover {
+  background: color-mix(in oklab, var(--surface) 98%, var(--bg));
+}

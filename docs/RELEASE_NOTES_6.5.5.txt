@@ -1,0 +1,38 @@
+R+ 6.5.5 (reparación instalación · módulos nativos)
+=======================================================
+
+Fecha: 2026-06-03
+
+## Resumen
+
+**Actualización de reparación** para quienes ya instalaron **6.5.4** con un empaquetado incompleto (módulos nativos argon2 / SQLCipher). Misma funcionalidad que 6.5.4; corrige el instalador y el auto-update. **No borra** pacientes ni ajustes locales.
+
+## Para usuarios en 6.5.4 con errores
+
+1. En R+: **Ajustes → Aplicación** → **Reinstalar actualización de reparación (6.5.5)…** (canal **Estable**).
+2. O **Buscar actualizaciones…** con canal Estable.
+3. Si el servidor aún no tiene 6.5.5: **Abrir instalador en GitHub…** o descarga manual del `.dmg` / `.exe` de esta release.
+4. Alternativa: **Restaurar versión estable** → **6.5.0** (última 6.5.x que sigue en GitHub; las 6.5.1–6.5.4 se retiraron del servidor).
+
+Síntomas que corrige esta build: «failed to load native binding», argon2, base clínica que no abre tras una actualización defectuosa.
+
+## Cambios técnicos (empaquetado)
+
+- Inclusión de binarios **argon2** (arm64 + x64 en Mac) en el instalador (`asarUnpack`, fetch pre-build).
+- Verificación **verify-release-natives** antes de publicar releases.
+- Catálogo **Restaurar versión estable** y mensajes de recuperación en Ajustes.
+
+## Nuevo / mejorado (app)
+
+- Botón **Reinstalar actualización de reparación** en Ajustes → Aplicación.
+- Sección **Restaurar versión estable** y enlace a instalador en GitHub.
+- Modal de ayuda si fallan módulos nativos al arrancar.
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v6.5.5
+
+- Mac: `R+-6.5.5-arm64.dmg`, `R+-6.5.5-x64.dmg` (y zip para auto-update).
+- Windows: `R+-6.5.5-x64.exe`.
+
+Tras publicar: los clientes en **6.5.4** reciben **6.5.5** como actualización normal en el canal Estable.

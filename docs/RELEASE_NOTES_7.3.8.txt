@@ -1,0 +1,33 @@
+R+ 7.3.8 (COAG separado, balance I/O NC y arranque DB)
+==========================================================
+
+Fecha: 2026-06-20
+
+## Resumen
+
+Sobre **7.3.7**: coagulación como sección **COAG** independiente de BH (parser, pase, panel y diagramas); balance hídrico **NC** cuando los egresos no son cuantificables; mejor feedback al arrancar si la base clínica no abre; y endurecimiento del flujo de binarios SQLCipher para pruebas vs Electron.
+
+## Nuevo / mejorado
+
+- **Laboratorio — COAG** — TP/TTP/INR/Fib/DD salen en bloque `COAG` propio (no anidado bajo BH); merge de filas BH del mismo día conserva la coagulación más completa; encabezados `COAG`/`Coag.` con estilo de sección en pase y panel.
+- **Diagramas** — Tendencias y SVG de coagulación leen valores desde **BH** o **COAG**.
+- **Estado actual — I/O** — Balance **NC** cuando hay egresos declarados sin total numérico (p. ej. DIURESIS NC); texto SOAP y snapshot usan `BALANCE NC` en lugar de guiones o placeholders.
+- **Estado actual — registro** — Selector de fecha/hora del modal alineado al resto de la UI (`rpc-date-picker`); el control nativo oculto ya no hereda chrome de `.ea-input`.
+- **Arranque DB** — Toast al boot si la base clínica está bloqueada o el binario nativo no coincide (ABI); mensaje orientado a código de recuperación / rebuild.
+- **DX — SQLCipher** — `fetch-sqlite-node` verifica el prebuild tras instalarlo; `ensure-native-db-for-node` evita sobrescribir el binario de Node con ABI de Electron y restaura el binario de la app si falla el paso de pruebas.
+- **Directorio LAN** — **Actualizar desde ⇄** trae usuarios registrados de todas las salas (sin exigir sala activa en el perfil); filtro de sala incluye Interconsultas, UX, Eme, etc.; el directorio conserva grupos abiertos y asignaciones al refrescar actividad.
+- **Estado actual — dieta** — Confirmar dieta desde SOME ya no vuelve a pedir aceptación tras sync ⇄; merge de monitoreo preserva dieta confirmada local.
+- **Censo — tarjetas** — Sidebar de pacientes con cama primero y chips de prioridad más legibles.
+
+## Operación en guardia
+
+Instala **7.3.8** cuando pegues labs con coagulación separada o uses balance NC en monitoreo. Sin cambio de esquema SQLCipher (sigue **v17**). No exige paridad en todas las estaciones del turno salvo que queráis el mismo formato COAG en cada Mac.
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v7.3.8
+
+- Mac: `R+-7.3.8-arm64.dmg`, `R+-7.3.8-x64.dmg` (y zip para auto-update).
+- Windows: `R+-7.3.8-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye write-release-yml.js).

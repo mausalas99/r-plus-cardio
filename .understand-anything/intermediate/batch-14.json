@@ -1,0 +1,4927 @@
+{
+  "nodes": [
+    {
+      "id": "file:public/js/fuzzy-match.test.mjs",
+      "type": "file",
+      "name": "fuzzy-match.test.mjs",
+      "filePath": "public/js/fuzzy-match.test.mjs",
+      "summary": "Tests for fuzzy-match.mjs covering unit tests.",
+      "tags": [
+        "test",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/historia-clinica-lan-sync.mjs",
+      "type": "file",
+      "name": "historia-clinica-lan-sync.mjs",
+      "filePath": "public/js/historia-clinica-lan-sync.mjs",
+      "summary": "LAN LiveSync module exporting 7 symbol(s) with 8 helper(s) in historia-clinica-lan-sync.mjs.",
+      "tags": [
+        "lan-sync",
+        "historia-clinica",
+        "exports"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:public/js/historia-clinica-lan-sync.mjs:buildHistoriaClinicaDelta",
+      "type": "function",
+      "name": "buildHistoriaClinicaDelta",
+      "filePath": "public/js/historia-clinica-lan-sync.mjs",
+      "lineRange": [
+        58,
+        76
+      ],
+      "summary": "Exported build historia clinica delta for LAN LiveSync.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/historia-clinica-lan-sync.mjs:markHistoriaPendingLanSync",
+      "type": "function",
+      "name": "markHistoriaPendingLanSync",
+      "filePath": "public/js/historia-clinica-lan-sync.mjs",
+      "lineRange": [
+        85,
+        95
+      ],
+      "summary": "Exported mark historia pending lan sync for LAN LiveSync.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/historia-clinica-lan-sync.mjs:flushPendingHistoriaClinicaLanSync",
+      "type": "function",
+      "name": "flushPendingHistoriaClinicaLanSync",
+      "filePath": "public/js/historia-clinica-lan-sync.mjs",
+      "lineRange": [
+        101,
+        196
+      ],
+      "summary": "Exported flush pending historia clinica lan sync for LAN LiveSync.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/historia-clinica-lan-sync.mjs:schedulePendingHistoriaClinicaLanSync",
+      "type": "function",
+      "name": "schedulePendingHistoriaClinicaLanSync",
+      "filePath": "public/js/historia-clinica-lan-sync.mjs",
+      "lineRange": [
+        199,
+        214
+      ],
+      "summary": "Exported schedule pending historia clinica lan sync for LAN LiveSync.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/historia-clinica-lan-sync.mjs:flushAllPendingHistoriaClinicaLanSync",
+      "type": "function",
+      "name": "flushAllPendingHistoriaClinicaLanSync",
+      "filePath": "public/js/historia-clinica-lan-sync.mjs",
+      "lineRange": [
+        216,
+        224
+      ],
+      "summary": "Exported flush all pending historia clinica lan sync for LAN LiveSync.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/historia-clinica-lan-sync.mjs:scheduleFlushAllPendingHistoriaClinicaLanSync",
+      "type": "function",
+      "name": "scheduleFlushAllPendingHistoriaClinicaLanSync",
+      "filePath": "public/js/historia-clinica-lan-sync.mjs",
+      "lineRange": [
+        226,
+        228
+      ],
+      "summary": "Exported schedule flush all pending historia clinica lan sync for LAN LiveSync.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/historia-clinica-lan-sync.mjs:applyServerHistoriaClinicaToPatient",
+      "type": "function",
+      "name": "applyServerHistoriaClinicaToPatient",
+      "filePath": "public/js/historia-clinica-lan-sync.mjs",
+      "lineRange": [
+        236,
+        247
+      ],
+      "summary": "Aplica copia del host y detiene reintentos de sync pendiente.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/historia-clinica-lan-sync.test.mjs",
+      "type": "file",
+      "name": "historia-clinica-lan-sync.test.mjs",
+      "filePath": "public/js/historia-clinica-lan-sync.test.mjs",
+      "summary": "Tests for historia-clinica-lan-sync.mjs covering LAN LiveSync.",
+      "tags": [
+        "test",
+        "lan-sync",
+        "historia-clinica"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:public/js/lazy-feature-routes.mjs",
+      "type": "file",
+      "name": "lazy-feature-routes.mjs",
+      "filePath": "public/js/lazy-feature-routes.mjs",
+      "summary": "Lazy feature routes (BN-10) — boot hubs must not statically import index shells.",
+      "tags": [
+        "exports",
+        "utility",
+        "module"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:public/js/lazy-feature-routes.mjs:ensureSettingsHelpLoaded",
+      "type": "function",
+      "name": "ensureSettingsHelpLoaded",
+      "filePath": "public/js/lazy-feature-routes.mjs",
+      "lineRange": [
+        36,
+        45
+      ],
+      "summary": "Exported ensure settings help loaded used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/lazy-feature-routes.mjs:ensurePlatformLoaded",
+      "type": "function",
+      "name": "ensurePlatformLoaded",
+      "filePath": "public/js/lazy-feature-routes.mjs",
+      "lineRange": [
+        50,
+        59
+      ],
+      "summary": "Exported ensure platform loaded used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/lazy-feature-routes.mjs:ensureLabsLoaded",
+      "type": "function",
+      "name": "ensureLabsLoaded",
+      "filePath": "public/js/lazy-feature-routes.mjs",
+      "lineRange": [
+        64,
+        74
+      ],
+      "summary": "Exported ensure labs loaded used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/lazy-feature-routes.mjs:bindLazyLabsRuntimeCtx",
+      "type": "function",
+      "name": "bindLazyLabsRuntimeCtx",
+      "filePath": "public/js/lazy-feature-routes.mjs",
+      "lineRange": [
+        77,
+        79
+      ],
+      "summary": "Exported bind lazy labs runtime ctx used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/lazy-feature-routes.mjs:wireLabsRuntimeExports",
+      "type": "function",
+      "name": "wireLabsRuntimeExports",
+      "filePath": "public/js/lazy-feature-routes.mjs",
+      "lineRange": [
+        84,
+        107
+      ],
+      "summary": "Internal wire labs runtime exports in lazy-feature-routes.mjs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/lazy-feature-routes.mjs:showLabPanelLoadingSkeleton",
+      "type": "function",
+      "name": "showLabPanelLoadingSkeleton",
+      "filePath": "public/js/lazy-feature-routes.mjs",
+      "lineRange": [
+        120,
+        136
+      ],
+      "summary": "Exported show lab panel loading skeleton used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/lazy-feature-routes.mjs:hideLabPanelLoadingSkeleton",
+      "type": "function",
+      "name": "hideLabPanelLoadingSkeleton",
+      "filePath": "public/js/lazy-feature-routes.mjs",
+      "lineRange": [
+        138,
+        147
+      ],
+      "summary": "Exported hide lab panel loading skeleton used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/lazy-feature-routes.mjs:labsAsyncFn",
+      "type": "function",
+      "name": "labsAsyncFn",
+      "filePath": "public/js/lazy-feature-routes.mjs",
+      "lineRange": [
+        152,
+        165
+      ],
+      "summary": "Internal labs async fn in lazy-feature-routes.mjs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/lazy-feature-routes.mjs:ensureChartsLoaded",
+      "type": "function",
+      "name": "ensureChartsLoaded",
+      "filePath": "public/js/lazy-feature-routes.mjs",
+      "lineRange": [
+        225,
+        238
+      ],
+      "summary": "Exported ensure charts loaded used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/lazy-feature-routes.mjs:bindLazyChartsRuntimeCtx",
+      "type": "function",
+      "name": "bindLazyChartsRuntimeCtx",
+      "filePath": "public/js/lazy-feature-routes.mjs",
+      "lineRange": [
+        241,
+        243
+      ],
+      "summary": "Exported bind lazy charts runtime ctx used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/lazy-feature-routes.mjs:inferFechaLabSetFromIdFallback",
+      "type": "function",
+      "name": "inferFechaLabSetFromIdFallback",
+      "filePath": "public/js/lazy-feature-routes.mjs",
+      "lineRange": [
+        245,
+        256
+      ],
+      "summary": "Internal infer fecha lab set from id fallback in lazy-feature-routes.mjs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/lazy-feature-routes.mjs:wireChartsRuntimeExports",
+      "type": "function",
+      "name": "wireChartsRuntimeExports",
+      "filePath": "public/js/lazy-feature-routes.mjs",
+      "lineRange": [
+        269,
+        281
+      ],
+      "summary": "Internal wire charts runtime exports in lazy-feature-routes.mjs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/lazy-feature-routes.mjs:registerLazyChartsRuntimes",
+      "type": "function",
+      "name": "registerLazyChartsRuntimes",
+      "filePath": "public/js/lazy-feature-routes.mjs",
+      "lineRange": [
+        286,
+        313
+      ],
+      "summary": "Internal register lazy charts runtimes in lazy-feature-routes.mjs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/lazy-feature-routes.mjs:chartsAsyncFn",
+      "type": "function",
+      "name": "chartsAsyncFn",
+      "filePath": "public/js/lazy-feature-routes.mjs",
+      "lineRange": [
+        319,
+        333
+      ],
+      "summary": "Internal charts async fn in lazy-feature-routes.mjs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/lazy-feature-routes.mjs:chartsSyncFn",
+      "type": "function",
+      "name": "chartsSyncFn",
+      "filePath": "public/js/lazy-feature-routes.mjs",
+      "lineRange": [
+        339,
+        348
+      ],
+      "summary": "Internal charts sync fn in lazy-feature-routes.mjs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/lazy-feature-routes.mjs:patchWindowHandlers",
+      "type": "function",
+      "name": "patchWindowHandlers",
+      "filePath": "public/js/lazy-feature-routes.mjs",
+      "lineRange": [
+        444,
+        450
+      ],
+      "summary": "Exported patch window handlers used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/lazy-feature-routes.mjs:lazyWindowHandler",
+      "type": "function",
+      "name": "lazyWindowHandler",
+      "filePath": "public/js/lazy-feature-routes.mjs",
+      "lineRange": [
+        456,
+        468
+      ],
+      "summary": "Internal lazy window handler in lazy-feature-routes.mjs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/lazy-feature-routes.mjs:buildLazyWindowHandlers",
+      "type": "function",
+      "name": "buildLazyWindowHandlers",
+      "filePath": "public/js/lazy-feature-routes.mjs",
+      "lineRange": [
+        474,
+        481
+      ],
+      "summary": "Exported build lazy window handlers used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/lazy-feature-routes.mjs:registerLazyFeatureRuntimesBody",
+      "type": "function",
+      "name": "registerLazyFeatureRuntimesBody",
+      "filePath": "public/js/lazy-feature-routes.mjs",
+      "lineRange": [
+        577,
+        586
+      ],
+      "summary": "Register platform + settings-help runtimes and replace lazy window stubs with real handlers.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/lazy-feature-routes.mjs:registerLazyFeatureRuntimes",
+      "type": "function",
+      "name": "registerLazyFeatureRuntimes",
+      "filePath": "public/js/lazy-feature-routes.mjs",
+      "lineRange": [
+        588,
+        594
+      ],
+      "summary": "Exported register lazy feature runtimes used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/listado-problemas-ai-prompt.mjs",
+      "type": "file",
+      "name": "listado-problemas-ai-prompt.mjs",
+      "filePath": "public/js/listado-problemas-ai-prompt.mjs",
+      "summary": "Prompt fijo para IA externa (Listado de problemas).",
+      "tags": [
+        "exports",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:public/js/med-pharm-profile-core.mjs",
+      "type": "file",
+      "name": "med-pharm-profile-core.mjs",
+      "filePath": "public/js/med-pharm-profile-core.mjs",
+      "summary": "Perfil farmacoterapéutico mensual SOME — funciones puras, CCN bajo.",
+      "tags": [
+        "exports",
+        "utility",
+        "module"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:public/js/med-pharm-profile-core.mjs:normDosisForRowKey",
+      "type": "function",
+      "name": "normDosisForRowKey",
+      "filePath": "public/js/med-pharm-profile-core.mjs",
+      "lineRange": [
+        14,
+        20
+      ],
+      "summary": "Ignora *DIA# n* en la clave para no duplicar filas al actualizar Receta día a día.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/med-pharm-profile-core.mjs:buildMedPharmRowKey",
+      "type": "function",
+      "name": "buildMedPharmRowKey",
+      "filePath": "public/js/med-pharm-profile-core.mjs",
+      "lineRange": [
+        22,
+        28
+      ],
+      "summary": "Ignora *DIA# n* en la clave para no duplicar filas al actualizar Receta día a día.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/med-pharm-profile-core.mjs:extractMedBaseName",
+      "type": "function",
+      "name": "extractMedBaseName",
+      "filePath": "public/js/med-pharm-profile-core.mjs",
+      "lineRange": [
+        31,
+        48
+      ],
+      "summary": "Principio activo / nombre base SOME (sin concentración ni forma farmacéutica).",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/med-pharm-profile-core.mjs:buildMedPharmMedGroupKey",
+      "type": "function",
+      "name": "buildMedPharmMedGroupKey",
+      "filePath": "public/js/med-pharm-profile-core.mjs",
+      "lineRange": [
+        51,
+        53
+      ],
+      "summary": "Clave de agrupación en lista: mismo fármaco, distintas presentaciones/dosis.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/med-pharm-profile-core.mjs:monthKeyFromParts",
+      "type": "function",
+      "name": "monthKeyFromParts",
+      "filePath": "public/js/med-pharm-profile-core.mjs",
+      "lineRange": [
+        55,
+        57
+      ],
+      "summary": "Clave de agrupación en lista: mismo fármaco, distintas presentaciones/dosis.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/med-pharm-profile-core.mjs:splitMonthAt",
+      "type": "function",
+      "name": "splitMonthAt",
+      "filePath": "public/js/med-pharm-profile-core.mjs",
+      "lineRange": [
+        59,
+        61
+      ],
+      "summary": "Clave de agrupación en lista: mismo fármaco, distintas presentaciones/dosis.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/med-pharm-profile-core.mjs:dayValueInMap",
+      "type": "function",
+      "name": "dayValueInMap",
+      "filePath": "public/js/med-pharm-profile-core.mjs",
+      "lineRange": [
+        63,
+        68
+      ],
+      "summary": "Exported day value in map used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/med-pharm-profile-core.mjs:adherenceStats",
+      "type": "function",
+      "name": "adherenceStats",
+      "filePath": "public/js/med-pharm-profile-core.mjs",
+      "lineRange": [
+        70,
+        94
+      ],
+      "summary": "Exported adherence stats used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/med-pharm-profile-core.mjs:isMedPharmRowHidden",
+      "type": "function",
+      "name": "isMedPharmRowHidden",
+      "filePath": "public/js/med-pharm-profile-core.mjs",
+      "lineRange": [
+        96,
+        98
+      ],
+      "summary": "Exported is med pharm row hidden used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/med-pharm-profile-core.mjs:toggleNotAdmin",
+      "type": "function",
+      "name": "toggleNotAdmin",
+      "filePath": "public/js/med-pharm-profile-core.mjs",
+      "lineRange": [
+        100,
+        110
+      ],
+      "summary": "Exported toggle not admin used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/med-pharm-profile-core.mjs:formatFreqShort",
+      "type": "function",
+      "name": "formatFreqShort",
+      "filePath": "public/js/med-pharm-profile-core.mjs",
+      "lineRange": [
+        112,
+        121
+      ],
+      "summary": "Exported format freq short used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/med-pharm-profile-core.mjs:formatViaShort",
+      "type": "function",
+      "name": "formatViaShort",
+      "filePath": "public/js/med-pharm-profile-core.mjs",
+      "lineRange": [
+        123,
+        126
+      ],
+      "summary": "Exported format via short used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/med-pharm-profile-core.mjs:findDayHeaderInfo",
+      "type": "function",
+      "name": "findDayHeaderInfo",
+      "filePath": "public/js/med-pharm-profile-core.mjs",
+      "lineRange": [
+        135,
+        145
+      ],
+      "summary": "Internal find day header info in med-pharm-profile-core.mjs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/med-pharm-profile-core.mjs:rowMetaFromCols",
+      "type": "function",
+      "name": "rowMetaFromCols",
+      "filePath": "public/js/med-pharm-profile-core.mjs",
+      "lineRange": [
+        156,
+        169
+      ],
+      "summary": "Internal row meta from cols in med-pharm-profile-core.mjs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/med-pharm-profile-core.mjs:parseRowLine",
+      "type": "function",
+      "name": "parseRowLine",
+      "filePath": "public/js/med-pharm-profile-core.mjs",
+      "lineRange": [
+        180,
+        191
+      ],
+      "summary": "Internal parse row line in med-pharm-profile-core.mjs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/med-pharm-profile-core.mjs:looksLikeSomePharmMonthPaste",
+      "type": "function",
+      "name": "looksLikeSomePharmMonthPaste",
+      "filePath": "public/js/med-pharm-profile-core.mjs",
+      "lineRange": [
+        193,
+        203
+      ],
+      "summary": "Exported looks like some pharm month paste used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/med-pharm-profile-core.mjs:parseSomePharmMonthPaste",
+      "type": "function",
+      "name": "parseSomePharmMonthPaste",
+      "filePath": "public/js/med-pharm-profile-core.mjs",
+      "lineRange": [
+        205,
+        256
+      ],
+      "summary": "Exported parse some pharm month paste used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/med-pharm-profile-core.mjs:parseRecetaDateToDay",
+      "type": "function",
+      "name": "parseRecetaDateToDay",
+      "filePath": "public/js/med-pharm-profile-core.mjs",
+      "lineRange": [
+        258,
+        268
+      ],
+      "summary": "Exported parse receta date to day used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/med-pharm-profile-core.mjs:emptyMonth",
+      "type": "function",
+      "name": "emptyMonth",
+      "filePath": "public/js/med-pharm-profile-core.mjs",
+      "lineRange": [
+        270,
+        278
+      ],
+      "summary": "Exported empty month used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/med-pharm-profile-core.mjs:maxIndicatedDay",
+      "type": "function",
+      "name": "maxIndicatedDay",
+      "filePath": "public/js/med-pharm-profile-core.mjs",
+      "lineRange": [
+        295,
+        304
+      ],
+      "summary": "Internal max indicated day in med-pharm-profile-core.mjs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/med-pharm-profile-core.mjs:mergeMedPharmRowDays",
+      "type": "function",
+      "name": "mergeMedPharmRowDays",
+      "filePath": "public/js/med-pharm-profile-core.mjs",
+      "lineRange": [
+        306,
+        334
+      ],
+      "summary": "Internal merge med pharm row days in med-pharm-profile-core.mjs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/med-pharm-profile-core.mjs:coalesceMedPharmRowsByKey",
+      "type": "function",
+      "name": "coalesceMedPharmRowsByKey",
+      "filePath": "public/js/med-pharm-profile-core.mjs",
+      "lineRange": [
+        337,
+        357
+      ],
+      "summary": "SOME emits one row per DIA# with the same régimen; merge by rowKey (DIA# ignored in key).",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/med-pharm-profile-core.mjs:mergeRecetaIntoMonth",
+      "type": "function",
+      "name": "mergeRecetaIntoMonth",
+      "filePath": "public/js/med-pharm-profile-core.mjs",
+      "lineRange": [
+        366,
+        397
+      ],
+      "summary": "Exported merge receta into month used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/med-pharm-profile-core.mjs:mergeNotAdminFromPrevious",
+      "type": "function",
+      "name": "mergeNotAdminFromPrevious",
+      "filePath": "public/js/med-pharm-profile-core.mjs",
+      "lineRange": [
+        399,
+        408
+      ],
+      "summary": "Exported merge not admin from previous used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/med-pharm-profile-core.mjs:applySomePasteToProfile",
+      "type": "function",
+      "name": "applySomePasteToProfile",
+      "filePath": "public/js/med-pharm-profile-core.mjs",
+      "lineRange": [
+        410,
+        446
+      ],
+      "summary": "Exported apply some paste to profile used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/med-pharm-profile-core.mjs:medPharmProfileUpdatedAt",
+      "type": "function",
+      "name": "medPharmProfileUpdatedAt",
+      "filePath": "public/js/med-pharm-profile-core.mjs",
+      "lineRange": [
+        449,
+        473
+      ],
+      "summary": "ISO timestamp for LAN LWW — latest SOME paste or Receta merge across months.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/med-pharm-profile-core.mjs:getMonthFromProfile",
+      "type": "function",
+      "name": "getMonthFromProfile",
+      "filePath": "public/js/med-pharm-profile-core.mjs",
+      "lineRange": [
+        475,
+        478
+      ],
+      "summary": "Exported get month from profile used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/med-pharm-profile-core.mjs:profileHasMonthData",
+      "type": "function",
+      "name": "profileHasMonthData",
+      "filePath": "public/js/med-pharm-profile-core.mjs",
+      "lineRange": [
+        480,
+        486
+      ],
+      "summary": "Exported profile has month data used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/med-pharm-profile-core.mjs:monthHasData",
+      "type": "function",
+      "name": "monthHasData",
+      "filePath": "public/js/med-pharm-profile-core.mjs",
+      "lineRange": [
+        488,
+        491
+      ],
+      "summary": "Exported month has data used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/med-pharm-profile-core.mjs:deleteMonthFromProfile",
+      "type": "function",
+      "name": "deleteMonthFromProfile",
+      "filePath": "public/js/med-pharm-profile-core.mjs",
+      "lineRange": [
+        494,
+        504
+      ],
+      "summary": "Quita un mes del perfil; devuelve null si no queda nada (ni draftPaste).",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/med-pharm-profile-core.mjs:ensureMonthOnProfile",
+      "type": "function",
+      "name": "ensureMonthOnProfile",
+      "filePath": "public/js/med-pharm-profile-core.mjs",
+      "lineRange": [
+        506,
+        513
+      ],
+      "summary": "Exported ensure month on profile used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/med-pharm-profile-core.test.mjs",
+      "type": "file",
+      "name": "med-pharm-profile-core.test.mjs",
+      "filePath": "public/js/med-pharm-profile-core.test.mjs",
+      "summary": "Tests for med-pharm-profile-core.mjs covering unit tests.",
+      "tags": [
+        "test",
+        "module"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:public/js/med-pharm-some-catalog.mjs",
+      "type": "file",
+      "name": "med-pharm-some-catalog.mjs",
+      "filePath": "public/js/med-pharm-some-catalog.mjs",
+      "summary": "Catálogo de categorías SOME para perfil farmacoterapéutico (filtros + clasificación por nombre). CCN bajo: listas de tokens, un solo clasificador, overlay opcional desde rpc-medCatalog.",
+      "tags": [
+        "exports",
+        "utility",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/med-pharm-some-catalog.mjs:sanitizeTokenList",
+      "type": "function",
+      "name": "sanitizeTokenList",
+      "filePath": "public/js/med-pharm-some-catalog.mjs",
+      "lineRange": [
+        111,
+        125
+      ],
+      "summary": "Internal sanitize token list in med-pharm-some-catalog.mjs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/med-pharm-some-catalog.mjs:sanitizeSomePharmCatalog",
+      "type": "function",
+      "name": "sanitizeSomePharmCatalog",
+      "filePath": "public/js/med-pharm-some-catalog.mjs",
+      "lineRange": [
+        127,
+        136
+      ],
+      "summary": "Internal sanitize some pharm catalog in med-pharm-some-catalog.mjs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/med-pharm-some-catalog.mjs:tokensMatch",
+      "type": "function",
+      "name": "tokensMatch",
+      "filePath": "public/js/med-pharm-some-catalog.mjs",
+      "lineRange": [
+        144,
+        153
+      ],
+      "summary": "Internal tokens match in med-pharm-some-catalog.mjs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/med-pharm-some-catalog.mjs:applySomePharmCatalogOverlay",
+      "type": "function",
+      "name": "applySomePharmCatalogOverlay",
+      "filePath": "public/js/med-pharm-some-catalog.mjs",
+      "lineRange": [
+        158,
+        164
+      ],
+      "summary": "Exported apply some pharm catalog overlay used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/med-pharm-some-catalog.mjs:getSomePharmCatalogSnapshot",
+      "type": "function",
+      "name": "getSomePharmCatalogSnapshot",
+      "filePath": "public/js/med-pharm-some-catalog.mjs",
+      "lineRange": [
+        166,
+        173
+      ],
+      "summary": "Exported get some pharm catalog snapshot used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/med-pharm-some-catalog.mjs:listSomePharmFilterLabels",
+      "type": "function",
+      "name": "listSomePharmFilterLabels",
+      "filePath": "public/js/med-pharm-some-catalog.mjs",
+      "lineRange": [
+        175,
+        177
+      ],
+      "summary": "Exported list some pharm filter labels used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/med-pharm-some-catalog.mjs:isSomePharmCategoryLabel",
+      "type": "function",
+      "name": "isSomePharmCategoryLabel",
+      "filePath": "public/js/med-pharm-some-catalog.mjs",
+      "lineRange": [
+        179,
+        181
+      ],
+      "summary": "Exported is some pharm category label used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/med-pharm-some-catalog.mjs:classifySomePharmCategory",
+      "type": "function",
+      "name": "classifySomePharmCategory",
+      "filePath": "public/js/med-pharm-some-catalog.mjs",
+      "lineRange": [
+        183,
+        192
+      ],
+      "summary": "Exported classify some pharm category used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/med-pharm-some-catalog.mjs:rowSomePharmCategory",
+      "type": "function",
+      "name": "rowSomePharmCategory",
+      "filePath": "public/js/med-pharm-some-catalog.mjs",
+      "lineRange": [
+        195,
+        200
+      ],
+      "summary": "Categoría efectiva para filtro (override manual > auto).",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/med-pharm-some-catalog.mjs:assignSomePharmCategory",
+      "type": "function",
+      "name": "assignSomePharmCategory",
+      "filePath": "public/js/med-pharm-some-catalog.mjs",
+      "lineRange": [
+        202,
+        207
+      ],
+      "summary": "Categoría efectiva para filtro (override manual > auto).",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/med-pharm-some-catalog.mjs:assignSomePharmCategories",
+      "type": "function",
+      "name": "assignSomePharmCategories",
+      "filePath": "public/js/med-pharm-some-catalog.mjs",
+      "lineRange": [
+        209,
+        211
+      ],
+      "summary": "Exported assign some pharm categories used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/med-pharm-some-catalog.test.mjs",
+      "type": "file",
+      "name": "med-pharm-some-catalog.test.mjs",
+      "filePath": "public/js/med-pharm-some-catalog.test.mjs",
+      "summary": "Tests for med-pharm-some-catalog.mjs covering unit tests.",
+      "tags": [
+        "test",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/med-pharm-view-window.mjs",
+      "type": "file",
+      "name": "med-pharm-view-window.mjs",
+      "filePath": "public/js/med-pharm-view-window.mjs",
+      "summary": "Ventana dinámica de columnas para Perfil histórico SOME — funciones puras.",
+      "tags": [
+        "exports",
+        "utility",
+        "module"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:public/js/med-pharm-view-window.mjs:parseFimiFecha",
+      "type": "function",
+      "name": "parseFimiFecha",
+      "filePath": "public/js/med-pharm-view-window.mjs",
+      "lineRange": [
+        44,
+        49
+      ],
+      "summary": "Exported parse fimi fecha used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/med-pharm-view-window.mjs:columnKey",
+      "type": "function",
+      "name": "columnKey",
+      "filePath": "public/js/med-pharm-view-window.mjs",
+      "lineRange": [
+        51,
+        53
+      ],
+      "summary": "Exported column key used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/med-pharm-view-window.mjs:daysInCalendarMonth",
+      "type": "function",
+      "name": "daysInCalendarMonth",
+      "filePath": "public/js/med-pharm-view-window.mjs",
+      "lineRange": [
+        55,
+        57
+      ],
+      "summary": "Exported days in calendar month used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/med-pharm-view-window.mjs:makeColumn",
+      "type": "function",
+      "name": "makeColumn",
+      "filePath": "public/js/med-pharm-view-window.mjs",
+      "lineRange": [
+        59,
+        61
+      ],
+      "summary": "Exported make column used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/med-pharm-view-window.mjs:collectIndicatedDays",
+      "type": "function",
+      "name": "collectIndicatedDays",
+      "filePath": "public/js/med-pharm-view-window.mjs",
+      "lineRange": [
+        86,
+        100
+      ],
+      "summary": "Internal collect indicated days in med-pharm-view-window.mjs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/med-pharm-view-window.mjs:rowHasIndicationInRange",
+      "type": "function",
+      "name": "rowHasIndicationInRange",
+      "filePath": "public/js/med-pharm-view-window.mjs",
+      "lineRange": [
+        102,
+        112
+      ],
+      "summary": "Internal row has indication in range in med-pharm-view-window.mjs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/med-pharm-view-window.mjs:rowKeysContinuingAcrossMonths",
+      "type": "function",
+      "name": "rowKeysContinuingAcrossMonths",
+      "filePath": "public/js/med-pharm-view-window.mjs",
+      "lineRange": [
+        114,
+        132
+      ],
+      "summary": "Internal row keys continuing across months in med-pharm-view-window.mjs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/med-pharm-view-window.mjs:minIndicatedDayAmongRows",
+      "type": "function",
+      "name": "minIndicatedDayAmongRows",
+      "filePath": "public/js/med-pharm-view-window.mjs",
+      "lineRange": [
+        134,
+        143
+      ],
+      "summary": "Internal min indicated day among rows in med-pharm-view-window.mjs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/med-pharm-view-window.mjs:rangeColumns",
+      "type": "function",
+      "name": "rangeColumns",
+      "filePath": "public/js/med-pharm-view-window.mjs",
+      "lineRange": [
+        145,
+        154
+      ],
+      "summary": "Internal range columns in med-pharm-view-window.mjs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/med-pharm-view-window.mjs:buildCurrentMonthWindow",
+      "type": "function",
+      "name": "buildCurrentMonthWindow",
+      "filePath": "public/js/med-pharm-view-window.mjs",
+      "lineRange": [
+        156,
+        195
+      ],
+      "summary": "Internal build current month window in med-pharm-view-window.mjs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/med-pharm-view-window.mjs:buildPastMonthWindow",
+      "type": "function",
+      "name": "buildPastMonthWindow",
+      "filePath": "public/js/med-pharm-view-window.mjs",
+      "lineRange": [
+        197,
+        217
+      ],
+      "summary": "Internal build past month window in med-pharm-view-window.mjs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/med-pharm-view-window.mjs:buildWindowLabel",
+      "type": "function",
+      "name": "buildWindowLabel",
+      "filePath": "public/js/med-pharm-view-window.mjs",
+      "lineRange": [
+        219,
+        252
+      ],
+      "summary": "Internal build window label in med-pharm-view-window.mjs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/med-pharm-view-window.mjs:buildPharmViewWindow",
+      "type": "function",
+      "name": "buildPharmViewWindow",
+      "filePath": "public/js/med-pharm-view-window.mjs",
+      "lineRange": [
+        254,
+        280
+      ],
+      "summary": "Exported build pharm view window used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/med-pharm-view-window.mjs:findRowWithDayInMonth",
+      "type": "function",
+      "name": "findRowWithDayInMonth",
+      "filePath": "public/js/med-pharm-view-window.mjs",
+      "lineRange": [
+        291,
+        300
+      ],
+      "summary": "Internal find row with day in month in med-pharm-view-window.mjs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/med-pharm-view-window.mjs:unifyRowsForWindow",
+      "type": "function",
+      "name": "unifyRowsForWindow",
+      "filePath": "public/js/med-pharm-view-window.mjs",
+      "lineRange": [
+        307,
+        364
+      ],
+      "summary": "Exported unify rows for window used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/med-pharm-view-window.mjs:cellValueAtColumn",
+      "type": "function",
+      "name": "cellValueAtColumn",
+      "filePath": "public/js/med-pharm-view-window.mjs",
+      "lineRange": [
+        366,
+        377
+      ],
+      "summary": "Exported cell value at column used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/med-pharm-view-window.mjs:toggleNotAdminAtColumn",
+      "type": "function",
+      "name": "toggleNotAdminAtColumn",
+      "filePath": "public/js/med-pharm-view-window.mjs",
+      "lineRange": [
+        379,
+        397
+      ],
+      "summary": "Exported toggle not admin at column used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/med-pharm-view-window.mjs:notAdminAtColumn",
+      "type": "function",
+      "name": "notAdminAtColumn",
+      "filePath": "public/js/med-pharm-view-window.mjs",
+      "lineRange": [
+        399,
+        410
+      ],
+      "summary": "Internal not admin at column in med-pharm-view-window.mjs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/med-pharm-view-window.mjs:latestVariantInWindow",
+      "type": "function",
+      "name": "latestVariantInWindow",
+      "filePath": "public/js/med-pharm-view-window.mjs",
+      "lineRange": [
+        413,
+        424
+      ],
+      "summary": "Variante con indicación más reciente en la ventana (columnas de derecha a izquierda).",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/med-pharm-view-window.mjs:adherenceStatsForRowKeys",
+      "type": "function",
+      "name": "adherenceStatsForRowKeys",
+      "filePath": "public/js/med-pharm-view-window.mjs",
+      "lineRange": [
+        426,
+        453
+      ],
+      "summary": "Exported adherence stats for row keys used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/med-pharm-view-window.mjs:groupUnifiedRowsByMed",
+      "type": "function",
+      "name": "groupUnifiedRowsByMed",
+      "filePath": "public/js/med-pharm-view-window.mjs",
+      "lineRange": [
+        455,
+        484
+      ],
+      "summary": "Exported group unified rows by med used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/med-pharm-view-window.mjs:rowsForMedGroup",
+      "type": "function",
+      "name": "rowsForMedGroup",
+      "filePath": "public/js/med-pharm-view-window.mjs",
+      "lineRange": [
+        486,
+        490
+      ],
+      "summary": "Exported rows for med group used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/med-pharm-view-window.test.mjs",
+      "type": "file",
+      "name": "med-pharm-view-window.test.mjs",
+      "filePath": "public/js/med-pharm-view-window.test.mjs",
+      "summary": "Tests for med-pharm-view-window.mjs covering unit tests.",
+      "tags": [
+        "test",
+        "module"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:public/js/med-pharm-view-window.test.mjs:profileWithCrossMonth",
+      "type": "function",
+      "name": "profileWithCrossMonth",
+      "filePath": "public/js/med-pharm-view-window.test.mjs",
+      "lineRange": [
+        16,
+        53
+      ],
+      "summary": "profile with cross month supporting unit tests.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/med-pharm-view-window.test.mjs:profileWithDoseChange",
+      "type": "function",
+      "name": "profileWithDoseChange",
+      "filePath": "public/js/med-pharm-view-window.test.mjs",
+      "lineRange": [
+        176,
+        218
+      ],
+      "summary": "profile with dose change supporting unit tests.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/mobile-lan-boot.mjs",
+      "type": "file",
+      "name": "mobile-lan-boot.mjs",
+      "filePath": "public/js/mobile-lan-boot.mjs",
+      "summary": "Mobile PWA: defer LAN join/sync until after first paint (bundle + sync no longer block UI).",
+      "tags": [
+        "exports",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/mobile-lan-boot.mjs:scheduleMobileLanWork",
+      "type": "function",
+      "name": "scheduleMobileLanWork",
+      "filePath": "public/js/mobile-lan-boot.mjs",
+      "lineRange": [
+        7,
+        30
+      ],
+      "summary": "Mobile PWA: defer LAN join/sync until after first paint (bundle + sync no longer block UI).",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/mobile-lan-boot.test.mjs",
+      "type": "file",
+      "name": "mobile-lan-boot.test.mjs",
+      "filePath": "public/js/mobile-lan-boot.test.mjs",
+      "summary": "Tests for mobile-lan-boot.mjs covering unit tests.",
+      "tags": [
+        "test",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/mobile-web.mjs",
+      "type": "file",
+      "name": "mobile-web.mjs",
+      "filePath": "public/js/mobile-web.mjs",
+      "summary": "R+ Móvil: misma UI que escritorio en navegador (Safari/iPad), sin exportación Word.",
+      "tags": [
+        "exports",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/mobile-web.mjs:isMobileWeb",
+      "type": "function",
+      "name": "isMobileWeb",
+      "filePath": "public/js/mobile-web.mjs",
+      "lineRange": [
+        11,
+        21
+      ],
+      "summary": "Exported is mobile web used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/mobile-web.mjs:activateMobileWebRoot",
+      "type": "function",
+      "name": "activateMobileWebRoot",
+      "filePath": "public/js/mobile-web.mjs",
+      "lineRange": [
+        23,
+        28
+      ],
+      "summary": "Exported activate mobile web root used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/mobile-web.mjs:blockIfMobileDocExport",
+      "type": "function",
+      "name": "blockIfMobileDocExport",
+      "filePath": "public/js/mobile-web.mjs",
+      "lineRange": [
+        31,
+        34
+      ],
+      "summary": "Exported block if mobile doc export used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/mobile-web.mjs:mobileDocExportToast",
+      "type": "function",
+      "name": "mobileDocExportToast",
+      "filePath": "public/js/mobile-web.mjs",
+      "lineRange": [
+        36,
+        43
+      ],
+      "summary": "Exported mobile doc export toast used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/mobile-web.mjs:syncMobileBarebonesChrome",
+      "type": "function",
+      "name": "syncMobileBarebonesChrome",
+      "filePath": "public/js/mobile-web.mjs",
+      "lineRange": [
+        46,
+        72
+      ],
+      "summary": "Oculta chrome de escritorio (censo, perfil, ajustes, pestaña Salida).",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/mobile-web.test.mjs",
+      "type": "file",
+      "name": "mobile-web.test.mjs",
+      "filePath": "public/js/mobile-web.test.mjs",
+      "summary": "Tests for mobile-web.mjs covering unit tests.",
+      "tags": [
+        "test",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:public/js/modal-dismiss.mjs",
+      "type": "file",
+      "name": "modal-dismiss.mjs",
+      "filePath": "public/js/modal-dismiss.mjs",
+      "summary": "Cierre unificado de ventanas modales: Escape y clic en el fondo (backdrop). Las capas se evalúan en orden inverso al registro (la última registrada gana).",
+      "tags": [
+        "exports",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/modal-dismiss.mjs:isRpcOverlayVisible",
+      "type": "function",
+      "name": "isRpcOverlayVisible",
+      "filePath": "public/js/modal-dismiss.mjs",
+      "lineRange": [
+        7,
+        14
+      ],
+      "summary": "Cierre unificado de ventanas modales: Escape y clic en el fondo (backdrop). Las capas se evalúan en orden inverso al registro (la última registrada gana).",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/modal-dismiss.mjs:getOverlayZIndex",
+      "type": "function",
+      "name": "getOverlayZIndex",
+      "filePath": "public/js/modal-dismiss.mjs",
+      "lineRange": [
+        17,
+        21
+      ],
+      "summary": "Exported get overlay zindex used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/modal-dismiss.mjs:getDismissPanel",
+      "type": "function",
+      "name": "getDismissPanel",
+      "filePath": "public/js/modal-dismiss.mjs",
+      "lineRange": [
+        24,
+        34
+      ],
+      "summary": "Exported get dismiss panel used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/modal-dismiss.mjs:isBackdropOutsideClick",
+      "type": "function",
+      "name": "isBackdropOutsideClick",
+      "filePath": "public/js/modal-dismiss.mjs",
+      "lineRange": [
+        37,
+        44
+      ],
+      "summary": "Exported is backdrop outside click used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/modal-dismiss.mjs:bindBackdropDismiss",
+      "type": "function",
+      "name": "bindBackdropDismiss",
+      "filePath": "public/js/modal-dismiss.mjs",
+      "lineRange": [
+        46,
+        55
+      ],
+      "summary": "Exported bind backdrop dismiss used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/modal-dismiss.mjs:createModalDismissRegistry",
+      "type": "function",
+      "name": "createModalDismissRegistry",
+      "filePath": "public/js/modal-dismiss.mjs",
+      "lineRange": [
+        57,
+        104
+      ],
+      "summary": "Exported create modal dismiss registry used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/modal-dismiss.test.mjs",
+      "type": "file",
+      "name": "modal-dismiss.test.mjs",
+      "filePath": "public/js/modal-dismiss.test.mjs",
+      "summary": "Tests for modal-dismiss.mjs covering unit tests.",
+      "tags": [
+        "test",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:public/js/mode-features.mjs",
+      "type": "file",
+      "name": "mode-features.mjs",
+      "filePath": "public/js/mode-features.mjs",
+      "summary": "Modo de trabajo del usuario y migración de settings v3.0.",
+      "tags": [
+        "exports",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/mode-features.mjs:isModeSala",
+      "type": "function",
+      "name": "isModeSala",
+      "filePath": "public/js/mode-features.mjs",
+      "lineRange": [
+        6,
+        9
+      ],
+      "summary": "Ejemplo genérico en placeholders de UI (no asumir un servicio hospitalario concreto).",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/mode-features.mjs:getDefaultServicio",
+      "type": "function",
+      "name": "getDefaultServicio",
+      "filePath": "public/js/mode-features.mjs",
+      "lineRange": [
+        11,
+        14
+      ],
+      "summary": "Ejemplo genérico en placeholders de UI (no asumir un servicio hospitalario concreto).",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/mode-features.mjs:getDefaultCuarto",
+      "type": "function",
+      "name": "getDefaultCuarto",
+      "filePath": "public/js/mode-features.mjs",
+      "lineRange": [
+        16,
+        19
+      ],
+      "summary": "Exported get default cuarto used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/mode-features.mjs:getDefaultCama",
+      "type": "function",
+      "name": "getDefaultCama",
+      "filePath": "public/js/mode-features.mjs",
+      "lineRange": [
+        21,
+        24
+      ],
+      "summary": "Exported get default cama used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/mode-features.mjs:migrateToV3",
+      "type": "function",
+      "name": "migrateToV3",
+      "filePath": "public/js/mode-features.mjs",
+      "lineRange": [
+        30,
+        38
+      ],
+      "summary": "Migración suave a 3.0.0. Idempotente. Muta el settings recibido y retorna true si aplicó la migración, false si ya estaba migrado.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/mode-features.test.mjs",
+      "type": "file",
+      "name": "mode-features.test.mjs",
+      "filePath": "public/js/mode-features.test.mjs",
+      "summary": "Tests for mode-features.mjs covering unit tests.",
+      "tags": [
+        "test",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:public/js/motion-mode.mjs",
+      "type": "file",
+      "name": "motion-mode.mjs",
+      "filePath": "public/js/motion-mode.mjs",
+      "summary": "Motion intensity presets (Ajustes → Animaciones). 'mixto' is the default and maps to no html class (:root token values).",
+      "tags": [
+        "exports",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/motion-mode.mjs:normalizeMotionMode",
+      "type": "function",
+      "name": "normalizeMotionMode",
+      "filePath": "public/js/motion-mode.mjs",
+      "lineRange": [
+        8,
+        10
+      ],
+      "summary": "Motion intensity presets (Ajustes → Animaciones). 'mixto' is the default and maps to no html class (:root token values).",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/motion-mode.mjs:motionClassFor",
+      "type": "function",
+      "name": "motionClassFor",
+      "filePath": "public/js/motion-mode.mjs",
+      "lineRange": [
+        12,
+        15
+      ],
+      "summary": "Exported motion class for used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/motion-mode.test.mjs",
+      "type": "file",
+      "name": "motion-mode.test.mjs",
+      "filePath": "public/js/motion-mode.test.mjs",
+      "summary": "Tests for motion-mode.mjs covering unit tests.",
+      "tags": [
+        "test",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/output-dir-fallback.mjs",
+      "type": "file",
+      "name": "output-dir-fallback.mjs",
+      "filePath": "public/js/output-dir-fallback.mjs",
+      "summary": "Shared javascript module (2 functions, 2 exports) for the R+ workbench.",
+      "tags": [
+        "exports",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/output-dir-fallback.mjs:isOutputDirError",
+      "type": "function",
+      "name": "isOutputDirError",
+      "filePath": "public/js/output-dir-fallback.mjs",
+      "lineRange": [
+        1,
+        8
+      ],
+      "summary": "Exported is output dir error used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/output-dir-fallback.mjs:handleOutputDirFallback",
+      "type": "function",
+      "name": "handleOutputDirFallback",
+      "filePath": "public/js/output-dir-fallback.mjs",
+      "lineRange": [
+        10,
+        40
+      ],
+      "summary": "Exported handle output dir fallback used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/output-dir-fallback.test.mjs",
+      "type": "file",
+      "name": "output-dir-fallback.test.mjs",
+      "filePath": "public/js/output-dir-fallback.test.mjs",
+      "summary": "Tests for output-dir-fallback.mjs covering unit tests.",
+      "tags": [
+        "test",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:public/js/patient-data-accesos-ui.mjs",
+      "type": "file",
+      "name": "patient-data-accesos-ui.mjs",
+      "filePath": "public/js/patient-data-accesos-ui.mjs",
+      "summary": "Shared javascript module (13 functions, 6 exports) for the R+ workbench.",
+      "tags": [
+        "exports",
+        "utility",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/patient-data-accesos-ui.mjs:viaSelectHtml",
+      "type": "function",
+      "name": "viaSelectHtml",
+      "filePath": "public/js/patient-data-accesos-ui.mjs",
+      "lineRange": [
+        26,
+        46
+      ],
+      "summary": "Internal via select html in patient-data-accesos-ui.mjs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/patient-data-accesos-ui.mjs:renderAccesosListHtml",
+      "type": "function",
+      "name": "renderAccesosListHtml",
+      "filePath": "public/js/patient-data-accesos-ui.mjs",
+      "lineRange": [
+        48,
+        74
+      ],
+      "summary": "Internal render accesos list html in patient-data-accesos-ui.mjs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/patient-data-accesos-ui.mjs:buildPatientAccesosSectionHtml",
+      "type": "function",
+      "name": "buildPatientAccesosSectionHtml",
+      "filePath": "public/js/patient-data-accesos-ui.mjs",
+      "lineRange": [
+        77,
+        89
+      ],
+      "summary": "Exported build patient accesos section html used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/patient-data-accesos-ui.mjs:onPatientAccesoVia",
+      "type": "function",
+      "name": "onPatientAccesoVia",
+      "filePath": "public/js/patient-data-accesos-ui.mjs",
+      "lineRange": [
+        112,
+        119
+      ],
+      "summary": "Exported on patient acceso via used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/patient-data-accesos-ui.mjs:onPatientAccesoFecha",
+      "type": "function",
+      "name": "onPatientAccesoFecha",
+      "filePath": "public/js/patient-data-accesos-ui.mjs",
+      "lineRange": [
+        121,
+        128
+      ],
+      "summary": "Exported on patient acceso fecha used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/patient-data-accesos-ui.mjs:addPatientAccesoRow",
+      "type": "function",
+      "name": "addPatientAccesoRow",
+      "filePath": "public/js/patient-data-accesos-ui.mjs",
+      "lineRange": [
+        130,
+        138
+      ],
+      "summary": "Exported add patient acceso row used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/patient-data-accesos-ui.mjs:removePatientAccesoRow",
+      "type": "function",
+      "name": "removePatientAccesoRow",
+      "filePath": "public/js/patient-data-accesos-ui.mjs",
+      "lineRange": [
+        140,
+        150
+      ],
+      "summary": "Exported remove patient acceso row used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/patient-data-censo-ui.mjs",
+      "type": "file",
+      "name": "patient-data-censo-ui.mjs",
+      "filePath": "public/js/patient-data-censo-ui.mjs",
+      "summary": "Shared javascript module (13 functions, 8 exports) for the R+ workbench.",
+      "tags": [
+        "exports",
+        "utility",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/patient-data-censo-ui.mjs:renderDxListHtml",
+      "type": "function",
+      "name": "renderDxListHtml",
+      "filePath": "public/js/patient-data-censo-ui.mjs",
+      "lineRange": [
+        29,
+        51
+      ],
+      "summary": "Internal render dx list html in patient-data-censo-ui.mjs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/patient-data-censo-ui.mjs:buildPatientCensoDatosSectionsHtml",
+      "type": "function",
+      "name": "buildPatientCensoDatosSectionsHtml",
+      "filePath": "public/js/patient-data-censo-ui.mjs",
+      "lineRange": [
+        54,
+        78
+      ],
+      "summary": "Exported build patient censo datos sections html used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/patient-data-censo-ui.mjs:onPatientDxInput",
+      "type": "function",
+      "name": "onPatientDxInput",
+      "filePath": "public/js/patient-data-censo-ui.mjs",
+      "lineRange": [
+        92,
+        100
+      ],
+      "summary": "Exported on patient dx input used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/patient-data-censo-ui.mjs:addPatientDxRow",
+      "type": "function",
+      "name": "addPatientDxRow",
+      "filePath": "public/js/patient-data-censo-ui.mjs",
+      "lineRange": [
+        102,
+        110
+      ],
+      "summary": "Exported add patient dx row used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/patient-data-censo-ui.mjs:removePatientDxRow",
+      "type": "function",
+      "name": "removePatientDxRow",
+      "filePath": "public/js/patient-data-censo-ui.mjs",
+      "lineRange": [
+        112,
+        121
+      ],
+      "summary": "Exported remove patient dx row used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/patient-data-censo-ui.mjs:splitPatientDxPaste",
+      "type": "function",
+      "name": "splitPatientDxPaste",
+      "filePath": "public/js/patient-data-censo-ui.mjs",
+      "lineRange": [
+        123,
+        133
+      ],
+      "summary": "Exported split patient dx paste used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/patient-data-censo-ui.mjs:updatePatientCensoMeds",
+      "type": "function",
+      "name": "updatePatientCensoMeds",
+      "filePath": "public/js/patient-data-censo-ui.mjs",
+      "lineRange": [
+        135,
+        141
+      ],
+      "summary": "Exported update patient censo meds used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/patient-data-censo-ui.mjs:censoTomarDeMedicamentos",
+      "type": "function",
+      "name": "censoTomarDeMedicamentos",
+      "filePath": "public/js/patient-data-censo-ui.mjs",
+      "lineRange": [
+        143,
+        152
+      ],
+      "summary": "Exported censo tomar de medicamentos used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/patient-datos-modal.mjs",
+      "type": "file",
+      "name": "patient-datos-modal.mjs",
+      "filePath": "public/js/patient-datos-modal.mjs",
+      "summary": "Modal de datos del paciente (expediente → pestaña Paciente).",
+      "tags": [
+        "exports",
+        "utility",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/patient-datos-modal.mjs:ensureDatosPaneInModal",
+      "type": "function",
+      "name": "ensureDatosPaneInModal",
+      "filePath": "public/js/patient-datos-modal.mjs",
+      "lineRange": [
+        19,
+        29
+      ],
+      "summary": "Internal ensure datos pane in modal in patient-datos-modal.mjs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/patient-datos-modal.mjs:closePatientDatosModal",
+      "type": "function",
+      "name": "closePatientDatosModal",
+      "filePath": "public/js/patient-datos-modal.mjs",
+      "lineRange": [
+        41,
+        47
+      ],
+      "summary": "Exported close patient datos modal used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/patient-datos-modal.mjs:openPatientDatosModal",
+      "type": "function",
+      "name": "openPatientDatosModal",
+      "filePath": "public/js/patient-datos-modal.mjs",
+      "lineRange": [
+        52,
+        63
+      ],
+      "summary": "Exported open patient datos modal used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/patient-datos-modal.mjs:openPatientDatosModalForPatient",
+      "type": "function",
+      "name": "openPatientDatosModalForPatient",
+      "filePath": "public/js/patient-datos-modal.mjs",
+      "lineRange": [
+        66,
+        68
+      ],
+      "summary": "Open datos modal for a specific patient (caller should selectPatient first).",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/patient-datos-modal.mjs:wirePatientDatosModal",
+      "type": "function",
+      "name": "wirePatientDatosModal",
+      "filePath": "public/js/patient-datos-modal.mjs",
+      "lineRange": [
+        70,
+        89
+      ],
+      "summary": "Open datos modal for a specific patient (caller should selectPatient first).",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/patient-datos-modal.mjs:wirePatientDatosModalOnce",
+      "type": "function",
+      "name": "wirePatientDatosModalOnce",
+      "filePath": "public/js/patient-datos-modal.mjs",
+      "lineRange": [
+        91,
+        98
+      ],
+      "summary": "Exported wire patient datos modal once used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/patient-delete-sync.mjs",
+      "type": "file",
+      "name": "patient-delete-sync.mjs",
+      "filePath": "public/js/patient-delete-sync.mjs",
+      "summary": "Borrado de paciente diferido (ventana para deshacer antes de sync LAN).",
+      "tags": [
+        "exports",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/patient-delete-sync.mjs:stagePatientDelete",
+      "type": "function",
+      "name": "stagePatientDelete",
+      "filePath": "public/js/patient-delete-sync.mjs",
+      "lineRange": [
+        14,
+        28
+      ],
+      "summary": "Exported stage patient delete used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/patient-delete-sync.mjs:hasStagedDelete",
+      "type": "function",
+      "name": "hasStagedDelete",
+      "filePath": "public/js/patient-delete-sync.mjs",
+      "lineRange": [
+        30,
+        32
+      ],
+      "summary": "Exported has staged delete used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/patient-delete-sync.mjs:cancelStagedPatientDelete",
+      "type": "function",
+      "name": "cancelStagedPatientDelete",
+      "filePath": "public/js/patient-delete-sync.mjs",
+      "lineRange": [
+        34,
+        40
+      ],
+      "summary": "Exported cancel staged patient delete used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/patient-delete-sync.mjs:flushOne",
+      "type": "function",
+      "name": "flushOne",
+      "filePath": "public/js/patient-delete-sync.mjs",
+      "lineRange": [
+        42,
+        51
+      ],
+      "summary": "Internal flush one in patient-delete-sync.mjs.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/patient-delete-sync.mjs:flushStagedPatientDeletes",
+      "type": "function",
+      "name": "flushStagedPatientDeletes",
+      "filePath": "public/js/patient-delete-sync.mjs",
+      "lineRange": [
+        53,
+        56
+      ],
+      "summary": "Exported flush staged patient deletes used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/patient-delete-sync.mjs:cancelAllStagedPatientDeletes",
+      "type": "function",
+      "name": "cancelAllStagedPatientDeletes",
+      "filePath": "public/js/patient-delete-sync.mjs",
+      "lineRange": [
+        59,
+        62
+      ],
+      "summary": "Cancela todos los borrados en espera (p. ej. antes de deshacer con recarga).",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/patient-delete-sync.test.mjs",
+      "type": "file",
+      "name": "patient-delete-sync.test.mjs",
+      "filePath": "public/js/patient-delete-sync.test.mjs",
+      "summary": "Tests for patient-delete-sync.mjs covering unit tests.",
+      "tags": [
+        "test",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:public/js/patient-diagnosticos.mjs",
+      "type": "file",
+      "name": "patient-diagnosticos.mjs",
+      "filePath": "public/js/patient-diagnosticos.mjs",
+      "summary": "Shared javascript module (10 functions, 10 exports) for the R+ workbench.",
+      "tags": [
+        "exports",
+        "utility",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:public/js/patient-diagnosticos.mjs:parseDiagnosticosText",
+      "type": "function",
+      "name": "parseDiagnosticosText",
+      "filePath": "public/js/patient-diagnosticos.mjs",
+      "lineRange": [
+        10,
+        22
+      ],
+      "summary": "Exported parse diagnosticos text used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/patient-diagnosticos.mjs:formatDiagnosticosCopy",
+      "type": "function",
+      "name": "formatDiagnosticosCopy",
+      "filePath": "public/js/patient-diagnosticos.mjs",
+      "lineRange": [
+        25,
+        34
+      ],
+      "summary": "Exported format diagnosticos copy used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/patient-diagnosticos.mjs:ensurePatientDiagnosticos",
+      "type": "function",
+      "name": "ensurePatientDiagnosticos",
+      "filePath": "public/js/patient-diagnosticos.mjs",
+      "lineRange": [
+        37,
+        50
+      ],
+      "summary": "Exported ensure patient diagnosticos used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/patient-diagnosticos.mjs:diagnosticosTextForCenso",
+      "type": "function",
+      "name": "diagnosticosTextForCenso",
+      "filePath": "public/js/patient-diagnosticos.mjs",
+      "lineRange": [
+        56,
+        66
+      ],
+      "summary": "Máximo de diagnósticos exportados al censo (los primeros N de la lista).",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/patient-diagnosticos.mjs:migratePatientDiagnosticosFromVpo",
+      "type": "function",
+      "name": "migratePatientDiagnosticosFromVpo",
+      "filePath": "public/js/patient-diagnosticos.mjs",
+      "lineRange": [
+        72,
+        89
+      ],
+      "summary": "Exported migrate patient diagnosticos from vpo used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/patient-diagnosticos.mjs:applyPatientDiagnosticosList",
+      "type": "function",
+      "name": "applyPatientDiagnosticosList",
+      "filePath": "public/js/patient-diagnosticos.mjs",
+      "lineRange": [
+        95,
+        98
+      ],
+      "summary": "Exported apply patient diagnosticos list used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/patient-diagnosticos.mjs:preloadNoteDxFromPatient",
+      "type": "function",
+      "name": "preloadNoteDxFromPatient",
+      "filePath": "public/js/patient-diagnosticos.mjs",
+      "lineRange": [
+        101,
+        115
+      ],
+      "summary": "Exported preload note dx from patient used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/patient-diagnosticos.mjs:mergeCensoPatientFields",
+      "type": "function",
+      "name": "mergeCensoPatientFields",
+      "filePath": "public/js/patient-diagnosticos.mjs",
+      "lineRange": [
+        118,
+        127
+      ],
+      "summary": "Exported merge censo patient fields used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:public/js/patient-diagnosticos.mjs:pushDiagnosticosToPatient",
+      "type": "function",
+      "name": "pushDiagnosticosToPatient",
+      "filePath": "public/js/patient-diagnosticos.mjs",
+      "lineRange": [
+        129,
+        137
+      ],
+      "summary": "Exported push diagnosticos to patient used by other R+ modules.",
+      "tags": [
+        "exports",
+        "function"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:public/js/fuzzy-match.test.mjs",
+      "target": "file:public/js/fuzzy-match.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/fuzzy-match.mjs",
+      "target": "file:public/js/fuzzy-match.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:public/js/historia-clinica-lan-sync.mjs",
+      "target": "file:lib/historia-clinica/catalogs/ahf-conditions.json",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/historia-clinica-lan-sync.mjs",
+      "target": "file:lib/historia-clinica/catalogs/app-conditions.json",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/historia-clinica-lan-sync.mjs",
+      "target": "file:lib/historia-clinica/catalogs/ipas-systems.json",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/historia-clinica-lan-sync.mjs",
+      "target": "file:lib/historia-clinica/migrate-legacy.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/historia-clinica-lan-sync.mjs",
+      "target": "file:public/js/app-state.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/historia-clinica-lan-sync.mjs",
+      "target": "file:public/js/features/lan-sync.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/historia-clinica-lan-sync.mjs",
+      "target": "file:public/js/versioned-mutation.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/historia-clinica-lan-sync.mjs",
+      "target": "function:public/js/historia-clinica-lan-sync.mjs:buildHistoriaClinicaDelta",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/historia-clinica-lan-sync.mjs",
+      "target": "function:public/js/historia-clinica-lan-sync.mjs:buildHistoriaClinicaDelta",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/historia-clinica-lan-sync.mjs",
+      "target": "function:public/js/historia-clinica-lan-sync.mjs:markHistoriaPendingLanSync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/historia-clinica-lan-sync.mjs",
+      "target": "function:public/js/historia-clinica-lan-sync.mjs:markHistoriaPendingLanSync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/historia-clinica-lan-sync.mjs",
+      "target": "function:public/js/historia-clinica-lan-sync.mjs:flushPendingHistoriaClinicaLanSync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/historia-clinica-lan-sync.mjs",
+      "target": "function:public/js/historia-clinica-lan-sync.mjs:flushPendingHistoriaClinicaLanSync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/historia-clinica-lan-sync.mjs",
+      "target": "function:public/js/historia-clinica-lan-sync.mjs:schedulePendingHistoriaClinicaLanSync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/historia-clinica-lan-sync.mjs",
+      "target": "function:public/js/historia-clinica-lan-sync.mjs:schedulePendingHistoriaClinicaLanSync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/historia-clinica-lan-sync.mjs",
+      "target": "function:public/js/historia-clinica-lan-sync.mjs:flushAllPendingHistoriaClinicaLanSync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/historia-clinica-lan-sync.mjs",
+      "target": "function:public/js/historia-clinica-lan-sync.mjs:flushAllPendingHistoriaClinicaLanSync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/historia-clinica-lan-sync.mjs",
+      "target": "function:public/js/historia-clinica-lan-sync.mjs:scheduleFlushAllPendingHistoriaClinicaLanSync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/historia-clinica-lan-sync.mjs",
+      "target": "function:public/js/historia-clinica-lan-sync.mjs:scheduleFlushAllPendingHistoriaClinicaLanSync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/historia-clinica-lan-sync.mjs",
+      "target": "function:public/js/historia-clinica-lan-sync.mjs:applyServerHistoriaClinicaToPatient",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/historia-clinica-lan-sync.mjs",
+      "target": "function:public/js/historia-clinica-lan-sync.mjs:applyServerHistoriaClinicaToPatient",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/historia-clinica-lan-sync.test.mjs",
+      "target": "file:public/js/historia-clinica-lan-sync.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/historia-clinica-lan-sync.mjs",
+      "target": "file:public/js/historia-clinica-lan-sync.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:public/js/lazy-feature-routes.mjs",
+      "target": "file:public/js/mobile-web.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/lazy-feature-routes.mjs",
+      "target": "file:public/js/ui-skeleton.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/lazy-feature-routes.mjs",
+      "target": "function:public/js/lazy-feature-routes.mjs:ensureSettingsHelpLoaded",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/lazy-feature-routes.mjs",
+      "target": "function:public/js/lazy-feature-routes.mjs:ensureSettingsHelpLoaded",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/lazy-feature-routes.mjs",
+      "target": "function:public/js/lazy-feature-routes.mjs:ensurePlatformLoaded",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/lazy-feature-routes.mjs",
+      "target": "function:public/js/lazy-feature-routes.mjs:ensurePlatformLoaded",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/lazy-feature-routes.mjs",
+      "target": "function:public/js/lazy-feature-routes.mjs:ensureLabsLoaded",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/lazy-feature-routes.mjs",
+      "target": "function:public/js/lazy-feature-routes.mjs:ensureLabsLoaded",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/lazy-feature-routes.mjs",
+      "target": "function:public/js/lazy-feature-routes.mjs:bindLazyLabsRuntimeCtx",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/lazy-feature-routes.mjs",
+      "target": "function:public/js/lazy-feature-routes.mjs:bindLazyLabsRuntimeCtx",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/lazy-feature-routes.mjs",
+      "target": "function:public/js/lazy-feature-routes.mjs:wireLabsRuntimeExports",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/lazy-feature-routes.mjs",
+      "target": "function:public/js/lazy-feature-routes.mjs:showLabPanelLoadingSkeleton",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/lazy-feature-routes.mjs",
+      "target": "function:public/js/lazy-feature-routes.mjs:showLabPanelLoadingSkeleton",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/lazy-feature-routes.mjs",
+      "target": "function:public/js/lazy-feature-routes.mjs:hideLabPanelLoadingSkeleton",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/lazy-feature-routes.mjs",
+      "target": "function:public/js/lazy-feature-routes.mjs:hideLabPanelLoadingSkeleton",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/lazy-feature-routes.mjs",
+      "target": "function:public/js/lazy-feature-routes.mjs:labsAsyncFn",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/lazy-feature-routes.mjs",
+      "target": "function:public/js/lazy-feature-routes.mjs:ensureChartsLoaded",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/lazy-feature-routes.mjs",
+      "target": "function:public/js/lazy-feature-routes.mjs:ensureChartsLoaded",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/lazy-feature-routes.mjs",
+      "target": "function:public/js/lazy-feature-routes.mjs:bindLazyChartsRuntimeCtx",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/lazy-feature-routes.mjs",
+      "target": "function:public/js/lazy-feature-routes.mjs:bindLazyChartsRuntimeCtx",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/lazy-feature-routes.mjs",
+      "target": "function:public/js/lazy-feature-routes.mjs:inferFechaLabSetFromIdFallback",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/lazy-feature-routes.mjs",
+      "target": "function:public/js/lazy-feature-routes.mjs:wireChartsRuntimeExports",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/lazy-feature-routes.mjs",
+      "target": "function:public/js/lazy-feature-routes.mjs:registerLazyChartsRuntimes",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/lazy-feature-routes.mjs",
+      "target": "function:public/js/lazy-feature-routes.mjs:chartsAsyncFn",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/lazy-feature-routes.mjs",
+      "target": "function:public/js/lazy-feature-routes.mjs:chartsSyncFn",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/lazy-feature-routes.mjs",
+      "target": "function:public/js/lazy-feature-routes.mjs:patchWindowHandlers",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/lazy-feature-routes.mjs",
+      "target": "function:public/js/lazy-feature-routes.mjs:patchWindowHandlers",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/lazy-feature-routes.mjs",
+      "target": "function:public/js/lazy-feature-routes.mjs:lazyWindowHandler",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/lazy-feature-routes.mjs",
+      "target": "function:public/js/lazy-feature-routes.mjs:buildLazyWindowHandlers",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/lazy-feature-routes.mjs",
+      "target": "function:public/js/lazy-feature-routes.mjs:buildLazyWindowHandlers",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/lazy-feature-routes.mjs",
+      "target": "function:public/js/lazy-feature-routes.mjs:registerLazyFeatureRuntimesBody",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/lazy-feature-routes.mjs",
+      "target": "function:public/js/lazy-feature-routes.mjs:registerLazyFeatureRuntimes",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/lazy-feature-routes.mjs",
+      "target": "function:public/js/lazy-feature-routes.mjs:registerLazyFeatureRuntimes",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/med-pharm-profile-core.mjs",
+      "target": "file:public/js/med-pharm-some-catalog.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/med-pharm-profile-core.mjs",
+      "target": "function:public/js/med-pharm-profile-core.mjs:normDosisForRowKey",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/med-pharm-profile-core.mjs",
+      "target": "function:public/js/med-pharm-profile-core.mjs:normDosisForRowKey",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/med-pharm-profile-core.mjs",
+      "target": "function:public/js/med-pharm-profile-core.mjs:buildMedPharmRowKey",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/med-pharm-profile-core.mjs",
+      "target": "function:public/js/med-pharm-profile-core.mjs:buildMedPharmRowKey",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/med-pharm-profile-core.mjs",
+      "target": "function:public/js/med-pharm-profile-core.mjs:extractMedBaseName",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/med-pharm-profile-core.mjs",
+      "target": "function:public/js/med-pharm-profile-core.mjs:extractMedBaseName",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/med-pharm-profile-core.mjs",
+      "target": "function:public/js/med-pharm-profile-core.mjs:buildMedPharmMedGroupKey",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/med-pharm-profile-core.mjs",
+      "target": "function:public/js/med-pharm-profile-core.mjs:buildMedPharmMedGroupKey",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/med-pharm-profile-core.mjs",
+      "target": "function:public/js/med-pharm-profile-core.mjs:monthKeyFromParts",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/med-pharm-profile-core.mjs",
+      "target": "function:public/js/med-pharm-profile-core.mjs:monthKeyFromParts",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/med-pharm-profile-core.mjs",
+      "target": "function:public/js/med-pharm-profile-core.mjs:splitMonthAt",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/med-pharm-profile-core.mjs",
+      "target": "function:public/js/med-pharm-profile-core.mjs:splitMonthAt",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/med-pharm-profile-core.mjs",
+      "target": "function:public/js/med-pharm-profile-core.mjs:dayValueInMap",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/med-pharm-profile-core.mjs",
+      "target": "function:public/js/med-pharm-profile-core.mjs:dayValueInMap",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/med-pharm-profile-core.mjs",
+      "target": "function:public/js/med-pharm-profile-core.mjs:adherenceStats",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/med-pharm-profile-core.mjs",
+      "target": "function:public/js/med-pharm-profile-core.mjs:adherenceStats",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/med-pharm-profile-core.mjs",
+      "target": "function:public/js/med-pharm-profile-core.mjs:isMedPharmRowHidden",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/med-pharm-profile-core.mjs",
+      "target": "function:public/js/med-pharm-profile-core.mjs:isMedPharmRowHidden",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/med-pharm-profile-core.mjs",
+      "target": "function:public/js/med-pharm-profile-core.mjs:toggleNotAdmin",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/med-pharm-profile-core.mjs",
+      "target": "function:public/js/med-pharm-profile-core.mjs:toggleNotAdmin",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/med-pharm-profile-core.mjs",
+      "target": "function:public/js/med-pharm-profile-core.mjs:formatFreqShort",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/med-pharm-profile-core.mjs",
+      "target": "function:public/js/med-pharm-profile-core.mjs:formatFreqShort",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/med-pharm-profile-core.mjs",
+      "target": "function:public/js/med-pharm-profile-core.mjs:formatViaShort",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/med-pharm-profile-core.mjs",
+      "target": "function:public/js/med-pharm-profile-core.mjs:formatViaShort",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/med-pharm-profile-core.mjs",
+      "target": "function:public/js/med-pharm-profile-core.mjs:findDayHeaderInfo",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/med-pharm-profile-core.mjs",
+      "target": "function:public/js/med-pharm-profile-core.mjs:rowMetaFromCols",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/med-pharm-profile-core.mjs",
+      "target": "function:public/js/med-pharm-profile-core.mjs:parseRowLine",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/med-pharm-profile-core.mjs",
+      "target": "function:public/js/med-pharm-profile-core.mjs:looksLikeSomePharmMonthPaste",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/med-pharm-profile-core.mjs",
+      "target": "function:public/js/med-pharm-profile-core.mjs:looksLikeSomePharmMonthPaste",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/med-pharm-profile-core.mjs",
+      "target": "function:public/js/med-pharm-profile-core.mjs:parseSomePharmMonthPaste",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/med-pharm-profile-core.mjs",
+      "target": "function:public/js/med-pharm-profile-core.mjs:parseSomePharmMonthPaste",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/med-pharm-profile-core.mjs",
+      "target": "function:public/js/med-pharm-profile-core.mjs:parseRecetaDateToDay",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/med-pharm-profile-core.mjs",
+      "target": "function:public/js/med-pharm-profile-core.mjs:parseRecetaDateToDay",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/med-pharm-profile-core.mjs",
+      "target": "function:public/js/med-pharm-profile-core.mjs:emptyMonth",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/med-pharm-profile-core.mjs",
+      "target": "function:public/js/med-pharm-profile-core.mjs:emptyMonth",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/med-pharm-profile-core.mjs",
+      "target": "function:public/js/med-pharm-profile-core.mjs:maxIndicatedDay",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/med-pharm-profile-core.mjs",
+      "target": "function:public/js/med-pharm-profile-core.mjs:mergeMedPharmRowDays",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/med-pharm-profile-core.mjs",
+      "target": "function:public/js/med-pharm-profile-core.mjs:coalesceMedPharmRowsByKey",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/med-pharm-profile-core.mjs",
+      "target": "function:public/js/med-pharm-profile-core.mjs:coalesceMedPharmRowsByKey",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/med-pharm-profile-core.mjs",
+      "target": "function:public/js/med-pharm-profile-core.mjs:mergeRecetaIntoMonth",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/med-pharm-profile-core.mjs",
+      "target": "function:public/js/med-pharm-profile-core.mjs:mergeRecetaIntoMonth",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/med-pharm-profile-core.mjs",
+      "target": "function:public/js/med-pharm-profile-core.mjs:mergeNotAdminFromPrevious",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/med-pharm-profile-core.mjs",
+      "target": "function:public/js/med-pharm-profile-core.mjs:mergeNotAdminFromPrevious",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/med-pharm-profile-core.mjs",
+      "target": "function:public/js/med-pharm-profile-core.mjs:applySomePasteToProfile",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/med-pharm-profile-core.mjs",
+      "target": "function:public/js/med-pharm-profile-core.mjs:applySomePasteToProfile",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/med-pharm-profile-core.mjs",
+      "target": "function:public/js/med-pharm-profile-core.mjs:medPharmProfileUpdatedAt",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/med-pharm-profile-core.mjs",
+      "target": "function:public/js/med-pharm-profile-core.mjs:medPharmProfileUpdatedAt",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/med-pharm-profile-core.mjs",
+      "target": "function:public/js/med-pharm-profile-core.mjs:getMonthFromProfile",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/med-pharm-profile-core.mjs",
+      "target": "function:public/js/med-pharm-profile-core.mjs:getMonthFromProfile",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/med-pharm-profile-core.mjs",
+      "target": "function:public/js/med-pharm-profile-core.mjs:profileHasMonthData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/med-pharm-profile-core.mjs",
+      "target": "function:public/js/med-pharm-profile-core.mjs:profileHasMonthData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/med-pharm-profile-core.mjs",
+      "target": "function:public/js/med-pharm-profile-core.mjs:monthHasData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/med-pharm-profile-core.mjs",
+      "target": "function:public/js/med-pharm-profile-core.mjs:monthHasData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/med-pharm-profile-core.mjs",
+      "target": "function:public/js/med-pharm-profile-core.mjs:deleteMonthFromProfile",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/med-pharm-profile-core.mjs",
+      "target": "function:public/js/med-pharm-profile-core.mjs:deleteMonthFromProfile",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/med-pharm-profile-core.mjs",
+      "target": "function:public/js/med-pharm-profile-core.mjs:ensureMonthOnProfile",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/med-pharm-profile-core.mjs",
+      "target": "function:public/js/med-pharm-profile-core.mjs:ensureMonthOnProfile",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/med-pharm-profile-core.test.mjs",
+      "target": "file:public/js/med-pharm-profile-core.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/med-pharm-profile-core.mjs",
+      "target": "file:public/js/med-pharm-profile-core.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:public/js/med-pharm-some-catalog.mjs",
+      "target": "function:public/js/med-pharm-some-catalog.mjs:sanitizeTokenList",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/med-pharm-some-catalog.mjs",
+      "target": "function:public/js/med-pharm-some-catalog.mjs:sanitizeSomePharmCatalog",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/med-pharm-some-catalog.mjs",
+      "target": "function:public/js/med-pharm-some-catalog.mjs:tokensMatch",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/med-pharm-some-catalog.mjs",
+      "target": "function:public/js/med-pharm-some-catalog.mjs:applySomePharmCatalogOverlay",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/med-pharm-some-catalog.mjs",
+      "target": "function:public/js/med-pharm-some-catalog.mjs:applySomePharmCatalogOverlay",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/med-pharm-some-catalog.mjs",
+      "target": "function:public/js/med-pharm-some-catalog.mjs:getSomePharmCatalogSnapshot",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/med-pharm-some-catalog.mjs",
+      "target": "function:public/js/med-pharm-some-catalog.mjs:getSomePharmCatalogSnapshot",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/med-pharm-some-catalog.mjs",
+      "target": "function:public/js/med-pharm-some-catalog.mjs:listSomePharmFilterLabels",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/med-pharm-some-catalog.mjs",
+      "target": "function:public/js/med-pharm-some-catalog.mjs:listSomePharmFilterLabels",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/med-pharm-some-catalog.mjs",
+      "target": "function:public/js/med-pharm-some-catalog.mjs:isSomePharmCategoryLabel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/med-pharm-some-catalog.mjs",
+      "target": "function:public/js/med-pharm-some-catalog.mjs:isSomePharmCategoryLabel",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/med-pharm-some-catalog.mjs",
+      "target": "function:public/js/med-pharm-some-catalog.mjs:classifySomePharmCategory",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/med-pharm-some-catalog.mjs",
+      "target": "function:public/js/med-pharm-some-catalog.mjs:classifySomePharmCategory",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/med-pharm-some-catalog.mjs",
+      "target": "function:public/js/med-pharm-some-catalog.mjs:rowSomePharmCategory",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/med-pharm-some-catalog.mjs",
+      "target": "function:public/js/med-pharm-some-catalog.mjs:rowSomePharmCategory",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/med-pharm-some-catalog.mjs",
+      "target": "function:public/js/med-pharm-some-catalog.mjs:assignSomePharmCategory",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/med-pharm-some-catalog.mjs",
+      "target": "function:public/js/med-pharm-some-catalog.mjs:assignSomePharmCategory",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/med-pharm-some-catalog.mjs",
+      "target": "function:public/js/med-pharm-some-catalog.mjs:assignSomePharmCategories",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/med-pharm-some-catalog.mjs",
+      "target": "function:public/js/med-pharm-some-catalog.mjs:assignSomePharmCategories",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/med-pharm-some-catalog.test.mjs",
+      "target": "file:public/js/med-pharm-some-catalog.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/med-pharm-some-catalog.mjs",
+      "target": "file:public/js/med-pharm-some-catalog.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:public/js/med-pharm-view-window.mjs",
+      "target": "file:public/js/med-pharm-profile-core.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/med-pharm-view-window.mjs",
+      "target": "function:public/js/med-pharm-view-window.mjs:parseFimiFecha",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/med-pharm-view-window.mjs",
+      "target": "function:public/js/med-pharm-view-window.mjs:parseFimiFecha",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/med-pharm-view-window.mjs",
+      "target": "function:public/js/med-pharm-view-window.mjs:columnKey",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/med-pharm-view-window.mjs",
+      "target": "function:public/js/med-pharm-view-window.mjs:columnKey",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/med-pharm-view-window.mjs",
+      "target": "function:public/js/med-pharm-view-window.mjs:daysInCalendarMonth",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/med-pharm-view-window.mjs",
+      "target": "function:public/js/med-pharm-view-window.mjs:daysInCalendarMonth",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/med-pharm-view-window.mjs",
+      "target": "function:public/js/med-pharm-view-window.mjs:makeColumn",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/med-pharm-view-window.mjs",
+      "target": "function:public/js/med-pharm-view-window.mjs:makeColumn",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/med-pharm-view-window.mjs",
+      "target": "function:public/js/med-pharm-view-window.mjs:collectIndicatedDays",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/med-pharm-view-window.mjs",
+      "target": "function:public/js/med-pharm-view-window.mjs:rowHasIndicationInRange",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/med-pharm-view-window.mjs",
+      "target": "function:public/js/med-pharm-view-window.mjs:rowKeysContinuingAcrossMonths",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/med-pharm-view-window.mjs",
+      "target": "function:public/js/med-pharm-view-window.mjs:minIndicatedDayAmongRows",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/med-pharm-view-window.mjs",
+      "target": "function:public/js/med-pharm-view-window.mjs:rangeColumns",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/med-pharm-view-window.mjs",
+      "target": "function:public/js/med-pharm-view-window.mjs:buildCurrentMonthWindow",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/med-pharm-view-window.mjs",
+      "target": "function:public/js/med-pharm-view-window.mjs:buildPastMonthWindow",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/med-pharm-view-window.mjs",
+      "target": "function:public/js/med-pharm-view-window.mjs:buildWindowLabel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/med-pharm-view-window.mjs",
+      "target": "function:public/js/med-pharm-view-window.mjs:buildPharmViewWindow",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/med-pharm-view-window.mjs",
+      "target": "function:public/js/med-pharm-view-window.mjs:buildPharmViewWindow",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/med-pharm-view-window.mjs",
+      "target": "function:public/js/med-pharm-view-window.mjs:findRowWithDayInMonth",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/med-pharm-view-window.mjs",
+      "target": "function:public/js/med-pharm-view-window.mjs:unifyRowsForWindow",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/med-pharm-view-window.mjs",
+      "target": "function:public/js/med-pharm-view-window.mjs:unifyRowsForWindow",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/med-pharm-view-window.mjs",
+      "target": "function:public/js/med-pharm-view-window.mjs:cellValueAtColumn",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/med-pharm-view-window.mjs",
+      "target": "function:public/js/med-pharm-view-window.mjs:cellValueAtColumn",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/med-pharm-view-window.mjs",
+      "target": "function:public/js/med-pharm-view-window.mjs:toggleNotAdminAtColumn",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/med-pharm-view-window.mjs",
+      "target": "function:public/js/med-pharm-view-window.mjs:toggleNotAdminAtColumn",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/med-pharm-view-window.mjs",
+      "target": "function:public/js/med-pharm-view-window.mjs:notAdminAtColumn",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/med-pharm-view-window.mjs",
+      "target": "function:public/js/med-pharm-view-window.mjs:latestVariantInWindow",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/med-pharm-view-window.mjs",
+      "target": "function:public/js/med-pharm-view-window.mjs:latestVariantInWindow",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/med-pharm-view-window.mjs",
+      "target": "function:public/js/med-pharm-view-window.mjs:adherenceStatsForRowKeys",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/med-pharm-view-window.mjs",
+      "target": "function:public/js/med-pharm-view-window.mjs:adherenceStatsForRowKeys",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/med-pharm-view-window.mjs",
+      "target": "function:public/js/med-pharm-view-window.mjs:groupUnifiedRowsByMed",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/med-pharm-view-window.mjs",
+      "target": "function:public/js/med-pharm-view-window.mjs:groupUnifiedRowsByMed",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/med-pharm-view-window.mjs",
+      "target": "function:public/js/med-pharm-view-window.mjs:rowsForMedGroup",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/med-pharm-view-window.mjs",
+      "target": "function:public/js/med-pharm-view-window.mjs:rowsForMedGroup",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/med-pharm-view-window.test.mjs",
+      "target": "file:public/js/med-pharm-profile-core.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/med-pharm-view-window.test.mjs",
+      "target": "file:public/js/med-pharm-view-window.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/med-pharm-view-window.test.mjs",
+      "target": "function:public/js/med-pharm-view-window.test.mjs:profileWithCrossMonth",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/med-pharm-view-window.test.mjs",
+      "target": "function:public/js/med-pharm-view-window.test.mjs:profileWithDoseChange",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/med-pharm-profile-core.mjs",
+      "target": "file:public/js/med-pharm-view-window.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:public/js/med-pharm-view-window.mjs",
+      "target": "file:public/js/med-pharm-view-window.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:public/js/mobile-lan-boot.mjs",
+      "target": "file:public/js/mobile-web.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/mobile-lan-boot.mjs",
+      "target": "function:public/js/mobile-lan-boot.mjs:scheduleMobileLanWork",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/mobile-lan-boot.mjs",
+      "target": "function:public/js/mobile-lan-boot.mjs:scheduleMobileLanWork",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/mobile-lan-boot.test.mjs",
+      "target": "file:public/js/mobile-lan-boot.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/mobile-lan-boot.mjs",
+      "target": "file:public/js/mobile-lan-boot.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:public/js/mobile-web.mjs",
+      "target": "file:public/js/mobile-lan-query-persist.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/mobile-web.mjs",
+      "target": "function:public/js/mobile-web.mjs:isMobileWeb",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/mobile-web.mjs",
+      "target": "function:public/js/mobile-web.mjs:isMobileWeb",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/mobile-web.mjs",
+      "target": "function:public/js/mobile-web.mjs:activateMobileWebRoot",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/mobile-web.mjs",
+      "target": "function:public/js/mobile-web.mjs:activateMobileWebRoot",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/mobile-web.mjs",
+      "target": "function:public/js/mobile-web.mjs:blockIfMobileDocExport",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/mobile-web.mjs",
+      "target": "function:public/js/mobile-web.mjs:blockIfMobileDocExport",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/mobile-web.mjs",
+      "target": "function:public/js/mobile-web.mjs:mobileDocExportToast",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/mobile-web.mjs",
+      "target": "function:public/js/mobile-web.mjs:mobileDocExportToast",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/mobile-web.mjs",
+      "target": "function:public/js/mobile-web.mjs:syncMobileBarebonesChrome",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/mobile-web.mjs",
+      "target": "function:public/js/mobile-web.mjs:syncMobileBarebonesChrome",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/mobile-web.test.mjs",
+      "target": "file:public/js/expediente-tabs.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/mobile-web.test.mjs",
+      "target": "file:public/js/mobile-web.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/expediente-tabs.mjs",
+      "target": "file:public/js/mobile-web.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:public/js/mobile-web.mjs",
+      "target": "file:public/js/mobile-web.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:public/js/modal-dismiss.mjs",
+      "target": "function:public/js/modal-dismiss.mjs:isRpcOverlayVisible",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/modal-dismiss.mjs",
+      "target": "function:public/js/modal-dismiss.mjs:isRpcOverlayVisible",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/modal-dismiss.mjs",
+      "target": "function:public/js/modal-dismiss.mjs:getOverlayZIndex",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/modal-dismiss.mjs",
+      "target": "function:public/js/modal-dismiss.mjs:getOverlayZIndex",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/modal-dismiss.mjs",
+      "target": "function:public/js/modal-dismiss.mjs:getDismissPanel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/modal-dismiss.mjs",
+      "target": "function:public/js/modal-dismiss.mjs:getDismissPanel",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/modal-dismiss.mjs",
+      "target": "function:public/js/modal-dismiss.mjs:isBackdropOutsideClick",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/modal-dismiss.mjs",
+      "target": "function:public/js/modal-dismiss.mjs:isBackdropOutsideClick",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/modal-dismiss.mjs",
+      "target": "function:public/js/modal-dismiss.mjs:bindBackdropDismiss",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/modal-dismiss.mjs",
+      "target": "function:public/js/modal-dismiss.mjs:bindBackdropDismiss",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/modal-dismiss.mjs",
+      "target": "function:public/js/modal-dismiss.mjs:createModalDismissRegistry",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/modal-dismiss.mjs",
+      "target": "function:public/js/modal-dismiss.mjs:createModalDismissRegistry",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/modal-dismiss.test.mjs",
+      "target": "file:public/js/modal-dismiss.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/modal-dismiss.mjs",
+      "target": "file:public/js/modal-dismiss.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:public/js/mode-features.mjs",
+      "target": "function:public/js/mode-features.mjs:isModeSala",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/mode-features.mjs",
+      "target": "function:public/js/mode-features.mjs:isModeSala",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/mode-features.mjs",
+      "target": "function:public/js/mode-features.mjs:getDefaultServicio",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/mode-features.mjs",
+      "target": "function:public/js/mode-features.mjs:getDefaultServicio",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/mode-features.mjs",
+      "target": "function:public/js/mode-features.mjs:getDefaultCuarto",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/mode-features.mjs",
+      "target": "function:public/js/mode-features.mjs:getDefaultCuarto",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/mode-features.mjs",
+      "target": "function:public/js/mode-features.mjs:getDefaultCama",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/mode-features.mjs",
+      "target": "function:public/js/mode-features.mjs:getDefaultCama",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/mode-features.mjs",
+      "target": "function:public/js/mode-features.mjs:migrateToV3",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/mode-features.mjs",
+      "target": "function:public/js/mode-features.mjs:migrateToV3",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/mode-features.test.mjs",
+      "target": "file:public/js/mode-features.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/mode-features.mjs",
+      "target": "file:public/js/mode-features.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:public/js/motion-mode.mjs",
+      "target": "function:public/js/motion-mode.mjs:normalizeMotionMode",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/motion-mode.mjs",
+      "target": "function:public/js/motion-mode.mjs:normalizeMotionMode",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/motion-mode.mjs",
+      "target": "function:public/js/motion-mode.mjs:motionClassFor",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/motion-mode.mjs",
+      "target": "function:public/js/motion-mode.mjs:motionClassFor",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/motion-mode.test.mjs",
+      "target": "file:public/js/motion-mode.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/motion-mode.mjs",
+      "target": "file:public/js/motion-mode.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:public/js/output-dir-fallback.mjs",
+      "target": "function:public/js/output-dir-fallback.mjs:isOutputDirError",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/output-dir-fallback.mjs",
+      "target": "function:public/js/output-dir-fallback.mjs:isOutputDirError",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/output-dir-fallback.mjs",
+      "target": "function:public/js/output-dir-fallback.mjs:handleOutputDirFallback",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/output-dir-fallback.mjs",
+      "target": "function:public/js/output-dir-fallback.mjs:handleOutputDirFallback",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/output-dir-fallback.test.mjs",
+      "target": "file:public/js/output-dir-fallback.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/output-dir-fallback.mjs",
+      "target": "file:public/js/output-dir-fallback.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:public/js/patient-data-accesos-ui.mjs",
+      "target": "file:public/js/app-state.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/patient-data-accesos-ui.mjs",
+      "target": "file:public/js/patient-accesos.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/patient-data-accesos-ui.mjs",
+      "target": "file:public/js/patient-date-fields.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/patient-data-accesos-ui.mjs",
+      "target": "file:public/js/rpc-date-picker.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/patient-data-accesos-ui.mjs",
+      "target": "function:public/js/patient-data-accesos-ui.mjs:viaSelectHtml",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/patient-data-accesos-ui.mjs",
+      "target": "function:public/js/patient-data-accesos-ui.mjs:renderAccesosListHtml",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/patient-data-accesos-ui.mjs",
+      "target": "function:public/js/patient-data-accesos-ui.mjs:buildPatientAccesosSectionHtml",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/patient-data-accesos-ui.mjs",
+      "target": "function:public/js/patient-data-accesos-ui.mjs:buildPatientAccesosSectionHtml",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/patient-data-accesos-ui.mjs",
+      "target": "function:public/js/patient-data-accesos-ui.mjs:onPatientAccesoVia",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/patient-data-accesos-ui.mjs",
+      "target": "function:public/js/patient-data-accesos-ui.mjs:onPatientAccesoVia",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/patient-data-accesos-ui.mjs",
+      "target": "function:public/js/patient-data-accesos-ui.mjs:onPatientAccesoFecha",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/patient-data-accesos-ui.mjs",
+      "target": "function:public/js/patient-data-accesos-ui.mjs:onPatientAccesoFecha",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/patient-data-accesos-ui.mjs",
+      "target": "function:public/js/patient-data-accesos-ui.mjs:addPatientAccesoRow",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/patient-data-accesos-ui.mjs",
+      "target": "function:public/js/patient-data-accesos-ui.mjs:addPatientAccesoRow",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/patient-data-accesos-ui.mjs",
+      "target": "function:public/js/patient-data-accesos-ui.mjs:removePatientAccesoRow",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/patient-data-accesos-ui.mjs",
+      "target": "function:public/js/patient-data-accesos-ui.mjs:removePatientAccesoRow",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/patient-data-censo-ui.mjs",
+      "target": "file:public/js/app-state.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/patient-data-censo-ui.mjs",
+      "target": "file:public/js/censo-meds-format.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/patient-data-censo-ui.mjs",
+      "target": "file:public/js/patient-diagnosticos.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/patient-data-censo-ui.mjs",
+      "target": "function:public/js/patient-data-censo-ui.mjs:renderDxListHtml",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/patient-data-censo-ui.mjs",
+      "target": "function:public/js/patient-data-censo-ui.mjs:buildPatientCensoDatosSectionsHtml",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/patient-data-censo-ui.mjs",
+      "target": "function:public/js/patient-data-censo-ui.mjs:buildPatientCensoDatosSectionsHtml",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/patient-data-censo-ui.mjs",
+      "target": "function:public/js/patient-data-censo-ui.mjs:onPatientDxInput",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/patient-data-censo-ui.mjs",
+      "target": "function:public/js/patient-data-censo-ui.mjs:onPatientDxInput",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/patient-data-censo-ui.mjs",
+      "target": "function:public/js/patient-data-censo-ui.mjs:addPatientDxRow",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/patient-data-censo-ui.mjs",
+      "target": "function:public/js/patient-data-censo-ui.mjs:addPatientDxRow",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/patient-data-censo-ui.mjs",
+      "target": "function:public/js/patient-data-censo-ui.mjs:removePatientDxRow",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/patient-data-censo-ui.mjs",
+      "target": "function:public/js/patient-data-censo-ui.mjs:removePatientDxRow",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/patient-data-censo-ui.mjs",
+      "target": "function:public/js/patient-data-censo-ui.mjs:splitPatientDxPaste",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/patient-data-censo-ui.mjs",
+      "target": "function:public/js/patient-data-censo-ui.mjs:splitPatientDxPaste",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/patient-data-censo-ui.mjs",
+      "target": "function:public/js/patient-data-censo-ui.mjs:updatePatientCensoMeds",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/patient-data-censo-ui.mjs",
+      "target": "function:public/js/patient-data-censo-ui.mjs:updatePatientCensoMeds",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/patient-data-censo-ui.mjs",
+      "target": "function:public/js/patient-data-censo-ui.mjs:censoTomarDeMedicamentos",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/patient-data-censo-ui.mjs",
+      "target": "function:public/js/patient-data-censo-ui.mjs:censoTomarDeMedicamentos",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/patient-datos-modal.mjs",
+      "target": "function:public/js/patient-datos-modal.mjs:ensureDatosPaneInModal",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/patient-datos-modal.mjs",
+      "target": "function:public/js/patient-datos-modal.mjs:closePatientDatosModal",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/patient-datos-modal.mjs",
+      "target": "function:public/js/patient-datos-modal.mjs:closePatientDatosModal",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/patient-datos-modal.mjs",
+      "target": "function:public/js/patient-datos-modal.mjs:openPatientDatosModal",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/patient-datos-modal.mjs",
+      "target": "function:public/js/patient-datos-modal.mjs:openPatientDatosModal",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/patient-datos-modal.mjs",
+      "target": "function:public/js/patient-datos-modal.mjs:openPatientDatosModalForPatient",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/patient-datos-modal.mjs",
+      "target": "function:public/js/patient-datos-modal.mjs:openPatientDatosModalForPatient",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/patient-datos-modal.mjs",
+      "target": "function:public/js/patient-datos-modal.mjs:wirePatientDatosModal",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/patient-datos-modal.mjs",
+      "target": "function:public/js/patient-datos-modal.mjs:wirePatientDatosModalOnce",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/patient-datos-modal.mjs",
+      "target": "function:public/js/patient-datos-modal.mjs:wirePatientDatosModalOnce",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/patient-delete-sync.mjs",
+      "target": "function:public/js/patient-delete-sync.mjs:stagePatientDelete",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/patient-delete-sync.mjs",
+      "target": "function:public/js/patient-delete-sync.mjs:stagePatientDelete",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/patient-delete-sync.mjs",
+      "target": "function:public/js/patient-delete-sync.mjs:hasStagedDelete",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/patient-delete-sync.mjs",
+      "target": "function:public/js/patient-delete-sync.mjs:hasStagedDelete",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/patient-delete-sync.mjs",
+      "target": "function:public/js/patient-delete-sync.mjs:cancelStagedPatientDelete",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/patient-delete-sync.mjs",
+      "target": "function:public/js/patient-delete-sync.mjs:cancelStagedPatientDelete",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/patient-delete-sync.mjs",
+      "target": "function:public/js/patient-delete-sync.mjs:flushOne",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/patient-delete-sync.mjs",
+      "target": "function:public/js/patient-delete-sync.mjs:flushStagedPatientDeletes",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/patient-delete-sync.mjs",
+      "target": "function:public/js/patient-delete-sync.mjs:flushStagedPatientDeletes",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/patient-delete-sync.mjs",
+      "target": "function:public/js/patient-delete-sync.mjs:cancelAllStagedPatientDeletes",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/patient-delete-sync.mjs",
+      "target": "function:public/js/patient-delete-sync.mjs:cancelAllStagedPatientDeletes",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/patient-delete-sync.test.mjs",
+      "target": "file:public/js/patient-delete-sync.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/patient-delete-sync.mjs",
+      "target": "file:public/js/patient-delete-sync.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:public/js/patient-diagnosticos.mjs",
+      "target": "file:public/js/patient-accesos.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:public/js/patient-diagnosticos.mjs",
+      "target": "function:public/js/patient-diagnosticos.mjs:parseDiagnosticosText",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/patient-diagnosticos.mjs",
+      "target": "function:public/js/patient-diagnosticos.mjs:parseDiagnosticosText",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/patient-diagnosticos.mjs",
+      "target": "function:public/js/patient-diagnosticos.mjs:formatDiagnosticosCopy",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/patient-diagnosticos.mjs",
+      "target": "function:public/js/patient-diagnosticos.mjs:formatDiagnosticosCopy",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/patient-diagnosticos.mjs",
+      "target": "function:public/js/patient-diagnosticos.mjs:ensurePatientDiagnosticos",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/patient-diagnosticos.mjs",
+      "target": "function:public/js/patient-diagnosticos.mjs:ensurePatientDiagnosticos",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/patient-diagnosticos.mjs",
+      "target": "function:public/js/patient-diagnosticos.mjs:diagnosticosTextForCenso",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/patient-diagnosticos.mjs",
+      "target": "function:public/js/patient-diagnosticos.mjs:diagnosticosTextForCenso",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/patient-diagnosticos.mjs",
+      "target": "function:public/js/patient-diagnosticos.mjs:migratePatientDiagnosticosFromVpo",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/patient-diagnosticos.mjs",
+      "target": "function:public/js/patient-diagnosticos.mjs:migratePatientDiagnosticosFromVpo",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/patient-diagnosticos.mjs",
+      "target": "function:public/js/patient-diagnosticos.mjs:applyPatientDiagnosticosList",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/patient-diagnosticos.mjs",
+      "target": "function:public/js/patient-diagnosticos.mjs:applyPatientDiagnosticosList",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/patient-diagnosticos.mjs",
+      "target": "function:public/js/patient-diagnosticos.mjs:preloadNoteDxFromPatient",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/patient-diagnosticos.mjs",
+      "target": "function:public/js/patient-diagnosticos.mjs:preloadNoteDxFromPatient",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/patient-diagnosticos.mjs",
+      "target": "function:public/js/patient-diagnosticos.mjs:mergeCensoPatientFields",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/patient-diagnosticos.mjs",
+      "target": "function:public/js/patient-diagnosticos.mjs:mergeCensoPatientFields",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:public/js/patient-diagnosticos.mjs",
+      "target": "function:public/js/patient-diagnosticos.mjs:pushDiagnosticosToPatient",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:public/js/patient-diagnosticos.mjs",
+      "target": "function:public/js/patient-diagnosticos.mjs:pushDiagnosticosToPatient",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+/* Shared premium workbench tokens — group-row nav + workbench-surfaces panes
+ * Rams equipment layer (Dieter Rams / Braun) — hairline + flat elevation */
+
+:root {
+  --wb-pill-border: var(--border-hairline);
+  --wb-pill-radius: var(--radius-pill);
+  --wb-pill-bg: color-mix(in oklab, var(--surface) 92%, var(--bg));
+  --wb-pill-active-border: color-mix(in oklab, var(--action) 35%, transparent);
+  --wb-pill-active-bg: color-mix(in oklab, var(--action) 7%, var(--surface));
+  --wb-pill-shadow: var(--elev-flat);
+  --wb-frame-border: var(--equipment-border);
+  --wb-frame-shadow: var(--equipment-shadow);
+  --wb-card-radius: var(--radius-lg);
+  --wb-chart-radius: var(--equipment-radius);
+  --wb-chart-surface: var(--equipment-surface);
+}

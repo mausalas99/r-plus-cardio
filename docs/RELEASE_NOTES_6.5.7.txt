@@ -1,0 +1,39 @@
+R+ 6.5.7 (estable — sync LAN de equipos, usuarios y eventualidades)
+====================================================================
+
+Fecha: 2026-06-02
+
+## Resumen
+
+Corrige la **sincronización LAN (⇄)** de **equipos**, **directorio de usuarios LAN** y **eventualidades** entre Macs en la misma sala. Compatible con peers en **6.5.6** (importa equipos aunque el peer no exporte usuarios).
+
+## Nuevo / mejorado
+
+### Sync LAN clínica (equipos y usuarios)
+
+- **Export fiable de `clinicalOps`** — Al conectar, unirse a sala o crear/editar equipos, el bundle incluye equipos, membresías y usuarios LAN registrados.
+- **Orden de importación** — Usuarios → equipos → membresías (evita fallos silenciosos por claves foráneas).
+- **Directorio LAN** — Los `@usuario` de otras Macs aparecen tras sincronizar; el modal se refresca al recibir datos.
+- **Compatibilidad 6.5.6** — Si un peer antiguo manda equipos sin usuarios, se crean stubs temporales (`peer_…`) hasta que llegue su perfil.
+- **Subciclo al asignar** — El selector respeta el ciclo guardado (p. ej. D2) en lugar de resetear a A1.
+
+### Eventualidades
+
+- **Fusión en bundle LAN** — Las eventualidades de ambas Macs se unen por paciente (no se pierden al mezclar salas).
+- **Push LiveSync** — Guardar una eventualidad dispara sincronización ⇄ además del host REST.
+
+### Otros
+
+- Toast si falla la importación clínica (sesión bloqueada).
+- Estado ⇄ menciona equipos en el mensaje de sincronización.
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v6.5.7
+
+- Mac: `R+-6.5.7-arm64.dmg`, `R+-6.5.7-x64.dmg` (y zip para auto-update).
+- Windows: `R+-6.5.7-x64.exe`.
+
+**Recomendado:** todas las Macs del equipo en **6.5.7** con sesión clínica desbloqueada y usuario LAN en Mi rotación.
+
+Tras el build local: `npm run build:mac` / `npm run build:win`.

@@ -1,0 +1,252 @@
+{
+  "nodes": [
+    {
+      "id": "document:docs/core/00-system-index.md",
+      "type": "document",
+      "name": "00-system-index.md",
+      "filePath": "docs/core/00-system-index.md",
+      "summary": "Core architecture document: R+ Documentation Hub.",
+      "tags": [
+        "documentation",
+        "architecture",
+        "reference"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/core/01-vision-north-star.md",
+      "type": "document",
+      "name": "01-vision-north-star.md",
+      "filePath": "docs/core/01-vision-north-star.md",
+      "summary": "Core architecture document: 🌟 Vision & North Star: R+.",
+      "tags": [
+        "documentation",
+        "architecture",
+        "reference"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/core/02-product-context.md",
+      "type": "document",
+      "name": "02-product-context.md",
+      "filePath": "docs/core/02-product-context.md",
+      "summary": "Core architecture document: Product Context: R+.",
+      "tags": [
+        "documentation",
+        "architecture",
+        "reference"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/core/03-user-journey.md",
+      "type": "document",
+      "name": "03-user-journey.md",
+      "filePath": "docs/core/03-user-journey.md",
+      "summary": "Core architecture document: User Journey: R+.",
+      "tags": [
+        "documentation",
+        "architecture",
+        "reference"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/core/04-directory-structure.md",
+      "type": "document",
+      "name": "04-directory-structure.md",
+      "filePath": "docs/core/04-directory-structure.md",
+      "summary": "Core architecture document: Directory Structure.",
+      "tags": [
+        "documentation",
+        "architecture",
+        "reference"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/core/05-architecture-decisions.md",
+      "type": "document",
+      "name": "05-architecture-decisions.md",
+      "filePath": "docs/core/05-architecture-decisions.md",
+      "summary": "Core architecture document: Slot reservado: Architecture Decision Records.",
+      "tags": [
+        "documentation",
+        "architecture",
+        "reference"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/core/06-design-system.md",
+      "type": "document",
+      "name": "06-design-system.md",
+      "filePath": "docs/core/06-design-system.md",
+      "summary": "Core architecture document: Design System.",
+      "tags": [
+        "documentation",
+        "architecture",
+        "design"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/core/07-testing-strategy.md",
+      "type": "document",
+      "name": "07-testing-strategy.md",
+      "filePath": "docs/core/07-testing-strategy.md",
+      "summary": "Core architecture document: Estrategia de testing.",
+      "tags": [
+        "documentation",
+        "architecture",
+        "testing"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/core/08-core-architecture.md",
+      "type": "document",
+      "name": "08-core-architecture.md",
+      "filePath": "docs/core/08-core-architecture.md",
+      "summary": "Core architecture document: Core Architecture.",
+      "tags": [
+        "documentation",
+        "architecture",
+        "reference"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/core/09-cicd-release.md",
+      "type": "document",
+      "name": "09-cicd-release.md",
+      "filePath": "docs/core/09-cicd-release.md",
+      "summary": "Core architecture document: Slot reservado: CI/CD & Release.",
+      "tags": [
+        "documentation",
+        "architecture",
+        "reference"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/core/10-i18n.md",
+      "type": "document",
+      "name": "10-i18n.md",
+      "filePath": "docs/core/10-i18n.md",
+      "summary": "Core architecture document: Slot reservado: Localization & i18n.",
+      "tags": [
+        "documentation",
+        "architecture",
+        "reference"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/core/11-performance-monitoring.md",
+      "type": "document",
+      "name": "11-performance-monitoring.md",
+      "filePath": "docs/core/11-performance-monitoring.md",
+      "summary": "Core architecture document: Slot reservado: Performance & Monitoring.",
+      "tags": [
+        "documentation",
+        "architecture",
+        "reference"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/core/12-accessibility.md",
+      "type": "document",
+      "name": "12-accessibility.md",
+      "filePath": "docs/core/12-accessibility.md",
+      "summary": "Core architecture document: Slot reservado: Accessibility (a11y).",
+      "tags": [
+        "documentation",
+        "architecture",
+        "reference"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/core/13-error-handling.md",
+      "type": "document",
+      "name": "13-error-handling.md",
+      "filePath": "docs/core/13-error-handling.md",
+      "summary": "Core architecture document: Slot reservado: Error Handling & Recovery.",
+      "tags": [
+        "documentation",
+        "architecture",
+        "reference"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/core/14-compliance.md",
+      "type": "document",
+      "name": "14-compliance.md",
+      "filePath": "docs/core/14-compliance.md",
+      "summary": "Core architecture document: Slot reservado: Compliance & Regulatory.",
+      "tags": [
+        "documentation",
+        "architecture",
+        "reference"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/core/15-security.md",
+      "type": "document",
+      "name": "15-security.md",
+      "filePath": "docs/core/15-security.md",
+      "summary": "Core architecture document: Security.",
+      "tags": [
+        "documentation",
+        "architecture",
+        "security"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/core/16-glossary-of-terms.md",
+      "type": "document",
+      "name": "16-glossary-of-terms.md",
+      "filePath": "docs/core/16-glossary-of-terms.md",
+      "summary": "Core architecture document: Glossary of Terms.",
+      "tags": [
+        "documentation",
+        "architecture",
+        "reference"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/core/17-docs-blueprint.md",
+      "type": "document",
+      "name": "17-docs-blueprint.md",
+      "filePath": "docs/core/17-docs-blueprint.md",
+      "summary": "Core architecture document: Documentation Blueprint.",
+      "tags": [
+        "documentation",
+        "architecture",
+        "reference"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/core/18-knowledge-capture.md",
+      "type": "document",
+      "name": "18-knowledge-capture.md",
+      "filePath": "docs/core/18-knowledge-capture.md",
+      "summary": "Core architecture document: Knowledge Capture & Decision Log.",
+      "tags": [
+        "documentation",
+        "architecture",
+        "reference"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": []
+}

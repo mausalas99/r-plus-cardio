@@ -1,0 +1,21 @@
+{
+  "format": "r-plus-med-catalog",
+  "version": 1,
+  "exportedAt": "2026-05-31T12:00:00.000Z",
+  "accents": {},
+  "soapTokens": {
+    "vasop": [],
+    "abx": [],
+    "analgesia": [],
+    "antihta": []
+  },
+  "somePharm": {
+    "tokens": {
+      "ANTIBIÓTICO": ["ERTAPENEM", "CEFALOTINA", "MEROPENEM"],
+      "SEDANTE": ["DEXMEDETOMIDINA", "PROPOFOL"],
+      "ANTICONVULSIVO": ["LEVETIRACETAM"],
+      "ANALGÉSICO": ["METAMIZOL", "PARACETAMOL"],
+      "SUEROS": ["CLORURO DE SODIO", "DEXTROSA 5%"]
+    }
+  }
+}

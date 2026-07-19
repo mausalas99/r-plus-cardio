@@ -1,0 +1,26 @@
+R+ 7.2.7 (interno — frecuencia y UI signos)
+=======================================================
+
+Fecha: 2026-06-08
+
+## Resumen
+
+Parche sobre 7.2.6: el **interno móvil** ordena pacientes por **frecuencia de signos vitales** (más frecuente primero) y el modal de captura usa **tema oscuro** también en glucometrías.
+
+## Nuevo / mejorado
+
+- **Interno — orden por frecuencia** — La lista MIP prioriza pacientes con SV programados: q1h → q2h → q4h → por turno; dentro de la misma frecuencia, vencidos antes que al día; empate por cama. Pacientes solo con estudios al final.
+- **Interno — glucometrías** — Los campos mg/dL y HH:MM en el modal de signos usan el mismo fondo oscuro que TAS, FC, etc. (ya no aparecen en blanco en iPad).
+
+## Operación en guardia
+
+Parche sobre **7.2.6**: instala en **todas** las estaciones del turno el mismo día. Sin cambio de esquema SQLCipher (sigue **v15**). El iPad solo necesita recargar la página de internos (CSS `?v=4`).
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v7.2.7
+
+- Mac: `R+-7.2.7-arm64.dmg`, `R+-7.2.7-x64.dmg` (y zip para auto-update).
+- Windows: `R+-7.2.7-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye write-release-yml.js).

@@ -1,0 +1,32 @@
+R+ 6.7.0 (LAN — directorio visible y PIN del turno)
+=======================================================
+
+Fecha: 2026-06-05
+
+## Resumen
+
+Corrige el directorio LAN que en **6.6.8–6.6.9** solo mostraba al anfitrión: el host ya no borra el roster al recibir un sync-bundle vacío, los clientes ven un aviso honesto si aún no están conectados, y el **PIN del turno** (6 dígitos, ~12 h) permite unirse a la guardia sin pegar el enlace de invitación.
+
+## Nuevo / mejorado
+
+- **Directorio LAN** — El anfitrión conserva el roster acumulado aunque llegue `clinicalOps: null` en un push de bundle (base bloqueada o host solo-LAN). Fusión por unión de snapshots en `bundle-merge` y `host-store`.
+- **Diagnóstico ⇄** — Cada intento de push clinical-ops deja traza con `code` (`NO_LAN`, `NO_ROOM`, `NO_SNAPSHOT`, etc.) en el JSON de diagnósticos.
+- **Conexión honesta** — Si eliges guardia en red pero aún no hay host/sala, ya no aparece «Perfil guardado» como éxito falso: CTA para abrir LiveSync y conectar.
+- **PIN del turno** — El anfitrión muestra un PIN de 6 dígitos reutilizable (~12 h); los residentes lo ingresan al registrarse y R+ escanea la subred (beacon) para unirse sin copiar enlace.
+- **Directorio en guardia** — Los desplegables de asignación de equipo ya no se cierran al refrescar el roster LAN.
+
+## Operación en guardia
+
+1. **Anfitrión (R4+):** abre LiveSync, **Unirse** a la sala, comparte el **PIN del turno** o el enlace de invitación.
+2. **Residentes:** registran **@usuario**; si usan PIN, lo pegan en el campo de registro LAN o conectan desde el panel ⇄.
+3. **Actualiza todas las estaciones** a **6.7.0** el mismo día. Mezclar **6.6.6** o anterior con sala en vivo activa no es recomendable.
+4. Windows: permite R+ en el firewall (puerto **3738**) la primera vez en sala LiveSync.
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v6.7.0
+
+- Mac: `R+-6.7.0-arm64.dmg`, `R+-6.7.0-x64.dmg` (y zip para auto-update).
+- Windows: `R+-6.7.0-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye write-release-yml.js).

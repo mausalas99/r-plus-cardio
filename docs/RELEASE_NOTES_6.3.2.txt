@@ -1,0 +1,47 @@
+R+ 6.3.2 (Pegar monitoreo en Estado Actual — I/O, EVAC y correcciones)
+======================================================================
+
+Fecha: 2026-05-27
+
+## Resumen
+
+Parche centrado en **Estado Actual (Sala)**: pegar el bloque de monitoreo del turno (T°, FC, TA, DXT, I, E, EVAC) con un solo clic, egresos desglosados en el texto SOAP, balance calculado solo con diuresis numérica, y correcciones de **Medicamentos** y **Pendientes** que ya venían en esta versión.
+
+## Nuevo / mejorado
+
+### Estado Actual — pegar monitoreo
+
+- **Modal «Pegar monitoreo»** — Pega el texto del turno en cualquier orden; vista previa en mayúsculas y **Aplicar al formulario** rellena signos, glucometrías e I/O antes de registrar.
+- **Formato reconocido** — `T°`, `FC`, `FR`, `TA`, `DXT` (varios valores; hora opcional `198@08:30`), `I`, `E`, `EVAC` y `B` (este último se ignora).
+- **Egresos detallados** — En `E:` se interpretan **DIURESIS** (NC, NO CUANTIFICADA o cc), **DRENAJE**, **GASTROSTOMÍA** y **NEFROSTOMÍA** (IZQUIERDA / DERECHA). Solo la diuresis numérica entra al balance; drenajes y nefrostomías se listan aparte en el texto generado.
+- **Evacuaciones** — Campo `EVAC` (NC, cc o texto libre, p. ej. sin evacuaciones reportadas en el turno).
+- **Balance** — Ingresos menos la **suma de todas las salidas con cc** (diuresis, drenaje, gastrostomía, nefrostomías); NC y NO CUANTIFICADA no suman. No se usa el `B:` pegado.
+- **Salida en mayúsculas** — Vista previa, balance en vivo y línea NM del SOAP usan `CC`, `MG/DL`, `LPM`, etc.
+- **Glucometrías** — Enter en la última fila agrega otra lectura con hora.
+- **Dieta** — Kcal/kg y Kcal total se calculan en ambos sentidos según el peso del paciente.
+
+## Correcciones
+
+### Medicamentos (receta hospitalaria)
+
+- **Cambio de paciente** — El texto pegado y la receta procesada se guardan por paciente; al volver a un paciente recuperas su borrador y su listado.
+- **Guardado al cambiar** — Se fuerza la persistencia al seleccionar otro paciente para no perder una receta recién procesada.
+
+### Estado Actual (Sala)
+
+- **Estado clínico general** — Al pulsar Tab entre campos el acordeón ya no se colapsa (antes se re-renderizaba todo el panel).
+- **Peso** — Ya no aparece como signo vital en Estado Actual; el peso para kcal/dieta se toma solo de **Datos del paciente**.
+
+### Pendientes (reposiciones electrolíticas)
+
+- **Bloqueo persistente** — Si eliminas o marcas como hecho un pendiente «Repo …», no vuelve a salir al reiniciar la app ni al sincronizar en sala LiveSync.
+- **+ Pendiente** — Si la alteración ya fue bloqueada, verás un aviso en lugar de duplicar el pendiente.
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v6.3.2
+
+- Mac: `R+-6.3.2-arm64.dmg`, `R+-6.3.2-x64.dmg` (y zip para auto-update).
+- Windows: `R+-6.3.2-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye `build:ui` y bundle del renderer).

@@ -1,0 +1,32 @@
+R+ 6.3.0 (Sala en vivo — LAN estable y flujo simplificado)
+============================================================
+
+Fecha: 2026-05-27
+
+## Resumen
+
+Esta versión mejora **Sala en vivo** (conexión LAN del equipo): reconexión WebSocket más fiable, panel ⇄ sin pestañas Anfitrión/Cliente en Mac, y flujo directo para **crear o unirse a salas** y compartir el enlace de invitación.
+
+## Nuevo / mejorado
+
+### Sala en vivo (⇄)
+
+- **Flujo en Mac** — Al abrir la conexión del equipo, esta computadora actúa por defecto como **servidor del turno** (detecta IP y URL en la red); ya no hace falta elegir primero «Anfitrión» vs «Cliente».
+- **Crear / unirse** — Panel centrado en **Activar sala en vivo** y **Salas en vivo** (crear sala, unirse, copiar invitación).
+- **Unirse a otra Mac** — Sección colapsable para pegar el enlace de invitación si esta R+ debe conectarse al servidor de **otra** computadora; botón **Usar esta Mac como servidor del turno** para volver atrás.
+- **Sesiones guardadas** — Si ya estás en una sala, el botón muestra **En sala** (deshabilitado) en lugar de **Unirse**.
+- **Textos** — Encabezado del menú ⇄ y ayuda del botón de conexión alineados al flujo «crear o unirse a sala».
+
+### Estabilidad de conexión
+
+- **Reconexión LiveSync** — Corregido el estado «reconectando…» permanente: el cierre del socket antiguo ya no desconecta una sesión que acaba de abrirse; el bucle de reconexión no interrumpe un canal que sigue conectando o abierto.
+- **Rol por defecto en escritorio** — En Electron, el rol LAN por defecto es **host** (antes podía quedar en cliente tras actualizar desde una UI con pestañas).
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v6.3.0
+
+- Mac: `R+-6.3.0-arm64.dmg`, `R+-6.3.0-x64.dmg` (y zip para auto-update).
+- Windows: `R+-6.3.0-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye `build:ui` y bundle del renderer).

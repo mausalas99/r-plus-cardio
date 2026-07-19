@@ -1,0 +1,662 @@
+{
+  "nodes": [
+    {
+      "id": "file:.cursorignore",
+      "type": "file",
+      "name": ".cursorignore",
+      "filePath": ".cursorignore",
+      "summary": ".cursorignore (unknown, 20 non-empty lines).",
+      "tags": [
+        "module",
+        "module",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.deepseek/rules.md",
+      "type": "document",
+      "name": "rules.md",
+      "filePath": ".deepseek/rules.md",
+      "summary": "Project documentation covering deepseek gui \u2014 rules for r+ for R+ clinical workbench.",
+      "tags": [
+        "documentation",
+        "development",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:.dependency-cruiser.cjs",
+      "type": "file",
+      "name": ".dependency-cruiser.cjs",
+      "filePath": ".dependency-cruiser.cjs",
+      "summary": ".dependency-cruiser.cjs (javascript, 40 non-empty lines).",
+      "tags": [
+        "module",
+        "module",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.kunsdd/draft/f5e6164c-990b-4f51-9628-4045f9feeef7/requirement.md",
+      "type": "document",
+      "name": "requirement.md",
+      "filePath": ".kunsdd/draft/f5e6164c-990b-4f51-9628-4045f9feeef7/requirement.md",
+      "summary": "Project documentation covering untitled requirement for R+ clinical workbench.",
+      "tags": [
+        "documentation",
+        "development",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:.understand-anything/.understandignore",
+      "type": "file",
+      "name": ".understandignore",
+      "filePath": ".understand-anything/.understandignore",
+      "summary": ".understandignore (unknown, 56 non-empty lines).",
+      "tags": [
+        "module",
+        "module",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:design/icon/signal-from-noise/README.md",
+      "type": "document",
+      "name": "README.md",
+      "filePath": "design/icon/signal-from-noise/README.md",
+      "summary": "Project documentation covering signal from noise \u2014 icon layers for R+ clinical workbench.",
+      "tags": [
+        "documentation",
+        "development",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:design/icon/single-glass-cross/README.md",
+      "type": "document",
+      "name": "README.md",
+      "filePath": "design/icon/single-glass-cross/README.md",
+      "summary": "Project documentation covering single glass cross for R+ clinical workbench.",
+      "tags": [
+        "documentation",
+        "development",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/api/README.md",
+      "type": "document",
+      "name": "README.md",
+      "filePath": "docs/api/README.md",
+      "summary": "Project documentation covering api reference \u2014 r+ for R+ clinical workbench.",
+      "tags": [
+        "documentation",
+        "development",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/database/database-index.md",
+      "type": "document",
+      "name": "database-index.md",
+      "filePath": "docs/database/database-index.md",
+      "summary": "Project documentation covering database index for R+ clinical workbench.",
+      "tags": [
+        "documentation",
+        "development",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:docs/examples/med-catalog-some-tokens.example.json",
+      "type": "config",
+      "name": "med-catalog-some-tokens.example.json",
+      "filePath": "docs/examples/med-catalog-some-tokens.example.json",
+      "summary": "med-catalog-some-tokens.example.json (json, 21 non-empty lines).",
+      "tags": [
+        "module",
+        "module",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/features/features-index.md",
+      "type": "document",
+      "name": "features-index.md",
+      "filePath": "docs/features/features-index.md",
+      "summary": "Project documentation covering features index for R+ clinical workbench.",
+      "tags": [
+        "documentation",
+        "development",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/logic/logic-index.md",
+      "type": "document",
+      "name": "logic-index.md",
+      "filePath": "docs/logic/logic-index.md",
+      "summary": "Project documentation covering logic index for R+ clinical workbench.",
+      "tags": [
+        "documentation",
+        "development",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/logs/agent-changelog.md",
+      "type": "document",
+      "name": "agent-changelog.md",
+      "filePath": "docs/logs/agent-changelog.md",
+      "summary": "Project documentation covering agent changelog for R+ clinical workbench.",
+      "tags": [
+        "documentation",
+        "development",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/logs/v8-lan-sync-profile-2026-06-11.md",
+      "type": "document",
+      "name": "v8-lan-sync-profile-2026-06-11.md",
+      "filePath": "docs/logs/v8-lan-sync-profile-2026-06-11.md",
+      "summary": "Project documentation covering v8 lan sync profile \u2014 2026-06-11 for R+ clinical workbench.",
+      "tags": [
+        "documentation",
+        "development",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:docs/mockups/perfil-farmacoterapeutico-mockup.html",
+      "type": "file",
+      "name": "perfil-farmacoterapeutico-mockup.html",
+      "filePath": "docs/mockups/perfil-farmacoterapeutico-mockup.html",
+      "summary": "perfil-farmacoterapeutico-mockup.html (html, 956 non-empty lines).",
+      "tags": [
+        "module",
+        "module",
+        "module"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:docs/superpowers/brainstorm-vitals/io-chart-options.html",
+      "type": "file",
+      "name": "io-chart-options.html",
+      "filePath": "docs/superpowers/brainstorm-vitals/io-chart-options.html",
+      "summary": "io-chart-options.html (html, 178 non-empty lines).",
+      "tags": [
+        "module",
+        "module",
+        "module"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:eslint.config.mjs",
+      "type": "file",
+      "name": "eslint.config.mjs",
+      "filePath": "eslint.config.mjs",
+      "summary": "Flat ESLint config enforcing complexity and max-lines budgets aligned with debt ratchet rules.",
+      "tags": [
+        "configuration",
+        "lint",
+        "quality-gate",
+        "build-system"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:lib/censo-export-file.mjs",
+      "type": "file",
+      "name": "censo-export-file.mjs",
+      "filePath": "lib/censo-export-file.mjs",
+      "summary": "Writes census PDF/export files to disk from renderer-initiated export requests.",
+      "tags": [
+        "utility",
+        "export",
+        "censo",
+        "document-generation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:lib/censo-export-file.mjs:censoSafeName",
+      "type": "function",
+      "name": "censoSafeName",
+      "filePath": "lib/censo-export-file.mjs",
+      "lineRange": [
+        8,
+        10
+      ],
+      "summary": "Exported function censoSafeName in censo-export-file.mjs.",
+      "tags": [
+        "utility",
+        "exports"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lib/censo-export-file.mjs:censoDateStamp",
+      "type": "function",
+      "name": "censoDateStamp",
+      "filePath": "lib/censo-export-file.mjs",
+      "lineRange": [
+        16,
+        23
+      ],
+      "summary": "Exported function censoDateStamp in censo-export-file.mjs.",
+      "tags": [
+        "utility",
+        "exports"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lib/censo-export-file.mjs:censoTimeStamp",
+      "type": "function",
+      "name": "censoTimeStamp",
+      "filePath": "lib/censo-export-file.mjs",
+      "lineRange": [
+        30,
+        37
+      ],
+      "summary": "Exported function censoTimeStamp in censo-export-file.mjs.",
+      "tags": [
+        "utility",
+        "exports"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lib/censo-export-file.mjs:censoFileName",
+      "type": "function",
+      "name": "censoFileName",
+      "filePath": "lib/censo-export-file.mjs",
+      "lineRange": [
+        45,
+        56
+      ],
+      "summary": "Exported function censoFileName in censo-export-file.mjs.",
+      "tags": [
+        "utility",
+        "exports"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lib/censo-export-file.mjs:censoDailyFilePattern",
+      "type": "function",
+      "name": "censoDailyFilePattern",
+      "filePath": "lib/censo-export-file.mjs",
+      "lineRange": [
+        62,
+        65
+      ],
+      "summary": "Exported function censoDailyFilePattern in censo-export-file.mjs.",
+      "tags": [
+        "utility",
+        "exports"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lib/censo-export-file.mjs:listCensoFilesForDate",
+      "type": "function",
+      "name": "listCensoFilesForDate",
+      "filePath": "lib/censo-export-file.mjs",
+      "lineRange": [
+        73,
+        78
+      ],
+      "summary": "Exported function listCensoFilesForDate in censo-export-file.mjs.",
+      "tags": [
+        "utility",
+        "exports"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lib/censo-export-file.mjs:removeCensoFilesForDate",
+      "type": "function",
+      "name": "removeCensoFilesForDate",
+      "filePath": "lib/censo-export-file.mjs",
+      "lineRange": [
+        86,
+        93
+      ],
+      "summary": "Exported function removeCensoFilesForDate in censo-export-file.mjs.",
+      "tags": [
+        "utility",
+        "exports"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lib/censo-export-file.mjs:writeCensoPdf",
+      "type": "function",
+      "name": "writeCensoPdf",
+      "filePath": "lib/censo-export-file.mjs",
+      "lineRange": [
+        102,
+        106
+      ],
+      "summary": "Exported function writeCensoPdf in censo-export-file.mjs.",
+      "tags": [
+        "utility",
+        "exports"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lib/censo-export-file.mjs:writeCensoPdfForToday",
+      "type": "function",
+      "name": "writeCensoPdfForToday",
+      "filePath": "lib/censo-export-file.mjs",
+      "lineRange": [
+        109,
+        111
+      ],
+      "summary": "Exported function writeCensoPdfForToday in censo-export-file.mjs.",
+      "tags": [
+        "utility",
+        "exports"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:lib/censo-export-file.test.mjs",
+      "type": "file",
+      "name": "censo-export-file.test.mjs",
+      "filePath": "lib/censo-export-file.test.mjs",
+      "summary": "Unit/integration tests exercising censo-export-file.mjs behavior under Electron node test runner.",
+      "tags": [
+        "test",
+        "validation",
+        "electron"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:lib/csp-policy.txt",
+      "type": "document",
+      "name": "csp-policy.txt",
+      "filePath": "lib/csp-policy.txt",
+      "summary": "Project documentation covering csp-policy.txt for R+ clinical workbench.",
+      "tags": [
+        "documentation",
+        "development",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:lib/db/fixtures/legacy-minimal.json",
+      "type": "config",
+      "name": "legacy-minimal.json",
+      "filePath": "lib/db/fixtures/legacy-minimal.json",
+      "summary": "legacy-minimal.json (json, 32 non-empty lines).",
+      "tags": [
+        "module",
+        "module",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:lib/drive-import/fixtures/eventos-short.txt",
+      "type": "document",
+      "name": "eventos-short.txt",
+      "filePath": "lib/drive-import/fixtures/eventos-short.txt",
+      "summary": "Project documentation covering eventos-short.txt for R+ clinical workbench.",
+      "tags": [
+        "documentation",
+        "development",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:lib/drive-import/fixtures/labs-drive-sample.txt",
+      "type": "document",
+      "name": "labs-drive-sample.txt",
+      "filePath": "lib/drive-import/fixtures/labs-drive-sample.txt",
+      "summary": "Project documentation covering labs-drive-sample.txt for R+ clinical workbench.",
+      "tags": [
+        "documentation",
+        "development",
+        "module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:lib/interno/qr-svg.mjs",
+      "type": "file",
+      "name": "qr-svg.mjs",
+      "filePath": "lib/interno/qr-svg.mjs",
+      "summary": "Generates SVG QR codes for interno sala join links displayed on the guardia board.",
+      "tags": [
+        "utility",
+        "interno-mobile",
+        "qr",
+        "svg"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:lib/interno/qr-svg.mjs:renderQrSvg",
+      "type": "function",
+      "name": "renderQrSvg",
+      "filePath": "lib/interno/qr-svg.mjs",
+      "lineRange": [
+        7,
+        26
+      ],
+      "summary": "Exported function renderQrSvg in qr-svg.mjs.",
+      "tags": [
+        "utility",
+        "exports"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:lib/interno/qr-svg.test.mjs",
+      "type": "file",
+      "name": "qr-svg.test.mjs",
+      "filePath": "lib/interno/qr-svg.test.mjs",
+      "summary": "Unit/integration tests exercising qr-svg.mjs behavior under Electron node test runner.",
+      "tags": [
+        "test",
+        "validation",
+        "electron"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:lib/censo-export-file.mjs",
+      "target": "function:lib/censo-export-file.mjs:censoSafeName",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:lib/censo-export-file.mjs",
+      "target": "function:lib/censo-export-file.mjs:censoSafeName",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:lib/censo-export-file.mjs",
+      "target": "function:lib/censo-export-file.mjs:censoDateStamp",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:lib/censo-export-file.mjs",
+      "target": "function:lib/censo-export-file.mjs:censoDateStamp",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:lib/censo-export-file.mjs",
+      "target": "function:lib/censo-export-file.mjs:censoTimeStamp",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:lib/censo-export-file.mjs",
+      "target": "function:lib/censo-export-file.mjs:censoTimeStamp",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:lib/censo-export-file.mjs",
+      "target": "function:lib/censo-export-file.mjs:censoFileName",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:lib/censo-export-file.mjs",
+      "target": "function:lib/censo-export-file.mjs:censoFileName",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:lib/censo-export-file.mjs",
+      "target": "function:lib/censo-export-file.mjs:censoDailyFilePattern",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:lib/censo-export-file.mjs",
+      "target": "function:lib/censo-export-file.mjs:censoDailyFilePattern",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:lib/censo-export-file.mjs",
+      "target": "function:lib/censo-export-file.mjs:listCensoFilesForDate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:lib/censo-export-file.mjs",
+      "target": "function:lib/censo-export-file.mjs:listCensoFilesForDate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:lib/censo-export-file.mjs",
+      "target": "function:lib/censo-export-file.mjs:removeCensoFilesForDate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:lib/censo-export-file.mjs",
+      "target": "function:lib/censo-export-file.mjs:removeCensoFilesForDate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:lib/censo-export-file.mjs",
+      "target": "function:lib/censo-export-file.mjs:writeCensoPdf",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:lib/censo-export-file.mjs",
+      "target": "function:lib/censo-export-file.mjs:writeCensoPdf",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:lib/censo-export-file.mjs",
+      "target": "function:lib/censo-export-file.mjs:writeCensoPdfForToday",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:lib/censo-export-file.mjs",
+      "target": "function:lib/censo-export-file.mjs:writeCensoPdfForToday",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:lib/censo-export-file.test.mjs",
+      "target": "file:lib/censo-export-file.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lib/censo-export-file.mjs",
+      "target": "file:lib/censo-export-file.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:lib/interno/qr-svg.mjs",
+      "target": "function:lib/interno/qr-svg.mjs:renderQrSvg",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:lib/interno/qr-svg.mjs",
+      "target": "function:lib/interno/qr-svg.mjs:renderQrSvg",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:lib/interno/qr-svg.test.mjs",
+      "target": "file:lib/interno/qr-svg.mjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lib/interno/qr-svg.mjs",
+      "target": "file:lib/interno/qr-svg.test.mjs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

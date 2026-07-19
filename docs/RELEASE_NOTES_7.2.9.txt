@@ -1,0 +1,31 @@
+R+ 7.2.9 (Manejo, dietas SOME y EA)
+=======================================
+
+Fecha: 2026-06-10
+
+## Resumen
+
+Parche sobre 7.2.8: la pestaña **Medicamentos** pasa a **Manejo** con parser SOME ampliado (**medicamentos P2** y **dietas**); **Estado actual** recibe propuestas de dieta y un botón flotante para copiar; el censo re-selecciona paciente si el filtro lo oculta.
+
+## Nuevo / mejorado
+
+- **Manejo — parser SOME ampliado** — Al pegar el bloque del hospital se procesan filas `MEDICAMENTOS`, `MEDICAMENTOS P2` y `DIETAS` (tabuladores). `CUIDADOS` y `ESTUDIOS` se omiten con conteo en el toast.
+- **Manejo — dieta detectada** — Las dietas parseadas se muestran en tarjeta con kcal y gramos de proteína extraídos del detalle.
+- **Manejo — SOAP pre-marcado** — Antibióticos, antiHTA, insulinas, D50 y rescates PRN por glucometría se marcan automáticamente en la grilla SOAP.
+- **Estado actual — propuesta de dieta** — En sala, al procesar Manejo la dieta va a **propuesta pendiente** (`dieta`, `kcal`, `proteinG`); confirmar o descartar en EA como los medicamentos.
+- **Estado actual — proteína (g/día)** — Nuevo campo en la sección dieta del monitoreo clínico.
+- **Estado actual — copiar FAB** — Botón flotante (como Laboratorio) para copiar el texto de Estado actual sin bajar al pie del panel.
+- **Censo — paciente activo** — Si el filtro de equipo/censo oculta al paciente seleccionado, R+ elige el primero visible o vacía la vista.
+
+## Operación en guardia
+
+Parche sobre **7.2.8**: instala en **todas** las estaciones del turno el mismo día. Sin cambio de esquema SQLCipher (sigue **v15**). El iPad no requiere actualización.
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v7.2.9
+
+- Mac: `R+-7.2.9-arm64.dmg`, `R+-7.2.9-x64.dmg` (y zip para auto-update).
+- Windows: `R+-7.2.9-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye write-release-yml.js).

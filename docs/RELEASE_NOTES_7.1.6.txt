@@ -1,0 +1,30 @@
+R+ 7.1.6 (LiveSync ligero en red local)
+===========================================
+
+Fecha: 2026-06-07
+
+## Resumen
+
+LiveSync en red local deja de empujar el bundle completo de la sala en cada guardado. Las mutaciones tipadas (nota, indicaciones, laboratorios, campos) van por HTTP/WS liviano; el bundle completo queda para unirse, reconectar o un respaldo de seguridad a 30 s para dominios sin tipar.
+
+## Nuevo / mejorado
+
+- **⇄ Menos tráfico al unirse** — Al entrar un colega, cada Mac envía una pista de revisión (~60 B) en lugar de un bundle WS de ~100 KB.
+- **Compresión HTTP** — Respuestas grandes de `/api/lan/v1` (sync-bundle, clinical-ops) viajan comprimidas en gzip.
+- **Mutaciones tipadas** — Endpoints dedicados en el anfitrión para nota, indicaciones, laboratorios y campos; outbox SQLCipher v14 para reintentos.
+- **Bundle de seguridad (30 s)** — Dominios sin tipar (entrega, eventualidades, VPO, etc.) agrupan un bundle parcial (`entriesPartial`) sin pisar nota/labs ya sincronizados por la vía tipada.
+- **Pistas de revisión → delta primero** — Antes de `GET /sync-bundle`, intenta `GET /deltas?afterSeq=N` cuando el log alcanza.
+- **Perfil de red FAST / SLOW / OFFLINE** — Ajusta debounce y escaneo según RTT; en OFFLINE se detiene el escaneo y aparece **Reconectar** (flush outbox → bundle → WS).
+
+## Operación en guardia
+
+Parche sobre **7.1.5**: instala en **todas** las estaciones del turno. La base clínica migra a esquema **v14** (nuevos tipos en outbox LAN). Compatibilidad con Macs en 7.1.5: siguen funcionando; las estaciones en 7.1.6 aprovechan la vía liviana.
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v7.1.6
+
+- Mac: `R+-7.1.6-arm64.dmg`, `R+-7.1.6-x64.dmg` (y zip para auto-update).
+- Windows: `R+-7.1.6-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye write-release-yml.js).

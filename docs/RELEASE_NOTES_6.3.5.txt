@@ -1,0 +1,35 @@
+R+ 6.3.5 (Bomba con switch, Unirse a sala y ajustes de monitoreo)
+====================================================================
+
+Fecha: 2026-05-28
+
+## Resumen
+
+Parche de pulido: en **Estado Actual**, la **bomba de insulina** usa el mismo interruptor que las preferencias de laboratorio y sustituye las glucometrías normales al activarse; en **Sala en vivo (⇄)** el botón **Unirse** vuelve a responder al primer clic.
+
+## Nuevo / mejorado
+
+### Estado Actual (Sala)
+
+- **Switch Bomba de insulina** — Mismo estilo que *Vista de laboratorio* (BH extendida, etc.). Encendido: solo filas **Glu · Unidades · Hora**; apagado: solo glucometrías normales.
+- **Snapshot e historial** — Si el último registro es bomba, el snapshot y las gráficas muestran bomba y no mezclan glucometrías del mismo turno.
+
+## Correcciones
+
+### Estado Actual (Sala)
+
+- **Fila bomba** — El botón × queda alineado en la misma línea que los campos (ya no cae debajo del input).
+- **Modo bomba** — Ya no se muestran a la vez la fila simple (Glu + Hora) y la fila con unidades.
+
+### Sala en vivo (⇄)
+
+- **Unirse** — El panel ya no se reconstruye en cada mensaje del WebSocket de sincronización; los clics en **Unirse** (lista de salas y sesiones guardadas) vuelven a unirte a la sala con el toast correspondiente.
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-mas/releases/tag/v6.3.5
+
+- Mac: `R+-6.3.5-arm64.dmg`, `R+-6.3.5-x64.dmg` (y zip para auto-update).
+- Windows: `R+-6.3.5-x64.exe`.
+
+Tras el build local: `npm run build:mac` / `npm run build:win` (incluye write-release-yml.js).

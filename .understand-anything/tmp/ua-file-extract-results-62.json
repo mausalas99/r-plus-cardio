@@ -1,0 +1,1463 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 25,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "plans/README.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 104,
+      "nonEmptyLines": 88,
+      "sections": [
+        {
+          "heading": "Implementation Plans",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Execution order & status",
+          "level": 2,
+          "line": 8
+        },
+        {
+          "heading": "Dependency notes",
+          "level": 2,
+          "line": 35
+        },
+        {
+          "heading": "Direction notes (not plans — maintainer decisions)",
+          "level": 2,
+          "line": 44
+        },
+        {
+          "heading": "Findings considered and rejected",
+          "level": 2,
+          "line": 52
+        },
+        {
+          "heading": "What was NOT audited",
+          "level": 2,
+          "line": 91
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 6
+      }
+    },
+    {
+      "path": "preload.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 338,
+      "nonEmptyLines": 337,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/interno/index.html",
+      "language": "html",
+      "fileCategory": "markup",
+      "totalLines": 18,
+      "nonEmptyLines": 18,
+      "metrics": {}
+    },
+    {
+      "path": "public/interno/interno.css",
+      "language": "css",
+      "fileCategory": "markup",
+      "totalLines": 831,
+      "nonEmptyLines": 713,
+      "metrics": {}
+    },
+    {
+      "path": "public/js/age-calc.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 54,
+      "nonEmptyLines": 44,
+      "functions": [
+        {
+          "name": "parseDobToUTC",
+          "startLine": 5,
+          "endLine": 15,
+          "params": [
+            "dob"
+          ]
+        },
+        {
+          "name": "asOfToUTCDay",
+          "startLine": 17,
+          "endLine": 21,
+          "params": [
+            "asOf"
+          ]
+        },
+        {
+          "name": "calculateAge",
+          "startLine": 23,
+          "endLine": 48,
+          "params": [
+            "dob"
+          ]
+        },
+        {
+          "name": "formatDobForDocs",
+          "startLine": 50,
+          "endLine": 54,
+          "params": [
+            "dob"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "calculateAge",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "formatDobForDocs",
+          "line": 50,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "parseDobToUTC",
+          "callee": "DOB_RE.exec",
+          "lineNumber": 7
+        },
+        {
+          "caller": "parseDobToUTC",
+          "callee": "Number",
+          "lineNumber": 9
+        },
+        {
+          "caller": "parseDobToUTC",
+          "callee": "Number",
+          "lineNumber": 9
+        },
+        {
+          "caller": "parseDobToUTC",
+          "callee": "Number",
+          "lineNumber": 9
+        },
+        {
+          "caller": "parseDobToUTC",
+          "callee": "Date.UTC",
+          "lineNumber": 11
+        },
+        {
+          "caller": "parseDobToUTC",
+          "callee": "date.getUTCFullYear",
+          "lineNumber": 13
+        },
+        {
+          "caller": "parseDobToUTC",
+          "callee": "date.getUTCMonth",
+          "lineNumber": 13
+        },
+        {
+          "caller": "parseDobToUTC",
+          "callee": "date.getUTCDate",
+          "lineNumber": 13
+        },
+        {
+          "caller": "asOfToUTCDay",
+          "callee": "isNaN",
+          "lineNumber": 19
+        },
+        {
+          "caller": "asOfToUTCDay",
+          "callee": "d.getTime",
+          "lineNumber": 19
+        },
+        {
+          "caller": "asOfToUTCDay",
+          "callee": "Date.UTC",
+          "lineNumber": 20
+        },
+        {
+          "caller": "asOfToUTCDay",
+          "callee": "d.getUTCFullYear",
+          "lineNumber": 20
+        },
+        {
+          "caller": "asOfToUTCDay",
+          "callee": "d.getUTCMonth",
+          "lineNumber": 20
+        },
+        {
+          "caller": "asOfToUTCDay",
+          "callee": "d.getUTCDate",
+          "lineNumber": 20
+        },
+        {
+          "caller": "calculateAge",
+          "callee": "parseDobToUTC",
+          "lineNumber": 24
+        },
+        {
+          "caller": "calculateAge",
+          "callee": "asOfToUTCDay",
+          "lineNumber": 25
+        },
+        {
+          "caller": "calculateAge",
+          "callee": "dobD.getUTCFullYear",
+          "lineNumber": 31
+        },
+        {
+          "caller": "calculateAge",
+          "callee": "todayD.getUTCFullYear",
+          "lineNumber": 32
+        },
+        {
+          "caller": "calculateAge",
+          "callee": "dobD.getUTCMonth",
+          "lineNumber": 36
+        },
+        {
+          "caller": "calculateAge",
+          "callee": "dobD.getUTCDate",
+          "lineNumber": 36
+        },
+        {
+          "caller": "calculateAge",
+          "callee": "todayD.getUTCMonth",
+          "lineNumber": 37
+        },
+        {
+          "caller": "calculateAge",
+          "callee": "todayD.getUTCDate",
+          "lineNumber": 37
+        },
+        {
+          "caller": "calculateAge",
+          "callee": "todayD.getUTCFullYear",
+          "lineNumber": 42
+        },
+        {
+          "caller": "calculateAge",
+          "callee": "dobD.getUTCFullYear",
+          "lineNumber": 42
+        },
+        {
+          "caller": "calculateAge",
+          "callee": "todayD.getUTCMonth",
+          "lineNumber": 42
+        },
+        {
+          "caller": "calculateAge",
+          "callee": "dobD.getUTCMonth",
+          "lineNumber": 42
+        },
+        {
+          "caller": "calculateAge",
+          "callee": "todayD.getUTCDate",
+          "lineNumber": 43
+        },
+        {
+          "caller": "calculateAge",
+          "callee": "dobD.getUTCDate",
+          "lineNumber": 43
+        },
+        {
+          "caller": "calculateAge",
+          "callee": "Math.floor",
+          "lineNumber": 46
+        },
+        {
+          "caller": "formatDobForDocs",
+          "callee": "DOB_RE.exec",
+          "lineNumber": 51
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/age-calc.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 53,
+      "nonEmptyLines": 43,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/app-shell-exports.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 90,
+      "nonEmptyLines": 84,
+      "functions": [
+        {
+          "name": "collectExportedNames",
+          "startLine": 9,
+          "endLine": 22,
+          "params": [
+            "filePath"
+          ]
+        },
+        {
+          "name": "stubDomForShellImport",
+          "startLine": 24,
+          "endLine": 67,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "collectExportedNames",
+          "callee": "fs.readFileSync",
+          "lineNumber": 10
+        },
+        {
+          "caller": "collectExportedNames",
+          "callee": "src.matchAll",
+          "lineNumber": 12
+        },
+        {
+          "caller": "collectExportedNames",
+          "callee": "names.add",
+          "lineNumber": 12
+        },
+        {
+          "caller": "collectExportedNames",
+          "callee": "src.matchAll",
+          "lineNumber": 13
+        },
+        {
+          "caller": "collectExportedNames",
+          "callee": "m[1].split(',').forEach",
+          "lineNumber": 14
+        },
+        {
+          "caller": "collectExportedNames",
+          "callee": "m[1].split",
+          "lineNumber": 14
+        },
+        {
+          "caller": "collectExportedNames",
+          "callee": "part.trim",
+          "lineNumber": 15
+        },
+        {
+          "caller": "collectExportedNames",
+          "callee": "chunk.startsWith",
+          "lineNumber": 16
+        },
+        {
+          "caller": "collectExportedNames",
+          "callee": "chunk.split",
+          "lineNumber": 17
+        },
+        {
+          "caller": "collectExportedNames",
+          "callee": "names.add",
+          "lineNumber": 18
+        },
+        {
+          "caller": "collectExportedNames",
+          "callee": "alias[alias.length - 1].trim",
+          "lineNumber": 18
+        },
+        {
+          "caller": "getItem",
+          "callee": "JSON.stringify",
+          "lineNumber": 60
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/app-shell-modals.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 32,
+      "nonEmptyLines": 29,
+      "functions": [
+        {
+          "name": "stubDocument",
+          "startLine": 4,
+          "endLine": 13,
+          "params": []
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/app-state.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 133,
+      "nonEmptyLines": 122,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/features/lab-bulk-preview-modal.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 77,
+      "nonEmptyLines": 68,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/features/lan-delta-wiring.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 24,
+      "nonEmptyLines": 20,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/features/lan-sync-clinical-ops.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 401,
+      "nonEmptyLines": 346,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/features/platform.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 2,
+      "nonEmptyLines": 2,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/features/platform/platform-imports.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 26,
+      "nonEmptyLines": 23,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/features/settings-help-imports.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 41,
+      "nonEmptyLines": 36,
+      "functions": [
+        {
+          "name": "esc",
+          "startLine": 22,
+          "endLine": 28,
+          "params": [
+            "s"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "esc",
+          "callee": "String(s || '')\n    .replace(/&/g, '&amp;')\n    .replace(/</g, '&lt;')\n    .replace(/>/g, '&gt;')\n    .replace",
+          "lineNumber": 23
+        },
+        {
+          "caller": "esc",
+          "callee": "String(s || '')\n    .replace(/&/g, '&amp;')\n    .replace(/</g, '&lt;')\n    .replace",
+          "lineNumber": 23
+        },
+        {
+          "caller": "esc",
+          "callee": "String(s || '')\n    .replace(/&/g, '&amp;')\n    .replace",
+          "lineNumber": 23
+        },
+        {
+          "caller": "esc",
+          "callee": "String(s || '')\n    .replace",
+          "lineNumber": 23
+        },
+        {
+          "caller": "esc",
+          "callee": "String",
+          "lineNumber": 23
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/features/settings-help.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 4,
+      "nonEmptyLines": 4,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/features/settings-help/tour-intro.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 136,
+      "nonEmptyLines": 123,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/features/settings-help/tour-state.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 9,
+      "nonEmptyLines": 8,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/guardia-v7-gating.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 75,
+      "nonEmptyLines": 67,
+      "functions": [
+        {
+          "name": "normalizeVersionLabel",
+          "startLine": 1,
+          "endLine": 4,
+          "params": [
+            "v"
+          ]
+        },
+        {
+          "name": "parseSemverCoreParts",
+          "startLine": 6,
+          "endLine": 18,
+          "params": [
+            "versionLabel"
+          ]
+        },
+        {
+          "name": "compareSemverNumericArrays",
+          "startLine": 20,
+          "endLine": 28,
+          "params": [
+            "a",
+            "b"
+          ]
+        },
+        {
+          "name": "compareSemver",
+          "startLine": 30,
+          "endLine": 38,
+          "params": [
+            "a",
+            "b"
+          ]
+        },
+        {
+          "name": "semverLt",
+          "startLine": 40,
+          "endLine": 42,
+          "params": [
+            "a",
+            "b"
+          ]
+        },
+        {
+          "name": "semverGte",
+          "startLine": 44,
+          "endLine": 46,
+          "params": [
+            "a",
+            "b"
+          ]
+        },
+        {
+          "name": "shouldShowGuidedTourIntroBump",
+          "startLine": 48,
+          "endLine": 57,
+          "params": [
+            "currentVersion",
+            "storedDoneVersionRaw"
+          ]
+        },
+        {
+          "name": "shouldOfferGuardiaV7Education",
+          "startLine": 59,
+          "endLine": 67,
+          "params": []
+        },
+        {
+          "name": "shouldShowFundamentosTourIntro",
+          "startLine": 69,
+          "endLine": 75,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "semverLt",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "semverGte",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "shouldOfferGuardiaV7Education",
+          "line": 59,
+          "isDefault": false
+        },
+        {
+          "name": "shouldShowFundamentosTourIntro",
+          "line": 69,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "normalizeVersionLabel",
+          "callee": "String(v == null ? '' : v).trim",
+          "lineNumber": 2
+        },
+        {
+          "caller": "normalizeVersionLabel",
+          "callee": "String",
+          "lineNumber": 2
+        },
+        {
+          "caller": "parseSemverCoreParts",
+          "callee": "normalizeVersionLabel",
+          "lineNumber": 7
+        },
+        {
+          "caller": "parseSemverCoreParts",
+          "callee": "s.split('-')[0].split",
+          "lineNumber": 9
+        },
+        {
+          "caller": "parseSemverCoreParts",
+          "callee": "s.split",
+          "lineNumber": 9
+        },
+        {
+          "caller": "parseSemverCoreParts",
+          "callee": "core.split",
+          "lineNumber": 10
+        },
+        {
+          "caller": "parseSemverCoreParts",
+          "callee": "parseInt",
+          "lineNumber": 13
+        },
+        {
+          "caller": "parseSemverCoreParts",
+          "callee": "Number.isNaN",
+          "lineNumber": 14
+        },
+        {
+          "caller": "parseSemverCoreParts",
+          "callee": "nums.push",
+          "lineNumber": 15
+        },
+        {
+          "caller": "compareSemverNumericArrays",
+          "callee": "Math.max",
+          "lineNumber": 21
+        },
+        {
+          "caller": "compareSemver",
+          "callee": "parseSemverCoreParts",
+          "lineNumber": 31
+        },
+        {
+          "caller": "compareSemver",
+          "callee": "parseSemverCoreParts",
+          "lineNumber": 32
+        },
+        {
+          "caller": "compareSemver",
+          "callee": "compareSemverNumericArrays",
+          "lineNumber": 33
+        },
+        {
+          "caller": "compareSemver",
+          "callee": "normalizeVersionLabel",
+          "lineNumber": 34
+        },
+        {
+          "caller": "compareSemver",
+          "callee": "normalizeVersionLabel",
+          "lineNumber": 35
+        },
+        {
+          "caller": "semverLt",
+          "callee": "compareSemver",
+          "lineNumber": 41
+        },
+        {
+          "caller": "semverGte",
+          "callee": "compareSemver",
+          "lineNumber": 45
+        },
+        {
+          "caller": "shouldShowGuidedTourIntroBump",
+          "callee": "normalizeVersionLabel",
+          "lineNumber": 49
+        },
+        {
+          "caller": "shouldShowGuidedTourIntroBump",
+          "callee": "String(storedDoneVersionRaw).trim",
+          "lineNumber": 50
+        },
+        {
+          "caller": "shouldShowGuidedTourIntroBump",
+          "callee": "String",
+          "lineNumber": 50
+        },
+        {
+          "caller": "shouldShowGuidedTourIntroBump",
+          "callee": "String(storedDoneVersionRaw).trim",
+          "lineNumber": 51
+        },
+        {
+          "caller": "shouldShowGuidedTourIntroBump",
+          "callee": "String",
+          "lineNumber": 51
+        },
+        {
+          "caller": "shouldShowGuidedTourIntroBump",
+          "callee": "parseSemverCoreParts",
+          "lineNumber": 53
+        },
+        {
+          "caller": "shouldShowGuidedTourIntroBump",
+          "callee": "parseSemverCoreParts",
+          "lineNumber": 54
+        },
+        {
+          "caller": "shouldShowGuidedTourIntroBump",
+          "callee": "compareSemverNumericArrays",
+          "lineNumber": 55
+        },
+        {
+          "caller": "shouldOfferGuardiaV7Education",
+          "callee": "semverLt",
+          "lineNumber": 64
+        },
+        {
+          "caller": "shouldOfferGuardiaV7Education",
+          "callee": "semverGte",
+          "lineNumber": 64
+        },
+        {
+          "caller": "shouldShowFundamentosTourIntro",
+          "callee": "semverLt",
+          "lineNumber": 73
+        },
+        {
+          "caller": "shouldShowFundamentosTourIntro",
+          "callee": "shouldShowGuidedTourIntroBump",
+          "lineNumber": 74
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 9,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/guardia-v7-gating.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 43,
+      "nonEmptyLines": 40,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/lab-bulk-paste.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 233,
+      "nonEmptyLines": 217,
+      "functions": [
+        {
+          "name": "primaryTipoForResLabs",
+          "startLine": 36,
+          "endLine": 47,
+          "params": [
+            "resLabs"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "primaryTipoForResLabs",
+          "callee": "splitResLabsByTipo",
+          "lineNumber": 37
+        },
+        {
+          "caller": "primaryTipoForResLabs",
+          "callee": "sp.labs.some",
+          "lineNumber": 38
+        },
+        {
+          "caller": "primaryTipoForResLabs",
+          "callee": "String(r || '').trim",
+          "lineNumber": 39
+        },
+        {
+          "caller": "primaryTipoForResLabs",
+          "callee": "String",
+          "lineNumber": 39
+        },
+        {
+          "caller": "primaryTipoForResLabs",
+          "callee": "sp.cultivo.some",
+          "lineNumber": 41
+        },
+        {
+          "caller": "primaryTipoForResLabs",
+          "callee": "String(r || '').trim",
+          "lineNumber": 42
+        },
+        {
+          "caller": "primaryTipoForResLabs",
+          "callee": "String",
+          "lineNumber": 42
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/lab-history-set.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 198,
+      "nonEmptyLines": 184,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/labs-procesar-goldens.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 334,
+      "nonEmptyLines": 334,
+      "sections": [
+        {
+          "heading": "demoSome",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "olderDemoSome",
+          "level": 1,
+          "line": 187
+        },
+        {
+          "heading": "gasoVenosaSolo",
+          "level": 1,
+          "line": 270
+        },
+        {
+          "heading": "headerVariants",
+          "level": 1,
+          "line": 313
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 4
+      }
+    },
+    {
+      "path": "public/js/labs-procesar.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 188,
+      "nonEmptyLines": 179,
+      "functions": [
+        {
+          "name": "parseLabSexoNorm_",
+          "startLine": 7,
+          "endLine": 13,
+          "params": [
+            "mSexo"
+          ]
+        },
+        {
+          "name": "parseLabEdadParts_",
+          "startLine": 16,
+          "endLine": 23,
+          "params": [
+            "mEdad"
+          ]
+        },
+        {
+          "name": "parseLabUbicacion_",
+          "startLine": 25,
+          "endLine": 36,
+          "params": [
+            "textoBruto"
+          ]
+        },
+        {
+          "name": "createProcesarLabs",
+          "startLine": 63,
+          "endLine": 188,
+          "params": [
+            "deps"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createProcesarLabs",
+          "line": 63,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "parseLabSexoNorm_",
+          "callee": "mSexo[1].match",
+          "lineNumber": 9
+        },
+        {
+          "caller": "parseLabSexoNorm_",
+          "callee": "sm[1].toUpperCase",
+          "lineNumber": 11
+        },
+        {
+          "caller": "parseLabEdadParts_",
+          "callee": "mEdad[1].match",
+          "lineNumber": 17
+        },
+        {
+          "caller": "parseLabEdadParts_",
+          "callee": "(mEdad[1].match(/\\b(años|meses|dias|días|semanas)\\b/i) || ['años'])[0].toLowerCase",
+          "lineNumber": 19
+        },
+        {
+          "caller": "parseLabEdadParts_",
+          "callee": "mEdad[1].match",
+          "lineNumber": 19
+        },
+        {
+          "caller": "parseLabUbicacion_",
+          "callee": "textoBruto.match",
+          "lineNumber": 26
+        },
+        {
+          "caller": "parseLabUbicacion_",
+          "callee": "mUbic[1].trim",
+          "lineNumber": 28
+        },
+        {
+          "caller": "parseLabUbicacion_",
+          "callee": "uRaw\n    .split(/\\t+/)\n    .map(function (x) {\n      return x.trim();\n    })\n    .filter",
+          "lineNumber": 29
+        },
+        {
+          "caller": "parseLabUbicacion_",
+          "callee": "uRaw\n    .split(/\\t+/)\n    .map",
+          "lineNumber": 29
+        },
+        {
+          "caller": "parseLabUbicacion_",
+          "callee": "uRaw\n    .split",
+          "lineNumber": 29
+        },
+        {
+          "caller": "parseLabUbicacion_",
+          "callee": "x.trim",
+          "lineNumber": 32
+        },
+        {
+          "caller": "parseLabUbicacion_",
+          "callee": "(uTok[0] || uRaw.split(/\\s+(?:Medico|Médico|Edad)\\s*:/i)[0] || uRaw).trim",
+          "lineNumber": 35
+        },
+        {
+          "caller": "parseLabUbicacion_",
+          "callee": "uRaw.split",
+          "lineNumber": 35
+        },
+        {
+          "caller": "segmentLabReportBlocks_",
+          "callee": "tNorm.match",
+          "lineNumber": 65
+        },
+        {
+          "caller": "segmentLabReportBlocks_",
+          "callee": "textoBruto.match",
+          "lineNumber": 70
+        },
+        {
+          "caller": "segmentLabReportBlocks_",
+          "callee": "textoBruto.match",
+          "lineNumber": 71
+        },
+        {
+          "caller": "segmentLabReportBlocks_",
+          "callee": "textoBruto.match",
+          "lineNumber": 72
+        },
+        {
+          "caller": "segmentLabReportBlocks_",
+          "callee": "deps.bloqueCitoquimicoLiquidosFull",
+          "lineNumber": 74
+        },
+        {
+          "caller": "segmentLabReportBlocks_",
+          "callee": "tNorm.match",
+          "lineNumber": 75
+        },
+        {
+          "caller": "segmentLabReportBlocks_",
+          "callee": "tNorm.replace",
+          "lineNumber": 81
+        },
+        {
+          "caller": "segmentLabReportBlocks_",
+          "callee": "bloqueCitoLC.replace(/\\r/g, '').replace",
+          "lineNumber": 81
+        },
+        {
+          "caller": "segmentLabReportBlocks_",
+          "callee": "bloqueCitoLC.replace",
+          "lineNumber": 81
+        },
+        {
+          "caller": "segmentLabReportBlocks_",
+          "callee": "tSinLiqCorp\n      .replace(bloqueGaso, ' ')\n      .replace(bloqueEGO, ' ')\n      .replace",
+          "lineNumber": 83
+        },
+        {
+          "caller": "segmentLabReportBlocks_",
+          "callee": "tSinLiqCorp\n      .replace(bloqueGaso, ' ')\n      .replace",
+          "lineNumber": 83
+        },
+        {
+          "caller": "segmentLabReportBlocks_",
+          "callee": "tSinLiqCorp\n      .replace",
+          "lineNumber": 83
+        },
+        {
+          "caller": "segmentLabReportBlocks_",
+          "callee": "bloqueLCR.replace",
+          "lineNumber": 86
+        },
+        {
+          "caller": "segmentLabReportBlocks_",
+          "callee": "textoParaBh.replace",
+          "lineNumber": 88
+        },
+        {
+          "caller": "segmentLabReportBlocks_",
+          "callee": "/GASOMETRIA/i.test",
+          "lineNumber": 90
+        },
+        {
+          "caller": "segmentLabReportBlocks_",
+          "callee": "/BIOMETRIA|QUIMICA|ELECTROLITOS|PFH|COAGULACION|CULTIVO/i.test",
+          "lineNumber": 91
+        },
+        {
+          "caller": "pushLabSection_",
+          "callee": "resLabs.push",
+          "lineNumber": 101
+        },
+        {
+          "caller": "collectCoreLabSections_",
+          "callee": "deps.parseBH_",
+          "lineNumber": 106
+        },
+        {
+          "caller": "collectCoreLabSections_",
+          "callee": "resLabs.push",
+          "lineNumber": 107
+        },
+        {
+          "caller": "collectCoreLabSections_",
+          "callee": "resLabs.push",
+          "lineNumber": 108
+        },
+        {
+          "caller": "collectCoreLabSections_",
+          "callee": "pushLabSection_",
+          "lineNumber": 110
+        },
+        {
+          "caller": "collectCoreLabSections_",
+          "callee": "deps.parseQS_",
+          "lineNumber": 110
+        },
+        {
+          "caller": "collectCoreLabSections_",
+          "callee": "pushLabSection_",
+          "lineNumber": 111
+        },
+        {
+          "caller": "collectCoreLabSections_",
+          "callee": "deps.parseESC_",
+          "lineNumber": 111
+        },
+        {
+          "caller": "collectCoreLabSections_",
+          "callee": "pushLabSection_",
+          "lineNumber": 112
+        },
+        {
+          "caller": "collectCoreLabSections_",
+          "callee": "deps.parsePFH_",
+          "lineNumber": 112
+        },
+        {
+          "caller": "collectCoreLabSections_",
+          "callee": "pushLabSection_",
+          "lineNumber": 113
+        },
+        {
+          "caller": "collectCoreLabSections_",
+          "callee": "deps.parsePlaquetasCitrato_",
+          "lineNumber": 113
+        },
+        {
+          "caller": "collectLabSections_",
+          "callee": "collectCoreLabSections_",
+          "lineNumber": 121
+        },
+        {
+          "caller": "collectLabSections_",
+          "callee": "pushLabSection_",
+          "lineNumber": 123
+        },
+        {
+          "caller": "collectLabSections_",
+          "callee": "deps.parseGaso_",
+          "lineNumber": 123
+        },
+        {
+          "caller": "collectLabSections_",
+          "callee": "pushLabSection_",
+          "lineNumber": 124
+        },
+        {
+          "caller": "collectLabSections_",
+          "callee": "deps.parsePIE_",
+          "lineNumber": 124
+        },
+        {
+          "caller": "collectLabSections_",
+          "callee": "pushLabSection_",
+          "lineNumber": 125
+        },
+        {
+          "caller": "collectLabSections_",
+          "callee": "deps.parsearLCR",
+          "lineNumber": 125
+        },
+        {
+          "caller": "collectLabSections_",
+          "callee": "pushLabSection_",
+          "lineNumber": 126
+        },
+        {
+          "caller": "collectLabSections_",
+          "callee": "deps.parsearCitoquimicoLiquidos",
+          "lineNumber": 126
+        },
+        {
+          "caller": "collectLabSections_",
+          "callee": "pushLabSection_",
+          "lineNumber": 127
+        },
+        {
+          "caller": "collectLabSections_",
+          "callee": "deps.formatAscitisInterpretacionLine_",
+          "lineNumber": 129
+        },
+        {
+          "caller": "collectLabSections_",
+          "callee": "deps.buildAscitisLabAlerts_",
+          "lineNumber": 129
+        },
+        {
+          "caller": "collectLabSections_",
+          "callee": "pushLabSection_",
+          "lineNumber": 131
+        },
+        {
+          "caller": "collectLabSections_",
+          "callee": "deps.parseFisicoquimicoHeces_",
+          "lineNumber": 131
+        },
+        {
+          "caller": "collectLabSections_",
+          "callee": "deps.parseFrotisSangre_",
+          "lineNumber": 132
+        },
+        {
+          "caller": "collectLabSections_",
+          "callee": "fro.split('\\n').forEach",
+          "lineNumber": 134
+        },
+        {
+          "caller": "collectLabSections_",
+          "callee": "fro.split",
+          "lineNumber": 134
+        },
+        {
+          "caller": "collectLabSections_",
+          "callee": "resLabs.push",
+          "lineNumber": 135
+        },
+        {
+          "caller": "collectLabSections_",
+          "callee": "pushLabSection_",
+          "lineNumber": 138
+        },
+        {
+          "caller": "collectLabSections_",
+          "callee": "deps.parseEGO_",
+          "lineNumber": 138
+        },
+        {
+          "caller": "collectLabSections_",
+          "callee": "pushLabSection_",
+          "lineNumber": 139
+        },
+        {
+          "caller": "collectLabSections_",
+          "callee": "deps.parseCuantOrina_",
+          "lineNumber": 139
+        },
+        {
+          "caller": "collectLabSections_",
+          "callee": "pushLabSection_",
+          "lineNumber": 140
+        },
+        {
+          "caller": "collectLabSections_",
+          "callee": "deps.parseCultivo_",
+          "lineNumber": 140
+        },
+        {
+          "caller": "collectLabSections_",
+          "callee": "pushLabSection_",
+          "lineNumber": 141
+        },
+        {
+          "caller": "collectLabSections_",
+          "callee": "deps.parseSerologiaBancoSangre_",
+          "lineNumber": 141
+        },
+        {
+          "caller": "parseLabPatientHeader_",
+          "callee": "textoBruto.match",
+          "lineNumber": 146
+        },
+        {
+          "caller": "parseLabPatientHeader_",
+          "callee": "textoBruto.match",
+          "lineNumber": 147
+        },
+        {
+          "caller": "parseLabPatientHeader_",
+          "callee": "textoBruto.match",
+          "lineNumber": 148
+        },
+        {
+          "caller": "parseLabPatientHeader_",
+          "callee": "textoBruto.match",
+          "lineNumber": 149
+        },
+        {
+          "caller": "parseLabPatientHeader_",
+          "callee": "mExp[1].split(/\\s+(?:Solicitud|Medico|Médico|Fecha|Sexo|Edad|Ubicaci)/i)[0].trim",
+          "lineNumber": 151
+        },
+        {
+          "caller": "parseLabPatientHeader_",
+          "callee": "mExp[1].split",
+          "lineNumber": 151
+        },
+        {
+          "caller": "parseLabPatientHeader_",
+          "callee": "parseLabEdadParts_",
+          "lineNumber": 153
+        },
+        {
+          "caller": "parseLabPatientHeader_",
+          "callee": "parseLabSexoNorm_",
+          "lineNumber": 154
+        },
+        {
+          "caller": "parseLabPatientHeader_",
+          "callee": "mNombre[1].split(/Fecha|Sexo|Edad/i)[0].trim",
+          "lineNumber": 156
+        },
+        {
+          "caller": "parseLabPatientHeader_",
+          "callee": "mNombre[1].split",
+          "lineNumber": 156
+        },
+        {
+          "caller": "parseLabPatientHeader_",
+          "callee": "deps.extractLabReportFechaDMY",
+          "lineNumber": 160
+        },
+        {
+          "caller": "parseLabPatientHeader_",
+          "callee": "deps.extractLabReportHora",
+          "lineNumber": 161
+        },
+        {
+          "caller": "parseLabPatientHeader_",
+          "callee": "parseLabUbicacion_",
+          "lineNumber": 162
+        },
+        {
+          "caller": "createProcesarLabs",
+          "callee": "textoBruto.replace",
+          "lineNumber": 173
+        },
+        {
+          "caller": "createProcesarLabs",
+          "callee": "parseLabPatientHeader_",
+          "lineNumber": 174
+        },
+        {
+          "caller": "createProcesarLabs",
+          "callee": "segmentLabReportBlocks_",
+          "lineNumber": 175
+        },
+        {
+          "caller": "createProcesarLabs",
+          "callee": "collectLabSections_",
+          "lineNumber": 176
+        },
+        {
+          "caller": "createProcesarLabs",
+          "callee": "deps.dedupeSingletonSections_",
+          "lineNumber": 183
+        },
+        {
+          "caller": "createProcesarLabs",
+          "callee": "deps.buildRefsBySectionFromReport",
+          "lineNumber": 185
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "public/js/lan-mutation-registry.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 93,
+      "nonEmptyLines": 77,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    }
+  ]
+}
