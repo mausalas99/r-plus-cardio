@@ -177,7 +177,7 @@ export function buildCongestionPanelHtml(vm) {
       )
     ) +
     field(
-      'Congestion score',
+      'Score de congestión',
       '<input type="number" class="ea-input" data-ea-cardio-pocus="congestionScore" step="1" min="0" value="' +
         escAttr(scoreVal) +
         '">'
