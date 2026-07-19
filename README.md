@@ -1,6 +1,6 @@
-# R+
+# Cardionotas
 
-Herramienta clínica de escritorio para generación de **notas de evolución**, **indicaciones médicas** y visualización de **laboratorios** con diagramas automáticos.
+Fork de R+ para seguimiento de IC descompensada intrahospitalaria. Diseño: [cardionotas-ic-fork-design](docs/superpowers/specs/2026-07-19-cardionotas-ic-fork-design.md).
 
 ## Índice
 

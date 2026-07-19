@@ -198,7 +198,7 @@ function createWindow() {
     height: 900,
     minWidth: 960,
     minHeight: 700,
-    title: 'R+',
+    title: 'Cardionotas',
     show: false, // mostrar solo cuando esté listo (sin flash blanco)
     webPreferences: {
       nodeIntegration: false,
@@ -942,7 +942,7 @@ function buildMenu() {
     ...(isMac ? [{
       label: app.name,
       submenu: [
-        { label: `R+ v${version}`, enabled: false },
+        { label: `Cardionotas v${version}`, enabled: false },
         { type: 'separator' },
         { label: 'Buscar actualizaciones…', click: checkUpdate },
         { type: 'separator' },
@@ -973,7 +973,7 @@ function buildMenu() {
       label: 'Aplicación',
       submenu: [
         ...(!isMac ? [
-          { label: `R+ v${version}`, enabled: false },
+          { label: `Cardionotas v${version}`, enabled: false },
           { type: 'separator' },
           { label: 'Buscar actualizaciones…', click: checkUpdate },
           { type: 'separator' },
@@ -1025,7 +1025,7 @@ app.whenReady().then(async () => {
         nativeErr && nativeErr.message
           ? nativeErr.message
           : 'No se pudo cargar el módulo nativo de base de datos (SQLCipher).';
-      dialog.showErrorBox('R+ no pudo iniciar', detail);
+      dialog.showErrorBox('Cardionotas no pudo iniciar', detail);
       app.quit();
       return;
     }
@@ -1112,7 +1112,7 @@ app.whenReady().then(async () => {
   } catch (e) {
     const detail = e && e.message ? e.message : String(e);
     dialog.showErrorBox(
-      'R+ no pudo iniciar',
+      'Cardionotas no pudo iniciar',
       detail
     );
     app.quit();
