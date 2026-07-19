@@ -1,5 +1,5 @@
 /** Perfil — shared runtime and settings accessor. */
-import { isCardionotasInterconsultaEnabled } from '../cardio/cardionotas-gates.mjs';
+import { isCardionotasInterconsultaEnabled } from './cardio/cardionotas-gates.mjs';
 
 /** @type {{
  *   showToast(msg: string, type?: string): void,

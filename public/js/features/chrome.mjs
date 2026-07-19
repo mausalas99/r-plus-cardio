@@ -1,6 +1,6 @@
 import { normalizeMotionMode, motionClassFor, ALL_MOTION_CLASSES } from '../motion-mode.mjs';
 import { isModeSala } from '../mode-features.mjs';
-import { isCardionotasInterconsultaEnabled } from '../cardio/cardionotas-gates.mjs';
+import { isCardionotasInterconsultaEnabled } from './cardio/cardionotas-gates.mjs';
 import { paseSectionLabelFromTab } from './chrome-pase-label.mjs';
 
 /** Runtime hooks supplied by app.js once shell functions exist. */

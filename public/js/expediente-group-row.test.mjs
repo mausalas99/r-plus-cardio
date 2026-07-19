@@ -22,14 +22,15 @@ test('groupSections: clinico follows mode', () => {
 
 test('groupSections: resultados and salida come from the existing maps', () => {
   assert.deepEqual(groupSections('resultados', SALA), ['tend', 'cult']);
-  assert.deepEqual(groupSections('salida', SALA), ['listado', 'vpo', 'recetaHu']);
+  assert.deepEqual(groupSections('salida', SALA), ['listado']);
   assert.deepEqual(groupSections('salida', INTER), []);
+  assert.deepEqual(groupSections('manejo', SALA), []);
 });
 
 test('buildGroupRowModel: active group and section reflect the granular target', () => {
   const model = buildGroupRowModel('tend', SALA);
   const ids = model.map((g) => g.id);
-  assert.deepEqual(ids, ['paciente', 'clinico', 'resultados', 'salida']);
+  assert.deepEqual(ids, ['paciente', 'clinico', 'resultados', 'manejo', 'salida']);
   const resultados = model.find((g) => g.id === 'resultados');
   assert.equal(resultados.active, true);
   assert.equal(resultados.sections.find((s) => s.id === 'tend').active, true);
@@ -50,8 +51,17 @@ test('buildGroupRowModel: paciente is active for datos or todo without sub-pills
   assert.equal(pacDatos.leaf, true);
 });
 
+test('buildGroupRowModel: manejo is a leaf group in sala', () => {
+  const model = buildGroupRowModel('manejo', SALA);
+  const manejo = model.find((g) => g.id === 'manejo');
+  assert.ok(manejo);
+  assert.equal(manejo.active, true);
+  assert.equal(manejo.leaf, true);
+  assert.deepEqual(manejo.sections, []);
+});
+
 test('labels exist for every section that can appear', () => {
-  ['paciente', 'clinico', 'resultados', 'salida'].forEach((g) => {
+  ['paciente', 'clinico', 'resultados', 'manejo', 'salida'].forEach((g) => {
     assert.ok(GROUP_LABELS[g], 'group label ' + g);
     [SALA, INTER].forEach((st) => {
       groupSections(g, st).forEach((s) => assert.ok(SECTION_LABELS[s], 'section label ' + s));

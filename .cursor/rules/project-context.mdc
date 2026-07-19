@@ -136,6 +136,7 @@ Packaged files list: `npm run release:sync-pack` updates electron-builder `build
 
 Maintained incrementally — see `sync-context-on-commit.mdc`. Max ~20 entries.
 
+- **2026-07-19** `cardio-manejo-tab`: Sala top-level Manejo expediente tab + `patient.cardio` defaults; `lib/cardio/patient-cardio.mjs`, `features/cardio/manejo-panel.mjs`, `expediente-tabs.mjs`.
 - **2026-07-19** `cardio-med-segments`: dose segments, active meds, furosemida mg sum, fantásticos catalog; `lib/cardio/med-segments.mjs`.
 - **2026-07-19** `cardio-descongestion`: inclusive day counts + sticky acumulado overrides (diuresis, furosemida); `lib/cardio/descongestion.mjs`.
 - **2026-07-19** `cardionotas-gates`: Sala-only MVP — force `appMode=sala`, hide LiveSync chrome, Interconsulta toggle, VPO/Receta HU salida; `features/cardio/cardionotas-gates.mjs`, `mode-features.mjs`, `expediente-tabs.mjs`.

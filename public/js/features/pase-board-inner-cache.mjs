@@ -22,6 +22,7 @@ import {
   renderHistoriaClinicaPanel,
 } from './historia-clinica-panel.mjs';
 import { renderEventualidadesPanel } from './eventualidades-panel.mjs';
+import { renderManejoPanel } from './cardio/manejo-panel.mjs';
 import {
   renderPatientDataPane,
   renderCultivosTable,
@@ -59,6 +60,10 @@ export function granularMountIsEmpty(tab) {
   if (tab === "eventualidades") {
     var ev = document.getElementById("exp-pane-eventualidades");
     return !!ev && !ev.querySelector(".ev-panel");
+  }
+  if (tab === "manejo") {
+    var mj = document.getElementById("exp-pane-manejo");
+    return !!mj && !mj.querySelector(".manejo-panel");
   }
   if (tab === "todo") {
     var tf = document.getElementById("todo-form");
@@ -255,6 +260,10 @@ var GRANULAR_TAB_RENDERERS = {
   historia: renderHistoriaInnerTab,
   eventualidades: function (tab) {
     renderEventualidadesPanel(document.getElementById('exp-pane-eventualidades'));
+    markInnerTabRendered(tab);
+  },
+  manejo: function (tab) {
+    renderManejoPanel(document.getElementById('exp-pane-manejo'));
     markInnerTabRendered(tab);
   },
 };

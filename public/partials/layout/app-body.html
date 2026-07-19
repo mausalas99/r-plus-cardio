@@ -430,6 +430,10 @@
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 2v6.5L4.5 20a1 1 0 001 1h13a1 1 0 001-1L14 8.5V2"/><path d="M8 2h8"/></svg>
               Resultados
             </button>
+            <button type="button" class="inner-tab exp-consolidated-tab" id="itab-manejo" onclick="switchConsolidatedTab('manejo')" style="display:none;" aria-label="Manejo">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="9"/></svg>
+              Manejo
+            </button>
             <button type="button" class="inner-tab exp-consolidated-tab" id="itab-salida" onclick="switchConsolidatedTab('salida')" style="display:none;" aria-label="Salida">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8"/><path d="M8 17h5"/></svg>
               Salida
@@ -472,6 +476,9 @@
               <button type="button" class="exp-segment-btn rpc-subtab" id="exp-segment-cult" role="tab" data-exp-segment="cult" aria-selected="false" aria-controls="itab-content-cult" onclick="switchInnerTab('cult')">Cultivos</button>
             </div>
             <div class="exp-segment-body exp-segment-body--resultados"></div>
+          </div>
+          <div id="itab-content-manejo" class="tab-content exp-composite-pane">
+            <div id="exp-pane-manejo"></div>
           </div>
           <div id="itab-content-salida" class="tab-content exp-composite-pane">
             <div class="exp-segment-bar rpc-subtab-bar" id="exp-segment-salida" role="tablist" aria-label="Salida" style="display:none;">

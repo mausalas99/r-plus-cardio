@@ -6,7 +6,7 @@ import { isMobileWeb } from './mobile-web.mjs';
 import { filterSalidaSectionsForCardionotas } from './features/cardio/cardionotas-gates.mjs';
 import { openPatientDatosModal, openPatientDatosModalForPatient } from './patient-datos-modal.mjs';
 
-export const CONSOLIDATED_TABS_SALA = ['paciente', 'clinico', 'resultados', 'salida'];
+export const CONSOLIDATED_TABS_SALA = ['paciente', 'clinico', 'resultados', 'manejo', 'salida'];
 export const CONSOLIDATED_TABS_INTER = ['paciente', 'clinico', 'resultados', 'salida'];
 
 /** @deprecated alias of CONSOLIDATED_TABS_INTER for backward compatibility */
@@ -20,7 +20,7 @@ const CLINICO_GRANULAR_TABS = [
   'eventualidades',
   'vpo',
 ];
-export const COMPOSITE_PANE_IDS = ['paciente', 'clinico', 'resultados', 'salida'];
+export const COMPOSITE_PANE_IDS = ['paciente', 'clinico', 'resultados', 'manejo', 'salida'];
 
 /** @deprecated Manejo eliminado — siempre oculto. */
 export function isClinicoTabHidden(settings) {
@@ -142,7 +142,7 @@ export function getSalidaSections(settings) {
 export function resolveConsolidatedTarget(granularTab, settings) {
   if (granularTab === 'manejo') {
     return isModeSala(settings)
-      ? { tab: 'paciente', section: null }
+      ? { tab: 'manejo', section: null }
       : { tab: 'clinico', section: 'notas' };
   }
   var map = granularToConsolidatedMap(settings || {});
@@ -160,7 +160,7 @@ export function resolveConsolidatedTarget(granularTab, settings) {
 
 export function consolidatedTabForGranular(granularTab, settings) {
   if (granularTab === 'manejo') {
-    return isModeSala(settings) ? 'paciente' : 'clinico';
+    return isModeSala(settings) ? 'manejo' : 'clinico';
   }
   return resolveConsolidatedTarget(granularTab, settings).tab;
 }
@@ -179,6 +179,7 @@ export function defaultGranularForConsolidatedTab(compositeTab, settings) {
     paciente: 'todo',
     clinico: clinicoDefault,
     resultados: 'tend',
+    manejo: 'manejo',
     salida: isMobileWeb()
       ? sala
         ? 'historia'

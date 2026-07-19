@@ -172,6 +172,7 @@ var EXPEDIENTE_INNER_TABS = {
   historia: 1,
   estadoActual: 1,
   eventualidades: 1,
+  manejo: 1,
   recetaHu: 1,
 };
 
@@ -286,10 +287,14 @@ export function renderInnerTabs() {
   show("itab-clinico", showClinico);
   var clinicoPane = document.getElementById("itab-content-clinico");
   if (clinicoPane) clinicoPane.hidden = !showClinico;
+  show("itab-manejo", sala);
+  var manejoPane = document.getElementById("itab-content-manejo");
+  if (manejoPane) manejoPane.hidden = !sala;
   var order = 1;
   setOrder("itab-paciente", order++);
   if (showClinico) setOrder("itab-clinico", order++);
   setOrder("itab-resultados", order++);
+  if (sala) setOrder("itab-manejo", order++);
   if (sala && !isMobileWeb()) setOrder("itab-salida", order++);
   show("itab-salida", sala && !isMobileWeb());
   wirePatientDatosModalOnce();

@@ -6,7 +6,7 @@ const CONSOLIDATED_TAB_MAP = {
   todo: 'itab-paciente',
   notas: 'itab-clinico',
   indica: 'itab-clinico',
-  manejo: 'itab-clinico',
+  manejo: 'itab-manejo',
   tend: 'itab-resultados',
   cult: 'itab-resultados',
   paciente: 'itab-paciente',

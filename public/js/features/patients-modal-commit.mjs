@@ -15,6 +15,7 @@ import { stampPatientClinicalSala } from '../clinico-access.mjs';
 import { stampPatientRegistrationMeta } from '../patient-registration-meta.mjs';
 import { clearPatientDeleteTombstoneForAdmit } from './lan-sync.mjs';
 import { isMobileWeb } from '../mobile-web.mjs';
+import { emptyCardio } from '../../../lib/cardio/patient-cardio.mjs';
 import {
   adoptTourPatientOnCommit,
   DEMO_PATIENT_ID,
@@ -108,6 +109,7 @@ function buildPatientDraft(nombre, registro, edad, sexo, area, servicio, cuarto,
     cuarto: cuarto,
     cama: cama,
     fromLab: !!isFromLab,
+    cardio: emptyCardio(),
   };
 }
 

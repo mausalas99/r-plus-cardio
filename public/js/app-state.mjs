@@ -6,6 +6,7 @@ import { applySomePharmCatalogOverlay } from './med-pharm-some-catalog.mjs';
 import { repairLabHistoryMapInPlace } from './lab-history-repair.mjs';
 import { migratePatientMonitoreo } from './features/estado-actual-data.mjs';
 import { migratePatientsClinicalSala } from './clinico-access.mjs';
+import { ensureCardio } from '../../lib/cardio/patient-cardio.mjs';
 
 export let patients = [];
 export let notes = {};
@@ -163,8 +164,13 @@ export function initAppState() {
   applySomePharmCatalogOverlay(medCatalog);
   medNotaSelectionByPatient = {};
   var monitoreoMigrated = false;
+  var cardioBackfilled = false;
   for (var pi = 0; pi < patients.length; pi += 1) {
     if (migratePatientMonitoreo(patients[pi])) monitoreoMigrated = true;
+    var hadCardio =
+      patients[pi] && patients[pi].cardio && typeof patients[pi].cardio === 'object';
+    ensureCardio(patients[pi]);
+    if (!hadCardio) cardioBackfilled = true;
   }
   var salaMigrated = 0;
   try {
@@ -174,7 +180,7 @@ export function initAppState() {
       salaMigrated = migratePatientsClinicalSala(patients, { sala: clinicalSala });
     }
   } catch (_e) { void _e; }
-  if (repairLabHistoryInMemory() || monitoreoMigrated || salaMigrated > 0) {
+  if (repairLabHistoryInMemory() || monitoreoMigrated || cardioBackfilled || salaMigrated > 0) {
     saveState({ immediate: true });
   }
 }

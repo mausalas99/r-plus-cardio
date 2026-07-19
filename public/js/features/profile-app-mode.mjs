@@ -10,7 +10,7 @@ import {
 } from "./chrome.mjs";
 import { syncCensoExportButtonVisibility } from "../censo-export.mjs";
 import { isModeSala } from "../mode-features.mjs";
-import { isCardionotasInterconsultaEnabled } from "../cardio/cardionotas-gates.mjs";
+import { isCardionotasInterconsultaEnabled } from "./cardio/cardionotas-gates.mjs";
 import { migrateGranularInner } from "../expediente-tabs.mjs";
 import { renderNoteForm } from "./notes-indicaciones.mjs";
 import { renderEstadoActualButton } from "./soap-estado.mjs";

@@ -18,6 +18,7 @@ export var GROUP_LABELS = {
   paciente: 'Paciente',
   clinico: 'Clínico',
   resultados: 'Resultados',
+  manejo: 'Manejo',
   salida: 'Salida',
 };
 
@@ -38,6 +39,7 @@ export var SECTION_LABELS = {
 
 export function groupSections(group, settings) {
   if (group === 'paciente') return [];
+  if (group === 'manejo') return [];
   if (group === 'clinico') return getClinicoSections(settings || {});
   if (group === 'resultados') return RESULTADOS_SECTIONS.slice();
   if (group === 'salida') return getSalidaSections(settings || {});
