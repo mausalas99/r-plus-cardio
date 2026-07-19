@@ -2602,3 +2602,59 @@ html.ea-copy-fab-active #exp-pane-estado-actual {
   min-height: 56px;
 }
 
+/* Cardionotas IC — Manejo medication tables */
+.manejo-panel {
+  display: flex;
+  flex-direction: column;
+  gap: calc(14px * var(--density-space, 1));
+  padding: calc(8px * var(--density-space, 1)) 0;
+}
+
+.manejo-section + .manejo-section {
+  margin-top: 0;
+}
+
+.manejo-table-wrap {
+  overflow-x: auto;
+}
+
+.manejo-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: calc(13px * var(--density-font, 1));
+}
+
+.manejo-table th,
+.manejo-table td {
+  padding: 6px 8px;
+  text-align: left;
+  vertical-align: middle;
+  border-bottom: 1px solid var(--border-subtle, rgba(0, 0, 0, 0.08));
+}
+
+.manejo-table th {
+  font-weight: 600;
+  color: var(--text-muted);
+  font-size: calc(11px * var(--density-font, 1));
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.manejo-td-class {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.manejo-td-actions {
+  white-space: nowrap;
+}
+
+.manejo-row--ended {
+  opacity: 0.65;
+}
+
+.manejo-table .ea-input {
+  width: 100%;
+  min-width: 72px;
+}
+
