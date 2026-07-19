@@ -16,6 +16,7 @@ When adding a feature, create `feat-<name>.md` here and link from this table.
 | Tendencias | `public/js/features/tendencias.mjs` | |
 | Expediente / tabs | `public/js/expediente-tabs.mjs` | |
 | Estado actual | `public/js/features/estado-actual-*.mjs` | [spec](../superpowers/specs/2026-05-26-estado-actual-monitoreo-design.md) |
+| Cardionotas IC (EA/Manejo) | `public/js/features/cardio/`, `lib/cardio/` | [spec](../superpowers/specs/2026-07-19-cardionotas-ic-fork-design.md) |
 | Historia clínica | `lib/historia-clinica/`, expediente Sala | [spec](../superpowers/specs/2026-05-31-historia-clinica-institutional-format-design.md) |
 | VPO | `public/js/features/vpo.mjs`, `vpo-*.mjs` | [spec](../superpowers/specs/2026-05-29-vpo-design.md) |
 | Medicamentos / receta | `public/js/med-receta-core.mjs` | |

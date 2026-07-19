@@ -95,7 +95,7 @@ docs/
 | Debt metrics | `scripts/metrics/` (`lint-tier1.mjs`, `check.mjs`, `boot-graph.mjs`, `baseline.json`); `npm run lint:tier1` (changed paths), `npm run metrics:check` |
 | Onboarding / tour | `clinical-onboarding*.mjs`, `tour-targets.mjs`, `features/settings-help/` (tours, help, release notes), barrel `settings-help.mjs` |
 | UI shell / pase board | `app-shell.mjs` (chrome/toast/modals), `clinical-quick-export.mjs`, `document-export-client.mjs`, `features/pase-board.mjs`, `public/styles/pase-board.css` |
-| Cardionotas IC domain | `lib/cardio/{descongestion,congestion,med-segments}.mjs`, `features/cardio/cardionotas-gates.mjs` |
+| Cardionotas IC domain | `lib/cardio/{descongestion,congestion,med-segments,patient-cardio}.mjs`, `features/cardio/{cardionotas-gates,manejo-panel,descongestion-panel,congestion-panel}.mjs` |
 
 ---
 
@@ -136,6 +136,7 @@ Packaged files list: `npm run release:sync-pack` updates electron-builder `build
 
 Maintained incrementally — see `sync-context-on-commit.mdc`. Max ~20 entries.
 
+- **2026-07-19** `cardio-ea-ui`: Estado actual descongestión header + congestión/POCUS above vitals; `features/cardio/descongestion-panel.mjs`, `congestion-panel.mjs`, `estado-actual-panel-render-paths.mjs`.
 - **2026-07-19** `cardio-manejo-tab`: Sala top-level Manejo expediente tab + `patient.cardio` defaults; `lib/cardio/patient-cardio.mjs`, `features/cardio/manejo-panel.mjs`, `expediente-tabs.mjs`.
 - **2026-07-19** `cardio-med-segments`: dose segments, active meds, furosemida mg sum, fantásticos catalog; `lib/cardio/med-segments.mjs`.
 - **2026-07-19** `cardio-descongestion`: inclusive day counts + sticky acumulado overrides (diuresis, furosemida); `lib/cardio/descongestion.mjs`.
