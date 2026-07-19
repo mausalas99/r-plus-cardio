@@ -16,8 +16,8 @@ test('isCardionotasInterconsultaEnabled is false in Cardionotas MVP', () => {
 
 test('filterSalidaSectionsForCardionotas removes vpo and recetaHu', () => {
   assert.deepEqual(
-    filterSalidaSectionsForCardionotas(['listado', 'vpo', 'recetaHu']),
-    ['listado']
+    filterSalidaSectionsForCardionotas(['icHoja', 'listado', 'vpo', 'recetaHu']),
+    ['icHoja', 'listado'],
   );
 });
 
@@ -29,4 +29,11 @@ test('filterSalidaSectionsForCardionotas handles empty and null', () => {
 
 test('filterSalidaSectionsForCardionotas keeps listado-only', () => {
   assert.deepEqual(filterSalidaSectionsForCardionotas(['listado']), ['listado']);
+});
+
+test('filterSalidaSectionsForCardionotas keeps icHoja', () => {
+  assert.deepEqual(
+    filterSalidaSectionsForCardionotas(['icHoja', 'listado']),
+    ['icHoja', 'listado'],
+  );
 });

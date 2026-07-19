@@ -33,6 +33,7 @@ export var SECTION_LABELS = {
   vpo: 'VPO',
   tend: 'Tendencias',
   cult: 'Cultivos',
+  icHoja: 'Hoja IC',
   listado: 'Listado',
   recetaHu: 'Receta HU',
 };

@@ -262,6 +262,16 @@ appExpress.post('/generate-listado', generateLimiter, documentExportAuth, async 
   }
 });
 
+appExpress.post('/generate-ic-hoja', generateLimiter, documentExportAuth, async (req, res) => {
+  const { patient, asOfDate } = req.body;
+  try {
+    const { buffer, fileName } = await docExport.exportIcHojaDocx({ patient, asOfDate });
+    sendDocxBuffer(res, { buf: buffer, fileName, type: 'ic-hoja', patient });
+  } catch (e) {
+    docExportHttpError(res, e, { type: 'ic-hoja', patient });
+  }
+});
+
 appExpress.post('/generate-censo', generateLimiter, documentExportAuth, async (req, res) => {
   const { header, rows, servicio } = req.body;
   try {

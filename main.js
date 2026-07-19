@@ -560,6 +560,11 @@ ipcMain.handle('generate-document', async (_e, { kind, payload }) => {
         logDocExport({ type: 'listado', patient: payload && payload.patient, status: 200, bytes: buffer.length });
         return { ok: true, fileName, buffer };
       }
+      case 'ic-hoja': {
+        const { buffer, fileName } = await docExport.exportIcHojaDocx(payload || {});
+        logDocExport({ type: 'ic-hoja', patient: payload && payload.patient, status: 200, bytes: buffer.length });
+        return { ok: true, fileName, buffer };
+      }
       case 'censo': {
         const { buffer, fileName } = await docExport.exportCensoPdf(payload || {}, paths);
         logDocExport({ type: 'censo', status: 200, bytes: buffer.length });

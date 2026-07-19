@@ -23,6 +23,7 @@ import {
 } from './historia-clinica-panel.mjs';
 import { renderEventualidadesPanel } from './eventualidades-panel.mjs';
 import { renderManejoPanel } from './cardio/manejo-panel.mjs';
+import { renderIcHojaExportPanel } from './cardio/ic-hoja-export.mjs';
 import {
   renderPatientDataPane,
   renderCultivosTable,
@@ -236,6 +237,7 @@ function renderHistoriaInnerTab(tab, opts) {
 function renderLightGranularTab(tab) {
   if (tab === 'datos' || tab === 'todo') renderPatientDataPane();
   if (tab === 'cult') renderCultivosTable();
+  if (tab === 'icHoja') renderIcHojaExportPanel(document.getElementById('ic-hoja-export-mount'));
   if (tab === 'listado') renderListadoForm();
   if (tab === 'todo') renderTodoForm();
   if (tab === 'recetaHu') renderRecetaHu();

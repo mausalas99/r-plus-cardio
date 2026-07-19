@@ -56,7 +56,7 @@ export function getConsolidatedTabs(settings) {
 export const CLINICO_SECTIONS_ALL = ['notas', 'indica', 'historia', 'vpo'];
 export const CLINICO_SECTIONS_SALA = ['estadoActual', 'historia', 'eventualidades'];
 export const RESULTADOS_SECTIONS = ['tend', 'cult'];
-export const SALIDA_SECTIONS_SALA = ['listado', 'vpo', 'recetaHu'];
+export const SALIDA_SECTIONS_SALA = ['icHoja', 'listado', 'vpo', 'recetaHu'];
 
 /** @deprecated use getClinicoSections(settings) */
 export const CLINICO_SECTIONS = CLINICO_SECTIONS_ALL;
@@ -68,6 +68,7 @@ const GRANULAR_PANE_ORDER = [
   'historia',
   'tend',
   'cult',
+  'icHoja',
   'listado',
   'todo',
   'vpo',
@@ -90,6 +91,7 @@ function granularToConsolidatedMap(settings) {
     cult: { tab: 'resultados', section: 'cult' },
     recetaHu: { tab: 'salida', section: sala ? 'recetaHu' : null },
     listado: { tab: sala ? 'salida' : 'paciente', section: sala ? 'listado' : null },
+    icHoja: sala ? { tab: 'salida', section: 'icHoja' } : { tab: 'paciente', section: null },
     vpo: sala ? { tab: 'salida', section: 'vpo' } : { tab: 'clinico', section: 'vpo' },
   };
   if (sala) {
@@ -115,6 +117,7 @@ function paneMountSpec(granularTab, settings) {
     tend: { composite: 'resultados', selector: '.exp-segment-body--resultados' },
     cult: { composite: 'resultados', selector: '.exp-segment-body--resultados' },
     listado: sala ? { composite: 'salida', selector: '.exp-segment-body--salida' } : { composite: null, selector: null },
+    icHoja: sala ? { composite: 'salida', selector: '.exp-segment-body--salida' } : { composite: null, selector: null },
     recetaHu: { composite: 'salida', selector: '.exp-segment-body--salida' },
     estadoActual: sala
       ? { composite: 'clinico', selector: '.exp-segment-body--clinico' }
@@ -185,7 +188,7 @@ export function defaultGranularForConsolidatedTab(compositeTab, settings) {
         ? 'historia'
         : 'todo'
       : sala
-        ? 'listado'
+        ? 'icHoja'
         : 'recetaHu',
   };
   return defaults[compositeTab] || 'todo';
@@ -250,9 +253,13 @@ export function syncConsolidatedSegmentBarVisibility(settings) {
   }
   var salidaBar = document.getElementById('exp-segment-salida');
   if (salidaBar) {
-    salidaBar.style.display = sala && getSalidaSections(settings).length ? '' : 'none';
-    var vpoSalidaBtn = salidaBar.querySelector('[data-exp-segment="vpo"]');
-    if (vpoSalidaBtn) vpoSalidaBtn.style.display = sala ? '' : 'none';
+    var salidaSections = getSalidaSections(settings);
+    salidaBar.style.display = sala && salidaSections.length ? '' : 'none';
+    ['icHoja', 'listado', 'vpo', 'recetaHu'].forEach(function (section) {
+      var btn = salidaBar.querySelector('[data-exp-segment="' + section + '"]');
+      if (!btn) return;
+      btn.style.display = sala && salidaSections.indexOf(section) >= 0 ? '' : 'none';
+    });
   }
   var estadoActualTab = document.getElementById('itab-estadoActual');
   if (estadoActualTab) estadoActualTab.style.display = 'none';

@@ -77,7 +77,7 @@ test('defaultGranularForConsolidatedTab returns sensible defaults per mode', () 
   assert.equal(defaultGranularForConsolidatedTab('resultados', INTER), 'tend');
   assert.equal(defaultGranularForConsolidatedTab('salida', INTER), 'recetaHu');
   assert.equal(defaultGranularForConsolidatedTab('clinico', SALA), 'estadoActual');
-  assert.equal(defaultGranularForConsolidatedTab('salida', SALA), 'listado');
+  assert.equal(defaultGranularForConsolidatedTab('salida', SALA), 'icHoja');
   assert.equal(defaultGranularForConsolidatedTab('manejo', SALA), 'manejo');
 });
 
@@ -104,7 +104,7 @@ test('getClinicoSections differs by mode (manejo hidden globally)', () => {
 });
 
 test('getSalidaSections only in sala', () => {
-  assert.deepEqual(getSalidaSections(SALA), ['listado']);
+  assert.deepEqual(getSalidaSections(SALA), ['icHoja', 'listado']);
   assert.deepEqual(getSalidaSections(INTER), []);
 });
 
@@ -120,7 +120,11 @@ test('inter clinico sections include vpo and no manejo or historia', () => {
 });
 
 test('sala salida sections exclude vpo and recetaHu under Cardionotas gate', () => {
-  assert.deepEqual(getSalidaSections(SALA), ['listado']);
+  assert.deepEqual(getSalidaSections(SALA), ['icHoja', 'listado']);
+});
+
+test('resolveConsolidatedTarget icHoja maps to salida in sala', () => {
+  assert.deepEqual(resolveConsolidatedTarget('icHoja', SALA), { tab: 'salida', section: 'icHoja' });
 });
 
 test('resolveConsolidatedTarget vpo in inter maps to clinico', () => {
