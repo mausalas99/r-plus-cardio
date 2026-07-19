@@ -44,7 +44,8 @@ lib/                  Node-side shared logic (importable from main/server)
   interno/            Mobile interno/guardia board, QR, vitals, scope
   historia-clinica/   HC compile, defaults, migration
   drive-import/       Google Drive HC/labs import parsers
- lab-repo/           Intrahospital lab portal scraper (ASP.NET HTML parse, PDF fetch)
+  lab-repo/           Intrahospital lab portal scraper (ASP.NET HTML parse, PDF fetch)
+  cardio/             IC descongestión, congestión, med-segments (Cardionotas MVP)
 
 lan-squad/            LAN sync host: WS hub, host-store (→ host-store/), conflict resolver,
           auth-router, ticket-store, write-queue, team-code
@@ -94,6 +95,7 @@ docs/
 | Debt metrics | `scripts/metrics/` (`lint-tier1.mjs`, `check.mjs`, `boot-graph.mjs`, `baseline.json`); `npm run lint:tier1` (changed paths), `npm run metrics:check` |
 | Onboarding / tour | `clinical-onboarding*.mjs`, `tour-targets.mjs`, `features/settings-help/` (tours, help, release notes), barrel `settings-help.mjs` |
 | UI shell / pase board | `app-shell.mjs` (chrome/toast/modals), `clinical-quick-export.mjs`, `document-export-client.mjs`, `features/pase-board.mjs`, `public/styles/pase-board.css` |
+| Cardionotas IC domain | `lib/cardio/descongestion.mjs`, `features/cardio/cardionotas-gates.mjs` |
 
 ---
 
@@ -134,6 +136,7 @@ Packaged files list: `npm run release:sync-pack` updates electron-builder `build
 
 Maintained incrementally — see `sync-context-on-commit.mdc`. Max ~20 entries.
 
+- **2026-07-19** `cardio-descongestion`: inclusive day counts + sticky acumulado overrides (diuresis, furosemida); `lib/cardio/descongestion.mjs`.
 - **2026-07-19** `cardionotas-gates`: Sala-only MVP — force `appMode=sala`, hide LiveSync chrome, Interconsulta toggle, VPO/Receta HU salida; `features/cardio/cardionotas-gates.mjs`, `mode-features.mjs`, `expediente-tabs.mjs`.
 - **2026-07-19** `remove-neo`: drop Neo/Casiopea companion — Enviar a Neo UI/IPC, sesion-ingreso export, tour steps `sala_casiopea_*`, Aprender R+ neo modules; curriculum v10; `labs-anion-gap` AG/AGc/UAG.
 - **2026-07-19** `release-7.7.1`: receta SOAP ampliada (familias antieméticos/sedación/transfusiones…), rescates insulina PRN agrupados, glucometrías con UI en NM; `med-receta-soap*.mjs`, `insulin-rescate-*.mjs`, `estado-actual-med-soap-split.mjs`.
