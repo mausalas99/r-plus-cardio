@@ -3,6 +3,7 @@
  */
 import { isModeSala } from './mode-features.mjs';
 import { isMobileWeb } from './mobile-web.mjs';
+import { filterSalidaSectionsForCardionotas } from './features/cardio/cardionotas-gates.mjs';
 import { openPatientDatosModal, openPatientDatosModalForPatient } from './patient-datos-modal.mjs';
 
 export const CONSOLIDATED_TABS_SALA = ['paciente', 'clinico', 'resultados', 'salida'];
@@ -134,7 +135,8 @@ export function getClinicoSections(settings) {
 
 export function getSalidaSections(settings) {
   if (isMobileWeb()) return [];
-  return isModeSala(settings) ? SALIDA_SECTIONS_SALA : [];
+  if (!isModeSala(settings)) return [];
+  return filterSalidaSectionsForCardionotas(SALIDA_SECTIONS_SALA);
 }
 
 export function resolveConsolidatedTarget(granularTab, settings) {

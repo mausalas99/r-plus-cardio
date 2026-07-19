@@ -48,16 +48,16 @@ test('migrateToV3 setea appMode=sala cuando falta y retorna true', () => {
   assert.equal(settings._v3MigrationDone, true);
 });
 
-test('migrateToV3 idempotente: no toca settings ya migrados', () => {
+test('migrateToV3 idempotente: no toca settings ya migrados salvo gate Cardionotas', () => {
   const settings = { appMode: 'interconsulta', defaultServicio: 'CARDIO', _v3MigrationDone: true };
   const migrated = migrateToV3(settings);
   assert.equal(migrated, false);
-  assert.equal(settings.appMode, 'interconsulta');
+  assert.equal(settings.appMode, 'sala');
   assert.equal(settings.defaultServicio, 'CARDIO');
 });
 
-test('migrateToV3 conserva appMode preexistente si está seteado', () => {
+test('migrateToV3 fuerza sala bajo gate Cardionotas aunque appMode sea interconsulta', () => {
   const settings = { appMode: 'interconsulta' };
   migrateToV3(settings);
-  assert.equal(settings.appMode, 'interconsulta');
+  assert.equal(settings.appMode, 'sala');
 });

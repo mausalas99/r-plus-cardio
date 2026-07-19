@@ -6,6 +6,7 @@ import { RoomSyncPhase, getRoomSyncPhase, setRoomSyncPhase } from '../../lan-syn
 import { canAttemptAutoHostDetect } from '../../lan-host-detect-guard.mjs';
 import { isAutoHostDetectPaused } from '../../lan-host-detect-guard.mjs';
 import { isLanSessionConfiguredForRest } from './transport.mjs';
+import { isCardionotasLanUiEnabled } from '../cardio/cardionotas-gates.mjs';
 import {
   lanClient,
   activeLiveSyncRoomId,
@@ -82,6 +83,10 @@ function liveSyncStatusChromeDetail(roomLabel, phase) {
 export function syncLiveSyncStatusChrome() {
   var btn = document.getElementById('btn-header-team-sync');
   if (!btn) return;
+  if (!isCardionotasLanUiEnabled()) {
+    btn.style.display = 'none';
+    return;
+  }
   var roomLabel = activeLiveSyncRoomId
     ? activeLiveSyncRoomLabel || activeLiveSyncRoomId
     : '';

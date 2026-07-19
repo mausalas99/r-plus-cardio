@@ -44,6 +44,7 @@ import {
 } from './room.mjs';
 
 import { esc } from '../../dom-escape.mjs';
+import { isCardionotasLanUiEnabled } from '../cardio/cardionotas-gates.mjs';
 var _lanPanelRenderGen = 0;
 var _lanPanelRenderChain = Promise.resolve();
 // Scan interval adapts to network profile — call getLanScanIntervalMs() where set.
@@ -186,6 +187,11 @@ async function refreshLanSyncDiagnosticsInPlace() {
  * @param {{ force?: boolean } | undefined} [opts] Pass `{ force: true }` after explicit user actions in ⇄.
  */
 export function renderLanPanel(opts) {
+  if (!isCardionotasLanUiEnabled()) {
+    var root = document.getElementById('lan-connection-panel-root');
+    if (root) root.innerHTML = '';
+    return Promise.resolve();
+  }
   var o = normalizeLanPanelRenderOpts(opts);
   if (!o.force && !isLanConnectionDropdownOpen()) {
     return _lanPanelRenderChain;
@@ -323,10 +329,12 @@ export function closeConnectionDropdown() {
 }
 
 export function openConnectionDropdown() {
+  if (!isCardionotasLanUiEnabled()) return;
   return ensurePanelConnectionChrome().openConnectionDropdown();
 }
 
 export function toggleConnectionDropdown(ev) {
+  if (!isCardionotasLanUiEnabled()) return;
   return ensurePanelConnectionChrome().toggleConnectionDropdown(ev);
 }
 

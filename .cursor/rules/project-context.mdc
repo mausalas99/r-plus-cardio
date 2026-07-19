@@ -52,6 +52,7 @@ lan-squad/            LAN sync host: WS hub, host-store (→ host-store/), confl
 
 public/js/            Renderer modules (pre-bundle)
   features/           UI feature modules (*.mjs) — primary place for new UI work
+    cardio/           Cardionotas MVP gates (LAN/Interconsulta/VPO strip)
   app-state.mjs       Patient/state hydration
   clinical-access-runtime.mjs  Session + privileges (façade → clinical-access-runtime/)
   clinico-access-*.mjs  Scope evaluators (cycle, entrega, guardia, patient, teams, unlock)
@@ -133,6 +134,7 @@ Packaged files list: `npm run release:sync-pack` updates electron-builder `build
 
 Maintained incrementally — see `sync-context-on-commit.mdc`. Max ~20 entries.
 
+- **2026-07-19** `cardionotas-gates`: Sala-only MVP — force `appMode=sala`, hide LiveSync chrome, Interconsulta toggle, VPO/Receta HU salida; `features/cardio/cardionotas-gates.mjs`, `mode-features.mjs`, `expediente-tabs.mjs`.
 - **2026-07-19** `remove-neo`: drop Neo/Casiopea companion — Enviar a Neo UI/IPC, sesion-ingreso export, tour steps `sala_casiopea_*`, Aprender R+ neo modules; curriculum v10; `labs-anion-gap` AG/AGc/UAG.
 - **2026-07-19** `release-7.7.1`: receta SOAP ampliada (familias antieméticos/sedación/transfusiones…), rescates insulina PRN agrupados, glucometrías con UI en NM; `med-receta-soap*.mjs`, `insulin-rescate-*.mjs`, `estado-actual-med-soap-split.mjs`.
 - **2026-07-16** `release-7.7.0`: interpretación citoquímica (GASA, Light, PBE, LCR), fusión bloques duales LCR, diagramas colapsables; `labs-citoquimico-interpret*.mjs`, `labs-lcr-parse.mjs`.

@@ -100,7 +100,7 @@ test('getClinicoSections differs by mode (manejo hidden globally)', () => {
 });
 
 test('getSalidaSections only in sala', () => {
-  assert.deepEqual(getSalidaSections(SALA), ['listado', 'vpo', 'recetaHu']);
+  assert.deepEqual(getSalidaSections(SALA), ['listado']);
   assert.deepEqual(getSalidaSections(INTER), []);
 });
 
@@ -115,8 +115,8 @@ test('inter clinico sections include vpo and no manejo or historia', () => {
   assert.deepEqual(getClinicoSections(INTER), ['notas', 'indica', 'vpo']);
 });
 
-test('sala salida sections include vpo between listado and recetaHu', () => {
-  assert.deepEqual(getSalidaSections(SALA), ['listado', 'vpo', 'recetaHu']);
+test('sala salida sections exclude vpo and recetaHu under Cardionotas gate', () => {
+  assert.deepEqual(getSalidaSections(SALA), ['listado']);
 });
 
 test('resolveConsolidatedTarget vpo in inter maps to clinico', () => {

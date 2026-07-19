@@ -1,6 +1,7 @@
 /** Settings gear panel: centered modal (como ⇄ / Mi rotación). */
 import { isClinicalLocalOnlyMode, readRpcSettings } from '../../clinical-settings.mjs';
 import { isMobileWeb } from '../../mobile-web.mjs';
+import { isCardionotasLanUiEnabled } from '../cardio/cardionotas-gates.mjs';
 import { closeModalAnimated } from '../../ui-motion.mjs';
 import { closeConnectionDropdown } from '../lan-sync.mjs';
 import { getSettingsHelpRuntime } from './runtime.mjs';
@@ -272,7 +273,7 @@ export function expandSettingsAccordionBackupSync() {
 export function syncTeamSyncHeaderButton() {
   var btn = document.getElementById('btn-header-team-sync');
   if (!btn) return;
-  if (isClinicalLocalOnlyMode(readRpcSettings())) {
+  if (!isCardionotasLanUiEnabled() || isClinicalLocalOnlyMode(readRpcSettings())) {
     btn.style.display = 'none';
     return;
   }

@@ -1,5 +1,6 @@
 import { normalizeMotionMode, motionClassFor, ALL_MOTION_CLASSES } from '../motion-mode.mjs';
 import { isModeSala } from '../mode-features.mjs';
+import { isCardionotasInterconsultaEnabled } from '../cardio/cardionotas-gates.mjs';
 import { paseSectionLabelFromTab } from './chrome-pase-label.mjs';
 
 /** Runtime hooks supplied by app.js once shell functions exist. */
@@ -308,7 +309,16 @@ export function syncHeaderModeSeg() {
   var seg = document.getElementById('header-mode-seg');
   if (!seg) return;
   var mode = getWorkMode();
+  var interEnabled = isCardionotasInterconsultaEnabled();
   seg.querySelectorAll('.header-mode-seg-btn').forEach(function (btn) {
+    var isInter = btn.dataset.mode === 'interconsulta';
+    if (isInter && !interEnabled) {
+      btn.hidden = true;
+      btn.style.display = 'none';
+      return;
+    }
+    btn.hidden = false;
+    btn.style.display = '';
     var on = btn.dataset.mode === mode;
     btn.classList.toggle('is-active', on);
     btn.setAttribute('aria-pressed', on ? 'true' : 'false');

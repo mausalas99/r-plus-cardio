@@ -10,6 +10,7 @@ import {
 } from "./chrome.mjs";
 import { syncCensoExportButtonVisibility } from "../censo-export.mjs";
 import { isModeSala } from "../mode-features.mjs";
+import { isCardionotasInterconsultaEnabled } from "../cardio/cardionotas-gates.mjs";
 import { migrateGranularInner } from "../expediente-tabs.mjs";
 import { renderNoteForm } from "./notes-indicaciones.mjs";
 import { renderEstadoActualButton } from "./soap-estado.mjs";
@@ -74,7 +75,12 @@ export function applyAppModeSwitchEffects() {
 export function onAppModeChange() {
   var sala = document.getElementById("app-mode-sala");
   var st = settingsRef();
-  st.appMode = sala && sala.checked ? "sala" : "interconsulta";
+  if (!isCardionotasInterconsultaEnabled()) {
+    st.appMode = "sala";
+    if (sala) sala.checked = true;
+  } else {
+    st.appMode = sala && sala.checked ? "sala" : "interconsulta";
+  }
   invalidateLoadSettingsSnapshot();
   syncProfileModalLayout();
   persistSettingsToLocalStorage();
@@ -82,6 +88,7 @@ export function onAppModeChange() {
 }
 
 export function toggleHeaderWorkMode() {
+  if (!isCardionotasInterconsultaEnabled()) return;
   var st = settingsRef();
   st.appMode = isModeSala(st) ? "interconsulta" : "sala";
   invalidateLoadSettingsSnapshot();
@@ -106,6 +113,11 @@ export function setWorkModeFromHeader(mode) {
   }
   if (mode === "guardia") {
     toggleGuardiaMode();
+    collapseHeaderModeSeg();
+    syncHeaderModeSeg();
+    return;
+  }
+  if (mode === "interconsulta" && !isCardionotasInterconsultaEnabled()) {
     collapseHeaderModeSeg();
     syncHeaderModeSeg();
     return;

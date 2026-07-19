@@ -1,4 +1,5 @@
 /** Perfil — shared runtime and settings accessor. */
+import { isCardionotasInterconsultaEnabled } from '../cardio/cardionotas-gates.mjs';
 
 /** @type {{
  *   showToast(msg: string, type?: string): void,
@@ -107,6 +108,14 @@ export function syncAppModeRadioControls() {
   var modeSala = document.getElementById("app-mode-sala");
   var modeInter = document.getElementById("app-mode-inter");
   if (!modeSala || !modeInter) return;
+  var interEnabled = isCardionotasInterconsultaEnabled();
+  var interLabel = modeInter.closest("label");
+  if (interLabel) interLabel.hidden = !interEnabled;
+  if (!interEnabled) {
+    st.appMode = "sala";
+    modeSala.checked = true;
+    return;
+  }
   if ((st.appMode || "sala") === "sala") modeSala.checked = true;
   else modeInter.checked = true;
 }
