@@ -1,15 +1,22 @@
-version: 1.0.1
+version: 1.0.2
 files:
-  - url: R+ Cardio-1.0.1-x64.exe
-    sha512: zjivYNo+DeR6z2uGaGOsqQVOs/ZesGxiH1iDQC1AY7dY+g3MA92ePJt410VrR43aRWsr751K1caJ5qPi9qet/g==
-    size: 117535295
-path: R+ Cardio-1.0.1-x64.exe
-sha512: zjivYNo+DeR6z2uGaGOsqQVOs/ZesGxiH1iDQC1AY7dY+g3MA92ePJt410VrR43aRWsr751K1caJ5qPi9qet/g==
-releaseDate: '2026-07-20T06:17:42.000Z'
+  - url: R+ Cardio-1.0.2-x64.exe
+    sha512: tP2nu1TxoI6qShfHt6foJRPPiBUol1FLLBHGt8za7djmDexMGSQqlG8gxpUN1Ta5JUWn+UJlMFbtWTVMF2Ckww==
+    size: 121660972
+path: R+ Cardio-1.0.2-x64.exe
+sha512: tP2nu1TxoI6qShfHt6foJRPPiBUol1FLLBHGt8za7djmDexMGSQqlG8gxpUN1Ta5JUWn+UJlMFbtWTVMF2Ckww==
+releaseDate: '2026-07-20T16:47:48.000Z'
 releaseNotes: |
-  Corrige el modal Actualización requerida que bloqueaba R+ Cardio 1.0.0
-  pidiendo mínimo v6.4.0 y mencionando LAN — resto del fork R+, no política Cardio.
+  Manejo IC (Fantásticos / diuréticos) pasa a la pestaña principal Manejo,
+  con combos de fármacos por pilar GDMT y acumulado de furosemida más fiable.
+  Expediente se aligera (sin Paciente/Pendientes ni import Drive).
   
-  public/min-version.json — Alineado con el policy Cardio (minVersion 1.0.0;
+  Manejo en pestaña app — Fantásticos, otros y diuréticos viven en la
   
-  npm run build:ui — Copia el min-version.json de la raíz a public/ para
+  Combos GDMT — Sugerencias por clase (IECA/ARA/ARNI, SGLT2i, BB, MRA)
+  
+  Furosemida acumulada — Suma dosis diaria × días del segmento (hasta
+  
+  Chrome Cardio — Oculta Pendientes, import Drive y entrega; Salida
+  
+  Pack — Incluye templates/ic-seguimiento.docx en el empaquetado.

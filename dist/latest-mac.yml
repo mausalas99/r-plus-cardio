@@ -1,24 +1,31 @@
-version: 1.0.1
+version: 1.0.2
 files:
-  - url: R+ Cardio-1.0.1-arm64.zip
-    sha512: K0SuudP3sCrA6jOTL+e3Fvzf9MvFoPZWwlrjUu2BWSowZpjnqK4dDgJOZ4apUmGlVy8ZJpV4H+/kiiEjaAMWTg==
-    size: 132332975
-  - url: R+ Cardio-1.0.1-arm64.dmg
-    sha512: I+slcRHNVQyB2GToo7uaeEmAXFz2PSGwq8Tiu98SxzWXxR5lSczJ/woWZsBv5Dsl8FupRg/cy+nxWRb7oiQN/g==
-    size: 137575071
-  - url: R+ Cardio-1.0.1-x64.zip
-    sha512: MTQEcq5KOu4TTZvYoohxR6Zqwcn2OKOkhiYmOxyd89tcpeNcofupTZ37/f455Thxd7lNCMZnNv1vYDZ8M7zc9Q==
-    size: 140707088
-  - url: R+ Cardio-1.0.1-x64.dmg
-    sha512: mjGuwjbtZ+AbuGgxAH41Gk3AvsqClXiyVjNoo0QB+tLf8mjSL1qzK3Ta1kp6TLjG1GANMdQPVZxf4LdFxgYu0w==
-    size: 146006496
-path: R+ Cardio-1.0.1-arm64.zip
-sha512: K0SuudP3sCrA6jOTL+e3Fvzf9MvFoPZWwlrjUu2BWSowZpjnqK4dDgJOZ4apUmGlVy8ZJpV4H+/kiiEjaAMWTg==
-releaseDate: '2026-07-20T06:17:41.000Z'
+  - url: R+ Cardio-1.0.2-arm64.zip
+    sha512: uiIpyrfU+Z4mMNrqhCydbpMaNv+a9w9naEVhgS+dtyO1ltaFWzNRVnuUP5d2Ommox6tXzJQ9NzowZ9d/7ugYpQ==
+    size: 136458990
+  - url: R+ Cardio-1.0.2-arm64.dmg
+    sha512: OmJ55ly9NcUagBmFdN4pyKfxVLSQzszYbvYz/F5pM/6hc7uo14DJcR4AuwRsk5P1jEA8zfsA/S+38P2kzSeIBA==
+    size: 141746162
+  - url: R+ Cardio-1.0.2-x64.zip
+    sha512: 87b4NJ9CMdqu7otnDINDy5neKwhY4F29N2SPe4tvdSWGNcbwbRR22mlWFPWnQ62AE6bhKXs1qhNoKnvRH88G/g==
+    size: 144833077
+  - url: R+ Cardio-1.0.2-x64.dmg
+    sha512: 7CjKiYEtOo5rqYKclhSCbczSOD4k4pSD/5SlMS2h5eOaHYDycyYvgldJB7oCXHJ9xRyxBXB5cIcbCcp55UTl9Q==
+    size: 150167820
+path: R+ Cardio-1.0.2-arm64.zip
+sha512: uiIpyrfU+Z4mMNrqhCydbpMaNv+a9w9naEVhgS+dtyO1ltaFWzNRVnuUP5d2Ommox6tXzJQ9NzowZ9d/7ugYpQ==
+releaseDate: '2026-07-20T16:47:48.000Z'
 releaseNotes: |
-  Corrige el modal Actualización requerida que bloqueaba R+ Cardio 1.0.0
-  pidiendo mínimo v6.4.0 y mencionando LAN — resto del fork R+, no política Cardio.
+  Manejo IC (Fantásticos / diuréticos) pasa a la pestaña principal Manejo,
+  con combos de fármacos por pilar GDMT y acumulado de furosemida más fiable.
+  Expediente se aligera (sin Paciente/Pendientes ni import Drive).
   
-  public/min-version.json — Alineado con el policy Cardio (minVersion 1.0.0;
+  Manejo en pestaña app — Fantásticos, otros y diuréticos viven en la
   
-  npm run build:ui — Copia el min-version.json de la raíz a public/ para
+  Combos GDMT — Sugerencias por clase (IECA/ARA/ARNI, SGLT2i, BB, MRA)
+  
+  Furosemida acumulada — Suma dosis diaria × días del segmento (hasta
+  
+  Chrome Cardio — Oculta Pendientes, import Drive y entrega; Salida
+  
+  Pack — Incluye templates/ic-seguimiento.docx en el empaquetado.
