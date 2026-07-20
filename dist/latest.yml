@@ -1,8 +1,15 @@
-version: 1.0.0
+version: 1.0.1
 files:
-  - url: R+ Cardio-1.0.0-x64.exe
-    sha512: VuSoBR5j0HIoSFOpgHcyiOvvSOfAG9oN6NCesvKqu4R/42lG39FllfcX87VDu6lPGDQfxT1am7CvvNB0BYgfDA==
-    size: 117535358
-path: R+ Cardio-1.0.0-x64.exe
-sha512: VuSoBR5j0HIoSFOpgHcyiOvvSOfAG9oN6NCesvKqu4R/42lG39FllfcX87VDu6lPGDQfxT1am7CvvNB0BYgfDA==
-releaseDate: '2026-07-20T02:36:43.000Z'
+  - url: R+ Cardio-1.0.1-x64.exe
+    sha512: zjivYNo+DeR6z2uGaGOsqQVOs/ZesGxiH1iDQC1AY7dY+g3MA92ePJt410VrR43aRWsr751K1caJ5qPi9qet/g==
+    size: 117535295
+path: R+ Cardio-1.0.1-x64.exe
+sha512: zjivYNo+DeR6z2uGaGOsqQVOs/ZesGxiH1iDQC1AY7dY+g3MA92ePJt410VrR43aRWsr751K1caJ5qPi9qet/g==
+releaseDate: '2026-07-20T06:17:42.000Z'
+releaseNotes: |
+  Corrige el modal Actualización requerida que bloqueaba R+ Cardio 1.0.0
+  pidiendo mínimo v6.4.0 y mencionando LAN — resto del fork R+, no política Cardio.
+  
+  public/min-version.json — Alineado con el policy Cardio (minVersion 1.0.0;
+  
+  npm run build:ui — Copia el min-version.json de la raíz a public/ para

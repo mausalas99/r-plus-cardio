@@ -1,17 +1,24 @@
-version: 1.0.0
+version: 1.0.1
 files:
-  - url: R+ Cardio-1.0.0-arm64.zip
-    sha512: vJ4CAqQwAE3YPLLLI3bYki+lr2OUN0XJ6QxV81ql2/MuhvAt++vZqbR/Ql/CWmOFJlXejkxF5gtEl2bzjBbvZA==
-    size: 132334049
-  - url: R+ Cardio-1.0.0-arm64.dmg
-    sha512: Qtf3+h/RgoYc71SNcpCDuwuP1B0+Ybl7olZ1pTUm2pymNMYm/Ay62fxvxUuF+qAYF7Hgwx2TisKwV2n3YKlWdA==
-    size: 137577836
-  - url: R+ Cardio-1.0.0-x64.zip
-    sha512: hpC25TPXJBs5Os7H2jMcrJe4+MTVvgK0JhDZ/hQ4wAEvX9kmOeHWeh/ijBvYcCbnzHAwHitpb/TTT0HVE2GgQQ==
-    size: 140708128
-  - url: R+ Cardio-1.0.0-x64.dmg
-    sha512: WO/sF47s9pRAbSAxXXtSHIIap9yvDMgXA/DVWiimP65yeGaZ4gsXkEtJVIBAQkIp7PEQ65jUnPC1333/ZedUpA==
-    size: 146004144
-path: R+ Cardio-1.0.0-arm64.zip
-sha512: vJ4CAqQwAE3YPLLLI3bYki+lr2OUN0XJ6QxV81ql2/MuhvAt++vZqbR/Ql/CWmOFJlXejkxF5gtEl2bzjBbvZA==
-releaseDate: '2026-07-20T02:36:43.000Z'
+  - url: R+ Cardio-1.0.1-arm64.zip
+    sha512: K0SuudP3sCrA6jOTL+e3Fvzf9MvFoPZWwlrjUu2BWSowZpjnqK4dDgJOZ4apUmGlVy8ZJpV4H+/kiiEjaAMWTg==
+    size: 132332975
+  - url: R+ Cardio-1.0.1-arm64.dmg
+    sha512: I+slcRHNVQyB2GToo7uaeEmAXFz2PSGwq8Tiu98SxzWXxR5lSczJ/woWZsBv5Dsl8FupRg/cy+nxWRb7oiQN/g==
+    size: 137575071
+  - url: R+ Cardio-1.0.1-x64.zip
+    sha512: MTQEcq5KOu4TTZvYoohxR6Zqwcn2OKOkhiYmOxyd89tcpeNcofupTZ37/f455Thxd7lNCMZnNv1vYDZ8M7zc9Q==
+    size: 140707088
+  - url: R+ Cardio-1.0.1-x64.dmg
+    sha512: mjGuwjbtZ+AbuGgxAH41Gk3AvsqClXiyVjNoo0QB+tLf8mjSL1qzK3Ta1kp6TLjG1GANMdQPVZxf4LdFxgYu0w==
+    size: 146006496
+path: R+ Cardio-1.0.1-arm64.zip
+sha512: K0SuudP3sCrA6jOTL+e3Fvzf9MvFoPZWwlrjUu2BWSowZpjnqK4dDgJOZ4apUmGlVy8ZJpV4H+/kiiEjaAMWTg==
+releaseDate: '2026-07-20T06:17:41.000Z'
+releaseNotes: |
+  Corrige el modal Actualización requerida que bloqueaba R+ Cardio 1.0.0
+  pidiendo mínimo v6.4.0 y mencionando LAN — resto del fork R+, no política Cardio.
+  
+  public/min-version.json — Alineado con el policy Cardio (minVersion 1.0.0;
+  
+  npm run build:ui — Copia el min-version.json de la raíz a public/ para
