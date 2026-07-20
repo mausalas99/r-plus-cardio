@@ -160,7 +160,6 @@
       "template.docx",
       "template_indicaciones.docx",
       "template_listado.docx",
-      "templates/ic-seguimiento.docx",
       "templates/receta-hu-000-061-R-06-12.pdf",
       "public/**/*",
       "build/AppIcon.icns",
@@ -175,7 +174,6 @@
       "template.docx",
       "template_indicaciones.docx",
       "template_listado.docx",
-      "templates/ic-seguimiento.docx",
       "templates/receta-hu-000-061-R-06-12.pdf",
       "node_modules/better-sqlite3-multiple-ciphers/**/*",
       "node_modules/@node-rs/argon2*/**/*.node"
