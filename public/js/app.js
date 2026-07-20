@@ -400,7 +400,7 @@ function runDomBootAfterState() {
     ) {
       setTimeout(function () {
         try {
-          showToast('R+ 3.0 — Sala activado por defecto. Cambia en Mi Perfil → Aplicación.');
+          showToast('R+ Cardio — Sala. Cambia en Mi Perfil → Aplicación.');
         } catch (_e) {
           void _e;
         }

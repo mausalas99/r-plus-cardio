@@ -1,6 +1,6 @@
-# Cardionotas
+# R+ Cardio
 
-Fork de R+ orientado al seguimiento intrahospitalario de IC descompensada (descongestión, congestión/POCUS, manejo y hoja IC).
+Fork de R+ orientado al seguimiento intrahospitalario de IC descompensada (descongestión, congestión/POCUS, manejo y hoja IC). Sin LiveSync/LAN en el MVP.
 
 - Diseño: [2026-07-19-cardionotas-ic-fork-design](docs/superpowers/specs/2026-07-19-cardionotas-ic-fork-design.md)
 - Plan MVP: [2026-07-19-cardionotas-ic-mvp](docs/superpowers/plans/2026-07-19-cardionotas-ic-mvp.md)

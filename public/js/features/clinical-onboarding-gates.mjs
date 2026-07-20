@@ -9,6 +9,7 @@ import {
   needsClinicalLanProfileGate,
   readRpcSettings,
   resolveClinicalClientId,
+  setClinicalSyncModeLocalOnly,
 } from '../clinical-settings.mjs';
 import { isDbMode } from '../db-storage-bridge.mjs';
 import { hasElevatedTeamPrivileges } from '../clinical-privileges.mjs';
@@ -18,6 +19,7 @@ import {
   isValidUsernameFormat,
   normalizeUsername,
 } from '../clinical-username.mjs';
+import { isCardionotasLanUiEnabled } from './cardio/cardionotas-gates.mjs';
 
 function getClientId() {
   return resolveClinicalClientId(readRpcSettings());
@@ -45,9 +47,17 @@ export function needsTeamOnboarding() {
   return filterJoinedTeams(teams, clinicalSessionContext.user).length === 0;
 }
 
-/** First screen: LAN guardia vs solo este equipo (before any profile fields). */
+/** First screen: LAN guardia vs solo este equipo (before any profile fields).
+ *  R+ Cardio has no LAN — force solo-equipo and never show the choice. */
 export function needsClinicalSyncModeChoice() {
   if (!isDbMode()) return false;
+  if (!isCardionotasLanUiEnabled()) {
+    const settings = readRpcSettings();
+    if (!isClinicalSyncModeChosen(settings)) {
+      setClinicalSyncModeLocalOnly(true);
+    }
+    return false;
+  }
   const settings = readRpcSettings();
   if (settings.clinicalRegistered === true) return false;
   if (isClinicalSyncModeChosen(settings)) return false;

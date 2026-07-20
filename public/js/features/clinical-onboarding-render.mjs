@@ -220,7 +220,7 @@ export async function renderOnboardingPanelInto(host) {
     if (result.ok) {
       if (typeof window !== 'undefined' && typeof window.showToast === 'function') {
         window.showToast(
-          'Listo. R+ queda solo en este equipo, sin sincronización LAN.',
+          'Listo. R+ Cardio queda solo en este equipo (sin LAN).',
           'success'
         );
       }

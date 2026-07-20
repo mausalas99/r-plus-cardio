@@ -480,7 +480,7 @@ function startLanServer() {
 
   listenPromise = new Promise((resolve, reject) => {
     const srv = httpServer.listen(PORT, () => {
-      console.log(`Cardionotas → http://localhost:${PORT}`);
+      console.log(`R+ Cardio → http://localhost:${PORT}`);
       serverInstance = srv;
       try {
         scheduleEquiposPhotoPurge(equiposPhotosDir, getClinicalDbForInterno);

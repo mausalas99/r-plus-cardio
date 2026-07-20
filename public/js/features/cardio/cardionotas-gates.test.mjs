@@ -10,6 +10,11 @@ test('isCardionotasLanUiEnabled is false in Cardionotas MVP', () => {
   assert.equal(isCardionotasLanUiEnabled(), false);
 });
 
+test('cardionotasProductName is R+ Cardio', async () => {
+  const { cardionotasProductName } = await import('./cardionotas-gates.mjs');
+  assert.equal(cardionotasProductName(), 'R+ Cardio');
+});
+
 test('isCardionotasInterconsultaEnabled is false in Cardionotas MVP', () => {
   assert.equal(isCardionotasInterconsultaEnabled(), false);
 });

@@ -198,7 +198,7 @@ function createWindow() {
     height: 900,
     minWidth: 960,
     minHeight: 700,
-    title: 'Cardionotas',
+    title: 'R+ Cardio',
     show: false, // mostrar solo cuando esté listo (sin flash blanco)
     webPreferences: {
       nodeIntegration: false,
@@ -957,7 +957,7 @@ function buildMenu() {
     ...(isMac ? [{
       label: app.name,
       submenu: [
-        { label: `Cardionotas v${version}`, enabled: false },
+        { label: `R+ Cardio v${version}`, enabled: false },
         { type: 'separator' },
         { label: 'Buscar actualizaciones…', click: checkUpdate },
         { type: 'separator' },
@@ -988,7 +988,7 @@ function buildMenu() {
       label: 'Aplicación',
       submenu: [
         ...(!isMac ? [
-          { label: `Cardionotas v${version}`, enabled: false },
+          { label: `R+ Cardio v${version}`, enabled: false },
           { type: 'separator' },
           { label: 'Buscar actualizaciones…', click: checkUpdate },
           { type: 'separator' },
@@ -1040,7 +1040,7 @@ app.whenReady().then(async () => {
         nativeErr && nativeErr.message
           ? nativeErr.message
           : 'No se pudo cargar el módulo nativo de base de datos (SQLCipher).';
-      dialog.showErrorBox('Cardionotas no pudo iniciar', detail);
+      dialog.showErrorBox('R+ Cardio no pudo iniciar', detail);
       app.quit();
       return;
     }
@@ -1080,7 +1080,7 @@ app.whenReady().then(async () => {
         (lanErr && lanErr.message && String(lanErr.message).includes(String(LAN_HTTP_PORT)));
       if (peerMode && portBusy) {
         console.warn(
-          '[Cardionotas LAN peer mode] Puerto ' +
+          '[R+ Cardio LAN peer mode] Puerto ' +
             LAN_HTTP_PORT +
             ' en uso — esta ventana usará el servidor LAN del anfitrión ya abierto.'
         );
@@ -1129,7 +1129,7 @@ app.whenReady().then(async () => {
   } catch (e) {
     const detail = e && e.message ? e.message : String(e);
     dialog.showErrorBox(
-      'Cardionotas no pudo iniciar',
+      'R+ Cardio no pudo iniciar',
       detail
     );
     app.quit();

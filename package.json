@@ -1,7 +1,7 @@
 {
   "name": "cardionotas",
   "version": "7.7.1",
-  "description": "Cardionotas — seguimiento IC descompensada (fork de R+)",
+  "description": "R+ Cardio — seguimiento IC descompensada (fork de R+)",
   "main": "main.js",
   "scripts": {
     "build:ui": "node scripts/build-ui.mjs && node scripts/bundle-renderer.mjs",
@@ -82,7 +82,7 @@
   },
   "build": {
     "appId": "com.hospitaluniversitario.cardionotas",
-    "productName": "Cardionotas",
+    "productName": "R+ Cardio",
     "npmRebuild": false,
     "beforePack": "scripts/electron-builder-before-pack.cjs",
     "afterPack": "scripts/electron-builder-after-pack.cjs",

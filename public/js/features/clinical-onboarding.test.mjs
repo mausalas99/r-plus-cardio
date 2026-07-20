@@ -44,7 +44,7 @@ describe('clinical-onboarding helpers', () => {
     assert.equal(isLocalOnlyPlaceholderUsername('drmendoza'), false);
   });
 
-  it('needsClinicalSyncModeChoice before DB session (local-first boot)', () => {
+  it('needsClinicalSyncModeChoice is skipped on R+ Cardio (no LAN)', () => {
     const store = { 'rpc-settings': '{}' };
     const ls = {
       getItem(k) {
@@ -61,10 +61,10 @@ describe('clinical-onboarding helpers', () => {
       electronAPI: { dbClinicalLoadAll: async () => ({ ok: true, blobs: {} }) },
     };
     try {
-      assert.equal(needsClinicalSyncModeChoice(), true);
-      store['rpc-settings'] = JSON.stringify({ clinicalRegistered: true });
+      // LAN UI gated off → auto solo-equipo; never show sync-mode chooser
       assert.equal(needsClinicalSyncModeChoice(), false);
-      store['rpc-settings'] = JSON.stringify({ clinicalLocalOnly: true });
+      assert.equal(JSON.parse(store['rpc-settings']).clinicalLocalOnly, true);
+      store['rpc-settings'] = JSON.stringify({ clinicalRegistered: true, clinicalLocalOnly: true });
       assert.equal(needsClinicalSyncModeChoice(), false);
     } finally {
       if (prevWin === undefined) delete globalThis.window;
