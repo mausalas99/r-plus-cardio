@@ -1,7 +1,11 @@
 /** Expediente tab migration helpers (extracted for complexity budget). */
 import { isModeSala } from './mode-features.mjs';
 import { isMobileWeb } from './mobile-web.mjs';
-import { filterSalidaSectionsForCardionotas } from './features/cardio/cardionotas-gates.mjs';
+import {
+  filterSalidaSectionsForCardionotas,
+  isCardionotasManejoAppTab,
+  isCardionotasPendientesHidden,
+} from './features/cardio/cardionotas-gates.mjs';
 
 function migrateGranularMobile(granularTab, settings) {
   if (!isMobileWeb()) return null;
@@ -28,10 +32,24 @@ function migrateCardionotasSalida(granularTab, settings) {
 
 /** @param {string} granularTab @param {object} settings @param {Record<string, {tab:string, section?:string|null}>} granularMap */
 export function migrateGranularInner(granularTab, settings, granularMap) {
-  if (!granularTab) return 'todo';
+  if (!granularTab) {
+    if (isCardionotasPendientesHidden()) {
+      return isModeSala(settings) ? 'estadoActual' : 'notas';
+    }
+    return 'todo';
+  }
   if (granularTab === 'estadoActual' && !isModeSala(settings)) return 'todo';
-  if (granularTab === 'manejo') return isModeSala(settings) ? 'manejo' : 'notas';
-  if (!granularMap[granularTab]) return 'todo';
+  if (isCardionotasPendientesHidden() && granularTab === 'todo') {
+    return isModeSala(settings) ? 'estadoActual' : 'notas';
+  }
+  if (granularTab === 'manejo') {
+    if (isCardionotasManejoAppTab()) return isModeSala(settings) ? 'estadoActual' : 'notas';
+    return isModeSala(settings) ? 'manejo' : 'notas';
+  }
+  if (!granularMap[granularTab]) {
+    if (isCardionotasPendientesHidden() && isModeSala(settings)) return 'estadoActual';
+    return 'todo';
+  }
   const mobile = migrateGranularMobile(granularTab, settings);
   if (mobile) return mobile;
   const cardio = migrateCardionotasSalida(granularTab, settings);

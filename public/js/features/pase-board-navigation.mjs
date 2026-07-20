@@ -47,6 +47,10 @@ import { cancelDeferredIdleWork, scheduleAfterPaint } from '../deferred-work.mjs
 import { rt } from './pase-board-runtime.mjs';
 import { renderPaseBoard } from './pase-board-render.mjs';
 import { switchAppTab } from './pase-board-app-tabs.mjs';
+import {
+  isCardionotasManejoAppTab,
+  isCardionotasPendientesHidden,
+} from './cardio/cardionotas-gates.mjs';
 import { invalidatePaseBoardCache } from './pase-board-cache-keys.mjs';
 import {
   cancelExpedienteWarm,
@@ -137,6 +141,10 @@ export function refreshExpedienteAfterPatientSelect(opts) {
 
 export function switchConsolidatedTab(compositeTab) {
   var settings = rt.getSettings();
+  if (compositeTab === 'manejo' && isCardionotasManejoAppTab()) {
+    switchAppTab('med');
+    return;
+  }
   if (compositeTab === "clinico" && !isClinicoCompositeVisible(settings)) {
     compositeTab = "paciente";
   }
@@ -287,14 +295,19 @@ export function renderInnerTabs() {
   show("itab-clinico", showClinico);
   var clinicoPane = document.getElementById("itab-content-clinico");
   if (clinicoPane) clinicoPane.hidden = !showClinico;
-  show("itab-manejo", sala);
+  var showManejoExp = sala && !isCardionotasManejoAppTab();
+  show("itab-manejo", showManejoExp);
   var manejoPane = document.getElementById("itab-content-manejo");
-  if (manejoPane) manejoPane.hidden = !sala;
+  if (manejoPane) manejoPane.hidden = !showManejoExp;
+  var showPaciente = !isCardionotasPendientesHidden();
+  show("itab-paciente", showPaciente);
+  var pacientePane = document.getElementById("itab-content-paciente");
+  if (pacientePane) pacientePane.hidden = !showPaciente;
   var order = 1;
-  setOrder("itab-paciente", order++);
+  if (showPaciente) setOrder("itab-paciente", order++);
   if (showClinico) setOrder("itab-clinico", order++);
   setOrder("itab-resultados", order++);
-  if (sala) setOrder("itab-manejo", order++);
+  if (showManejoExp) setOrder("itab-manejo", order++);
   if (sala && !isMobileWeb()) setOrder("itab-salida", order++);
   show("itab-salida", sala && !isMobileWeb());
   wirePatientDatosModalOnce();

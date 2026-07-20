@@ -205,7 +205,11 @@ export async function exportWithOutputDirFallback(opts) {
     if (typeof opts.selectOutputDir === 'function' && isOutputDirError(message)) {
       return retryExportAfterOutputDirPrompt(opts, message);
     }
-    if (typeof opts.onError === 'function') opts.onError(message);
+    if (typeof opts.onError === 'function') {
+      opts.onError(message);
+      // Do not rethrow — callers often .catch() with a misleading "Error de conexión".
+      return { status: 'error', error: message };
+    }
     throw e;
   }
 }

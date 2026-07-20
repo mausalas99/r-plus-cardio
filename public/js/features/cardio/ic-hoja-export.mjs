@@ -139,9 +139,6 @@ export function generateIcHoja() {
       rt.showToast('Error: ' + msg, 'error');
     },
   })
-    .catch(function () {
-      rt.showToast('Error de conexión', 'error');
-    })
     .finally(function () {
       setAsyncButtonLoading(document.getElementById('btn-gen-ic-hoja'), false);
       rt.decrementPendingJobs();

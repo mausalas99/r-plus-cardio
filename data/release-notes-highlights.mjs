@@ -1597,10 +1597,34 @@ var RELEASE_NOTES_101 = [
   },
 ];
 
+var RELEASE_NOTES_102 = [
+  {
+    title: 'Manejo en pestaña principal',
+    body:
+      'Fantásticos, otros y diuréticos viven en la pestaña superior <strong>Manejo</strong>, no como sub-pestaña del expediente.',
+  },
+  {
+    title: 'Combos por pilar GDMT',
+    body:
+      'Sugerencias por clase (IECA/ARA/ARNI, SGLT2i, BB, MRA) sin mezclar diuréticos ni pilares cruzados.',
+  },
+  {
+    title: 'Furosemida acumulada',
+    body:
+      'Si no hay <code>mgTotal</code>, suma dosis diaria × días del segmento hasta la fecha as-of.',
+  },
+  {
+    title: 'Chrome más limpio',
+    body:
+      'Sin Pendientes, import Drive ni entrega; Salida centrada en <strong>Generar hoja IC</strong>.',
+  },
+];
+
 /** Fallback when a version has no curated entry (keep aligned with latest stable). */
-export var RELEASE_NOTES_HIGHLIGHTS_DEFAULT = RELEASE_NOTES_101;
+export var RELEASE_NOTES_HIGHLIGHTS_DEFAULT = RELEASE_NOTES_102;
 
 export var RELEASE_NOTES_HIGHLIGHTS = {
+  '1.0.2': RELEASE_NOTES_102,
   '1.0.1': RELEASE_NOTES_101,
   '1.0.0': RELEASE_NOTES_100,
   '7.7.1': RELEASE_NOTES_771,

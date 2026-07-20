@@ -23,6 +23,8 @@ import {
 } from './historia-clinica-panel.mjs';
 import { renderEventualidadesPanel } from './eventualidades-panel.mjs';
 import { renderManejoPanel } from './cardio/manejo-panel.mjs';
+import { renderCardioManejoAppTab } from './cardio/manejo-app-tab.mjs';
+import { isCardionotasManejoAppTab } from './cardio/cardionotas-gates.mjs';
 import { renderIcHojaExportPanel } from './cardio/ic-hoja-export.mjs';
 import {
   renderPatientDataPane,
@@ -265,6 +267,12 @@ var GRANULAR_TAB_RENDERERS = {
     markInnerTabRendered(tab);
   },
   manejo: function (tab) {
+    if (isCardionotasManejoAppTab()) {
+      renderCardioManejoAppTab();
+      if (typeof window.switchAppTab === 'function') window.switchAppTab('med');
+      markInnerTabRendered(tab);
+      return;
+    }
     renderManejoPanel(document.getElementById('exp-pane-manejo'));
     markInnerTabRendered(tab);
   },

@@ -1,38 +1,21 @@
 import { escHtml, escAttr } from '../../dom-escape.mjs';
+import { fantasticoDrugOptions } from '../../../../lib/cardio/med-segments.mjs';
 import {
   normalizeFantasticosRows,
   buildSegmentRows,
   catalogTipoOptions,
 } from './manejo-panel-rows.mjs';
-
-/**
- * @param {string[]} options
- * @param {string} listId
- */
-function datalistHtml(options, listId) {
-  return (
-    '<datalist id="' +
-    escAttr(listId) +
-    '">' +
-    options
-      .map(function (opt) {
-        return '<option value="' + escAttr(opt) + '"></option>';
-      })
-      .join('') +
-    '</datalist>'
-  );
-}
+import { buildManejoComboHtml, mergeTipoOptions } from './manejo-combo.mjs';
 
 /**
  * @param {Array<{ className: string, drug: string, inicio: string, dosis: string, tolerancia: string }>} rows
- * @param {unknown} catalog
+ * @param {unknown} [_catalog] unused — Fantásticos use per-class drug lists
  */
-export function buildFantasticosTableHtml(rows, catalog) {
+export function buildFantasticosTableHtml(rows, _catalog) {
   var list = normalizeFantasticosRows(rows);
-  var drugOpts = catalogTipoOptions(catalog);
-  var listId = 'manejo-fant-drugs';
   var body = list
     .map(function (row, idx) {
+      var drugOpts = fantasticoDrugOptions(row.className, row.drug);
       return (
         '<tr data-manejo-fant-row="' +
         escAttr(row.className) +
@@ -40,13 +23,14 @@ export function buildFantasticosTableHtml(rows, catalog) {
         '<td class="manejo-td-class">' +
         escHtml(row.className) +
         '</td>' +
-        '<td><input type="text" class="ea-input" list="' +
-        escAttr(listId) +
-        '" data-manejo-fant="drug" data-manejo-fant-idx="' +
-        idx +
-        '" value="' +
-        escAttr(row.drug) +
-        '" placeholder="Fármaco"></td>' +
+        '<td class="manejo-td-tipo">' +
+        buildManejoComboHtml(drugOpts, {
+          value: row.drug,
+          placeholder: 'Fármaco',
+          attrs:
+            'data-manejo-fant="drug" data-manejo-fant-idx="' + idx + '"',
+        }) +
+        '</td>' +
         '<td><input type="date" class="ea-input rpc-date-input" data-manejo-fant="inicio" data-manejo-fant-idx="' +
         idx +
         '" value="' +
@@ -70,7 +54,6 @@ export function buildFantasticosTableHtml(rows, catalog) {
   return (
     '<section class="ea-section ea-card manejo-section" data-manejo-fantasticos="1">' +
     '<h3 class="ea-section-title">Fantásticos</h3>' +
-    datalistHtml(drugOpts, listId) +
     '<div class="manejo-table-wrap">' +
     '<table class="manejo-table">' +
     '<thead><tr>' +
@@ -95,65 +78,58 @@ export function buildSegmentTableHtml(opts) {
   var showMg = kind === 'diuretic';
   var rows = buildSegmentRows(opts.segments);
   var catalog = opts.catalog;
-  var draftListId = 'manejo-seg-tipos-' + kind;
-  var tipoOpts = catalogTipoOptions(catalog);
+  var tipoOpts = mergeTipoOptions(catalogTipoOptions(catalog), kind);
 
   var history = rows
     .map(function (row) {
       var endedClass = row.active ? '' : ' manejo-row--ended';
       var mgCell = showMg
-        ? '<td><input type="number" class="ea-input" min="0" step="1" data-manejo-seg-field="mgTotal" data-manejo-seg-id="' +
+        ? '<td class="manejo-td-mg"><input type="number" class="ea-input" min="0" step="1" data-manejo-seg-field="mgTotal" data-manejo-seg-id="' +
           escAttr(row.id) +
           '" value="' +
           escAttr(row.mgTotal == null ? '' : String(row.mgTotal)) +
-          '"' +
-          (row.active ? '' : ' disabled') +
-          '></td>'
+          '" placeholder="auto" title="Vacío = calcular por dosis × días del rango"></td>'
         : '';
       var actions = row.active
-        ? '<button type="button" class="ea-btn ea-btn--ghost" data-manejo-seg-end="' +
+        ? '<button type="button" class="ea-btn ea-btn--ghost manejo-btn-compact" data-manejo-seg-end="' +
           escAttr(row.id) +
-          '">Suspender</button> ' +
-          '<button type="button" class="ea-btn ea-btn--ghost" data-manejo-seg-repo="' +
-          escAttr(row.id) +
-          '">Guardar tipo en repo</button>'
-        : '<span class="ea-muted">Hasta ' + escHtml(row.endedAt || '') + '</span>';
+          '" title="Cerrar esquema hoy">Cerrar</button>'
+        : '<span class="ea-muted manejo-ended-label">Cerrado</span>';
       return (
         '<tr class="manejo-seg-row' +
         endedClass +
         '" data-manejo-seg-id="' +
         escAttr(row.id) +
         '">' +
-        '<td><input type="text" class="ea-input" list="' +
-        escAttr(draftListId) +
-        '" data-manejo-seg-field="tipo" data-manejo-seg-id="' +
-        escAttr(row.id) +
-        '" value="' +
-        escAttr(row.tipo) +
-        '"' +
-        (row.active ? '' : ' disabled') +
-        '></td>' +
-        '<td><input type="date" class="ea-input rpc-date-input" data-manejo-seg-field="inicio" data-manejo-seg-id="' +
+        '<td class="manejo-td-tipo">' +
+        buildManejoComboHtml(tipoOpts, {
+          value: row.tipo,
+          attrs:
+            'data-manejo-seg-field="tipo" data-manejo-seg-id="' +
+            escAttr(row.id) +
+            '"',
+        }) +
+        '</td>' +
+        '<td class="manejo-td-date"><input type="date" class="ea-input rpc-date-input" data-manejo-seg-field="inicio" data-manejo-seg-id="' +
         escAttr(row.id) +
         '" value="' +
         escAttr(row.inicio) +
-        '"' +
-        (row.active ? '' : ' disabled') +
-        '></td>' +
-        '<td><input type="text" class="ea-input" data-manejo-seg-field="dosis" data-manejo-seg-id="' +
+        '"></td>' +
+        '<td class="manejo-td-date"><input type="date" class="ea-input rpc-date-input" data-manejo-seg-field="endedAt" data-manejo-seg-id="' +
+        escAttr(row.id) +
+        '" value="' +
+        escAttr(row.endedAt || '') +
+        '" title="Último día del esquema (inclusive). Vacío = vigente."></td>' +
+        '<td class="manejo-td-dosis"><input type="text" class="ea-input" data-manejo-seg-field="dosis" data-manejo-seg-id="' +
         escAttr(row.id) +
         '" value="' +
         escAttr(row.dosis) +
-        '"' +
-        (row.active ? '' : ' disabled') +
-        '></td>' +
-        '<td><input type="text" class="ea-input" data-manejo-seg-field="indicacion" data-manejo-seg-id="' +
+        '"></td>' +
+        '<td class="manejo-td-indicacion"><input type="text" class="ea-input" data-manejo-seg-field="indicacion" data-manejo-seg-id="' +
         escAttr(row.id) +
         '" value="' +
         escAttr(row.indicacion) +
-        '"' +
-        (row.active ? '' : ' disabled') +
-        '></td>' +
+        '"></td>' +
         mgCell +
         '<td class="manejo-td-actions">' +
         actions +
@@ -163,31 +139,42 @@ export function buildSegmentTableHtml(opts) {
     })
     .join('');
 
-  var mgHead = showMg ? '<th>mg total</th>' : '';
+  var mgHead = showMg ? '<th class="manejo-th-mg">mg</th>' : '';
   var draftMg = showMg
-    ? '<td><input type="number" class="ea-input" min="0" step="1" data-manejo-seg-draft="mgTotal" placeholder="mg"></td>'
+    ? '<td class="manejo-td-mg"><input type="number" class="ea-input" min="0" step="1" data-manejo-seg-draft="mgTotal" placeholder="auto" title="Vacío = calcular por dosis × días"></td>'
     : '';
 
   var draftRow =
     '<tr class="manejo-seg-draft" data-manejo-seg-draft-row="' +
     escAttr(kind) +
     '">' +
-    '<td><input type="text" class="ea-input" list="' +
-    escAttr(draftListId) +
-    '" data-manejo-seg-draft="tipo" placeholder="Tipo"></td>' +
-    '<td><input type="date" class="ea-input rpc-date-input" data-manejo-seg-draft="inicio"></td>' +
-    '<td><input type="text" class="ea-input" data-manejo-seg-draft="dosis" placeholder="Dosis"></td>' +
-    '<td><input type="text" class="ea-input" data-manejo-seg-draft="indicacion" placeholder="Indicación"></td>' +
+    '<td class="manejo-td-tipo">' +
+    buildManejoComboHtml(tipoOpts, {
+      placeholder: 'Tipo',
+      attrs: 'data-manejo-seg-draft="tipo"',
+    }) +
+    '</td>' +
+    '<td class="manejo-td-date"><input type="date" class="ea-input rpc-date-input" data-manejo-seg-draft="inicio" title="Inicio del rango"></td>' +
+    '<td class="manejo-td-date"><input type="date" class="ea-input rpc-date-input" data-manejo-seg-draft="endedAt" title="Fin del rango (inclusive). Vacío = vigente."></td>' +
+    '<td class="manejo-td-dosis"><input type="text" class="ea-input" data-manejo-seg-draft="dosis" placeholder="Dosis"></td>' +
+    '<td class="manejo-td-indicacion"><input type="text" class="ea-input" data-manejo-seg-draft="indicacion" placeholder="Indicación"></td>' +
     draftMg +
     '<td class="manejo-td-actions">' +
-    '<button type="button" class="ea-btn ea-btn--success" data-manejo-seg-add="' +
+    '<div class="manejo-actions-stack">' +
+    '<button type="button" class="ea-btn ea-btn--success manejo-btn-compact" data-manejo-seg-add="' +
     escAttr(kind) +
-    '">Agregar</button> ' +
-    '<button type="button" class="ea-btn ea-btn--ghost" data-manejo-seg-draft-repo="' +
+    '">Agregar</button>' +
+    '<button type="button" class="ea-btn ea-btn--ghost manejo-btn-compact" data-manejo-seg-draft-repo="' +
     escAttr(kind) +
-    '">Guardar tipo en repo</button>' +
-    '</td>' +
-    '</tr>';
+    '" title="Guardar tipo en el catálogo del paciente">Repo</button>' +
+    '</div></td></tr>';
+
+  var hint =
+    kind === 'diuretic'
+      ? '<p class="ea-muted manejo-range-hint">Rangos inclusive (ej. 18/07–18/07 a 80 c/12; 19/07 sin fin a 40 c/12).</p>'
+      : '';
+
+  var tableClass = 'manejo-table manejo-table--segments' + (showMg ? ' manejo-table--diuretic' : '');
 
   return (
     '<section class="ea-section ea-card manejo-section" data-manejo-segments="' +
@@ -196,13 +183,15 @@ export function buildSegmentTableHtml(opts) {
     '<h3 class="ea-section-title">' +
     escHtml(opts.title) +
     '</h3>' +
-    datalistHtml(tipoOpts, draftListId) +
+    hint +
     '<div class="manejo-table-wrap">' +
-    '<table class="manejo-table">' +
+    '<table class="' +
+    tableClass +
+    '">' +
     '<thead><tr>' +
-    '<th>Tipo</th><th>Inicio</th><th>Dosis</th><th>Indicación</th>' +
+    '<th class="manejo-th-tipo">Tipo</th><th class="manejo-th-date">Inicio</th><th class="manejo-th-date">Fin</th><th class="manejo-th-dosis">Dosis</th><th>Indicación</th>' +
     mgHead +
-    '<th></th>' +
+    '<th class="manejo-th-actions"></th>' +
     '</tr></thead>' +
     '<tbody>' +
     history +
@@ -219,7 +208,6 @@ export function buildManejoPanelHtml(cardio) {
   var catalog = c.medCatalog;
   return (
     '<div class="manejo-panel" data-manejo-panel="1">' +
-    datalistHtml(catalogTipoOptions(catalog), 'manejo-catalog-tipos') +
     buildFantasticosTableHtml(c.fantasticos, catalog) +
     buildSegmentTableHtml({
       title: 'Otros medicamentos',

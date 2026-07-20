@@ -30,6 +30,8 @@ import {
   renderGranularInnerTab,
   syncInnerTabVisualOnly,
 } from './pase-board-inner-cache.mjs';
+import { renderCardioManejoAppTab } from './cardio/manejo-app-tab.mjs';
+import { isCardionotasManejoAppTab } from './cardio/cardionotas-gates.mjs';
 
 var APP_TAB_ROWS = [
   ['lab', 'apptab-lab', 'appcontent-lab', 'appTab.lab'],
@@ -142,7 +144,9 @@ function scheduleStandardTabSideEffects(tab) {
   if (tab === 'lab') enterLabStandardTab();
   if (tab === 'med') {
     scheduleAfterPaint(function () {
-      if (rt.getActiveAppTab() === 'med') rt.renderMedRecetaPanel();
+      if (rt.getActiveAppTab() !== 'med') return;
+      if (isCardionotasManejoAppTab()) renderCardioManejoAppTab();
+      else rt.renderMedRecetaPanel();
     });
   }
   if (tab === 'agenda') {

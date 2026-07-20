@@ -3,7 +3,13 @@
  */
 import { isModeSala } from './mode-features.mjs';
 import { isMobileWeb } from './mobile-web.mjs';
-import { filterSalidaSectionsForCardionotas } from './features/cardio/cardionotas-gates.mjs';
+import {
+  filterExpedienteTabsForCardionotas,
+  filterSalidaSectionsForCardionotas,
+  isCardionotasDriveImportHidden,
+  isCardionotasManejoAppTab,
+  isCardionotasPendientesHidden,
+} from './features/cardio/cardionotas-gates.mjs';
 import { openPatientDatosModal, openPatientDatosModalForPatient } from './patient-datos-modal.mjs';
 
 export const CONSOLIDATED_TABS_SALA = ['paciente', 'clinico', 'resultados', 'manejo', 'salida'];
@@ -50,7 +56,7 @@ export function getConsolidatedTabs(settings) {
       return tab !== 'salida';
     });
   }
-  return tabs;
+  return filterExpedienteTabsForCardionotas(tabs);
 }
 
 export const CLINICO_SECTIONS_ALL = ['notas', 'indica', 'historia', 'vpo'];
@@ -144,25 +150,46 @@ export function getSalidaSections(settings) {
 
 export function resolveConsolidatedTarget(granularTab, settings) {
   if (granularTab === 'manejo') {
+    if (isCardionotasManejoAppTab()) {
+      return { tab: 'clinico', section: isModeSala(settings) ? 'estadoActual' : 'notas' };
+    }
     return isModeSala(settings)
       ? { tab: 'manejo', section: null }
       : { tab: 'clinico', section: 'notas' };
   }
+  if (
+    isCardionotasPendientesHidden() &&
+    (granularTab === 'todo' || granularTab === 'datos' || !granularTab)
+  ) {
+    return {
+      tab: 'clinico',
+      section: isModeSala(settings) ? 'estadoActual' : 'notas',
+    };
+  }
   var map = granularToConsolidatedMap(settings || {});
   var target = map[granularTab] || { tab: 'paciente', section: null };
+  if (isCardionotasPendientesHidden() && target.tab === 'paciente') {
+    return {
+      tab: 'clinico',
+      section: isModeSala(settings) ? 'estadoActual' : 'notas',
+    };
+  }
   if (isMobileWeb() && target.tab === 'salida') {
     if (!isModeSala(settings) && granularTab === 'vpo') {
       return { tab: 'clinico', section: 'vpo' };
     }
     return isModeSala(settings)
       ? { tab: 'clinico', section: 'historia' }
-      : { tab: 'paciente', section: null };
+      : isCardionotasPendientesHidden()
+        ? { tab: 'clinico', section: 'notas' }
+        : { tab: 'paciente', section: null };
   }
   return target;
 }
 
 export function consolidatedTabForGranular(granularTab, settings) {
   if (granularTab === 'manejo') {
+    if (isCardionotasManejoAppTab()) return 'clinico';
     return isModeSala(settings) ? 'manejo' : 'clinico';
   }
   return resolveConsolidatedTarget(granularTab, settings).tab;
@@ -178,22 +205,24 @@ export function defaultGranularForConsolidatedTab(compositeTab, settings) {
   var sala = isModeSala(settings);
   var clinicoDefault = 'notas';
   if (sala) clinicoDefault = 'estadoActual';
+  var pacienteDefault = isCardionotasPendientesHidden()
+    ? clinicoDefault
+    : 'todo';
   var defaults = {
-    paciente: 'todo',
+    paciente: pacienteDefault,
     clinico: clinicoDefault,
     resultados: 'tend',
     manejo: 'manejo',
     salida: isMobileWeb()
       ? sala
         ? 'historia'
-        : 'todo'
+        : pacienteDefault
       : sala
         ? 'icHoja'
         : 'recetaHu',
   };
-  return defaults[compositeTab] || 'todo';
+  return defaults[compositeTab] || pacienteDefault;
 }
-
 export function consolidatedInnerTabButtonId(tab, settings) {
   var tabs = getConsolidatedTabs(settings || {});
   if (tabs.includes(tab)) return 'itab-' + tab;
@@ -254,11 +283,13 @@ export function syncConsolidatedSegmentBarVisibility(settings) {
   var salidaBar = document.getElementById('exp-segment-salida');
   if (salidaBar) {
     var salidaSections = getSalidaSections(settings);
-    salidaBar.style.display = sala && salidaSections.length ? '' : 'none';
+    // Cardionotas: single Hoja IC pane — no segment bar chrome.
+    var showSalidaBar = sala && salidaSections.length > 1;
+    salidaBar.style.display = showSalidaBar ? '' : 'none';
     ['icHoja', 'listado', 'vpo', 'recetaHu'].forEach(function (section) {
       var btn = salidaBar.querySelector('[data-exp-segment="' + section + '"]');
       if (!btn) return;
-      btn.style.display = sala && salidaSections.indexOf(section) >= 0 ? '' : 'none';
+      btn.style.display = showSalidaBar && salidaSections.indexOf(section) >= 0 ? '' : 'none';
     });
   }
   var estadoActualTab = document.getElementById('itab-estadoActual');
@@ -325,15 +356,24 @@ export function syncConsolidatedPaneVisibility(granularTab, settings, opts) {
   });
   var datosActions = document.getElementById('exp-paciente-datos-actions');
   if (datosActions) {
-    datosActions.hidden = !(compositeState.paciente && compositeState.paciente.active);
+    if (isCardionotasPendientesHidden()) {
+      // Paciente tab removed; keep Datos reachable from any Expediente view.
+      datosActions.hidden = false;
+    } else {
+      datosActions.hidden = !(compositeState.paciente && compositeState.paciente.active);
+    }
   }
   var driveActions = document.getElementById('exp-clinico-drive-actions');
   if (driveActions) {
-    driveActions.hidden = !(
-      isModeSala(settings) &&
-      compositeState.clinico &&
-      compositeState.clinico.active
-    );
+    if (isCardionotasDriveImportHidden()) {
+      driveActions.hidden = true;
+    } else {
+      driveActions.hidden = !(
+        isModeSala(settings) &&
+        compositeState.clinico &&
+        compositeState.clinico.active
+      );
+    }
   }
   CLINICO_GRANULAR_TABS.forEach(function (section) {
     var pane = paneEl(section);

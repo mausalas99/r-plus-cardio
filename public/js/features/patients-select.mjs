@@ -28,6 +28,7 @@ import {
   scrollActiveRondaCardIntoView,
   setRoundOverviewMode,
 } from './patients-round.mjs';
+import { renderCardioManejoAppTab } from './cardio/manejo-app-tab.mjs';
 
 /** @param {string} iso */
 function formatIncomingEffectiveLabel(iso) {
@@ -190,7 +191,7 @@ function selectPatientCore(id) {
   rt.syncInnerTabVisualOnly();
   rt.refreshExpedienteAfterPatientSelect({ patientChanged: patientChanged });
   if (appTab === 'lab') rt.renderLabHistoryPanel();
-  if (appTab === 'med') rt.renderMedRecetaPanel();
+  if (appTab === 'med' && !renderCardioManejoAppTab()) rt.renderMedRecetaPanel();
   if (!handleLabTabAfterPatientChange(wasOnLab, patientChanged)) {
     rt.syncWorkContextChrome();
   }

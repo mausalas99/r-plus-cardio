@@ -95,9 +95,8 @@ const TARGETS = {
   },
   sala_med:          { appTab: 'med',  selector: '#med-import-open-btn',                      focus: false },
   sala_manejo: {
-    appTab: 'nota',
-    innerTab: 'manejo',
-    selector: '#exp-pane-manejo, .manejo-panel, [data-manejo-panel]',
+    appTab: 'med',
+    selector: '#med-pane-cardio-manejo, .manejo-panel, [data-manejo-panel]',
     focus: false,
     spotlightClass: 'tour-spotlight-action',
   },

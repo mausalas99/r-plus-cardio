@@ -1,4 +1,7 @@
-import { FANTASTICO_CLASSES } from '../../../../lib/cardio/med-segments.mjs';
+import {
+  FANTASTICO_CLASSES,
+  isMisplacedFantasticoDrug,
+} from '../../../../lib/cardio/med-segments.mjs';
 
 /**
  * Ensure exactly four fantástico rows aligned to FANTASTICO_CLASSES.
@@ -23,15 +26,23 @@ export function normalizeFantasticosRows(fantasticos) {
     }
   }
   return FANTASTICO_CLASSES.map(function (className) {
-    return (
-      byClass.get(className) || {
-        className: className,
-        drug: '',
-        inicio: '',
-        dosis: '',
-        tolerancia: '',
-      }
-    );
+    var row = byClass.get(className) || {
+      className: className,
+      drug: '',
+      inicio: '',
+      dosis: '',
+      tolerancia: '',
+    };
+    var drug = row.drug;
+    // Drop values clearly belonging to another pillar / diuretics (e.g. Furosemida in SGLT2i).
+    if (isMisplacedFantasticoDrug(className, drug)) drug = '';
+    return {
+      className: className,
+      drug: drug,
+      inicio: row.inicio,
+      dosis: row.dosis,
+      tolerancia: row.tolerancia,
+    };
   });
 }
 
@@ -96,6 +107,7 @@ export function buildSegmentRows(segments) {
  * @param {{
  *   tipo?: unknown,
  *   inicio?: unknown,
+ *   endedAt?: unknown,
  *   dosis?: unknown,
  *   indicacion?: unknown,
  *   mgTotal?: unknown,
@@ -109,9 +121,11 @@ export function serializeSegmentDraft(draft) {
     var n = Number(mgRaw);
     mgTotal = Number.isFinite(n) ? n : null;
   }
+  var endedRaw = String(src.endedAt == null ? '' : src.endedAt).trim();
   return {
     tipo: String(src.tipo || '').trim(),
     inicio: String(src.inicio || '').trim(),
+    endedAt: endedRaw || null,
     dosis: String(src.dosis || '').trim(),
     indicacion: String(src.indicacion || '').trim(),
     mgTotal: mgTotal,

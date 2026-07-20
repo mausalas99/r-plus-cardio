@@ -167,7 +167,7 @@ export function buildDescongestionHeaderHtml(vm) {
   return (
     '<section class="ea-section ea-card ea-cardio-descongestion" data-ea-cardio-descongestion-panel="1">' +
     '<h3 class="ea-section-title">Descongestión</h3>' +
-    '<div class="ea-cardio-grid">' +
+    '<div class="ea-cardio-grid ea-cardio-grid--meta">' +
     '<div class="ea-field">' +
     '<label class="ea-label" for="ea-cardio-inicio-descongestion">Inicio descongestión</label>' +
     '<input type="date" class="ea-input rpc-date-input" id="ea-cardio-inicio-descongestion" data-ea-cardio-inicio ' +
@@ -187,6 +187,8 @@ export function buildDescongestionHeaderHtml(vm) {
     escHtml(String(vm.diasDescongestion || 0)) +
     '</div>' +
     '</div>' +
+    '</div>' +
+    '<div class="ea-cardio-grid ea-cardio-grid--acum">' +
     '<div class="ea-field ea-cardio-acum">' +
     '<label class="ea-label" for="ea-cardio-diuresis-acum">Diuresis acumulada (ml)' +
     (vm.diuresisOverridden ? ' <span class="ea-cardio-override-badge">manual</span>' : '') +
@@ -196,7 +198,7 @@ export function buildDescongestionHeaderHtml(vm) {
     'step="1" value="' +
     escAttr(String(vm.diuresisAcumuladaMl ?? '')) +
     '">' +
-    '<button type="button" class="ea-btn ea-btn--ghost" data-ea-cardio-recalc="diuresisAcumuladaMl">Recalcular</button>' +
+    '<button type="button" class="ea-btn ea-btn--ghost ea-cardio-recalc-btn" data-ea-cardio-recalc="diuresisAcumuladaMl">Recalcular</button>' +
     '</div>' +
     '</div>' +
     '<div class="ea-field ea-cardio-acum">' +
@@ -208,7 +210,7 @@ export function buildDescongestionHeaderHtml(vm) {
     'step="1" value="' +
     escAttr(String(vm.furosemidaAcumuladaMg ?? '')) +
     '">' +
-    '<button type="button" class="ea-btn ea-btn--ghost" data-ea-cardio-recalc="furosemidaAcumuladaMg">Recalcular</button>' +
+    '<button type="button" class="ea-btn ea-btn--ghost ea-cardio-recalc-btn" data-ea-cardio-recalc="furosemidaAcumuladaMg">Recalcular</button>' +
     '</div>' +
     '</div>' +
     '</div>' +
@@ -233,7 +235,7 @@ export function mountDescongestionPanel(mount, patient) {
   var ingresoDate = resolveIngresoYmd(patient);
   var inicioYmd = accesoFechaToDateInputValue(cardio.inicioDescongestion) || '';
   var dailyDiuresis = extractDailyDiuresisMl(patient.monitoreo);
-  var furoMg = sumFurosemidaMg(cardio.diureticSegments);
+  var furoMg = sumFurosemidaMg(cardio.diureticSegments, asOf);
   var computed = computeDescongestion({
     ingresoDate: ingresoDate,
     asOfDate: asOf,

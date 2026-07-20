@@ -1,6 +1,6 @@
 {
   "name": "cardionotas",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "R+ Cardio — seguimiento IC descompensada (fork de R+)",
   "homepage": "https://github.com/mausalas99/r-plus-cardio/releases",
   "repository": {
@@ -161,6 +161,7 @@
       "template_indicaciones.docx",
       "template_listado.docx",
       "templates/receta-hu-000-061-R-06-12.pdf",
+      "templates/ic-seguimiento.docx",
       "public/**/*",
       "build/AppIcon.icns",
       "build/icon.ico",
@@ -175,6 +176,7 @@
       "template_indicaciones.docx",
       "template_listado.docx",
       "templates/receta-hu-000-061-R-06-12.pdf",
+      "templates/ic-seguimiento.docx",
       "node_modules/better-sqlite3-multiple-ciphers/**/*",
       "node_modules/@node-rs/argon2*/**/*.node"
     ]

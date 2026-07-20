@@ -18,6 +18,7 @@ import {
   serializeSegmentDraft,
 } from './manejo-panel-rows.mjs';
 import { buildManejoPanelHtml } from './manejo-panel-html.mjs';
+import { ensureManejoComboWired, closeAllManejoCombos } from './manejo-combo.mjs';
 
 export {
   normalizeFantasticosRows,
@@ -58,9 +59,45 @@ export function renderManejoPanel(mount) {
   }
   /** @type {any} */
   var cardio = patient.cardio;
+  if (healMisplacedFantasticos(cardio)) {
+    saveState({ immediate: true });
+  }
+  closeAllManejoCombos();
   mount.innerHTML = buildManejoPanelHtml(cardio);
   ensureManejoWired(mount);
   refreshRpcDateFields(mount);
+}
+
+/**
+ * Clear drugs that belong to another Fantásticos pillar or to diuretics.
+ * @param {Record<string, unknown> | null | undefined} cardio
+ * @returns {boolean} true if patient data changed
+ */
+function healMisplacedFantasticos(cardio) {
+  if (!cardio || typeof cardio !== 'object') return false;
+  var before = Array.isArray(cardio.fantasticos) ? cardio.fantasticos : [];
+  var healed = normalizeFantasticosRows(before);
+  var changed = healed.some(function (row, i) {
+    var prev = before[i];
+    if (!prev || typeof prev !== 'object') return String(row.drug || '') !== '';
+    return String(prev.drug || '') !== String(row.drug || '');
+  });
+  // Also changed if length/order differed from normalized four rows.
+  if (!changed && before.length !== healed.length) changed = true;
+  if (!changed) {
+    for (var j = 0; j < healed.length; j++) {
+      var p = before.find(function (r) {
+        return r && String(r.className) === healed[j].className;
+      });
+      if (p && String(p.drug || '') !== String(healed[j].drug || '')) {
+        changed = true;
+        break;
+      }
+    }
+  }
+  if (!changed) return false;
+  cardio.fantasticos = healed;
+  return true;
 }
 
 /** @returns {Record<string, unknown> | null} */
@@ -79,6 +116,7 @@ function resolveActivePatient() {
 function ensureManejoWired(mount) {
   if (mount.getAttribute('data-manejo-wired') === '1') return;
   mount.setAttribute('data-manejo-wired', '1');
+  ensureManejoComboWired(mount);
 
   mount.addEventListener('change', function (ev) {
     var patient = resolveActivePatient();
@@ -97,6 +135,8 @@ function ensureManejoWired(mount) {
     var segId = t.getAttribute('data-manejo-seg-id');
     if (segField && segId) {
       persistSegmentField(patient, segId, segField, /** @type {HTMLInputElement} */ (t).value);
+      // Fin changes active vs histórico (Cerrar hoy / estilo); re-render to refresh row state.
+      if (segField === 'endedAt') renderManejoPanel(mount);
     }
   });
 
@@ -197,11 +237,18 @@ function persistSegmentField(patient, segId, field, value) {
   });
   if (idx < 0) return;
   var row = Object.assign({}, list[idx]);
-  if (row.endedAt) return;
   if (field === 'mgTotal') {
     var n = Number(value);
     row.mgTotal = String(value).trim() === '' || !Number.isFinite(n) ? null : n;
-  } else if (field === 'tipo' || field === 'inicio' || field === 'dosis' || field === 'indicacion') {
+  } else if (field === 'endedAt') {
+    var ended = String(value == null ? '' : value).trim();
+    row.endedAt = ended || null;
+  } else if (
+    field === 'tipo' ||
+    field === 'inicio' ||
+    field === 'dosis' ||
+    field === 'indicacion'
+  ) {
     row[field] = String(value == null ? '' : value).trim();
   } else {
     return;

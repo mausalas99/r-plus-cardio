@@ -24,6 +24,16 @@ test('normalizeFantasticosRows always returns four class-aligned rows', () => {
   assert.equal(rows[1].tolerancia, 'OK');
 });
 
+test('normalizeFantasticosRows clears Furosemida misplaced in SGLT2i', () => {
+  var rows = normalizeFantasticosRows([
+    { className: 'SGLT2i', drug: 'Furosemida', inicio: '', dosis: '', tolerancia: '' },
+    { className: 'Betabloqueador', drug: 'Bisoprolol', inicio: '', dosis: '', tolerancia: '' },
+  ]);
+  assert.equal(rows[1].className, 'SGLT2i');
+  assert.equal(rows[1].drug, '');
+  assert.equal(rows[2].drug, 'Bisoprolol');
+});
+
 test('normalizeFantasticosRows fills empties from emptyFantasticos', () => {
   var rows = normalizeFantasticosRows(null);
   assert.deepEqual(
@@ -75,6 +85,7 @@ test('serializeSegmentDraft trims fields and coerces mgTotal', () => {
     serializeSegmentDraft({
       tipo: '  Furosemida ',
       inicio: '2026-03-13',
+      endedAt: '2026-03-18',
       dosis: '80 mg IV',
       indicacion: 'Descongestión',
       mgTotal: '640',
@@ -82,12 +93,14 @@ test('serializeSegmentDraft trims fields and coerces mgTotal', () => {
     {
       tipo: 'Furosemida',
       inicio: '2026-03-13',
+      endedAt: '2026-03-18',
       dosis: '80 mg IV',
       indicacion: 'Descongestión',
       mgTotal: 640,
     }
   );
   assert.equal(serializeSegmentDraft({ tipo: 'x', mgTotal: '' }).mgTotal, null);
+  assert.equal(serializeSegmentDraft({ tipo: 'x', endedAt: '  ' }).endedAt, null);
 });
 
 test('catalogTipoOptions merges catalog and current free text', () => {
@@ -99,7 +112,7 @@ test('catalogTipoOptions merges catalog and current free text', () => {
 });
 
 test('buildFantasticosTableHtml uses Spanish column labels', () => {
-  var html = buildFantasticosTableHtml(emptyFantasticos(), []);
+  var html = buildFantasticosTableHtml(emptyFantasticos(), [{ tipo: 'Furosemida' }]);
   assert.match(html, /Fantásticos/);
   assert.match(html, /Clase/);
   assert.match(html, /Fármaco/);
@@ -107,7 +120,14 @@ test('buildFantasticosTableHtml uses Spanish column labels', () => {
   assert.match(html, /Dosis/);
   assert.match(html, /Tolerancia/);
   assert.match(html, /data-manejo-fant=/);
+  assert.match(html, /manejo-combo/);
+  assert.doesNotMatch(html, /<datalist/);
   assert.match(html, /IECA\/ARA\/ARNI/);
+  assert.match(html, /data-manejo-combo-opt="Dapagliflozina"/);
+  assert.match(html, /data-manejo-combo-opt="Bisoprolol"/);
+  assert.match(html, /data-manejo-combo-opt="Espironolactona"/);
+  // General med catalog must not leak into Fantásticos suggestions.
+  assert.doesNotMatch(html, /data-manejo-combo-opt="Furosemida"/);
 });
 
 test('buildSegmentTableHtml includes actions and optional mgTotal', () => {
@@ -119,10 +139,13 @@ test('buildSegmentTableHtml includes actions and optional mgTotal', () => {
   });
   assert.match(medHtml, /Otros medicamentos/);
   assert.match(medHtml, /Tipo/);
+  assert.match(medHtml, />Fin</);
   assert.match(medHtml, /Indicación/);
   assert.match(medHtml, /Agregar/);
   assert.match(medHtml, /rpc-date-input/);
   assert.match(medHtml, /data-manejo-seg-add="med"/);
+  assert.match(medHtml, /manejo-combo/);
+  assert.doesNotMatch(medHtml, /<datalist/);
   assert.doesNotMatch(medHtml, /mg total/i);
 
   var diuHtml = buildSegmentTableHtml({
@@ -142,11 +165,21 @@ test('buildSegmentTableHtml includes actions and optional mgTotal', () => {
     catalog: [],
   });
   assert.match(diuHtml, /Diuréticos/);
-  assert.match(diuHtml, /mg total/i);
+  assert.match(diuHtml, /manejo-th-mg|>mg</);
+  assert.match(diuHtml, />Fin</);
+  assert.match(diuHtml, /data-manejo-seg-field="endedAt"/);
+  assert.match(diuHtml, /data-manejo-seg-draft="endedAt"/);
   assert.match(diuHtml, /data-manejo-seg-end="d1"/);
-  assert.match(diuHtml, /Guardar tipo en repo/);
+  assert.match(diuHtml, /Cerrar/);
+  assert.match(diuHtml, /data-manejo-seg-draft-repo="diuretic"/);
+  assert.match(diuHtml, />Repo</);
   assert.match(diuHtml, /value="200"/);
   assert.match(diuHtml, /rpc-date-input/);
+  assert.match(diuHtml, /Rangos inclusive/);
+  assert.match(diuHtml, /manejo-td-tipo/);
+  assert.match(diuHtml, /manejo-combo/);
+  assert.match(diuHtml, /data-manejo-combo-opt="Furosemida"/);
+  assert.doesNotMatch(diuHtml, /<datalist/);
 });
 
 test('cardioSegmentsNeedDemoHeal detects missing inicio/indicacion', async () => {
@@ -208,5 +241,6 @@ test('buildManejoPanelHtml wires three sections from cardio', () => {
   assert.match(html, /Fantásticos/);
   assert.match(html, /Otros medicamentos/);
   assert.match(html, /Diuréticos/);
-  assert.match(html, /manejo-catalog-tipos/);
+  assert.match(html, /manejo-combo/);
+  assert.doesNotMatch(html, /<datalist/);
 });

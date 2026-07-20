@@ -48,10 +48,18 @@ Instalación silenciosa (`/S`) y códigos de salida del instalador NSIS: [`docs/
 
 ---
 
-**Versión estable actual:** [1.0.1](https://github.com/mausalas99/r-plus-cardio/releases/tag/v1.0.1) — en *Releases* verás siempre el instalador más reciente con el número de versión en el nombre del archivo.
+**Versión estable actual:** [1.0.2](https://github.com/mausalas99/r-plus-cardio/releases/tag/v1.0.2) — en *Releases* verás siempre el instalador más reciente con el número de versión en el nombre del archivo.
 
 ---
 
+## R+ 1.0.2 (Manejo IC en pestaña principal)
+
+- **Manejo app** — Fantásticos / diuréticos en la pestaña superior **Manejo** (ya no sub-pestaña del expediente).
+- **Combos GDMT** — Sugerencias por pilar sin mezclar diuréticos; combo UI opaca.
+- **Furosemida** — Acumulado por dosis diaria × días del segmento cuando falta `mgTotal`.
+- **Chrome** — Sin Pendientes, Drive ni entrega; Salida centrada en hoja IC.
+
+Notas: `docs/RELEASE_NOTES_1.0.2.txt`.
 
 ## R+ 1.0.1 (parche — min-version Cardio)
 

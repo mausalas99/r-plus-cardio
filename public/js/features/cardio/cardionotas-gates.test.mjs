@@ -3,7 +3,13 @@ import assert from 'node:assert/strict';
 import {
   isCardionotasLanUiEnabled,
   isCardionotasInterconsultaEnabled,
+  isCardionotasManejoAppTab,
+  isCardionotasPendientesHidden,
+  isCardionotasDriveImportHidden,
+  isCardionotasEntregaHidden,
+  cardionotasSalidaTabLabel,
   filterSalidaSectionsForCardionotas,
+  filterExpedienteTabsForCardionotas,
 } from './cardionotas-gates.mjs';
 
 test('isCardionotasLanUiEnabled is false in Cardionotas MVP', () => {
@@ -41,4 +47,22 @@ test('filterSalidaSectionsForCardionotas keeps icHoja', () => {
     filterSalidaSectionsForCardionotas(['icHoja', 'listado']),
     ['icHoja'],
   );
+});
+
+test('isCardionotasManejoAppTab is true (Manejo IC in app tab)', () => {
+  assert.equal(isCardionotasManejoAppTab(), true);
+});
+
+test('filterExpedienteTabsForCardionotas drops manejo and paciente', () => {
+  assert.deepEqual(
+    filterExpedienteTabsForCardionotas(['paciente', 'clinico', 'resultados', 'manejo', 'salida']),
+    ['clinico', 'resultados', 'salida'],
+  );
+});
+
+test('Cardionotas hides pendientes, Drive import and entrega', () => {
+  assert.equal(isCardionotasPendientesHidden(), true);
+  assert.equal(isCardionotasDriveImportHidden(), true);
+  assert.equal(isCardionotasEntregaHidden(), true);
+  assert.equal(cardionotasSalidaTabLabel(), 'Hoja IC');
 });

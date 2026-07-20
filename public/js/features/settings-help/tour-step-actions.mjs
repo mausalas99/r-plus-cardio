@@ -32,6 +32,7 @@ import { patients, labHistory, listadoProblemas, saveState } from '../../app-sta
 import { getSettingsHelpRuntime } from './runtime.mjs';
 import { settingsHelpBridge } from './bridges.mjs';
 import { closeSettingsDropdown, isSettingsDropdownOpen, toggleSettingsDropdown } from './settings-dropdown.mjs';
+import { renderCardioManejoAppTab } from '../cardio/manejo-app-tab.mjs';
 import {
   TOUR_STEPS_USE_DEMO_PEREZ,
   ensureTourPrimaryDemoPatientActive,
@@ -528,7 +529,9 @@ function applyTourOverlayChromeForStep(id, t) {
     if (typeof closeSettingsDropdown === 'function') closeSettingsDropdown();
     if (typeof closeConnectionDropdown === 'function') closeConnectionDropdown();
   }
-  if (id === 'sala_med') rt.renderMedRecetaPanel();
+  if (id === 'sala_med' || id === 'sala_manejo') {
+    if (!renderCardioManejoAppTab()) rt.renderMedRecetaPanel();
+  }
 }
 
 function scheduleEstadoActualTourPrep(id, t) {

@@ -57,11 +57,10 @@ test('getTourTarget cardio_descongestion apunta a paneles IC en Estado actual', 
   assert.match(t.selector, /descongestion|congestion/);
 });
 
-test('getTourTarget sala_manejo apunta a Expediente → Manejo', () => {
+test('getTourTarget sala_manejo apunta a pestaña principal Manejo', () => {
   const t = getTourTarget('sala_manejo', 'sala');
-  assert.equal(t.appTab, 'nota');
-  assert.equal(t.innerTab, 'manejo');
-  assert.match(t.selector, /manejo-panel/);
+  assert.equal(t.appTab, 'med');
+  assert.match(t.selector, /med-pane-cardio-manejo|manejo-panel/);
 });
 
 test('getTourTarget sala_ic_hoja apunta a Generar hoja IC', () => {

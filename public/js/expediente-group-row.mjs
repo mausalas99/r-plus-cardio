@@ -13,6 +13,7 @@ import {
   RESULTADOS_SECTIONS,
   resolveConsolidatedTarget,
 } from './expediente-tabs.mjs';
+import { cardionotasSalidaTabLabel } from './features/cardio/cardionotas-gates.mjs';
 
 export var GROUP_LABELS = {
   paciente: 'Paciente',
@@ -21,6 +22,11 @@ export var GROUP_LABELS = {
   manejo: 'Manejo',
   salida: 'Salida',
 };
+
+function groupLabelFor(group) {
+  if (group === 'salida') return cardionotasSalidaTabLabel() || GROUP_LABELS.salida;
+  return GROUP_LABELS[group] || group;
+}
 
 export var SECTION_LABELS = {
   datos: 'Datos',
@@ -43,7 +49,12 @@ export function groupSections(group, settings) {
   if (group === 'manejo') return [];
   if (group === 'clinico') return getClinicoSections(settings || {});
   if (group === 'resultados') return RESULTADOS_SECTIONS.slice();
-  if (group === 'salida') return getSalidaSections(settings || {});
+  if (group === 'salida') {
+    var salida = getSalidaSections(settings || {});
+    // One section (Hoja IC): leaf pill — avoids "Hoja IC" + "Hoja IC".
+    if (salida.length <= 1) return [];
+    return salida;
+  }
   return [];
 }
 
@@ -56,7 +67,7 @@ export function buildGroupRowModel(activeGranular, settings) {
     var sections = groupSections(group, st);
     return {
       id: group,
-      label: GROUP_LABELS[group] || group,
+      label: groupLabelFor(group),
       active: activeGroup,
       leaf: sections.length === 0,
       sections: sections.map(function (section) {

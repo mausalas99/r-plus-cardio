@@ -22,22 +22,33 @@ const HIDE_MANEJO_INTER = { appMode: 'interconsulta', hideManejoSection: true, c
 const HIDE_MANEJO_LEGACY = { appMode: 'interconsulta', hideClinicoTab: true, clinicoUnlocked: true };
 
 test('resolveConsolidatedTarget maps granular tabs to composite groups (interconsulta)', () => {
-  assert.deepEqual(resolveConsolidatedTarget('todo', INTER), { tab: 'paciente', section: null });
+  // Cardionotas: Pendientes removed — todo/listado redirect to clínico.
+  assert.deepEqual(resolveConsolidatedTarget('todo', INTER), { tab: 'clinico', section: 'notas' });
   assert.deepEqual(resolveConsolidatedTarget('notas', INTER), { tab: 'clinico', section: 'notas' });
   assert.deepEqual(resolveConsolidatedTarget('manejo', INTER), { tab: 'clinico', section: 'notas' });
   assert.deepEqual(resolveConsolidatedTarget('tend', INTER), { tab: 'resultados', section: 'tend' });
   assert.deepEqual(resolveConsolidatedTarget('recetaHu', INTER), { tab: 'salida', section: null });
-  assert.deepEqual(resolveConsolidatedTarget('listado', INTER), { tab: 'paciente', section: null });
+  assert.deepEqual(resolveConsolidatedTarget('listado', INTER), { tab: 'clinico', section: 'notas' });
 });
 
 test('resolveConsolidatedTarget maps listado and recetaHu to salida in sala', () => {
   assert.deepEqual(resolveConsolidatedTarget('listado', SALA), { tab: 'salida', section: 'listado' });
   assert.deepEqual(resolveConsolidatedTarget('recetaHu', SALA), { tab: 'salida', section: 'recetaHu' });
-  assert.deepEqual(resolveConsolidatedTarget('manejo', SALA), { tab: 'manejo', section: null });
+  // Cardionotas: Manejo IC lives in the app tab, not Expediente.
+  assert.deepEqual(resolveConsolidatedTarget('manejo', SALA), {
+    tab: 'clinico',
+    section: 'estadoActual',
+  });
 });
 
-test('CONSOLIDATED_TABS_SALA includes top-level manejo', () => {
+test('CONSOLIDATED_TABS_SALA still lists manejo (filtered at getConsolidatedTabs)', () => {
   assert.deepEqual(CONSOLIDATED_TABS_SALA, ['paciente', 'clinico', 'resultados', 'manejo', 'salida']);
+});
+
+test('getConsolidatedTabs Cardionotas omits Manejo and Paciente/Pendientes', () => {
+  assert.equal(getConsolidatedTabs(SALA).includes('manejo'), false);
+  assert.equal(getConsolidatedTabs(SALA).includes('paciente'), false);
+  assert.deepEqual(getConsolidatedTabs(SALA), ['clinico', 'resultados', 'salida']);
 });
 
 test('resolveConsolidatedTarget estadoActual sala routes to clinico segment', () => {
@@ -62,41 +73,45 @@ test('estadoActual is not a consolidated top tab in either mode', () => {
 test('migrateGranularInner keeps known tabs and falls back to todo', () => {
   assert.equal(migrateGranularInner('indica', INTER), 'indica');
   assert.equal(migrateGranularInner('unknown', INTER), 'todo');
-  assert.equal(migrateGranularInner(null, INTER), 'todo');
+  assert.equal(migrateGranularInner(null, INTER), 'notas');
   assert.equal(migrateGranularInner('notas', SALA), 'historia');
   assert.equal(migrateGranularInner('recetaHu', SALA), 'icHoja');
   assert.equal(migrateGranularInner('listado', SALA), 'icHoja');
   assert.equal(migrateGranularInner('listado', INTER), 'todo');
   assert.equal(migrateGranularInner('estadoActual', SALA), 'estadoActual');
   assert.equal(migrateGranularInner('estadoActual', INTER), 'todo');
-  assert.equal(migrateGranularInner('manejo', SALA), 'manejo');
+  assert.equal(migrateGranularInner('manejo', SALA), 'estadoActual');
+  assert.equal(migrateGranularInner('todo', SALA), 'estadoActual');
+  assert.equal(migrateGranularInner(null, SALA), 'estadoActual');
 });
 
 test('defaultGranularForConsolidatedTab returns sensible defaults per mode', () => {
-  assert.equal(defaultGranularForConsolidatedTab('paciente', INTER), 'todo');
+  // Cardionotas: Paciente/Pendientes removed — paciente default redirects to clínico.
+  assert.equal(defaultGranularForConsolidatedTab('paciente', INTER), 'notas');
   assert.equal(defaultGranularForConsolidatedTab('clinico', INTER), 'notas');
   assert.equal(defaultGranularForConsolidatedTab('resultados', INTER), 'tend');
   assert.equal(defaultGranularForConsolidatedTab('salida', INTER), 'recetaHu');
   assert.equal(defaultGranularForConsolidatedTab('clinico', SALA), 'estadoActual');
   assert.equal(defaultGranularForConsolidatedTab('salida', SALA), 'icHoja');
   assert.equal(defaultGranularForConsolidatedTab('manejo', SALA), 'manejo');
+  assert.equal(defaultGranularForConsolidatedTab('paciente', SALA), 'estadoActual');
 });
 
 test('consolidatedInnerTabButtonId resolves composite button ids', () => {
   assert.equal(consolidatedInnerTabButtonId('notas', INTER), 'itab-clinico');
-  assert.equal(consolidatedInnerTabButtonId('todo', INTER), 'itab-paciente');
+  assert.equal(consolidatedInnerTabButtonId('todo', INTER), 'itab-clinico');
   assert.equal(consolidatedInnerTabButtonId('recetaHu', INTER), 'itab-salida');
   assert.equal(consolidatedInnerTabButtonId('listado', SALA), 'itab-salida');
   assert.equal(consolidatedInnerTabButtonId('clinico', INTER), 'itab-clinico');
   assert.equal(consolidatedInnerTabButtonId('estadoActual', SALA), 'itab-clinico');
   assert.equal(consolidatedInnerTabButtonId('eventualidades', SALA), 'itab-clinico');
-  assert.equal(consolidatedInnerTabButtonId('manejo', SALA), 'itab-manejo');
+  assert.equal(consolidatedInnerTabButtonId('manejo', SALA), 'itab-clinico');
 });
 
 test('consolidatedTabForGranular returns top-level composite tab id', () => {
   assert.equal(consolidatedTabForGranular('cult', INTER), 'resultados');
-  assert.equal(consolidatedTabForGranular('datos', INTER), 'paciente');
-  assert.equal(consolidatedTabForGranular('manejo', SALA), 'manejo');
+  assert.equal(consolidatedTabForGranular('datos', INTER), 'clinico');
+  assert.equal(consolidatedTabForGranular('manejo', SALA), 'clinico');
 });
 
 test('getClinicoSections differs by mode (manejo hidden globally)', () => {
@@ -174,13 +189,13 @@ test('legacy isClinicoTabHidden only true in sala', () => {
   assert.equal(isClinicoTabHidden({ appMode: 'sala', hideClinicoTab: true, clinicoUnlocked: true }), true);
 });
 
-test('getConsolidatedCompositeState keeps clinico visible in sala for historia', () => {
+test('getConsolidatedCompositeState Cardionotas: todo lands on clinico (no Paciente tab)', () => {
   const hiddenSala = { appMode: 'sala', hideManejoSection: true, clinicoUnlocked: true };
   const state = getConsolidatedCompositeState('todo', hiddenSala);
-  assert.equal(state.paciente.visible, true);
-  assert.equal(state.paciente.active, true);
+  assert.equal(state.paciente.visible, false);
+  assert.equal(state.paciente.active, false);
   assert.equal(state.clinico.visible, true);
-  assert.equal(state.clinico.active, false);
+  assert.equal(state.clinico.active, true);
 });
 
 test('getConsolidatedCompositeState keeps clinico visible in inter when only manejo hidden', () => {

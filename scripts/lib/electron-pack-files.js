@@ -24,6 +24,7 @@ const PACK_FILES_BASELINE = [
   'template_indicaciones.docx',
   'template_listado.docx',
   'templates/receta-hu-000-061-R-06-12.pdf',
+  'templates/ic-seguimiento.docx',
   'public/**/*',
   'build/AppIcon.icns',
   'build/icon.ico',
@@ -43,6 +44,7 @@ const ASAR_UNPACK_BASELINE = [
   'template_indicaciones.docx',
   'template_listado.docx',
   'templates/receta-hu-000-061-R-06-12.pdf',
+  'templates/ic-seguimiento.docx',
   ...NATIVE_MODULE_PACK_PATTERNS,
 ];
 

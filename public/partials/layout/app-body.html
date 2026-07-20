@@ -212,13 +212,15 @@
       <div id="med-empty-guided" class="empty-state" style="display:none;" role="region" aria-label="Sin paciente para manejo">
         <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.5 4.04 3 5.5l7 7Z"/></svg>
         <h3 class="empty-state-title">Selecciona un paciente para Manejo</h3>
-        <p class="empty-state-lead">Elige uno en la lista de la izquierda o agrega un paciente con <strong>+ Agregar</strong>. Después podrás importar el listado SOME y procesar la receta.</p>
+        <p class="empty-state-lead med-empty-lead-legacy">Elige uno en la lista de la izquierda o agrega un paciente con <strong>+ Agregar</strong>. Después podrás importar el listado SOME y procesar la receta.</p>
+        <p class="empty-state-lead med-empty-lead-cardio" hidden>Elige un paciente en la lista para editar Fantásticos, otros medicamentos y diuréticos (furosemida por rangos).</p>
         <div class="guided-empty-actions">
           <button type="button" class="primary" onclick="focusPatientSearchInput()">Buscar en la lista</button>
           <button type="button" onclick="openAddModal()">Agregar paciente</button>
         </div>
       </div>
       <div id="med-active-shell" class="med-active-shell" style="display:none;flex-direction:column;flex:1;overflow:hidden;min-height:0;">
+        <div id="med-pane-cardio-manejo" class="main-work-scroll med-cardio-manejo-host" hidden></div>
         <div class="inner-tab-bar" id="med-subview-tabs-bar" role="tablist" aria-label="Vista de manejo">
           <button type="button" class="inner-tab active" id="med-itab-receta" data-med-subview="receta" onclick="setMedSubview('receta')" aria-selected="true">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8"/><path d="M8 17h5"/></svg>

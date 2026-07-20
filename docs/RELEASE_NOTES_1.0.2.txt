@@ -1,0 +1,31 @@
+R+ Cardio 1.0.2 (Manejo IC en pestaña principal)
+=================================================
+
+Fecha: 2026-07-20
+
+## Resumen
+
+Manejo IC (Fantásticos / diuréticos) pasa a la pestaña principal **Manejo**,
+con combos de fármacos por pilar GDMT y acumulado de furosemida más fiable.
+Expediente se aligera (sin Paciente/Pendientes ni import Drive).
+
+## Nuevo / mejorado
+
+- **Manejo en pestaña app** — Fantásticos, otros y diuréticos viven en la
+  pestaña superior **Manejo** (ya no como sub-pestaña del expediente).
+- **Combos GDMT** — Sugerencias por clase (IECA/ARA/ARNI, SGLT2i, BB, MRA)
+  sin mezclar diuréticos ni pilares cruzados; UI tipo combo opaca.
+- **Furosemida acumulada** — Suma dosis diaria × días del segmento (hasta
+  as-of) cuando no hay `mgTotal` explícito.
+- **Chrome Cardio** — Oculta Pendientes, import Drive y entrega; Salida
+  queda centrada en **Generar hoja IC**.
+- **Pack** — Incluye `templates/ic-seguimiento.docx` en el empaquetado.
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-plus-cardio/releases/tag/v1.0.2
+
+- Mac: `R+ Cardio-1.0.2-arm64.dmg`, `R+ Cardio-1.0.2-x64.dmg` (y zip para auto-update).
+- Windows: `R+ Cardio-1.0.2-x64.exe`.
+
+R+ Cardio y R+ pueden coexistir (distinto `appId`).

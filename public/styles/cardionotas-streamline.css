@@ -59,6 +59,55 @@ html.rpc-cardio-streamline #ronda-quick-listado,
 html.rpc-cardio-streamline #btn-gen-listado,
 html.rpc-cardio-streamline [data-exp-segment="listado"],
 html.rpc-cardio-streamline .profile-block--formats,
-html.rpc-cardio-streamline #templates-modal {
+html.rpc-cardio-streamline #templates-modal,
+html.rpc-cardio-streamline #itab-manejo,
+html.rpc-cardio-streamline #itab-content-manejo,
+html.rpc-cardio-streamline #med-subview-tabs-bar,
+html.rpc-cardio-streamline #med-work-area,
+html.rpc-cardio-streamline .med-empty-lead-legacy,
+html.rpc-cardio-streamline #itab-paciente,
+html.rpc-cardio-streamline #itab-content-paciente,
+html.rpc-cardio-streamline .exp-pendientes-mount,
+html.rpc-cardio-streamline #exp-clinico-drive-actions,
+html.rpc-cardio-streamline #btn-drive-import,
+html.rpc-cardio-streamline #btn-guardia-entrega-phase,
+html.rpc-cardio-streamline #guardia-entrega-phase-status,
+html.rpc-cardio-streamline #guardia-orphan-entregas-strip,
+html.rpc-cardio-streamline #entrega-modal-backdrop,
+html.rpc-cardio-streamline #exp-segment-salida {
+  display: none !important;
+}
+
+/* IC Manejo panel hosts in the top-level Manejo app tab. */
+html.rpc-cardio-streamline #med-pane-cardio-manejo {
+  display: block !important;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: calc(8px * var(--density-space, 1)) calc(12px * var(--density-space, 1))
+    calc(28px * var(--density-space, 1));
+}
+
+html.rpc-cardio-streamline #med-pane-cardio-manejo .manejo-panel,
+html.rpc-cardio-streamline #med-pane-cardio-manejo .manejo-section,
+html.rpc-cardio-streamline #med-pane-cardio-manejo .manejo-table-wrap {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Datos sits with the nav pills; avoid a floating “stuck” control look. */
+html.rpc-cardio-streamline .exp-expediente-nav-actions#exp-paciente-datos-actions {
+  margin-left: auto;
+  align-self: center;
+}
+
+html.rpc-cardio-streamline .med-empty-lead-cardio {
+  display: block !important;
+}
+
+html.rpc-cardio-streamline #exp-pane-manejo,
+html.rpc-cardio-streamline #itab-content-manejo.tab-content.exp-composite-pane.active {
   display: none !important;
 }

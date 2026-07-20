@@ -180,6 +180,7 @@ import { renderGuardiaBoard } from './features/guardia-board.mjs';
 import {
   renderMedRecetaPanel,
 } from './features/medications.mjs';
+import { renderCardioManejoAppTab } from './features/cardio/manejo-app-tab.mjs';
 import {
   renderEstadoActualBar,
   renderEstadoActualButton,
@@ -240,7 +241,7 @@ function buildRuntimeContextUiDeps() {
     showToast,
     navigateToEstadoActualPanel,
     refreshMedPanel: function refreshMedPanel() {
-      renderMedRecetaPanel();
+      if (!renderCardioManejoAppTab()) renderMedRecetaPanel();
     },
     syncWorkContextChrome,
     renderMedRecetaPanel,
