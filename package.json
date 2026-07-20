@@ -2,6 +2,14 @@
   "name": "cardionotas",
   "version": "1.0.0",
   "description": "R+ Cardio — seguimiento IC descompensada (fork de R+)",
+  "homepage": "https://github.com/mausalas99/r-plus-cardio/releases",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mausalas99/r-plus-cardio.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mausalas99/r-plus-cardio/issues"
+  },
   "main": "main.js",
   "scripts": {
     "build:ui": "node scripts/build-ui.mjs && node scripts/bundle-renderer.mjs",

@@ -1,6 +1,6 @@
-# Contributing to R+
+# Contributing to R+ Cardio
 
-¡Gracias por tu interés en contribuir a R+!
+¡Gracias por tu interés en contribuir a R+ Cardio!
 
 ## Índice
 
@@ -18,19 +18,22 @@ La documentación del proyecto sigue una arquitectura hub-and-spoke documentada 
 - **Punto de entrada:** [`docs/core/00-system-index.md`](docs/core/00-system-index.md)
 - **Estándar:** [`docs/core/17-docs-blueprint.md`](docs/core/17-docs-blueprint.md)
 - **Reglas para agentes:** `.cursor/rules/` (siempre activas)
+- **Diseño Cardio:** [`docs/superpowers/specs/2026-07-19-cardionotas-ic-fork-design.md`](docs/superpowers/specs/2026-07-19-cardionotas-ic-fork-design.md)
+
+Upstream R+ (referencia, no releases): [`mausalas99/r-mas`](https://github.com/mausalas99/r-mas).
 
 ## Primeros pasos
 
 ```bash
 # Clonar e instalar
-git clone <repo>
-cd R+
+git clone https://github.com/mausalas99/r-plus-cardio.git
+cd r-plus-cardio
 npm install
 npm run build:ui
 npm start
 ```
 
-Revisa [`README.md`](README.md) para instrucciones detalladas de instalación y desarrollo.
+Revisa [`README.md`](README.md) para instrucciones detalladas de instalación y desarrollo. Puerto local: **3838** (R+ usa 3738).
 
 ## Agentes AI
 

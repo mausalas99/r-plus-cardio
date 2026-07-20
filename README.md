@@ -2,6 +2,9 @@
 
 Fork de R+ orientado al seguimiento intrahospitalario de IC descompensada (descongestión, congestión/POCUS, manejo y hoja IC). Sin LiveSync/LAN en el MVP.
 
+- **Repo:** [mausalas99/r-plus-cardio](https://github.com/mausalas99/r-plus-cardio)
+- **Releases:** [última versión](https://github.com/mausalas99/r-plus-cardio/releases/latest)
+- **Upstream R+:** [mausalas99/r-mas](https://github.com/mausalas99/r-mas) (código de origen; releases independientes)
 - Diseño: [2026-07-19-cardionotas-ic-fork-design](docs/superpowers/specs/2026-07-19-cardionotas-ic-fork-design.md)
 - Plan MVP: [2026-07-19-cardionotas-ic-mvp](docs/superpowers/plans/2026-07-19-cardionotas-ic-mvp.md)
 - Fixture demo IC: `data/demo-patients/demo-ic-seguimiento.json` (+ hoja ejemplo `demo-ic-hoja-ejemplo.docx`)
