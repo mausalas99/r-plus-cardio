@@ -53,7 +53,7 @@ export function needsClinicalSyncModeChoice() {
   if (!isDbMode()) return false;
   if (!isCardionotasLanUiEnabled()) {
     const settings = readRpcSettings();
-    if (!isClinicalSyncModeChosen(settings)) {
+    if (!isClinicalLocalOnlyMode(settings)) {
       setClinicalSyncModeLocalOnly(true);
     }
     return false;
