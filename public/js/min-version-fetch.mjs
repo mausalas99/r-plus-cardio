@@ -1,7 +1,7 @@
 /** Fetch min-version policy: local static file first, then GitHub main. */
 
 const REMOTE_MIN_VERSION_URL =
-  'https://raw.githubusercontent.com/mausalas99/r-mas/main/min-version.json';
+  'https://raw.githubusercontent.com/mausalas99/r-plus-cardio/main/min-version.json';
 
 /**
  * @returns {Promise<{ minVersion: string, message?: string }|null>}

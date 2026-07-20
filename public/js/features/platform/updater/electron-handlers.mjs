@@ -50,7 +50,7 @@ function wireUpdateAvailableActions(version, isDowngrade) {
       link.textContent = 'Ver notas en GitHub';
       link.onclick = function() {
         if (window.electronAPI && window.electronAPI.openExternal) {
-          window.electronAPI.openExternal('https://github.com/mausalas99/r-mas/releases');
+          window.electronAPI.openExternal('https://github.com/mausalas99/r-plus-cardio/releases');
         }
       };
       sec.appendChild(link);

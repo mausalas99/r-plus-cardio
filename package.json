@@ -1,11 +1,12 @@
 {
   "name": "cardionotas",
-  "version": "7.7.1",
+  "version": "1.0.0",
   "description": "R+ Cardio — seguimiento IC descompensada (fork de R+)",
   "main": "main.js",
   "scripts": {
     "build:ui": "node scripts/build-ui.mjs && node scripts/bundle-renderer.mjs",
     "build:equipos-pages": "node scripts/build-equipos-pages.mjs",
+    "render:cardio-icons": "node scripts/render-cardio-icons.mjs",
     "build:ui:check": "node scripts/build-ui.mjs --check && node scripts/bundle-renderer.mjs --check",
     "bundle:renderer": "node scripts/bundle-renderer.mjs",
     "bundle:renderer:prod": "node scripts/bundle-renderer.mjs --prod",
@@ -88,9 +89,9 @@
     "afterPack": "scripts/electron-builder-after-pack.cjs",
     "afterAllArtifactBuild": "scripts/after-all-artifact-build.cjs",
     "artifactName": "${productName}-${version}-${arch}.${ext}",
-    "icon": "AppIcon.icns",
+    "icon": "build/AppIcon.icns",
     "mac": {
-      "icon": "AppIcon.icns",
+      "icon": "build/AppIcon.icns",
       "category": "public.app-category.medical",
       "notarize": true,
       "hardenedRuntime": true,
@@ -135,7 +136,7 @@
     "publish": {
       "provider": "github",
       "owner": "mausalas99",
-      "repo": "r-mas"
+      "repo": "r-plus-cardio"
     },
     "files": [
       "main.js",

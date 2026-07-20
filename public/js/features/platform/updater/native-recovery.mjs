@@ -48,7 +48,7 @@ function populateNativeRecoveryActions() {
     ghBtn.textContent = 'Ver releases en GitHub';
     ghBtn.onclick = function () {
       if (window.electronAPI && window.electronAPI.openExternal) {
-        window.electronAPI.openExternal('https://github.com/mausalas99/r-mas/releases');
+        window.electronAPI.openExternal('https://github.com/mausalas99/r-plus-cardio/releases');
       }
     };
     actions.appendChild(ghBtn);

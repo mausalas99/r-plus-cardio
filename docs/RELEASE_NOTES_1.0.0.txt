@@ -1,0 +1,24 @@
+R+ Cardio 1.0.0 (seguimiento IC descompensada)
+
+Fecha: 2026-07-19
+
+**1.0.0** es la primera release de **R+ Cardio**, fork de R+ orientado al seguimiento
+intrahospitalario de insuficiencia cardíaca descompensada.
+
+## Qué incluye
+
+- **Descongestión** — días de internamiento / descongestión, diuresis y furosemida acumulada (con override manual).
+- **Congestión / POCUS** — checklist diario y serie POCUS en Estado actual.
+- **Manejo** — cuatro fantásticos, otros medicamentos y diuréticos por segmentos de dosis.
+- **Salida** — generar hoja IC (`.docx`) con plantilla institucional fija.
+- **Laboratorio / HC / Eventualidades / Pase local** — piezas útiles de R+ sin LiveSync en el MVP.
+- **Puerto local 3838** — no choca con R+ (3738); appId propio (`com.hospitaluniversitario.cardionotas`).
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-plus-cardio/releases/tag/v1.0.0
+
+- Mac: `R+ Cardio-1.0.0-arm64.dmg`, `R+ Cardio-1.0.0-x64.dmg` (y zip para auto-update).
+- Windows: `R+ Cardio-1.0.0-x64.exe`.
+
+R+ Cardio y R+ pueden coexistir en la misma máquina (distinto `appId` y datos de usuario).

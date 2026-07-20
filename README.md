@@ -4,7 +4,8 @@ Fork de R+ orientado al seguimiento intrahospitalario de IC descompensada (desco
 
 - Diseño: [2026-07-19-cardionotas-ic-fork-design](docs/superpowers/specs/2026-07-19-cardionotas-ic-fork-design.md)
 - Plan MVP: [2026-07-19-cardionotas-ic-mvp](docs/superpowers/plans/2026-07-19-cardionotas-ic-mvp.md)
-- Fixture demo IC: `data/demo-patients/ma-elena-ic-fixture.json`
+- Fixture demo IC: `data/demo-patients/demo-ic-seguimiento.json` (+ hoja ejemplo `demo-ic-hoja-ejemplo.docx`)
+- Importar en app: **Ajustes → Tours → Importar DEMO IC (caso completo)**
 - **Puerto local:** `3838` (R+ usa `3738`) — override con `CARDIONOTAS_HTTP_PORT`
 
 ## Índice
@@ -21,21 +22,21 @@ Fork de R+ orientado al seguimiento intrahospitalario de IC descompensada (desco
 
 ## Instalación (Mac y Windows)
 
-Todo se descarga desde **[Releases — última versión](https://github.com/mausalas99/r-mas/releases/latest)**. No hace falta instalar Python ni Node: los instaladores ya incluyen todo lo necesario para generar los `.docx` (módulos nativos en `lib/doc-generators/`).
+Todo se descarga desde **[Releases — última versión](https://github.com/mausalas99/r-plus-cardio/releases/latest)**. No hace falta instalar Python ni Node: los instaladores ya incluyen todo lo necesario para generar los `.docx` (módulos nativos en `lib/doc-generators/`).
 
 ### Mac
 
 1. Abre la página de *Releases* (enlace de arriba).
 2. Descarga el `.dmg` según tu Mac:
-   - **`R+-<versión>-arm64.dmg`** — Apple Silicon (M1, M2, M3, M4…).
-   - **`R+-<versión>-x64.dmg`** — Mac con procesador Intel.
-3. Abre el `.dmg`, arrastra **R+** a la carpeta **Aplicaciones** y abre la app desde allí.
+   - **`R+ Cardio-<versión>-arm64.dmg`** — Apple Silicon (M1, M2, M3, M4…).
+   - **`R+ Cardio-<versión>-x64.dmg`** — Mac con procesador Intel.
+3. Abre el `.dmg`, arrastra **R+ Cardio** a la carpeta **Aplicaciones** y abre la app desde allí.
 
-> Si macOS dice que no se puede abrir porque el desarrollador no está identificado: clic derecho en **R+** → **Abrir** → confirmar **Abrir**.
+> Si macOS dice que no se puede abrir porque el desarrollador no está identificado: clic derecho en **R+ Cardio** → **Abrir** → confirmar **Abrir**.
 
 ### Windows
 
-1. En la misma página de *Releases*, descarga **`R+-<versión>-x64.exe`**.
+1. En la misma página de *Releases*, descarga **`R+ Cardio-<versión>-x64.exe`**.
 2. Ejecuta el instalador y sigue los pasos.
 
 Instalación silenciosa (`/S`) y códigos de salida del instalador NSIS: [`docs/INSTALLER_EXIT_CODES.md`](docs/INSTALLER_EXIT_CODES.md).
@@ -44,10 +45,20 @@ Instalación silenciosa (`/S`) y códigos de salida del instalador NSIS: [`docs/
 
 ---
 
-**Versión estable actual:** [7.7.1](https://github.com/mausalas99/r-mas/releases/tag/v7.7.1) — en *Releases* verás siempre el instalador más reciente con el número de versión en el nombre del archivo.
+**Versión estable actual:** [1.0.0](https://github.com/mausalas99/r-plus-cardio/releases/tag/v1.0.0) — en *Releases* verás siempre el instalador más reciente con el número de versión en el nombre del archivo.
 
 ---
 
+
+## R+ 1.0.0 (seguimiento IC descompensada)
+
+- **Producto** — Primera release de R+ Cardio (fork de R+); releases en `mausalas99/r-plus-cardio`, independiente de R+.
+- **Descongestión / congestión / POCUS** — Captura diaria en Estado actual con acumulados overrideables.
+- **Manejo** — Fantásticos, otros meds y diuréticos por segmentos de dosis.
+- **Hoja IC** — Export `.docx` con plantilla institucional fija (Salida → Generar hoja IC).
+- **MVP sin LiveSync** — Pase local; puerto **3838** (R+ usa 3738); appId propio.
+
+Notas: `docs/RELEASE_NOTES_1.0.0.txt`.
 
 ## R+ 7.7.1 (receta SOAP ampliada e insulina rescate)
 
@@ -563,22 +574,22 @@ Si prefieres instalar a mano o la versión no está en el catálogo curado, rein
 
 **Pasos:**
 
-1. **Cierra R+ por completo** (en macOS, ⌘Q; no basta con cerrar la ventana).
-2. Abre la página de [Releases](https://github.com/mausalas99/r-mas/releases) y localiza la versión a la que quieres volver (**no uses “Latest”**). Expande **Assets** y descarga el instalador adecuado:
-   - **Mac Apple Silicon (M1/M2/M3/M4):** `R+-x.x.x-arm64.dmg`
-   - **Mac Intel:** `R+-x.x.x-x64.dmg`
-   - **Windows:** `R+-x.x.x-x64.exe`
+1. **Cierra R+ Cardio por completo** (en macOS, ⌘Q; no basta con cerrar la ventana).
+2. Abre la página de [Releases](https://github.com/mausalas99/r-plus-cardio/releases) y localiza la versión a la que quieres volver (**no uses “Latest”**). Expande **Assets** y descarga el instalador adecuado:
+   - **Mac Apple Silicon (M1/M2/M3/M4):** `R+ Cardio-x.x.x-arm64.dmg`
+   - **Mac Intel:** `R+ Cardio-x.x.x-x64.dmg`
+   - **Windows:** `R+ Cardio-x.x.x-x64.exe`
 3. Instala la versión descargada:
-   - **Mac:** abre el `.dmg` y arrastra **R+** a **Aplicaciones**. Si macOS ofrece **Reemplazar**, acéptalo. Si aparece un aviso de firma inválida, elimina R+ desde `Aplicaciones` (a la Papelera) y vuelve a instalar desde el `.dmg` descargado.
+   - **Mac:** abre el `.dmg` y arrastra **R+ Cardio** a **Aplicaciones**. Si macOS ofrece **Reemplazar**, acéptalo. Si aparece un aviso de firma inválida, elimina R+ Cardio desde `Aplicaciones` (a la Papelera) y vuelve a instalar desde el `.dmg` descargado.
    - **Windows:** ejecuta el `.exe` del instalador; por defecto sobrescribe la instalación actual.
-4. Abre R+ y confirma la versión en **Ajustes → Aplicación → Versión**.
+4. Abre R+ Cardio y confirma la versión en **Ajustes → Aplicación → Versión**.
 5. Si la auto-actualización vuelve a proponerte la versión nueva y aún no quieres actualizar, en macOS puedes **esperar 24h** (la app respeta el snooze por versión), o cambiar a canal **Estable** si estabas en **Pre-releases**.
 
 **Datos locales y compatibilidad:**
 
 - Tus datos (pacientes, notas, indicaciones, historial de labs, respaldos JSON, ajustes) están en el `userData` de Electron — abre la carpeta desde **Ajustes → Datos en esta computadora → Abrir carpeta…**. **No se borran** al reinstalar una versión anterior.
 - Si una release documenta un **cambio de formato incompatible**, importa tu respaldo `.json` más reciente desde **Ajustes → Respaldo local → Importar copia de seguridad…** después de reinstalar la versión anterior.
-- En macOS, `electron-updater` requiere misma firma y `appId` (`com.hospitaluniversitario.rplusclinical`) entre versiones. Si cambias manualmente entre una build firmada y otra ad-hoc, es normal que la auto-actualización falle: reinstala desde el `.dmg` para resolverlo.
+- En macOS, `electron-updater` requiere misma firma y `appId` (`com.hospitaluniversitario.cardionotas`) entre versiones. Si cambias manualmente entre una build firmada y otra ad-hoc, es normal que la auto-actualización falle: reinstala desde el `.dmg` para resolverlo.
 
 ---
 

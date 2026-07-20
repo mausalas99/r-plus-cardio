@@ -3,7 +3,7 @@
 var UPDATE_SNOOZE_KEY = 'rplus-update-snooze-until';
 var UPDATE_DISMISS_VER_KEY = 'rplus-update-dismiss-version';
 var UPDATE_TELEMETRY_URL = 'https://example.invalid/r-plus-update';
-var RELEASES_LATEST_URL = 'https://github.com/mausalas99/r-mas/releases/latest';
+var RELEASES_LATEST_URL = 'https://github.com/mausalas99/r-plus-cardio/releases/latest';
 
 var updaterState = {
   pendingUpdaterTargetVersion: null,

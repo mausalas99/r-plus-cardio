@@ -8,10 +8,10 @@ import {
 import { showSettingsPanel } from './features/settings-help/settings-dropdown.mjs';
 import { fetchMinVersionPayload } from './min-version-fetch.mjs';
 
-const RELEASES_PAGE = 'https://github.com/mausalas99/r-mas/releases';
+const RELEASES_PAGE = 'https://github.com/mausalas99/r-plus-cardio/releases';
 
 const GITHUB_RELEASES_API =
-  'https://api.github.com/repos/mausalas99/r-mas/releases?per_page=40';
+  'https://api.github.com/repos/mausalas99/r-plus-cardio/releases?per_page=40';
 
 /**
  * Solo ofrece versiones con release (y artefactos) en GitHub — evita 6.5.1–6.5.3 borradas.

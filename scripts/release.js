@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Release en dos pasos para R+ (mausalas99/r-mas).
+ * Release en dos pasos para R+ Cardio (mausalas99/r-plus-cardio).
  *
  *   npm run release:bump -- 3.4.3
  *   npm run release:bump -- patch|minor|major
@@ -40,7 +40,7 @@ const { ensureElectronPackFiles } = require('./lib/electron-pack-files');
 const { curatedConstName } = require('./lib/release-notes-body');
 
 const ROOT = path.join(__dirname, '..');
-const REPO = 'mausalas99/r-mas';
+const REPO = 'mausalas99/r-plus-cardio';
 const { allReleaseArtifactNames } = require('./lib/artifact-names');
 const APP_JS = path.join(ROOT, 'public/js/app.js');
 const RELEASE_NOTES_HIGHLIGHTS = path.join(ROOT, 'data/release-notes-highlights.mjs');
@@ -172,8 +172,8 @@ TODO: resumen en una o dos frases.
 
 Descarga desde: https://github.com/${REPO}/releases/tag/v${version}
 
-- Mac: \`R+-${version}-arm64.dmg\`, \`R+-${version}-x64.dmg\` (y zip para auto-update).
-- Windows: \`R+-${version}-x64.exe\`.
+- Mac: \`R+ Cardio-${version}-arm64.dmg\`, \`R+ Cardio-${version}-x64.dmg\` (y zip para auto-update).
+- Windows: \`R+ Cardio-${version}-x64.exe\`.
 
 Tras el build local: \`npm run build:mac\` / \`npm run build:win\` (incluye write-release-yml.js).
 `;

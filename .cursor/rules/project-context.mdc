@@ -136,6 +136,7 @@ Packaged files list: `npm run release:sync-pack` updates electron-builder `build
 
 Maintained incrementally — see `sync-context-on-commit.mdc`. Max ~20 entries.
 
+- **2026-07-19** `cardio-release-repo`: R+ Cardio 1.0.0 publishes to `mausalas99/r-plus-cardio` (separate from `r-mas`); updater/downgrade URLs + `stable-versions`/`min-version`.
 - **2026-07-19** `cardio-ic-fixture`: Ma.Elena export smoke fixture + README Cardionotas links; `data/demo-patients/ma-elena-ic-fixture.json`, `ic-hoja-fixture-smoke.test.mjs`.
 - **2026-07-19** `cardio-ic-export`: Salida **Generar hoja IC** (as-of date) via `/generate-ic-hoja` + IPC `ic-hoja`; `features/cardio/ic-hoja-export.mjs`, `doc-export-service.js`.
 - **2026-07-19** `cardio-ic-hoja`: fixed-schema IC seguimiento docx filler (OOXML sentinels) + export payload; `lib/cardio/ic-export-payload.mjs`, `lib/doc-generators/ic-hoja*.js`, `templates/ic-seguimiento.docx`.
@@ -156,4 +157,3 @@ Maintained incrementally — see `sync-context-on-commit.mdc`. Max ~20 entries.
 - **2026-07-01** `ipad-lan-scope`: iPad conserva scope LAN sin SQLCipher; ops clínicas en móvil; sala Interconsultas por equipo; `scope-db.mjs`, `room-clinical-ops.mjs`, `patients-clinical-filter.mjs`; `room.test` exit fix en wrapper Electron.
 - **2026-06-27** `release-7.5.4`: iPad EA signos → LAN (Guardar push), sync-bundle 16mb, merge monitoreo por id, recuperación outbox; `vitals-recovery.mjs`, `server-http-security.js`.
 - **2026-06-27** `release-7.5.3`: repositorio intrahospitalario — registro + rango fechas, PDF→SOME, import híbrido silencioso/revisión; `lib/lab-repo/`, `lab-repo-import*.mjs`, IPC `lab-repo-fetch`.
-- **2026-06-26** `release-7.5.2`: EA signos en filas + modal historial, SOAP/copiar última lectura, PICO febril ≤5 días, SOME ayuno + traqueostomía; `estado-actual-panel-snapshot-*`, `estado-actual-vital-history-modal.mjs`, `med-receta-parse.mjs`.

@@ -1538,6 +1538,24 @@ var RELEASE_NOTES_769 = [
   },
 ];
 
+var RELEASE_NOTES_100 = [
+  {
+    title: 'R+ Cardio 1.0',
+    body:
+      'Primera release del fork de cardiología: descongestión, congestión/POCUS, Manejo y hoja IC. Releases en <strong>mausalas99/r-plus-cardio</strong> (independiente de R+).',
+  },
+  {
+    title: 'Hoja IC fija',
+    body:
+      'Salida → <strong>Generar hoja IC</strong> rellena la plantilla institucional sin reordenar secciones.',
+  },
+  {
+    title: 'Sin LiveSync en MVP',
+    body:
+      'Pase local; puerto <strong>3838</strong>. Coexiste con R+ (appId y datos de usuario separados).',
+  },
+];
+
 var RELEASE_NOTES_771 = [
   {
     title: 'SOAP — más categorías desde receta',
@@ -1567,9 +1585,10 @@ var RELEASE_NOTES_771 = [
 ];
 
 /** Fallback when a version has no curated entry (keep aligned with latest stable). */
-export var RELEASE_NOTES_HIGHLIGHTS_DEFAULT = RELEASE_NOTES_771;
+export var RELEASE_NOTES_HIGHLIGHTS_DEFAULT = RELEASE_NOTES_100;
 
 export var RELEASE_NOTES_HIGHLIGHTS = {
+  '1.0.0': RELEASE_NOTES_100,
   '7.7.1': RELEASE_NOTES_771,
   '7.7.0': RELEASE_NOTES_770,
   '7.6.9': RELEASE_NOTES_769,
