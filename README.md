@@ -1,6 +1,10 @@
 # Cardionotas
 
-Fork de R+ para seguimiento de IC descompensada intrahospitalaria. Diseño: [cardionotas-ic-fork-design](docs/superpowers/specs/2026-07-19-cardionotas-ic-fork-design.md).
+Fork de R+ orientado al seguimiento intrahospitalario de IC descompensada (descongestión, congestión/POCUS, manejo y hoja IC).
+
+- Diseño: [2026-07-19-cardionotas-ic-fork-design](docs/superpowers/specs/2026-07-19-cardionotas-ic-fork-design.md)
+- Plan MVP: [2026-07-19-cardionotas-ic-mvp](docs/superpowers/plans/2026-07-19-cardionotas-ic-mvp.md)
+- Fixture demo IC: `data/demo-patients/ma-elena-ic-fixture.json`
 
 ## Índice
 

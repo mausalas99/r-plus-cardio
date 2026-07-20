@@ -95,7 +95,7 @@ docs/
 | Debt metrics | `scripts/metrics/` (`lint-tier1.mjs`, `check.mjs`, `boot-graph.mjs`, `baseline.json`); `npm run lint:tier1` (changed paths), `npm run metrics:check` |
 | Onboarding / tour | `clinical-onboarding*.mjs`, `tour-targets.mjs`, `features/settings-help/` (tours, help, release notes), barrel `settings-help.mjs` |
 | UI shell / pase board | `app-shell.mjs` (chrome/toast/modals), `clinical-quick-export.mjs`, `document-export-client.mjs`, `features/pase-board.mjs`, `public/styles/pase-board.css` |
-| Cardionotas IC domain | `lib/cardio/{descongestion,congestion,med-segments,patient-cardio,ic-export-payload}.mjs`, `features/cardio/{cardionotas-gates,manejo-panel,manejo-panel-rows,manejo-panel-html,descongestion-panel,congestion-panel,ic-hoja-export}.mjs`, IC hoja `lib/doc-generators/ic-hoja*.js` + `templates/ic-seguimiento.docx` |
+| Cardionotas IC domain | `lib/cardio/{descongestion,congestion,med-segments,patient-cardio,ic-export-payload}.mjs`, `features/cardio/{cardionotas-gates,manejo-panel,manejo-panel-rows,manejo-panel-html,descongestion-panel,congestion-panel,ic-hoja-export}.mjs`, IC hoja `lib/doc-generators/ic-hoja*.js` + `templates/ic-seguimiento.docx`; fixture `data/demo-patients/ma-elena-ic-fixture.json` |
 
 ---
 
@@ -136,6 +136,7 @@ Packaged files list: `npm run release:sync-pack` updates electron-builder `build
 
 Maintained incrementally — see `sync-context-on-commit.mdc`. Max ~20 entries.
 
+- **2026-07-19** `cardio-ic-fixture`: Ma.Elena export smoke fixture + README Cardionotas links; `data/demo-patients/ma-elena-ic-fixture.json`, `ic-hoja-fixture-smoke.test.mjs`.
 - **2026-07-19** `cardio-ic-export`: Salida **Generar hoja IC** (as-of date) via `/generate-ic-hoja` + IPC `ic-hoja`; `features/cardio/ic-hoja-export.mjs`, `doc-export-service.js`.
 - **2026-07-19** `cardio-ic-hoja`: fixed-schema IC seguimiento docx filler (OOXML sentinels) + export payload; `lib/cardio/ic-export-payload.mjs`, `lib/doc-generators/ic-hoja*.js`, `templates/ic-seguimiento.docx`.
 - **2026-07-19** `cardio-manejo-tables`: Fantásticos + dose-segment tables (otros/diuréticos) + medCatalog repo; `features/cardio/manejo-panel*.mjs`.
@@ -156,4 +157,3 @@ Maintained incrementally — see `sync-context-on-commit.mdc`. Max ~20 entries.
 - **2026-06-27** `release-7.5.4`: iPad EA signos → LAN (Guardar push), sync-bundle 16mb, merge monitoreo por id, recuperación outbox; `vitals-recovery.mjs`, `server-http-security.js`.
 - **2026-06-27** `release-7.5.3`: repositorio intrahospitalario — registro + rango fechas, PDF→SOME, import híbrido silencioso/revisión; `lib/lab-repo/`, `lab-repo-import*.mjs`, IPC `lab-repo-fetch`.
 - **2026-06-26** `release-7.5.2`: EA signos en filas + modal historial, SOAP/copiar última lectura, PICO febril ≤5 días, SOME ayuno + traqueostomía; `estado-actual-panel-snapshot-*`, `estado-actual-vital-history-modal.mjs`, `med-receta-parse.mjs`.
-- **2026-06-25** `release-7.5.1`: push equipos LAN/cloud, eTFG desde expediente, labs masivos ventana 2 h, UI Rams, SQLCipher v20; `lib/equipos/equipos-push-*`, `labs-egfr.mjs`, `public/tokens.css`.
