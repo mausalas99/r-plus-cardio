@@ -1,0 +1,26 @@
+R+ Cardio 1.0.1 (parche — min-version Cardio)
+=============================================
+
+Fecha: 2026-07-20
+
+## Resumen
+
+Corrige el modal **Actualización requerida** que bloqueaba R+ Cardio 1.0.0
+pidiendo mínimo **v6.4.0** y mencionando LAN — resto del fork R+, no política Cardio.
+
+## Nuevo / mejorado
+
+- **`public/min-version.json`** — Alineado con el policy Cardio (`minVersion` 1.0.0;
+  mensaje sin LAN).
+- **`npm run build:ui`** — Copia el `min-version.json` de la raíz a `public/` para
+  que el empaquetado no vuelva a desfasarse.
+
+## Instalación
+
+Descarga desde: https://github.com/mausalas99/r-plus-cardio/releases/tag/v1.0.1
+
+- Mac: `R+ Cardio-1.0.1-arm64.dmg`, `R+ Cardio-1.0.1-x64.dmg` (y zip para auto-update).
+- Windows: `R+ Cardio-1.0.1-x64.exe`.
+
+Si ya tienes 1.0.0 abierto con el modal: usa **Buscar actualización** o instala
+desde Releases. R+ Cardio y R+ pueden coexistir (distinto `appId`).

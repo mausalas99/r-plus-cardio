@@ -1584,10 +1584,24 @@ var RELEASE_NOTES_771 = [
   },
 ];
 
+var RELEASE_NOTES_101 = [
+  {
+    title: 'Sin modal falso de 6.4.0',
+    body:
+      'Corrige el bloqueo que pedía R+ <strong>6.4.0</strong> / LAN; Cardio usa su propio mínimo <strong>1.0.0</strong>.',
+  },
+  {
+    title: 'Policy empaquetada al día',
+    body:
+      '<code>build:ui</code> sincroniza <code>min-version.json</code> raíz → <code>public/</code> para que no vuelva a derivar.',
+  },
+];
+
 /** Fallback when a version has no curated entry (keep aligned with latest stable). */
-export var RELEASE_NOTES_HIGHLIGHTS_DEFAULT = RELEASE_NOTES_100;
+export var RELEASE_NOTES_HIGHLIGHTS_DEFAULT = RELEASE_NOTES_101;
 
 export var RELEASE_NOTES_HIGHLIGHTS = {
+  '1.0.1': RELEASE_NOTES_101,
   '1.0.0': RELEASE_NOTES_100,
   '7.7.1': RELEASE_NOTES_771,
   '7.7.0': RELEASE_NOTES_770,

@@ -45,6 +45,27 @@ export function buildUi(srcPath) {
   return GENERATED_BANNER + content;
 }
 
+/** Keep packaged `/min-version.json` identical to the repo-root policy file. */
+export function syncMinVersionPolicy(rootDir = process.cwd(), { check = false } = {}) {
+  const src = path.join(rootDir, 'min-version.json');
+  const dest = path.join(rootDir, 'public', 'min-version.json');
+  if (!fs.existsSync(src)) {
+    throw new Error('missing min-version.json at repo root');
+  }
+  const next = fs.readFileSync(src, 'utf8');
+  if (check) {
+    const onDisk = fs.existsSync(dest) ? fs.readFileSync(dest, 'utf8') : '';
+    if (onDisk !== next) {
+      throw new Error('public/min-version.json out of date; run npm run build:ui');
+    }
+    return { changed: false };
+  }
+  const prev = fs.existsSync(dest) ? fs.readFileSync(dest, 'utf8') : null;
+  if (prev === next) return { changed: false };
+  fs.writeFileSync(dest, next);
+  return { changed: true };
+}
+
 const isMain = process.argv[1] === fileURLToPath(import.meta.url);
 if (isMain) {
   const check = process.argv.includes('--check');
@@ -53,6 +74,12 @@ if (isMain) {
   const dest = path.join(publicDir, 'index.html');
   if (!fs.existsSync(src)) {
     console.error('missing public/index.src.html');
+    process.exit(1);
+  }
+  try {
+    syncMinVersionPolicy(process.cwd(), { check });
+  } catch (err) {
+    console.error(err && err.message ? err.message : err);
     process.exit(1);
   }
   const built = buildUi(src);
@@ -66,4 +93,5 @@ if (isMain) {
   }
   fs.writeFileSync(dest, built);
   console.log('wrote public/index.html');
+  console.log('synced public/min-version.json');
 }

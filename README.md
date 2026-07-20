@@ -48,10 +48,17 @@ Instalación silenciosa (`/S`) y códigos de salida del instalador NSIS: [`docs/
 
 ---
 
-**Versión estable actual:** [1.0.0](https://github.com/mausalas99/r-plus-cardio/releases/tag/v1.0.0) — en *Releases* verás siempre el instalador más reciente con el número de versión en el nombre del archivo.
+**Versión estable actual:** [1.0.1](https://github.com/mausalas99/r-plus-cardio/releases/tag/v1.0.1) — en *Releases* verás siempre el instalador más reciente con el número de versión en el nombre del archivo.
 
 ---
 
+
+## R+ 1.0.1 (parche — min-version Cardio)
+
+- **Min-version** — Corrige el modal bloqueante que pedía R+ **6.4.0** / LAN: `public/min-version.json` quedó desfasado del policy Cardio (`1.0.0`).
+- **Build** — `build:ui` sincroniza el policy raíz → `public/min-version.json` para que no vuelva a derivar.
+
+Notas: `docs/RELEASE_NOTES_1.0.1.txt`.
 
 ## R+ 1.0.0 (seguimiento IC descompensada)
 
