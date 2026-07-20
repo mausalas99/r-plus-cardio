@@ -20,21 +20,21 @@ function mockStorage() {
 
 test('markGuardiaV7ChapterComplete reports wasNew only on first completion', () => {
   const storage = mockStorage();
-  const first = markGuardiaV7ChapterComplete('ch-guardia-modo', storage);
+  const first = markGuardiaV7ChapterComplete('ch-cardio-labs', storage);
   assert.equal(first.wasNew, true);
-  assert.deepEqual(first.completedChapters, ['ch-guardia-modo']);
+  assert.deepEqual(first.completedChapters, ['ch-cardio-labs']);
 
-  const second = markGuardiaV7ChapterComplete('ch-guardia-modo', storage);
+  const second = markGuardiaV7ChapterComplete('ch-cardio-labs', storage);
   assert.equal(second.wasNew, false);
 });
 
 test('resetGuardiaV7Chapter removes chapter from progress', () => {
   const storage = mockStorage();
-  markGuardiaV7ChapterComplete('ch-guardia-modo', storage);
-  markGuardiaV7ChapterComplete('ch-guardia-entrega', storage);
-  resetGuardiaV7Chapter('ch-guardia-modo', storage);
+  markGuardiaV7ChapterComplete('ch-cardio-labs', storage);
+  markGuardiaV7ChapterComplete('ch-cardio-manejo', storage);
+  resetGuardiaV7Chapter('ch-cardio-labs', storage);
   const p = loadGuardiaV7Progress(storage);
-  assert.deepEqual(p.completedChapters, ['ch-guardia-entrega']);
+  assert.deepEqual(p.completedChapters, ['ch-cardio-manejo']);
   assert.equal(isGuardiaV7TrackComplete(storage), false);
 });
 
@@ -45,7 +45,7 @@ test('guardiaV7ProgressSummary reports chapter completion percent', () => {
   assert.ok(empty.total > 0);
   assert.equal(empty.percent, 0);
 
-  markGuardiaV7ChapterComplete('ch-guardia-modo', storage);
+  markGuardiaV7ChapterComplete('ch-cardio-labs', storage);
   const partial = guardiaV7ProgressSummary(storage);
   assert.equal(partial.completed, 1);
   assert.ok(partial.percent > 0);
@@ -53,6 +53,6 @@ test('guardiaV7ProgressSummary reports chapter completion percent', () => {
 
 test('progress round-trips through storage key', () => {
   const storage = mockStorage();
-  markGuardiaV7ChapterComplete('ch-guardia-modo', storage);
+  markGuardiaV7ChapterComplete('ch-cardio-labs', storage);
   assert.ok(storage.getItem(GUARDIA_V7_PROGRESS_LS_KEY));
 });

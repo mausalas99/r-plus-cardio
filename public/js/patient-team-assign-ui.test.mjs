@@ -35,18 +35,14 @@ describe('patient-team-assign-ui', () => {
     assert.equal(defaultPatientRegistrationTeamId(user), 't2');
   });
 
-  it('shows team select with current team when patient is assigned', () => {
+  it('hides team assign UI in R+ Cardio (no LAN teams)', () => {
     const html = buildPatientTeamAssignSectionHtml({ id: 'p1' });
-    assert.match(html, /patient-team-assign-select/);
-    assert.match(html, /Equipo A/);
-    assert.match(html, /Cambiar equipo/);
-    assert.doesNotMatch(html, /field-readonly/);
+    assert.equal(html, '');
   });
 
-  it('shows assign select when patient has no team and user joined teams', () => {
+  it('hides assign select for unassigned patient in R+ Cardio', () => {
     const html = buildPatientTeamAssignSectionHtml({ id: 'p2' });
-    assert.match(html, /patient-team-assign-select/);
-    assert.match(html, /Asignar a equipo/);
+    assert.equal(html, '');
   });
 
   it('activePatientTeamId resolves latest active assignment', () => {

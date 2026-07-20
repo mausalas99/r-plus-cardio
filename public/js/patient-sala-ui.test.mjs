@@ -18,10 +18,8 @@ describe('patient-sala-ui', () => {
     assert.equal(resolveRegistrationSalaDefault({ sala: 'UX' }, '', []), 'UX');
   });
 
-  it('buildPatientSalaFieldHtml includes selected sala', () => {
+  it('buildPatientSalaFieldHtml is empty in R+ Cardio (no LAN salas)', () => {
     const html = buildPatientSalaFieldHtml({ sala: 'UX' });
-    assert.match(html, /patient-sala-select/);
-    assert.match(html, /value="UX" selected/);
-    assert.match(html, /Interconsultas/);
+    assert.equal(html, '');
   });
 });
