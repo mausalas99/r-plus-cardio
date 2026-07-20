@@ -27,9 +27,35 @@ import {
   syncHideClinicoTabUI,
   syncHideListadoProblemasAiPromptUI,
 } from "./profile-prefs.mjs";
+import { isCardionotasLanUiEnabled } from "./cardio/cardionotas-gates.mjs";
+import { applyCardionotasStreamlineChrome } from "./cardio/cardionotas-chrome.mjs";
 
 /** Oculta secciones de Sala / clínica según modo y base de datos. */
 export function syncProfileModalLayout() {
+  applyCardionotasStreamlineChrome();
+  if (!isCardionotasLanUiEnabled()) {
+    var salidaOff = document.getElementById("profile-salida-section");
+    var bridgeOff = document.getElementById("profile-clinical-bridge");
+    var modeOff = document.querySelector(".profile-block--mode");
+    var formatsOff = document.querySelector(".profile-block--formats");
+    if (salidaOff) {
+      salidaOff.hidden = true;
+      salidaOff.style.display = "none";
+    }
+    if (bridgeOff) {
+      bridgeOff.hidden = true;
+      bridgeOff.style.display = "none";
+    }
+    if (modeOff instanceof HTMLElement) {
+      modeOff.hidden = true;
+      modeOff.style.display = "none";
+    }
+    if (formatsOff instanceof HTMLElement) {
+      formatsOff.hidden = true;
+      formatsOff.style.display = "none";
+    }
+    return;
+  }
   var st = settingsRef();
   var sala = isModeSala(st);
   var salida = document.getElementById("profile-salida-section");

@@ -11,6 +11,8 @@ import { storage } from '../storage.js';
 import { subscribeRoomSyncPhase } from '../lan-sync-state.mjs';
 import { buildClinicalRotationEntryStatus } from './clinical-rotation-entry-status.mjs';
 import { isLanSkipShiftPin } from '../lan-shift-pin-bypass.mjs';
+import { isCardionotasLanUiEnabled } from './cardio/cardionotas-gates.mjs';
+import { applyCardionotasStreamlineChrome } from './cardio/cardionotas-chrome.mjs';
 
 let entryControlsWired = false;
 
@@ -107,6 +109,12 @@ function syncLanConnectCta(show) {
 }
 
 export async function openMiRotacion() {
+  if (!isCardionotasLanUiEnabled()) {
+    if (typeof window.showToast === 'function') {
+      window.showToast('Mi rotación y equipos LAN no forman parte de R+ Cardio.', 'info');
+    }
+    return;
+  }
   if (!isDbMode()) {
     if (typeof window.showToast === 'function') {
       window.showToast('Mi rotación requiere la base de datos clínica.', 'info');
@@ -136,9 +144,13 @@ function buildEntryStatus() {
 }
 
 export function syncClinicalRotationEntryChrome() {
+  applyCardionotasStreamlineChrome();
   const rotationSection = document.getElementById('clinical-rotation-section');
   const show =
-    isDbMode() && !isClinicalLocalOnlyMode(readRpcSettings()) && !isGuardiaMode();
+    isCardionotasLanUiEnabled() &&
+    isDbMode() &&
+    !isClinicalLocalOnlyMode(readRpcSettings()) &&
+    !isGuardiaMode();
 
   if (rotationSection) rotationSection.hidden = !show;
   if (!show) {

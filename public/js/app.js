@@ -390,6 +390,9 @@ function runDomBootAfterState() {
     }
     loadSettings();
     syncWorkContextChrome();
+    void import('./features/cardio/cardionotas-chrome.mjs').then(function (mod) {
+      mod.applyCardionotasStreamlineChrome();
+    });
     syncMainAppTabA11y(activeAppTab);
     renderInnerTabs();
     initTabBarMotion();
@@ -400,7 +403,7 @@ function runDomBootAfterState() {
     ) {
       setTimeout(function () {
         try {
-          showToast('R+ Cardio — Sala. Cambia en Mi Perfil → Aplicación.');
+          showToast('R+ Cardio listo. Firma y plantillas en Mi Perfil.');
         } catch (_e) {
           void _e;
         }

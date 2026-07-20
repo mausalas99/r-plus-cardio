@@ -68,6 +68,8 @@ function startOnboarding(branch, opts) {
   if (opts.resumeStepId) resetTourUiBeforeResume();
   tourState.guidedTourBranch = resolveTourBranch(branch);
   var isGuardiaV7 = tourState.guidedTourBranch === 'guardia-v7';
+  var isCardioTrack =
+    tourState.guidedTourBranch === 'quick-route' || tourState.guidedTourBranch === 'guardia-v7';
   if (!opts.resumeStepId) {
     tourState.guidedTourChapterScope = null;
     tourState.guidedTourModuleOnly = false;
@@ -84,11 +86,25 @@ function startOnboarding(branch, opts) {
     publishTourGuardContext();
     if (opts.resumeStepId) persistTourProgressDebounced();
   }
-  if (opts.resumeStepId) {
-    setTimeout(finishTourStart, 0);
-  } else {
-    finishTourStart();
+  function afterOptionalIcSeed() {
+    if (opts.resumeStepId) {
+      setTimeout(finishTourStart, 0);
+    } else {
+      finishTourStart();
+    }
   }
+  if (isCardioTrack) {
+    void import('./tour-ic-demo-seed.mjs')
+      .then(function (mod) {
+        if (typeof mod.ensureTourIcDemoPatientActive === 'function') {
+          return mod.ensureTourIcDemoPatientActive();
+        }
+        return false;
+      })
+      .finally(afterOptionalIcSeed);
+    return;
+  }
+  afterOptionalIcSeed();
 }
 
 function findTourDemoBlockForRegistro(blocks, registro) {

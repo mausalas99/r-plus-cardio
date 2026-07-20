@@ -64,12 +64,12 @@ var SETTINGS_MINI_TOUR_STEPS = [
 var LAB_MINI_TOUR_STEPS = [
   {
     badge: 'Laboratorio · pegar',
-    body: 'Estás en la pestaña <strong>Laboratorio</strong>. Pega el reporte del laboratorio en el cuadro de texto. R+ reconoce biometría, química, electrolitos, gasometría, pruebas hepáticas y más.',
+    body: 'Estás en la pestaña <strong>Laboratorio</strong>. Pega el reporte del laboratorio en el cuadro de texto. R+ Cardio reconoce biometría, química, electrolitos, gasometría, pruebas hepáticas y más.',
     before: function(){ rt.switchAppTab('lab'); }
   },
   {
     badge: 'Laboratorio · procesar',
-    body: 'Pulsa <strong>Procesar</strong>: R+ genera diagramas automáticos (Gamble, BH, Química, Coagulación…) y una tabla de resultados con los valores alterados resaltados en rojo.',
+    body: 'Pulsa <strong>Procesar</strong>: R+ Cardio genera diagramas automáticos (Gamble, BH, Química, Coagulación…) y una tabla de resultados con los valores alterados resaltados en rojo.',
     before: function(){ rt.switchAppTab('lab'); }
   },
   {
@@ -175,8 +175,10 @@ function startTourModule(chapterId) {
     return;
   }
   var branch =
-    cid.indexOf('ch-guardia-') === 0 ? 'guardia-v7'
-      : cid.indexOf('ch-ic') === 0 ? 'interconsulta'
+    cid.indexOf('ch-cardio-') === 0 || cid.indexOf('ch-guardia-') === 0
+      ? 'guardia-v7'
+      : cid.indexOf('ch-ic') === 0
+        ? 'interconsulta'
         : 'sala';
   var stepId = getFirstStepIdForChapter(chapterId, branch);
   if (!stepId) return;

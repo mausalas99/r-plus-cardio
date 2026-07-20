@@ -50,6 +50,31 @@ function copyImportClinicalData(patientId, entry) {
   else delete medPharmProfileByPatient[patientId];
 }
 
+/** IC / HC fields stored on the patient object (Cardionotas + Sala). */
+function mergePatientClinicalBlobFromImported(target, source) {
+  if (!target || !source || typeof source !== 'object') return;
+  var keys = [
+    'cardio',
+    'historiaClinica',
+    'eventualidades',
+    'icLabs',
+    'fenotipo',
+    'etiologia',
+    'residente',
+    'fimiFecha',
+    'diagnosticos',
+    'ekg',
+  ];
+  keys.forEach(function (key) {
+    if (!(key in source) || source[key] == null) return;
+    try {
+      target[key] = JSON.parse(JSON.stringify(source[key]));
+    } catch (_e) {
+      target[key] = source[key];
+    }
+  });
+}
+
 function applyImportOverwrite(existing, entry) {
   existing.nombre = entry.patient.nombre || existing.nombre;
   existing.edad = entry.patient.edad || existing.edad;
@@ -63,6 +88,7 @@ function applyImportOverwrite(existing, entry) {
   mergePatientRegistrationMeta(existing, entry.patient);
   existing.registro = entry.patient.registro || existing.registro;
   mergePatientMonitoreoFromImported(existing, entry.patient);
+  mergePatientClinicalBlobFromImported(existing, entry.patient);
   copyImportClinicalData(existing.id, entry);
   return existing.id;
 }
@@ -84,6 +110,7 @@ function applyImportDuplicate(entry) {
   mergePatientMonitoreoFromImported(newPatient, entry.patient);
   mergeCensoPatientFields(newPatient, entry.patient);
   mergePatientRegistrationMeta(newPatient, entry.patient);
+  mergePatientClinicalBlobFromImported(newPatient, entry.patient);
   patients.unshift(newPatient);
   copyImportClinicalData(newId, entry);
   return newId;

@@ -28,8 +28,13 @@ import {
   restoreEaPanelUiState,
 } from './estado-actual-panel-clinico.mjs';
 import { syncEaCopyFab } from './estado-actual-panel-actions.mjs';
-import { mountDescongestionPanel } from './cardio/descongestion-panel.mjs';
+import { mountDescongestionPanel, resolveClinicalAsOfYmd } from './cardio/descongestion-panel.mjs';
 import { mountCongestionPanel } from './cardio/congestion-panel.mjs';
+import { getPocusDay } from '../../../lib/cardio/congestion.mjs';
+import {
+  isDemoIcPatient,
+  hydrateDemoIcPatientFromBundle,
+} from './cardio/demo-ic-hydrate.mjs';
 
 /** Slot above vitals for IC descongestión + congestión/POCUS. */
 var EA_CARDIO_IC_SLOT_HTML = '<div id="ea-cardio-ic" class="ea-cardio-ic"></div>';
@@ -41,14 +46,26 @@ var EA_CARDIO_IC_SLOT_HTML = '<div id="ea-cardio-ic" class="ea-cardio-ic"></div>
 export function mountEaCardioIcBlocks(mount, patient) {
   var host = mount && mount.querySelector('#ea-cardio-ic');
   if (!host || !patient) return;
+  if (isDemoIcPatient(patient)) {
+    if (hydrateDemoIcPatientFromBundle(patient)) {
+      saveState({ immediate: true });
+    }
+  }
   var dayEl = host.querySelector('[data-ea-cardio-pocus-day]');
-  var keepDay = dayEl && dayEl.value ? String(dayEl.value) : '';
+  var keepDay = dayEl && dayEl.value ? String(dayEl.value).trim() : '';
+  var clinicalDay = resolveClinicalAsOfYmd(patient);
+  /** @type {any} */
+  var cardio = patient.cardio;
+  var pocus = cardio && Array.isArray(cardio.pocusByDay) ? cardio.pocusByDay : [];
+  // Prefer keepDay only when that day already has POCUS; otherwise clinical as-of
+  // (avoids sticking on empty "today" after tour seed / remount).
+  var day = keepDay && getPocusDay(pocus, keepDay) ? keepDay : clinicalDay || keepDay || undefined;
   host.innerHTML =
     '<div data-ea-cardio-descongestion-host></div>' +
     '<div data-ea-cardio-congestion-host></div>';
   mountDescongestionPanel(host.querySelector('[data-ea-cardio-descongestion-host]'), patient);
   mountCongestionPanel(host.querySelector('[data-ea-cardio-congestion-host]'), patient, {
-    day: keepDay || undefined,
+    day: day,
   });
 }
 

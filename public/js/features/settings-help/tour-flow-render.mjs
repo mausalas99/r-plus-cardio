@@ -33,17 +33,11 @@ function resetTourNextButton(nextBtn) {
 
 function renderQuickRouteStepCopy(bodyEl, nextBtn) {
   var id = tourState.tourStepId;
-  if (id === 'map_lab_teaser') {
+  if (id === 'cardio_demo_intro') {
     bodyEl.innerHTML =
-      '<p style="margin:0;line-height:1.5;">Ruta rápida: primero <strong>laboratorio</strong>. El cuadro trae <strong>DEMO PÉREZ</strong> y <strong>DEMO GARCÍA</strong>. En el siguiente paso pulsa <strong>Procesar</strong> y agrega ambos al censo.</p>';
+      '<p style="margin:0;line-height:1.5;"><strong>Ruta rápida IC:</strong> ya está el caso completo <strong>Rosa María Delgado Vázquez</strong> en el censo (descongestión, POCUS, Manejo, labs).</p>' +
+      '<p style="margin:10px 0 0;font-size:13px;color:var(--text-muted);">Pulsa <strong>Siguiente</strong> — no hace falta procesar DEMO PÉREZ ni DEMO GARCÍA.</p>';
     nextBtn.textContent = 'Siguiente';
-    return true;
-  }
-  if (id === 'lab_parse') {
-    bodyEl.innerHTML =
-      '<p style="margin:0;line-height:1.5;">Pulsa <strong>Procesar</strong> y agrega ambos pacientes demo al censo.</p>' +
-      '<p style="margin:10px 0 0;font-size:13px;color:var(--text-muted);">Sin <strong>Siguiente</strong> hasta que ambos tengan laboratorio en historial.</p>';
-    nextBtn.style.display = 'none';
     return true;
   }
   if (id.indexOf('gv7_') === 0) {
@@ -51,6 +45,7 @@ function renderQuickRouteStepCopy(bodyEl, nextBtn) {
     nextBtn.textContent = 'Siguiente';
     return true;
   }
+  // Cardio quick-route steps reuse Fundamentos copy (descongestión, Manejo, hoja IC).
   return false;
 }
 
@@ -66,14 +61,14 @@ function renderTourDockBadge(tourBranch, prog, idx, total) {
   }
   if (tourBranch === 'guardia-v7') {
     badge.innerHTML =
-      '<span class="tour-dock-badge-line tour-dock-badge-kicker">Guardia 7.x</span>' +
+      '<span class="tour-dock-badge-line tour-dock-badge-kicker">R+ Cardio</span>' +
       '<span class="tour-dock-badge-line tour-dock-badge-module">Módulo ' +
       prog.chapterIndex + '/5 · ' + escapeTourHtml(prog.chapterTitle) + '</span>' +
       '<span class="tour-dock-badge-line tour-dock-badge-step">Paso ' +
       prog.stepInChapter + ' de ' + prog.chapterSteps + '</span>';
     return;
   }
-  var branchLabel = tourBranch === 'interconsulta' ? 'Interconsulta' : 'Sala';
+  var branchLabel = 'R+ Cardio';
   var sub =
     'Cap. ' + prog.chapterIndex + '/' + prog.chapterCount + ' · ' + prog.chapterTitle +
     ' · paso ' + prog.stepInChapter + '/' + prog.chapterSteps;
@@ -99,7 +94,7 @@ function applyTourStepUserActionGate(nextBtn) {
 
 function renderQuickRouteWrap(bodyEl, nextBtn, prevBtn) {
   bodyEl.innerHTML =
-    '<p style="margin:0;line-height:1.5;">Listo. Explora más en <strong>Aprender R+</strong>: módulos de guardia 7.x o el tutorial completo en <strong>Fundamentos</strong>.</p>';
+    '<p style="margin:0;line-height:1.5;">Listo. Explora más en <strong>Aprender R+ Cardio</strong>: módulos cortos o el tutorial completo en <strong>Fundamentos</strong>.</p>';
   nextBtn.textContent = 'Finalizar';
   nextBtn.style.display = '';
   nextBtn.setAttribute('onclick', 'guidedTourFinish()');
@@ -117,12 +112,17 @@ function renderQuickRouteBranch(bodyEl, nextBtn, prevBtn) {
 }
 
 function renderGuardiaV7Branch(bodyEl, nextBtn, prevBtn) {
-  bodyEl.innerHTML = getGuardiaV7StepHtml(tourState.tourStepId);
+  var id = tourState.tourStepId;
+  if (String(id || '').indexOf('gv7_') === 0) {
+    bodyEl.innerHTML = getGuardiaV7StepHtml(id);
+  } else {
+    renderFundamentosStep(id, bodyEl, nextBtn);
+  }
   var gv7Steps = getGuidedTourSteps();
-  var gv7Idx = gv7Steps.indexOf(tourState.tourStepId);
+  var gv7Idx = gv7Steps.indexOf(id);
   nextBtn.textContent =
     gv7Idx >= 0 && gv7Idx >= gv7Steps.length - 1 ? 'Finalizar módulo' : 'Siguiente';
-  if (stepRequiresUserAction(tourState.tourStepId)) {
+  if (stepRequiresUserAction(id)) {
     nextBtn.style.display = 'none';
   }
   finalizeTourStepRender(prevBtn);
@@ -134,7 +134,12 @@ function renderGuardiaOrQuickRouteStep(bodyEl, nextBtn, prevBtn, tourBranch) {
     renderQuickRouteWrap(bodyEl, nextBtn, prevBtn);
     return true;
   }
-  if (tourBranch === 'quick-route' && renderQuickRouteBranch(bodyEl, nextBtn, prevBtn)) {
+  if (tourBranch === 'quick-route') {
+    if (renderQuickRouteBranch(bodyEl, nextBtn, prevBtn)) return true;
+    // Fall through: cardio quick-route steps use Fundamentos copy.
+    renderFundamentosStep(tourState.tourStepId, bodyEl, nextBtn);
+    applyTourStepUserActionGate(nextBtn);
+    finalizeTourStepRender(prevBtn);
     return true;
   }
   renderGuardiaV7Branch(bodyEl, nextBtn, prevBtn);

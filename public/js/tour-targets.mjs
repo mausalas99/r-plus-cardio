@@ -94,6 +94,35 @@ const TARGETS = {
     spotlightClass: 'tour-spotlight-action',
   },
   sala_med:          { appTab: 'med',  selector: '#med-import-open-btn',                      focus: false },
+  sala_manejo: {
+    appTab: 'nota',
+    innerTab: 'manejo',
+    selector: '#exp-pane-manejo, .manejo-panel, [data-manejo-panel]',
+    focus: false,
+    spotlightClass: 'tour-spotlight-action',
+  },
+  cardio_demo_intro: {
+    appTab: 'nota',
+    innerTab: 'estadoActual',
+    selector: '#patient-list, aside .sidebar-header, #ea-snapshot',
+    focus: false,
+    spotlightClass: 'tour-spotlight-action',
+  },
+  cardio_descongestion: {
+    appTab: 'nota',
+    innerTab: 'estadoActual',
+    selector:
+      '[data-ea-cardio-descongestion-panel], [data-ea-cardio-congestion-panel], #ea-snapshot',
+    focus: false,
+    spotlightClass: 'tour-spotlight-action',
+  },
+  sala_ic_hoja: {
+    appTab: 'nota',
+    innerTab: 'icHoja',
+    selector: '#ic-hoja-export-mount, #btn-gen-ic-hoja, [data-ic-hoja-export]',
+    focus: false,
+    spotlightClass: 'tour-spotlight-action',
+  },
   listado_problemas: {
     appTab: 'nota',
     innerTab: 'listado',

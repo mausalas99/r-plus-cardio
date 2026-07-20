@@ -1,4 +1,5 @@
 import { isGuardiaMode } from './chrome.mjs';
+import { isCardionotasLanUiEnabled } from './cardio/cardionotas-gates.mjs';
 
 /** @returns {HTMLElement | null} */
 export function clinicalContextBarEl() {
@@ -9,6 +10,10 @@ export function clinicalContextBarEl() {
 export function syncClinicalContextBarVisibility() {
   const bar = clinicalContextBarEl();
   if (!bar) return;
+  if (!isCardionotasLanUiEnabled()) {
+    bar.hidden = true;
+    return;
+  }
   const rotation = document.getElementById('clinical-rotation-section');
   const filtersMount = document.getElementById('clinical-census-filters-mount');
   const hasRotation = rotation && !rotation.hidden && !isGuardiaMode();

@@ -2,10 +2,8 @@ import {
   GUARDIA_V7_HUB_MODULES,
   QUICK_ROUTE_HUB_MODULE,
   SALA_HUB_MODULES,
-  IC_HUB_MODULES,
   GUARDIA_V7_CHAPTERS,
   SALA_CHAPTERS,
-  IC_CHAPTERS,
   getChapterForStep,
   getChapterProgressLabel,
 } from '../../onboarding-curriculum.mjs';
@@ -40,10 +38,6 @@ function stepCountForChapter(chapterId, branch) {
   }
   if (branch === 'guardia-v7') {
     const ch = GUARDIA_V7_CHAPTERS.find((c) => c.id === chapterId);
-    return ch ? ch.stepIds.length : 0;
-  }
-  if (branch === 'interconsulta') {
-    const ch = IC_CHAPTERS.find((c) => c.id === chapterId);
     return ch ? ch.stepIds.length : 0;
   }
   const ch = SALA_CHAPTERS.find((c) => c.id === chapterId);
@@ -221,7 +215,7 @@ function renderLearnHubQuickRouteCard(parts) {
     '<button type="button" class="learn-hub-module-hit learn-hub-module-hit--cta"' +
     ` data-learn-chapter="${escapeHtml(QUICK_ROUTE_HUB_MODULE.chapterId)}"` +
     ' data-learn-branch="quick-route"' +
-    ' title="Ruta rápida — lab, guardia, LAN y entrega">' +
+    ' title="Ruta rápida — labs, descongestión, Manejo y hoja IC">' +
     '<span class="learn-hub-module-index learn-hub-module-index--cta" aria-hidden="true">5′</span>' +
     '<span class="learn-hub-module-main">' +
     `<span class="learn-hub-module-title">${escapeHtml(QUICK_ROUTE_HUB_MODULE.label)}</span>` +
@@ -242,13 +236,13 @@ function renderLearnHubNovedadesTrack(parts, focusTrack, progress, tourProgress)
   );
   parts.push(
     '<summary class="learn-hub-track-title">' +
-    'Novedades 7.x' +
+    'Empezar aquí' +
     `<span class="learn-hub-progress-pill">${guardiaCompletedCount}/5</span>` +
     '</summary>'
   );
   parts.push('<div class="learn-hub-track-body">');
   parts.push(
-    '<p class="learn-hub-section-lead">Módulos cortos e independientes. Pulsa una tarjeta para empezar; los completados se pueden resetear y abrir después.</p>'
+    '<p class="learn-hub-section-lead">Módulos cortos para el seguimiento IC: laboratorio, descongestión, Manejo y hoja .docx. Pulsa una tarjeta para empezar.</p>'
   );
   parts.push('<div class="learn-hub-module-list">');
   renderLearnHubQuickRouteCard(parts);
@@ -289,9 +283,8 @@ function renderLearnHubFundamentosTrack(parts, focusTrack, fundamentosProgress, 
   );
   parts.push('<div class="learn-hub-track-body">');
   parts.push(
-    '<p class="learn-hub-fundamentos-lead">Módulos por flujo clínico (~15 min, DEMO PÉREZ). Elige Sala o Interconsulta según tu rol.</p>'
+    '<p class="learn-hub-fundamentos-lead">Tutorial completo del flujo IC (~15 min): labs → expediente → Manejo → hoja IC. La ruta rápida usa el caso <strong>Rosa María Delgado Vázquez</strong>.</p>'
   );
-  parts.push('<p class="learn-hub-fundamentos-sub">Sala</p>');
   parts.push('<div class="learn-hub-module-list">');
   for (const mod of SALA_HUB_MODULES.filter((m) => m.chapterId)) {
     const st = fundamentosModuleState(mod.chapterId, 'sala', fundamentosProgress, tourProgress);
@@ -308,30 +301,6 @@ function renderLearnHubFundamentosTrack(parts, focusTrack, fundamentosProgress, 
       })
     );
   }
-  parts.push('</div>');
-  parts.push('<p class="learn-hub-fundamentos-sub">Interconsulta</p>');
-  parts.push('<div class="learn-hub-module-list">');
-  IC_HUB_MODULES.forEach((mod, idx) => {
-    const st = fundamentosModuleState(
-      mod.chapterId,
-      'interconsulta',
-      fundamentosProgress,
-      tourProgress
-    );
-    parts.push(
-      buildModuleRow({
-        chapterId: mod.chapterId,
-        label: mod.label,
-        branch: 'interconsulta',
-        completed: st.completed,
-        inProgress: st.inProgress,
-        stepInChapter: st.stepInChapter,
-        chapterSteps: st.chapterSteps,
-        active: st.active,
-        moduleIndex: idx + 1,
-      })
-    );
-  });
   parts.push('</div></div></details>');
 }
 

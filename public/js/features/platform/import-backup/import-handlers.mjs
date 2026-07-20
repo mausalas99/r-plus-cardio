@@ -110,6 +110,25 @@ function importBundledDemoPerez() {
   importBundledDemoPatients();
 }
 
+async function importBundledDemoIc() {
+  var name = 'demo-ic-seguimiento.json';
+  try {
+    var res = await fetch('demo-patients/' + name, { cache: 'no-store' });
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    var result = parsePatientImportJsonText(await res.text());
+    if (!result.payloads.length) {
+      rt.showToast('El JSON demo IC no tiene formato de importación válido.', 'error');
+      return;
+    }
+    importPatientExportPayloads(result.payloads, 'bundled-ic:');
+  } catch {
+    rt.showToast(
+      'No se encontró ' + name + ' en la app. Copia data/demo-patients a public/demo-patients y npm run build:ui.',
+      'error'
+    );
+  }
+}
+
 function buildFullBackupConfirmMsg(n) {
   var confirmMsg =
     'Esto reemplaza todos los pacientes y datos locales en esta computadora (' +
@@ -179,5 +198,6 @@ export {
   triggerImportActivePatientBackup,
   onPatientBackupFileChosen,
   importBundledDemoPerez,
+  importBundledDemoIc,
   onBackupFileChosen,
 };

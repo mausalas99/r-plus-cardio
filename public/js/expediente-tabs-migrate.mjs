@@ -1,6 +1,7 @@
 /** Expediente tab migration helpers (extracted for complexity budget). */
 import { isModeSala } from './mode-features.mjs';
 import { isMobileWeb } from './mobile-web.mjs';
+import { filterSalidaSectionsForCardionotas } from './features/cardio/cardionotas-gates.mjs';
 
 function migrateGranularMobile(granularTab, settings) {
   if (!isMobileWeb()) return null;
@@ -17,6 +18,14 @@ function migrateGranularSala(granularTab, settings) {
   return null;
 }
 
+function migrateCardionotasSalida(granularTab, settings) {
+  if (!isModeSala(settings)) return null;
+  if (granularTab !== 'listado' && granularTab !== 'vpo' && granularTab !== 'recetaHu') return null;
+  const allowed = filterSalidaSectionsForCardionotas(['icHoja', 'listado', 'vpo', 'recetaHu']);
+  if (allowed.indexOf(granularTab) >= 0) return null;
+  return allowed[0] || 'historia';
+}
+
 /** @param {string} granularTab @param {object} settings @param {Record<string, {tab:string, section?:string|null}>} granularMap */
 export function migrateGranularInner(granularTab, settings, granularMap) {
   if (!granularTab) return 'todo';
@@ -25,6 +34,8 @@ export function migrateGranularInner(granularTab, settings, granularMap) {
   if (!granularMap[granularTab]) return 'todo';
   const mobile = migrateGranularMobile(granularTab, settings);
   if (mobile) return mobile;
+  const cardio = migrateCardionotasSalida(granularTab, settings);
+  if (cardio) return cardio;
   const sala = migrateGranularSala(granularTab, settings);
   if (sala) return sala;
   return granularTab;

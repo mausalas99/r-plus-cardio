@@ -7,44 +7,26 @@ import {
   stepRequiresUserAction,
 } from './tour-targets.mjs';
 
-test('getSalaTourSteps orden overhaul: lab primero, clinico HC EA Eventualidades, salida VPO receta agenda', () => {
+test('getSalaTourSteps Cardio: labs, clínico con descongestión, manejo, hoja IC', () => {
   const steps = getSalaTourSteps();
-  assert.equal(steps.length, 22);
+  assert.equal(steps.length, 19);
   assert.ok(!steps.includes('lab_bulk_separator'));
-  assert.ok(!steps.includes('sala_manejo'));
-  assert.equal(steps.indexOf('servicio_default'), steps.indexOf('lab_view') + 1);
+  assert.ok(steps.includes('sala_manejo'));
+  assert.ok(steps.includes('cardio_descongestion'));
+  assert.ok(steps.includes('sala_ic_hoja'));
+  assert.ok(!steps.includes('servicio_default'));
+  assert.ok(!steps.includes('listado_problemas'));
+  assert.ok(!steps.includes('sala_vpo'));
+  assert.ok(!steps.includes('sala_receta_hu'));
+  assert.ok(!steps.includes('livesync_desktop'));
   assert.equal(steps.indexOf('estado_actual'), steps.indexOf('historia_clinica') + 1);
-  assert.equal(steps.indexOf('estado_actual_registro'), steps.indexOf('estado_actual') + 1);
-  assert.equal(steps.indexOf('estado_actual_review'), steps.indexOf('estado_actual_registro') + 1);
-  assert.equal(steps.indexOf('eventualidades'), steps.indexOf('estado_actual_review') + 1);
-  assert.ok(!steps.includes('sala_casiopea_lab'));
-  assert.ok(!steps.includes('sala_casiopea_trends'));
-  assert.ok(steps.includes('listado_problemas'));
-  assert.ok(steps.includes('sala_vpo'));
-  assert.ok(steps.includes('sala_receta_hu'));
+  assert.equal(steps.indexOf('cardio_descongestion'), steps.indexOf('estado_actual') + 1);
   assert.ok(steps.includes('sala_agenda'));
   assert.equal(steps[steps.length - 1], 'wrap');
 });
 
-test('getInterconsultaTourSteps no incluye pasos de Modo Pase', () => {
-  const steps = getInterconsultaTourSteps();
-  assert.ok(!steps.includes('pase_enter'));
-  assert.ok(!steps.includes('pase_board'));
-  assert.equal(steps[1], 'map_tabs');
-  assert.ok(steps.includes('sala_tend_chart'));
-});
-
-test('getInterconsultaTourSteps mantiene pasos clásicos sin Estado Actual ni Listado', () => {
-  const steps = getInterconsultaTourSteps();
-  assert.ok(steps.includes('map_sidebar'));
-  assert.ok(!steps.includes('map'));
-  assert.ok(!steps.includes('estado_actual'));
-  assert.ok(!steps.includes('listado_problemas'));
-  assert.ok(steps.includes('ic_nota'));
-  assert.ok(steps.includes('ic_indica'));
-  assert.ok(steps.includes('livesync_desktop'));
-  assert.ok(steps.includes('livesync_mobile'));
-  assert.equal(steps[steps.length - 1], 'wrap');
+test('getInterconsultaTourSteps is empty in Cardio', () => {
+  assert.deepEqual(getInterconsultaTourSteps(), []);
 });
 
 test('getTourTarget devuelve selector para lab_parse en Laboratorio', () => {
@@ -62,18 +44,38 @@ test('getTourTarget para estado_actual apunta al segmento Estado actual (Sala)',
   assert.equal(t.spotlightClass, 'tour-spotlight-action');
 });
 
+test('getTourTarget cardio_demo_intro apunta al censo / EA', () => {
+  const t = getTourTarget('cardio_demo_intro', 'quick-route');
+  assert.equal(t.appTab, 'nota');
+  assert.match(t.selector, /patient-list|ea-snapshot/);
+});
+
+test('getTourTarget cardio_descongestion apunta a paneles IC en Estado actual', () => {
+  const t = getTourTarget('cardio_descongestion', 'sala');
+  assert.equal(t.appTab, 'nota');
+  assert.equal(t.innerTab, 'estadoActual');
+  assert.match(t.selector, /descongestion|congestion/);
+});
+
+test('getTourTarget sala_manejo apunta a Expediente → Manejo', () => {
+  const t = getTourTarget('sala_manejo', 'sala');
+  assert.equal(t.appTab, 'nota');
+  assert.equal(t.innerTab, 'manejo');
+  assert.match(t.selector, /manejo-panel/);
+});
+
+test('getTourTarget sala_ic_hoja apunta a Generar hoja IC', () => {
+  const t = getTourTarget('sala_ic_hoja', 'sala');
+  assert.equal(t.appTab, 'nota');
+  assert.equal(t.innerTab, 'icHoja');
+  assert.match(t.selector, /ic-hoja|btn-gen-ic-hoja/);
+});
+
 test('getTourTarget para estado_actual_review combina snapshot, gráficas e historial', () => {
   const review = getTourTarget('estado_actual_review', 'sala');
   assert.match(review.selector, /ea-snapshot/);
   assert.match(review.selector, /ea-charts-summary/);
   assert.match(review.selector, /ea-historial/);
-});
-
-test('gv7 action steps require user interaction', () => {
-  assert.equal(stepRequiresUserAction('gv7_guardia_toggle'), true);
-  assert.equal(stepRequiresUserAction('gv7_lan_wifi'), true);
-  assert.equal(stepRequiresUserAction('gv7_mobile_link'), true);
-  assert.equal(stepRequiresUserAction('livesync_desktop'), true);
 });
 
 test('getTourTarget para historia_clinica y eventualidades en Clínico (Sala)', () => {
@@ -85,29 +87,10 @@ test('getTourTarget para historia_clinica y eventualidades en Clínico (Sala)', 
   assert.match(ev.selector, /exp-segment-eventualidades/);
 });
 
-test('getTourTarget para sala_vpo, sala_receta_hu y sala_agenda', () => {
-  const vpo = getTourTarget('sala_vpo', 'sala');
-  assert.equal(vpo.innerTab, 'vpo');
-  assert.match(vpo.selector, /vpo/);
-  const rec = getTourTarget('sala_receta_hu', 'sala');
-  assert.equal(rec.innerTab, 'recetaHu');
+test('getTourTarget para sala_agenda', () => {
   const ag = getTourTarget('sala_agenda', 'sala');
   assert.equal(ag.appTab, 'agenda');
   assert.match(ag.selector, /agenda/);
-});
-
-test('getTourTarget para listado_problemas abre listado y resalta Generar', () => {
-  const t = getTourTarget('listado_problemas', 'sala');
-  assert.equal(t.appTab, 'nota');
-  assert.equal(t.innerTab, 'listado');
-  assert.equal(t.selector, '#listado-form, #exp-segment-listado, #btn-gen-listado');
-  assert.equal(t.spotlightClass, 'tour-spotlight-action');
-  assert.equal(stepRequiresUserAction('listado_problemas'), false);
-});
-
-test('getTourTarget para servicio_default apunta a Mi Perfil', () => {
-  const t = getTourTarget('servicio_default', 'sala');
-  assert.match(t.selector, /servicio|profile-default-servicio|profile-modal/i);
 });
 
 test('getTourTarget para sala_tend_chart resalta botón Gráfica', () => {
@@ -118,31 +101,13 @@ test('getTourTarget para sala_tend_chart resalta botón Gráfica', () => {
   assert.equal(t.spotlightClass, 'tour-spotlight-action');
 });
 
-test('getTourTarget livesync_desktop resalta icono LiveSync', () => {
-  const t = getTourTarget('livesync_desktop', 'sala');
-  assert.match(t.selector || '', /team-sync/);
-  assert.equal(t.openConnection, undefined);
-});
-
 test('stepRequiresUserAction es false para pasos puramente narrativos', () => {
   assert.equal(stepRequiresUserAction('map_sidebar'), false);
   assert.equal(stepRequiresUserAction('map_tabs'), false);
   assert.equal(stepRequiresUserAction('map_lab_teaser'), false);
   assert.equal(stepRequiresUserAction('wrap'), false);
-  assert.equal(stepRequiresUserAction('livesync_desktop'), true);
-  assert.equal(stepRequiresUserAction('livesync_mobile'), false);
-});
-
-test('getInterconsultaTourSteps orden curriculum: 17 pasos, lab antes de expediente', () => {
-  const steps = getInterconsultaTourSteps();
-  assert.equal(steps.length, 17);
-  assert.equal(steps.indexOf('lab_parse'), 3);
-  assert.ok(!steps.includes('sala_casiopea_lab'));
-  assert.ok(!steps.includes('sala_casiopea_trends'));
-  assert.ok(!steps.includes('sala_manejo'));
-  assert.ok(steps.includes('ic_expediente_tabs'));
-  assert.equal(steps.indexOf('ic_expediente_tabs'), steps.indexOf('lab_view') + 1);
-  assert.equal(steps.indexOf('sala_tend'), steps.indexOf('ic_expediente_tabs') + 1);
+  assert.equal(stepRequiresUserAction('sala_manejo'), false);
+  assert.equal(stepRequiresUserAction('sala_ic_hoja'), false);
 });
 
 test('getTourTarget for sala_expediente_tabs apunta a barra de pestañas', () => {

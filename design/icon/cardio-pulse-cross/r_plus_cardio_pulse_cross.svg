@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024" fill="none">
+  <title>R+ Cardio pulse cross</title>
+  <defs>
+    <linearGradient id="cardio-field" x1="512" y1="0" x2="512" y2="1024" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#e53935"/>
+      <stop offset="100%" stop-color="#c62828"/>
+    </linearGradient>
+    <clipPath id="squircle">
+      <rect width="1024" height="1024" rx="226" ry="226"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#squircle)">
+    <rect width="1024" height="1024" fill="url(#cardio-field)"/>
+    <g fill="#ffffff">
+      <rect x="440" y="250" width="144" height="468"/>
+      <rect x="278" y="412" width="468" height="144"/>
+    </g>
+    <path
+      d="M 322 880 L 420 880 L 470 880 L 505 810 L 540 960 L 575 840 L 610 880 L 702 880"
+      fill="none"
+      stroke="#ffffff"
+      stroke-opacity="0.55"
+      stroke-width="26"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+  </g>
+</svg>

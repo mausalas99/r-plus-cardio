@@ -1,0 +1,64 @@
+/* R+ Cardio: brand accent (red) — distinct from R+ blue (#4a52e8). */
+html.rpc-cardio-streamline {
+  --color-accent: #c62828;
+  --color-accent-hover: #a31f1f;
+  --color-accent-soft: color-mix(in oklab, var(--color-accent) 9%, transparent);
+  --color-accent-soft-text: #a31f1f;
+  --color-channel-pill-bg: color-mix(in oklab, var(--color-accent) 78%, #7f1d1d);
+  --color-focus-ring: color-mix(in oklab, var(--color-accent) 26%, transparent);
+  --action: var(--color-accent);
+  --action-hover: var(--color-accent-hover);
+  --lab-chip-bg: var(--color-accent-soft);
+  --lab-chip-txt: var(--color-accent-soft-text);
+  --color-section-header-bg: color-mix(in oklab, var(--color-accent) 6%, var(--color-surface));
+  --color-section-accent: var(--color-accent);
+  --section-header-bg: var(--color-section-header-bg);
+  --section-accent: var(--color-section-accent);
+  --color-livesync-local: var(--color-accent);
+  --color-agenda-block-bg: color-mix(in oklab, var(--color-accent) 11%, var(--color-surface));
+  --color-agenda-block-border: color-mix(in oklab, var(--color-accent) 32%, var(--border));
+}
+
+html.dark.rpc-cardio-streamline {
+  --color-accent: #ef5350;
+  --color-accent-hover: #ff8a80;
+  --color-accent-soft: color-mix(in oklab, var(--color-accent) 14%, transparent);
+  --color-accent-soft-text: #ff8a80;
+  --color-on-accent: #0c0e14;
+  --color-channel-pill-bg: color-mix(in oklab, var(--color-accent) 55%, #7f1d1d);
+  --color-channel-pill-fg: #fff5f5;
+  --color-focus-ring: color-mix(in oklab, var(--color-accent) 22%, transparent);
+  --action: var(--color-accent);
+  --action-hover: var(--color-accent-hover);
+  --lab-chip-bg: var(--color-accent-soft);
+  --lab-chip-txt: var(--color-accent-soft-text);
+  --color-section-header-bg: color-mix(in oklab, var(--color-surface) 92%, var(--color-accent) 8%);
+  --color-livesync-local: var(--color-accent-soft-text);
+  --color-agenda-block-bg: color-mix(in oklab, var(--color-accent) 16%, var(--color-surface));
+  --color-agenda-block-border: color-mix(in oklab, var(--color-accent) 38%, var(--border));
+}
+
+/* R+ Cardio: hide LAN / guardia / sala-mode / listado UI (defense in depth with JS gates). */
+html.rpc-cardio-streamline #header-mode-seg,
+html.rpc-cardio-streamline #profile-clinical-bridge,
+html.rpc-cardio-streamline .profile-block--mode,
+html.rpc-cardio-streamline #profile-salida-section,
+html.rpc-cardio-streamline #m-sala-group,
+html.rpc-cardio-streamline #m-team-group,
+html.rpc-cardio-streamline #clinical-rotation-section,
+html.rpc-cardio-streamline #btn-sidebar-mi-rotacion,
+html.rpc-cardio-streamline .app-bar-mi-rotacion,
+html.rpc-cardio-streamline #clinical-context-bar,
+html.rpc-cardio-streamline #btn-export-censo-header,
+html.rpc-cardio-streamline #lan-connection-banner,
+html.rpc-cardio-streamline #btn-header-team-sync,
+html.rpc-cardio-streamline .patient-sala-field,
+html.rpc-cardio-streamline #exp-segment-listado,
+html.rpc-cardio-streamline #itab-content-listado,
+html.rpc-cardio-streamline #ronda-quick-listado,
+html.rpc-cardio-streamline #btn-gen-listado,
+html.rpc-cardio-streamline [data-exp-segment="listado"],
+html.rpc-cardio-streamline .profile-block--formats,
+html.rpc-cardio-streamline #templates-modal {
+  display: none !important;
+}

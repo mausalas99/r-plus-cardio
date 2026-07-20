@@ -20,12 +20,30 @@ test('buildDescongestionHeaderHtml includes days and override badge', () => {
     activeMeds: [{ label: 'Furosemida', dosis: '40 mg IV' }],
   });
   assert.match(html, /Inicio descongestión/);
+  assert.match(html, /rpc-date-input/);
   assert.match(html, />7</);
   assert.match(html, /Diuresis acumulada/);
   assert.match(html, /ea-cardio-override-badge">manual/);
   assert.match(html, /Furosemida/);
   assert.match(html, /40 mg IV/);
   assert.match(html, /data-ea-cardio-recalc="diuresisAcumuladaMl"/);
+});
+
+test('resolveClinicalAsOfYmd prefers latest POCUS day over today', async () => {
+  const { resolveClinicalAsOfYmd } = await import('./descongestion-panel.mjs');
+  const ymd = resolveClinicalAsOfYmd({
+    fimiFecha: '2026-03-13',
+    cardio: {
+      inicioDescongestion: '2026-03-13',
+      pocusByDay: [
+        { date: '2026-03-13' },
+        { date: '2026-03-19' },
+        { date: '2026-03-15' },
+      ],
+    },
+    monitoreo: { historial: [] },
+  });
+  assert.equal(ymd, '2026-03-19');
 });
 
 test('extractDailyDiuresisMl sums per local day from historial', () => {

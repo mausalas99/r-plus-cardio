@@ -9,7 +9,9 @@ export function isCardionotasInterconsultaEnabled() {
 }
 
 export function filterSalidaSectionsForCardionotas(sections) {
-  return (sections || []).filter((s) => s !== 'vpo' && s !== 'recetaHu');
+  return (sections || []).filter(
+    (s) => s !== 'vpo' && s !== 'recetaHu' && s !== 'listado',
+  );
 }
 
 /** Display name in chrome / dialogs / Electron productName. */

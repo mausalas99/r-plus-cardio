@@ -40,6 +40,7 @@ export {
   triggerImportActivePatientBackup,
   onPatientBackupFileChosen,
   importBundledDemoPerez,
+  importBundledDemoIc,
   onBackupFileChosen,
 } from './import-backup/import-handlers.mjs';
 

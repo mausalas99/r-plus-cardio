@@ -474,9 +474,32 @@ function applyTourDensityForStep(id, t) {
 }
 
 function seedTourDemosForStep(id) {
+  var cardioIds = {
+    cardio_demo_intro: 1,
+    cardio_descongestion: 1,
+    sala_manejo: 1,
+    sala_ic_hoja: 1,
+    estado_actual: 1,
+    estado_actual_review: 1,
+    sala_tend: 1,
+    sala_tend_chart: 1,
+  };
+  if (cardioIds[id] && (tourState.guidedTourBranch === 'quick-route' || tourState.guidedTourBranch === 'guardia-v7')) {
+    void import('./tour-ic-demo-seed.mjs').then(function (mod) {
+      if (typeof mod.ensureTourIcDemoPatientActive === 'function') {
+        void mod.ensureTourIcDemoPatientActive();
+      }
+    });
+    return;
+  }
   if (TOUR_STEPS_USE_DEMO_PEREZ[id]) ensureTourPrimaryDemoPatientActive();
   if (id === 'listado_problemas') seedDemoListadoProblemas();
-  if (id === 'estado_actual' || id === 'estado_actual_registro' || isEstadoActualPostRegistroTourStep(id)) {
+  if (
+    id === 'estado_actual' ||
+    id === 'cardio_descongestion' ||
+    id === 'estado_actual_registro' ||
+    isEstadoActualPostRegistroTourStep(id)
+  ) {
     seedDemoMonitoreoOnActivePatient();
   }
   if (id === 'eventualidades') seedDemoEventualidadesOnActivePatient();
@@ -510,9 +533,9 @@ function applyTourOverlayChromeForStep(id, t) {
 
 function scheduleEstadoActualTourPrep(id, t) {
   if (tourState.guidedTourBranch === 'interconsulta') return false;
-  if (id === 'estado_actual') {
+  if (id === 'estado_actual' || id === 'cardio_descongestion') {
     setTimeout(function () {
-      if (!tourState.guidedTourActive || tourState.tourStepId !== 'estado_actual') return;
+      if (!tourState.guidedTourActive || tourState.tourStepId !== id) return;
       prepareEstadoActualPanelForTour();
     }, 160);
     return false;

@@ -10,75 +10,80 @@ import {
   getChapterProgressLabel,
   HUB_MODULES,
   migrateTourStepId,
+  GUARDIA_V7_HUB_MODULES,
+  QUICK_ROUTE_HUB_MODULE,
 } from './onboarding-curriculum.mjs';
 
-test('CURRICULUM_VERSION is 10 with guardia-v7 and quick-route tracks', () => {
-  assert.equal(CURRICULUM_VERSION, 10);
+test('CURRICULUM_VERSION is 12 for R+ Cardio tracks', () => {
+  assert.equal(CURRICULUM_VERSION, 12);
 });
 
-test('getSalaTourSteps has 22 base steps without Neo or Manejo', () => {
+test('getSalaTourSteps covers labs → clínico → manejo → hoja IC', () => {
   const steps = getSalaTourSteps();
-  assert.equal(steps.length, 22);
-  assert.ok(!steps.includes('sala_manejo'));
+  assert.equal(steps.length, 19);
+  assert.ok(steps.includes('sala_manejo'));
+  assert.ok(steps.includes('cardio_descongestion'));
+  assert.ok(steps.includes('sala_ic_hoja'));
   assert.ok(!steps.includes('sala_casiopea_lab'));
-  assert.ok(!steps.includes('sala_casiopea_trends'));
-  assert.ok(!steps.includes('estado_actual_snapshot'));
-  assert.ok(steps.includes('estado_actual_review'));
+  assert.ok(!steps.includes('sala_vpo'));
+  assert.ok(!steps.includes('sala_receta_hu'));
+  assert.ok(!steps.includes('listado_problemas'));
+  assert.ok(!steps.includes('livesync_desktop'));
+  assert.ok(!steps.includes('servicio_default'));
   assert.equal(steps[0], 'map_sidebar');
   assert.equal(steps.indexOf('lab_view'), 4);
-  assert.equal(steps.indexOf('servicio_default'), 5);
-  assert.equal(steps.indexOf('sala_expediente_tabs'), 6);
-  assert.equal(steps.indexOf('historia_clinica'), 7);
-  assert.equal(steps.indexOf('estado_actual'), 8);
-  assert.equal(steps.indexOf('estado_actual_registro'), 9);
-  assert.equal(steps.indexOf('estado_actual_review'), 10);
-  assert.equal(steps.indexOf('eventualidades'), 11);
-  assert.ok(steps.indexOf('estado_actual_review') < steps.indexOf('eventualidades'));
-  assert.ok(steps.includes('listado_problemas'));
-  assert.ok(steps.includes('sala_vpo'));
-  assert.ok(steps.includes('sala_receta_hu'));
-  assert.equal(steps.indexOf('listado_problemas'), steps.indexOf('sala_med') + 1);
+  assert.equal(steps.indexOf('sala_expediente_tabs'), 5);
+  assert.equal(steps.indexOf('historia_clinica'), 6);
+  assert.equal(steps.indexOf('estado_actual'), 7);
+  assert.equal(steps.indexOf('cardio_descongestion'), 8);
+  assert.ok(steps.indexOf('sala_manejo') < steps.indexOf('sala_ic_hoja'));
   assert.ok(steps.includes('sala_agenda'));
   assert.equal(steps[steps.length - 1], 'wrap');
 });
 
-test('getQuickRouteTourSteps has 6 cross-track steps', () => {
+test('getQuickRouteTourSteps is IC path without Pérez/García lab gate', () => {
   const steps = getQuickRouteTourSteps();
-  assert.equal(steps.length, 6);
-  assert.equal(steps[0], 'map_lab_teaser');
-  assert.equal(steps[1], 'lab_parse');
-  assert.equal(steps[2], 'gv7_guardia_chip');
+  assert.equal(steps.length, 5);
+  assert.equal(steps[0], 'cardio_demo_intro');
+  assert.equal(steps[1], 'cardio_descongestion');
+  assert.ok(steps.includes('sala_manejo'));
+  assert.ok(steps.includes('sala_ic_hoja'));
+  assert.ok(!steps.includes('lab_parse'));
+  assert.ok(!steps.includes('map_lab_teaser'));
   assert.equal(steps[steps.length - 1], 'quick_wrap');
+  assert.match(QUICK_ROUTE_HUB_MODULE.label, /caso IC/i);
 });
 
 test('getChapterProgressLabel quick-route uses linear index', () => {
-  const label = getChapterProgressLabel('gv7_guardia_chip', 'quick-route');
-  assert.equal(label.stepInChapter, 3);
-  assert.equal(label.chapterSteps, 6);
+  const label = getChapterProgressLabel('cardio_descongestion', 'quick-route');
+  assert.equal(label.stepInChapter, 2);
+  assert.equal(label.chapterSteps, 5);
   assert.match(label.chapterTitle, /Ruta rápida/i);
 });
 
-test('migrateTourStepId maps legacy estado_actual substeps', () => {
+test('migrateTourStepId maps legacy R+ steps to Cardio equivalents', () => {
   assert.equal(migrateTourStepId('estado_actual_charts', 'sala'), 'estado_actual_review');
+  assert.equal(migrateTourStepId('sala_vpo', 'sala'), 'sala_ic_hoja');
+  assert.equal(migrateTourStepId('livesync_desktop', 'sala'), 'wrap');
+  assert.equal(migrateTourStepId('gv7_guardia_chip', 'guardia-v7'), 'map_lab_teaser');
+  assert.equal(migrateTourStepId('lab_parse', 'quick-route'), 'cardio_demo_intro');
   assert.equal(migrateTourStepId('lab_view', 'sala'), 'lab_view');
 });
 
-test('getChapterForStep maps servicio_default to ch-patient-lab', () => {
-  const ch = getChapterForStep('servicio_default', 'sala');
-  assert.equal(ch.id, 'ch-patient-lab');
-  assert.match(ch.title, /Paciente|laboratorio/i);
-});
-
-test('estado_actual is in ch-chart not ch-salida', () => {
+test('estado_actual and hoja IC chapter mapping', () => {
   assert.equal(getChapterForStep('estado_actual', 'sala').id, 'ch-chart');
-  assert.equal(getChapterForStep('sala_vpo', 'sala').id, 'ch-salida');
+  assert.equal(getChapterForStep('sala_ic_hoja', 'sala').id, 'ch-salida');
+  assert.equal(getChapterForStep('sala_manejo', 'sala').id, 'ch-manejo');
   assert.equal(getChapterForStep('sala_agenda', 'sala').id, 'ch-agenda');
 });
 
-test('guardia-v7 censo chapter precedes entrega', () => {
-  assert.equal(getChapterForStep('gv7_censo_r1', 'guardia-v7').id, 'ch-guardia-censo');
+test('cardio short modules replace guardia-v7 track', () => {
+  assert.equal(GUARDIA_V7_HUB_MODULES.length, 5);
+  assert.ok(GUARDIA_V7_HUB_MODULES.every((m) => String(m.chapterId).startsWith('ch-cardio-')));
+  assert.equal(getChapterForStep('sala_manejo', 'guardia-v7').id, 'ch-cardio-manejo');
   const steps = getGuardiaV7TourSteps();
-  assert.ok(steps.indexOf('gv7_censo_sync') < steps.indexOf('gv7_entrega_phase'));
+  assert.ok(steps.includes('sala_ic_hoja'));
+  assert.ok(!steps.includes('gv7_censo_r1'));
 });
 
 test('getChapterProgressLabel for step in chapter 2', () => {
@@ -88,14 +93,13 @@ test('getChapterProgressLabel for step in chapter 2', () => {
   assert.ok(label.chapterSteps >= 1);
 });
 
-test('HUB_MODULES includes agenda module without neo companion cards', () => {
+test('HUB_MODULES includes Manejo and hoja IC without neo', () => {
   assert.ok(!HUB_MODULES.some((m) => m.id === 'neo-lab'));
-  assert.ok(!HUB_MODULES.some((m) => m.id === 'neo-trends'));
+  assert.ok(HUB_MODULES.some((m) => m.chapterId === 'ch-manejo'));
+  assert.ok(HUB_MODULES.some((m) => m.chapterId === 'ch-salida'));
   assert.ok(HUB_MODULES.some((m) => m.chapterId === 'ch-agenda'));
 });
 
-test('getInterconsultaTourSteps still lab-first and no Neo', () => {
-  const steps = getInterconsultaTourSteps();
-  assert.equal(steps.indexOf('lab_parse'), steps.indexOf('map_lab_teaser') + 1);
-  assert.ok(!steps.includes('sala_casiopea_lab'));
+test('getInterconsultaTourSteps is empty in Cardio', () => {
+  assert.deepEqual(getInterconsultaTourSteps(), []);
 });

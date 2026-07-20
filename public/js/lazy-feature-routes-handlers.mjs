@@ -37,6 +37,7 @@ const platformHandlerNames = {
   triggerImportBackup: 'triggerImportBackup',
   onPatientBackupFileChosen: 'onPatientBackupFileChosen',
   importBundledDemoPerez: 'importBundledDemoPerez',
+  importBundledDemoIc: 'importBundledDemoIc',
   onBackupFileChosen: 'onBackupFileChosen',
   restorePreimportBackupPrompt: 'restorePreimportBackupPrompt',
   checkForAppUpdates: 'checkForAppUpdates',

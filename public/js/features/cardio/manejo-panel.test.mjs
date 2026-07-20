@@ -121,6 +121,7 @@ test('buildSegmentTableHtml includes actions and optional mgTotal', () => {
   assert.match(medHtml, /Tipo/);
   assert.match(medHtml, /Indicación/);
   assert.match(medHtml, /Agregar/);
+  assert.match(medHtml, /rpc-date-input/);
   assert.match(medHtml, /data-manejo-seg-add="med"/);
   assert.doesNotMatch(medHtml, /mg total/i);
 
@@ -145,6 +146,55 @@ test('buildSegmentTableHtml includes actions and optional mgTotal', () => {
   assert.match(diuHtml, /data-manejo-seg-end="d1"/);
   assert.match(diuHtml, /Guardar tipo en repo/);
   assert.match(diuHtml, /value="200"/);
+  assert.match(diuHtml, /rpc-date-input/);
+});
+
+test('cardioSegmentsNeedDemoHeal detects missing inicio/indicacion', async () => {
+  const { cardioSegmentsNeedDemoHeal } = await import('./manejo-panel.mjs');
+  assert.equal(
+    cardioSegmentsNeedDemoHeal({
+      medSegments: [{ tipo: 'Furosemida', inicio: '', dosis: '40 mg', indicacion: '' }],
+    }),
+    true
+  );
+  assert.equal(
+    cardioSegmentsNeedDemoHeal({
+      medSegments: [
+        {
+          tipo: 'Furosemida',
+          inicio: '2026-03-17',
+          dosis: '40 mg',
+          indicacion: 'Descongestión',
+        },
+      ],
+    }),
+    false
+  );
+});
+
+test('hydrateDemoIcPatientFromBundle fills inicio and indicacion', async () => {
+  const {
+    hydrateDemoIcPatientFromBundle,
+    cardioSegmentsIncomplete,
+    getBundledDemoIcPatient,
+  } = await import('./demo-ic-hydrate.mjs');
+  const bundled = getBundledDemoIcPatient();
+  assert.ok(bundled && bundled.cardio);
+  assert.equal(cardioSegmentsIncomplete(bundled.cardio), false);
+  const stub = {
+    registro: 'DEMO-IC-0001',
+    nombre: 'Rosa María Delgado Vázquez',
+    cardio: {
+      medSegments: [{ id: 'm1', tipo: 'Furosemida', inicio: '', dosis: '40 mg', indicacion: '' }],
+      diureticSegments: [],
+      fantasticos: [],
+    },
+  };
+  assert.equal(cardioSegmentsIncomplete(stub.cardio), true);
+  assert.equal(hydrateDemoIcPatientFromBundle(stub), true);
+  assert.equal(cardioSegmentsIncomplete(stub.cardio), false);
+  assert.match(String(stub.cardio.medSegments[0].inicio), /^\d{4}-\d{2}-\d{2}$/);
+  assert.ok(String(stub.cardio.medSegments[0].indicacion).length > 0);
 });
 
 test('buildManejoPanelHtml wires three sections from cardio', () => {

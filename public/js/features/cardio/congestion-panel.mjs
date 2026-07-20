@@ -6,7 +6,8 @@ import {
 } from '../../../../lib/cardio/congestion.mjs';
 import { saveState } from '../../app-state.mjs';
 import { escHtml, escAttr } from '../../dom-escape.mjs';
-import { localYmd } from './descongestion-panel.mjs';
+import { refreshRpcDateFields } from '../../rpc-date-picker.mjs';
+import { localYmd, resolveClinicalAsOfYmd } from './descongestion-panel.mjs';
 
 /**
  * @param {boolean | null | undefined} v
@@ -91,7 +92,7 @@ export function buildCongestionPanelHtml(vm) {
     '<h3 class="ea-section-title">Congestión / POCUS</h3>' +
     '<div class="ea-field ea-cardio-day">' +
     '<label class="ea-label" for="ea-cardio-pocus-day">Día</label>' +
-    '<input type="date" class="ea-input" id="ea-cardio-pocus-day" data-ea-cardio-pocus-day value="' +
+    '<input type="date" class="ea-input rpc-date-input" id="ea-cardio-pocus-day" data-ea-cardio-pocus-day value="' +
     escAttr(vm.date || '') +
     '">' +
     '</div>' +
@@ -251,6 +252,36 @@ function field(label, controlHtml) {
 }
 
 /**
+ * Normalize checklist keys from fixtures / older blobs.
+ * @param {Record<string, unknown> | null | undefined} raw
+ */
+export function normalizeCongestionChecklist(raw) {
+  var base = emptyCongestionChecklist();
+  if (!raw || typeof raw !== 'object') return base;
+  Object.assign(base, raw);
+  if (base.ascitisHepatomegalia == null && raw.ascitis != null) {
+    base.ascitisHepatomegalia = /** @type {boolean|null} */ (raw.ascitis);
+  }
+  base.llenadoCapilar = normalizeLlenadoCapilar(base.llenadoCapilar);
+  return base;
+}
+
+/**
+ * Map legacy digit / free-text capillary refill into UI select values.
+ * @param {unknown} raw
+ * @returns {string}
+ */
+export function normalizeLlenadoCapilar(raw) {
+  var s = String(raw || '').trim();
+  if (!s) return '';
+  if (s === '<2s' || s === '2-3s' || s === '>3s' || s === 'otro') return s;
+  if (s === '1' || s === '2' || /^<\s*2/i.test(s)) return '<2s';
+  if (s === '3' || /^2\s*[-–]\s*3/i.test(s)) return '2-3s';
+  if (s === '4' || s === '5' || /^>\s*3/i.test(s)) return '>3s';
+  return 'otro';
+}
+
+/**
  * @param {HTMLElement | null} mount
  * @param {Record<string, unknown> | null | undefined} patient
  * @param {{ day?: string }} [opts]
@@ -260,9 +291,12 @@ export function mountCongestionPanel(mount, patient, opts) {
   ensureCardio(patient);
   /** @type {any} */
   var cardio = patient.cardio;
-  var day = (opts && opts.day) || localYmd();
+  var day =
+    (opts && opts.day) ||
+    resolveClinicalAsOfYmd(patient) ||
+    localYmd();
   var existing = getPocusDay(cardio.pocusByDay, day);
-  var checklist = (existing && existing.checklist) || emptyCongestionChecklist();
+  var checklist = normalizeCongestionChecklist(existing && existing.checklist);
   mount.innerHTML = buildCongestionPanelHtml({
     date: day,
     checklist: checklist,
@@ -276,6 +310,7 @@ export function mountCongestionPanel(mount, patient, opts) {
     note: existing ? existing.note : '',
   });
   wireCongestionPanel(mount, patient);
+  refreshRpcDateFields(mount);
 }
 
 /**

@@ -11,9 +11,7 @@ export function openProfileModal() {
   modal.setAttribute("aria-hidden", "false");
   queueMicrotask(function () {
     loadSettings();
-    var first =
-      document.getElementById("app-mode-sala") ||
-      document.getElementById("profile-doctor");
+    var first = document.getElementById("profile-doctor");
     if (first) {
       try {
         first.focus({ preventScroll: true });

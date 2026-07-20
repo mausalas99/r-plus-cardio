@@ -7,16 +7,19 @@ JSON generados desde el mismo seed que **Modo presentación** en la app.
 En **Ajustes → Ayuda → Tours**:
 
 - **Importar DEMO PÉREZ (JSON incluido)**
+- **Importar DEMO IC (caso completo)** — seguimiento IC con POCUS/diuréticos/labs (Rosa María Delgado Vázquez)
 
 Requiere `npm run build:ui` reciente (el JSON vive en `public/demo-patients/`).
 
 ## Archivos en disco
 
-| Archivo | Uso en R+ |
+| Archivo | Uso en R+ / Cardio |
 |---------|-----------|
 | **`demo-perez.json`** | **Importar paciente…** |
 | **`demo-pitch-bundle.json`** | **Importar paciente…** (mismo paciente, formato bundle) |
 | **`demo-pitch-rango.json`** | **Importar paciente…** o **Importar rango…** |
+| **`demo-ic-seguimiento.json`** | Caso IC completo → **Generar hoja IC** |
+| **`demo-ic-hoja-ejemplo.docx`** | Abrir en Word: hoja ya llena (identidad anonimizada) |
 
 No uses **Importar copia de seguridad…** (espera `r-plus-backup`, respaldo completo de toda la app).
 

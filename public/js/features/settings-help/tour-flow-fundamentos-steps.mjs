@@ -1,9 +1,6 @@
-/** Fundamentos (sala / interconsulta) tour step copy. */
-import { stepRequiresUserAction } from '../../tour-targets.mjs';
+/** Fundamentos (R+ Cardio / sala) tour step copy. */
 import { getUiDensity } from '../chrome.mjs';
 import { hideTourDock } from './tour-engine.mjs';
-import { LIVESYNC_BTN_COPY, MOBILE_SCOPE_COPY } from './tour-flow-guardia-copy.mjs';
-import { tourState } from './tour-state.mjs';
 
 function showNext(nextBtn, label) {
   nextBtn.style.display = '';
@@ -25,22 +22,12 @@ function getMapTabsCopy() {
       '<p style="margin:0;line-height:1.5;">En <strong>Pase</strong> el centro es un <strong>resumen</strong> del paciente. Pulsa un bloque o usa <strong>Ctrl/⌘ + 1…4</strong> para abrir el detalle en vista <strong>Normal</strong>.</p>'
     );
   }
-  if (tourState.guidedTourBranch === 'interconsulta') {
-    return (
-      '<p style="margin:0;line-height:1.5;">Arriba: <strong>Laboratorio</strong>, <strong>Expediente</strong>, <strong>Medicamentos</strong> y <strong>Agenda</strong>. Las pestañas internas del expediente vienen en el siguiente paso.</p>'
-    );
-  }
   return (
-    '<p style="margin:0;line-height:1.5;">Arriba: <strong>Laboratorio</strong>, <strong>Expediente</strong>, <strong>Medicamentos</strong> y <strong>Agenda</strong>. El mapa del expediente lo verás al entrar en esa pestaña.</p>'
+    '<p style="margin:0;line-height:1.5;">Arriba: <strong>Laboratorio</strong>, <strong>Expediente</strong>, <strong>Manejo</strong> y <strong>Agenda</strong>. El mapa del expediente (Clínico, Resultados, Manejo IC, hoja IC) lo verás al entrar en <strong>Expediente</strong>.</p>'
   );
 }
 
 function getMapLabTeaserCopy() {
-  if (tourState.guidedTourBranch === 'interconsulta') {
-    return (
-      '<p style="margin:0;line-height:1.5;">El cuadro ya trae <strong>DEMO PÉREZ</strong> (dos días) y <strong>DEMO GARCÍA</strong> con el separador <strong>--- PACIENTE ---</strong>. Revisa el texto detrás y pulsa <strong>Siguiente</strong>.</p>'
-    );
-  }
   return (
     '<p style="margin:0;line-height:1.5;">El cuadro ya trae <strong>DEMO PÉREZ</strong> (dos días) y <strong>DEMO GARCÍA</strong>. En el siguiente paso pulsa <strong>Procesar</strong>: verás la <strong>vista previa multi-paciente</strong> y podrás dar de alta a cada uno en el censo.</p>'
   );
@@ -96,15 +83,15 @@ function renderIcExpedienteTabs(bodyEl, nextBtn) {
 
 function renderSalaExpedienteTabs(bodyEl, nextBtn) {
   bodyEl.innerHTML =
-    '<p style="margin:0;line-height:1.5;">En <strong>Sala</strong>, el expediente tiene cuatro pestañas: <strong>Paciente</strong>, <strong>Clínico</strong>, <strong>Resultados</strong> y <strong>Salida</strong>.</p>' +
-    '<p style="margin:10px 0 0;font-size:13px;color:var(--text-muted);"><strong>Clínico</strong>: Historia Clínica → <strong>Estado actual</strong> → Eventualidades. <strong>Resultados</strong>: tendencias. <strong>Salida</strong>: Listado, <strong>VPO</strong> y <strong>Receta HU</strong>. Peso/talla en <strong>Paciente</strong>.</p>';
+    '<p style="margin:0;line-height:1.5;">En <strong>R+ Cardio</strong> el expediente tiene: <strong>Paciente</strong>, <strong>Clínico</strong>, <strong>Resultados</strong>, <strong>Manejo</strong> y <strong>Salida</strong>.</p>' +
+    '<p style="margin:10px 0 0;font-size:13px;color:var(--text-muted);"><strong>Clínico</strong>: HC → Estado actual (descongestión / congestión / POCUS) → Eventualidades. <strong>Manejo</strong>: fantásticos y diuréticos. <strong>Salida</strong>: <strong>Generar hoja IC</strong>.</p>';
   showNext(nextBtn);
 }
 
 function renderHistoriaClinica(bodyEl, nextBtn) {
   bodyEl.innerHTML =
     '<p style="margin:0;line-height:1.5;"><strong>Expediente → Clínico → Historia Clínica</strong>: ingreso institucional en <strong>3 pasos</strong> (identificación, antecedentes APP/AHF/APNP/IPAS, padecimiento). Cambia a <strong>Lectura</strong> para ver el texto compilado y <strong>Copiar</strong>.</p>' +
-    '<p style="margin:10px 0 0;font-size:13px;color:var(--text-muted);">Solo en <strong>Sala</strong>. En sala en vivo (⇄) se sincroniza por paciente con el anfitrión.</p>';
+    '<p style="margin:10px 0 0;font-size:13px;color:var(--text-muted);">Todo queda en este equipo (sin LiveSync). Pulsa <strong>Siguiente</strong>.</p>';
   showNext(nextBtn);
 }
 
@@ -149,7 +136,36 @@ function renderSalaSoap(bodyEl, nextBtn) {
 
 function renderSalaMed(bodyEl, nextBtn) {
   bodyEl.innerHTML =
-    '<p style="margin:0;line-height:1.5;">Pulsa <strong>Importar SOME</strong>, pega el bloque TSV del hospital y procesa la receta. Marca filas para <strong>SOAP</strong> o <strong>Tratamiento</strong>; el demo ya trae dos fármacos de ejemplo.</p>';
+    '<p style="margin:0;line-height:1.5;">La pestaña superior <strong>Manejo</strong> importa la receta del hospital: pulsa <strong>Importar SOME</strong>, pega el bloque TSV y procesa. Marca filas para <strong>SOAP</strong> o <strong>Tratamiento</strong>; el demo ya trae dos fármacos de ejemplo.</p>' +
+    '<p style="margin:10px 0 0;font-size:13px;color:var(--text-muted);">Los fantásticos / diuréticos del seguimiento IC viven en <strong>Expediente → Manejo</strong> (paso anterior).</p>';
+  showNext(nextBtn);
+}
+
+function renderCardioDemoIntro(bodyEl, nextBtn) {
+  bodyEl.innerHTML =
+    '<p style="margin:0;line-height:1.5;">Se cargó el caso completo <strong>Rosa María Delgado Vázquez</strong> (DEMO-IC-0001): 7 días de descongestión, POCUS, Manejo y labs.</p>' +
+    '<p style="margin:10px 0 0;font-size:13px;color:var(--text-muted);">No hace falta procesar DEMO PÉREZ/GARCÍA. Pulsa <strong>Siguiente</strong> para recorrer Estado actual → Manejo → hoja IC.</p>';
+  showNext(nextBtn);
+}
+
+function renderSalaManejo(bodyEl, nextBtn) {
+  bodyEl.innerHTML =
+    '<p style="margin:0;line-height:1.5;"><strong>Expediente → Manejo</strong>: tablas de <strong>fantásticos</strong>, otros medicamentos y <strong>diuréticos</strong> con historial de dosis. Aquí se calcula la furosemida acumulada que verás en Estado actual.</p>' +
+    '<p style="margin:10px 0 0;font-size:13px;color:var(--text-muted);">Edita o revisa las filas resaltadas y pulsa <strong>Siguiente</strong>.</p>';
+  showNext(nextBtn);
+}
+
+function renderCardioDescongestion(bodyEl, nextBtn) {
+  bodyEl.innerHTML =
+    '<p style="margin:0;line-height:1.5;">En <strong>Estado actual</strong> el encabezado de <strong>descongestión</strong> muestra días de internamiento / descongestión, diuresis y furosemida acumuladas (con override manual). Abajo: checklist de <strong>congestión</strong> y <strong>POCUS</strong> del día.</p>' +
+    '<p style="margin:10px 0 0;font-size:13px;color:var(--text-muted);">Los medicamentos activos se leen de Manejo (solo lectura aquí). <strong>Siguiente</strong> para practicar un registro.</p>';
+  showNext(nextBtn);
+}
+
+function renderSalaIcHoja(bodyEl, nextBtn) {
+  bodyEl.innerHTML =
+    '<p style="margin:0;line-height:1.5;"><strong>Expediente → Salida → Generar hoja IC</strong>: exporta el .docx institucional de seguimiento con los datos del paciente a la <strong>fecha de corte</strong>.</p>' +
+    '<p style="margin:10px 0 0;font-size:13px;color:var(--text-muted);">En el tutorial no hace falta exportar; revisa el panel y pulsa <strong>Siguiente</strong>.</p>';
   showNext(nextBtn);
 }
 
@@ -167,9 +183,9 @@ function renderServicioDefault(bodyEl, nextBtn) {
 
 function renderEstadoActual(bodyEl, nextBtn) {
   bodyEl.innerHTML =
-    '<p style="margin:0;line-height:1.5;">En <strong>Clínico → Estado actual</strong> el <strong>snapshot</strong> resume el turno (SV, glu, I/O, medicamentos). Abajo, las <strong>gráficas</strong> muestran tendencias por familia (hemodinámico, respiratorio, metabólico) con puntos alterados resaltados.</p>' +
-    '<p style="margin:10px 0 0;line-height:1.5;">El historial de mediciones y el texto compilado para la nota están en esta misma pestaña. El demo trae tomas de <strong>hoy</strong> (TM, TV, TN).</p>' +
-    '<p style="margin:10px 0 0;font-size:13px;color:var(--text-muted);">Pulsa <strong>Siguiente</strong> para practicar un <strong>registro manual</strong>.</p>';
+    '<p style="margin:0;line-height:1.5;">En <strong>Clínico → Estado actual</strong> el <strong>snapshot</strong> resume el turno (SV, glu, I/O). Arriba verás el bloque de <strong>descongestión</strong>; abajo, gráficas e historial.</p>' +
+    '<p style="margin:10px 0 0;line-height:1.5;">El demo trae tomas de <strong>hoy</strong> (TM, TV, TN). El siguiente paso detalla descongestión / congestión / POCUS.</p>' +
+    '<p style="margin:10px 0 0;font-size:13px;color:var(--text-muted);">Pulsa <strong>Siguiente</strong>.</p>';
   showNext(nextBtn);
 }
 
@@ -218,35 +234,29 @@ function renderSalaRecetaHu(bodyEl, nextBtn) {
 
 function renderSalaAgenda(bodyEl, nextBtn) {
   bodyEl.innerHTML =
-    '<p style="margin:0;line-height:1.5;">La pestaña <strong>Agenda</strong> (arriba) concentra <strong>procedimientos programados</strong> del servicio: cirugías, estudios y pendientes del turno, enlazados al paciente cuando aplica.</p>' +
-    '<p style="margin:10px 0 0;font-size:13px;color:var(--text-muted);">Con <strong>⇄ LiveSync</strong> la agenda se comparte en la sala. <strong>Siguiente</strong>: sincronización en equipo.</p>';
+    '<p style="margin:0;line-height:1.5;">La pestaña <strong>Agenda</strong> (arriba) concentra <strong>procedimientos programados</strong>: estudios y pendientes del turno, enlazados al paciente cuando aplica.</p>' +
+    '<p style="margin:10px 0 0;font-size:13px;color:var(--text-muted);">Es local a este equipo. <strong>Siguiente</strong> para cerrar el tutorial.</p>';
   showNext(nextBtn);
 }
 
 function renderLivesyncDesktop(bodyEl, nextBtn) {
   bodyEl.innerHTML =
-    '<p style="margin:0;line-height:1.5;">' +
-    LIVESYNC_BTN_COPY +
-    ' abre la sala en vivo: activa la red del turno y luego <strong>creas una sala</strong> o <strong>te unes</strong> a una existente. En iPad u otra Mac pegas el enlace de invitación.</p>' +
-    '<p style="margin:10px 0 0;font-size:13px;color:var(--text-muted);">Pulsa el icono Wi‑Fi para abrir el panel; aparece <strong>Siguiente</strong> cuando esté visible.</p>';
-  if (stepRequiresUserAction('livesync_desktop')) hideNext(nextBtn);
+    '<p style="margin:0;line-height:1.5;">R+ Cardio trabaja <strong>en local</strong> (sin LiveSync). Usa <strong>Ajustes</strong> para respaldos y carpeta de documentos.</p>';
+  showNext(nextBtn);
 }
 
 function renderLivesyncMobile(bodyEl, nextBtn) {
   bodyEl.innerHTML =
-    '<p style="margin:0;line-height:1.5;">En LiveSync usa <strong>Copiar enlace móvil</strong> y ábrelo en Safari (misma Wi‑Fi). ' +
-    MOBILE_SCOPE_COPY +
-    '</p>' +
-    '<p style="margin:10px 0 0;font-size:13px;color:var(--text-muted);">El Mac anfitrión debe tener R+ abierto y la <strong>misma sala LiveSync</strong> que el equipo de escritorio.</p>';
+    '<p style="margin:0;line-height:1.5;">No hay cliente móvil de sync en este MVP. El seguimiento IC se hace en el escritorio y se exporta con <strong>Generar hoja IC</strong>.</p>';
   showNext(nextBtn);
 }
 
 function renderWrap(bodyEl, nextBtn) {
   bodyEl.innerHTML =
-    '<p style="margin:0;line-height:1.5;">Listo. Repite el tutorial desde <strong>Mi Perfil</strong> o <strong>Ajustes</strong>. Para el equipo en vivo usa <strong>LiveSync</strong> y, si hace falta, el enlace móvil.</p>' +
-    '<p style="margin:10px 0 0;font-size:13px;color:var(--text-muted);"><strong>Modo Pase</strong> (resumen de ronda): prueba el atajo <strong>' +
+    '<p style="margin:0;line-height:1.5;">Listo. Flujo típico: <strong>pegar labs</strong> → documentar en <strong>Estado actual / Manejo</strong> → <strong>Generar hoja IC</strong>. Repite módulos desde <strong>Aprender R+ Cardio</strong>.</p>' +
+    '<p style="margin:10px 0 0;font-size:13px;color:var(--text-muted);"><strong>Modo Pase</strong> (resumen de ronda): atajo <strong>' +
     getWrapPaseShortcutKey() +
-    '+P</strong> o <strong>Ajustes → Modo de vista → Pase</strong> cuando quieras ver pendientes, labs y meds en una sola columna.</p>';
+    '+P</strong> o <strong>Ajustes → Modo de vista → Pase</strong>.</p>';
   finishNext(nextBtn);
 }
 
@@ -275,6 +285,10 @@ const FUNDAMENTOS_STEP_HANDLERS = {
   listado_problemas: renderListadoProblemas,
   sala_vpo: renderSalaVpo,
   sala_receta_hu: renderSalaRecetaHu,
+  sala_manejo: renderSalaManejo,
+  cardio_demo_intro: renderCardioDemoIntro,
+  cardio_descongestion: renderCardioDescongestion,
+  sala_ic_hoja: renderSalaIcHoja,
   sala_agenda: renderSalaAgenda,
   livesync_desktop: renderLivesyncDesktop,
   livesync_mobile: renderLivesyncMobile,

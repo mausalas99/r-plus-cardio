@@ -17,6 +17,7 @@ import {
   guardDocExportBlocked,
   saveOutputDirSelection,
 } from './document-export-client.mjs';
+import { isCardionotasLanUiEnabled } from './features/cardio/cardionotas-gates.mjs';
 
 var rt = {
   getSettings() {
@@ -52,7 +53,7 @@ var CENSO_EXPORT_BUTTON_IDS = [
 ];
 
 export function syncCensoExportButtonVisibility() {
-  var show = isModeSala(rt.getSettings()) && !isMobileWeb();
+  var show = isCardionotasLanUiEnabled() && isModeSala(rt.getSettings()) && !isMobileWeb();
   CENSO_EXPORT_BUTTON_IDS.forEach(function (id) {
     var btn = document.getElementById(id);
     if (!btn) return;

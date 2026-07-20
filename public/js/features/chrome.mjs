@@ -1,6 +1,7 @@
 import { normalizeMotionMode, motionClassFor, ALL_MOTION_CLASSES } from '../motion-mode.mjs';
 import { isModeSala } from '../mode-features.mjs';
-import { isCardionotasInterconsultaEnabled } from './cardio/cardionotas-gates.mjs';
+import { isCardionotasInterconsultaEnabled, isCardionotasLanUiEnabled } from './cardio/cardionotas-gates.mjs';
+import { applyCardionotasStreamlineChrome } from './cardio/cardionotas-chrome.mjs';
 import { paseSectionLabelFromTab } from './chrome-pase-label.mjs';
 
 /** Runtime hooks supplied by app.js once shell functions exist. */
@@ -306,8 +307,16 @@ if (typeof document !== 'undefined') {
 }
 
 export function syncHeaderModeSeg() {
+  applyCardionotasStreamlineChrome();
   var seg = document.getElementById('header-mode-seg');
   if (!seg) return;
+  if (!isCardionotasLanUiEnabled()) {
+    seg.hidden = true;
+    seg.style.display = 'none';
+    return;
+  }
+  seg.hidden = false;
+  seg.style.display = '';
   var mode = getWorkMode();
   var interEnabled = isCardionotasInterconsultaEnabled();
   seg.querySelectorAll('.header-mode-seg-btn').forEach(function (btn) {

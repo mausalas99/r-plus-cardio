@@ -22,7 +22,7 @@ test('groupSections: clinico follows mode', () => {
 
 test('groupSections: resultados and salida come from the existing maps', () => {
   assert.deepEqual(groupSections('resultados', SALA), ['tend', 'cult']);
-  assert.deepEqual(groupSections('salida', SALA), ['icHoja', 'listado']);
+  assert.deepEqual(groupSections('salida', SALA), ['icHoja']);
   assert.deepEqual(groupSections('salida', INTER), []);
   assert.deepEqual(groupSections('manejo', SALA), []);
 });

@@ -13,7 +13,7 @@ function wireGuardiaV7UpgradeCardOnce(el) {
     document.getElementById('guardia-v7-upgrade-card')?.remove();
     void import('./tour-runtime.mjs').then((mod) => {
       if (typeof mod.startTourModule === 'function') {
-        mod.startTourModule('ch-guardia-modo');
+        mod.startTourModule('ch-quick-route');
       }
     });
   });
@@ -41,22 +41,22 @@ export function maybeShowGuardiaV7UpgradeCard({ delayMs = 0 } = {}) {
     const progress = guardiaV7ProgressSummary();
     const startLabel =
       progress.completed > 0 && progress.completed < progress.total
-        ? 'Continuar guía de guardia'
-        : 'Empezar guía de guardia';
+        ? 'Continuar ruta IC'
+        : 'Empezar ruta IC (5 min)';
 
     const el = document.createElement('div');
     el.id = 'guardia-v7-upgrade-card';
     el.className = 'clinical-onboarding-card guardia-v7-upgrade-card';
     el.setAttribute('role', 'region');
-    el.setAttribute('aria-label', 'Novedades de guardia en R+ 7');
+    el.setAttribute('aria-label', 'Bienvenida a R+ Cardio');
     el.innerHTML =
-      '<h3 class="clinical-onboarding-title">Novedades de guardia en R+ 7</h3>' +
+      '<h3 class="clinical-onboarding-title">Bienvenido a R+ Cardio</h3>' +
       '<p class="guardia-v7-upgrade-progress" aria-live="polite">' +
       'Progreso: <strong>' +
       progress.completed +
       '/' +
       progress.total +
-      '</strong> capítulos (' +
+      '</strong> módulos (' +
       progress.percent +
       '%)</p>' +
       '<div class="guardia-v7-upgrade-meter" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="' +
@@ -66,9 +66,9 @@ export function maybeShowGuardiaV7UpgradeCard({ delayMs = 0 } = {}) {
       progress.percent +
       '%"></span></div>' +
       '<ul class="guardia-v7-upgrade-bullets">' +
-      '<li><strong>Modo Guardia</strong> — tablero de turno, censo y alcance por rango.</li>' +
-      '<li><strong>Modo Entrega</strong> — handoff por paciente, roster y pendientes v2.</li>' +
-      '<li><strong>LAN 7.x</strong> — PIN del turno, directorio y enlace móvil permanente.</li>' +
+      '<li><strong>Laboratorio</strong> — pega SOME y da de alta pacientes.</li>' +
+      '<li><strong>Estado actual</strong> — descongestión, congestión y POCUS.</li>' +
+      '<li><strong>Manejo + hoja IC</strong> — fantásticos/diuréticos y .docx institucional.</li>' +
       '</ul>' +
       '<div class="modal-actions guardia-v7-upgrade-actions">' +
       '<button type="button" class="btn-save" id="guardia-v7-upgrade-start">' +

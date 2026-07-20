@@ -1,16 +1,16 @@
-export const CURRICULUM_VERSION = 10;
+export const CURRICULUM_VERSION = 12;
 
+/** Fundamentos — flujo R+ Cardio (Sala local, sin LiveSync / Interconsulta). */
 export const SALA_CHAPTERS = [
   {
     id: 'ch-patient-lab',
-    title: 'Paciente y laboratorio',
+    title: 'Pacientes y laboratorio',
     stepIds: [
       'map_sidebar',
       'map_tabs',
       'map_lab_teaser',
       'lab_parse',
       'lab_view',
-      'servicio_default',
     ],
   },
   {
@@ -20,6 +20,7 @@ export const SALA_CHAPTERS = [
       'sala_expediente_tabs',
       'historia_clinica',
       'estado_actual',
+      'cardio_descongestion',
       'estado_actual_registro',
       'estado_actual_review',
       'eventualidades',
@@ -31,101 +32,54 @@ export const SALA_CHAPTERS = [
     stepIds: ['sala_tend', 'sala_tend_chart'],
   },
   {
+    id: 'ch-manejo',
+    title: 'Manejo',
+    stepIds: ['sala_manejo', 'sala_med'],
+  },
+  {
     id: 'ch-salida',
-    title: 'Medicamentos y salida',
-    stepIds: ['sala_med', 'listado_problemas', 'sala_vpo', 'sala_receta_hu'],
+    title: 'Hoja IC',
+    stepIds: ['sala_ic_hoja'],
   },
   {
     id: 'ch-agenda',
     title: 'Agenda',
-    stepIds: ['sala_agenda'],
-  },
-  {
-    id: 'ch-team',
-    title: 'Equipo',
-    stepIds: ['livesync_desktop', 'livesync_mobile', 'wrap'],
+    stepIds: ['sala_agenda', 'wrap'],
   },
 ];
 
-/** Interconsulta: lab block first (sin servicio_default en v1). */
-export const IC_CHAPTERS = [
-  {
-    id: 'ch-ic-lab',
-    title: 'Paciente y laboratorio',
-    stepIds: [
-      'map_sidebar',
-      'map_tabs',
-      'map_lab_teaser',
-      'lab_parse',
-      'lab_view',
-    ],
-  },
-  {
-    id: 'ch-ic-chart',
-    title: 'Expediente y clínico',
-    stepIds: [
-      'ic_expediente_tabs',
-      'sala_tend',
-      'sala_tend_chart',
-      'sala_soap',
-      'sala_med',
-      'ic_nota',
-      'ic_indica',
-    ],
-  },
-  {
-    id: 'ch-ic-settings',
-    title: 'Ajustes y perfil',
-    stepIds: ['ic_exports', 'profile'],
-  },
-  {
-    id: 'ch-ic-team',
-    title: 'Equipo',
-    stepIds: ['livesync_desktop', 'livesync_mobile', 'wrap'],
-  },
-];
+/** @deprecated Interconsulta no es producto en R+ Cardio; se mantiene vacío para imports legacy. */
+export const IC_CHAPTERS = [];
 
+/**
+ * Módulos cortos del hub (track «Empezar aquí»).
+ * Branch id sigue siendo `guardia-v7` por compatibilidad de progreso/LS.
+ */
 export const GUARDIA_V7_CHAPTERS = [
   {
-    id: 'ch-guardia-modo',
-    title: 'Modo Guardia',
-    stepIds: [
-      'gv7_guardia_chip',
-      'gv7_guardia_tab',
-      'gv7_guardia_scope',
-      'gv7_guardia_toggle',
-      'gv7_guardia_exit',
-    ],
+    id: 'ch-cardio-labs',
+    title: 'Laboratorio y tendencias',
+    stepIds: ['sala_tend', 'sala_tend_chart'],
   },
   {
-    id: 'ch-guardia-censo',
-    title: 'Censo y alcance',
-    stepIds: ['gv7_censo_r1', 'gv7_censo_r4', 'gv7_censo_sync'],
+    id: 'ch-cardio-descongestion',
+    title: 'Descongestión y Estado actual',
+    stepIds: ['estado_actual', 'cardio_descongestion', 'estado_actual_review'],
   },
   {
-    id: 'ch-guardia-entrega',
-    title: 'Modo Entrega',
-    stepIds: [
-      'gv7_entrega_phase',
-      'gv7_entrega_patient',
-      'gv7_entrega_roster',
-      'gv7_entrega_pendientes',
-    ],
+    id: 'ch-cardio-manejo',
+    title: 'Manejo (fantásticos y diuréticos)',
+    stepIds: ['sala_manejo'],
   },
   {
-    id: 'ch-guardia-lan',
-    title: 'LAN y equipos',
-    stepIds: [
-      'gv7_lan_wifi',
-      'gv7_lan_pin',
-      'gv7_lan_directorio',
-      'gv7_lan_rotacion',
-    ],
+    id: 'ch-cardio-hoja',
+    title: 'Generar hoja IC',
+    stepIds: ['sala_ic_hoja'],
   },
   {
-    id: 'ch-guardia-movil',
-    title: 'iPad y móvil',
-    stepIds: ['gv7_mobile_link', 'gv7_mobile_scope', 'gv7_mobile_vs_sala'],
+    id: 'ch-cardio-agenda',
+    title: 'Agenda',
+    stepIds: ['sala_agenda'],
   },
 ];
 
@@ -134,11 +88,10 @@ export const QUICK_ROUTE_CHAPTERS = [
     id: 'ch-quick-route',
     title: 'Ruta rápida',
     stepIds: [
-      'map_lab_teaser',
-      'lab_parse',
-      'gv7_guardia_chip',
-      'gv7_lan_wifi',
-      'gv7_entrega_phase',
+      'cardio_demo_intro',
+      'cardio_descongestion',
+      'sala_manejo',
+      'sala_ic_hoja',
       'quick_wrap',
     ],
   },
@@ -146,7 +99,7 @@ export const QUICK_ROUTE_CHAPTERS = [
 
 export const QUICK_ROUTE_HUB_MODULE = {
   id: 'ch-quick-route',
-  label: 'Ruta rápida · turno en 5 min',
+  label: 'Ruta rápida · caso IC en 5 min',
   chapterId: 'ch-quick-route',
   branch: 'quick-route',
   stepCount: QUICK_ROUTE_CHAPTERS[0].stepIds.length,
@@ -161,21 +114,15 @@ export const GUARDIA_V7_HUB_MODULES = GUARDIA_V7_CHAPTERS.map((ch) => ({
 }));
 
 export const SALA_HUB_MODULES = [
-  { id: 'mod-ch1', chapterId: 'ch-patient-lab', label: 'Laboratorio y pacientes', branch: 'sala' },
+  { id: 'mod-ch1', chapterId: 'ch-patient-lab', label: 'Pacientes y laboratorio', branch: 'sala' },
   { id: 'mod-ch2', chapterId: 'ch-chart', label: 'Expediente · Clínico', branch: 'sala' },
   { id: 'mod-ch3', chapterId: 'ch-results', label: 'Resultados (tendencias)', branch: 'sala' },
-  { id: 'mod-ch4', chapterId: 'ch-salida', label: 'Medicamentos y salida', branch: 'sala' },
-  { id: 'mod-ch5', chapterId: 'ch-agenda', label: 'Agenda del turno', branch: 'sala' },
-  { id: 'mod-ch6', chapterId: 'ch-team', label: 'Equipo (LiveSync + móvil)', branch: 'sala' },
+  { id: 'mod-ch4', chapterId: 'ch-manejo', label: 'Manejo IC', branch: 'sala' },
+  { id: 'mod-ch5', chapterId: 'ch-salida', label: 'Generar hoja IC', branch: 'sala' },
+  { id: 'mod-ch6', chapterId: 'ch-agenda', label: 'Agenda', branch: 'sala' },
 ];
 
-export const IC_HUB_MODULES = IC_CHAPTERS.map((ch) => ({
-  id: ch.id,
-  label: ch.title,
-  chapterId: ch.id,
-  branch: 'interconsulta',
-  stepCount: ch.stepIds.length,
-}));
+export const IC_HUB_MODULES = [];
 
 /** @deprecated Use SALA_HUB_MODULES — kept for legacy imports */
 export const HUB_MODULES = SALA_HUB_MODULES;
@@ -286,6 +233,21 @@ export function migrateTourStepId(stepId, _branch) {
     stepId === 'estado_actual_historial'
   ) {
     return 'estado_actual_review';
+  }
+  if (stepId === 'sala_vpo' || stepId === 'sala_receta_hu' || stepId === 'listado_problemas') {
+    return 'sala_ic_hoja';
+  }
+  if (stepId === 'livesync_desktop' || stepId === 'livesync_mobile') {
+    return 'wrap';
+  }
+  if (stepId === 'servicio_default') {
+    return 'lab_view';
+  }
+  if (String(stepId || '').indexOf('gv7_') === 0) {
+    return 'map_lab_teaser';
+  }
+  if (stepId === 'map_lab_teaser' || stepId === 'lab_parse') {
+    return 'cardio_demo_intro';
   }
   return stepId;
 }

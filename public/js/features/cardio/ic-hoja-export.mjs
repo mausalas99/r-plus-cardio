@@ -9,8 +9,9 @@ import {
   syncApprovedOutputDir,
 } from '../../document-export-client.mjs';
 import { rt } from '../expediente/expediente-runtime.mjs';
-import { localYmd } from './descongestion-panel.mjs';
+import { localYmd, resolveClinicalAsOfYmd } from './descongestion-panel.mjs';
 import { escHtml, escAttr } from '../../dom-escape.mjs';
+import { refreshRpcDateFields } from '../../rpc-date-picker.mjs';
 
 function activePatient() {
   var id = rt.getActiveId && rt.getActiveId();
@@ -35,7 +36,7 @@ export function renderIcHojaExportPanel(mount) {
       '</div>';
     return;
   }
-  var asOf = localYmd();
+  var asOf = resolveClinicalAsOfYmd(patient) || localYmd();
   mount.innerHTML =
     '<div class="ic-hoja-export rpc-form-stack" data-ic-hoja-export="1">' +
     '<div class="card">' +
@@ -44,7 +45,7 @@ export function renderIcHojaExportPanel(mount) {
     '<p class="ea-muted" style="margin:0 0 12px;">Genera el .docx institucional con los datos del paciente a la fecha indicada.</p>' +
     '<div class="field-group" style="max-width:220px;">' +
     '<label for="ic-hoja-asof">Fecha de corte</label>' +
-    '<input type="date" id="ic-hoja-asof" class="profile-input" value="' +
+    '<input type="date" id="ic-hoja-asof" class="profile-input rpc-date-input" value="' +
     escAttr(asOf) +
     '">' +
     '</div>' +
@@ -59,6 +60,7 @@ export function renderIcHojaExportPanel(mount) {
     '</svg>Generar hoja IC</button>' +
     '</div></div>';
   ensureIcHojaWired(mount);
+  refreshRpcDateFields(mount);
 }
 
 /**

@@ -1,6 +1,7 @@
 import { CLINICAL_SALA_VALUES } from '../../lib/clinical-salas.mjs';
 import { clinicalSessionContext } from './clinical-access-runtime.mjs';
 import { esc } from './dom-escape.mjs';
+import { isCardionotasLanUiEnabled } from './features/cardio/cardionotas-gates.mjs';
 
 /** @param {object[]|null|undefined} teams @param {string} teamId */
 function findTeamById(teams, teamId) {
@@ -32,8 +33,9 @@ function buildSalaOptionsHtml(selected) {
   );
 }
 
-/** Sala dropdown for Expediente → Datos. */
+/** Sala dropdown for Expediente → Datos. Hidden in R+ Cardio (no LAN salas). */
 export function buildPatientSalaFieldHtml(patient) {
+  if (!isCardionotasLanUiEnabled()) return '';
   const sala = String(patient?.sala || '').trim();
   return (
     '<div class="field-group patient-sala-field">' +
@@ -49,6 +51,14 @@ export function buildPatientSalaFieldHtml(patient) {
 /** Sync #m-sala in the new-patient modal. */
 export function syncPatientRegistrationSalaSelect(teamId) {
   if (typeof document === 'undefined') return;
+  if (!isCardionotasLanUiEnabled()) {
+    const group = document.getElementById('m-sala-group');
+    if (group) {
+      group.hidden = true;
+      group.style.display = 'none';
+    }
+    return;
+  }
   const select = document.getElementById('m-sala');
   if (!(select instanceof HTMLSelectElement)) return;
   const user = clinicalSessionContext.user;

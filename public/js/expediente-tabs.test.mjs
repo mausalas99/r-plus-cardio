@@ -64,7 +64,8 @@ test('migrateGranularInner keeps known tabs and falls back to todo', () => {
   assert.equal(migrateGranularInner('unknown', INTER), 'todo');
   assert.equal(migrateGranularInner(null, INTER), 'todo');
   assert.equal(migrateGranularInner('notas', SALA), 'historia');
-  assert.equal(migrateGranularInner('recetaHu', SALA), 'recetaHu');
+  assert.equal(migrateGranularInner('recetaHu', SALA), 'icHoja');
+  assert.equal(migrateGranularInner('listado', SALA), 'icHoja');
   assert.equal(migrateGranularInner('listado', INTER), 'todo');
   assert.equal(migrateGranularInner('estadoActual', SALA), 'estadoActual');
   assert.equal(migrateGranularInner('estadoActual', INTER), 'todo');
@@ -104,7 +105,7 @@ test('getClinicoSections differs by mode (manejo hidden globally)', () => {
 });
 
 test('getSalidaSections only in sala', () => {
-  assert.deepEqual(getSalidaSections(SALA), ['icHoja', 'listado']);
+  assert.deepEqual(getSalidaSections(SALA), ['icHoja']);
   assert.deepEqual(getSalidaSections(INTER), []);
 });
 
@@ -119,8 +120,8 @@ test('inter clinico sections include vpo and no manejo or historia', () => {
   assert.deepEqual(getClinicoSections(INTER), ['notas', 'indica', 'vpo']);
 });
 
-test('sala salida sections exclude vpo and recetaHu under Cardionotas gate', () => {
-  assert.deepEqual(getSalidaSections(SALA), ['icHoja', 'listado']);
+test('sala salida sections exclude listado, vpo and recetaHu under Cardionotas gate', () => {
+  assert.deepEqual(getSalidaSections(SALA), ['icHoja']);
 });
 
 test('resolveConsolidatedTarget icHoja maps to salida in sala', () => {

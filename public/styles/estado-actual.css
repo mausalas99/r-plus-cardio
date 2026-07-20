@@ -2603,11 +2603,27 @@ html.ea-copy-fab-active #exp-pane-estado-actual {
 }
 
 /* Cardionotas IC — Manejo medication tables */
+#itab-content-manejo.tab-content.exp-composite-pane.active {
+  flex-direction: column;
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto !important;
+  -webkit-overflow-scrolling: touch;
+}
+
+#exp-pane-manejo {
+  flex: 0 0 auto;
+  width: 100%;
+  min-height: 0;
+  overflow: visible;
+  padding-bottom: calc(32px * var(--density-space, 1));
+}
+
 .manejo-panel {
   display: flex;
   flex-direction: column;
   gap: calc(14px * var(--density-space, 1));
-  padding: calc(8px * var(--density-space, 1)) 0;
+  padding: calc(8px * var(--density-space, 1)) 0 calc(28px * var(--density-space, 1));
 }
 
 .manejo-section + .manejo-section {
@@ -2656,5 +2672,14 @@ html.ea-copy-fab-active #exp-pane-estado-actual {
 .manejo-table .ea-input {
   width: 100%;
   min-width: 72px;
+}
+
+.manejo-table .rpc-date-field,
+.manejo-table input.rpc-date-input[type='date'] {
+  min-width: 148px;
+}
+
+.manejo-table td:nth-child(4) .ea-input {
+  min-width: 120px;
 }
 

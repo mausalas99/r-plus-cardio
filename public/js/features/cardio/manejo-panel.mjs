@@ -7,6 +7,11 @@ import {
 import { patients, saveState } from '../../app-state.mjs';
 import { rt } from '../pase-board-runtime.mjs';
 import { localYmd } from './descongestion-panel.mjs';
+import { refreshRpcDateFields } from '../../rpc-date-picker.mjs';
+import {
+  isDemoIcPatient,
+  hydrateDemoIcPatientFromBundle,
+} from './demo-ic-hydrate.mjs';
 import {
   normalizeFantasticosRows,
   updateFantasticoField,
@@ -27,6 +32,8 @@ export {
   buildManejoPanelHtml,
 } from './manejo-panel-html.mjs';
 
+export { cardioSegmentsIncomplete as cardioSegmentsNeedDemoHeal } from './demo-ic-hydrate.mjs';
+
 /**
  * @param {HTMLElement | null} mount
  */
@@ -44,10 +51,16 @@ export function renderManejoPanel(mount) {
     return;
   }
   ensureCardio(patient);
+  if (isDemoIcPatient(patient)) {
+    if (hydrateDemoIcPatientFromBundle(patient)) {
+      saveState({ immediate: true });
+    }
+  }
   /** @type {any} */
   var cardio = patient.cardio;
   mount.innerHTML = buildManejoPanelHtml(cardio);
   ensureManejoWired(mount);
+  refreshRpcDateFields(mount);
 }
 
 /** @returns {Record<string, unknown> | null} */

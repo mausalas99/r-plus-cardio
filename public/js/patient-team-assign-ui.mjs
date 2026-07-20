@@ -8,6 +8,7 @@ import { hasElevatedTeamPrivileges } from './clinical-privileges.mjs';
 import { filterJoinedTeams } from './features/clinical-teams/shared.mjs';
 import { resolveActiveTeamFilterId } from './features/clinical-census-filters-ui.mjs';
 import { patients, saveState } from './app-state.mjs';
+import { isCardionotasLanUiEnabled } from './features/cardio/cardionotas-gates.mjs';
 
 import { esc } from './dom-escape.mjs';
 function dbApi() {
@@ -119,6 +120,13 @@ export function syncPatientRegistrationTeamSelect(selectedTeamId) {
   const group = document.getElementById('m-team-group');
   const select = document.getElementById('m-team');
   if (!group || !select) return;
+  if (!isCardionotasLanUiEnabled()) {
+    group.hidden = true;
+    group.style.display = 'none';
+    select.innerHTML = '<option value="">— Sin asignar —</option>';
+    select.value = '';
+    return;
+  }
   const user = clinicalSessionContext.user;
   const teams = assignableTeamsForUser(user);
   if (!teams.length) {
@@ -143,6 +151,7 @@ export function readPatientRegistrationTeamId() {
 }
 
 export function buildPatientTeamAssignSectionHtml(patient) {
+  if (!isCardionotasLanUiEnabled()) return '';
   const user = clinicalSessionContext.user;
   if (!user?.user_id || !patient?.id) return '';
 

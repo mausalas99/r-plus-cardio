@@ -136,7 +136,7 @@ Packaged files list: `npm run release:sync-pack` updates electron-builder `build
 
 Maintained incrementally — see `sync-context-on-commit.mdc`. Max ~20 entries.
 
-- **2026-07-19** `cardio-release-repo`: R+ Cardio 1.0.0 publishes to `mausalas99/r-plus-cardio` (separate from `r-mas`); updater/downgrade URLs + `stable-versions`/`min-version`.
+- **2026-07-19** `cardio-release-repo`: public `mausalas99/r-plus-cardio` (CI on main, wiki, secret scanning); 1.0.0 publish target separate from `r-mas`; updater URLs + package repository metadata.
 - **2026-07-19** `cardio-ic-fixture`: Ma.Elena export smoke fixture + README Cardionotas links; `data/demo-patients/ma-elena-ic-fixture.json`, `ic-hoja-fixture-smoke.test.mjs`.
 - **2026-07-19** `cardio-ic-export`: Salida **Generar hoja IC** (as-of date) via `/generate-ic-hoja` + IPC `ic-hoja`; `features/cardio/ic-hoja-export.mjs`, `doc-export-service.js`.
 - **2026-07-19** `cardio-ic-hoja`: fixed-schema IC seguimiento docx filler (OOXML sentinels) + export payload; `lib/cardio/ic-export-payload.mjs`, `lib/doc-generators/ic-hoja*.js`, `templates/ic-seguimiento.docx`.

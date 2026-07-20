@@ -47,7 +47,7 @@ export function buildFantasticosTableHtml(rows, catalog) {
         '" value="' +
         escAttr(row.drug) +
         '" placeholder="Fármaco"></td>' +
-        '<td><input type="date" class="ea-input" data-manejo-fant="inicio" data-manejo-fant-idx="' +
+        '<td><input type="date" class="ea-input rpc-date-input" data-manejo-fant="inicio" data-manejo-fant-idx="' +
         idx +
         '" value="' +
         escAttr(row.inicio) +
@@ -133,7 +133,7 @@ export function buildSegmentTableHtml(opts) {
         '"' +
         (row.active ? '' : ' disabled') +
         '></td>' +
-        '<td><input type="date" class="ea-input" data-manejo-seg-field="inicio" data-manejo-seg-id="' +
+        '<td><input type="date" class="ea-input rpc-date-input" data-manejo-seg-field="inicio" data-manejo-seg-id="' +
         escAttr(row.id) +
         '" value="' +
         escAttr(row.inicio) +
@@ -175,7 +175,7 @@ export function buildSegmentTableHtml(opts) {
     '<td><input type="text" class="ea-input" list="' +
     escAttr(draftListId) +
     '" data-manejo-seg-draft="tipo" placeholder="Tipo"></td>' +
-    '<td><input type="date" class="ea-input" data-manejo-seg-draft="inicio"></td>' +
+    '<td><input type="date" class="ea-input rpc-date-input" data-manejo-seg-draft="inicio"></td>' +
     '<td><input type="text" class="ea-input" data-manejo-seg-draft="dosis" placeholder="Dosis"></td>' +
     '<td><input type="text" class="ea-input" data-manejo-seg-draft="indicacion" placeholder="Indicación"></td>' +
     draftMg +

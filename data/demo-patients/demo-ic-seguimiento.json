@@ -1,0 +1,584 @@
+{
+  "format": "r-plus-patient-export",
+  "version": 1,
+  "exportedAt": "2026-03-19T18:00:00.000Z",
+  "appVersion": null,
+  "patient": {
+    "id": "demo-ic-seguimiento",
+    "nombre": "Rosa María Delgado Vázquez",
+    "registro": "DEMO-IC-0001",
+    "edad": "79",
+    "sexo": "F",
+    "area": "Cardiología",
+    "servicio": "Cardiología",
+    "cuarto": "312",
+    "cama": "2",
+    "fimiFecha": "2026-03-13",
+    "fenotipo": "Fenotipo de HFpEF",
+    "etiologia": "IC FEVIpreservada",
+    "residente": "Dra. Ana Laura Méndez Soto",
+    "diagnosticos": [
+      "Insuficiencia Cardiaca FEVI preservada",
+      "Exacerbación de Enfermedad Pulmonar Obstructiva Crónica",
+      "Portadora de Marcapasos St Jude secundario a Fibrilación Auricular + Bloqueo AV"
+    ],
+    "historiaClinica": {
+      "padecimientoActual": "Inicia padecimiento actual 5 días previo a ingreso al presentar tos no productiva que genera disnea de grandes esfuerzos progresiva hasta ser en reposo. Por lo cual, suspende medicamento (bumetanida). Acude a cita de seguimiento para revisión de marcapasos y a clínica de falla cardiaca. Se identifica SatO2: 80% aa, disnea en reposo; se auscultan estertores bibasales.\nSe realiza rastreo donde se identifica VCI: 2.8 no colapsa >50%, Patrón B pulmonar en ambos hemitórax 3-4 líneas B por campo, VExUS score: 2. Congestion score: 3 puntos (derrame pleural + edema de miembros inferiores). Sin defectos segmentarios, FEVI preservada.\nSe determina llevar a área de urgencias para iniciar tratamiento con diurético IV.\nSe indica dosis de furosemida 80 mg IV DU en bolo, obteniendo respuesta en diuresis 1600 cc en 5 horas y natriuresis 119NaU. Por lo cual, se determina continuar con dosis cada 12 horas. Uresis: 2900 cc en 24 hrs",
+      "app": {
+        "descripcionDetallada": "EPOC diagnosticado hace 15 años, en tratamiento con Trelegy inhalador, utilizar una inhalación cada 24 horas, última hospitalización en diciembre 2025 por exacerbación.\nApnea Obstructiva del Sueño, en tratamiento con BIPAPA y usuaria de oxígeno suplementario en casa 2l/min.\nPolisomnografía I A/H: 31,3, saturación promedio 87, menor saturación 69. SAOS grave, ronquido leve.\nMayo 2025, Colocación de marcapasos (marca St. Jude) por Fibrilación Auricular + bloqueo AV.\nInsuficiencia Cardiaca FEVI preservada, en tratamiento con Dapagliflozina 10 mg cada 24 horas + Finerrenona 20 mg cada 24 horas + Bisoprolol 2.5 mg cada 24 horas + Rivaroxaban 20 mg cada 24 horas + Bumetanida 1-1-0. Seguimiento en Clínica de Insuficiencia Cardiaca"
+      }
+    },
+    "eventualidades": {
+      "entries": [
+        {
+          "at": "2026-03-14T12:00:00.000Z",
+          "text": "Paciente con adecuada respuesta a dosis de diurético, se determina continuar con dosis cada 12 horas. Se realiza interconsulta con servicio de Neumología quienes sugieren agregar manejo para paciente con criterios compatibles con exacerbación de EPOC, por lo cual, se agrega Prednisona 40 mg cada 24 horas + Levofloxacino 750 mg cada 24 horas."
+        },
+        {
+          "at": "2026-03-15T14:00:00.000Z",
+          "text": "Paciente con adecuada respuesta a diurético, se determina continuar con misma dosis para mejorar parámetros de congestión. Pendiente traer de casa inhalador + BIPAP."
+        },
+        {
+          "at": "2026-03-16T14:30:00.000Z",
+          "text": "Continua en etapa de descongestión con adecuada respuesta, sin requerimiento de oxígeno suplementario y uso de BIPAP por las noches. Continua cumpliendo antibioticoterapia."
+        },
+        {
+          "at": "2026-03-17T15:00:00.000Z",
+          "text": "Paciente con mejoría en sintomatología. Se titula diurético hacia la baja, permanecemos en vigilancia."
+        },
+        {
+          "at": "2026-03-18T16:00:00.000Z",
+          "text": "Presenta un episodio de tos que requirió uso de MNB con combivent de rescate; se comenta con servicio de Neumología quien indica tratamiento con horario y se solicita Trellegy (medicamento previamente usado)."
+        },
+        {
+          "at": "2026-03-19T12:00:00.000Z",
+          "text": "Paciente con adecuada evolución clínica, por lo cual, se comenta con servicio de Neumología y Medicina Interna, por nuestro servicios sin datos clínicos de continuar hospitalizada, se entrega receta de alta y se cita en consulta de Insuficiencia Cardiaca en 7 días con paraclínicos."
+        }
+      ]
+    },
+    "cardio": {
+      "inicioDescongestion": "2026-03-13",
+      "ekg": "Ritmo de marcapasos, FC: 60 lpm, Morfología de bloqueo de rama izquierda",
+      "ritmo": "Ritmo de marcapasos",
+      "estrategiaControlFa": "Si, betabloqueador",
+      "overrides": {
+        "diuresisAcumuladaMl": 17245,
+        "furosemidaAcumuladaMg": 800
+      },
+      "pocusByDay": [
+        {
+          "date": "2026-03-13",
+          "vciCm": 2.8,
+          "vexus": 2,
+          "congestionScore": 3,
+          "lungPattern": "B",
+          "stevenson": "B",
+          "note": "VCI: 2.8 no colapsa >50%, Patrón B pulmonar en ambos hemitórax 3-4 líneas B por campo, VExUS 2, congestion 3 (derrame pleural + edema MI). Sin defectos segmentarios, FEVI preservada.",
+          "checklist": {
+            "pvy": true,
+            "rhy": true,
+            "soplo": false,
+            "estertores": true,
+            "edemaMi": true,
+            "llenadoCapilar": ">3s",
+            "ascitisHepatomegalia": false
+          },
+          "vciCollapse": "<50%",
+          "lungLinesB": "difusas"
+        },
+        {
+          "date": "2026-03-14",
+          "vciCm": 1.96,
+          "vexus": 0,
+          "congestionScore": 3,
+          "lungPattern": "B",
+          "stevenson": "B",
+          "note": "VCI: 1.96 VExUS 0, congestion 3 por edema MI + derrame pleural derecho, Patrón B, 3-4 líneas B por campo",
+          "checklist": {
+            "pvy": true,
+            "rhy": false,
+            "soplo": false,
+            "estertores": true,
+            "edemaMi": true,
+            "llenadoCapilar": "2-3s",
+            "ascitisHepatomegalia": false
+          },
+          "vciCollapse": "≥50%",
+          "lungLinesB": "moderadas"
+        },
+        {
+          "date": "2026-03-15",
+          "vciCm": 2.2,
+          "vexus": 1,
+          "congestionScore": 2,
+          "lungPattern": "B",
+          "stevenson": "B",
+          "note": "VCI: 2.2 VExUS 1, congestion 2 derrame pleural derecho no puncionable, Patrón B, 2-3 líneas B por campo",
+          "checklist": {
+            "pvy": true,
+            "rhy": false,
+            "soplo": false,
+            "estertores": true,
+            "edemaMi": true,
+            "llenadoCapilar": "2-3s",
+            "ascitisHepatomegalia": false
+          },
+          "vciCollapse": "≥50%",
+          "lungLinesB": "moderadas"
+        },
+        {
+          "date": "2026-03-16",
+          "vciCm": 1.8,
+          "vexus": 0,
+          "congestionScore": 2,
+          "lungPattern": "A",
+          "stevenson": "A",
+          "note": "VCI: 1.8 VExUS 0, congestion 2 derrame pleural derecho no puncionable, Patrón A, 1-2 líneas B por campo",
+          "checklist": {
+            "pvy": false,
+            "rhy": false,
+            "soplo": false,
+            "estertores": false,
+            "edemaMi": true,
+            "llenadoCapilar": "2-3s",
+            "ascitisHepatomegalia": false
+          },
+          "vciCollapse": "≥50%",
+          "lungLinesB": "escasas"
+        },
+        {
+          "date": "2026-03-17",
+          "vciCm": 1.76,
+          "vexus": 0,
+          "congestionScore": 2,
+          "lungPattern": "A",
+          "stevenson": "A",
+          "note": "VCI: 1.76 VExUS 0, congestion 2 derrame pleural derecho no puncionable, Patrón A, 1-2 líneas B por campo",
+          "checklist": {
+            "pvy": false,
+            "rhy": false,
+            "soplo": false,
+            "estertores": false,
+            "edemaMi": true,
+            "llenadoCapilar": "2-3s",
+            "ascitisHepatomegalia": false
+          },
+          "vciCollapse": "≥50%",
+          "lungLinesB": "escasas"
+        },
+        {
+          "date": "2026-03-18",
+          "vciCm": 1.5,
+          "vexus": 0,
+          "congestionScore": 0,
+          "lungPattern": "A",
+          "stevenson": "A",
+          "note": "VCI: 1.5 VExUS 0, congestion 0, Patrón A pulmonar",
+          "checklist": {
+            "pvy": false,
+            "rhy": false,
+            "soplo": false,
+            "estertores": false,
+            "edemaMi": false,
+            "llenadoCapilar": "2-3s",
+            "ascitisHepatomegalia": false
+          },
+          "vciCollapse": "≥50%",
+          "lungLinesB": "escasas"
+        },
+        {
+          "date": "2026-03-19",
+          "vciCm": 1.63,
+          "vexus": 0,
+          "congestionScore": 0,
+          "lungPattern": "A",
+          "stevenson": "A",
+          "usPulmonar": "Patrón A pulmonar",
+          "note": "VCI: 1.63 VExUS 0, congestion 0, Patrón A pulmonar",
+          "checklist": {
+            "pvy": false,
+            "rhy": false,
+            "soplo": false,
+            "estertores": false,
+            "edemaMi": false,
+            "llenadoCapilar": "2-3s",
+            "ascitisHepatomegalia": false
+          },
+          "vciCollapse": "≥50%",
+          "lungLinesB": "escasas"
+        }
+      ],
+      "diureticSegments": [
+        {
+          "id": "d1",
+          "tipo": "Furosemida",
+          "inicio": "2026-03-13",
+          "dosis": "80 mg IV DU bolo",
+          "indicacion": "Descongestión aguda",
+          "endedAt": "2026-03-13",
+          "mgTotal": 80
+        },
+        {
+          "id": "d2",
+          "tipo": "Furosemida",
+          "inicio": "2026-03-14",
+          "dosis": "80 mg IV cada 12 horas",
+          "indicacion": "Descongestión",
+          "endedAt": "2026-03-16",
+          "mgTotal": 480
+        },
+        {
+          "id": "d3",
+          "tipo": "Furosemida",
+          "inicio": "2026-03-17",
+          "dosis": "40 mg IV cada 12 horas",
+          "indicacion": "Titulación a la baja",
+          "endedAt": "2026-03-17",
+          "mgTotal": 80
+        },
+        {
+          "id": "d4",
+          "tipo": "Furosemida",
+          "inicio": "2026-03-18",
+          "dosis": "40 mg VO cada 12 horas",
+          "indicacion": "Mantenimiento VO",
+          "endedAt": null,
+          "mgTotal": 160
+        }
+      ],
+      "fantasticos": [
+        {
+          "className": "IECA/ARA/ARNI",
+          "drug": "Neparvis",
+          "inicio": "2026-03-13",
+          "dosis": "",
+          "tolerancia": "Buena"
+        },
+        {
+          "className": "SGLT2i",
+          "drug": "Dapagliflozina",
+          "inicio": "2026-03-13",
+          "dosis": "10 mg c/24h",
+          "tolerancia": "Buena"
+        },
+        {
+          "className": "Betabloqueador",
+          "drug": "Bisoprolol",
+          "inicio": "2026-03-13",
+          "dosis": "2.5 mg c/24h",
+          "tolerancia": "Buena"
+        },
+        {
+          "className": "MRA",
+          "drug": "Finerrenona",
+          "inicio": "2026-03-13",
+          "dosis": "20 mg c/24h",
+          "tolerancia": "Buena"
+        }
+      ],
+      "medSegments": [
+        {
+          "id": "m1",
+          "tipo": "Furosemida",
+          "inicio": "2026-03-17",
+          "dosis": "40 mg cada 12h",
+          "indicacion": "Descongestión",
+          "endedAt": null,
+          "mgTotal": null
+        },
+        {
+          "id": "m2",
+          "tipo": "Enoxaparina",
+          "inicio": "2026-03-13",
+          "dosis": "100 mg cada 12h",
+          "indicacion": "Anticoagulación",
+          "endedAt": null,
+          "mgTotal": null
+        },
+        {
+          "id": "m3",
+          "tipo": "Prednisona",
+          "inicio": "2026-03-13",
+          "dosis": "40 mg cada 24h",
+          "indicacion": "Exacerbación EPOC",
+          "endedAt": null,
+          "mgTotal": null
+        },
+        {
+          "id": "m4",
+          "tipo": "Levofloxacino",
+          "inicio": "2026-03-13",
+          "dosis": "750 mg cada 24h",
+          "indicacion": "Exacerbación EPOC",
+          "endedAt": null,
+          "mgTotal": null
+        },
+        {
+          "id": "m5",
+          "tipo": "Polietilenglicol",
+          "inicio": "2026-03-14",
+          "dosis": "17 g cada 24 horas",
+          "indicacion": "Estreñimiento",
+          "endedAt": null,
+          "mgTotal": null
+        },
+        {
+          "id": "m6",
+          "tipo": "Ipratropio-Salbutamol",
+          "inicio": "2026-03-16",
+          "dosis": "2.5 ml en 3 cc de NaCl 0.9% cada 6h",
+          "indicacion": "EPOC",
+          "endedAt": null,
+          "mgTotal": null
+        }
+      ],
+      "medCatalog": [
+        {
+          "tipo": "Enoxaparina",
+          "defaultIndicacion": "Anticoagulación"
+        },
+        {
+          "tipo": "Prednisona",
+          "defaultIndicacion": "Exacerbación EPOC"
+        },
+        {
+          "tipo": "Levofloxacino",
+          "defaultIndicacion": "Exacerbación EPOC"
+        },
+        {
+          "tipo": "Polietilenglicol",
+          "defaultIndicacion": "Estreñimiento"
+        },
+        {
+          "tipo": "Ipratropio-Salbutamol",
+          "defaultIndicacion": "EPOC"
+        }
+      ]
+    },
+    "icLabs": [
+      {
+        "date": "2026-03-13",
+        "lines": [
+          "PH: 7.30 PCO2: 60 HCO3: 29.5 LACTATO: 2.8",
+          "BHHB: 12.60 HTO: 40.8 LEU: 13.2 NEU: 10.10 PLT: 257",
+          "QSCR: 0.6 BUN: 14 GLU: 141 AU: 5.0 PT: 6.9",
+          "PFHALB: 3.9 AST: 11 ALT: 17 FA: 89 BT: 0.5 BD: 0.2 BI: 0.3 LDH: 151 AMILSA: 24 CT: 117 TG: 120",
+          "ESCL: 96.7 NA: 138.6 K: 4.0 CA: 8.9 P:3.5",
+          "KU: 11 NAU: 119 CRU: 11.28"
+        ]
+      },
+      {
+        "date": "2026-03-14",
+        "lines": [
+          "Hb 10.9 Hto 36 VCM 85 HCM 25.8 Leu 10.6 Neu 9.4 Eos 0.014 Plt 201 Glu 133 Cr 0.6 BUN 14 AU 5.6 TGL 63 COL 95 Na 140.3 Cl 98 K 3.9 Ca 8.5 F 3.5 Alb 3.2 AST 9 ALT 15 FA 76 BT 0.4 BD 0.2 BI 0.2 LDH 134 Amil 37 pH 7.33 pCO2 61 pO2 64 Lactato 0.9 Bica 32.2"
+        ]
+      },
+      {
+        "date": "2026-03-15",
+        "lines": [
+          "BHHB: 10.9 HTO: 36 HCM: 25.8 VCM: 85 LEU: 10.6 NEU: 9.40 MON: 0.541 EOS: 0.014 BAS: 0.048 PLT: 201",
+          "QSCR: 0.6 BUN: 14 GLU: 133 AU: 5.6",
+          "PFHPT: 6.1 ALB: 3.2 AST: 9 ALT: 15 FA: 76 AMILASA: 37 CT: 95 TG: 63",
+          "ESNA: 140.3 K: 3.9 CA: 8.5 P: 3.5",
+          "PH: 7.33 PCO2: 61 HCO3: 32.3 SATO2: 90% PO2: 64"
+        ]
+      },
+      {
+        "date": "2026-03-16",
+        "lines": [
+          "BHHB: 11.3 HTO: 37.5 LEU: 9.91 NEU: 7.98 PLT: 232",
+          "QSCR: 0.7 BUN: 21 GLU: 84 AU: 5.9",
+          "PFHALB: 3.2 AST: 9 ALT: 13 BT: 0.5 BD: 0.1 BI: 0.4 LDH: 147 CT: 120 TG: 91",
+          "ESCCL: 90.4 NA: 141.2 K: 3.7 CA: 8.1 P: 2.2",
+          "PH: 7.56 PCO2: 40 HCO3: 35.9 LACTATO: 1.7",
+          "PCR: 5.40"
+        ]
+      },
+      {
+        "date": "2026-03-17",
+        "lines": [
+          "BHHB: 12.2 HTO: 40.4 LEU: 8.42 NEU: 6.89 PLT: 241",
+          "QSCR: 0.8 BUN: 21 GLU: 108 AU: 6.8",
+          "PFHALB: 3.3 PT: 6.6 AST: 10 ALT: 15 FA: 73 BT: 0.5 BD: 0.1 BI: 0.4 LDH: 119 AMILASA: 36 TG: 86 CT: 124",
+          "ESCL: 88 NA: 142.4 K: 4.0 CA: 8.0 P: 3.5",
+          "PH: 7.54 PCO2: 51 HCO3: 43.6 LACTATO: 2.5"
+        ]
+      },
+      {
+        "date": "2026-03-18",
+        "lines": [
+          "BHHB: 13.10 HTO: 42.4 LEU: 7.97 NEU: 7.30 PLT: 298 LINF: 0.45",
+          "QSCR: 0.7 BUN: 26 GLU: 158 AU: 6.4",
+          "PFHALB: 3.7 AST: 27 ALT: 21 FA: 73 LDH: 481 AMILSAS: 36 CT: 165 TG: 100",
+          "ESCL: 89.2 NA: 135.5 K: 3.5 CA: 8.8 P: 3.7"
+        ]
+      },
+      {
+        "date": "2026-03-19",
+        "lines": [
+          "PH: 7.39 PCO2: 40 HCO3: 24.2 LACTATO: 1.8"
+        ]
+      }
+    ],
+    "monitoreo": {
+      "historial": [
+        {
+          "id": "demo-ic-ea-13",
+          "recordedAt": "2026-03-13T16:00:00.000Z",
+          "vitals": {
+            "tas": 148,
+            "tad": 88,
+            "fc": 98,
+            "fr": 24,
+            "sat": 88,
+            "temp": 36.8
+          },
+          "io": {
+            "diuresis": 2900,
+            "ing": 800,
+            "egr": 3000
+          }
+        },
+        {
+          "id": "demo-ic-ea-14",
+          "recordedAt": "2026-03-14T15:00:00.000Z",
+          "vitals": {
+            "tas": 138,
+            "tad": 82,
+            "fc": 84,
+            "fr": 20,
+            "sat": 90,
+            "temp": 36.6
+          },
+          "io": {
+            "diuresis": 2600,
+            "ing": 900,
+            "egr": 2700
+          }
+        },
+        {
+          "id": "demo-ic-ea-15",
+          "recordedAt": "2026-03-15T15:00:00.000Z",
+          "vitals": {
+            "tas": 132,
+            "tad": 78,
+            "fc": 78,
+            "fr": 20,
+            "sat": 91,
+            "temp": 36.6
+          },
+          "io": {
+            "diuresis": 2450,
+            "ing": 900,
+            "egr": 2500
+          }
+        },
+        {
+          "id": "demo-ic-ea-16",
+          "recordedAt": "2026-03-16T15:00:00.000Z",
+          "vitals": {
+            "tas": 128,
+            "tad": 74,
+            "fc": 72,
+            "fr": 18,
+            "sat": 92,
+            "temp": 36.5
+          },
+          "io": {
+            "diuresis": 2300,
+            "ing": 1000,
+            "egr": 2400
+          }
+        },
+        {
+          "id": "demo-ic-ea-17",
+          "recordedAt": "2026-03-17T15:00:00.000Z",
+          "vitals": {
+            "tas": 124,
+            "tad": 72,
+            "fc": 68,
+            "fr": 18,
+            "sat": 93,
+            "temp": 36.5
+          },
+          "io": {
+            "diuresis": 2100,
+            "ing": 1100,
+            "egr": 2200
+          }
+        },
+        {
+          "id": "demo-ic-ea-18",
+          "recordedAt": "2026-03-18T15:00:00.000Z",
+          "vitals": {
+            "tas": 122,
+            "tad": 70,
+            "fc": 64,
+            "fr": 18,
+            "sat": 93,
+            "temp": 36.5
+          },
+          "io": {
+            "diuresis": 2115,
+            "ing": 1150,
+            "egr": 2200
+          }
+        },
+        {
+          "id": "demo-ic-ea-19",
+          "recordedAt": "2026-03-19T15:00:00.000Z",
+          "vitals": {
+            "tas": 120,
+            "tad": 70,
+            "fc": 60,
+            "fr": 18,
+            "sat": 93,
+            "temp": 36.5
+          },
+          "io": {
+            "diuresis": 1780,
+            "ing": 1200,
+            "egr": 1900
+          }
+        }
+      ]
+    },
+    "fromLab": false
+  },
+  "note": null,
+  "indicaciones": null,
+  "labHistory": [
+    {
+      "fecha": "2026-03-13",
+      "resLabs": [
+        "PH: 7.30 PCO2: 60 HCO3: 29.5 LACTATO: 2.8",
+        "BHHB: 12.60 HTO: 40.8 LEU: 13.2 NEU: 10.10 PLT: 257",
+        "QSCR: 0.6 BUN: 14 GLU: 141 AU: 5.0",
+        "NA: 138.6 K: 4.0 CA: 8.9 P:3.5 NAU: 119"
+      ]
+    },
+    {
+      "fecha": "2026-03-15",
+      "resLabs": [
+        "BHHB: 10.9 HTO: 36 LEU: 10.6 NEU: 9.40 PLT: 201",
+        "QSCR: 0.6 BUN: 14 GLU: 133",
+        "PH: 7.33 PCO2: 61 HCO3: 32.3"
+      ]
+    },
+    {
+      "fecha": "2026-03-17",
+      "resLabs": [
+        "BHHB: 12.2 HTO: 40.4 LEU: 8.42 PLT: 241",
+        "QSCR: 0.8 BUN: 21 GLU: 108",
+        "NA: 142.4 K: 4.0"
+      ]
+    },
+    {
+      "fecha": "2026-03-19",
+      "resLabs": [
+        "PH: 7.39 PCO2: 40 HCO3: 24.2 LACTATO: 1.8"
+      ]
+    }
+  ],
+  "medReceta": null
+}

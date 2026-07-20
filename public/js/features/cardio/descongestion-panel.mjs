@@ -9,6 +9,7 @@ import { accesoFechaToDateInputValue } from '../../patient-date-fields.mjs';
 import { ioDiuresisForBalance } from '../estado-actual-io.mjs';
 import { saveState } from '../../app-state.mjs';
 import { escHtml, escAttr } from '../../dom-escape.mjs';
+import { refreshRpcDateFields } from '../../rpc-date-picker.mjs';
 
 /** @param {Date} [d] */
 export function localYmd(d) {
@@ -53,6 +54,40 @@ export function extractDailyDiuresisMl(monitoreo) {
     .map(function (e) {
       return e[1];
     });
+}
+
+/**
+ * Prefer the latest day that already has clinical data (POCUS / EA historial).
+ * Falls back to today so live capture still works for new patients.
+ * @param {Record<string, unknown> | null | undefined} patient
+ * @returns {string} YYYY-MM-DD
+ */
+export function resolveClinicalAsOfYmd(patient) {
+  if (!patient) return localYmd();
+  /** @type {string[]} */
+  var candidates = [];
+  /** @type {any} */
+  var cardio = patient.cardio;
+  var pocus = cardio && Array.isArray(cardio.pocusByDay) ? cardio.pocusByDay : [];
+  for (var i = 0; i < pocus.length; i++) {
+    var d = pocus[i] && String(pocus[i].date || '').trim();
+    if (/^\d{4}-\d{2}-\d{2}$/.test(d)) candidates.push(d);
+  }
+  var hist =
+    patient.monitoreo && Array.isArray(patient.monitoreo.historial)
+      ? patient.monitoreo.historial
+      : [];
+  for (var j = 0; j < hist.length; j++) {
+    var hy = recordedAtToLocalYmd(hist[j] && hist[j].recordedAt);
+    if (hy) candidates.push(hy);
+  }
+  var inicio = accesoFechaToDateInputValue(cardio && cardio.inicioDescongestion);
+  if (inicio) candidates.push(inicio);
+  var ingreso = resolveIngresoYmd(patient);
+  if (ingreso) candidates.push(ingreso);
+  if (!candidates.length) return localYmd();
+  candidates.sort();
+  return candidates[candidates.length - 1];
 }
 
 /**
@@ -135,7 +170,7 @@ export function buildDescongestionHeaderHtml(vm) {
     '<div class="ea-cardio-grid">' +
     '<div class="ea-field">' +
     '<label class="ea-label" for="ea-cardio-inicio-descongestion">Inicio descongestión</label>' +
-    '<input type="date" class="ea-input" id="ea-cardio-inicio-descongestion" data-ea-cardio-inicio ' +
+    '<input type="date" class="ea-input rpc-date-input" id="ea-cardio-inicio-descongestion" data-ea-cardio-inicio ' +
     'value="' +
     escAttr(vm.inicioDescongestion || '') +
     '">' +
@@ -194,14 +229,15 @@ export function mountDescongestionPanel(mount, patient) {
   ensureCardio(patient);
   /** @type {any} */
   var cardio = patient.cardio;
-  var asOf = localYmd();
+  var asOf = resolveClinicalAsOfYmd(patient);
   var ingresoDate = resolveIngresoYmd(patient);
+  var inicioYmd = accesoFechaToDateInputValue(cardio.inicioDescongestion) || '';
   var dailyDiuresis = extractDailyDiuresisMl(patient.monitoreo);
   var furoMg = sumFurosemidaMg(cardio.diureticSegments);
   var computed = computeDescongestion({
     ingresoDate: ingresoDate,
     asOfDate: asOf,
-    inicioDescongestion: cardio.inicioDescongestion || '',
+    inicioDescongestion: inicioYmd,
     dailyDiuresisMl: dailyDiuresis,
     furosemidaAcumuladaMg: furoMg,
     overrides: cardio.overrides || {},
@@ -209,7 +245,7 @@ export function mountDescongestionPanel(mount, patient) {
   var overrides = cardio.overrides || {};
   mount.innerHTML = buildDescongestionHeaderHtml({
     ingresoDate: ingresoDate,
-    inicioDescongestion: cardio.inicioDescongestion || '',
+    inicioDescongestion: inicioYmd,
     diasInternamiento: computed.diasInternamiento,
     diasDescongestion: computed.diasDescongestion,
     diuresisAcumuladaMl: computed.diuresisAcumuladaMl,
@@ -219,6 +255,7 @@ export function mountDescongestionPanel(mount, patient) {
     activeMeds: collectActiveMedRows(cardio),
   });
   wireDescongestionPanel(mount, patient);
+  refreshRpcDateFields(mount);
 }
 
 /**

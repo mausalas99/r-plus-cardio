@@ -53,7 +53,7 @@ function guidedTourPause() {
   tourState.guidedTourActive = false;
   publishTourGuardContext();
   hideTourDock();
-  rt.showToast('Tutorial pausado. Continúa desde Aprender R+.', 'info');
+  rt.showToast('Tutorial pausado. Continúa desde Aprender R+ Cardio.', 'info');
   syncLearnHubContinueVisibility();
 }
 
