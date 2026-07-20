@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 /**
  * Simulates a second Mac pushing @usuario / clinicalOps to a live LAN host.
- * Use while R+ is running as host (port 3738).
+ * Use while Cardionotas is running as host (port 3838; R+ uses 3738).
  *
  * Examples:
  *   npm run dev:lan-virtual-peer -- --room sala-2
- *   npm run dev:lan-virtual-peer -- --host http://127.0.0.1:3738 --code "$(cat ~/Library/Application\ Support/R+/lan-team-code.txt)" --room sala-2
+ *   npm run dev:lan-virtual-peer -- --host http://127.0.0.1:3838 --code "$(cat ~/Library/Application\ Support/Cardionotas/lan-team-code.txt)" --room sala-2
  *   npm run dev:lan-virtual-peer -- --probe
  */
 import fs from 'node:fs';
@@ -14,7 +14,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { randomUUID } from 'node:crypto';
 
-const DEFAULT_PORT = 3738;
+const DEFAULT_PORT = 3838;
 
 function parseArgs(argv) {
   const opts = {
@@ -60,7 +60,7 @@ Options:
   --delta              POST field delta (historiaClinica labsAtAdmission.na) + verify replay
   --patient ID         Patient id for --delta (default: pat_smoke_virtual)
   --churn              After push, send sync-bundle with no clinicalOps (wipe regression)
-  --host URL           Default: http://127.0.0.1:3738 or R_PLUS_LAN_HOST
+  --host URL           Default: http://127.0.0.1:3838 or R_PLUS_LAN_HOST
   --code TOKEN         Bearer team code (R_PLUS_LAN_TEAM_CODE or host userData file)
   --room ID            LiveSync room id, e.g. sala-2
   --username HANDLE    Virtual @usuario (default: doctor_virtual)

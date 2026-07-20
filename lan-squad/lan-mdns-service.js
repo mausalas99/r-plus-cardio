@@ -11,9 +11,10 @@ const {
   isRecoverableMdnsError,
 } = require('./lan-mdns-service-lifecycle.js');
 
+const { LAN_HTTP_PORT } = require('../lib/http-port.js');
 const SERVICE_TYPE = 'rplus';
 const SERVICE_PROTOCOL = 'tcp';
-const DEFAULT_PORT = 3738;
+const DEFAULT_PORT = LAN_HTTP_PORT;
 
 /**
  * True when this Mac has a non-loopback IPv4 LAN address for mDNS.

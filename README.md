@@ -5,6 +5,7 @@ Fork de R+ orientado al seguimiento intrahospitalario de IC descompensada (desco
 - Diseño: [2026-07-19-cardionotas-ic-fork-design](docs/superpowers/specs/2026-07-19-cardionotas-ic-fork-design.md)
 - Plan MVP: [2026-07-19-cardionotas-ic-mvp](docs/superpowers/plans/2026-07-19-cardionotas-ic-mvp.md)
 - Fixture demo IC: `data/demo-patients/ma-elena-ic-fixture.json`
+- **Puerto local:** `3838` (R+ usa `3738`) — override con `CARDIONOTAS_HTTP_PORT`
 
 ## Índice
 

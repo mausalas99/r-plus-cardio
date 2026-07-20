@@ -20,6 +20,7 @@ import {
 import { normalizeLanHostBase } from '../../lan-host-subnet-discovery.mjs';
 import { listWardHostUrlsForProbe } from '../../lan-ward-host-registry.mjs';
 import { canLocalMacBeLanHost } from '../../lan-host-rank-policy.mjs';
+import { cardionotasLoopbackBaseUrl } from '../../http-port.mjs';
 import {
   isLanSessionConfiguredForRest,
   isLanElectronDesktop,
@@ -291,7 +292,7 @@ function resolveLanShiftPinHostPrefill() {
     window.electronAPI &&
     typeof window.electronAPI.isLanDevPeer === 'function' &&
     window.electronAPI.isLanDevPeer()
-      ? 'http://127.0.0.1:3738'
+      ? cardionotasLoopbackBaseUrl()
       : '';
   return (
     normalizeLanHostBase(cfg.hostUrl) ||
@@ -334,7 +335,7 @@ function createLanShiftPinHostUrlField(wardPrefill) {
   hostUrlInput.className = 'profile-input lan-shift-pin-host-url';
   hostUrlInput.autocomplete = 'off';
   hostUrlInput.placeholder =
-    bundledWardHostUrl() || 'http://127.0.0.1:3738 o IP del anfitrión';
+    bundledWardHostUrl() || cardionotasLoopbackBaseUrl() + ' o IP del anfitrión';
   if (wardPrefill) hostUrlInput.value = wardPrefill;
 
   var hostUrlHint = document.createElement('p');

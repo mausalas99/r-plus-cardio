@@ -1,9 +1,10 @@
 'use strict';
 const os = require('node:os');
+const { LAN_HTTP_PORT } = require('../lib/http-port.js');
 
-const DEFAULT_LAN_PORT = 3738;
+const DEFAULT_LAN_PORT = LAN_HTTP_PORT;
 
-/** http://<IPv4-LAN>:3738 — never localhost (for tickets / mobile join). */
+/** http://<IPv4-LAN>:PORT — never localhost (for tickets / mobile join). */
 function pickLanCandidateBaseUrl(port = DEFAULT_LAN_PORT) {
   const nets = os.networkInterfaces();
   const candidates = [];

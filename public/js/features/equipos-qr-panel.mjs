@@ -16,6 +16,7 @@ import {
   setEquiposCloudConfig,
 } from '../equipos-cloud-config.mjs';
 import { renderEquiposBoardPanel } from './equipos-board.mjs';
+import { cardionotasLoopbackBaseUrl } from '../http-port.mjs';
 
 /** @type {{ hostBaseUrl?: string, userId?: string, showToast?: (msg: string, kind?: string) => void } | null} */
 let panelOpts = null;
@@ -29,7 +30,7 @@ function normalizeHostBase(hostBase) {
   const base = String(hostBase || '')
     .trim()
     .replace(/\/+$/, '');
-  return base || 'http://127.0.0.1:3738';
+  return base || cardionotasLoopbackBaseUrl();
 }
 
 function lanEquiposUrl(hostBase) {

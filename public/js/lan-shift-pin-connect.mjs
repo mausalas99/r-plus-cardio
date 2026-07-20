@@ -20,6 +20,7 @@ import {
 import { pingLanHostUrl } from './lan-surrogate-host.mjs';
 import { storage } from './storage.js';
 import { isLanSkipShiftPin } from './lan-shift-pin-bypass.mjs';
+import { cardionotasLoopbackBaseUrl } from './http-port.mjs';
 import {
   canAttemptAutoHostDetect,
   recordAutoHostDetectMiss,
@@ -326,7 +327,7 @@ async function discoverExtraWardHosts(ownUrl, localPrefixes, pin, opts, tried) {
 
 async function tryLoopbackShiftPin(transport, pin, opts, tried) {
   if (!shouldTryLoopbackShiftPin(transport)) return false;
-  const loopbackHost = normalizeLanHostBase('http://127.0.0.1:3738');
+  const loopbackHost = normalizeLanHostBase(cardionotasLoopbackBaseUrl());
   if (!loopbackHost || tried.has(loopbackHost)) return false;
   tried.add(loopbackHost);
   return joinHostAfterShiftPinExchange(loopbackHost, pin, opts);

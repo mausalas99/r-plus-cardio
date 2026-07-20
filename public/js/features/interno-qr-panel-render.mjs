@@ -1,5 +1,6 @@
 import { copyInternoQrImage, downloadInternoQrPng } from '../interno-qr-render.mjs';
 import { CLINICAL_SALA_VALUES, clinicalSalaRoomSlug } from '../../../lib/clinical-salas.mjs';
+import { cardionotasLoopbackBaseUrl } from '../http-port.mjs';
 
 const SALA_DEFS = CLINICAL_SALA_VALUES.map((key) => ({
   key,
@@ -9,7 +10,7 @@ const SALA_DEFS = CLINICAL_SALA_VALUES.map((key) => ({
 /** @param {string} hostBase */
 export function normalizeInternoHostBase(hostBase) {
   const base = String(hostBase || '').trim().replace(/\/+$/, '');
-  return base || 'http://127.0.0.1:3738';
+  return base || cardionotasLoopbackBaseUrl();
 }
 
 export function isLocalOnlyInternoHost(base) {

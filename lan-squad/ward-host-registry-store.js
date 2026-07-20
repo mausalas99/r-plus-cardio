@@ -8,9 +8,10 @@ const {
   createRegistryPersistence,
 } = require('./ward-host-registry-persistence.js');
 
+const { LAN_HTTP_PORT } = require('../lib/http-port.js');
 const MAX_HINT_URLS = 8;
 const DEFAULT_MAX_AGE_MS = 7 * 24 * 60 * 60 * 1000;
-const DEFAULT_PORT = 3738;
+const DEFAULT_PORT = LAN_HTTP_PORT;
 
 function normalizeHostUrl(raw) {
   const s = String(raw || '').trim().replace(/\/+$/, '');

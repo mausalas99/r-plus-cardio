@@ -88,14 +88,14 @@ console.log('Host (primary R+): ⇄ Wi‑Fi on, sala activa — copy invite “O
 console.log('');
 const hostTeamCode = readHostTeamCode();
 if (hostTeamCode) {
-  console.log('LAN: peer will auto-target http://127.0.0.1:3738 with host team code.');
+  console.log('LAN: peer will auto-target http://127.0.0.1:3838 with host team code.');
 } else {
-  console.log('LAN: no host team code found — paste ⇄ invite after onboarding, or run host R+ once.');
+  console.log('LAN: no host team code found — paste ⇄ invite after onboarding, or run host Cardionotas once.');
 }
 console.log('');
 console.log('Peer (this window), in order:');
 console.log('  1. Wait for onboarding (DB opens automatically — no password overlay)');
-console.log('  2. “¿Cómo usarás R+?” → Guardia en red (LAN)  ← not “Solo este equipo”');
+console.log('  2. “¿Cómo usarás Cardionotas?” → Guardia en red (LAN)  ← not “Solo este equipo”');
 console.log('  3. Register @usuario + sala — leave PIN empty OR use host PIN del turno');
 console.log('  4. Optional: ⇄ → Conectar al turno → paste host invite if auto-connect did not run');
 console.log('  5. Delta smoke: same patient both sides — edit Sodio in HC');
@@ -110,7 +110,7 @@ const child = spawn(electronBin, args, {
   env: {
     ...process.env,
     R_PLUS_LAN_PEER: '1',
-    R_PLUS_LAN_DEV_PEER_HOST: 'http://127.0.0.1:3738',
+    R_PLUS_LAN_DEV_PEER_HOST: 'http://127.0.0.1:3838',
     ...(hostTeamCode ? { R_PLUS_LAN_DEV_PEER_CODE: hostTeamCode } : {}),
   },
 });

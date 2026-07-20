@@ -1,5 +1,6 @@
 'use strict';
 const dgram = require('node:dgram');
+const { LAN_HTTP_PORT } = require('../lib/http-port.js');
 
 const DISCOVER_MSG = JSON.stringify({ type: 'rplus-discover' });
 
@@ -13,7 +14,7 @@ function parseBeaconMessage(msg) {
 
 function beaconResultFromLocalhost(data) {
   return {
-    url: `http://127.0.0.1:${data.port || 3738}`,
+    url: `http://127.0.0.1:${data.port || LAN_HTTP_PORT}`,
     clientId: String(data.clientId),
     startedAt: Number(data.startedAt) || 0,
     rank: String(data.rank || ''),
@@ -24,7 +25,7 @@ function beaconResultFromLocalhost(data) {
 
 function beaconResultFromRemote(data, rinfo) {
   return {
-    url: `http://${rinfo.address}:${data.port || 3738}`,
+    url: `http://${rinfo.address}:${data.port || LAN_HTTP_PORT}`,
     clientId: data.clientId,
     startedAt: data.startedAt,
     rank: data.rank,
@@ -84,7 +85,7 @@ function multicastDiscover(multicastGroup, port, clientId, timeoutMs = 500) {
     sock.on('message', (msg, rinfo) => {
       const data = parseBeaconMessage(msg);
       if (data && data.type === 'rplus-beacon' && data.clientId && data.clientId !== clientId) {
-        const url = `http://${rinfo.address}:${data.port || 3738}`;
+        const url = `http://${rinfo.address}:${data.port || LAN_HTTP_PORT}`;
         if (!seen.has(url)) {
           seen.add(url);
           results.push(beaconResultFromRemote(data, rinfo));

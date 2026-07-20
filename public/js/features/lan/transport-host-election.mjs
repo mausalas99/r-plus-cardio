@@ -23,6 +23,7 @@ import {
 } from '../../lan-host-detect-guard.mjs';
 import { isWardTierHostMeta, markWardTierHostSeen } from '../../lan-host-escalation.mjs';
 import { buildLocalLanHostMeta, prefersLanClientDiscoveryFirst } from '../../lan-host-rank.mjs';
+import { cardionotasLoopbackBaseUrl } from '../../http-port.mjs';
 import {
   canLocalMacBeLanHost,
   evaluatePeerHostAction,
@@ -176,7 +177,7 @@ async function resolveReachableLanHostUrl(cfg, opts, autoUrl, bearer) {
   if (url && !isLocalLoopbackLanUrl(url)) return url;
   var shareUrl = await resolveLanShareBaseUrl();
   if (shareUrl) return shareUrl;
-  url = autoUrl || 'http://127.0.0.1:3738';
+  url = autoUrl || cardionotasLoopbackBaseUrl();
   if (!isLocalLoopbackLanUrl(url)) return url;
   var retried = await refreshElectronLanCandidateUrl({ ensureServer: true, tries: 6, delayMs: 400 });
   return retried || url;

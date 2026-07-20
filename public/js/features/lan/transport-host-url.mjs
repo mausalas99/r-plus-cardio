@@ -18,6 +18,7 @@ import { canLocalMacBeLanHost } from '../../lan-host-rank-policy.mjs';
 import { isLanSkipShiftPin } from '../../lan-shift-pin-bypass.mjs';
 import { normalizeLanHostBase, lanHostBasesSameMachine } from '../../lan-host-subnet-discovery.mjs';
 import { getPinnedHostUrl, isPinnedHostLocal } from '../../lan-host-pin.mjs';
+import { cardionotasLoopbackBaseUrl } from '../../http-port.mjs';
 
 async function ensureElectronLanServerOnce(opts, attempt) {
   if (!opts.ensureServer || attempt !== 0) return;
@@ -94,7 +95,7 @@ export async function resolveLanHostUrlAuto() {
     .replace(/\/+$/, '');
   if (fromCfg) return fromCfg;
   if (!isLanElectronDesktop()) return '';
-  return 'http://127.0.0.1:3738';
+  return cardionotasLoopbackBaseUrl();
 }
 
 async function readOwnLanBaseFromElectron() {

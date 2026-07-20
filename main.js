@@ -217,7 +217,7 @@ function createWindow() {
   }
   mainWindow = new BrowserWindow(winOpts);
 
-  mainWindow.loadURL('http://localhost:3738');
+  mainWindow.loadURL('http://localhost:' + require('./lib/http-port.js').LAN_HTTP_PORT);
 
   mainWindow.webContents.setWindowOpenHandler(({ url }) => {
     if (isAllowedExternalUrl(url)) shell.openExternal(url);
@@ -659,6 +659,7 @@ ipcMain.handle('lan-get-effective-team-code', () => {
 
 const { createLanMdnsService, buildTeamHashSync } = require('./lan-squad/lan-mdns-service.js');
 const { createUdpBeacon } = require('./lan-squad/lan-udp-beacon.js');
+const { LAN_HTTP_PORT, LAN_BEACON_PORT } = require('./lib/http-port.js');
 const crypto = require('node:crypto');
 
 let _lanMdnsService = null;
@@ -717,7 +718,14 @@ function startUdpBeaconIfHosting() {
     const rank = meta.rank || 'R1';
     const teamHash = buildTeamHashSync(teamResult.code);
     if (_udpBeacon) _udpBeacon.stop();
-    _udpBeacon = createUdpBeacon({ clientId, startedAt, rank, teamHash, port: 3739 });
+    _udpBeacon = createUdpBeacon({
+      clientId,
+      startedAt,
+      rank,
+      teamHash,
+      port: LAN_BEACON_PORT,
+      httpPort: LAN_HTTP_PORT,
+    });
     _udpBeacon.startListening().catch(() => {});
   } catch (_e) {
     // Non-critical — UDP beacon unavailable
@@ -733,7 +741,7 @@ ipcMain.handle('lan-ensure-server-ready', async () => {
   } catch (lanErr) {
     const portBusy =
       (lanErr && lanErr.code === 'EADDRINUSE') ||
-      (lanErr && lanErr.message && String(lanErr.message).includes('3738'));
+      (lanErr && lanErr.message && String(lanErr.message).includes(String(LAN_HTTP_PORT)));
     if (!(peerMode && portBusy)) throw lanErr;
   }
   if (!peerMode) {
@@ -765,7 +773,9 @@ ipcMain.handle('lan-udp-discover', async () => {
 /** Dev peer window (npm run dev:lan-peer-app): seed LAN client config toward local host. */
 ipcMain.handle('lan-dev-peer-seed-config', () => {
   if (process.env.R_PLUS_LAN_PEER !== '1') return { ok: false };
-  const hostUrl = String(process.env.R_PLUS_LAN_DEV_PEER_HOST || 'http://127.0.0.1:3738').trim();
+  const hostUrl = String(
+    process.env.R_PLUS_LAN_DEV_PEER_HOST || 'http://127.0.0.1:' + LAN_HTTP_PORT,
+  ).trim();
   const teamCode = String(process.env.R_PLUS_LAN_DEV_PEER_CODE || '').trim();
   if (!hostUrl || teamCode.length < 32) return { ok: false };
   return { ok: true, hostUrl, teamCode };
@@ -1067,10 +1077,12 @@ app.whenReady().then(async () => {
       const peerMode = process.env.R_PLUS_LAN_PEER === '1';
       const portBusy =
         (lanErr && lanErr.code === 'EADDRINUSE') ||
-        (lanErr && lanErr.message && String(lanErr.message).includes('3738'));
+        (lanErr && lanErr.message && String(lanErr.message).includes(String(LAN_HTTP_PORT)));
       if (peerMode && portBusy) {
         console.warn(
-          '[R+ LAN peer mode] Puerto 3738 en uso — esta ventana usará el servidor LAN del anfitrión ya abierto.'
+          '[Cardionotas LAN peer mode] Puerto ' +
+            LAN_HTTP_PORT +
+            ' en uso — esta ventana usará el servidor LAN del anfitrión ya abierto.'
         );
       } else {
         throw lanErr;
@@ -1157,7 +1169,7 @@ app.on('before-quit', (event) => {
   const flushCap = new Promise((r) => setTimeout(r, 3000));
   Promise.race([lanServer.flushHostStoreNow().catch(() => {}), flushCap])
     .then(() => {
-      // Renderer loads from localhost:3738 — drop windows before httpServer.close().
+      // Renderer loads from localhost:LAN_HTTP_PORT — drop windows before httpServer.close().
       destroyAllBrowserWindows();
       return lanServer.stopLanServer();
     })

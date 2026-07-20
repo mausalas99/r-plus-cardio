@@ -5,6 +5,7 @@ import { copyInternoQrImage, downloadInternoQrPng } from '../interno-qr-render.m
 import { copyToClipboardSafe } from './soap-estado.mjs';
 import { showToast } from '../ui-toast.mjs';
 import { CLINICAL_SALA_VALUES, clinicalSalaRoomSlug } from '../../../lib/clinical-salas.mjs';
+import { cardionotasLoopbackBaseUrl } from '../http-port.mjs';
 
 const SALA_DEFS = CLINICAL_SALA_VALUES.map((key) => ({
   key,
@@ -22,7 +23,7 @@ function normalizeHostBase(hostBase) {
     .trim()
     .replace(/\/+$/, '');
   if (base) return base;
-  return 'http://127.0.0.1:3738';
+  return cardionotasLoopbackBaseUrl();
 }
 
 /** @param {string} sala @param {string} slug @param {string} token @param {string} hostBase */

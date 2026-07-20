@@ -1,21 +1,29 @@
 'use strict';
 const dgram = require('node:dgram');
 const { DISCOVER_MSG, discoverOnPort, multicastDiscover } = require('./lan-udp-beacon-discover.js');
+const { LAN_HTTP_PORT, LAN_BEACON_PORT } = require('../lib/http-port.js');
 
 const MULTICAST_GROUP = '239.255.42.1';
-const DEFAULT_BEACON_PORT = 3739;
+const DEFAULT_BEACON_PORT = LAN_BEACON_PORT;
 
 /**
- * @param {{ clientId: string, startedAt: number, rank: string, teamHash: string, port?: number }} opts
+ * @param {{ clientId: string, startedAt: number, rank: string, teamHash: string, port?: number, httpPort?: number }} opts
  */
-function createUdpBeacon({ clientId, startedAt, rank, teamHash, port = DEFAULT_BEACON_PORT }) {
+function createUdpBeacon({
+  clientId,
+  startedAt,
+  rank,
+  teamHash,
+  port = DEFAULT_BEACON_PORT,
+  httpPort = LAN_HTTP_PORT,
+}) {
   /** @type {dgram.Socket | null} */
   let listenSocket = null;
   let listenPort = 0;
 
   const beaconMsg = JSON.stringify({
     type: 'rplus-beacon',
-    port: 3738,
+    port: Number(httpPort) || LAN_HTTP_PORT,
     clientId,
     startedAt,
     rank,

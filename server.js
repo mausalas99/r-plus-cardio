@@ -39,7 +39,7 @@ appExpress.use((req, res, next) => {
   return globalJsonBodyParser(req, res, next);
 });
 
-const LAN_HTTP_PORT = 3738;
+const { LAN_HTTP_PORT } = require('./lib/http-port.js');
 
 function isPrivateIpv4Host(host) {
   const h = String(host || '').split(':')[0];
@@ -53,7 +53,7 @@ function isPrivateIpv4Host(host) {
   return false;
 }
 
-/** Permite fetch/WebSocket desde el mismo host (p. ej. iPad en http://192.168.x.x:3738). */
+/** Permite fetch/WebSocket desde el mismo host (p. ej. iPad en http://192.168.x.x:PORT). */
 function isAllowedLanCorsOrigin(originUrl, requestHost) {
   if (!originUrl || !requestHost) return false;
   const oh = String(originUrl.host || '').toLowerCase();
@@ -480,7 +480,7 @@ function startLanServer() {
 
   listenPromise = new Promise((resolve, reject) => {
     const srv = httpServer.listen(PORT, () => {
-      console.log(`R+ → http://localhost:${PORT}`);
+      console.log(`Cardionotas → http://localhost:${PORT}`);
       serverInstance = srv;
       try {
         scheduleEquiposPhotoPurge(equiposPhotosDir, getClinicalDbForInterno);
@@ -553,4 +553,5 @@ module.exports = {
   flushHostStoreNow,
   getLanWardHostRegistry,
   setOnInternoHostSync,
+  LAN_HTTP_PORT,
 };
