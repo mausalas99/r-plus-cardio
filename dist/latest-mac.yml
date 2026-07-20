@@ -1,0 +1,17 @@
+version: 1.0.0
+files:
+  - url: R+ Cardio-1.0.0-arm64.zip
+    sha512: vJ4CAqQwAE3YPLLLI3bYki+lr2OUN0XJ6QxV81ql2/MuhvAt++vZqbR/Ql/CWmOFJlXejkxF5gtEl2bzjBbvZA==
+    size: 132334049
+  - url: R+ Cardio-1.0.0-arm64.dmg
+    sha512: Qtf3+h/RgoYc71SNcpCDuwuP1B0+Ybl7olZ1pTUm2pymNMYm/Ay62fxvxUuF+qAYF7Hgwx2TisKwV2n3YKlWdA==
+    size: 137577836
+  - url: R+ Cardio-1.0.0-x64.zip
+    sha512: hpC25TPXJBs5Os7H2jMcrJe4+MTVvgK0JhDZ/hQ4wAEvX9kmOeHWeh/ijBvYcCbnzHAwHitpb/TTT0HVE2GgQQ==
+    size: 140708128
+  - url: R+ Cardio-1.0.0-x64.dmg
+    sha512: WO/sF47s9pRAbSAxXXtSHIIap9yvDMgXA/DVWiimP65yeGaZ4gsXkEtJVIBAQkIp7PEQ65jUnPC1333/ZedUpA==
+    size: 146004144
+path: R+ Cardio-1.0.0-arm64.zip
+sha512: vJ4CAqQwAE3YPLLLI3bYki+lr2OUN0XJ6QxV81ql2/MuhvAt++vZqbR/Ql/CWmOFJlXejkxF5gtEl2bzjBbvZA==
+releaseDate: '2026-07-20T02:36:43.000Z'
